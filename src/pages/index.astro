@@ -18,7 +18,9 @@ const secondary = rest.slice(0, 2);
 const shown = new Set([lead, ...secondary].filter(Boolean).map((s) => s.id));
 
 // Headlines pulled from local outlets and town halls (scripts/ingest.mjs).
-const wire = newsItems().filter((i) => i.category === 'news' || i.category === 'public-safety').slice(0, 10);
+// Render a few extra; the script below trims the rail to the height of the
+// stories beside it. Without JS (and on narrow screens) CSS shows six.
+const wire = newsItems().filter((i) => i.category === 'news' || i.category === 'public-safety').slice(0, 12);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
 
@@ -117,6 +119,40 @@ const events = (await getUpcomingEvents()).slice(0, 5);
   </div>
 </Base>
 
+<script>
+  // Show only as many rail headlines as fit beside the lead + secondary stories.
+  const MIN = 4;
+  const rail = document.querySelector<HTMLElement>('.top-rail');
+  const left = document.querySelector<HTMLElement>('.top-secondary');
+
+  function fit() {
+    if (!rail || !left) return;
+    const items = [...rail.querySelectorAll<HTMLElement>('.wire-item')];
+    rail.classList.add('fitted');
+    items.forEach((el) => (el.hidden = false));
+    // Stacked (single-column) layout: fall back to a fixed count.
+    if (!matchMedia('(min-width: 1000px)').matches) {
+      items.forEach((el, i) => (el.hidden = i >= 6));
+      return;
+    }
+    const limit = left.getBoundingClientRect().bottom;
+    const more = rail.querySelector<HTMLElement>('.rail-more');
+    const reserve = more ? more.offsetHeight + 10 : 0;
+    for (let i = items.length - 1; i >= MIN; i--) {
+      if (items[i].getBoundingClientRect().bottom + reserve <= limit) break;
+      items[i].hidden = true;
+    }
+  }
+
+  fit();
+  document.fonts?.ready.then(fit);
+  let t: number | undefined;
+  addEventListener('resize', () => {
+    clearTimeout(t);
+    t = window.setTimeout(fit, 100);
+  });
+</script>
+
 <style>
   .top {
     display: grid;
@@ -154,6 +190,7 @@ const events = (await getUpcomingEvents()).slice(0, 5);
     margin-bottom: 8px;
   }
   .rail-head + :global(.wire) { margin-top: 12px; }
+  .top-rail:not(.fitted) :global(.wire-item:nth-child(n + 7)) { display: none; }
   .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
 
   .signup-row { margin-top: 44px; }

@@ -3,7 +3,9 @@ import Base from '../../layouts/Base.astro';
 import StoryIndex from '../../components/StoryIndex.astro';
 import EventList from '../../components/EventList.astro';
 import { getStories, getUpcomingEvents } from '../../lib/content';
+import WireList from '../../components/WireList.astro';
 import { TOWNS } from '../../site.config';
+import { itemsForTown } from '../../lib/wire';
 
 export function getStaticPaths() {
   return TOWNS.map((t) => ({ params: { town: t.slug }, props: { name: t.name } }));
@@ -13,6 +15,9 @@ const { town } = Astro.params;
 const { name } = Astro.props;
 const stories = (await getStories()).filter((s) => s.data.towns.includes(town));
 const events = (await getUpcomingEvents()).filter((e) => e.data.town === town).slice(0, 5);
+const townItems = itemsForTown(town);
+const headlines = townItems.filter((i) => i.category !== 'meetings').slice(0, 15);
+const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
 ---
 <Base title={name} description={`News, events and things to do in ${name}, Massachusetts.`}>
   <StoryIndex
@@ -21,7 +26,20 @@ const events = (await getUpcomingEvents()).filter((e) => e.data.town === town).s
     dek={`The latest news and events from ${name}.`}
     stories={stories}
   >
+    <section slot="wire">
+      <div class="section-head">
+        <h2>Latest {name} headlines</h2>
+        <a href={`/news/?town=${town}`}>All →</a>
+      </div>
+      <WireList items={headlines} showSummary showTowns={false} empty={`No recent headlines for ${name}.`} />
+    </section>
     <div slot="rail">
+      {meetings.length > 0 && (
+        <>
+          <div class="section-head"><h2>Meeting agendas</h2></div>
+          <WireList items={meetings} showTowns={false} />
+        </>
+      )}
       <div class="section-head"><h2>Upcoming in {name}</h2></div>
       <EventList events={events} compact />
     </div>

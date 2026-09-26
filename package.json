@@ -7,11 +7,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "ingest": "NODE_USE_ENV_PROXY=1 node scripts/ingest.mjs",
+    "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.3.5"
+    "astro": "^7.3.5",
+    "fast-xml-parser": "^5.11.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

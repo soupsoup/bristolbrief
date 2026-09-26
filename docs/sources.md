@@ -1,0 +1,122 @@
+# Bristol County news and data sources
+
+Research notes behind `src/data/sources.json`. Every feed marked **live** was fetched on 2026-09-26 and returned a valid feed with recent items. `npm run ingest` re-checks all of them and writes the results to `src/data/feed-status.json`.
+
+## How the wire works
+
+1. `scripts/ingest.mjs` fetches each enabled source in `src/data/sources.json` (RSS, Atom or RDF).
+2. `scripts/lib/parse.mjs` tags each item with the Bristol County towns it names (including villages such as Assonet, North Dartmouth and Ocean Grove) and guesses a section.
+3. Sources marked `"filter": "county"` keep only items that name a Bristol County place. Regional outlets (WPRI, WBSM, Boston TV) need this. Single-town sources (a town hall, a police department) use `defaultTowns` instead.
+4. Items merge into `src/data/wire.json`, deduplicated by link and headline and kept for 45 days.
+5. Active National Weather Service alerts for zones MAZ017 (Northern Bristol), MAZ020 (Southern Bristol), MAC005 (county), ANZ234 (Buzzards Bay) and ANZ236 (Narragansett Bay) go to `src/data/alerts.json`.
+6. `.github/workflows/ingest.yml` runs this hourly and commits only when headlines or alerts change. Your host then rebuilds the site.
+
+The site shows each item's headline and the publisher's own summary, and links to the original. It never republishes full articles.
+
+## Live sources (49)
+
+### Local news outlets
+
+| Source | Feed | Notes |
+|---|---|---|
+| The New Bedford Light | `newbedfordlight.org/feed/` | Nonprofit, free |
+| Fall River Reporter | `fallriverreporter.com/feed/` | Also posts statewide items, so the county filter is on |
+| New Bedford Guide | `newbedfordguide.com/feed` | |
+| WBSM 1420 | `wbsm.com/category/news/feed/` | The `southcoast-news` category feed is empty; use the news feed plus the county filter |
+| WSAR 1480 | `wsar.com/wsar-news/feed.xml` | Not WordPress; found by feed autodiscovery |
+| Fairhaven Neighborhood News | `fairhavenneighborhoodnews.com/feed/` | |
+| The Sun Chronicle | `thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc` | BLOX CMS. Includes AP wire copy; the county filter keeps the local share. Paywalled. Section feeds returned 429 (rate limited) during testing |
+| Portuguese Times | `portuguesetimes.com/feed/` | Portuguese-language; mostly international news, few local items |
+| The Public's Radio | `thepublicsradio.org/feed/` | Now Ocean State Media. Returns 1,000 items and few mention the county |
+| WPRI 12, SE Mass section | `wpri.com/news/local-news/se-mass/feed/` | Best regional TV source |
+| Attleboro Patch, Mansfield Patch | `patch.com/feeds/aol/massachusetts/<slug>` | Mostly regional filler; the county filter drops most |
+| CommonWealth Beacon, Rhode Island Current, Boston 25, WBZ, MassLive | Standard feeds | Statewide or regional; occasional Bristol County stories get through the filter |
+
+### Gannett papers (no RSS)
+
+Gannett turned off RSS on its local sites in 2023. The wire uses Google News search feeds restricted to each site. These return a headline and link, with no summary.
+
+| Paper | Query |
+|---|---|
+| The Standard-Times (New Bedford) | `site:southcoasttoday.com` |
+| The Herald News (Fall River) | `site:heraldnews.com` |
+| Taunton Daily Gazette | `site:tauntongazette.com` |
+| The Enterprise (Easton, Raynham) | `site:enterprisenews.com (Easton OR Raynham)` |
+
+Google News also stands in for three outlets with no feed: Dartmouth Week, Reporter Today (Seekonk, Rehoboth) and Westport Shorelines (eastbayri.com).
+
+### Police, prosecutors and courts
+
+| Source | Feed | Notes |
+|---|---|---|
+| Bristol County District Attorney | Google News search for "Bristol County District Attorney" | This environment's network policy blocks bristolda.com. The DA's site runs WordPress, so try `bristolda.com/category/press-releases/feed/` once that domain is allowed |
+| U.S. Attorney, District of Massachusetts | `justice.gov/feeds/justice-news.xml?type[press_release]=press_release&component[1871]=1871` | justice.gov returns 401 intermittently; the ingest retries with a browser user agent |
+| Attleboro, New Bedford, Swansea and Taunton police | WordPress `/feed/` on each department's site | Attleboro's newest post is from June |
+
+### Town and city halls
+
+| Municipality | Platform | News feed | Agenda feed |
+|---|---|---|---|
+| Acushnet | CivicPlus | Empty (not used) | **Live** |
+| Attleboro | CivicPlus | Empty (not used) | **Live** |
+| Dartmouth | CivicPlus | **Live** | **Live** |
+| Dighton | CivicPlus | **Live** | **Live** |
+| Mansfield | CivicPlus | **Live** | **Live** |
+| New Bedford | WordPress behind a Cloudflare bot challenge | Google News `site:newbedford-ma.gov` | Not available (HTML pages only) |
+| North Attleborough | CivicPlus | **Live** | **Live** |
+| Norton | CivicPlus | Empty (not used) | **Live** |
+| Seekonk | CivicPlus | **Live** (intermittent timeouts) | **Live** |
+| Somerset | CivicPlus | **Live** | **Live** |
+| Taunton | CivicPlus + CivicClerk | **Live** | **Live** |
+| Westport | Revize | **Live** at `/rss.xml`, but items have no dates | Not available |
+
+CivicPlus feed URLs follow one pattern: `/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml` for news, `ModID=65&CID=All-0` for agendas, `ModID=63` for the Alert Center, `ModID=58` for the calendar and `ModID=76` for bids. Each site lists its feeds at `/rss.aspx`, with per-board agenda feeds such as `CID=Attleboro-Municipal-Council-5`.
+
+## Found but not wired up yet
+
+### Town sites that need a scraper or a different route
+
+| Municipality | What exists | Why it isn't live |
+|---|---|---|
+| Fall River | Revize site with a news list (`fallriverma.gov/newslist.php`); City Council agendas on Revize pages; School Committee on BoardDocs; meeting video through the FRGTV Cablecast API | No RSS; needs an HTML scraper |
+| Easton | Revize news list (`newslist.php`); agendas on Documents-On-Demand; ArcGIS Hub open data | No RSS; needs an HTML scraper |
+| Swansea | Revize with per-board agenda pages | No RSS. The police feed is live |
+| Freetown | CivicPlus | Feed URLs returned 404 or timed out; needs a retry from another network |
+| Fairhaven, Raynham, Rehoboth, Berkley | WordPress (Fairhaven, Berkley) and Virtual Towns & Schools (Raynham, Rehoboth) | Cloudflare returns 403 to automated requests. Google News site searches could work as a fallback |
+| Dartmouth Police | WordPress with monthly log PDFs | Cloudflare 403 |
+| Taunton | CivicClerk public API: `tauntonma.api.civicclerk.com/v1/Events` | **Works** (returns JSON with meeting dates). Needs its own handler; would give real meeting dates instead of posting dates |
+
+Police log PDFs (New Bedford, Attleboro, Dartmouth, Taunton) exist but need PDF parsing.
+
+### Data APIs tested live
+
+| Source | Endpoint | Status | Use |
+|---|---|---|---|
+| NWS alerts | `api.weather.gov/alerts/active?zone=MAZ017,MAZ020,MAC005,ANZ234,ANZ236` | **Wired up** | Alert banner and `/weather/` |
+| MBTA alerts | `api-v3.mbta.com/alerts?filter[route]=CR-NewBedford,CR-Providence` | 200, works without a key at low volume | South Coast Rail and Attleboro/Mansfield commuter rail disruptions |
+| NOAA tides | `api.tidesandcurrents.noaa.gov/...station=8447636` (New Bedford), `8447386` (Fall River) | 200 | Tide widget, coastal flooding |
+| USGS river gauges | `waterservices.usgs.gov/nwis/iv/?sites=01108000,01109060` | 200 | Taunton River and Threemile River flood levels |
+| Taunton CivicClerk | see above | 200 | Meeting calendar |
+
+### Promising but untested here
+
+- **MEMA power outage CSV** (`mema.mapsonline.net/power_outage_public.csv`): outages by town for every utility. The connection was reset from this environment.
+- **MassDOT roadway events** (`massdot.state.ma.us/feeds/MARoadwayEventsXML.aspx`): timed out.
+- **Division of Marine Fisheries shellfish closures**: an HTML list on mass.gov; needs a scraper.
+- **masspublicnotices.org**: legal notices by town; an ASP.NET search form with no API.
+- **mass.gov press releases**: no RSS; scrape `mass.gov/press-releases/recent` and filter by town name.
+- **DESE / Education-to-Career Hub** (Socrata), **Census ACS**, **DLS Municipal Databank**: good for data stories, not for a live wire.
+- **YouTube channels** for local access TV (Acushnet `UCQLn-V7X9rp0JdWXh445neQ`, Norton Media Center `UCSB7j1FrUhxf32qygjxIryA`, RAYCAM `UCwCbOVwMK3Olgi99RKp4GQA`). This environment's proxy blocks youtube.com; the feeds are `youtube.com/feeds/videos.xml?channel_id=<id>`.
+
+### Outlets without a usable feed
+
+- **Boston Globe**: no supported RSS.
+- **ABC6**: abc6.com now redirects to coastalabc.com, which has no feed.
+- **NBC 10 (turnto10.com)**: the RSS page lists no feed URLs.
+- **The Anchor** (Diocese of Fall River): the feed works but hasn't updated since March 2026.
+- **Ocean State Media**: `index.rss` returns zero items; the old thepublicsradio.org feed still works.
+- **The Gannett weeklies** (Mansfield News, Easton Journal, Norton Mirror, Raynham Call) closed or merged in 2022.
+
+## Usage terms
+
+Show a headline, the publisher's own summary and a link, with attribution. Don't reproduce full text, especially from paywalled sites (Gannett papers, The Sun Chronicle). Rhode Island Current publishes under Creative Commons and allows republication with credit. The New Bedford Light has no stated republication policy, so ask before republishing its stories in full.

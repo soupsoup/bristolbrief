@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { sources, sourceStatus } from '../lib/wire';
+
+const groups = [
+  { key: 'news', name: 'News outlets' },
+  { key: 'public-safety', name: 'Police, prosecutors and courts' },
+  { key: 'government', name: 'City and town halls' },
+  { key: 'meetings', name: 'Meeting agendas' },
+];
+const status = new Map(sourceStatus.map((s) => [s.id, s]));
+const enabled = sources.filter((s) => s.enabled);
+---
+<Base title="Our sources" description="Where The Bristol Brief's headlines come from.">
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">Transparency</p>
+    <h1 class="page-title" style="margin-top:4px">Where our headlines come from</h1>
+    <div class="prose">
+      <p>
+        Our headline wire collects public RSS feeds from local newsrooms, police departments and
+        municipal websites. We show the headline and, when the publisher provides one, a short
+        summary, and we link to the original story. Please support the local newsrooms listed here.
+      </p>
+      <p>
+        Some publishers don't offer feeds. For those, we use Google News search results limited to
+        the publisher's site. Publishers who would like to be added, removed or linked differently can
+        <a href="/tips/">contact us</a>.
+      </p>
+    </div>
+    {groups.map((g) => (
+      <section>
+        <div class="section-head"><h2>{g.name}</h2></div>
+        <ul class="src-list">
+          {enabled.filter((s) => s.category === g.key).map((s) => {
+            const st = status.get(s.id);
+            return (
+              <li>
+                <a href={s.homepage ?? s.url}>{s.name}</a>
+                {s.via === 'google-news' && <span class="meta"> (via Google News)</span>}
+                {st && !st.ok && <span class="meta"> · temporarily unavailable</span>}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .src-list { list-style: none; margin: 0; padding: 0; columns: 2 260px; column-gap: 32px; font-family: var(--sans); font-size: 15px; }
+  .src-list li { break-inside: avoid; padding: 5px 0; }
+</style>

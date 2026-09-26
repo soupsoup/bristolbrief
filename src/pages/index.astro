@@ -4,14 +4,20 @@ import StoryCard from '../components/StoryCard.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import EventList from '../components/EventList.astro';
 import { getStories, getUpcomingEvents } from '../lib/content';
+import WireList from '../components/WireList.astro';
 import { SECTIONS, TOWNS } from '../site.config';
+import { newsItems, meetingItems, wireItems } from '../lib/wire';
 
 const stories = await getStories();
 const lead = stories.find((s) => s.data.featured) ?? stories[0];
 const rest = stories.filter((s) => s !== lead);
 const secondary = rest.slice(0, 2);
-const latest = rest.slice(2, 8);
-const shown = new Set([lead, ...secondary, ...latest].filter(Boolean).map((s) => s.id));
+const shown = new Set([lead, ...secondary].filter(Boolean).map((s) => s.id));
+
+// Headlines pulled from local outlets and town halls (scripts/ingest.mjs).
+const wire = newsItems().filter((i) => i.category === 'news' || i.category === 'public-safety').slice(0, 10);
+const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
+const meetings = meetingItems().slice(0, 6);
 
 // A row for each section with enough unshown stories to fill it;
 // everything else lands in "More stories".
@@ -37,10 +43,9 @@ const events = (await getUpcomingEvents()).slice(0, 5);
           {secondary.map((s) => <StoryCard story={s} />)}
         </div>
         <aside class="top-rail">
-          <div class="rail-head">The latest</div>
-          <ol class="latest">
-            {latest.map((s) => <li><StoryCard story={s} variant="compact" /></li>)}
-          </ol>
+          <div class="rail-head">Around the county</div>
+          <WireList items={wire} empty="Headlines will appear after the first feed update." />
+          <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
       </section>
     )}
@@ -77,6 +82,16 @@ const events = (await getUpcomingEvents()).slice(0, 5);
           <a href="/events/">Calendar →</a>
         </div>
         <EventList events={events} compact />
+        <div class="section-head">
+          <h2>From town hall</h2>
+          <a href="/news/?category=government">More →</a>
+        </div>
+        <WireList items={townHall} />
+        <div class="section-head">
+          <h2>Public meetings</h2>
+          <a href="/meetings/">All →</a>
+        </div>
+        <WireList items={meetings} />
         <div class="section-head">
           <h2>Your town</h2>
         </div>
@@ -124,9 +139,8 @@ const events = (await getUpcomingEvents()).slice(0, 5);
     padding-top: 8px;
     margin-bottom: 8px;
   }
-  .latest { list-style: none; margin: 0; padding: 0; }
-  .latest li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
-  .latest li:last-child { border-bottom: 0; }
+  .rail-head + :global(.wire) { margin-top: 12px; }
+  .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
 
   .signup-row { margin-top: 44px; }
 

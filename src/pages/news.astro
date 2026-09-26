@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import WireList from '../components/WireList.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { newsItems, wireUpdated, sources } from '../lib/wire';
+import { TOWNS } from '../site.config';
+
+const items = newsItems();
+const usedSources = sources.filter((s) => items.some((i) => i.source === s.id));
+const updated = wireUpdated
+  ? new Date(wireUpdated).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' })
+  : null;
+---
+<Base title="Local headlines" description="Headlines from news outlets, police departments and town halls across Bristol County, Massachusetts.">
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">The wire</p>
+    <h1 class="page-title" style="margin-top:4px">Bristol County headlines</h1>
+    <p class="page-dek">
+      The latest from local newsrooms, police departments and town halls, updated through the day.
+      Every headline links to the original source. <a href="/sources/">See our sources.</a>
+    </p>
+    {updated && <p class="meta">Last updated {updated}</p>}
+
+    <form class="filters" aria-label="Filter headlines">
+      <label>
+        <span>Town</span>
+        <select name="town">
+          <option value="">All towns</option>
+          {TOWNS.map((t) => <option value={t.slug}>{t.name}</option>)}
+        </select>
+      </label>
+      <label>
+        <span>Type</span>
+        <select name="category">
+          <option value="">Everything</option>
+          <option value="news">News outlets</option>
+          <option value="public-safety">Police &amp; courts</option>
+          <option value="government">Town &amp; city halls</option>
+        </select>
+      </label>
+      <label>
+        <span>Source</span>
+        <select name="source">
+          <option value="">All sources</option>
+          {usedSources.map((s) => <option value={s.id}>{s.name}</option>)}
+        </select>
+      </label>
+    </form>
+
+    <div class="news-grid">
+      <div>
+        <WireList items={items} showSummary empty="Headlines will appear after the first feed update." />
+        <p class="meta no-match" hidden>No headlines match those filters.</p>
+      </div>
+      <aside><NewsletterSignup /></aside>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.filters')!;
+  const items = [...document.querySelectorAll<HTMLElement>('.wire-item')];
+  const empty = document.querySelector<HTMLElement>('.no-match')!;
+
+  function apply() {
+    const f = new FormData(form);
+    const town = String(f.get('town') ?? '');
+    const category = String(f.get('category') ?? '');
+    const source = String(f.get('source') ?? '');
+    let shown = 0;
+    for (const el of items) {
+      const ok =
+        (!town || el.dataset.towns!.split(' ').includes(town)) &&
+        (!category || el.dataset.category === category) &&
+        (!source || el.dataset.source === source);
+      el.hidden = !ok;
+      if (ok) shown++;
+    }
+    empty.hidden = shown > 0;
+    const params = new URLSearchParams();
+    for (const [k, v] of f) if (v) params.set(k, String(v));
+    history.replaceState(null, '', params.size ? `?${params}` : location.pathname);
+  }
+
+  // Restore filters from the URL so filtered views can be linked.
+  const params = new URLSearchParams(location.search);
+  for (const el of form.elements as unknown as HTMLSelectElement[]) {
+    if (el.name && params.has(el.name)) el.value = params.get(el.name)!;
+  }
+  form.addEventListener('change', apply);
+  apply();
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 8px;
+    padding: 14px 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 13px;
+  }
+  .filters label { display: flex; flex-direction: column; gap: 4px; flex: 1 1 160px; min-width: 0; }
+  .filters span { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; }
+  .filters select {
+    font: inherit;
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 100%;
+  }
+  .news-grid { display: grid; gap: 40px; grid-template-columns: 1fr; margin-top: 16px; }
+  @media (min-width: 1000px) {
+    .news-grid { grid-template-columns: minmax(0, 1fr) 320px; }
+  }
+</style>

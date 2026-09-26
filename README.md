@@ -20,6 +20,20 @@ npm run preview  # serve the built site
 - **About**, **Subscribe**, **Send a tip** and 404 pages.
 - **RSS feed** at `/rss.xml`, Open Graph tags, light and dark themes, and mobile layouts.
 
+## Local headline wire
+
+The site also pulls real headlines from about 50 local sources: newsrooms, police departments, town and city halls, and meeting agenda feeds. It adds National Weather Service alerts for the county.
+
+```sh
+npm run ingest   # fetch all feeds, update src/data/*.json
+npm test         # parser and town-matching tests
+```
+
+- Sources live in `src/data/sources.json`. To add a feed, add an entry with `id`, `name`, `url`, `category` (`news`, `public-safety`, `government` or `meetings`) and either `"filter": "county"` (keep only items naming a Bristol County place) or `"defaultTowns": ["slug"]`.
+- `.github/workflows/ingest.yml` runs the ingest hourly and commits when headlines change, which triggers a redeploy on most hosts. Scheduled workflows only run on the default branch.
+- Headlines appear on the home page, `/news/` (filter by town, type and source), each town page, `/meetings/`, `/weather/` and `/sources/`.
+- `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
+
 ## Publishing a story
 
 Add a Markdown file to `src/content/stories/`. The filename becomes the URL (`/stories/<filename>/`).

@@ -9,6 +9,8 @@ const path = Astro.url.pathname;
     <div class="wrap topbar-inner">
       <span class="today" data-today>{todayLine()}</span>
       <nav class="topbar-links" aria-label="Utility">
+        <a href="/news/">Headlines</a>
+        <a href="/meetings/">Meetings</a>
         <a href="/events/">Events</a>
         <a href="/tips/">Send a tip</a>
         <a href="/about/">About</a>
@@ -91,7 +93,7 @@ const path = Astro.url.pathname;
     .today { display: none; }
     .topbar-inner { justify-content: flex-end; }
     .topbar-links { gap: 12px; }
-    .topbar-links a:nth-child(3) { display: none; }
+    .topbar-links a:nth-child(n+3):not(.btn) { display: none; }
   }
 
   .masthead {

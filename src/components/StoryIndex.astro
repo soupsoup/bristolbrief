@@ -10,6 +10,7 @@ interface Props {
   stories: Story[];
 }
 const { kicker, title, dek, stories } = Astro.props;
+const hasWire = Astro.slots.has('wire');
 ---
 <div class="wrap">
   <header class="index-head">
@@ -19,8 +20,10 @@ const { kicker, title, dek, stories } = Astro.props;
   </header>
   <div class="index-grid">
     <div>
+      <slot name="wire" />
+      {hasWire && stories.length > 0 && <div class="section-head"><h2>Bristol Brief stories</h2></div>}
       {stories.length === 0 ? (
-        <p class="empty">
+        !hasWire && <p class="empty">
           No stories here yet. <a href="/tips/">Tell us what we should be covering.</a>
         </p>
       ) : (

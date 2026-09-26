@@ -176,8 +176,6 @@ export function matchTowns(str) {
   return found;
 }
 
-export const mentionsCounty = (str) => /\bbristol county\b(?!,? (?:r\.?i\.?|rhode island))/i.test(str) || /\bsouth ?coast\b/i.test(str);
-
 const SECTION_RULES = [
   ['public-safety', /\b(ICE|police|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
   ['schools', /\b(school|schools|superintendent|student|students|teacher|teachers|classroom|MCAS|DESE|graduat)/i],
@@ -198,11 +196,19 @@ export const itemId = (link, title) =>
 
 /**
  * Turn raw feed entries into wire items for one source.
- * Sources with filter "county" keep only entries that name a Bristol County
- * place. Single-town sources fall back to their defaultTowns.
+ *
+ * Institutional sources (a town hall, police department or agenda center,
+ * i.e. anything that isn't category "news" and has defaultTowns) speak for
+ * their own town, so every item is kept and tagged with that town.
+ *
+ * Everything else must name at least one of the 20 Bristol County
+ * municipalities (or a village within one) in its headline or summary.
+ * "South Coast" and "Bristol County" alone don't count: they also cover
+ * Plymouth County towns and Bristol County, R.I.
  */
 export function normalize(entries, source, now = new Date()) {
   const out = [];
+  const institutional = source.category !== 'news' && source.defaultTowns?.length > 0;
   for (const e of entries) {
     let title = stripHtml(e.title);
     if (!title || !e.link) continue;
@@ -215,11 +221,8 @@ export function normalize(entries, source, now = new Date()) {
     // Headline towns win; the summary often names opponents, hometowns, etc.
     const titleTowns = matchTowns(title);
     const matched = titleTowns.length ? titleTowns : matchTowns(haystack);
-    if (source.filter === 'county' && matched.length === 0 && !mentionsCounty(haystack)) continue;
-    // A town hall, police or agenda feed speaks for its own town even when an
-    // item names a neighbor ("Somerset Berkley Regional School Committee").
-    const institutional = source.category !== 'news' && source.defaultTowns?.length;
-    const towns = institutional ? source.defaultTowns : matched.length ? matched : source.defaultTowns ?? [];
+    if (!institutional && matched.length === 0) continue;
+    const towns = institutional ? source.defaultTowns : matched;
     const date = e.date && e.date <= now ? e.date : now;
     out.push({
       id: itemId(e.link, title),

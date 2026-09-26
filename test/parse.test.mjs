@@ -58,8 +58,8 @@ test('ignores same-named places elsewhere', () => {
   assert.deepEqual(matchTowns('Mansfield, Ohio factory'), []);
 });
 
-test('county filter drops stories outside Bristol County', () => {
-  const items = normalize(parseFeed(RSS), { id: 'x', name: 'X', category: 'news', filter: 'county' });
+test('news items must name a Bristol County town', () => {
+  const items = normalize(parseFeed(RSS), { id: 'x', name: 'X', category: 'news' });
   assert.equal(items.length, 1);
   assert.equal(items[0].title, 'Fall River council approves road bond');
   assert.deepEqual(items[0].towns, ['fall-river']);
@@ -74,9 +74,20 @@ test('single-town sources fall back to their default town', () => {
   assert.equal(items[0].summary, 'agenda posted');
 });
 
+test('South Coast or Bristol County alone does not qualify', () => {
+  const xml = `<rss><channel>
+    <item><title>Officer-involved shooting in Lakeville</title><link>https://e/1</link><description>Police across the South Coast responded.</description></item>
+    <item><title>Bristol County, R.I. beaches reopen</title><link>https://e/2</link></item>
+    <item><title>Bristol County DA: crash in Easton kills driver</title><link>https://e/3</link></item>
+  </channel></rss>`;
+  const items = normalize(parseFeed(xml), { id: 'r', name: 'R', category: 'news' });
+  assert.deepEqual(items.map((i) => i.link), ['https://e/3']);
+  assert.deepEqual(items[0].towns, ['easton']);
+});
+
 test('Google News titles lose the publisher suffix and summary', () => {
   const xml = `<rss><channel><item><title>Taunton gets new police chief - Taunton Daily Gazette</title><link>https://news.google.com/x</link><description>&lt;a href="x"&gt;junk&lt;/a&gt;</description></item></channel></rss>`;
-  const [item] = normalize(parseFeed(xml), { id: 'g', name: 'G', category: 'news', filter: 'county', via: 'google-news' });
+  const [item] = normalize(parseFeed(xml), { id: 'g', name: 'G', category: 'news', via: 'google-news' });
   assert.equal(item.title, 'Taunton gets new police chief');
   assert.equal(item.summary, '');
 });
@@ -84,7 +95,7 @@ test('Google News titles lose the publisher suffix and summary', () => {
 test('future dates are clamped to now', () => {
   const now = new Date('2026-09-26T00:00:00Z');
   const xml = `<rss><channel><item><title>Seekonk event</title><link>https://e/1</link><pubDate>Tue, 01 Dec 2026 00:00:00 GMT</pubDate></item></channel></rss>`;
-  const [item] = normalize(parseFeed(xml), { id: 'z', name: 'Z', category: 'news', filter: 'county' }, now);
+  const [item] = normalize(parseFeed(xml), { id: 'z', name: 'Z', category: 'news' }, now);
   assert.equal(item.date, now.toISOString());
 });
 
@@ -123,6 +134,9 @@ test('institutional feeds keep their own town', () => {
   const xml = `<rss><channel><item><title>Somerset Berkley Regional School Committee</title><link>https://s/1</link></item></channel></rss>`;
   const [agenda] = normalize(parseFeed(xml), { id: 'a', name: 'A', category: 'meetings', defaultTowns: ['somerset'] });
   assert.deepEqual(agenda.towns, ['somerset']);
-  const [story] = normalize(parseFeed(xml), { id: 'n', name: 'N', category: 'news', defaultTowns: ['fairhaven'] });
+  const [story] = normalize(parseFeed(xml), { id: 'n', name: 'N', category: 'news' });
   assert.deepEqual(story.towns, ['somerset', 'berkley']);
+  // News outlets don't get a default town: an item with no county town is dropped.
+  const offTopic = `<rss><channel><item><title>Sunken boat found at Bourne marina</title><link>https://s/2</link></item></channel></rss>`;
+  assert.equal(normalize(parseFeed(offTopic), { id: 'n', name: 'N', category: 'news' }).length, 0);
 });

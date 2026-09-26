@@ -7,9 +7,6 @@
       "url": "https://newbedfordlight.org/feed/",
       "category": "news",
       "homepage": "https://newbedfordlight.org/",
-      "defaultTowns": [
-        "new-bedford"
-      ],
       "enabled": true
     },
     {
@@ -18,7 +15,6 @@
       "url": "https://fallriverreporter.com/feed/",
       "category": "news",
       "homepage": "https://fallriverreporter.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -27,9 +23,6 @@
       "url": "https://www.newbedfordguide.com/feed",
       "category": "news",
       "homepage": "https://www.newbedfordguide.com/",
-      "defaultTowns": [
-        "new-bedford"
-      ],
       "enabled": true
     },
     {
@@ -38,7 +31,6 @@
       "url": "https://wbsm.com/category/news/feed/",
       "category": "news",
       "homepage": "https://wbsm.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -47,7 +39,6 @@
       "url": "https://wsar.com/wsar-news/feed.xml",
       "category": "news",
       "homepage": "https://wsar.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -56,9 +47,6 @@
       "url": "https://fairhavenneighborhoodnews.com/feed/",
       "category": "news",
       "homepage": "https://fairhavenneighborhoodnews.com/",
-      "defaultTowns": [
-        "fairhaven"
-      ],
       "enabled": true
     },
     {
@@ -67,7 +55,6 @@
       "url": "https://www.thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc",
       "category": "news",
       "homepage": "https://www.thesunchronicle.com/",
-      "filter": "county",
       "note": "Paywalled. BLOX feed includes AP wire copy, so the county filter matters.",
       "enabled": true
     },
@@ -77,7 +64,6 @@
       "url": "https://portuguesetimes.com/feed/",
       "category": "news",
       "homepage": "https://portuguesetimes.com/",
-      "filter": "county",
       "language": "pt",
       "enabled": true
     },
@@ -87,7 +73,6 @@
       "url": "https://thepublicsradio.org/feed/",
       "category": "news",
       "homepage": "https://thepublicsradio.org/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -96,7 +81,6 @@
       "url": "https://www.wpri.com/news/local-news/se-mass/feed/",
       "category": "news",
       "homepage": "https://www.wpri.com/news/local-news/se-mass/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -105,7 +89,6 @@
       "url": "https://patch.com/feeds/aol/massachusetts/attleboro",
       "category": "news",
       "homepage": "https://patch.com/massachusetts/attleboro",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -114,7 +97,6 @@
       "url": "https://patch.com/feeds/aol/massachusetts/mansfield-ma",
       "category": "news",
       "homepage": "https://patch.com/massachusetts/mansfield-ma",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -123,7 +105,6 @@
       "url": "https://commonwealthbeacon.org/feed/",
       "category": "news",
       "homepage": "https://commonwealthbeacon.org/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -132,7 +113,6 @@
       "url": "https://rhodeislandcurrent.com/feed/",
       "category": "news",
       "homepage": "https://rhodeislandcurrent.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -141,7 +121,6 @@
       "url": "https://www.boston25news.com/arc/outboundfeeds/rss/?outputType=xml",
       "category": "news",
       "homepage": "https://www.boston25news.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -150,7 +129,6 @@
       "url": "https://www.cbsnews.com/boston/latest/rss/main",
       "category": "news",
       "homepage": "https://www.cbsnews.com/boston/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -159,7 +137,6 @@
       "url": "https://www.masslive.com/arc/outboundfeeds/rss/?outputType=xml",
       "category": "news",
       "homepage": "https://www.masslive.com/",
-      "filter": "county",
       "enabled": true
     },
     {
@@ -168,7 +145,6 @@
       "url": "https://news.google.com/rss/search?q=site:southcoasttoday.com&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.southcoasttoday.com/",
-      "filter": "county",
       "via": "google-news",
       "note": "Gannett has no RSS; Google News site search.",
       "enabled": true
@@ -179,7 +155,6 @@
       "url": "https://news.google.com/rss/search?q=site:heraldnews.com&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.heraldnews.com/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -189,7 +164,6 @@
       "url": "https://news.google.com/rss/search?q=site:tauntongazette.com&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.tauntongazette.com/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -199,7 +173,6 @@
       "url": "https://news.google.com/rss/search?q=site:enterprisenews.com+(Easton+OR+Raynham)&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.enterprisenews.com/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -209,7 +182,6 @@
       "url": "https://news.google.com/rss/search?q=site:dartmouth.theweektoday.com&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://dartmouth.theweektoday.com/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -219,7 +191,6 @@
       "url": "https://news.google.com/rss/search?q=site:reportertoday.com&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.reportertoday.com/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -229,7 +200,6 @@
       "url": "https://news.google.com/rss/search?q=site:eastbayri.com+Westport&hl=en-US&gl=US&ceid=US:en",
       "category": "news",
       "homepage": "https://www.eastbayri.com/westport/",
-      "filter": "county",
       "via": "google-news",
       "enabled": true
     },
@@ -239,7 +209,6 @@
       "url": "https://news.google.com/rss/search?q=%22Bristol+County+District+Attorney%22&hl=en-US&gl=US&ceid=US:en",
       "category": "public-safety",
       "homepage": "https://www.bristolda.com/",
-      "filter": "county",
       "via": "google-news",
       "section": "public-safety",
       "note": "bristolda.com WordPress feed is a better source once reachable.",
@@ -251,7 +220,6 @@
       "url": "https://www.justice.gov/feeds/justice-news.xml?type[press_release]=press_release&component[1871]=1871",
       "category": "public-safety",
       "homepage": "https://www.justice.gov/usao-ma",
-      "filter": "county",
       "section": "public-safety",
       "enabled": true
     },

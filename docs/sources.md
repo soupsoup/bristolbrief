@@ -6,7 +6,7 @@ Research notes behind `src/data/sources.json`. Every feed marked **live** was fe
 
 1. `scripts/ingest.mjs` fetches each enabled source in `src/data/sources.json` (RSS, Atom or RDF).
 2. `scripts/lib/parse.mjs` tags each item with the Bristol County towns it names (including villages such as Assonet, North Dartmouth and Ocean Grove) and guesses a section.
-3. Sources marked `"filter": "county"` keep only items that name a Bristol County place. Regional outlets (WPRI, WBSM, Boston TV) need this. Single-town sources (a town hall, a police department) use `defaultTowns` instead.
+3. News items are kept only when the headline or summary names one of the 20 Bristol County municipalities or a village inside one. "South Coast" and "Bristol County" alone don't qualify, since they also cover Plymouth County towns (Lakeville, Mattapoisett) and Bristol County, R.I. Town halls, police departments and agenda feeds have `defaultTowns`; all of their items are kept and filed under that town.
 4. Items merge into `src/data/wire.json`, deduplicated by link and headline and kept for 45 days.
 5. JSON APIs go to their own files: MBTA commuter rail alerts (`transit.json`), NOAA tides (`tides.json`) and CivicClerk meeting calendars (`calendar.json`). If an API is down, the last good file stays in place.
 6. Active National Weather Service alerts for zones MAZ017 (Northern Bristol), MAZ020 (Southern Bristol), MAC005 (county), ANZ234 (Buzzards Bay) and ANZ236 (Narragansett Bay) go to `src/data/alerts.json`.
@@ -21,17 +21,17 @@ The site shows each item's headline and the publisher's own summary, and links t
 | Source | Feed | Notes |
 |---|---|---|
 | The New Bedford Light | `newbedfordlight.org/feed/` | Nonprofit, free |
-| Fall River Reporter | `fallriverreporter.com/feed/` | Also posts statewide items, so the county filter is on |
+| Fall River Reporter | `fallriverreporter.com/feed/` | Also posts statewide items; only those naming a county town are kept |
 | New Bedford Guide | `newbedfordguide.com/feed` | |
-| WBSM 1420 | `wbsm.com/category/news/feed/` | The `southcoast-news` category feed is empty; use the news feed plus the county filter |
+| WBSM 1420 | `wbsm.com/category/news/feed/` | The `southcoast-news` category feed is empty; use the news feed; the town filter drops Plymouth County and statewide items |
 | WSAR 1480 | `wsar.com/wsar-news/feed.xml` | Not WordPress; found by feed autodiscovery |
 | Fairhaven Neighborhood News | `fairhavenneighborhoodnews.com/feed/` | |
-| The Sun Chronicle | `thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc` | BLOX CMS. Includes AP wire copy; the county filter keeps the local share. Paywalled. Section feeds returned 429 (rate limited) during testing |
+| The Sun Chronicle | `thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc` | BLOX CMS. Includes AP wire copy; the town filter keeps the local share. Paywalled. Section feeds returned 429 (rate limited) during testing |
 | Portuguese Times | `portuguesetimes.com/feed/` | Portuguese-language; mostly international news, few local items |
 | The Public's Radio | `thepublicsradio.org/feed/` | Now Ocean State Media. Returns 1,000 items and few mention the county |
 | WPRI 12, SE Mass section | `wpri.com/news/local-news/se-mass/feed/` | Best regional TV source |
-| Attleboro Patch, Mansfield Patch | `patch.com/feeds/aol/massachusetts/<slug>` | Mostly regional filler; the county filter drops most |
-| CommonWealth Beacon, Rhode Island Current, Boston 25, WBZ, MassLive | Standard feeds | Statewide or regional; occasional Bristol County stories get through the filter |
+| Attleboro Patch, Mansfield Patch | `patch.com/feeds/aol/massachusetts/<slug>` | Mostly regional filler; the town filter drops most |
+| CommonWealth Beacon, Rhode Island Current, Boston 25, WBZ, MassLive | Standard feeds | Statewide or regional; only stories naming a county town get through |
 
 ### Gannett papers (no RSS)
 

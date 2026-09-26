@@ -16,6 +16,8 @@ export interface WireItem {
   towns: string[];
   /** Names Bristol County but no specific town. Shown in the wire, not on town pages. */
   countywide?: boolean;
+  /** Set on the item an editor pinned to the lead slot (src/data/pinned.json). */
+  pinned?: boolean;
 }
 
 export interface Alert {
@@ -155,17 +157,40 @@ export const storyItems = () => wireItems.filter((i) => i.category === 'news' ||
  * Pick `n` top stories for the front page: recent items with a real summary,
  * at most one per source so a single outlet can't fill the top of the page.
  */
-export function pickTopStories(items: WireItem[], n: number, now = new Date()) {
+export function pickTopStories(items: WireItem[], n: number, now = new Date(), exclude: WireItem[] = []) {
   const recent = items.filter((i) => now.valueOf() - new Date(i.date).valueOf() < 3 * 864e5);
   // A real summary, not a fragment like "are in full swing."
   const pool = (recent.length >= n ? recent : items).filter((i) => i.summary.length >= 80);
   const picked: WireItem[] = [];
-  const sources = new Set<string>();
+  const skip = new Set(exclude.map((i) => i.id));
+  const sources = new Set<string>(exclude.map((i) => i.source));
   for (const item of pool) {
-    if (sources.has(item.source)) continue;
+    if (skip.has(item.id) || sources.has(item.source)) continue;
     picked.push(item);
     sources.add(item.source);
     if (picked.length === n) break;
   }
   return picked;
+}
+
+import pinnedData from '../data/pinned.json';
+import { resolvePin } from '../../scripts/lib/pin.mjs';
+
+interface PinConfig {
+  url: string;
+  until?: string;
+  title?: string;
+  summary?: string;
+  sourceName?: string;
+  towns?: string[];
+  section?: string;
+}
+
+/** The pinned lead story, or null when nothing is pinned or the pin expired. */
+export function pinnedLead(now = new Date()): WireItem | null {
+  // Typed explicitly: when nothing is pinned the JSON infers as `null`.
+  const pin = pinnedData.lead as PinConfig | null;
+  const { item, reason } = resolvePin(pin, wireItems, now);
+  if (reason === 'unmatched') console.warn(`[pin] No headline matches the pinned story: ${pin?.url}`);
+  return item as WireItem | null;
 }

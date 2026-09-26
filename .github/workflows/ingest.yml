@@ -36,4 +36,6 @@ jobs:
           git config user.email "bristol-brief-bot@users.noreply.github.com"
           git add src/data/
           git commit -m "Update headlines $(date -u +%Y-%m-%dT%H:%MZ)"
+          # Someone may have pushed (e.g. edited pinned.json) while this ran.
+          git pull --rebase
           git push

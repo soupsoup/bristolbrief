@@ -29,6 +29,34 @@ npm test         # parser, town-matching and data tests
 - The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
 
+## Pinning the lead story
+
+The home page picks its lead story automatically: the newest story with a real summary. To choose it yourself:
+
+```sh
+npm run pin -- "waterfront plan"              # pin the headline containing this text
+npm run pin -- https://example.com/story      # or pin by URL
+npm run pin -- "waterfront plan" --hours 48   # stay up 48 hours (default 24)
+npm run pin -- "waterfront plan" --summary "Your own summary for the home page"
+npm run pin                                   # show the current pin
+npm run pin -- --clear                        # back to automatic
+```
+
+To pin a story the feeds haven't picked up, pin its URL with `--title "Headline" --source "Outlet"` (and optionally `--town <slug>`). The two stories under the lead are still picked automatically, from different outlets.
+
+The pin lives in `src/data/pinned.json`, so you can also edit it on GitHub without the command line:
+
+```json
+{
+  "lead": {
+    "url": "https://newbedfordlight.org/some-story/",
+    "until": "2026-09-28T18:00:00-04:00"
+  }
+}
+```
+
+Commit and push (or let the hourly job rebuild) to update the site. An expired pin is ignored, and the lead goes back to automatic on the next build.
+
 ## Before launch
 
 1. **Connect the newsletter.** Set `newsletterAction` in `src/site.config.ts` to your provider's form endpoint (beehiiv, Buttondown, Ghost, Mailchimp). Until then the form shows a "sign-ups open soon" message.

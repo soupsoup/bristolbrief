@@ -7,11 +7,15 @@ import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import { SECTIONS, TOWNS } from '../site.config';
-import { storyItems, meetingItems, wireItems, pickTopStories } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories, pinnedLead } from '../lib/wire';
 
 // Everything on this page comes from the ingested feeds (scripts/ingest.mjs).
 const stories = storyItems();
-const [lead, ...secondary] = pickTopStories(stories, 3);
+// An editor can pin the lead (npm run pin); the rest are picked automatically.
+const pinned = pinnedLead();
+const [lead, ...secondary] = pinned
+  ? [pinned, ...pickTopStories(stories, 2, new Date(), [pinned])]
+  : pickTopStories(stories, 3);
 const shown = new Set([lead, ...secondary].filter(Boolean).map((i) => i.id));
 
 // Render a few extra; the script below trims the rail to the height of the

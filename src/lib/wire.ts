@@ -14,6 +14,8 @@ export interface WireItem {
   category: 'news' | 'government' | 'public-safety' | 'meetings';
   section: string;
   towns: string[];
+  /** Names Bristol County but no specific town. Shown in the wire, not on town pages. */
+  countywide?: boolean;
 }
 
 export interface Alert {

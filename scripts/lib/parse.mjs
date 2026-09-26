@@ -176,6 +176,12 @@ export function matchTowns(str) {
   return found;
 }
 
+// "Bristol County" means Massachusetts unless the text says Rhode Island.
+const COUNTY_RE = /\bbristol county\b/i;
+const RI_COUNTY_RE = /\bbristol county,? (?:r\.?\s?i\.?\b|rhode island)|\brhode island'?s bristol county\b/i;
+
+export const mentionsBristolCountyMA = (str) => COUNTY_RE.test(str) && !RI_COUNTY_RE.test(str);
+
 const SECTION_RULES = [
   ['public-safety', /\b(ICE|police|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
   ['schools', /\b(school|schools|superintendent|student|students|teacher|teachers|classroom|MCAS|DESE|graduat)/i],
@@ -203,8 +209,9 @@ export const itemId = (link, title) =>
  *
  * Everything else must name at least one of the 20 Bristol County
  * municipalities (or a village within one) in its headline or summary.
- * "South Coast" and "Bristol County" alone don't count: they also cover
- * Plymouth County towns and Bristol County, R.I.
+ * An item that names no town but mentions Bristol County (Massachusetts)
+ * is kept as countywide: it appears in the main wire but on no town page.
+ * "South Coast" doesn't count; it also covers Plymouth County towns.
  */
 export function normalize(entries, source, now = new Date()) {
   const out = [];
@@ -221,7 +228,8 @@ export function normalize(entries, source, now = new Date()) {
     // Headline towns win; the summary often names opponents, hometowns, etc.
     const titleTowns = matchTowns(title);
     const matched = titleTowns.length ? titleTowns : matchTowns(haystack);
-    if (!institutional && matched.length === 0) continue;
+    const countywide = !institutional && matched.length === 0 && mentionsBristolCountyMA(haystack);
+    if (!institutional && matched.length === 0 && !countywide) continue;
     const towns = institutional ? source.defaultTowns : matched;
     const date = e.date && e.date <= now ? e.date : now;
     out.push({
@@ -235,6 +243,7 @@ export function normalize(entries, source, now = new Date()) {
       category: source.category,
       section: source.section ?? guessSection(title, null) ?? guessSection(haystack),
       towns,
+      ...(countywide ? { countywide: true } : {}),
     });
   }
   return out;

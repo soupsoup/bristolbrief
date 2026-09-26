@@ -18,13 +18,14 @@ const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.'
     {items.map((i) => (
       <li
         class="wire-item"
-        data-towns={i.towns.join(' ')}
+        data-towns={[...i.towns, ...(i.countywide ? ['countywide'] : [])].join(' ')}
         data-source={i.source}
         data-category={i.category}
       >
         <p class="wire-meta meta">
           <span class="wire-source">{i.sourceName}</span>
           {showTowns && i.towns.length > 0 && <span> · {i.towns.slice(0, 2).map(townName).join(', ')}</span>}
+          {showTowns && i.countywide && <span> · Countywide</span>}
           {' · '}
           <time datetime={i.date} data-ago>{timeAgo(i.date)}</time>
         </p>

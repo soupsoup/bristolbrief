@@ -74,15 +74,21 @@ test('single-town sources fall back to their default town', () => {
   assert.equal(items[0].summary, 'agenda posted');
 });
 
-test('South Coast or Bristol County alone does not qualify', () => {
+test('South Coast and Bristol County, R.I. do not qualify', () => {
   const xml = `<rss><channel>
     <item><title>Officer-involved shooting in Lakeville</title><link>https://e/1</link><description>Police across the South Coast responded.</description></item>
     <item><title>Bristol County, R.I. beaches reopen</title><link>https://e/2</link></item>
+    <item><title>Rhode Island's Bristol County gets grant</title><link>https://e/5</link></item>
     <item><title>Bristol County DA: crash in Easton kills driver</title><link>https://e/3</link></item>
+    <item><title>Bristol County sheriff signs election pledge</title><link>https://e/4</link></item>
   </channel></rss>`;
   const items = normalize(parseFeed(xml), { id: 'r', name: 'R', category: 'news' });
-  assert.deepEqual(items.map((i) => i.link), ['https://e/3']);
+  assert.deepEqual(items.map((i) => i.link), ['https://e/3', 'https://e/4']);
+  // A named town wins; the county tag is only for items with no town.
   assert.deepEqual(items[0].towns, ['easton']);
+  assert.equal(items[0].countywide, undefined);
+  assert.deepEqual(items[1].towns, []);
+  assert.equal(items[1].countywide, true);
 });
 
 test('Google News titles lose the publisher suffix and summary', () => {

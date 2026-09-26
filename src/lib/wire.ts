@@ -23,8 +23,9 @@ export interface WireItem {
   /** Photo added in the admin (path under /uploads/). */
   image?: string;
   imageAlt?: string;
-  /** Position in the featured list (0 = lead), set by editors. */
+  /** Editor's pick: 0 lead, 1 second, 2 third, 3+ top of the rail. */
   featuredRank?: number;
+  featuredSlot?: 'lead' | 'second' | 'third' | 'rail';
   /** Story added by hand in the admin rather than pulled from a feed. */
   manual?: boolean;
   /** Manual stories: URL slug and body, when the story has its own page here. */

@@ -6,7 +6,7 @@ import { sectionName, townName, TOWNS } from '../../site.config';
 
 export const prerender = false;
 
-let data;
+let data: Awaited<ReturnType<typeof loadAdminData>> | undefined;
 let loadError = '';
 try {
   data = await loadAdminData();
@@ -19,6 +19,17 @@ const usedSources = [
   { id: 'bristol-brief', name: 'The Bristol Brief (manual)' },
   ...sources.filter((s) => items.some((i) => i.source === s.id)),
 ];
+const SLOT_LABEL: Record<string, string> = { lead: 'Lead', second: 'Second', third: 'Third', rail: 'Rail' };
+const slots = [
+  ...(['lead', 'second', 'third'] as const).map((slot) => ({ label: SLOT_LABEL[slot], item: featured.find((i) => i.featuredSlot === slot) })),
+  ...featured.filter((i) => i.featuredSlot === 'rail').map((item) => ({ label: 'Rail', item })),
+];
+const clock = (d: Date) => d.toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: '2-digit' });
+const expiresText = (id: string) => {
+  const e = data?.expiry.get(id);
+  if (!e?.at) return 'no time limit';
+  return e.kept ? `kept until ${clock(e.at)}` : `until ${clock(e.at)}, then freshest`;
+};
 const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Police & courts', government: 'Town hall', meetings: 'Agenda' };
 ---
 <Admin title="Stories" active="dashboard">
@@ -31,26 +42,33 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   </p>
 
   <h2>Featured on the home page</h2>
-  {featured.length === 0 ? (
-    <p class="a-muted">Nothing featured. The home page picks its top stories automatically. Use "Feature" below to choose them.</p>
-  ) : (
-    <ol class="featured">
-      {featured.map((i, n) => (
-        <li data-id={i.id}>
-          <span class="slot">{n === 0 ? 'Lead' : n < 3 ? `Top ${n + 1}` : `Rail ${n - 2}`}</span>
-          <span class="f-title">
-            <a href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>{i.title}</a>
-            <span class="a-muted"> · {i.sourceName}{data!.until.get(i.id) && <> · until {fmtAdminDate(data!.until.get(i.id)!)}</>}</span>
-          </span>
-          <span class="f-actions">
-            <button class="a-btn" data-op="move" data-direction="up" disabled={n === 0} aria-label="Move up">↑</button>
-            <button class="a-btn" data-op="move" data-direction="down" disabled={n === featured.length - 1} aria-label="Move down">↓</button>
-            <button class="a-btn danger" data-op="unfeature">Remove</button>
-          </span>
-        </li>
-      ))}
-    </ol>
-  )}
+  <p class="a-muted help">
+    Pick the lead and the two stories under it, or add stories to the top of "Around the county".
+    Each pick lasts an hour, then the freshest news takes over. Set "Keep featured until" on a
+    story's edit page to hold it longer.
+  </p>
+  <ol class="featured">
+    {slots.map(({ label, item }, n) => (
+      <li data-id={item?.id} class={item ? undefined : 'empty'}>
+        <span class="slot">{label}</span>
+        {item ? (
+          <>
+            <span class="f-title">
+              <a href={`/admin/edit/?id=${encodeURIComponent(item.id)}`}>{item.title}</a>
+              <span class="a-muted"> · {item.sourceName} · {expiresText(item.id)}</span>
+            </span>
+            <span class="f-actions">
+              <button class="a-btn" data-op="move" data-direction="up" disabled={n === 0} aria-label="Move up">↑</button>
+              <button class="a-btn" data-op="move" data-direction="down" disabled={n >= 2 && n === slots.length - 1} aria-label="Move down">↓</button>
+              <button class="a-btn danger" data-op="unfeature">Remove</button>
+            </span>
+          </>
+        ) : (
+          <span class="f-title a-muted">Automatic: freshest story</span>
+        )}
+      </li>
+    ))}
+  </ol>
 
   <h2>All stories <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
   <form class="filters" onsubmit="return false">
@@ -115,7 +133,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
           <td class="thumb-col">{i.image ? <img src={i.image} alt="" loading="lazy" data-thumb /> : null}</td>
           <td>
             <div class="badges">
-              {i.featuredRank != null && <span class="a-badge featured">{i.featuredRank === 0 ? 'Lead' : `Featured ${i.featuredRank + 1}`}</span>}
+              {i.featuredSlot && <span class="a-badge featured">{SLOT_LABEL[i.featuredSlot]}</span>}
               {i.manual && <span class="a-badge manual">Added here</span>}
               {i.edited && <span class="a-badge">Edited</span>}
               {i.hidden && <span class="a-badge hidden">Hidden</span>}
@@ -130,9 +148,17 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
             </div>
           </td>
           <td class="act-col">
-            {i.featuredRank == null
-              ? <button class="a-btn" data-op="feature">Feature</button>
-              : <button class="a-btn" data-op="unfeature">Unfeature</button>}
+            {i.featuredRank == null ? (
+              <select class="a-btn feature-select" aria-label="Feature on the home page">
+                <option value="">Feature as…</option>
+                <option value="lead">Lead</option>
+                <option value="second">Second</option>
+                <option value="third">Third</option>
+                <option value="rail">Top of rail</option>
+              </select>
+            ) : (
+              <button class="a-btn" data-op="unfeature">Unfeature</button>
+            )}
             <button class="a-btn" data-op={i.hidden ? 'show' : 'hide'}>{i.hidden ? 'Show' : 'Hide'}</button>
             <a class="a-btn" href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>Edit</a>
             <a class="a-btn" href={i.link} target="_blank" rel="noopener" aria-label="Open original">↗</a>
@@ -238,6 +264,21 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   form.addEventListener('input', apply);
   apply();
 
+  // "Feature as…" menus on each row.
+  document.addEventListener('change', async (e) => {
+    const sel = (e.target as HTMLElement).closest<HTMLSelectElement>('select.feature-select');
+    if (!sel || !sel.value) return;
+    const row = sel.closest<HTMLElement>('[data-id]')!;
+    const title = row.querySelector('.i-title')?.textContent?.trim().slice(0, 60) ?? row.dataset.id;
+    sel.disabled = true;
+    const res = await saveOp({ type: 'feature', id: row.dataset.id, slot: sel.value }, `feature "${title}" as ${sel.value}`);
+    if (res.ok) setTimeout(() => location.reload(), 700);
+    else {
+      sel.disabled = false;
+      sel.value = '';
+    }
+  });
+
   // Row and featured-list actions.
   document.addEventListener('click', async (e) => {
     const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-op]');
@@ -247,7 +288,6 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     const title = holder.querySelector('.i-title, .f-title a')?.textContent?.trim().slice(0, 60) ?? id;
     const kind = btn.dataset.op!;
     const ops: Record<string, [Record<string, unknown>, string]> = {
-      feature: [{ type: 'feature', id, position: 'bottom' }, `feature "${title}"`],
       unfeature: [{ type: 'unfeature', id }, `unfeature "${title}"`],
       move: [{ type: 'move', id, direction: btn.dataset.direction }, `move "${title}" ${btn.dataset.direction}`],
       hide: [{ type: 'update', id, fields: { hidden: true } }, `hide "${title}"`],
@@ -263,6 +303,9 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
 
 <style>
   .featured { list-style: none; margin: 0; padding: 0; }
+  .help { margin: -4px 0 8px; font-size: 14px; }
+  .featured li.empty .f-title { font-style: italic; }
+  .feature-select { width: auto; padding: 5px 6px; }
   .featured li { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
   .slot { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); width: 56px; flex: none; }
   .f-title { flex: 1 1 300px; min-width: 0; }

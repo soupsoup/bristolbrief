@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-// Feature a story at the top of the home page (the first featured story is
-// the lead). Command-line shortcut for the admin's "Feature" button.
+// Feature a story on the home page. Command-line shortcut for the admin's
+// "Feature as" menu.
 //
-//   npm run pin -- "waterfront plan"             feature the headline containing this text
-//   npm run pin -- https://example.com/story     or match by URL
-//   npm run pin -- "waterfront plan" --hours 48  stop featuring after 48 hours (default 24)
-//   npm run pin -- --clear                       remove every featured story
-//   npm run pin                                  list featured stories
+//   npm run pin -- "waterfront plan"                  make the headline containing this text the lead
+//   npm run pin -- https://example.com/story          or match by URL
+//   npm run pin -- "waterfront plan" --slot second    lead | second | third | rail
+//   npm run pin -- "waterfront plan" --hours 6        keep it for 6 hours (default: 1 hour, then freshest news)
+//   npm run pin -- --clear                            remove every featured story
+//   npm run pin                                       list featured stories
 import { readFile, writeFile } from 'node:fs/promises';
-import { applyEditorial, applyOp, featuredItems, normalizeEditorial } from './lib/editorial.mjs';
+import { applyEditorial, applyOp, featuredItems, featureExpiry, normalizeEditorial, FEATURE_SLOTS } from './lib/editorial.mjs';
 
 const edFile = new URL('../src/data/editorial.json', import.meta.url);
 const wire = JSON.parse(await readFile(new URL('../src/data/wire.json', import.meta.url), 'utf8')).items ?? [];
@@ -23,7 +24,9 @@ const save = (doc) => writeFile(edFile, JSON.stringify(doc, null, 2) + '\n');
 
 const args = process.argv.slice(2);
 const hi = args.indexOf('--hours');
-const hours = hi === -1 ? 24 : Number(args.splice(hi, 2)[1]);
+const hours = hi === -1 ? null : Number(args.splice(hi, 2)[1]);
+const si = args.indexOf('--slot');
+const slot = si === -1 ? 'lead' : args.splice(si, 2)[1];
 
 if (args.includes('--clear')) {
   await save({ ...ed, featured: [] });
@@ -37,15 +40,19 @@ const query = args.join(' ').trim();
 if (!query) {
   const list = featuredItems(items);
   if (!list.length) console.log('Nothing featured. Top stories are picked automatically.');
-  list.forEach((i, n) => {
-    const until = ed.featured.find((f) => f.id === i.id)?.until;
-    console.log(`${n + 1}. ${i.title} (${i.sourceName})${until ? ` until ${et(until)}` : ''}`);
-  });
+  for (const i of list) {
+    const exp = featureExpiry(ed.featured.find((f) => f.id === i.id));
+    console.log(`${i.featuredSlot.padEnd(6)} ${i.title} (${i.sourceName})${exp ? ` until ${et(exp.toISOString())}` : ''}`);
+  }
   process.exit(0);
 }
 
-if (!Number.isFinite(hours) || hours <= 0) {
+if (hours !== null && (!Number.isFinite(hours) || hours <= 0)) {
   console.error('--hours must be a positive number.');
+  process.exit(1);
+}
+if (!FEATURE_SLOTS.includes(slot)) {
+  console.error(`--slot must be one of: ${FEATURE_SLOTS.join(', ')}`);
   process.exit(1);
 }
 
@@ -59,6 +66,8 @@ if (matches.length !== 1) {
   process.exit(1);
 }
 
-const until = new Date(Date.now() + hours * 3600e3).toISOString();
-await save(applyOp(ed, { type: 'feature', id: matches[0].id, until }));
-console.log(`Featured as the lead: ${matches[0].title}\n  ${matches[0].sourceName} · until ${et(until)}`);
+const until = hours ? new Date(Date.now() + hours * 3600e3).toISOString() : undefined;
+const next = applyOp(ed, { type: 'feature', id: matches[0].id, slot, until });
+const exp = featureExpiry(next.featured.find((f) => f.id === matches[0].id));
+await save(next);
+console.log(`Featured as ${slot}: ${matches[0].title}\n  ${matches[0].sourceName} · until ${et(exp.toISOString())}${hours ? '' : ', then the freshest news'}`);

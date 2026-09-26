@@ -146,3 +146,7 @@ test('institutional feeds keep their own town', () => {
   const offTopic = `<rss><channel><item><title>Sunken boat found at Bourne marina</title><link>https://s/2</link></item></channel></rss>`;
   assert.equal(normalize(parseFeed(offTopic), { id: 'n', name: 'N', category: 'news' }).length, 0);
 });
+
+test('storm outage stories are news, not business', () => {
+  assert.equal(guessSection("Hundreds lose power in Attleboro area from nor'easter"), 'news');
+});

@@ -188,7 +188,7 @@ const SECTION_RULES = [
   ['government', /\b(council|select ?board|selectmen|town meeting|mayor|budget|zoning|planning board|ordinance|election|ballot|warrant|state rep|senator|legislat)/i],
   ['real-estate', /\b(housing|apartments?|development|developer|condo|real estate|home sales?|affordable housing|MBTA communities)\b/i],
   ['food-drink', /\b(restaurant|bakery|café|cafe|brewery|pizza|diner|food truck|chef|menu)\b/i],
-  ['business', /\b(business|opens|opening|closing|closes|jobs|layoffs|company|store|retail|economy|power outages?|lose power)\b/i],
+  ['business', /\b(business|opens|opening|closing|closes|jobs|layoffs|company|store|retail|economy)\b/i],
   ['things-to-do', /\b(festival|concert|parade|exhibit|museum|farmers market|things to do|book sale|open house)\b/i],
 ];
 

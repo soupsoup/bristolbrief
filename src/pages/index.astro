@@ -12,18 +12,20 @@ import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories } 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
 // editors added in the admin, with their edits applied (src/data/editorial.json).
 const stories = storyItems();
-// Editors' featured stories come first, in their chosen order: the first is
-// the lead, the next two fill the secondary slots, and any more go to the top
-// of the rail. Empty slots are filled automatically.
+// Editors can pick the lead, second and third stories and add stories to the
+// top of the rail. Each pick lasts an hour (unless kept longer); any empty
+// slot gets the freshest story automatically.
 const featured = featuredStories();
-const top = [...featured.slice(0, 3)];
-if (top.length < 3) top.push(...pickTopStories(stories, 3 - top.length, new Date(), featured));
+const picked = (['lead', 'second', 'third'] as const).map((slot) => featured.find((i) => i.featuredSlot === slot));
+const auto = pickTopStories(stories, picked.filter((i) => !i).length, new Date(), featured);
+const top = picked.map((i) => i ?? auto.shift()).filter((i): i is NonNullable<typeof i> => Boolean(i));
 const [lead, ...secondary] = top;
 const shown = new Set(top.map((i) => i.id));
 
 // Render a few extra; the script below trims the rail to the height of the
 // stories beside it. Without JS (and on narrow screens) CSS shows six.
-const wire = [...featured.slice(3), ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
+const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
+const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);

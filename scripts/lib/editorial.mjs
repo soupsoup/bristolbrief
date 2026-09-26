@@ -124,14 +124,57 @@ function mergeFields(target, fields) {
   return next;
 }
 
-const isActive = (entry, now) => !entry.until || new Date(entry.until) > now;
+/** Home page slots an editor can fill. "rail" is the top of "Around the county". */
+export const TOP_SLOTS = ['lead', 'second', 'third'];
+export const FEATURE_SLOTS = [...TOP_SLOTS, 'rail'];
+
+/** Picks give way to the freshest news an hour after they're made, unless given a later `until`. */
+export const FEATURE_DEFAULT_MS = 60 * 60 * 1000;
+
+/** When a featured entry stops applying, or null if it never expires (legacy entries). */
+export function featureExpiry(entry) {
+  if (entry.until) return new Date(entry.until);
+  if (entry.at) return new Date(new Date(entry.at).valueOf() + FEATURE_DEFAULT_MS);
+  return null;
+}
+
+const isActive = (entry, now) => {
+  const exp = featureExpiry(entry);
+  return !exp || exp > now;
+};
+
+/**
+ * Give every featured entry a slot. Older files stored an ordered list without
+ * slots: the first three become lead, second and third, the rest go to the rail.
+ */
+function normalizeFeatured(list) {
+  const taken = new Set();
+  return list.map((f, i) => {
+    let slot = FEATURE_SLOTS.includes(f.slot) ? f.slot : i < 3 ? TOP_SLOTS[i] : 'rail';
+    if (slot !== 'rail' && taken.has(slot)) slot = 'rail';
+    taken.add(slot);
+    return { ...f, slot };
+  });
+}
+
+/** Featured entries laid out as [lead, second, third, ...rail]; empty top slots are null. */
+function layout(featured) {
+  const top = TOP_SLOTS.map((s) => featured.find((f) => f.slot === s) ?? null);
+  return [...top, ...featured.filter((f) => f.slot === 'rail')];
+}
+
+function fromLayout(positions) {
+  return positions
+    .map((f, i) => (f ? { ...f, slot: i < 3 ? TOP_SLOTS[i] : 'rail' } : null))
+    .filter(Boolean);
+}
 
 /** Normalize a possibly partial editorial document. */
 export function normalizeEditorial(doc) {
   return {
     overrides: { ...(doc?.overrides ?? {}) },
     manual: [...(doc?.manual ?? [])],
-    featured: [...(doc?.featured ?? [])],
+    featured: normalizeFeatured(doc?.featured ?? []),
   };
 }
 
@@ -174,13 +217,14 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
 
     case 'feature': {
       if (!op.id || !exists(op.id)) throw new EditorialError('That story is no longer in the feed');
+      const slot = op.slot ?? 'rail';
+      if (!FEATURE_SLOTS.includes(slot)) throw new EditorialError(`Unknown slot: ${slot}`);
       const until = op.until ? checkDate(op.until) : undefined;
       if (until && new Date(until) <= now) throw new EditorialError('Featured-until time is in the past');
-      const rest = ed.featured.filter((f) => f.id !== op.id);
-      const entry = { id: op.id, ...(until && { until }) };
-      const at = op.position === 'bottom' ? rest.length : Math.max(0, Math.min(Number(op.position) || 0, rest.length));
-      rest.splice(at, 0, entry);
-      ed.featured = rest;
+      // A top slot holds one story: whatever was there goes back to automatic.
+      const rest = ed.featured.filter((f) => f.id !== op.id && (slot === 'rail' || f.slot !== slot));
+      const entry = { id: op.id, slot, at: now.toISOString(), ...(until && { until }) };
+      ed.featured = slot === 'rail' ? [entry, ...rest] : [...rest, entry];
       return ed;
     }
 
@@ -189,11 +233,16 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
       return ed;
 
     case 'move': {
-      const i = ed.featured.findIndex((f) => f.id === op.id);
+      // Positions run lead, second, third, then the rail in order. Moving swaps
+      // with the neighbor (an empty top slot just moves the story into it).
+      const positions = layout(ed.featured);
+      const i = positions.findIndex((f) => f?.id === op.id);
       if (i === -1) throw new EditorialError('That story is not featured');
       const j = op.direction === 'up' ? i - 1 : i + 1;
-      if (j < 0 || j >= ed.featured.length) return ed;
-      [ed.featured[i], ed.featured[j]] = [ed.featured[j], ed.featured[i]];
+      if (j < 0 || (j >= positions.length && i >= 3)) return ed;
+      if (j >= positions.length) positions.push(null);
+      [positions[i], positions[j]] = [positions[j], positions[i]];
+      ed.featured = fromLayout(positions);
       return ed;
     }
 
@@ -212,7 +261,7 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
         createdAt: now.toISOString(),
       };
       ed.manual.unshift(story);
-      if (op.feature) ed.featured.unshift({ id: story.id });
+      if (op.feature) return applyOp(ed, { type: 'feature', id: story.id, slot: op.feature === true ? 'lead' : op.feature }, { now });
       return ed;
     }
 
@@ -263,7 +312,15 @@ function manualToItem(m) {
  */
 export function applyEditorial(wireItems, doc, { now = new Date(), includeHidden = false } = {}) {
   const ed = normalizeEditorial(doc);
-  const featuredRank = new Map(ed.featured.filter((f) => isActive(f, now)).map((f, i) => [f.id, i]));
+  // Rank: lead 0, second 1, third 2, then the rail in order. Expired picks are ignored.
+  const active = ed.featured.filter((f) => isActive(f, now));
+  const featuredRank = new Map();
+  const featuredSlot = new Map();
+  layout(active).forEach((f, i) => {
+    if (!f) return;
+    featuredRank.set(f.id, i);
+    featuredSlot.set(f.id, f.slot);
+  });
   const out = [];
   for (const item of wireItems) {
     const o = ed.overrides[item.id] ?? {};
@@ -278,12 +335,15 @@ export function applyEditorial(wireItems, doc, { now = new Date(), includeHidden
       ...(o.image && { image: o.image, imageAlt: o.imageAlt ?? '' }),
       ...(o.hidden && { hidden: true }),
       ...(Object.keys(o).length > 0 && { edited: true }),
-      ...(featuredRank.has(item.id) && { featuredRank: featuredRank.get(item.id) }),
+      ...(featuredRank.has(item.id) && { featuredRank: featuredRank.get(item.id), featuredSlot: featuredSlot.get(item.id) }),
     });
   }
   for (const m of ed.manual) {
     const item = manualToItem(m);
-    if (featuredRank.has(item.id)) item.featuredRank = featuredRank.get(item.id);
+    if (featuredRank.has(item.id)) {
+      item.featuredRank = featuredRank.get(item.id);
+      item.featuredSlot = featuredSlot.get(item.id);
+    }
     out.push(item);
   }
   return out.sort((a, b) => b.date.localeCompare(a.date));

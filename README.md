@@ -36,7 +36,7 @@ npm test         # parser, town-matching and data tests
 
 - **Stories:** everything the feeds pulled in plus stories added by hand, searchable and filterable by source, type and status.
 - **Edit** a headline or summary, add sections and towns, attach a photo with a caption, or hide an item from the site. A field left at the feed's value keeps updating from the feed.
-- **Feature** stories on the home page and reorder them. The first featured story is the lead, the next two fill the secondary slots, and any more go to the top of "Around the county". Featuring can expire at a set time. Empty slots fill automatically.
+- **Feature** stories on the home page: pick the **lead**, the **second** and **third** stories under it, or add stories to the **top of the rail** ("Around the county"). Each pick lasts one hour, then the freshest news takes over; set "Keep featured until" on a story's edit page to hold it longer. Empty slots always get the freshest story automatically.
 - **Add a story** to one or more sections and towns. Give it a link to another site, or write the text and it gets its own page at `/stories/<slug>/`.
 - **Photos** are resized in the browser to 1600px, then saved to `public/uploads/`.
 - **Feeds** shows how each source did on the last headline update.
@@ -54,7 +54,9 @@ Every save is a commit to `src/data/editorial.json` (or a photo under `public/up
 
 Without `ADMIN_PASSWORD` the admin is switched off. Without `ADMIN_GITHUB_TOKEN` (for example under `npm run dev`) it saves to local files instead of GitHub; set `ADMIN_PASSWORD` in `.env` to try it locally.
 
-`npm run pin -- "headline text"` still works as a shortcut for featuring a story from the command line.
+`npm run pin -- "headline text" [--slot lead|second|third|rail] [--hours N]` features a story from the command line.
+
+The hourly headline job commits and triggers a rebuild every hour, so expired picks give way to fresh news at the first hourly update after they expire.
 
 ## Deploying on Vercel
 

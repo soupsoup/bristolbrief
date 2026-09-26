@@ -107,23 +107,38 @@ const localDate = (iso?: string) => {
       {isNew ? (
         <fieldset>
           <legend>Home page</legend>
-          <label class="inline"><input type="checkbox" name="feature" /> Make this the lead story</label>
+          <label class="field" style="margin:0">
+            <span>Feature as</span>
+            <select name="feature">
+              <option value="">Not featured</option>
+              <option value="lead">Lead</option>
+              <option value="second">Second</option>
+              <option value="third">Third</option>
+              <option value="rail">Top of rail</option>
+            </select>
+          </label>
+          <small class="a-muted">For one hour, then the freshest news takes over.</small>
         </fieldset>
       ) : (
         <fieldset>
           <legend>Home page</legend>
-          {item!.featuredRank != null
-            ? <p class="a-muted" style="margin:0 0 8px">Featured {item!.featuredRank === 0 ? 'as the lead' : `in position ${item!.featuredRank + 1}`}.</p>
-            : <p class="a-muted" style="margin:0 0 8px">Not featured.</p>}
-          <label class="field">
-            <span>Feature until (optional)</span>
-            <input type="datetime-local" name="until" value={until ? localDate(until) : ''} />
-          </label>
+          <p class="a-muted" style="margin:0 0 8px">
+            {item!.featuredSlot
+              ? `Featured as ${{ lead: 'the lead', second: 'the second story', third: 'the third story', rail: 'the top of the rail' }[item!.featuredSlot]}.`
+              : 'Not featured.'}
+          </p>
           <div class="btn-row">
-            <button type="button" class="a-btn" data-feature="0">Make lead</button>
-            <button type="button" class="a-btn" data-feature="bottom">Add to featured</button>
-            {item!.featuredRank != null && <button type="button" class="a-btn danger" data-unfeature>Unfeature</button>}
+            <button type="button" class="a-btn" data-feature="lead">Lead</button>
+            <button type="button" class="a-btn" data-feature="second">Second</button>
+            <button type="button" class="a-btn" data-feature="third">Third</button>
+            <button type="button" class="a-btn" data-feature="rail">Rail</button>
+            {item!.featuredSlot && <button type="button" class="a-btn danger" data-unfeature>Unfeature</button>}
           </div>
+          <label class="field" style="margin-top:12px">
+            <span>Keep featured until (optional)</span>
+            <input type="datetime-local" name="until" value={until ? localDate(until) : ''} />
+            <small class="a-muted">Leave blank and the pick lasts one hour, then the freshest news takes over.</small>
+          </label>
           <label class="inline" style="margin-top:12px"><input type="checkbox" name="hidden" checked={item!.hidden} /> Hide from the site</label>
         </fieldset>
       )}
@@ -233,7 +248,7 @@ const localDate = (iso?: string) => {
       fields.image = imageInput.value || null;
       const res = isNew
         ? await saveOp(
-            { type: 'addManual', story: fields, feature: (form.elements.namedItem('feature') as HTMLInputElement).checked },
+            { type: 'addManual', story: fields, feature: val('feature') || undefined },
             `add story "${title.slice(0, 60)}"`,
           )
         : await saveOp({ type: 'update', id, fields }, `edit "${title.slice(0, 60)}"`);
@@ -252,8 +267,8 @@ const localDate = (iso?: string) => {
     btn.addEventListener('click', async () => {
       btn.disabled = true;
       const res = await saveOp(
-        { type: 'feature', id, position: btn.dataset.feature === 'bottom' ? 'bottom' : 0, until: toIso(val('until')) },
-        `feature "${val('title').slice(0, 60)}"`,
+        { type: 'feature', id, slot: btn.dataset.feature, until: toIso(val('until')) },
+        `feature "${val('title').slice(0, 60)}" as ${btn.dataset.feature}`,
       );
       if (res.ok) setTimeout(() => location.reload(), 800);
       else btn.disabled = false;

@@ -34,32 +34,52 @@ test('hidden items drop off the site but stay in the admin view', () => {
   assert.equal(all.find((i) => i.id === 'b').hidden, true);
 });
 
-test('featured order: top, bottom, move, unfeature, expiry', () => {
-  let ed = op({}, { type: 'feature', id: 'a' });
-  ed = op(ed, { type: 'feature', id: 'b' }); // top by default
-  assert.deepEqual(ed.featured.map((f) => f.id), ['b', 'a']);
+test('featured slots: lead, second, third and rail', () => {
+  let ed = op({}, { type: 'feature', id: 'b', slot: 'second' });
+  ed = op(ed, { type: 'feature', id: 'a', slot: 'rail' });
+  let items = applyEditorial(wire, ed, { now });
+  assert.equal(items.find((i) => i.id === 'b').featuredSlot, 'second');
+  assert.equal(items.find((i) => i.id === 'b').featuredRank, 1);
+  assert.equal(items.find((i) => i.id === 'a').featuredSlot, 'rail');
+  // Putting another story in a taken slot bumps the old one back to automatic.
+  ed = op(ed, { type: 'feature', id: 'a', slot: 'second' });
+  assert.deepEqual(ed.featured.map((f) => `${f.id}:${f.slot}`), ['a:second']);
+  // Moving up from second fills the empty lead slot.
   ed = op(ed, { type: 'move', id: 'a', direction: 'up' });
-  assert.deepEqual(ed.featured.map((f) => f.id), ['a', 'b']);
-  ed = op(ed, { type: 'feature', id: 'a', position: 'bottom' });
-  assert.deepEqual(ed.featured.map((f) => f.id), ['b', 'a']);
-  assert.deepEqual(featuredItems(applyEditorial(wire, ed, { now })).map((i) => i.id), ['b', 'a']);
+  assert.deepEqual(ed.featured.map((f) => `${f.id}:${f.slot}`), ['a:lead']);
+  ed = op(ed, { type: 'feature', id: 'b', slot: 'lead' });
+  assert.deepEqual(ed.featured.map((f) => `${f.id}:${f.slot}`), ['b:lead']);
   ed = op(ed, { type: 'unfeature', id: 'b' });
-  assert.deepEqual(ed.featured.map((f) => f.id), ['a']);
+  assert.deepEqual(ed.featured, []);
+  assert.throws(() => op({}, { type: 'feature', id: 'a', slot: 'sidebar' }), EditorialError);
+});
 
-  const timed = op({}, { type: 'feature', id: 'a', until: '2026-09-26T13:00:00Z' });
-  assert.equal(featuredItems(applyEditorial(wire, timed, { now })).length, 1);
-  assert.equal(featuredItems(applyEditorial(wire, timed, { now: new Date('2026-09-26T14:00:00Z') })).length, 0);
-  // Expired entries are cleaned up on the next write.
-  const later = applyOp(timed, { type: 'unfeature', id: 'zzz' }, { now: new Date('2026-09-26T14:00:00Z') });
-  assert.deepEqual(later.featured, []);
+test('picks give way to fresh news after an hour unless kept longer', () => {
+  const ed = op({}, { type: 'feature', id: 'a', slot: 'lead' });
+  const at = (iso) => featuredItems(applyEditorial(wire, ed, { now: new Date(iso) })).length;
+  assert.equal(at('2026-09-26T12:59:00Z'), 1);
+  assert.equal(at('2026-09-26T13:01:00Z'), 0);
+
+  const kept = op({}, { type: 'feature', id: 'a', slot: 'lead', until: '2026-09-26T18:00:00Z' });
+  assert.equal(featuredItems(applyEditorial(wire, kept, { now: new Date('2026-09-26T17:00:00Z') })).length, 1);
   assert.throws(() => op({}, { type: 'feature', id: 'a', until: '2026-09-26T11:00:00Z' }), EditorialError);
+
+  // Expired entries are cleaned up on the next write.
+  const later = applyOp(ed, { type: 'unfeature', id: 'zzz' }, { now: new Date('2026-09-26T14:00:00Z') });
+  assert.deepEqual(later.featured, []);
+});
+
+test('older files without slots keep their order', () => {
+  const legacy = { featured: [{ id: 'b', until: '2026-09-27T00:00:00Z' }, { id: 'a' }] };
+  const items = featuredItems(applyEditorial(wire, legacy, { now }));
+  assert.deepEqual(items.map((i) => `${i.id}:${i.featuredSlot}`), ['b:lead', 'a:second']);
 });
 
 test('manual stories: add, sections, own page or external link, edit, delete', () => {
   let ed = op({}, { type: 'addManual', story: { title: 'Storm cleanup: what to know', summary: 'Crews are out.', body: 'Para one.\n\nPara two.', sections: ['news', 'public-safety'], towns: ['attleboro'] }, feature: true });
   const [m] = ed.manual;
   assert.equal(m.id, 'm-storm-cleanup-what-to-know');
-  assert.equal(ed.featured[0].id, m.id);
+  assert.deepEqual([ed.featured[0].id, ed.featured[0].slot], [m.id, 'lead']);
   let item = applyEditorial(wire, ed, { now }).find((i) => i.id === m.id);
   assert.equal(item.link, '/stories/storm-cleanup-what-to-know/');
   assert.deepEqual(item.sections, ['news', 'public-safety']);

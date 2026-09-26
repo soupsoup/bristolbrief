@@ -2,7 +2,7 @@
 import Admin from '../../layouts/Admin.astro';
 import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
 import { sources } from '../../lib/wire';
-import { sectionName, townName } from '../../site.config';
+import { sectionName, townName, TOWNS } from '../../site.config';
 
 export const prerender = false;
 
@@ -71,6 +71,19 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
       <option value="manual">Added here</option>
       <option value="photo">Has photo</option>
     </select>
+    <select name="town" aria-label="Town">
+      <option value="">All towns</option>
+      {TOWNS.map((t) => <option value={t.slug}>{t.name}</option>)}
+      <option value="countywide">Countywide</option>
+      <option value="none">No town</option>
+    </select>
+    <select name="sort" aria-label="Sort by">
+      <option value="newest">Newest first</option>
+      <option value="oldest">Oldest first</option>
+      <option value="town">Town (A–Z)</option>
+      <option value="source">Source (A–Z)</option>
+      <option value="title">Headline (A–Z)</option>
+    </select>
   </form>
 
   <table class="items">
@@ -84,6 +97,12 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
           data-q={`${i.title} ${i.originalTitle ?? ''} ${i.sourceName}`.toLowerCase()}
           data-source={i.source}
           data-category={i.category}
+          data-towns={i.towns.join(' ')}
+          data-countywide={i.countywide ? '1' : undefined}
+          data-date={i.date}
+          data-source-name={i.sourceName}
+          data-title={i.title}
+          data-town-label={i.towns.length ? i.towns.map(townName).sort()[0] : i.countywide ? 'Countywide' : ''}
           data-status={[
             i.featuredRank != null && 'featured',
             i.edited && 'edited',
@@ -136,32 +155,88 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     else img.addEventListener('error', () => pending(img));
   });
 
-  // Filtering (client-side; the list is a few hundred rows).
+  // Filtering and sorting (client-side; the list is a few hundred rows).
+  // The choices live in the page address so they survive the reload after each action.
   const form = document.querySelector<HTMLFormElement>('.filters')!;
-  const rows = [...document.querySelectorAll<HTMLTableRowElement>('table.items tbody tr')];
+  const tbody = document.querySelector<HTMLTableSectionElement>('table.items tbody')!;
+  const rows = [...tbody.querySelectorAll<HTMLTableRowElement>('tr[data-id]')];
   const count = document.querySelector('.count')!;
   const none = document.querySelector<HTMLElement>('.none')!;
-  function filter() {
+  const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement;
+
+  const params = new URLSearchParams(location.search);
+  for (const name of ['q', 'source', 'category', 'status', 'town', 'sort']) {
+    const v = params.get(name);
+    if (v !== null) field(name).value = v;
+  }
+
+  const byText = (key: string) => (a: HTMLElement, b: HTMLElement) =>
+    (a.dataset[key] ?? '').localeCompare(b.dataset[key] ?? '', 'en', { sensitivity: 'base' });
+  const newest = (a: HTMLElement, b: HTMLElement) => b.dataset.date!.localeCompare(a.dataset.date!);
+  // Named towns first (A–Z), then Countywide, then items with no town.
+  const townKey = (r: HTMLElement) =>
+    r.dataset.towns ? r.dataset.townLabel! : r.dataset.countywide === '1' ? '\uffff1' : '\uffff2';
+  const SORTS: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
+    newest,
+    oldest: (a, b) => -newest(a, b),
+    town: (a, b) => townKey(a).localeCompare(townKey(b)) || newest(a, b),
+    source: (a, b) => byText('sourceName')(a, b) || newest(a, b),
+    title: byText('title'),
+  };
+
+  function matchesTown(r: HTMLElement, town: string) {
+    if (!town) return true;
+    const towns = r.dataset.towns ? r.dataset.towns.split(' ') : [];
+    if (town === 'countywide') return r.dataset.countywide === '1';
+    if (town === 'none') return towns.length === 0 && r.dataset.countywide !== '1';
+    return towns.includes(town);
+  }
+
+  function apply() {
     const f = new FormData(form);
     const q = String(f.get('q') ?? '').toLowerCase().trim();
     const source = String(f.get('source') ?? '');
     const category = String(f.get('category') ?? '');
     const status = String(f.get('status') ?? '');
+    const town = String(f.get('town') ?? '');
+    const sort = String(f.get('sort') ?? 'newest');
+
+    tbody.querySelectorAll('tr.group').forEach((g) => g.remove());
+    const sorted = [...rows].sort(SORTS[sort] ?? newest);
     let shown = 0;
-    for (const r of rows) {
+    let lastGroup: string | null = null;
+    for (const r of sorted) {
       const ok =
         (!q || r.dataset.q!.includes(q)) &&
         (!source || r.dataset.source === source) &&
         (!category || r.dataset.category === category) &&
-        (!status || r.dataset.status!.split(' ').includes(status));
+        (!status || r.dataset.status!.split(' ').includes(status)) &&
+        matchesTown(r, town);
       r.hidden = !ok;
+      // Grouped by town: a heading row before each town's first story.
+      if (ok && sort === 'town' && !town) {
+        const label = r.dataset.townLabel || 'No town';
+        if (label !== lastGroup) {
+          const g = document.createElement('tr');
+          g.className = 'group';
+          g.innerHTML = `<th colspan="3"></th>`;
+          g.firstElementChild!.textContent = label;
+          tbody.append(g);
+          lastGroup = label;
+        }
+      }
+      tbody.append(r);
       if (ok) shown++;
     }
     count.textContent = `(${shown} of ${rows.length})`;
     none.hidden = shown > 0;
+
+    const next = new URLSearchParams();
+    for (const [k, v] of f) if (v && !(k === 'sort' && v === 'newest')) next.set(k, String(v));
+    history.replaceState(null, '', next.size ? `?${next}` : location.pathname);
   }
-  form.addEventListener('input', filter);
-  filter();
+  form.addEventListener('input', apply);
+  apply();
 
   // Row and featured-list actions.
   document.addEventListener('click', async (e) => {
@@ -193,8 +268,13 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   .f-title { flex: 1 1 300px; min-width: 0; }
   .f-title a { font-weight: 700; color: var(--ink); }
   .f-actions { display: flex; gap: 6px; }
-  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(3, 1fr); margin-bottom: 10px; }
-  @media (max-width: 800px) { .filters { grid-template-columns: 1fr 1fr; } .filters input { grid-column: 1 / -1; } }
+  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(5, 1fr); margin-bottom: 10px; }
+  @media (max-width: 1100px) { .filters { grid-template-columns: repeat(3, 1fr); } .filters input { grid-column: 1 / -1; } }
+  @media (max-width: 600px) { .filters { grid-template-columns: 1fr 1fr; } }
+  table.items :global(tr.group th) {
+    text-align: left; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent); padding: 18px 8px 6px; border-bottom: 2px solid var(--ink); background: var(--paper);
+  }
   table.items { width: 100%; border-collapse: collapse; }
   table.items th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding: 6px 8px; border-bottom: 2px solid var(--ink); }
   table.items td { padding: 10px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }

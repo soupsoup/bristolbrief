@@ -14,7 +14,7 @@ export async function GET(context) {
         title: i.title,
         description: i.summary ? `${i.summary} (${i.sourceName})` : i.sourceName,
         pubDate: new Date(i.date),
-        link: i.link,
+        link: new URL(i.link, context.site).toString(),
       })),
   });
 }

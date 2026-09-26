@@ -2,6 +2,8 @@ import wireData from '../data/wire.json';
 import alertsData from '../data/alerts.json';
 import sourcesData from '../data/sources.json';
 import statusData from '../data/feed-status.json';
+import editorialData from '../data/editorial.json';
+import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 
 export interface WireItem {
   id: string;
@@ -16,8 +18,23 @@ export interface WireItem {
   towns: string[];
   /** Names Bristol County but no specific town. Shown in the wire, not on town pages. */
   countywide?: boolean;
-  /** Set on the item an editor pinned to the lead slot (src/data/pinned.json). */
-  pinned?: boolean;
+  /** All sections the item appears in; `section` is the first. Editors can add more. */
+  sections: string[];
+  /** Photo added in the admin (path under /uploads/). */
+  image?: string;
+  imageAlt?: string;
+  /** Position in the featured list (0 = lead), set by editors. */
+  featuredRank?: number;
+  /** Story added by hand in the admin rather than pulled from a feed. */
+  manual?: boolean;
+  /** Manual stories: URL slug and body, when the story has its own page here. */
+  slug?: string;
+  body?: string;
+  external?: boolean;
+  /** Admin views only. */
+  hidden?: boolean;
+  edited?: boolean;
+  originalTitle?: string;
 }
 
 export interface Alert {
@@ -55,7 +72,10 @@ export interface SourceStatus {
 }
 
 export const wireUpdated: string | null = wireData.updated;
-export const wireItems = (wireData.items ?? []) as WireItem[];
+/** Raw feed items, before editorial changes (the admin shows these). */
+export const rawWireItems = (wireData.items ?? []) as Omit<WireItem, 'sections'>[];
+/** Feed items plus manual stories, with editors' changes applied and hidden items removed. */
+export const wireItems = applyEditorial(rawWireItems, editorialData) as WireItem[];
 export const sources = (sourcesData.sources ?? []) as Source[];
 export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
 
@@ -71,6 +91,12 @@ export function activeAlerts(now = new Date()): Alert[] {
 export const newsItems = () => wireItems.filter((i) => i.category !== 'meetings');
 export const meetingItems = () => wireItems.filter((i) => i.category === 'meetings');
 export const itemsForTown = (town: string) => wireItems.filter((i) => i.towns.includes(town));
+export const itemsForSection = (section: string) =>
+  wireItems.filter((i) => i.category !== 'meetings' && i.sections.includes(section));
+/** Stories an editor featured, in priority order (first is the lead). */
+export const featuredStories = () => featuredItems(wireItems) as WireItem[];
+/** Manual stories that have their own page on this site. */
+export const localStories = () => wireItems.filter((i) => i.manual && !i.external);
 
 export function timeAgo(iso: string, now = new Date()) {
   const mins = Math.round((now.valueOf() - new Date(iso).valueOf()) / 60000);
@@ -173,24 +199,3 @@ export function pickTopStories(items: WireItem[], n: number, now = new Date(), e
   return picked;
 }
 
-import pinnedData from '../data/pinned.json';
-import { resolvePin } from '../../scripts/lib/pin.mjs';
-
-interface PinConfig {
-  url: string;
-  until?: string;
-  title?: string;
-  summary?: string;
-  sourceName?: string;
-  towns?: string[];
-  section?: string;
-}
-
-/** The pinned lead story, or null when nothing is pinned or the pin expired. */
-export function pinnedLead(now = new Date()): WireItem | null {
-  // Typed explicitly: when nothing is pinned the JSON infers as `null`.
-  const pin = pinnedData.lead as PinConfig | null;
-  const { item, reason } = resolvePin(pin, wireItems, now);
-  if (reason === 'unmatched') console.warn(`[pin] No headline matches the pinned story: ${pin?.url}`);
-  return item as WireItem | null;
-}

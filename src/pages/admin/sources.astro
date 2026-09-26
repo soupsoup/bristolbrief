@@ -1,0 +1,48 @@
+---
+import Admin from '../../layouts/Admin.astro';
+import { sources, sourceStatus, wireUpdated, rawWireItems } from '../../lib/wire';
+import { fmtAdminDate } from '../../lib/admin/data';
+
+export const prerender = false;
+
+const status = new Map(sourceStatus.map((s) => [s.id, s]));
+const counts = new Map<string, number>();
+for (const i of rawWireItems) counts.set(i.source, (counts.get(i.source) ?? 0) + 1);
+const rows = sources
+  .filter((s) => s.enabled)
+  .map((s) => ({ ...s, st: status.get(s.id), inWire: counts.get(s.id) ?? 0 }))
+  .sort((a, b) => Number(a.st?.ok ?? false) - Number(b.st?.ok ?? false) || a.name.localeCompare(b.name));
+const failing = rows.filter((r) => r.st && !r.st.ok).length;
+---
+<Admin title="Feeds" active="sources">
+  <h1>Feeds</h1>
+  <p class="a-muted">
+    Results of the last headline update{wireUpdated && <> ({fmtAdminDate(wireUpdated)})</>}.
+    {failing > 0 ? `${failing} of ${rows.length} feeds failed on that run.` : `All ${rows.length} feeds responded.`}
+    Feeds are listed in <code>src/data/sources.json</code>.
+  </p>
+  <table class="feeds">
+    <thead><tr><th>Feed</th><th>Type</th><th>Last run</th><th class="num">Kept / fetched</th><th class="num">In wire</th><th>Newest item</th></tr></thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr class={r.st && !r.st.ok ? 'bad' : undefined}>
+          <td><a href={r.homepage ?? r.url} target="_blank" rel="noopener">{r.name}</a>{r.via === 'google-news' && <span class="a-muted"> (Google News)</span>}</td>
+          <td>{r.category}</td>
+          <td>{!r.st ? '–' : r.st.ok ? 'OK' : <strong>{r.st.error}</strong>}</td>
+          <td class="num">{r.st?.ok ? `${r.st.kept} / ${r.st.entries}` : '–'}</td>
+          <td class="num">{r.inWire}</td>
+          <td>{r.st?.newest ? fmtAdminDate(r.st.newest) : '–'}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Admin>
+
+<style>
+  table.feeds { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding: 6px 8px; border-bottom: 2px solid var(--ink); }
+  td { padding: 8px; border-bottom: 1px solid var(--rule); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.bad td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  @media (max-width: 700px) { th:nth-child(2), td:nth-child(2), th:nth-child(6), td:nth-child(6) { display: none; } }
+</style>

@@ -30,9 +30,10 @@ const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.'
           <time datetime={i.date} data-ago>{timeAgo(i.date)}</time>
         </p>
         <h3 class="wire-title">
-          <a href={i.link} rel="noopener" target="_blank">{i.title}</a>
+          <a href={i.link} {...(!i.manual || i.external ? { target: '_blank', rel: 'noopener' } : {})}>{i.title}</a>
         </h3>
         {showSummary && i.summary && <p class="wire-summary">{i.summary}</p>}
+        {i.image && <img class="wire-thumb" src={i.image} alt={i.imageAlt ?? ''} loading="lazy" />}
       </li>
     ))}
   </ol>
@@ -55,6 +56,9 @@ const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.'
 <style>
   .wire { list-style: none; margin: 0; padding: 0; }
   .wire-item { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .wire-item:has(.wire-thumb) { display: grid; grid-template-columns: 1fr 96px; column-gap: 14px; }
+  .wire-item:has(.wire-thumb) > :not(.wire-thumb) { grid-column: 1; }
+  .wire-thumb { grid-column: 2; grid-row: 1 / span 3; width: 96px; aspect-ratio: 1; object-fit: cover; }
   .wire-item:first-child { padding-top: 0; }
   .wire-item:last-child { border-bottom: 0; }
   .wire-meta { margin: 0 0 3px; font-size: 12px; }

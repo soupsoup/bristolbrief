@@ -7,20 +7,23 @@ import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import { SECTIONS, TOWNS } from '../site.config';
-import { storyItems, meetingItems, wireItems, pickTopStories, pinnedLead } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories } from '../lib/wire';
 
-// Everything on this page comes from the ingested feeds (scripts/ingest.mjs).
+// Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
+// editors added in the admin, with their edits applied (src/data/editorial.json).
 const stories = storyItems();
-// An editor can pin the lead (npm run pin); the rest are picked automatically.
-const pinned = pinnedLead();
-const [lead, ...secondary] = pinned
-  ? [pinned, ...pickTopStories(stories, 2, new Date(), [pinned])]
-  : pickTopStories(stories, 3);
-const shown = new Set([lead, ...secondary].filter(Boolean).map((i) => i.id));
+// Editors' featured stories come first, in their chosen order: the first is
+// the lead, the next two fill the secondary slots, and any more go to the top
+// of the rail. Empty slots are filled automatically.
+const featured = featuredStories();
+const top = [...featured.slice(0, 3)];
+if (top.length < 3) top.push(...pickTopStories(stories, 3 - top.length, new Date(), featured));
+const [lead, ...secondary] = top;
+const shown = new Set(top.map((i) => i.id));
 
 // Render a few extra; the script below trims the rail to the height of the
 // stories beside it. Without JS (and on narrow screens) CSS shows six.
-const wire = stories.filter((i) => !shown.has(i.id)).slice(0, 12);
+const wire = [...featured.slice(3), ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
@@ -28,7 +31,7 @@ const meetings = meetingItems().slice(0, 6);
 // A row per section with at least three stories not already shown.
 const sectionRows = SECTIONS.map((sec) => ({
   ...sec,
-  items: stories.filter((i) => i.section === sec.slug && !shown.has(i.id)).slice(0, 3),
+  items: stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3),
 })).filter((row) => row.items.length === 3);
 ---
 <Base>

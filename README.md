@@ -14,10 +14,11 @@ npm test         # parser, town-matching and data tests
 
 ## Pages
 
-- **Home:** top stories, an "Around the county" rail, section rows, commuter rail alerts, tides, town hall notices and public meetings.
+- **Home:** top stories (featured by editors, or picked automatically), an "Around the county" rail, section rows, commuter rail alerts, tides, town hall notices and public meetings.
 - **`/news/`:** every headline, filterable by town (including Countywide), type and source.
 - **`/section/<slug>/`** and **`/towns/<slug>/`** for all 8 sections and 20 municipalities.
 - **`/meetings/`**, **`/weather/`** (alerts and tides), **`/transit/`**, **`/sources/`**, plus About, Subscribe and Send a tip.
+- **`/stories/<slug>/`:** stories written in the admin.
 - **`/rss.xml`:** the headline feed, linking to the original stories.
 
 ## How the headlines work
@@ -29,33 +30,31 @@ npm test         # parser, town-matching and data tests
 - The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
 
-## Pinning the lead story
+## Admin
 
-The home page picks its lead story automatically: the newest story with a real summary. To choose it yourself:
+`/admin/` is a password-protected back end for editors:
 
-```sh
-npm run pin -- "waterfront plan"              # pin the headline containing this text
-npm run pin -- https://example.com/story      # or pin by URL
-npm run pin -- "waterfront plan" --hours 48   # stay up 48 hours (default 24)
-npm run pin -- "waterfront plan" --summary "Your own summary for the home page"
-npm run pin                                   # show the current pin
-npm run pin -- --clear                        # back to automatic
-```
+- **Stories:** everything the feeds pulled in plus stories added by hand, searchable and filterable by source, type and status.
+- **Edit** a headline or summary, add sections and towns, attach a photo with a caption, or hide an item from the site. A field left at the feed's value keeps updating from the feed.
+- **Feature** stories on the home page and reorder them. The first featured story is the lead, the next two fill the secondary slots, and any more go to the top of "Around the county". Featuring can expire at a set time. Empty slots fill automatically.
+- **Add a story** to one or more sections and towns. Give it a link to another site, or write the text and it gets its own page at `/stories/<slug>/`.
+- **Photos** are resized in the browser to 1600px, then saved to `public/uploads/`.
+- **Feeds** shows how each source did on the last headline update.
 
-To pin a story the feeds haven't picked up, pin its URL with `--title "Headline" --source "Outlet"` (and optionally `--town <slug>`). The two stories under the lead are still picked automatically, from different outlets.
+Every save is a commit to `src/data/editorial.json` (or a photo under `public/uploads/`) on GitHub, so Vercel redeploys and the change is live in about a minute. The git history is the edit log, and any change can be reverted there. The hourly headline job never touches `editorial.json`.
 
-The pin lives in `src/data/pinned.json`, so you can also edit it on GitHub without the command line:
+### Setup (once)
 
-```json
-{
-  "lead": {
-    "url": "https://newbedfordlight.org/some-story/",
-    "until": "2026-09-28T18:00:00-04:00"
-  }
-}
-```
+1. **Create a GitHub token:** GitHub → Settings → Developer settings → Fine-grained tokens → Generate. Give it access to `soupsoup/bristolbrief` only, with **Contents: Read and write**.
+2. **Add environment variables** in the Vercel project (Settings → Environment Variables, Production):
+   - `ADMIN_PASSWORD`: the admin password. Use a long one; anyone who has it can edit the site.
+   - `ADMIN_GITHUB_TOKEN`: the token from step 1.
+   - Optional: `ADMIN_SESSION_SECRET` to sign sessions with a separate secret (otherwise one is derived from the password; changing either signs everyone out).
+3. **Redeploy**, then sign in at `/admin/`.
 
-Commit and push (or let the hourly job rebuild) to update the site. An expired pin is ignored, and the lead goes back to automatic on the next build.
+Without `ADMIN_PASSWORD` the admin is switched off. Without `ADMIN_GITHUB_TOKEN` (for example under `npm run dev`) it saves to local files instead of GitHub; set `ADMIN_PASSWORD` in `.env` to try it locally.
+
+`npm run pin -- "headline text"` still works as a shortcut for featuring a story from the command line.
 
 ## Deploying on Vercel
 
@@ -77,6 +76,8 @@ Commit and push (or let the hourly job rebuild) to update the site. An expired p
 | `src/site.config.ts` | Site name, sections, towns, newsletter endpoint, contact info |
 | `src/data/sources.json` | Feed registry |
 | `src/data/*.json` | Ingested headlines, alerts, transit, tides, meetings, feed status |
+| `src/data/editorial.json` | Admin edits, featured order, manual stories |
+| `src/pages/admin/`, `src/pages/api/admin/`, `src/lib/admin/` | Admin pages, API and storage |
 | `scripts/ingest.mjs`, `scripts/lib/` | Fetching, parsing, town tagging |
 | `src/pages/` | Routes |
 | `src/components/` | Header, footer, headline cards and lists, alerts, tides, meetings |

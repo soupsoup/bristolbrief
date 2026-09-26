@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import { storeInfo } from '../lib/admin/store';
+
+interface Props {
+  title: string;
+  active?: 'dashboard' | 'new' | 'sources';
+}
+const { title, active } = Astro.props;
+const info = storeInfo();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} | Bristol Brief admin</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="admin">
+    <header class="a-top">
+      <div class="a-wrap a-top-inner">
+        <a class="a-brand" href="/admin/">Bristol Brief <span>admin</span></a>
+        <nav>
+          <a href="/admin/" aria-current={active === 'dashboard' ? 'page' : undefined}>Stories</a>
+          <a href="/admin/new/" aria-current={active === 'new' ? 'page' : undefined}>Add story</a>
+          <a href="/admin/sources/" aria-current={active === 'sources' ? 'page' : undefined}>Feeds</a>
+          <a href="/" target="_blank" rel="noopener">View site ↗</a>
+          <form method="post" action="/api/admin/logout/"><button type="submit">Sign out</button></form>
+        </nav>
+      </div>
+    </header>
+    {info.mode === 'local' && (
+      <p class="a-banner">
+        Local mode: no ADMIN_GITHUB_TOKEN is set, so changes are written to files on this machine and are not published.
+      </p>
+    )}
+    <main class="a-wrap"><slot /></main>
+    <div class="a-toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
+
+<style is:global>
+  body.admin { font-family: var(--sans); font-size: 15px; line-height: 1.45; }
+  .a-wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gutter); }
+  .a-top { background: var(--navy); color: #fff; }
+  @media (prefers-color-scheme: dark) { .a-top { background: #0b0e12; } }
+  .a-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; min-height: 56px; }
+  .a-brand { color: #fff; text-decoration: none; font-family: var(--serif-display); font-size: 20px; font-weight: 800; }
+  .a-brand span { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-left: 4px; }
+  .a-top nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .a-top nav a, .a-top nav button { color: #fff; text-decoration: none; font: inherit; font-weight: 600; background: none; border: 0; cursor: pointer; padding: 0; }
+  .a-top nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 5px; }
+  .a-top nav form { margin: 0; }
+  .a-banner { margin: 0; padding: 8px var(--gutter); background: var(--paper-2); border-bottom: 1px solid var(--rule); text-align: center; font-size: 13px; }
+  .admin h1 { font-family: var(--serif-display); font-size: 30px; margin: 24px 0 4px; }
+  .admin h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin: 28px 0 10px; border-top: 3px solid var(--ink); padding-top: 8px; }
+  .a-muted { color: var(--ink-2); }
+  .a-btn {
+    font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
+    border-radius: 4px; padding: 5px 10px; text-decoration: none; display: inline-block; white-space: nowrap;
+  }
+  .a-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .a-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .a-btn.danger { color: var(--accent); }
+  .a-btn[disabled] { opacity: 0.5; cursor: wait; }
+  .a-badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 1px 6px; border-radius: 3px; background: var(--paper-2); color: var(--ink-2); border: 1px solid var(--rule); }
+  .a-badge.featured { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .a-badge.hidden { background: var(--ink-2); border-color: var(--ink-2); color: var(--paper); }
+  .a-badge.manual { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+  .admin input[type='text'], .admin input[type='url'], .admin input[type='search'], .admin input[type='datetime-local'], .admin textarea, .admin select {
+    font: inherit; font-size: 15px; width: 100%; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink);
+  }
+  .admin textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
+  .admin label.field { display: block; margin: 0 0 16px; }
+  .admin label.field > span, .admin fieldset legend { display: block; font-weight: 700; font-size: 13px; margin-bottom: 5px; }
+  .admin fieldset { border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; margin: 0 0 16px; }
+  .a-checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 4px 12px; }
+  .a-checks label { display: flex; gap: 6px; align-items: center; font-size: 14px; }
+  .a-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 50; max-width: min(560px, calc(100vw - 32px)); background: var(--ink); color: var(--paper); padding: 12px 16px; border-radius: 6px; box-shadow: 0 10px 30px rgb(0 0 0 / 0.25); font-size: 14px; }
+  .a-toast.error { background: var(--accent); color: var(--accent-ink); }
+  .a-toast a { color: inherit; }
+</style>

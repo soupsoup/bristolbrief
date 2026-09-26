@@ -1,0 +1,14 @@
+---
+import Admin from '../../layouts/Admin.astro';
+import StoryForm from '../../components/admin/StoryForm.astro';
+
+export const prerender = false;
+---
+<Admin title="Add story" active="new">
+  <h1>Add a story</h1>
+  <p class="a-muted">
+    Link to a story the feeds missed, or write one that gets its own page on this site. Pick one or
+    more sections and towns so it shows up in the right places.
+  </p>
+  <StoryForm />
+</Admin>

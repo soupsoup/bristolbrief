@@ -1,0 +1,43 @@
+---
+import '../../styles/global.css';
+import { hasSession } from '../../lib/admin/auth';
+
+export const prerender = false;
+
+const next = Astro.url.searchParams.get('next') ?? '/admin/';
+if (hasSession(Astro.cookies)) return Astro.redirect(next.startsWith('/admin') ? next : '/admin/');
+const failed = Astro.url.searchParams.has('error');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Sign in | Bristol Brief admin</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="login">
+      <p class="kicker">The Bristol Brief</p>
+      <h1>Admin sign in</h1>
+      {failed && <p class="err" role="alert">That password didn't work.</p>}
+      <form method="post" action="/api/admin/login/">
+        <input type="hidden" name="next" value={next} />
+        <label for="pw">Password</label>
+        <input id="pw" name="password" type="password" autocomplete="current-password" required autofocus />
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </main>
+  </body>
+</html>
+
+<style>
+  .login { max-width: 360px; margin: 12vh auto 0; padding: 0 var(--gutter); font-family: var(--sans); }
+  .kicker { margin: 0; }
+  h1 { font-family: var(--serif-display); font-size: 32px; margin: 4px 0 20px; }
+  label { display: block; font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+  input { font: inherit; width: 100%; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink); margin-bottom: 14px; }
+  .btn { width: 100%; }
+  .err { color: var(--accent); font-weight: 600; }
+</style>

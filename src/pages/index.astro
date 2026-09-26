@@ -1,0 +1,210 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import WireList from '../components/WireList.astro';
+import WireCard from '../components/WireCard.astro';
+import TransitAlerts from '../components/TransitAlerts.astro';
+import TideTable from '../components/TideTable.astro';
+import MeetingCalendar from '../components/MeetingCalendar.astro';
+import { SECTIONS, TOWNS } from '../site.config';
+import { storyItems, meetingItems, wireItems, pickTopStories, pinnedLead } from '../lib/wire';
+
+// Everything on this page comes from the ingested feeds (scripts/ingest.mjs).
+const stories = storyItems();
+// An editor can pin the lead (npm run pin); the rest are picked automatically.
+const pinned = pinnedLead();
+const [lead, ...secondary] = pinned
+  ? [pinned, ...pickTopStories(stories, 2, new Date(), [pinned])]
+  : pickTopStories(stories, 3);
+const shown = new Set([lead, ...secondary].filter(Boolean).map((i) => i.id));
+
+// Render a few extra; the script below trims the rail to the height of the
+// stories beside it. Without JS (and on narrow screens) CSS shows six.
+const wire = stories.filter((i) => !shown.has(i.id)).slice(0, 12);
+wire.forEach((i) => shown.add(i.id));
+const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
+const meetings = meetingItems().slice(0, 6);
+
+// A row per section with at least three stories not already shown.
+const sectionRows = SECTIONS.map((sec) => ({
+  ...sec,
+  items: stories.filter((i) => i.section === sec.slug && !shown.has(i.id)).slice(0, 3),
+})).filter((row) => row.items.length === 3);
+---
+<Base>
+  <div class="wrap">
+    {!lead ? (
+      <p class="page-dek" style="margin-top:40px">Headlines will appear after the first feed update (<code>npm run ingest</code>).</p>
+    ) : (
+      <section class="top" aria-label="Top stories">
+        <div class="top-lead">
+          <WireCard item={lead} variant="lead" />
+        </div>
+        <div class="top-secondary">
+          {secondary.map((i) => <WireCard item={i} />)}
+        </div>
+        <aside class="top-rail">
+          <div class="rail-head">Around the county</div>
+          <WireList items={wire} />
+          <a class="rail-more" href="/news/">All local headlines →</a>
+        </aside>
+      </section>
+    )}
+
+    <div class="signup-row">
+      <NewsletterSignup variant="banner" />
+    </div>
+
+    <div class="lower">
+      <div class="lower-main">
+        {sectionRows.map((row) => (
+          <section>
+            <div class="section-head">
+              <h2>{row.name}</h2>
+              <a href={`/section/${row.slug}/`}>More {row.name} →</a>
+            </div>
+            <div class="grid-3">
+              {row.items.map((i) => <WireCard item={i} />)}
+            </div>
+          </section>
+        ))}
+      </div>
+      <aside class="lower-rail">
+        <div class="section-head">
+          <h2>Commuter rail</h2>
+          <a href="/transit/">More →</a>
+        </div>
+        <TransitAlerts compact />
+        <div class="section-head">
+          <h2>Tides</h2>
+          <a href="/weather/#tides">All stations →</a>
+        </div>
+        <TideTable stations={['8447636', '8447386']} count={2} />
+        <div class="section-head">
+          <h2>From town hall</h2>
+          <a href="/news/?category=government">More →</a>
+        </div>
+        <WireList items={townHall} />
+        <div class="section-head">
+          <h2>Public meetings</h2>
+          <a href="/meetings/">All →</a>
+        </div>
+        <MeetingCalendar limit={3} />
+        <WireList items={meetings} />
+        <div class="section-head">
+          <h2>Your town</h2>
+        </div>
+        <ul class="town-chips">
+          {TOWNS.map((t) => <li><a href={`/towns/${t.slug}/`}>{t.name}</a></li>)}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Show only as many rail headlines as fit beside the lead + secondary stories.
+  const MIN = 4;
+  const rail = document.querySelector<HTMLElement>('.top-rail');
+  const left = document.querySelector<HTMLElement>('.top-secondary');
+
+  function fit() {
+    if (!rail || !left) return;
+    const items = [...rail.querySelectorAll<HTMLElement>('.wire-item')];
+    rail.classList.add('fitted');
+    items.forEach((el) => (el.hidden = false));
+    // Stacked (single-column) layout: fall back to a fixed count.
+    if (!matchMedia('(min-width: 1000px)').matches) {
+      items.forEach((el, i) => (el.hidden = i >= 6));
+      return;
+    }
+    const limit = left.getBoundingClientRect().bottom;
+    const more = rail.querySelector<HTMLElement>('.rail-more');
+    const reserve = more ? more.offsetHeight + 10 : 0;
+    for (let i = items.length - 1; i >= MIN; i--) {
+      if (items[i].getBoundingClientRect().bottom + reserve <= limit) break;
+      items[i].hidden = true;
+    }
+  }
+
+  fit();
+  document.fonts?.ready.then(fit);
+  let t: number | undefined;
+  addEventListener('resize', () => {
+    clearTimeout(t);
+    t = window.setTimeout(fit, 100);
+  });
+</script>
+
+<style>
+  .top {
+    display: grid;
+    gap: 28px;
+    padding-top: 28px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'lead' 'secondary' 'rail';
+  }
+  .top-lead { grid-area: lead; }
+  .top-secondary { grid-area: secondary; display: grid; gap: 28px; }
+  .top-rail { grid-area: rail; }
+
+  @media (min-width: 720px) {
+    .top-secondary { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1000px) {
+    .top {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      grid-template-areas: 'lead rail' 'secondary rail';
+      align-items: start;
+      column-gap: 40px;
+    }
+    .top-rail { border-left: 1px solid var(--rule); padding-left: 28px; }
+  }
+
+  .rail-head {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--ink);
+    padding-top: 8px;
+    margin-bottom: 8px;
+  }
+  .rail-head + :global(.wire) { margin-top: 12px; }
+  .top-rail:not(.fitted) :global(.wire-item:nth-child(n + 7)) { display: none; }
+  .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
+
+  .signup-row { margin-top: 44px; }
+
+  .lower { display: grid; gap: 0 40px; grid-template-columns: 1fr; }
+  @media (min-width: 1000px) {
+    .lower { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  }
+  .grid-3 { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) {
+    .grid-3 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  }
+
+  .town-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .town-chips a {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .town-chips a:hover { border-color: var(--accent); color: var(--accent); }
+</style>

@@ -1,0 +1,72 @@
+---
+import type { WireItem } from '../lib/wire';
+import { timeAgo } from '../lib/wire';
+import { townName } from '../site.config';
+
+interface Props {
+  items: WireItem[];
+  showSummary?: boolean;
+  showTowns?: boolean;
+  empty?: string;
+}
+const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.' } = Astro.props;
+---
+{items.length === 0 ? (
+  <p class="meta">{empty}</p>
+) : (
+  <ol class="wire">
+    {items.map((i) => (
+      <li
+        class="wire-item"
+        data-towns={[...i.towns, ...(i.countywide ? ['countywide'] : [])].join(' ')}
+        data-source={i.source}
+        data-category={i.category}
+      >
+        <p class="wire-meta meta">
+          <span class="wire-source">{i.sourceName}</span>
+          {showTowns && i.towns.length > 0 && <span> · {i.towns.slice(0, 2).map(townName).join(', ')}</span>}
+          {showTowns && i.countywide && <span> · Countywide</span>}
+          {' · '}
+          <time datetime={i.date} data-ago>{timeAgo(i.date)}</time>
+        </p>
+        <h3 class="wire-title">
+          <a href={i.link} rel="noopener" target="_blank">{i.title}</a>
+        </h3>
+        {showSummary && i.summary && <p class="wire-summary">{i.summary}</p>}
+      </li>
+    ))}
+  </ol>
+)}
+
+<script>
+  // Refresh relative times in the browser; the page itself is static.
+  const fmt = (iso: string) => {
+    const mins = Math.round((Date.now() - new Date(iso).valueOf()) / 60000);
+    if (mins < 60) return `${Math.max(mins, 1)}m ago`;
+    const hrs = Math.round(mins / 60);
+    if (hrs < 24) return `${hrs}h ago`;
+    return new Date(iso).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' });
+  };
+  document.querySelectorAll<HTMLTimeElement>('time[data-ago]').forEach((t) => {
+    t.textContent = fmt(t.dateTime);
+  });
+</script>
+
+<style>
+  .wire { list-style: none; margin: 0; padding: 0; }
+  .wire-item { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .wire-item:first-child { padding-top: 0; }
+  .wire-item:last-child { border-bottom: 0; }
+  .wire-meta { margin: 0 0 3px; font-size: 12px; }
+  .wire-source { font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; }
+  .wire-title {
+    font-family: var(--serif-display);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .wire-title a { color: var(--ink); text-decoration: none; }
+  .wire-title a:hover { color: var(--accent); text-decoration: underline; }
+  .wire-summary { margin: 5px 0 0; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+</style>

@@ -1,0 +1,88 @@
+---
+import { SITE, SECTIONS, TOWNS } from '../site.config';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">The Bristol Brief</a>
+      <p>{SITE.description}</p>
+      <a class="btn" href="/subscribe/">Get the newsletter</a>
+    </div>
+    <div>
+      <h3>Sections</h3>
+      <ul>
+        {SECTIONS.map((s) => <li><a href={`/section/${s.slug}/`}>{s.name}</a></li>)}
+      </ul>
+    </div>
+    <div class="footer-towns">
+      <h3>Towns</h3>
+      <ul>
+        {TOWNS.map((t) => <li><a href={`/towns/${t.slug}/`}>{t.name}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/tips/">Send a tip</a></li>
+        <li><a href="/meetings/">Public meetings</a></li>
+        <li><a href="/weather/">Weather &amp; tides</a></li>
+        <li><a href="/transit/">Commuter rail</a></li>
+        <li><a href="/rss.xml">RSS</a></li>
+        <li><a href={SITE.social.instagram}>Instagram</a></li>
+        <li><a href={SITE.social.facebook}>Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    © {year} {SITE.name}. Serving Bristol County, Massachusetts.
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 72px;
+    border-top: 3px double var(--ink);
+    background: var(--paper-2);
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+  @media (min-width: 800px) {
+    .footer-grid { grid-template-columns: 1.6fr 1fr 1.6fr 1fr; }
+  }
+  .footer-logo {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .footer-brand p { color: var(--ink-2); margin: 10px 0 16px; }
+  h3 {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { margin: 0 0 8px; }
+  .footer-towns ul { columns: 2; column-gap: 16px; }
+  .footer-towns li { break-inside: avoid; }
+  a:not(.btn):not(.footer-logo) { color: var(--ink-2); text-decoration: none; }
+  a:not(.btn):not(.footer-logo):hover { color: var(--accent); }
+  .footer-base {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    padding-bottom: 28px;
+    color: var(--ink-2);
+    font-size: 13px;
+  }
+</style>

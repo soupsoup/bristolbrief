@@ -1,0 +1,41 @@
+name: Update headlines
+
+on:
+  schedule:
+    # Hourly, off the top of the hour. Scheduled runs only fire on the default branch.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run ingest
+      - name: Commit when headlines, alerts or meetings changed
+        run: |
+          if git diff --quiet -- src/data/wire.json src/data/alerts.json src/data/transit.json src/data/calendar.json; then
+            echo "No new headlines."
+            exit 0
+          fi
+          git config user.name "bristol-brief-bot"
+          git config user.email "bristol-brief-bot@users.noreply.github.com"
+          git add src/data/
+          git commit -m "Update headlines $(date -u +%Y-%m-%dT%H:%MZ)"
+          # Someone may have pushed (e.g. edited pinned.json) while this ran.
+          git pull --rebase
+          git push

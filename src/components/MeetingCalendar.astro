@@ -1,0 +1,71 @@
+---
+import { upcomingMeetings, fmtTime } from '../lib/wire';
+import { townName } from '../site.config';
+
+interface Props {
+  town?: string;
+  limit?: number;
+}
+const { town, limit = 10 } = Astro.props;
+const meetings = upcomingMeetings()
+  .filter((m) => !town || m.town === town)
+  .slice(0, limit);
+const ET = { timeZone: 'America/New_York' } as const;
+const mon = (iso: string) => new Date(iso).toLocaleDateString('en-US', { ...ET, month: 'short' });
+const day = (iso: string) => new Date(iso).toLocaleDateString('en-US', { ...ET, day: 'numeric' });
+const dow = (iso: string) => new Date(iso).toLocaleDateString('en-US', { ...ET, weekday: 'short' });
+---
+{meetings.length > 0 && (
+  <ol class="meetings">
+    {meetings.map((m) => (
+      <li>
+        <div class="m-date" aria-hidden="true">
+          <span>{mon(m.start)}</span>
+          <strong>{day(m.start)}</strong>
+          <span>{dow(m.start)}</span>
+        </div>
+        <div>
+          <h3><a href={m.link}>{m.title}</a></h3>
+          <p class="meta">
+            <span class="visually-hidden">{new Date(m.start).toDateString()}, </span>
+            {fmtTime(m.start)}
+            {!town && <> · {townName(m.town)}</>}
+            {m.location && <> · {m.location}</>}
+            {m.hasAgenda && <> · <a href={m.link}>Agenda</a></>}
+          </p>
+        </div>
+      </li>
+    ))}
+  </ol>
+)}
+
+<style>
+  .meetings { list-style: none; margin: 0; padding: 0; }
+  .meetings li {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .m-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--navy);
+    padding: 3px 0 5px;
+    line-height: 1.15;
+    height: fit-content;
+  }
+  .m-date strong { font-family: var(--serif-display); font-size: 22px; color: var(--ink); }
+  h3 { font-family: var(--serif-display); font-size: 17px; line-height: 1.25; margin: 0 0 3px; }
+  h3 a { color: var(--ink); text-decoration: none; }
+  h3 a:hover { color: var(--accent); }
+  .meta { margin: 0; }
+</style>

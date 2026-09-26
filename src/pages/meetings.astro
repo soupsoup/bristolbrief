@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import WireList from '../components/WireList.astro';
+import MeetingCalendar from '../components/MeetingCalendar.astro';
+import { meetingItems, sources } from '../lib/wire';
+import { TOWNS } from '../site.config';
+
+const items = meetingItems();
+const byTown = TOWNS.map((t) => ({ ...t, items: items.filter((i) => i.towns.includes(t.slug)).slice(0, 8) }));
+const covered = byTown.filter((t) => t.items.length > 0);
+const missing = byTown.filter((t) => t.items.length === 0);
+const agendaSources = sources.filter((s) => s.category === 'meetings');
+---
+<Base title="Public meetings" description="Agendas and minutes posted by Bristol County cities and towns.">
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">Civic calendar</p>
+    <h1 class="page-title" style="margin-top:4px">Public meetings</h1>
+    <p class="page-dek">
+      The newest agendas and minutes posted by town boards and committees. Massachusetts law requires
+      most meetings to be posted at least 48 hours in advance.
+    </p>
+    <section>
+      <div class="section-head"><h2>Coming up</h2></div>
+      <MeetingCalendar limit={20} />
+      <p class="meta">
+        Scheduled meetings with dates come from towns that publish a meeting calendar (currently Taunton).
+        Below are the newest agenda and minutes postings from each town.
+      </p>
+    </section>
+    <div class="meet-grid">
+      {covered.map((t) => (
+        <section>
+          <div class="section-head">
+            <h2>{t.name}</h2>
+            <a href={agendaSources.find((s) => s.id === `${t.slug}-agendas`)?.homepage ?? `/towns/${t.slug}/`}>Agenda center →</a>
+          </div>
+          <WireList items={t.items} showTowns={false} />
+        </section>
+      ))}
+    </div>
+    {missing.length > 0 && (
+      <p class="meta" style="margin-top:32px">
+        Not yet available: {missing.map((t) => t.name).join(', ')}. These communities don't publish
+        agendas in a machine-readable format yet.
+      </p>
+    )}
+  </div>
+</Base>
+
+<style>
+  .meet-grid { display: grid; gap: 0 40px; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .meet-grid { grid-template-columns: 1fr 1fr; } }
+</style>

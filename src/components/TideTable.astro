@@ -1,0 +1,61 @@
+---
+import { tideStations, nextTides, fmtDay, fmtTime, type TideStation } from '../lib/wire';
+
+interface Props {
+  town?: string;
+  count?: number;
+  /** Limit to these station ids (defaults to all, or the town's station). */
+  stations?: string[];
+}
+const { town, count = 4, stations: ids } = Astro.props;
+const stations: TideStation[] = tideStations.filter((s) =>
+  ids ? ids.includes(s.id) : town ? s.towns.includes(town) : true,
+);
+---
+{stations.length > 0 && (
+  <div class="tides">
+    {stations.map((st) => {
+      const tides = nextTides(st, count);
+      return (
+        <div class="tide-station">
+          <h3>{st.name}</h3>
+          <table>
+            <tbody>
+              {tides.map((t) => (
+                <tr>
+                  <th scope="row" class={t.type}>{t.type === 'high' ? 'High' : 'Low'}</th>
+                  <td>{fmtDay(t.time)}</td>
+                  <td>{fmtTime(t.time)}</td>
+                  <td class="num">{t.height.toFixed(1)} ft</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {st.observed && (
+            <p class="meta">
+              Water level {st.observed.height.toFixed(1)} ft at {fmtTime(st.observed.time)}
+            </p>
+          )}
+        </div>
+      );
+    })}
+    <p class="meta tide-note">
+      Heights in feet above mean lower low water. Predictions from
+      <a href="https://tidesandcurrents.noaa.gov/">NOAA Tides &amp; Currents</a>.
+    </p>
+  </div>
+)}
+
+<style>
+  .tides { font-family: var(--sans); }
+  .tide-station { margin-bottom: 16px; }
+  h3 { font-family: var(--serif-display); font-size: 17px; margin: 0 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 4px 6px 4px 0; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  th { font-weight: 700; width: 3.5em; }
+  th.high { color: var(--navy); }
+  th.low { color: var(--ink-2); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tide-station .meta { margin: 6px 0 0; font-size: 12px; }
+  .tide-note { font-size: 12px; margin: 0; }
+</style>

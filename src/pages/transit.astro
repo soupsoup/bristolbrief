@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import TransitAlerts from '../components/TransitAlerts.astro';
+import { MBTA_STATIONS } from '../../scripts/lib/data.mjs';
+import { townName } from '../site.config';
+
+const byLine = [
+  { name: 'Fall River/New Bedford Line', ids: ['place-FRS-0109', 'place-FRS-0054', 'place-NBM-0546', 'place-NBM-0523', 'place-NBM-0374'] },
+  { name: 'Providence/Stoughton Line', ids: ['place-NEC-1919', 'place-NEC-1969', 'place-NEC-2040'] },
+];
+---
+<Base title="Commuter rail" description="MBTA commuter rail alerts for Bristol County stations.">
+  <div class="wrap narrow">
+    <p class="kicker" style="margin:32px 0 0">Getting around</p>
+    <h1 class="page-title" style="margin-top:4px">Commuter rail alerts</h1>
+    <p class="page-dek">
+      Delays, shuttles and service changes at Bristol County's eight MBTA stations, updated live
+      from the MBTA.
+    </p>
+    <div class="section-head"><h2>Current alerts</h2></div>
+    <TransitAlerts />
+    <div class="section-head"><h2>Stations</h2></div>
+    <div class="lines">
+      {byLine.map((l) => (
+        <div>
+          <h3>{l.name}</h3>
+          <ul>
+            {l.ids.map((id) => {
+              const s = MBTA_STATIONS[id as keyof typeof MBTA_STATIONS];
+              return <li>{s.name} <span class="meta">· {townName(s.town)}</span></li>;
+            })}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .narrow { max-width: 820px; }
+  .lines { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  h3 { font-family: var(--serif-display); font-size: 19px; margin: 0 0 6px; }
+  ul { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: 15px; }
+  li { padding: 5px 0; border-bottom: 1px solid var(--rule); }
+</style>

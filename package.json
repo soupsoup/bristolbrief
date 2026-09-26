@@ -1,0 +1,27 @@
+{
+  "name": "bristolbrief",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "ingest": "NODE_USE_ENV_PROXY=1 node scripts/ingest.mjs",
+    "test": "node --test test/*.test.mjs",
+    "pin": "node scripts/pin.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.3.5",
+    "fast-xml-parser": "^5.11.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

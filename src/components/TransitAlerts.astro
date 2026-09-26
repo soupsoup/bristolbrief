@@ -1,0 +1,102 @@
+---
+import { transitAlerts, transitStopParents, fmtDay, fmtTime, type TransitAlert } from '../lib/wire';
+import { MBTA_LINE_LABELS, mbtaEffectLabel } from '../../scripts/lib/data.mjs';
+
+const LINE: Record<string, string> = MBTA_LINE_LABELS;
+
+interface Props {
+  town?: string;
+  compact?: boolean;
+}
+const { town, compact = false } = Astro.props;
+const alerts = transitAlerts().filter((a) => !town || a.towns.includes(town) || a.stations.length === 0);
+
+const when = (a: TransitAlert) =>
+  a.end && new Date(a.end).valueOf() - new Date(a.start).valueOf() > 864e5
+    ? `${fmtDay(a.start)} to ${fmtDay(a.end)}`
+    : a.end
+      ? `Until ${fmtTime(a.end)}`
+      : `Since ${fmtDay(a.start)}`;
+---
+<div class="transit" data-town={town ?? ''} data-compact={compact ? '1' : ''}>
+  <ul class="transit-list">
+    {alerts.map((a) => (
+      <li class={`t-alert sev-${a.severity >= 7 ? 'high' : a.severity >= 4 ? 'mid' : 'low'}`}>
+        <p class="t-meta meta">
+          <strong>{mbtaEffectLabel(a.effect)}</strong>
+          {' · '}{a.routes.map((r) => LINE[r] ?? r).join(', ')}{' · '}{when(a)}
+        </p>
+        <p class="t-head">{a.header}</p>
+      </li>
+    ))}
+  </ul>
+  <p class="t-empty meta" hidden={alerts.length > 0}>
+    No alerts for Bristol County stations on the Fall River/New Bedford or Providence/Stoughton lines.
+  </p>
+  <p class="t-source meta">
+    <span data-live-status>From the MBTA</span> ·
+    <a href="https://www.mbta.com/schedules/CR-NewBedford/alerts">Fall River/New Bedford</a> ·
+    <a href="https://www.mbta.com/schedules/CR-Providence/alerts">Providence/Stoughton</a>
+  </p>
+  <script type="application/json" data-stop-parents set:html={JSON.stringify(transitStopParents)} />
+</div>
+
+<script>
+  import { normalizeMbtaAlerts, mbtaEffectLabel, MBTA_LINE_LABELS } from '../../scripts/lib/data.mjs';
+
+  // Swap in live alerts: delays only last an hour and the page may be older.
+  const LINE: Record<string, string> = MBTA_LINE_LABELS;
+  const ET = { timeZone: 'America/New_York' } as const;
+  const day = (iso: string) => new Date(iso).toLocaleDateString('en-US', { ...ET, weekday: 'short', month: 'short', day: 'numeric' });
+  const time = (iso: string) => new Date(iso).toLocaleTimeString('en-US', { ...ET, hour: 'numeric', minute: '2-digit' });
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  async function refresh() {
+    const boxes = document.querySelectorAll<HTMLElement>('.transit');
+    if (!boxes.length) return;
+    let json;
+    try {
+      const res = await fetch('https://api-v3.mbta.com/alerts?filter[route]=CR-NewBedford,CR-Providence');
+      if (!res.ok) return;
+      json = await res.json();
+    } catch {
+      return; // Keep the build-time list.
+    }
+    for (const box of boxes) {
+      const parents = JSON.parse(box.querySelector('[data-stop-parents]')?.textContent || '{}');
+      const town = box.dataset.town;
+      const alerts = normalizeMbtaAlerts(json, parents).filter(
+        (a: any) => !town || a.towns.includes(town) || a.stations.length === 0,
+      );
+      const list = box.querySelector('.transit-list')!;
+      list.innerHTML = alerts
+        .map((a: any) => {
+          const span = a.end && Date.parse(a.end) - Date.parse(a.start) > 864e5;
+          const when = span ? `${day(a.start)} to ${day(a.end)}` : a.end ? `Until ${time(a.end)}` : `Since ${day(a.start)}`;
+          const sev = a.severity >= 7 ? 'high' : a.severity >= 4 ? 'mid' : 'low';
+          const effect = mbtaEffectLabel(a.effect);
+          return `<li class="t-alert sev-${sev}"><p class="t-meta meta"><strong>${esc(effect)}</strong> · ${a.routes
+            .map((r: string) => LINE[r] ?? r)
+            .join(', ')} · ${when}</p><p class="t-head">${esc(a.header)}</p></li>`;
+        })
+        .join('');
+      (box.querySelector('.t-empty') as HTMLElement).hidden = alerts.length > 0;
+      const status = box.querySelector('[data-live-status]');
+      if (status) status.textContent = `Live from the MBTA as of ${time(new Date().toISOString())}`;
+    }
+  }
+  refresh();
+</script>
+
+<style>
+  /* :global because the live refresh injects list items without Astro's scope attribute. */
+  .transit :global(.transit-list) { list-style: none; margin: 0; padding: 0; }
+  .transit :global(.t-alert) { padding: 10px 0 10px 12px; border-left: 4px solid var(--rule); margin-bottom: 10px; }
+  .transit :global(.t-alert.sev-mid) { border-left-color: #d9a21b; }
+  .transit :global(.t-alert.sev-high) { border-left-color: var(--accent); }
+  .transit :global(.t-meta) { margin: 0 0 3px; font-size: 12px; }
+  .transit :global(.t-head) { margin: 0; font-size: 15px; line-height: 1.4; }
+  .t-empty { margin: 0 0 8px; }
+  .t-source { margin: 6px 0 0; font-size: 12px; }
+  .transit[data-compact='1'] :global(.t-head) { font-size: 14px; }
+</style>

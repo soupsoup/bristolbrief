@@ -1,0 +1,63 @@
+---
+import Base from '../../layouts/Base.astro';
+import WireList from '../../components/WireList.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import TransitAlerts from '../../components/TransitAlerts.astro';
+import TideTable from '../../components/TideTable.astro';
+import MeetingCalendar from '../../components/MeetingCalendar.astro';
+import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
+import { TOWNS } from '../../site.config';
+import { itemsForTown } from '../../lib/wire';
+
+export function getStaticPaths() {
+  return TOWNS.map((t) => ({ params: { town: t.slug }, props: { name: t.name } }));
+}
+
+const { town } = Astro.params;
+const { name } = Astro.props;
+const townItems = itemsForTown(town);
+const headlines = townItems.filter((i) => i.category !== 'meetings').slice(0, 25);
+const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
+const hasStation = Object.values(MBTA_STATIONS).some((s) => s.town === town);
+const hasTides = TIDE_STATIONS.some((s) => s.towns.includes(town));
+---
+<Base title={name} description={`News, public meetings and notices from ${name}, Massachusetts.`}>
+  <div class="wrap">
+    <header class="index-head">
+      <p class="kicker">Bristol County</p>
+      <h1 class="page-title">{name}</h1>
+      <p class="page-dek">The latest news, notices and public meetings from {name}.</p>
+    </header>
+    <div class="index-grid">
+      <section>
+        <div class="section-head">
+          <h2>Latest {name} headlines</h2>
+          <a href={`/news/?town=${town}`}>All →</a>
+        </div>
+        <WireList items={headlines} showSummary showTowns={false} empty={`No recent headlines for ${name}.`} />
+      </section>
+      <aside>
+        <NewsletterSignup />
+        <MeetingCalendar town={town} limit={5} />
+        {meetings.length > 0 && (
+          <>
+            <div class="section-head"><h2>Meeting agendas</h2></div>
+            <WireList items={meetings} showTowns={false} />
+          </>
+        )}
+        {hasStation && (
+          <>
+            <div class="section-head"><h2>Commuter rail</h2></div>
+            <TransitAlerts town={town} compact />
+          </>
+        )}
+        {hasTides && (
+          <>
+            <div class="section-head"><h2>Tides</h2></div>
+            <TideTable town={town} count={4} />
+          </>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>

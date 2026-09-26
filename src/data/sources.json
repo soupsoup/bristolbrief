@@ -1,0 +1,523 @@
+{
+  "$comment": "Feeds verified live on 2026-09-26. See docs/sources.md for research notes and sources that need scrapers.",
+  "sources": [
+    {
+      "id": "new-bedford-light",
+      "name": "The New Bedford Light",
+      "url": "https://newbedfordlight.org/feed/",
+      "category": "news",
+      "homepage": "https://newbedfordlight.org/",
+      "enabled": true
+    },
+    {
+      "id": "fall-river-reporter",
+      "name": "Fall River Reporter",
+      "url": "https://fallriverreporter.com/feed/",
+      "category": "news",
+      "homepage": "https://fallriverreporter.com/",
+      "enabled": true
+    },
+    {
+      "id": "new-bedford-guide",
+      "name": "New Bedford Guide",
+      "url": "https://www.newbedfordguide.com/feed",
+      "category": "news",
+      "homepage": "https://www.newbedfordguide.com/",
+      "enabled": true
+    },
+    {
+      "id": "wbsm",
+      "name": "WBSM 1420",
+      "url": "https://wbsm.com/category/news/feed/",
+      "category": "news",
+      "homepage": "https://wbsm.com/",
+      "enabled": true
+    },
+    {
+      "id": "wsar",
+      "name": "WSAR 1480",
+      "url": "https://wsar.com/wsar-news/feed.xml",
+      "category": "news",
+      "homepage": "https://wsar.com/",
+      "enabled": true
+    },
+    {
+      "id": "fairhaven-neighborhood-news",
+      "name": "Fairhaven Neighborhood News",
+      "url": "https://fairhavenneighborhoodnews.com/feed/",
+      "category": "news",
+      "homepage": "https://fairhavenneighborhoodnews.com/",
+      "enabled": true
+    },
+    {
+      "id": "sun-chronicle",
+      "name": "The Sun Chronicle",
+      "url": "https://www.thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc",
+      "category": "news",
+      "homepage": "https://www.thesunchronicle.com/",
+      "note": "Paywalled. BLOX feed includes AP wire copy, so the county filter matters.",
+      "enabled": true
+    },
+    {
+      "id": "portuguese-times",
+      "name": "Portuguese Times",
+      "url": "https://portuguesetimes.com/feed/",
+      "category": "news",
+      "homepage": "https://portuguesetimes.com/",
+      "language": "pt",
+      "enabled": true
+    },
+    {
+      "id": "publics-radio",
+      "name": "The Public's Radio",
+      "url": "https://thepublicsradio.org/feed/",
+      "category": "news",
+      "homepage": "https://thepublicsradio.org/",
+      "enabled": true
+    },
+    {
+      "id": "wpri",
+      "name": "WPRI 12 (SE Mass)",
+      "url": "https://www.wpri.com/news/local-news/se-mass/feed/",
+      "category": "news",
+      "homepage": "https://www.wpri.com/news/local-news/se-mass/",
+      "enabled": true
+    },
+    {
+      "id": "patch-attleboro",
+      "name": "Attleboro Patch",
+      "url": "https://patch.com/feeds/aol/massachusetts/attleboro",
+      "category": "news",
+      "homepage": "https://patch.com/massachusetts/attleboro",
+      "enabled": true
+    },
+    {
+      "id": "patch-mansfield",
+      "name": "Mansfield Patch",
+      "url": "https://patch.com/feeds/aol/massachusetts/mansfield-ma",
+      "category": "news",
+      "homepage": "https://patch.com/massachusetts/mansfield-ma",
+      "enabled": true
+    },
+    {
+      "id": "commonwealth-beacon",
+      "name": "CommonWealth Beacon",
+      "url": "https://commonwealthbeacon.org/feed/",
+      "category": "news",
+      "homepage": "https://commonwealthbeacon.org/",
+      "enabled": true
+    },
+    {
+      "id": "ri-current",
+      "name": "Rhode Island Current",
+      "url": "https://rhodeislandcurrent.com/feed/",
+      "category": "news",
+      "homepage": "https://rhodeislandcurrent.com/",
+      "enabled": true
+    },
+    {
+      "id": "boston25",
+      "name": "Boston 25 News",
+      "url": "https://www.boston25news.com/arc/outboundfeeds/rss/?outputType=xml",
+      "category": "news",
+      "homepage": "https://www.boston25news.com/",
+      "enabled": true
+    },
+    {
+      "id": "wbz",
+      "name": "WBZ CBS Boston",
+      "url": "https://www.cbsnews.com/boston/latest/rss/main",
+      "category": "news",
+      "homepage": "https://www.cbsnews.com/boston/",
+      "enabled": true
+    },
+    {
+      "id": "masslive",
+      "name": "MassLive",
+      "url": "https://www.masslive.com/arc/outboundfeeds/rss/?outputType=xml",
+      "category": "news",
+      "homepage": "https://www.masslive.com/",
+      "enabled": true
+    },
+    {
+      "id": "standard-times",
+      "name": "The Standard-Times",
+      "url": "https://news.google.com/rss/search?q=site:southcoasttoday.com&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.southcoasttoday.com/",
+      "via": "google-news",
+      "note": "Gannett has no RSS; Google News site search.",
+      "enabled": true
+    },
+    {
+      "id": "herald-news",
+      "name": "The Herald News",
+      "url": "https://news.google.com/rss/search?q=site:heraldnews.com&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.heraldnews.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "taunton-gazette",
+      "name": "Taunton Daily Gazette",
+      "url": "https://news.google.com/rss/search?q=site:tauntongazette.com&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.tauntongazette.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "the-enterprise",
+      "name": "The Enterprise",
+      "url": "https://news.google.com/rss/search?q=site:enterprisenews.com+(Easton+OR+Raynham)&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.enterprisenews.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "dartmouth-week",
+      "name": "Dartmouth Week",
+      "url": "https://news.google.com/rss/search?q=site:dartmouth.theweektoday.com&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://dartmouth.theweektoday.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "reporter-today",
+      "name": "Reporter Today",
+      "url": "https://news.google.com/rss/search?q=site:reportertoday.com&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.reportertoday.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "westport-shorelines",
+      "name": "Westport Shorelines",
+      "url": "https://news.google.com/rss/search?q=site:eastbayri.com+Westport&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "homepage": "https://www.eastbayri.com/westport/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "bristol-da",
+      "name": "Bristol County District Attorney",
+      "url": "https://news.google.com/rss/search?q=%22Bristol+County+District+Attorney%22&hl=en-US&gl=US&ceid=US:en",
+      "category": "public-safety",
+      "homepage": "https://www.bristolda.com/",
+      "via": "google-news",
+      "section": "public-safety",
+      "note": "bristolda.com WordPress feed is a better source once reachable.",
+      "enabled": true
+    },
+    {
+      "id": "us-attorney-ma",
+      "name": "U.S. Attorney, District of Massachusetts",
+      "url": "https://www.justice.gov/feeds/justice-news.xml?type[press_release]=press_release&component[1871]=1871",
+      "category": "public-safety",
+      "homepage": "https://www.justice.gov/usao-ma",
+      "section": "public-safety",
+      "enabled": true
+    },
+    {
+      "id": "attleboro-police",
+      "name": "Attleboro Police",
+      "url": "https://www.attleboropolice.org/feed/",
+      "category": "public-safety",
+      "homepage": "https://www.attleboropolice.org/",
+      "defaultTowns": [
+        "attleboro"
+      ],
+      "section": "public-safety",
+      "enabled": true
+    },
+    {
+      "id": "new-bedford-police",
+      "name": "New Bedford Police",
+      "url": "https://www.newbedfordpd.com/feed/",
+      "category": "public-safety",
+      "homepage": "https://www.newbedfordpd.com/",
+      "defaultTowns": [
+        "new-bedford"
+      ],
+      "section": "public-safety",
+      "enabled": true
+    },
+    {
+      "id": "swansea-police",
+      "name": "Swansea Police",
+      "url": "https://swanseapolice.com/feed/",
+      "category": "public-safety",
+      "homepage": "https://swanseapolice.com/",
+      "defaultTowns": [
+        "swansea"
+      ],
+      "section": "public-safety",
+      "enabled": true
+    },
+    {
+      "id": "taunton-police",
+      "name": "Taunton Police",
+      "url": "https://tauntonpd.com/feed/",
+      "category": "public-safety",
+      "homepage": "https://tauntonpd.com/",
+      "defaultTowns": [
+        "taunton"
+      ],
+      "section": "public-safety",
+      "enabled": true
+    },
+    {
+      "id": "dartmouth-news",
+      "name": "Town of Dartmouth",
+      "url": "https://www.dartmouthma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.dartmouthma.gov/",
+      "defaultTowns": [
+        "dartmouth"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "dighton-news",
+      "name": "Town of Dighton",
+      "url": "https://www.dighton-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.dighton-ma.gov/",
+      "defaultTowns": [
+        "dighton"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "mansfield-news",
+      "name": "Town of Mansfield",
+      "url": "https://www.mansfieldma.com/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.mansfieldma.com/",
+      "defaultTowns": [
+        "mansfield"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "north-attleborough-news",
+      "name": "Town of North Attleborough",
+      "url": "https://www.northattleborough.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.northattleborough.gov/",
+      "defaultTowns": [
+        "north-attleborough"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "seekonk-news",
+      "name": "Town of Seekonk",
+      "url": "https://www.seekonk-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.seekonk-ma.gov/",
+      "defaultTowns": [
+        "seekonk"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "somerset-news",
+      "name": "Town of Somerset",
+      "url": "https://www.townofsomerset.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.townofsomerset.org/",
+      "defaultTowns": [
+        "somerset"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "taunton-news",
+      "name": "City of Taunton",
+      "url": "https://www.taunton-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "category": "government",
+      "homepage": "https://www.taunton-ma.gov/",
+      "defaultTowns": [
+        "taunton"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "westport-news",
+      "name": "Town of Westport",
+      "url": "https://www.westport-ma.com/rss.xml",
+      "category": "government",
+      "homepage": "https://www.westport-ma.com/",
+      "defaultTowns": [
+        "westport"
+      ],
+      "section": "government",
+      "platform": "revize",
+      "enabled": true
+    },
+    {
+      "id": "new-bedford-city",
+      "name": "City of New Bedford",
+      "url": "https://news.google.com/rss/search?q=site:newbedford-ma.gov&hl=en-US&gl=US&ceid=US:en",
+      "category": "government",
+      "homepage": "https://www.newbedford-ma.gov/",
+      "defaultTowns": [
+        "new-bedford"
+      ],
+      "section": "government",
+      "via": "google-news",
+      "note": "City site blocks automated requests (Cloudflare).",
+      "enabled": true
+    },
+    {
+      "id": "acushnet-agendas",
+      "name": "Acushnet meeting agendas",
+      "url": "https://www.acushnet.ma.us/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.acushnet.ma.us/AgendaCenter",
+      "defaultTowns": [
+        "acushnet"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "attleboro-agendas",
+      "name": "Attleboro meeting agendas",
+      "url": "https://www.cityofattleboro.us/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.cityofattleboro.us/AgendaCenter",
+      "defaultTowns": [
+        "attleboro"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "dartmouth-agendas",
+      "name": "Dartmouth meeting agendas",
+      "url": "https://www.dartmouthma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.dartmouthma.gov/AgendaCenter",
+      "defaultTowns": [
+        "dartmouth"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "dighton-agendas",
+      "name": "Dighton meeting agendas",
+      "url": "https://www.dighton-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.dighton-ma.gov/AgendaCenter",
+      "defaultTowns": [
+        "dighton"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "mansfield-agendas",
+      "name": "Mansfield meeting agendas",
+      "url": "https://www.mansfieldma.com/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.mansfieldma.com/AgendaCenter",
+      "defaultTowns": [
+        "mansfield"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "north-attleborough-agendas",
+      "name": "North Attleborough meeting agendas",
+      "url": "https://www.northattleborough.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.northattleborough.gov/AgendaCenter",
+      "defaultTowns": [
+        "north-attleborough"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "norton-agendas",
+      "name": "Norton meeting agendas",
+      "url": "https://www.nortonma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.nortonma.gov/AgendaCenter",
+      "defaultTowns": [
+        "norton"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "seekonk-agendas",
+      "name": "Seekonk meeting agendas",
+      "url": "https://www.seekonk-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.seekonk-ma.gov/AgendaCenter",
+      "defaultTowns": [
+        "seekonk"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "somerset-agendas",
+      "name": "Somerset meeting agendas",
+      "url": "https://www.townofsomerset.org/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.townofsomerset.org/AgendaCenter",
+      "defaultTowns": [
+        "somerset"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    },
+    {
+      "id": "taunton-agendas",
+      "name": "Taunton meeting agendas",
+      "url": "https://www.taunton-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+      "category": "meetings",
+      "homepage": "https://www.taunton-ma.gov/AgendaCenter",
+      "defaultTowns": [
+        "taunton"
+      ],
+      "section": "government",
+      "platform": "civicplus",
+      "enabled": true
+    }
+  ]
+}

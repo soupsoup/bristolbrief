@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import TideTable from '../components/TideTable.astro';
+import { activeAlerts } from '../lib/wire';
+import alertsData from '../data/alerts.json';
+
+const alerts = activeAlerts();
+const fmt = (iso: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' }) : 'further notice';
+---
+<Base title="Weather & tides" description="Weather alerts and tide times for Bristol County, Massachusetts.">
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">Weather</p>
+    <h1 class="page-title" style="margin-top:4px">Active weather alerts</h1>
+    <p class="page-dek">
+      Watches, warnings and advisories from the National Weather Service office in Norton for
+      northern and southern Bristol County, Buzzards Bay and Narragansett Bay.
+    </p>
+    {alertsData.updated && <p class="meta">Checked {fmt(alertsData.updated)}</p>}
+    {alerts.length === 0 ? (
+      <p>No active alerts right now.</p>
+    ) : (
+      alerts.map((a) => (
+        <article class="alert">
+          <h2>{a.event}</h2>
+          <p class="meta">{a.severity} · In effect until {fmt(a.expires)}</p>
+          <p class="meta">{a.areas}</p>
+          <p>{a.description}</p>
+          {a.instruction && <p><strong>What to do:</strong> {a.instruction}</p>}
+        </article>
+      ))
+    )}
+    <p class="meta">
+      Source: <a href="https://www.weather.gov/box/">National Weather Service Boston/Norton</a>.
+    </p>
+
+    <section id="tides">
+      <div class="section-head"><h2>Tides</h2></div>
+      <div class="tide-grid"><TideTable count={8} /></div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .alert { border-top: 3px solid var(--accent); padding: 12px 0 8px; max-width: 46em; }
+  .alert h2 { font-family: var(--serif-display); font-size: 26px; margin: 0 0 4px; }
+  .alert .meta { margin: 0 0 4px; }
+  .tide-grid :global(.tides) { display: grid; gap: 8px 32px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .tide-grid :global(.tide-note) { grid-column: 1 / -1; }
+</style>

@@ -1,0 +1,26 @@
+---
+import { activeAlerts } from '../lib/wire';
+const alerts = activeAlerts();
+const severe = alerts.some((a) => a.severity === 'Severe' || a.severity === 'Extreme');
+---
+{alerts.length > 0 && (
+  <div class={`alert-banner ${severe ? 'severe' : ''}`} role="region" aria-label="Weather alerts">
+    <div class="wrap alert-inner">
+      <strong>National Weather Service:</strong>
+      <span>{alerts.map((a) => a.event).join(' · ')}</span>
+      <a href="/weather/">Details</a>
+    </div>
+  </div>
+)}
+
+<style>
+  .alert-banner {
+    background: #f6c945;
+    color: #231a00;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+  .alert-banner.severe { background: #b3372b; color: #fff; }
+  .alert-inner { display: flex; flex-wrap: wrap; gap: 4px 10px; padding-top: 9px; padding-bottom: 9px; }
+  .alert-banner a { color: inherit; font-weight: 700; }
+</style>

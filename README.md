@@ -57,10 +57,17 @@ The pin lives in `src/data/pinned.json`, so you can also edit it on GitHub witho
 
 Commit and push (or let the hourly job rebuild) to update the site. An expired pin is ignored, and the lead goes back to automatic on the next build.
 
+## Deploying on Vercel
+
+1. Go to [vercel.com/new](https://vercel.com/new), import `soupsoup/bristolbrief`, and deploy. `vercel.json` sets the build; no settings need changing.
+2. In the project's **Settings → Git**, set the production branch to the branch you want live (the default branch, once this work is merged). Other branches get preview URLs.
+3. Every push deploys automatically, including the hourly headline commits from `.github/workflows/ingest.yml`.
+4. When you add a custom domain, set a `SITE_URL` environment variable (for example `https://bristolbrief.com`) so canonical links and the RSS feed use it. Until then they use the Vercel production URL.
+
 ## Before launch
 
 1. **Connect the newsletter.** Set `newsletterAction` in `src/site.config.ts` to your provider's form endpoint (beehiiv, Buttondown, Ghost, Mailchimp). Until then the form shows a "sign-ups open soon" message.
-2. **Set the domain** in `astro.config.mjs` and the contact email and social links in `src/site.config.ts`.
+2. **Set the domain** with the `SITE_URL` environment variable, and the contact email and social links in `src/site.config.ts`.
 3. **Merge to the default branch** so the hourly GitHub Actions job can run.
 
 ## Where things live

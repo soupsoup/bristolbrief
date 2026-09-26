@@ -1,0 +1,45 @@
+---
+import type { WireItem } from '../lib/wire';
+import { timeAgo } from '../lib/wire';
+import { sectionName, townName } from '../site.config';
+
+interface Props {
+  item: WireItem;
+  variant?: 'lead' | 'standard';
+}
+const { item, variant = 'standard' } = Astro.props;
+const Heading = variant === 'lead' ? 'h1' : 'h2';
+const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', ') : item.countywide ? 'Countywide' : null;
+---
+<article class={`wcard wcard-${variant}`}>
+  <div class="wcard-kicker">
+    <a class="kicker" href={`/section/${item.section}/`}>{sectionName(item.section)}</a>
+    {place && <span class="meta">· {place}</span>}
+  </div>
+  <Heading class="wcard-title">
+    <a href={item.link} target="_blank" rel="noopener">{item.title}</a>
+  </Heading>
+  {item.summary && <p class="wcard-dek">{item.summary}</p>}
+  <p class="meta wcard-meta">
+    <span class="wcard-source">{item.sourceName}</span> · <time datetime={item.date} data-ago>{timeAgo(item.date)}</time>
+  </p>
+</article>
+
+<style>
+  .wcard-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .wcard-title {
+    font-family: var(--serif-display);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0 0 6px;
+    font-size: 22px;
+  }
+  .wcard-title a { color: var(--ink); text-decoration: none; }
+  .wcard-title a:hover { color: var(--accent); }
+  .wcard-dek { margin: 0 0 6px; color: var(--ink-2); font-size: 17px; line-height: 1.45; }
+  .wcard-meta { margin: 0; }
+  .wcard-source { font-weight: 700; color: var(--ink); }
+  .wcard-lead .wcard-title { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.05; }
+  .wcard-lead .wcard-dek { font-size: 19px; }
+</style>

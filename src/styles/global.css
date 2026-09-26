@@ -8,8 +8,6 @@
   --accent: #b3372b;
   --accent-ink: #ffffff;
   --link: #14325a;
-  --sample-bg: #fff4d6;
-  --sample-ink: #7a5300;
 
   --serif-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --serif-body: 'Source Serif 4', Georgia, serif;
@@ -31,8 +29,6 @@
     --accent: #e0685b;
     --accent-ink: #12161b;
     --link: #9cc0ec;
-    --sample-bg: #3a3014;
-    --sample-ink: #f3d68b;
     color-scheme: dark;
   }
 }
@@ -80,20 +76,6 @@ a:hover { color: var(--accent); }
   font-family: var(--sans);
   font-size: 13px;
   color: var(--ink-2);
-}
-
-.sample-tag {
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: var(--sample-bg);
-  color: var(--sample-ink);
-  padding: 1px 6px;
-  border-radius: 3px;
-  vertical-align: middle;
 }
 
 .section-head {
@@ -167,3 +149,12 @@ a:hover { color: var(--accent); }
 }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Index pages (sections, towns): headline list plus a right rail. */
+.index-head { border-bottom: 3px solid var(--ink); padding-bottom: 16px; margin-bottom: 8px; }
+.index-head .kicker { margin: 32px 0 0; }
+.index-head .page-title { margin-top: 4px; }
+.index-grid { display: grid; gap: 40px; grid-template-columns: 1fr; padding-top: 18px; }
+@media (min-width: 1000px) {
+  .index-grid { grid-template-columns: minmax(0, 1fr) 320px; }
+}

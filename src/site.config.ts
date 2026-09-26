@@ -2,7 +2,7 @@ export const SITE = {
   name: 'The Bristol Brief',
   tagline: 'Local news for Bristol County, Massachusetts',
   description:
-    'Independent local news for the 20 cities and towns of Bristol County, Massachusetts: government, schools, food, real estate and things to do.',
+    'Local headlines, public meetings, weather and transit alerts for the 20 cities and towns of Bristol County, Massachusetts, gathered from local newsrooms and town halls.',
   email: 'tips@bristolbrief.com',
   // Point this at your newsletter provider's subscribe endpoint
   // (beehiiv, Buttondown, Ghost, Mailchimp, etc.). Leave empty to show a

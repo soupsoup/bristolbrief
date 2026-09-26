@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
-import StoryIndex from '../../components/StoryIndex.astro';
-import { getStories } from '../../lib/content';
+import WireList from '../../components/WireList.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { SECTIONS } from '../../site.config';
+import { wireItems } from '../../lib/wire';
 
 export function getStaticPaths() {
   return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { name: s.name } }));
@@ -10,8 +11,18 @@ export function getStaticPaths() {
 
 const { section } = Astro.params;
 const { name } = Astro.props;
-const stories = (await getStories()).filter((s) => s.data.section === section);
+const items = wireItems.filter((i) => i.category !== 'meetings' && i.section === section);
 ---
-<Base title={name} description={`${name} coverage from across Bristol County, Massachusetts.`}>
-  <StoryIndex kicker="Section" title={name} stories={stories} />
+<Base title={name} description={`${name} headlines from across Bristol County, Massachusetts.`}>
+  <div class="wrap">
+    <header class="index-head">
+      <p class="kicker">Section</p>
+      <h1 class="page-title">{name}</h1>
+      <p class="page-dek">The latest {name.toLowerCase()} headlines from local newsrooms, police and town halls.</p>
+    </header>
+    <div class="index-grid">
+      <WireList items={items} showSummary empty={`No recent ${name.toLowerCase()} headlines.`} />
+      <aside><NewsletterSignup /></aside>
+    </div>
+  </div>
 </Base>

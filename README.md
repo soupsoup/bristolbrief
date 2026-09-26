@@ -1,33 +1,26 @@
 # The Bristol Brief
 
-A local news site for the 20 cities and towns of Bristol County, Massachusetts, built with [Astro](https://astro.build). It is a fast static site: stories and events are Markdown files, and every page is prebuilt HTML.
+One front page for the 20 cities and towns of Bristol County, Massachusetts. The site gathers headlines from local newsrooms, police departments and town halls, plus meeting agendas, weather alerts, tides and commuter rail alerts. Every headline links to the original story. It's built with [Astro](https://astro.build) as a static site.
 
 ## Run it
 
 ```sh
 npm install
+npm run ingest   # fetch feeds and APIs, update src/data/*.json
 npm run dev      # http://localhost:4321
 npm run build    # outputs to dist/
-npm run preview  # serve the built site
+npm test         # parser, town-matching and data tests
 ```
 
-## What's included
+## Pages
 
-- **Front page** with a lead story, secondary stories, a "The latest" rail, newsletter signup, section rows, upcoming events and a town directory.
-- **Story pages** with byline, reading time, a sticky newsletter box and related stories (matched by town and section).
-- **Section pages** (`/section/government/`, etc.) and **town pages** (`/towns/new-bedford/`, etc.) for all 20 municipalities.
-- **Events calendar** (`/events/`) grouped by month.
-- **About**, **Subscribe**, **Send a tip** and 404 pages.
-- **RSS feed** at `/rss.xml`, Open Graph tags, light and dark themes, and mobile layouts.
+- **Home:** top stories, an "Around the county" rail, section rows, commuter rail alerts, tides, town hall notices and public meetings.
+- **`/news/`:** every headline, filterable by town (including Countywide), type and source.
+- **`/section/<slug>/`** and **`/towns/<slug>/`** for all 8 sections and 20 municipalities.
+- **`/meetings/`**, **`/weather/`** (alerts and tides), **`/transit/`**, **`/sources/`**, plus About, Subscribe and Send a tip.
+- **`/rss.xml`:** the headline feed, linking to the original stories.
 
-## Local headline wire
-
-The site also pulls real headlines from about 50 local sources: newsrooms, police departments, town and city halls, and meeting agenda feeds. It adds National Weather Service alerts for the county.
-
-```sh
-npm run ingest   # fetch feeds and APIs, update src/data/*.json
-npm test         # parser and town-matching tests
-```
+## How the headlines work
 
 - Sources live in `src/data/sources.json`. To add a feed, add an entry with `id`, `name`, `url` and `category` (`news`, `public-safety`, `government` or `meetings`).
 - Only items that name one of the county's 20 cities and towns (or a village in one, like Assonet or North Dartmouth) make it onto the site. "South Coast" alone doesn't count. Stories that mention Bristol County but no town are kept with a "Countywide" label: they show in the headline list (and the Countywide filter on `/news/`) but on no town page. The exception is a town hall, police department or agenda feed: give it `"defaultTowns": ["slug"]` and all of its items are kept and filed under that town.
@@ -36,59 +29,21 @@ npm test         # parser and town-matching tests
 - The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
 
-## Publishing a story
-
-Add a Markdown file to `src/content/stories/`. The filename becomes the URL (`/stories/<filename>/`).
-
-```md
----
-title: "Headline goes here"
-dek: "One- or two-sentence summary shown under the headline."
-date: 2026-10-01
-author: Jane Reporter          # optional, defaults to "Bristol Brief Staff"
-section: government            # news | government | schools | public-safety | real-estate | food-drink | business | things-to-do
-towns: [fall-river, somerset]  # slugs from src/site.config.ts
-image: /images/photo.jpg       # optional, put the file in public/images/
-imageAlt: "Caption / alt text"
-featured: true                 # optional, pins the story to the lead slot
-draft: false                   # optional, true hides it
----
-
-Story body in Markdown.
-```
-
-## Adding an event
-
-Add a Markdown file to `src/content/events/`:
-
-```md
----
-title: "Harvest Festival"
-date: 2026-10-03
-time: "10 a.m.–4 p.m."
-town: westport
-venue: "Town common"
-cost: "Free"
-url: https://example.com   # optional
----
-One-line description.
-```
-
-Past events drop off automatically at build time, so rebuild the site at least daily (a scheduled deploy hook on Netlify, Vercel or Cloudflare Pages works).
-
 ## Before launch
 
-1. **Delete the sample content.** Every file in `src/content/` with `sample: true` is placeholder copy, not real reporting, and is labeled "Sample" on the site.
-2. **Connect the newsletter.** Set `newsletterAction` in `src/site.config.ts` to your provider's form endpoint (beehiiv, Buttondown, Ghost, Mailchimp). Until then the form shows a "sign-ups open soon" message.
-3. **Set the domain** in `astro.config.mjs` and the tip email and social links in `src/site.config.ts`.
+1. **Connect the newsletter.** Set `newsletterAction` in `src/site.config.ts` to your provider's form endpoint (beehiiv, Buttondown, Ghost, Mailchimp). Until then the form shows a "sign-ups open soon" message.
+2. **Set the domain** in `astro.config.mjs` and the contact email and social links in `src/site.config.ts`.
+3. **Merge to the default branch** so the hourly GitHub Actions job can run.
 
 ## Where things live
 
 | Path | Purpose |
 | --- | --- |
 | `src/site.config.ts` | Site name, sections, towns, newsletter endpoint, contact info |
-| `src/content.config.ts` | Story and event schemas |
-| `src/content/` | Stories and events (Markdown) |
+| `src/data/sources.json` | Feed registry |
+| `src/data/*.json` | Ingested headlines, alerts, transit, tides, meetings, feed status |
+| `scripts/ingest.mjs`, `scripts/lib/` | Fetching, parsing, town tagging |
 | `src/pages/` | Routes |
-| `src/components/` | Header, footer, story cards, signup, event list |
+| `src/components/` | Header, footer, headline cards and lists, alerts, tides, meetings |
 | `src/styles/global.css` | Colors, type and shared styles |
+| `docs/sources.md` | Source research notes |

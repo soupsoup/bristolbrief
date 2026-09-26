@@ -1,19 +1,20 @@
 import rss from '@astrojs/rss';
-import { getStories } from '../lib/content';
+import { storyItems } from '../lib/wire';
 import { SITE } from '../site.config';
 
+// Headlines from local sources; each item links to the original story.
 export async function GET(context) {
-  const stories = await getStories();
   return rss({
-    title: SITE.name,
+    title: `${SITE.name}: Bristol County headlines`,
     description: SITE.description,
     site: context.site,
-    items: stories.map((s) => ({
-      title: s.data.title,
-      description: s.data.dek,
-      pubDate: s.data.date,
-      author: s.data.author,
-      link: `/stories/${s.id}/`,
-    })),
+    items: storyItems()
+      .slice(0, 100)
+      .map((i) => ({
+        title: i.title,
+        description: i.summary ? `${i.summary} (${i.sourceName})` : i.sourceName,
+        pubDate: new Date(i.date),
+        link: i.link,
+      })),
   });
 }

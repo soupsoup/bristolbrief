@@ -241,7 +241,8 @@ export function normalize(entries, source, now = new Date()) {
       source: source.id,
       sourceName: source.name,
       category: source.category,
-      section: source.section ?? guessSection(title, null) ?? guessSection(haystack),
+      // Headline only: summaries mislead ("the whale charged the ship" is not crime news).
+      section: source.section ?? guessSection(title),
       towns,
       ...(countywide ? { countywide: true } : {}),
     });

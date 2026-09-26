@@ -138,3 +138,34 @@ export const fmtTime = (iso: string) =>
   new Date(iso).toLocaleTimeString('en-US', { timeZone: ET, hour: 'numeric', minute: '2-digit' });
 export const fmtDay = (iso: string) =>
   new Date(iso).toLocaleDateString('en-US', { timeZone: ET, weekday: 'short', month: 'short', day: 'numeric' });
+
+export const todayLine = () =>
+  new Date().toLocaleDateString('en-US', {
+    timeZone: 'America/New_York',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+/** Stories from newsrooms and police/prosecutors (not town-hall notices or agendas). */
+export const storyItems = () => wireItems.filter((i) => i.category === 'news' || i.category === 'public-safety');
+
+/**
+ * Pick `n` top stories for the front page: recent items with a real summary,
+ * at most one per source so a single outlet can't fill the top of the page.
+ */
+export function pickTopStories(items: WireItem[], n: number, now = new Date()) {
+  const recent = items.filter((i) => now.valueOf() - new Date(i.date).valueOf() < 3 * 864e5);
+  // A real summary, not a fragment like "are in full swing."
+  const pool = (recent.length >= n ? recent : items).filter((i) => i.summary.length >= 80);
+  const picked: WireItem[] = [];
+  const sources = new Set<string>();
+  for (const item of pool) {
+    if (sources.has(item.source)) continue;
+    picked.push(item);
+    sources.add(item.source);
+    if (picked.length === n) break;
+  }
+  return picked;
+}

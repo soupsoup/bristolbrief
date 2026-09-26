@@ -1,55 +1,47 @@
 ---
 import Base from '../layouts/Base.astro';
-import StoryCard from '../components/StoryCard.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import EventList from '../components/EventList.astro';
-import { getStories, getUpcomingEvents } from '../lib/content';
 import WireList from '../components/WireList.astro';
+import WireCard from '../components/WireCard.astro';
 import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import { SECTIONS, TOWNS } from '../site.config';
-import { newsItems, meetingItems, wireItems } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories } from '../lib/wire';
 
-const stories = await getStories();
-const lead = stories.find((s) => s.data.featured) ?? stories[0];
-const rest = stories.filter((s) => s !== lead);
-const secondary = rest.slice(0, 2);
-const shown = new Set([lead, ...secondary].filter(Boolean).map((s) => s.id));
+// Everything on this page comes from the ingested feeds (scripts/ingest.mjs).
+const stories = storyItems();
+const [lead, ...secondary] = pickTopStories(stories, 3);
+const shown = new Set([lead, ...secondary].filter(Boolean).map((i) => i.id));
 
-// Headlines pulled from local outlets and town halls (scripts/ingest.mjs).
 // Render a few extra; the script below trims the rail to the height of the
 // stories beside it. Without JS (and on narrow screens) CSS shows six.
-const wire = newsItems().filter((i) => i.category === 'news' || i.category === 'public-safety').slice(0, 12);
+const wire = stories.filter((i) => !shown.has(i.id)).slice(0, 12);
+wire.forEach((i) => shown.add(i.id));
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
 
-// A row for each section with enough unshown stories to fill it;
-// everything else lands in "More stories".
+// A row per section with at least three stories not already shown.
 const sectionRows = SECTIONS.map((sec) => ({
   ...sec,
-  items: stories.filter((s) => s.data.section === sec.slug && !shown.has(s.id)).slice(0, 3),
+  items: stories.filter((i) => i.section === sec.slug && !shown.has(i.id)).slice(0, 3),
 })).filter((row) => row.items.length === 3);
-for (const row of sectionRows) row.items.forEach((s) => shown.add(s.id));
-const more = stories.filter((s) => !shown.has(s.id)).slice(0, 9);
-
-const events = (await getUpcomingEvents()).slice(0, 5);
 ---
 <Base>
   <div class="wrap">
-    {stories.length === 0 ? (
-      <p class="page-dek" style="margin-top:40px">No stories yet. Add Markdown files to <code>src/content/stories/</code>.</p>
+    {!lead ? (
+      <p class="page-dek" style="margin-top:40px">Headlines will appear after the first feed update (<code>npm run ingest</code>).</p>
     ) : (
       <section class="top" aria-label="Top stories">
         <div class="top-lead">
-          <StoryCard story={lead} variant="lead" />
+          <WireCard item={lead} variant="lead" />
         </div>
         <div class="top-secondary">
-          {secondary.map((s) => <StoryCard story={s} />)}
+          {secondary.map((i) => <WireCard item={i} />)}
         </div>
         <aside class="top-rail">
           <div class="rail-head">Around the county</div>
-          <WireList items={wire} empty="Headlines will appear after the first feed update." />
+          <WireList items={wire} />
           <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
       </section>
@@ -68,25 +60,12 @@ const events = (await getUpcomingEvents()).slice(0, 5);
               <a href={`/section/${row.slug}/`}>More {row.name} →</a>
             </div>
             <div class="grid-3">
-              {row.items.map((s) => <StoryCard story={s} />)}
+              {row.items.map((i) => <WireCard item={i} />)}
             </div>
           </section>
         ))}
-        {more.length > 0 && (
-          <section>
-            <div class="section-head"><h2>More stories</h2></div>
-            <div class="grid-3">
-              {more.map((s) => <StoryCard story={s} />)}
-            </div>
-          </section>
-        )}
       </div>
       <aside class="lower-rail">
-        <div class="section-head">
-          <h2>Things to do</h2>
-          <a href="/events/">Calendar →</a>
-        </div>
-        <EventList events={events} compact />
         <div class="section-head">
           <h2>Commuter rail</h2>
           <a href="/transit/">More →</a>

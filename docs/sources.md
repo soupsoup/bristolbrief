@@ -8,8 +8,9 @@ Research notes behind `src/data/sources.json`. Every feed marked **live** was fe
 2. `scripts/lib/parse.mjs` tags each item with the Bristol County towns it names (including villages such as Assonet, North Dartmouth and Ocean Grove) and guesses a section.
 3. Sources marked `"filter": "county"` keep only items that name a Bristol County place. Regional outlets (WPRI, WBSM, Boston TV) need this. Single-town sources (a town hall, a police department) use `defaultTowns` instead.
 4. Items merge into `src/data/wire.json`, deduplicated by link and headline and kept for 45 days.
-5. Active National Weather Service alerts for zones MAZ017 (Northern Bristol), MAZ020 (Southern Bristol), MAC005 (county), ANZ234 (Buzzards Bay) and ANZ236 (Narragansett Bay) go to `src/data/alerts.json`.
-6. `.github/workflows/ingest.yml` runs this hourly and commits only when headlines or alerts change. Your host then rebuilds the site.
+5. JSON APIs go to their own files: MBTA commuter rail alerts (`transit.json`), NOAA tides (`tides.json`) and CivicClerk meeting calendars (`calendar.json`). If an API is down, the last good file stays in place.
+6. Active National Weather Service alerts for zones MAZ017 (Northern Bristol), MAZ020 (Southern Bristol), MAC005 (county), ANZ234 (Buzzards Bay) and ANZ236 (Narragansett Bay) go to `src/data/alerts.json`.
+7. `.github/workflows/ingest.yml` runs this hourly and commits only when headlines or alerts change. Your host then rebuilds the site.
 
 The site shows each item's headline and the publisher's own summary, and links to the original. It never republishes full articles.
 
@@ -84,7 +85,6 @@ CivicPlus feed URLs follow one pattern: `/RSSFeed.aspx?ModID=1&CID=All-newsflash
 | Freetown | CivicPlus | Feed URLs returned 404 or timed out; needs a retry from another network |
 | Fairhaven, Raynham, Rehoboth, Berkley | WordPress (Fairhaven, Berkley) and Virtual Towns & Schools (Raynham, Rehoboth) | Cloudflare returns 403 to automated requests. Google News site searches could work as a fallback |
 | Dartmouth Police | WordPress with monthly log PDFs | Cloudflare 403 |
-| Taunton | CivicClerk public API: `tauntonma.api.civicclerk.com/v1/Events` | **Works** (returns JSON with meeting dates). Needs its own handler; would give real meeting dates instead of posting dates |
 
 Police log PDFs (New Bedford, Attleboro, Dartmouth, Taunton) exist but need PDF parsing.
 
@@ -93,10 +93,10 @@ Police log PDFs (New Bedford, Attleboro, Dartmouth, Taunton) exist but need PDF 
 | Source | Endpoint | Status | Use |
 |---|---|---|---|
 | NWS alerts | `api.weather.gov/alerts/active?zone=MAZ017,MAZ020,MAC005,ANZ234,ANZ236` | **Wired up** | Alert banner and `/weather/` |
-| MBTA alerts | `api-v3.mbta.com/alerts?filter[route]=CR-NewBedford,CR-Providence` | 200, works without a key at low volume | South Coast Rail and Attleboro/Mansfield commuter rail disruptions |
-| NOAA tides | `api.tidesandcurrents.noaa.gov/...station=8447636` (New Bedford), `8447386` (Fall River) | 200 | Tide widget, coastal flooding |
+| MBTA alerts | `api-v3.mbta.com/alerts?filter[route]=CR-NewBedford,CR-Providence` | **Wired up** | `/transit/`, home page, and town pages with a station. Filtered to line-wide alerts and the eight Bristol County stations; browsers re-fetch live (the API allows cross-origin requests) |
+| NOAA tides | `api.tidesandcurrents.noaa.gov/api/prod/datagetter` for New Bedford Harbor `8447636`, Fall River `8447386`, Round Hill Point `8447842`, Westport Harbor `8447975` | **Wired up** | `/weather/#tides`, home page, coastal town pages. The two harbor stations also report live water level |
 | USGS river gauges | `waterservices.usgs.gov/nwis/iv/?sites=01108000,01109060` | 200 | Taunton River and Threemile River flood levels |
-| Taunton CivicClerk | see above | 200 | Meeting calendar |
+| Taunton CivicClerk | `tauntonma.api.civicclerk.com/v1/Events` | **Wired up** | Dated meetings on `/meetings/`, the home page and the Taunton page. Times are stored as local wall-clock time with a misleading `Z` suffix |
 
 ### Promising but untested here
 

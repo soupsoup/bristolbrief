@@ -216,7 +216,10 @@ export function normalize(entries, source, now = new Date()) {
     const titleTowns = matchTowns(title);
     const matched = titleTowns.length ? titleTowns : matchTowns(haystack);
     if (source.filter === 'county' && matched.length === 0 && !mentionsCounty(haystack)) continue;
-    const towns = matched.length ? matched : source.defaultTowns ?? [];
+    // A town hall, police or agenda feed speaks for its own town even when an
+    // item names a neighbor ("Somerset Berkley Regional School Committee").
+    const institutional = source.category !== 'news' && source.defaultTowns?.length;
+    const towns = institutional ? source.defaultTowns : matched.length ? matched : source.defaultTowns ?? [];
     const date = e.date && e.date <= now ? e.date : now;
     out.push({
       id: itemId(e.link, title),

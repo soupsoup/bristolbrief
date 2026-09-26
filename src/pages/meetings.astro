@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import WireList from '../components/WireList.astro';
+import MeetingCalendar from '../components/MeetingCalendar.astro';
 import { meetingItems, sources } from '../lib/wire';
 import { TOWNS } from '../site.config';
 
@@ -18,6 +19,14 @@ const agendaSources = sources.filter((s) => s.category === 'meetings');
       The newest agendas and minutes posted by town boards and committees. Massachusetts law requires
       most meetings to be posted at least 48 hours in advance.
     </p>
+    <section>
+      <div class="section-head"><h2>Coming up</h2></div>
+      <MeetingCalendar limit={20} />
+      <p class="meta">
+        Scheduled meetings with dates come from towns that publish a meeting calendar (currently Taunton).
+        Below are the newest agenda and minutes postings from each town.
+      </p>
+    </section>
     <div class="meet-grid">
       {covered.map((t) => (
         <section>

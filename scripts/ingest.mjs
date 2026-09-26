@@ -2,11 +2,24 @@
 // Pull every enabled source in src/data/sources.json and write:
 //   src/data/wire.json         headlines for the site (merged with prior runs)
 //   src/data/alerts.json       active National Weather Service alerts
+//   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
+//   src/data/tides.json        NOAA tide predictions and latest water levels
+//   src/data/calendar.json     upcoming public meetings with real dates (CivicClerk)
 //   src/data/feed-status.json  per-source health report
 //
 // Usage: node scripts/ingest.mjs [--only id1,id2] [--dry-run]
 import { readFile, writeFile } from 'node:fs/promises';
 import { parseFeed, normalize, normalizeNws, mergeItems } from './lib/parse.mjs';
+import {
+  MBTA_ROUTES,
+  MBTA_STATIONS,
+  TIDE_STATIONS,
+  normalizeMbtaAlerts,
+  mbtaStopParents,
+  normalizeTidePredictions,
+  normalizeWaterLevel,
+  normalizeCivicClerk,
+} from './lib/data.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const path = (p) => new URL(p, ROOT);
@@ -19,6 +32,8 @@ const dryRun = args.includes('--dry-run');
 const UA = 'Mozilla/5.0 (compatible; BristolBriefBot/1.0; +https://bristolbrief.com/sources/)';
 // A few servers (justice.gov) refuse anything that doesn't look like a browser.
 const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36';
+// Towns whose meeting calendars run on CivicClerk (public OData API, no key).
+const CIVICCLERK = [{ town: 'taunton', tenant: 'tauntonma' }];
 const NWS_ZONES = ['MAZ017', 'MAZ020', 'MAC005', 'ANZ234', 'ANZ236'];
 const CONCURRENCY = 6;
 
@@ -110,10 +125,84 @@ async function ingestAlerts() {
   }
 }
 
+async function fetchJson(url) {
+  const { status, body } = await fetchText(url, { accept: 'application/json, application/vnd.api+json' });
+  if (status !== 200) throw new Error(`HTTP ${status}`);
+  return JSON.parse(body);
+}
+
+async function ingestTransit() {
+  try {
+    const routes = Object.keys(MBTA_ROUTES).join(',');
+    const [alerts, stops] = await Promise.all([
+      fetchJson(`https://api-v3.mbta.com/alerts?filter[route]=${routes}`),
+      fetchJson(`https://api-v3.mbta.com/stops?filter[id]=${Object.keys(MBTA_STATIONS).join(',')}&include=child_stops`),
+    ]);
+    // Platform -> station map, saved so the browser can re-filter live alerts.
+    const stopParents = mbtaStopParents(stops);
+    return { ok: true, alerts: normalizeMbtaAlerts(alerts, stopParents), stopParents };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+const ymd = (d) => d.toLocaleDateString('en-CA', { timeZone: 'America/New_York' }).replaceAll('-', '');
+
+async function ingestTides() {
+  const base = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?datum=MLLW&units=english&time_zone=lst_ldt&format=json&application=bristolbrief';
+  try {
+    const stations = await Promise.all(
+      TIDE_STATIONS.map(async (st) => {
+        const predictions = normalizeTidePredictions(
+          await fetchJson(`${base}&station=${st.id}&product=predictions&interval=hilo&begin_date=${ymd(new Date())}&range=96`),
+        );
+        let observed = null;
+        if (st.observed) {
+          try {
+            observed = normalizeWaterLevel(await fetchJson(`${base}&station=${st.id}&product=water_level&date=latest`));
+          } catch {
+            // Sensors go offline; predictions still stand on their own.
+          }
+        }
+        return { id: st.id, name: st.name, towns: st.towns, predictions, observed };
+      }),
+    );
+    return { ok: true, stations };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+async function ingestCalendar() {
+  const now = new Date();
+  // A week back (so recent agendas and minutes stay linked) through 60 days out.
+  const from = new Date(now.valueOf() - 7 * 864e5).toISOString().slice(0, 19) + 'Z';
+  const to = new Date(now.valueOf() + 60 * 864e5).toISOString().slice(0, 19) + 'Z';
+  const meetings = [];
+  const errors = [];
+  for (const { town, tenant } of CIVICCLERK) {
+    const filter = encodeURIComponent(`startDateTime ge ${from} and startDateTime le ${to}`);
+    try {
+      const json = await fetchJson(`https://${tenant}.api.civicclerk.com/v1/Events?$filter=${filter}&$orderby=startDateTime`);
+      meetings.push(...normalizeCivicClerk(json, { town, portal: `https://${tenant}.portal.civicclerk.com` }));
+    } catch (err) {
+      errors.push(`${town}: ${err.message}`);
+    }
+  }
+  meetings.sort((a, b) => a.start.localeCompare(b.start));
+  return { ok: errors.length < CIVICCLERK.length, meetings, error: errors.join('; ') || undefined };
+}
+
 const { sources } = await readJson('src/data/sources.json', { sources: [] });
 const selected = sources.filter((s) => s.enabled && (!only || only.includes(s.id)));
 
-const [results, alertResult] = await Promise.all([pool(selected, CONCURRENCY, ingestSource), ingestAlerts()]);
+const [results, alertResult, transit, tides, calendar] = await Promise.all([
+  pool(selected, CONCURRENCY, ingestSource),
+  ingestAlerts(),
+  ingestTransit(),
+  ingestTides(),
+  ingestCalendar(),
+]);
 
 const incoming = results.flatMap((r) => r.items);
 const wire = await readJson('src/data/wire.json', { items: [] });
@@ -130,12 +219,27 @@ console.log(
   `\n${results.length - failed.length}/${results.length} sources ok, ${incoming.length} items fetched, ${merged.length} in wire. ` +
     `NWS: ${alertResult.ok ? `${alertResult.alerts.length} active alerts` : `failed (${alertResult.error})`}`,
 );
+console.log(
+  `MBTA: ${transit.ok ? `${transit.alerts.length} alerts` : `failed (${transit.error})`}. ` +
+    `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
+    `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}.`,
+);
 
 if (!dryRun) {
   const now = new Date().toISOString();
   await writeFile(path('src/data/wire.json'), JSON.stringify({ updated: now, items: merged }, null, 1) + '\n');
   if (alertResult.ok) {
     await writeFile(path('src/data/alerts.json'), JSON.stringify({ updated: now, alerts: alertResult.alerts }, null, 1) + '\n');
+  }
+  // Keep the last good copy when an API is down.
+  if (transit.ok) {
+    await writeFile(path('src/data/transit.json'), JSON.stringify({ updated: now, alerts: transit.alerts, stopParents: transit.stopParents }, null, 1) + '\n');
+  }
+  if (tides.ok) {
+    await writeFile(path('src/data/tides.json'), JSON.stringify({ updated: now, stations: tides.stations }, null, 1) + '\n');
+  }
+  if (calendar.ok) {
+    await writeFile(path('src/data/calendar.json'), JSON.stringify({ updated: now, meetings: calendar.meetings }, null, 1) + '\n');
   }
   // Only rewrite the status file for a full run so --only doesn't drop entries.
   if (!only) {

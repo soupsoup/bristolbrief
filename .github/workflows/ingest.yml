@@ -26,14 +26,14 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run ingest
-      - name: Commit when headlines or alerts changed
+      - name: Commit when headlines, alerts or meetings changed
         run: |
-          if git diff --quiet -- src/data/wire.json src/data/alerts.json; then
+          if git diff --quiet -- src/data/wire.json src/data/alerts.json src/data/transit.json src/data/calendar.json; then
             echo "No new headlines."
             exit 0
           fi
           git config user.name "bristol-brief-bot"
           git config user.email "bristol-brief-bot@users.noreply.github.com"
-          git add src/data/wire.json src/data/alerts.json src/data/feed-status.json
+          git add src/data/
           git commit -m "Update headlines $(date -u +%Y-%m-%dT%H:%MZ)"
           git push

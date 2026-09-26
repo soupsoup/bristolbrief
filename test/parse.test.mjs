@@ -118,3 +118,11 @@ test('normalizes NWS alerts', () => {
   assert.equal(a.event, 'Flood Watch');
   assert.equal(a.description, 'Heavy rain.');
 });
+
+test('institutional feeds keep their own town', () => {
+  const xml = `<rss><channel><item><title>Somerset Berkley Regional School Committee</title><link>https://s/1</link></item></channel></rss>`;
+  const [agenda] = normalize(parseFeed(xml), { id: 'a', name: 'A', category: 'meetings', defaultTowns: ['somerset'] });
+  assert.deepEqual(agenda.towns, ['somerset']);
+  const [story] = normalize(parseFeed(xml), { id: 'n', name: 'N', category: 'news', defaultTowns: ['fairhaven'] });
+  assert.deepEqual(story.towns, ['somerset', 'berkley']);
+});

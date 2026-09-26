@@ -25,13 +25,14 @@ npm run preview  # serve the built site
 The site also pulls real headlines from about 50 local sources: newsrooms, police departments, town and city halls, and meeting agenda feeds. It adds National Weather Service alerts for the county.
 
 ```sh
-npm run ingest   # fetch all feeds, update src/data/*.json
+npm run ingest   # fetch feeds and APIs, update src/data/*.json
 npm test         # parser and town-matching tests
 ```
 
 - Sources live in `src/data/sources.json`. To add a feed, add an entry with `id`, `name`, `url`, `category` (`news`, `public-safety`, `government` or `meetings`) and either `"filter": "county"` (keep only items naming a Bristol County place) or `"defaultTowns": ["slug"]`.
 - `.github/workflows/ingest.yml` runs the ingest hourly and commits when headlines change, which triggers a redeploy on most hosts. Scheduled workflows only run on the default branch.
 - Headlines appear on the home page, `/news/` (filter by town, type and source), each town page, `/meetings/`, `/weather/` and `/sources/`.
+- The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
 
 ## Publishing a story

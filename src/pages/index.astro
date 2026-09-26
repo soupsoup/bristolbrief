@@ -5,6 +5,9 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 import EventList from '../components/EventList.astro';
 import { getStories, getUpcomingEvents } from '../lib/content';
 import WireList from '../components/WireList.astro';
+import TransitAlerts from '../components/TransitAlerts.astro';
+import TideTable from '../components/TideTable.astro';
+import MeetingCalendar from '../components/MeetingCalendar.astro';
 import { SECTIONS, TOWNS } from '../site.config';
 import { newsItems, meetingItems, wireItems } from '../lib/wire';
 
@@ -83,6 +86,16 @@ const events = (await getUpcomingEvents()).slice(0, 5);
         </div>
         <EventList events={events} compact />
         <div class="section-head">
+          <h2>Commuter rail</h2>
+          <a href="/transit/">More →</a>
+        </div>
+        <TransitAlerts compact />
+        <div class="section-head">
+          <h2>Tides</h2>
+          <a href="/weather/#tides">All stations →</a>
+        </div>
+        <TideTable stations={['8447636', '8447386']} count={2} />
+        <div class="section-head">
           <h2>From town hall</h2>
           <a href="/news/?category=government">More →</a>
         </div>
@@ -91,6 +104,7 @@ const events = (await getUpcomingEvents()).slice(0, 5);
           <h2>Public meetings</h2>
           <a href="/meetings/">All →</a>
         </div>
+        <MeetingCalendar limit={3} />
         <WireList items={meetings} />
         <div class="section-head">
           <h2>Your town</h2>

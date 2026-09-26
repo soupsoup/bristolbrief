@@ -75,3 +75,64 @@ export function timeAgo(iso: string, now = new Date()) {
   if (hrs < 24) return `${hrs}h ago`;
   return new Date(iso).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' });
 }
+
+import transitData from '../data/transit.json';
+import tidesData from '../data/tides.json';
+import calendarData from '../data/calendar.json';
+
+export interface TransitAlert {
+  id: string;
+  header: string;
+  effect: string;
+  severity: number;
+  lifecycle: string;
+  start: string;
+  end: string | null;
+  routes: string[];
+  stations: string[];
+  towns: string[];
+  url: string | null;
+}
+
+export interface TideStation {
+  id: string;
+  name: string;
+  towns: string[];
+  predictions: { time: string; local: string; height: number; type: 'high' | 'low' }[];
+  observed: { time: string; height: number } | null;
+}
+
+export interface Meeting {
+  id: string;
+  title: string;
+  body: string;
+  start: string;
+  location: string;
+  town: string;
+  link: string;
+  hasAgenda: boolean;
+}
+
+export const transitUpdated: string | null = transitData.updated;
+export const transitStopParents = (transitData.stopParents ?? {}) as Record<string, string>;
+export const transitAlerts = (now = new Date()) =>
+  ((transitData.alerts ?? []) as TransitAlert[]).filter((a) => !a.end || new Date(a.end) > now);
+
+export const tideStations = (tidesData.stations ?? []) as TideStation[];
+export const tidesUpdated: string | null = tidesData.updated;
+
+/** Upcoming tides from `now`, for one station. */
+export const nextTides = (station: TideStation, count = 4, now = new Date()) =>
+  station.predictions.filter((p) => new Date(p.time) > now).slice(0, count);
+
+export const upcomingMeetings = (now = new Date()) => {
+  const start = new Date(now);
+  start.setHours(0, 0, 0, 0);
+  return ((calendarData.meetings ?? []) as Meeting[]).filter((m) => new Date(m.start) >= start);
+};
+
+const ET = 'America/New_York';
+export const fmtTime = (iso: string) =>
+  new Date(iso).toLocaleTimeString('en-US', { timeZone: ET, hour: 'numeric', minute: '2-digit' });
+export const fmtDay = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { timeZone: ET, weekday: 'short', month: 'short', day: 'numeric' });

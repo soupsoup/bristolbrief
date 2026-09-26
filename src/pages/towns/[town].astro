@@ -4,6 +4,10 @@ import StoryIndex from '../../components/StoryIndex.astro';
 import EventList from '../../components/EventList.astro';
 import { getStories, getUpcomingEvents } from '../../lib/content';
 import WireList from '../../components/WireList.astro';
+import TransitAlerts from '../../components/TransitAlerts.astro';
+import TideTable from '../../components/TideTable.astro';
+import MeetingCalendar from '../../components/MeetingCalendar.astro';
+import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
 import { TOWNS } from '../../site.config';
 import { itemsForTown } from '../../lib/wire';
 
@@ -18,6 +22,8 @@ const events = (await getUpcomingEvents()).filter((e) => e.data.town === town).s
 const townItems = itemsForTown(town);
 const headlines = townItems.filter((i) => i.category !== 'meetings').slice(0, 15);
 const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
+const hasStation = Object.values(MBTA_STATIONS).some((s) => s.town === town);
+const hasTides = TIDE_STATIONS.some((s) => s.towns.includes(town));
 ---
 <Base title={name} description={`News, events and things to do in ${name}, Massachusetts.`}>
   <StoryIndex
@@ -34,10 +40,23 @@ const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
       <WireList items={headlines} showSummary showTowns={false} empty={`No recent headlines for ${name}.`} />
     </section>
     <div slot="rail">
+      <MeetingCalendar town={town} limit={5} />
       {meetings.length > 0 && (
         <>
           <div class="section-head"><h2>Meeting agendas</h2></div>
           <WireList items={meetings} showTowns={false} />
+        </>
+      )}
+      {hasStation && (
+        <>
+          <div class="section-head"><h2>Commuter rail</h2></div>
+          <TransitAlerts town={town} compact />
+        </>
+      )}
+      {hasTides && (
+        <>
+          <div class="section-head"><h2>Tides</h2></div>
+          <TideTable town={town} count={4} />
         </>
       )}
       <div class="section-head"><h2>Upcoming in {name}</h2></div>

@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config';
+---
+<Base title="Send a tip" description="Tell The Bristol Brief what we should be covering.">
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">Tips</p>
+    <h1 class="page-title" style="margin-top:4px">What should we be covering?</h1>
+    <div class="prose">
+      <p>
+        You know your neighborhood better than we do. Tell us about the new restaurant going in on
+        your corner, the agenda item nobody's talking about, or the event we should put on the calendar.
+      </p>
+      <p><a class="btn" href={`mailto:${SITE.email}?subject=News%20tip`}>Email {SITE.email}</a></p>
+      <h2>Helpful details to include</h2>
+      <ul>
+        <li>Which town, and where (street or business name).</li>
+        <li>When it happened or will happen.</li>
+        <li>How you know, plus any documents, photos or links.</li>
+        <li>How we can reach you if we have follow-up questions.</li>
+      </ul>
+      <p class="meta">
+        We read every tip. We won't publish your name without your permission.
+      </p>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,73 @@
+---
+import type { Story } from '../lib/content';
+import { formatDate, formatShortDate } from '../lib/content';
+import { sectionName, townName } from '../site.config';
+
+interface Props {
+  story: Story;
+  variant?: 'lead' | 'standard' | 'compact' | 'list';
+}
+
+const { story, variant = 'standard' } = Astro.props;
+const { title, dek, date, section, towns, image, imageAlt, sample, author } = story.data;
+const href = `/stories/${story.id}/`;
+const Heading = variant === 'lead' ? 'h1' : variant === 'list' || variant === 'compact' ? 'h3' : 'h2';
+const place = towns.length ? townName(towns[0]) : null;
+---
+<article class={`card card-${variant}`}>
+  {image && variant !== 'compact' && variant !== 'list' && (
+    <a href={href} class="card-img" tabindex="-1" aria-hidden="true">
+      <img src={image} alt={imageAlt ?? ''} loading={variant === 'lead' ? 'eager' : 'lazy'} />
+    </a>
+  )}
+  <div class="card-body">
+    <div class="card-kicker">
+      <a class="kicker" href={`/section/${section}/`}>{sectionName(section)}</a>
+      {place && <span class="meta">· {place}</span>}
+      {sample && <span class="sample-tag">Sample</span>}
+    </div>
+    <Heading class="card-title"><a href={href}>{title}</a></Heading>
+    {variant !== 'compact' && <p class="card-dek">{dek}</p>}
+    <p class="meta">
+      {variant === 'lead' || variant === 'list' ? <>By {author} · </> : null}
+      <time datetime={date.toISOString()}>
+        {variant === 'compact' ? formatShortDate(date) : formatDate(date)}
+      </time>
+    </p>
+  </div>
+</article>
+
+<style>
+  .card { display: grid; gap: 12px; }
+  .card-img img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    background: var(--paper-2);
+  }
+  .card-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .card-title {
+    font-family: var(--serif-display);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0 0 6px;
+    font-size: 22px;
+  }
+  .card-title a { color: var(--ink); text-decoration: none; }
+  .card-title a:hover { color: var(--accent); }
+  .card-dek { margin: 0 0 6px; color: var(--ink-2); font-size: 17px; line-height: 1.45; }
+  .card .meta { margin: 0; }
+
+  .card-lead .card-title { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.05; }
+  .card-lead .card-dek { font-size: 19px; }
+
+  .card-compact .card-title { font-size: 18px; }
+
+  .card-list {
+    grid-template-columns: 1fr;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .card-list .card-title { font-size: 24px; }
+</style>

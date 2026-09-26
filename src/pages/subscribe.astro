@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+---
+<Base title="Subscribe" description="Get Bristol County news in your inbox every weekday morning.">
+  <div class="wrap narrow">
+    <NewsletterSignup variant="banner" />
+    <div class="prose perks">
+      <h2>What you'll get</h2>
+      <ul>
+        <li>A short morning briefing with the day's local headlines, every weekday.</li>
+        <li>A Thursday weekend guide to the best things to do across the county.</li>
+        <li>Alerts when something big happens in your town.</li>
+      </ul>
+      <p class="meta">Free. Unsubscribe any time. We never sell your email address.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .narrow { max-width: 760px; padding-top: 40px; }
+  .perks { margin: 32px auto 0; }
+</style>

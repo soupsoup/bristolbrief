@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import StoryIndex from '../../components/StoryIndex.astro';
+import { getStories } from '../../lib/content';
+import { SECTIONS } from '../../site.config';
+
+export function getStaticPaths() {
+  return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { name: s.name } }));
+}
+
+const { section } = Astro.params;
+const { name } = Astro.props;
+const stories = (await getStories()).filter((s) => s.data.section === section);
+---
+<Base title={name} description={`${name} coverage from across Bristol County, Massachusetts.`}>
+  <StoryIndex kicker="Section" title={name} stories={stories} />
+</Base>

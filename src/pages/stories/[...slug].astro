@@ -1,0 +1,124 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { getStories, formatDate, readingTime, type Story } from '../../lib/content';
+import { sectionName, townName } from '../../site.config';
+
+export async function getStaticPaths() {
+  const stories = await getStories();
+  return stories.map((story) => ({ params: { slug: story.id }, props: { story, stories } }));
+}
+
+interface Props {
+  story: Story;
+  stories: Story[];
+}
+
+const { story, stories } = Astro.props;
+const { Content } = await render(story);
+const d = story.data;
+const related = stories
+  .filter((s) => s.id !== story.id)
+  .map((s) => ({
+    s,
+    score:
+      (s.data.section === d.section ? 2 : 0) +
+      s.data.towns.filter((t) => d.towns.includes(t)).length * 3,
+  }))
+  .sort((a, b) => b.score - a.score || b.s.data.date.valueOf() - a.s.data.date.valueOf())
+  .slice(0, 3)
+  .map(({ s }) => s);
+---
+<Base title={d.title} description={d.dek} image={d.image} type="article">
+  <article class="wrap story">
+    <header class="story-head">
+      <div class="story-kicker">
+        <a class="kicker" href={`/section/${d.section}/`}>{sectionName(d.section)}</a>
+        {d.towns.map((t) => <a class="town-link meta" href={`/towns/${t}/`}>{townName(t)}</a>)}
+      </div>
+      <h1 class="story-title">{d.title}</h1>
+      <p class="story-dek">{d.dek}</p>
+      <p class="meta byline">
+        By <strong>{d.author}</strong>{' · '}
+        <time datetime={d.date.toISOString()}>{formatDate(d.date)}</time>
+        {d.updated && <>{' · '}Updated <time datetime={d.updated.toISOString()}>{formatDate(d.updated)}</time></>}
+        {' · '}{readingTime(story.body)} min read
+      </p>
+    </header>
+
+    {d.sample && (
+      <p class="sample-note">
+        <span class="sample-tag">Sample</span>
+        This is placeholder copy that ships with the site template. It is not a real news report.
+      </p>
+    )}
+
+    {d.image && (
+      <figure class="story-figure">
+        <img src={d.image} alt={d.imageAlt ?? ''} />
+        {d.imageAlt && <figcaption class="meta">{d.imageAlt}</figcaption>}
+      </figure>
+    )}
+
+    <div class="story-grid">
+      <div class="prose story-body">
+        <Content />
+        <hr />
+        <p class="meta">
+          Know something we should look into? <a href="/tips/">Send us a tip</a>.
+        </p>
+      </div>
+      <aside class="story-rail">
+        <NewsletterSignup />
+      </aside>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="wrap">
+      <div class="section-head"><h2>Keep reading</h2></div>
+      <div class="related">
+        {related.map((s) => <StoryCard story={s} />)}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .story-head { max-width: 46em; padding-top: 36px; }
+  .story-kicker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .town-link { text-decoration: none; }
+  .town-link:hover { color: var(--accent); }
+  .story-title {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: clamp(32px, 5.5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 10px 0 12px;
+  }
+  .story-dek { font-size: 21px; line-height: 1.4; color: var(--ink-2); margin: 0 0 14px; }
+  .byline { border-top: 1px solid var(--rule); padding-top: 12px; }
+  .sample-note {
+    font-family: var(--sans);
+    font-size: 14px;
+    background: var(--sample-bg);
+    color: var(--sample-ink);
+    padding: 10px 12px;
+    border-radius: 4px;
+    max-width: 46em;
+  }
+  .story-figure { margin: 24px 0 0; }
+  .story-figure img { width: 100%; max-height: 620px; object-fit: cover; }
+  .story-figure figcaption { margin-top: 6px; }
+  .story-grid { display: grid; gap: 40px; grid-template-columns: 1fr; margin-top: 24px; }
+  @media (min-width: 1000px) {
+    .story-grid { grid-template-columns: minmax(0, 1fr) 320px; }
+    .story-rail { position: sticky; top: 20px; align-self: start; }
+  }
+  .story-body { font-size: 19px; }
+  .related { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .related { grid-template-columns: repeat(3, 1fr); } }
+</style>

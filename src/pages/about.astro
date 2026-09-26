@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { SITE, TOWNS } from '../site.config';
+---
+<Base title="About" description={`About ${SITE.name}.`}>
+  <div class="wrap">
+    <p class="kicker" style="margin:32px 0 0">About us</p>
+    <h1 class="page-title" style="margin-top:4px">News for the 20 towns of Bristol County</h1>
+    <div class="prose">
+      <p>
+        {SITE.name} is an independent, reader-supported news site covering Bristol County,
+        Massachusetts. We report on the decisions made in town halls, school committees and
+        planning boards, and we track what opens, closes and changes on the streets where you live.
+      </p>
+      <p>
+        Our coverage area runs from the Attleboros and Mansfield in the north to the SouthCoast
+        harbors of New Bedford, Fairhaven and Westport: {TOWNS.map((t) => t.name).join(', ')}.
+      </p>
+      <h2>What we cover</h2>
+      <ul>
+        <li><strong>Government:</strong> city councils, select boards, town meeting and the budget votes that shape your tax bill.</li>
+        <li><strong>Schools:</strong> school committees, building projects and what's happening in the classroom.</li>
+        <li><strong>Real estate and development:</strong> new projects, zoning fights and notable sales.</li>
+        <li><strong>Food and business:</strong> openings, closings and the people behind them.</li>
+        <li><strong>Things to do:</strong> a weekly calendar of festivals, shows, markets and meetings.</li>
+      </ul>
+      <h2>Our standards</h2>
+      <p>
+        We correct errors promptly and note corrections at the bottom of the story. We don't
+        publish sponsored content disguised as news. Advertisers and donors have no say in what we cover.
+      </p>
+      <h2>Get in touch</h2>
+      <p>
+        Story ideas, corrections and press releases: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+        You can also <a href="/tips/">send us a tip</a>.
+      </p>
+    </div>
+    <div style="max-width:40em;margin-top:40px"><NewsletterSignup /></div>
+  </div>
+</Base>

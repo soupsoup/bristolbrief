@@ -1,0 +1,85 @@
+---
+import { SITE } from '../site.config';
+
+interface Props {
+  variant?: 'box' | 'banner';
+}
+const { variant = 'box' } = Astro.props;
+const live = Boolean(SITE.newsletterAction);
+---
+<section class={`signup signup-${variant}`} aria-labelledby={`signup-${variant}-title`}>
+  <p class="kicker">Free newsletter</p>
+  <h2 id={`signup-${variant}-title`}>Bristol County in your inbox</h2>
+  <p class="signup-copy">
+    The stories that matter from New Bedford to Attleboro, plus the week's best things to do.
+    Delivered weekday mornings.
+  </p>
+  <form
+    class="signup-form"
+    method="post"
+    action={live ? SITE.newsletterAction : undefined}
+    data-live={live ? 'true' : 'false'}
+  >
+    <label class="visually-hidden" for={`email-${variant}`}>Email address</label>
+    <input
+      id={`email-${variant}`}
+      type="email"
+      name="email"
+      placeholder="you@example.com"
+      autocomplete="email"
+      required
+    />
+    <button class="btn" type="submit">Subscribe</button>
+  </form>
+  <p class="signup-status meta" role="status" hidden></p>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('.signup-form[data-live="false"]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = form.nextElementSibling as HTMLElement;
+      status.hidden = false;
+      status.textContent = 'Thanks! Sign-ups open soon. We’ll save you a seat.';
+      form.reset();
+    });
+  });
+</script>
+
+<style>
+  .signup {
+    background: var(--paper-2);
+    border-top: 3px solid var(--accent);
+    padding: 22px 20px 20px;
+  }
+  .signup h2 {
+    font-family: var(--serif-display);
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 4px 0 8px;
+  }
+  .signup .kicker { margin: 0; }
+  .signup-copy { margin: 0 0 14px; font-size: 16px; color: var(--ink-2); }
+  .signup-form { display: flex; flex-wrap: wrap; gap: 8px; }
+  .signup-form input {
+    flex: 1 1 200px;
+    min-width: 0;
+    font: inherit;
+    font-family: var(--sans);
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .signup-status { margin: 10px 0 0; }
+
+  .signup-banner {
+    text-align: center;
+    padding: 36px 20px;
+  }
+  .signup-banner h2 { font-size: clamp(28px, 4vw, 36px); }
+  .signup-banner .signup-copy { max-width: 34em; margin-left: auto; margin-right: auto; }
+  .signup-banner .signup-form { max-width: 480px; margin: 0 auto; }
+</style>

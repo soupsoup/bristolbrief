@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import StoryCard from '../components/StoryCard.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import EventList from '../components/EventList.astro';
+import { getStories, getUpcomingEvents } from '../lib/content';
+import { SECTIONS, TOWNS } from '../site.config';
+
+const stories = await getStories();
+const lead = stories.find((s) => s.data.featured) ?? stories[0];
+const rest = stories.filter((s) => s !== lead);
+const secondary = rest.slice(0, 2);
+const latest = rest.slice(2, 8);
+const shown = new Set([lead, ...secondary, ...latest].filter(Boolean).map((s) => s.id));
+
+// A row for each section with enough unshown stories to fill it;
+// everything else lands in "More stories".
+const sectionRows = SECTIONS.map((sec) => ({
+  ...sec,
+  items: stories.filter((s) => s.data.section === sec.slug && !shown.has(s.id)).slice(0, 3),
+})).filter((row) => row.items.length === 3);
+for (const row of sectionRows) row.items.forEach((s) => shown.add(s.id));
+const more = stories.filter((s) => !shown.has(s.id)).slice(0, 9);
+
+const events = (await getUpcomingEvents()).slice(0, 5);
+---
+<Base>
+  <div class="wrap">
+    {stories.length === 0 ? (
+      <p class="page-dek" style="margin-top:40px">No stories yet. Add Markdown files to <code>src/content/stories/</code>.</p>
+    ) : (
+      <section class="top" aria-label="Top stories">
+        <div class="top-lead">
+          <StoryCard story={lead} variant="lead" />
+        </div>
+        <div class="top-secondary">
+          {secondary.map((s) => <StoryCard story={s} />)}
+        </div>
+        <aside class="top-rail">
+          <div class="rail-head">The latest</div>
+          <ol class="latest">
+            {latest.map((s) => <li><StoryCard story={s} variant="compact" /></li>)}
+          </ol>
+        </aside>
+      </section>
+    )}
+
+    <div class="signup-row">
+      <NewsletterSignup variant="banner" />
+    </div>
+
+    <div class="lower">
+      <div class="lower-main">
+        {sectionRows.map((row) => (
+          <section>
+            <div class="section-head">
+              <h2>{row.name}</h2>
+              <a href={`/section/${row.slug}/`}>More {row.name} →</a>
+            </div>
+            <div class="grid-3">
+              {row.items.map((s) => <StoryCard story={s} />)}
+            </div>
+          </section>
+        ))}
+        {more.length > 0 && (
+          <section>
+            <div class="section-head"><h2>More stories</h2></div>
+            <div class="grid-3">
+              {more.map((s) => <StoryCard story={s} />)}
+            </div>
+          </section>
+        )}
+      </div>
+      <aside class="lower-rail">
+        <div class="section-head">
+          <h2>Things to do</h2>
+          <a href="/events/">Calendar →</a>
+        </div>
+        <EventList events={events} compact />
+        <div class="section-head">
+          <h2>Your town</h2>
+        </div>
+        <ul class="town-chips">
+          {TOWNS.map((t) => <li><a href={`/towns/${t.slug}/`}>{t.name}</a></li>)}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .top {
+    display: grid;
+    gap: 28px;
+    padding-top: 28px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'lead' 'secondary' 'rail';
+  }
+  .top-lead { grid-area: lead; }
+  .top-secondary { grid-area: secondary; display: grid; gap: 28px; }
+  .top-rail { grid-area: rail; }
+
+  @media (min-width: 720px) {
+    .top-secondary { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1000px) {
+    .top {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      grid-template-areas: 'lead rail' 'secondary rail';
+      align-items: start;
+      column-gap: 40px;
+    }
+    .top-rail { border-left: 1px solid var(--rule); padding-left: 28px; }
+  }
+
+  .rail-head {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--ink);
+    padding-top: 8px;
+    margin-bottom: 8px;
+  }
+  .latest { list-style: none; margin: 0; padding: 0; }
+  .latest li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .latest li:last-child { border-bottom: 0; }
+
+  .signup-row { margin-top: 44px; }
+
+  .lower { display: grid; gap: 0 40px; grid-template-columns: 1fr; }
+  @media (min-width: 1000px) {
+    .lower { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  }
+  .grid-3 { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) {
+    .grid-3 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  }
+
+  .town-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .town-chips a {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .town-chips a:hover { border-color: var(--accent); color: var(--accent); }
+</style>

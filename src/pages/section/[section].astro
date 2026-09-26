@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import WireList from '../../components/WireList.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { SECTIONS } from '../../site.config';
-import { wireItems } from '../../lib/wire';
+import { itemsForSection } from '../../lib/wire';
 
 export function getStaticPaths() {
   return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { name: s.name } }));
@@ -11,7 +11,7 @@ export function getStaticPaths() {
 
 const { section } = Astro.params;
 const { name } = Astro.props;
-const items = wireItems.filter((i) => i.category !== 'meetings' && i.section === section);
+const items = itemsForSection(section);
 ---
 <Base title={name} description={`${name} headlines from across Bristol County, Massachusetts.`}>
   <div class="wrap">

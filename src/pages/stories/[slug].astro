@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import WireList from '../../components/WireList.astro';
+import { localStories, storyItems, fmtDay, type WireItem } from '../../lib/wire';
+import { renderBody } from '../../lib/body';
+import { sectionName, townName } from '../../site.config';
+
+export function getStaticPaths() {
+  return localStories().map((story) => ({ params: { slug: story.slug }, props: { story } }));
+}
+
+const { story } = Astro.props as { story: WireItem };
+const more = storyItems()
+  .filter((i) => i.id !== story.id && i.towns.some((t) => story.towns.includes(t)))
+  .slice(0, 5);
+---
+<Base title={story.title} description={story.summary || story.title} image={story.image} type="article">
+  <article class="wrap story">
+    <header class="story-head">
+      <div class="story-kicker">
+        {story.sections.map((s) => <a class="kicker" href={`/section/${s}/`}>{sectionName(s)}</a>)}
+        {story.towns.map((t) => <a class="meta town" href={`/towns/${t}/`}>{townName(t)}</a>)}
+      </div>
+      <h1 class="story-title">{story.title}</h1>
+      {story.summary && <p class="story-dek">{story.summary}</p>}
+      <p class="meta byline">
+        {story.sourceName} · <time datetime={story.date}>{fmtDay(story.date)}</time>
+      </p>
+    </header>
+    {story.image && (
+      <figure class="story-figure">
+        <img src={story.image} alt={story.imageAlt ?? ''} />
+        {story.imageAlt && <figcaption class="meta">{story.imageAlt}</figcaption>}
+      </figure>
+    )}
+    <div class="story-grid">
+      <div class="prose story-body" set:html={renderBody(story.body)} />
+      <aside>
+        <NewsletterSignup />
+        {more.length > 0 && (
+          <>
+            <div class="section-head"><h2>More from {townName(story.towns[0])}</h2></div>
+            <WireList items={more} showTowns={false} />
+          </>
+        )}
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .story-head { max-width: 46em; padding-top: 36px; }
+  .story-kicker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .town { text-decoration: none; }
+  .story-title {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: clamp(32px, 5.5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 10px 0 12px;
+  }
+  .story-dek { font-size: 21px; line-height: 1.4; color: var(--ink-2); margin: 0 0 14px; }
+  .byline { border-top: 1px solid var(--rule); padding-top: 12px; }
+  .story-figure { margin: 24px 0 0; }
+  .story-figure img { width: 100%; max-height: 620px; object-fit: cover; }
+  .story-figure figcaption { margin-top: 6px; }
+  .story-grid { display: grid; gap: 40px; grid-template-columns: 1fr; margin-top: 24px; }
+  @media (min-width: 1000px) {
+    .story-grid { grid-template-columns: minmax(0, 1fr) 320px; }
+  }
+  .story-body { font-size: 19px; }
+</style>

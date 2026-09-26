@@ -1,0 +1,220 @@
+---
+import Admin from '../../layouts/Admin.astro';
+import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
+import { sources } from '../../lib/wire';
+import { sectionName, townName } from '../../site.config';
+
+export const prerender = false;
+
+let data;
+let loadError = '';
+try {
+  data = await loadAdminData();
+} catch (err: any) {
+  loadError = err?.message ?? 'Could not load editorial data';
+}
+const items = data?.items ?? [];
+const featured = data?.featured ?? [];
+const usedSources = [
+  { id: 'bristol-brief', name: 'The Bristol Brief (manual)' },
+  ...sources.filter((s) => items.some((i) => i.source === s.id)),
+];
+const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Police & courts', government: 'Town hall', meetings: 'Agenda' };
+---
+<Admin title="Stories" active="dashboard">
+  {loadError && <p class="a-toast error" style="position:static;transform:none;margin:16px 0">{loadError}</p>}
+
+  <h1>Stories</h1>
+  <p class="a-muted">
+    Everything the feeds pulled in, plus stories added here. Edit a headline, add a photo or sections,
+    hide an item, or feature it on the home page.
+  </p>
+
+  <h2>Featured on the home page</h2>
+  {featured.length === 0 ? (
+    <p class="a-muted">Nothing featured. The home page picks its top stories automatically. Use "Feature" below to choose them.</p>
+  ) : (
+    <ol class="featured">
+      {featured.map((i, n) => (
+        <li data-id={i.id}>
+          <span class="slot">{n === 0 ? 'Lead' : n < 3 ? `Top ${n + 1}` : `Rail ${n - 2}`}</span>
+          <span class="f-title">
+            <a href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>{i.title}</a>
+            <span class="a-muted"> · {i.sourceName}{data!.until.get(i.id) && <> · until {fmtAdminDate(data!.until.get(i.id)!)}</>}</span>
+          </span>
+          <span class="f-actions">
+            <button class="a-btn" data-op="move" data-direction="up" disabled={n === 0} aria-label="Move up">↑</button>
+            <button class="a-btn" data-op="move" data-direction="down" disabled={n === featured.length - 1} aria-label="Move down">↓</button>
+            <button class="a-btn danger" data-op="unfeature">Remove</button>
+          </span>
+        </li>
+      ))}
+    </ol>
+  )}
+
+  <h2>All stories <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
+  <form class="filters" onsubmit="return false">
+    <input type="search" name="q" placeholder="Search headlines" aria-label="Search headlines" />
+    <select name="source" aria-label="Source">
+      <option value="">All sources</option>
+      {usedSources.map((s) => <option value={s.id}>{s.name}</option>)}
+    </select>
+    <select name="category" aria-label="Type">
+      <option value="">All types</option>
+      {Object.entries(TYPE).map(([k, v]) => <option value={k}>{v}</option>)}
+    </select>
+    <select name="status" aria-label="Status">
+      <option value="">Any status</option>
+      <option value="featured">Featured</option>
+      <option value="edited">Edited</option>
+      <option value="hidden">Hidden</option>
+      <option value="manual">Added here</option>
+      <option value="photo">Has photo</option>
+    </select>
+  </form>
+
+  <table class="items">
+    <thead>
+      <tr><th class="thumb-col"></th><th>Story</th><th class="act-col">Actions</th></tr>
+    </thead>
+    <tbody>
+      {items.map((i) => (
+        <tr
+          data-id={i.id}
+          data-q={`${i.title} ${i.originalTitle ?? ''} ${i.sourceName}`.toLowerCase()}
+          data-source={i.source}
+          data-category={i.category}
+          data-status={[
+            i.featuredRank != null && 'featured',
+            i.edited && 'edited',
+            i.hidden && 'hidden',
+            i.manual && 'manual',
+            i.image && 'photo',
+          ].filter(Boolean).join(' ')}
+          class={i.hidden ? 'is-hidden' : undefined}
+        >
+          <td class="thumb-col">{i.image ? <img src={i.image} alt="" loading="lazy" data-thumb /> : null}</td>
+          <td>
+            <div class="badges">
+              {i.featuredRank != null && <span class="a-badge featured">{i.featuredRank === 0 ? 'Lead' : `Featured ${i.featuredRank + 1}`}</span>}
+              {i.manual && <span class="a-badge manual">Added here</span>}
+              {i.edited && <span class="a-badge">Edited</span>}
+              {i.hidden && <span class="a-badge hidden">Hidden</span>}
+            </div>
+            <a class="i-title" href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>{i.title}</a>
+            {i.originalTitle && <div class="a-muted orig">Feed headline: {i.originalTitle}</div>}
+            <div class="a-muted meta">
+              {i.sourceName} · {TYPE[i.category] ?? i.category} · {fmtAdminDate(i.date)}
+              {' · '}{i.sections.map(sectionName).join(', ')}
+              {i.towns.length > 0 && <> · {i.towns.map(townName).join(', ')}</>}
+              {i.countywide && <> · Countywide</>}
+            </div>
+          </td>
+          <td class="act-col">
+            {i.featuredRank == null
+              ? <button class="a-btn" data-op="feature">Feature</button>
+              : <button class="a-btn" data-op="unfeature">Unfeature</button>}
+            <button class="a-btn" data-op={i.hidden ? 'show' : 'hide'}>{i.hidden ? 'Show' : 'Hide'}</button>
+            <a class="a-btn" href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>Edit</a>
+            <a class="a-btn" href={i.link} target="_blank" rel="noopener" aria-label="Open original">↗</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <p class="a-muted none" hidden>No stories match.</p>
+</Admin>
+
+<script>
+  import { saveOp } from '../../lib/admin/client';
+
+  // A photo uploaded moments ago isn't on the site until the redeploy finishes.
+  const pending = (img: HTMLImageElement) =>
+    img.replaceWith(Object.assign(document.createElement('span'), { className: 'pending', textContent: 'Publishing…' }));
+  document.querySelectorAll<HTMLImageElement>('img[data-thumb]').forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) pending(img);
+    else img.addEventListener('error', () => pending(img));
+  });
+
+  // Filtering (client-side; the list is a few hundred rows).
+  const form = document.querySelector<HTMLFormElement>('.filters')!;
+  const rows = [...document.querySelectorAll<HTMLTableRowElement>('table.items tbody tr')];
+  const count = document.querySelector('.count')!;
+  const none = document.querySelector<HTMLElement>('.none')!;
+  function filter() {
+    const f = new FormData(form);
+    const q = String(f.get('q') ?? '').toLowerCase().trim();
+    const source = String(f.get('source') ?? '');
+    const category = String(f.get('category') ?? '');
+    const status = String(f.get('status') ?? '');
+    let shown = 0;
+    for (const r of rows) {
+      const ok =
+        (!q || r.dataset.q!.includes(q)) &&
+        (!source || r.dataset.source === source) &&
+        (!category || r.dataset.category === category) &&
+        (!status || r.dataset.status!.split(' ').includes(status));
+      r.hidden = !ok;
+      if (ok) shown++;
+    }
+    count.textContent = `(${shown} of ${rows.length})`;
+    none.hidden = shown > 0;
+  }
+  form.addEventListener('input', filter);
+  filter();
+
+  // Row and featured-list actions.
+  document.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-op]');
+    if (!btn) return;
+    const holder = btn.closest<HTMLElement>('[data-id]')!;
+    const id = holder.dataset.id!;
+    const title = holder.querySelector('.i-title, .f-title a')?.textContent?.trim().slice(0, 60) ?? id;
+    const kind = btn.dataset.op!;
+    const ops: Record<string, [Record<string, unknown>, string]> = {
+      feature: [{ type: 'feature', id, position: 'bottom' }, `feature "${title}"`],
+      unfeature: [{ type: 'unfeature', id }, `unfeature "${title}"`],
+      move: [{ type: 'move', id, direction: btn.dataset.direction }, `move "${title}" ${btn.dataset.direction}`],
+      hide: [{ type: 'update', id, fields: { hidden: true } }, `hide "${title}"`],
+      show: [{ type: 'update', id, fields: { hidden: null } }, `show "${title}"`],
+    };
+    const [op, summary] = ops[kind];
+    btn.disabled = true;
+    const res = await saveOp(op, summary);
+    if (res.ok) setTimeout(() => location.reload(), 700);
+    else btn.disabled = false;
+  });
+</script>
+
+<style>
+  .featured { list-style: none; margin: 0; padding: 0; }
+  .featured li { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+  .slot { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); width: 56px; flex: none; }
+  .f-title { flex: 1 1 300px; min-width: 0; }
+  .f-title a { font-weight: 700; color: var(--ink); }
+  .f-actions { display: flex; gap: 6px; }
+  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(3, 1fr); margin-bottom: 10px; }
+  @media (max-width: 800px) { .filters { grid-template-columns: 1fr 1fr; } .filters input { grid-column: 1 / -1; } }
+  table.items { width: 100%; border-collapse: collapse; }
+  table.items th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding: 6px 8px; border-bottom: 2px solid var(--ink); }
+  table.items td { padding: 10px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .thumb-col { width: 72px; }
+  .thumb-col img { width: 64px; height: 48px; object-fit: cover; display: block; }
+  .thumb-col :global(.pending) { font-size: 11px; color: var(--ink-2); }
+  .act-col { width: 1%; white-space: nowrap; text-align: right; }
+  .act-col .a-btn { margin-left: 4px; }
+  .badges { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 3px; }
+  .badges:empty { display: none; }
+  .i-title { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 16px; }
+  .i-title:hover { color: var(--accent); text-decoration: underline; }
+  .orig { font-size: 13px; font-style: italic; }
+  .meta { font-size: 13px; margin-top: 2px; }
+  tr.is-hidden .i-title { color: var(--ink-2); text-decoration: line-through; }
+  @media (max-width: 700px) {
+    .thumb-col { display: none; }
+    table.items td.act-col { white-space: normal; text-align: left; }
+    table.items tr { display: grid; grid-template-columns: 1fr; }
+    table.items thead { display: none; }
+    .act-col .a-btn { margin: 4px 4px 0 0; }
+  }
+</style>

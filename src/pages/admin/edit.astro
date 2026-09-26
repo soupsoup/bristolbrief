@@ -1,0 +1,34 @@
+---
+import Admin from '../../layouts/Admin.astro';
+import StoryForm from '../../components/admin/StoryForm.astro';
+import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
+import { rawWireItems } from '../../lib/wire';
+
+export const prerender = false;
+
+const id = Astro.url.searchParams.get('id') ?? '';
+const { items, until } = await loadAdminData();
+const item = items.find((i) => i.id === id);
+const raw = rawWireItems.find((i) => i.id === id);
+if (!item) Astro.response.status = 404;
+const original = raw && { title: raw.title, summary: raw.summary, section: raw.section, towns: raw.towns };
+---
+<Admin title={item ? `Edit: ${item.title}` : 'Story not found'}>
+  <p style="margin:16px 0 0"><a href="/admin/">← All stories</a></p>
+  {!item ? (
+    <>
+      <h1>Story not found</h1>
+      <p class="a-muted">It may have aged out of the feed (headlines are kept for 45 days) or been deleted.</p>
+    </>
+  ) : (
+    <>
+      <h1>{item.manual ? 'Edit story' : 'Edit feed item'}</h1>
+      <p class="a-muted">
+        {item.sourceName} · {fmtAdminDate(item.date)} ·
+        <a href={item.link} target="_blank" rel="noopener">{item.manual && !item.external ? 'View on site' : 'Open original'} ↗</a>
+        {!item.manual && <> · Edits change how this item appears here; the publisher's story is untouched.</>}
+      </p>
+      <StoryForm item={item} original={original} until={until.get(item.id)} />
+    </>
+  )}
+</Admin>

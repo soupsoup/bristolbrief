@@ -1,0 +1,288 @@
+---
+import { SECTIONS, TOWNS } from '../../site.config';
+import type { WireItem } from '../../lib/wire';
+
+interface Props {
+  /** The story as currently shown (edits applied). Omit for a new story. */
+  item?: WireItem;
+  /** Feed items: the values from the feed, so unchanged fields aren't saved as edits. */
+  original?: { title: string; summary: string; section: string; towns: string[] };
+  until?: string;
+}
+const { item, original, until } = Astro.props;
+const isNew = !item;
+const manual = isNew || item!.manual;
+const sections = new Set(item?.sections ?? []);
+const towns = new Set(item?.towns ?? []);
+const localDate = (iso?: string) => {
+  const d = iso ? new Date(iso) : new Date();
+  return new Date(d.valueOf() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+};
+---
+<form
+  class="story-form"
+  data-id={item?.id ?? ''}
+  data-new={isNew ? '1' : ''}
+  data-manual={manual ? '1' : ''}
+  data-original={original ? JSON.stringify(original) : ''}
+  novalidate
+>
+  <div class="cols">
+    <div class="main-col">
+      <label class="field">
+        <span>Headline</span>
+        <input type="text" name="title" value={item?.title ?? ''} maxlength="200" required />
+        {original && item?.title !== original.title && (
+          <small class="a-muted">Feed headline: {original.title} <button type="button" class="linkish" data-reset="title">Restore</button></small>
+        )}
+      </label>
+      <label class="field">
+        <span>Summary</span>
+        <textarea name="summary" maxlength="600" rows="3">{item?.summary ?? ''}</textarea>
+        {original && <small class="a-muted">Leave it as the feed's summary to keep updates from the feed.</small>}
+      </label>
+
+      {manual && (
+        <>
+          <label class="field">
+            <span>Link to the full story (optional)</span>
+            <input type="url" name="link" value={item?.external ? item.link : ''} placeholder="https://" />
+            <small class="a-muted">Link to another site, or leave blank and write the story below. It gets its own page here.</small>
+          </label>
+          <label class="field">
+            <span>Story text (used when there's no link)</span>
+            <textarea name="body" rows="14" placeholder={'Blank line between paragraphs.\n## Subheading\n- List item\n> Quote'}>{item?.body ?? ''}</textarea>
+          </label>
+          <div class="two">
+            <label class="field">
+              <span>Byline / source</span>
+              <input type="text" name="sourceName" value={item?.sourceName ?? 'The Bristol Brief'} maxlength="80" />
+            </label>
+            <label class="field">
+              <span>Date and time</span>
+              <input type="datetime-local" name="date" value={localDate(item?.date)} />
+            </label>
+          </div>
+        </>
+      )}
+
+      <fieldset>
+        <legend>Sections {manual ? '(pick at least one)' : ''}</legend>
+        <div class="a-checks">
+          {SECTIONS.map((s) => (
+            <label><input type="checkbox" name="sections" value={s.slug} checked={sections.has(s.slug) || (isNew && s.slug === 'news')} /> {s.name}</label>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Towns</legend>
+        <div class="a-checks">
+          {TOWNS.map((t) => (
+            <label><input type="checkbox" name="towns" value={t.slug} checked={towns.has(t.slug)} /> {t.name}</label>
+          ))}
+        </div>
+      </fieldset>
+    </div>
+
+    <aside class="side-col">
+      <fieldset>
+        <legend>Photo</legend>
+        <div class="photo-preview" data-has={item?.image ? '1' : ''}>
+          {item?.image && <img src={item.image} alt="" />}
+        </div>
+        <input type="hidden" name="image" value={item?.image ?? ''} />
+        <label class="a-btn file-btn">
+          <input type="file" accept="image/*" name="photo" />
+          {item?.image ? 'Replace photo' : 'Add photo'}
+        </label>
+        <button type="button" class="a-btn danger remove-photo" hidden={!item?.image}>Remove photo</button>
+        <label class="field" style="margin-top:12px">
+          <span>Caption / alt text</span>
+          <input type="text" name="imageAlt" value={item?.imageAlt ?? ''} maxlength="300" placeholder="Describe the photo; credit the photographer" />
+        </label>
+        <small class="a-muted">Photos are resized to 1600px before upload.</small>
+      </fieldset>
+
+      {isNew ? (
+        <fieldset>
+          <legend>Home page</legend>
+          <label class="inline"><input type="checkbox" name="feature" /> Make this the lead story</label>
+        </fieldset>
+      ) : (
+        <fieldset>
+          <legend>Home page</legend>
+          {item!.featuredRank != null
+            ? <p class="a-muted" style="margin:0 0 8px">Featured {item!.featuredRank === 0 ? 'as the lead' : `in position ${item!.featuredRank + 1}`}.</p>
+            : <p class="a-muted" style="margin:0 0 8px">Not featured.</p>}
+          <label class="field">
+            <span>Feature until (optional)</span>
+            <input type="datetime-local" name="until" value={until ? localDate(until) : ''} />
+          </label>
+          <div class="btn-row">
+            <button type="button" class="a-btn" data-feature="0">Make lead</button>
+            <button type="button" class="a-btn" data-feature="bottom">Add to featured</button>
+            {item!.featuredRank != null && <button type="button" class="a-btn danger" data-unfeature>Unfeature</button>}
+          </div>
+          <label class="inline" style="margin-top:12px"><input type="checkbox" name="hidden" checked={item!.hidden} /> Hide from the site</label>
+        </fieldset>
+      )}
+
+      <div class="btn-row save-row">
+        <button type="submit" class="a-btn primary">{isNew ? 'Publish story' : 'Save changes'}</button>
+        {!isNew && manual && <button type="button" class="a-btn danger" data-delete>Delete story</button>}
+      </div>
+    </aside>
+  </div>
+</form>
+
+<script>
+  import { saveOp, resizeImage, uploadImage, toast } from '../../lib/admin/client';
+
+  const form = document.querySelector<HTMLFormElement>('.story-form')!;
+  const id = form.dataset.id!;
+  const isNew = form.dataset.new === '1';
+  const manual = form.dataset.manual === '1';
+  const original = form.dataset.original ? JSON.parse(form.dataset.original) : null;
+  const preview = form.querySelector<HTMLElement>('.photo-preview')!;
+  const imageInput = form.elements.namedItem('image') as HTMLInputElement;
+  const removeBtn = form.querySelector<HTMLButtonElement>('.remove-photo')!;
+  let pendingPhoto: { dataUrl: string; name: string } | null = null;
+
+  const val = (name: string) => ((form.elements.namedItem(name) as HTMLInputElement | null)?.value ?? '').trim();
+  const checked = (name: string) =>
+    [...form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]:checked`)].map((i) => i.value);
+  const same = (a: string[], b: string[]) => a.length === b.length && a.every((x) => b.includes(x));
+  const toIso = (local: string) => (local ? new Date(local).toISOString() : null);
+
+  form.querySelector<HTMLInputElement>('input[name="photo"]')!.addEventListener('change', async (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+    try {
+      const dataUrl = await resizeImage(file);
+      pendingPhoto = { dataUrl, name: file.name };
+      preview.innerHTML = `<img src="${dataUrl}" alt="" />`;
+      removeBtn.hidden = false;
+    } catch (err: any) {
+      toast(err.message, { error: true });
+    }
+  });
+
+  removeBtn.addEventListener('click', () => {
+    pendingPhoto = null;
+    imageInput.value = '';
+    preview.innerHTML = '';
+    removeBtn.hidden = true;
+  });
+
+  form.querySelector('[data-reset="title"]')?.addEventListener('click', () => {
+    (form.elements.namedItem('title') as HTMLInputElement).value = original.title;
+  });
+
+  function collect() {
+    const title = val('title');
+    const summary = val('summary');
+    const sections = checked('sections');
+    const towns = checked('towns');
+    const fields: Record<string, unknown> = {};
+    if (manual) {
+      Object.assign(fields, {
+        title,
+        summary,
+        sections,
+        towns,
+        link: val('link') || null,
+        body: (form.elements.namedItem('body') as HTMLTextAreaElement).value,
+        sourceName: val('sourceName') || null,
+        date: toIso(val('date')),
+      });
+    } else {
+      // Only save what differs from the feed, so unchanged fields keep updating.
+      fields.title = title === original.title ? null : title;
+      fields.summary = summary === original.summary ? null : summary;
+      fields.sections = same(sections, [original.section]) ? null : sections;
+      fields.towns = same(towns, original.towns) ? null : towns;
+      fields.hidden = (form.elements.namedItem('hidden') as HTMLInputElement).checked || null;
+    }
+    fields.imageAlt = val('imageAlt') || null;
+    return { title, fields };
+  }
+
+  function check(title: string, fields: Record<string, any>) {
+    if (!title) return 'Add a headline.';
+    if (manual && !(fields.sections as string[]).length) return 'Pick at least one section.';
+    if (manual && !fields.link && !String(fields.body ?? '').trim()) return 'Add a link or write the story text.';
+    return null;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const { title, fields } = collect();
+    const problem = check(title, fields);
+    if (problem) return toast(problem, { error: true });
+    submit.disabled = true;
+    try {
+      if (pendingPhoto) {
+        toast('Uploading photo…');
+        const path = await uploadImage(pendingPhoto.dataUrl, pendingPhoto.name);
+        if (!path) return;
+        imageInput.value = path;
+        pendingPhoto = null;
+      }
+      fields.image = imageInput.value || null;
+      const res = isNew
+        ? await saveOp(
+            { type: 'addManual', story: fields, feature: (form.elements.namedItem('feature') as HTMLInputElement).checked },
+            `add story "${title.slice(0, 60)}"`,
+          )
+        : await saveOp({ type: 'update', id, fields }, `edit "${title.slice(0, 60)}"`);
+      if (res.ok) {
+        setTimeout(() => {
+          if (isNew && res.id) location.href = `/admin/edit/?id=${encodeURIComponent(res.id)}`;
+          else location.reload();
+        }, 800);
+      }
+    } finally {
+      submit.disabled = false;
+    }
+  });
+
+  form.querySelectorAll<HTMLButtonElement>('[data-feature]').forEach((btn) =>
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      const res = await saveOp(
+        { type: 'feature', id, position: btn.dataset.feature === 'bottom' ? 'bottom' : 0, until: toIso(val('until')) },
+        `feature "${val('title').slice(0, 60)}"`,
+      );
+      if (res.ok) setTimeout(() => location.reload(), 800);
+      else btn.disabled = false;
+    }),
+  );
+
+  form.querySelector('[data-unfeature]')?.addEventListener('click', async () => {
+    const res = await saveOp({ type: 'unfeature', id }, `unfeature "${val('title').slice(0, 60)}"`);
+    if (res.ok) setTimeout(() => location.reload(), 800);
+  });
+
+  form.querySelector('[data-delete]')?.addEventListener('click', async () => {
+    if (!confirm('Delete this story? This removes it from the site.')) return;
+    const res = await saveOp({ type: 'deleteManual', id }, `delete "${val('title').slice(0, 60)}"`);
+    if (res.ok) setTimeout(() => (location.href = '/admin/'), 800);
+  });
+</script>
+
+<style>
+  .cols { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .cols { grid-template-columns: minmax(0, 1fr) 340px; } }
+  .two { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  small { display: block; margin-top: 4px; font-size: 12px; }
+  .linkish { background: none; border: 0; padding: 0; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; }
+  .photo-preview img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 8px; display: block; background: var(--paper-2); }
+  .file-btn { position: relative; overflow: hidden; }
+  .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .save-row { padding: 6px 0 10px; }
+  .save-row .primary { font-size: 15px; padding: 9px 18px; }
+  label.inline { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+</style>

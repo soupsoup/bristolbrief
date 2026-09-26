@@ -1,62 +1,47 @@
 #!/usr/bin/env node
-// Pin a story to the home page lead slot.
+// Feature a story at the top of the home page (the first featured story is
+// the lead). Command-line shortcut for the admin's "Feature" button.
 //
-//   npm run pin -- "waterfront plan"                  pin the headline containing this text
-//   npm run pin -- https://example.com/story          pin by URL
-//   npm run pin -- "waterfront plan" --hours 48       keep it up for 48 hours (default 24)
-//   npm run pin -- "waterfront plan" --summary "..."  replace the summary shown on the home page
-//   npm run pin -- https://example.com/story --title "Headline" --source "Outlet" [--summary "..."] [--town new-bedford]
-//                                                      pin a story that isn't in the wire
-//   npm run pin -- --clear                            remove the pin
-//   npm run pin                                       show the current pin
+//   npm run pin -- "waterfront plan"             feature the headline containing this text
+//   npm run pin -- https://example.com/story     or match by URL
+//   npm run pin -- "waterfront plan" --hours 48  stop featuring after 48 hours (default 24)
+//   npm run pin -- --clear                       remove every featured story
+//   npm run pin                                  list featured stories
 import { readFile, writeFile } from 'node:fs/promises';
-import { findItems, resolvePin } from './lib/pin.mjs';
-import { TOWNS } from '../src/site.config.ts';
+import { applyEditorial, applyOp, featuredItems, normalizeEditorial } from './lib/editorial.mjs';
 
-const file = new URL('../src/data/pinned.json', import.meta.url);
+const edFile = new URL('../src/data/editorial.json', import.meta.url);
 const wire = JSON.parse(await readFile(new URL('../src/data/wire.json', import.meta.url), 'utf8')).items ?? [];
-const current = JSON.parse(await readFile(file, 'utf8')).lead ?? null;
+let ed;
+try {
+  ed = normalizeEditorial(JSON.parse(await readFile(edFile, 'utf8')));
+} catch {
+  ed = normalizeEditorial({});
+}
+const et = (iso) => new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' });
+const save = (doc) => writeFile(edFile, JSON.stringify(doc, null, 2) + '\n');
 
 const args = process.argv.slice(2);
-const et = (iso) => new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' });
-const flag = (name) => {
-  const i = args.indexOf(`--${name}`);
-  if (i === -1) return undefined;
-  const v = args[i + 1];
-  args.splice(i, 2);
-  return v;
-};
+const hi = args.indexOf('--hours');
+const hours = hi === -1 ? 24 : Number(args.splice(hi, 2)[1]);
 
 if (args.includes('--clear')) {
-  await writeFile(file, JSON.stringify({ lead: null }, null, 2) + '\n');
-  console.log('Pin cleared. The lead story is picked automatically again.');
+  await save({ ...ed, featured: [] });
+  console.log('Cleared. Top stories are picked automatically again.');
   process.exit(0);
 }
 
-const hours = Number(flag('hours') ?? 24);
-const title = flag('title');
-const sourceName = flag('source');
-const summary = flag('summary');
-const town = flag('town');
+const items = applyEditorial(wire, ed);
 const query = args.join(' ').trim();
 
 if (!query) {
-  if (!current) {
-    console.log('Nothing pinned. The lead story is picked automatically.');
-  } else {
-    const { item, reason } = resolvePin(current, wire);
-    console.log(
-      item
-        ? `Pinned until ${current.until ? et(current.until) : 'cleared'}: ${item.title} (${item.sourceName})`
-        : `Pin is inactive (${reason}): ${current.url}`,
-    );
-  }
+  const list = featuredItems(items);
+  if (!list.length) console.log('Nothing featured. Top stories are picked automatically.');
+  list.forEach((i, n) => {
+    const until = ed.featured.find((f) => f.id === i.id)?.until;
+    console.log(`${n + 1}. ${i.title} (${i.sourceName})${until ? ` until ${et(until)}` : ''}`);
+  });
   process.exit(0);
-}
-
-if (town && !TOWNS.some((t) => t.slug === town)) {
-  console.error(`Unknown town "${town}". Use one of: ${TOWNS.map((t) => t.slug).join(', ')}`);
-  process.exit(1);
 }
 
 if (!Number.isFinite(hours) || hours <= 0) {
@@ -64,35 +49,16 @@ if (!Number.isFinite(hours) || hours <= 0) {
   process.exit(1);
 }
 
-const matches = findItems(wire, query);
-if (matches.length > 1) {
-  console.error(`"${query}" matches ${matches.length} headlines. Use more of the headline, or the URL:\n`);
+const q = query.toLowerCase();
+const matches = /^https?:\/\//i.test(query)
+  ? items.filter((i) => i.link.replace(/\/+$/, '') === query.replace(/\/+$/, ''))
+  : items.filter((i) => i.title.toLowerCase().includes(q));
+if (matches.length !== 1) {
+  console.error(matches.length ? `"${query}" matches ${matches.length} headlines:\n` : `No headline matches "${query}". To feature a story that isn't in the feeds, add it in the admin.`);
   for (const m of matches.slice(0, 10)) console.error(`  ${m.title}\n    ${m.sourceName} · ${m.link}\n`);
   process.exit(1);
 }
 
-const now = new Date();
-const pin = {
-  url: matches[0]?.link ?? query,
-  pinnedAt: now.toISOString(),
-  until: new Date(now.valueOf() + hours * 3600e3).toISOString(),
-  ...(title && { title }),
-  ...(sourceName && { sourceName }),
-  ...(summary && { summary }),
-  ...(town && { towns: [town] }),
-};
-
-const { item, reason } = resolvePin(pin, wire, now);
-if (!item) {
-  console.error(
-    /^https?:\/\//i.test(query)
-      ? 'That URL is not in the wire. To pin it anyway, add --title "Headline" and --source "Outlet name".'
-      : `No headline contains "${query}". Check /news/ for the exact wording, or pin by URL.`,
-  );
-  process.exit(1);
-}
-
-await writeFile(file, JSON.stringify({ lead: pin }, null, 2) + '\n');
-console.log(`Pinned${reason === 'manual' ? ' (not in the wire, using your details)' : ''}: ${item.title}`);
-console.log(`  ${item.sourceName} · until ${et(pin.until)}`);
-console.log('Rebuild or push to update the site.');
+const until = new Date(Date.now() + hours * 3600e3).toISOString();
+await save(applyOp(ed, { type: 'feature', id: matches[0].id, until }));
+console.log(`Featured as the lead: ${matches[0].title}\n  ${matches[0].sourceName} · until ${et(until)}`);

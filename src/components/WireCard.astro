@@ -9,15 +9,22 @@ interface Props {
 }
 const { item, variant = 'standard' } = Astro.props;
 const Heading = variant === 'lead' ? 'h1' : 'h2';
+// Stories written here open on this site; everything else opens the publisher's page.
+const ext = !item.manual || item.external ? { target: '_blank', rel: 'noopener' } : {};
 const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', ') : item.countywide ? 'Countywide' : null;
 ---
 <article class={`wcard wcard-${variant}`}>
+  {item.image && (
+    <a href={item.link} class="wcard-img" tabindex="-1" aria-hidden="true" {...ext}>
+      <img src={item.image} alt={item.imageAlt ?? ''} loading={variant === 'lead' ? 'eager' : 'lazy'} />
+    </a>
+  )}
   <div class="wcard-kicker">
     <a class="kicker" href={`/section/${item.section}/`}>{sectionName(item.section)}</a>
     {place && <span class="meta">· {place}</span>}
   </div>
   <Heading class="wcard-title">
-    <a href={item.link} target="_blank" rel="noopener">{item.title}</a>
+    <a href={item.link} {...ext}>{item.title}</a>
   </Heading>
   {item.summary && <p class="wcard-dek">{item.summary}</p>}
   <p class="meta wcard-meta">
@@ -26,6 +33,8 @@ const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', '
 </article>
 
 <style>
+  .wcard-img { display: block; margin-bottom: 12px; }
+  .wcard-img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: var(--paper-2); }
   .wcard-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
   .wcard-title {
     font-family: var(--serif-display);

@@ -9,6 +9,7 @@ export const SITE = {
   // "coming soon" message instead of submitting.
   newsletterAction: '',
   social: {
+    discord: 'https://discord.gg/VPTjAAmvWB',
     instagram: 'https://instagram.com/',
     facebook: 'https://facebook.com/',
   },

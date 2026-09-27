@@ -7,7 +7,8 @@ import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
-import { SECTIONS, TOWNS } from '../site.config';
+import { SITE, SECTIONS, TOWNS } from '../site.config';
+import DiscordIcon from '../components/DiscordIcon.astro';
 import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection } from '../lib/wire';
 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
@@ -69,6 +70,13 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
             <a class="pin-title" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">National Grid outage map ↗</a>
             <a class="pin-title" href="https://outagemap.eversource.com/external/default.html" target="_blank" rel="noopener">Eversource outage map ↗</a>
           </div>
+          <a class="discord-pin" href={SITE.social.discord} target="_blank" rel="noopener">
+            <DiscordIcon size={28} />
+            <span>
+              <span class="dp-label">Join the conversation</span>
+              <span class="dp-title">Talk local news with neighbors on the Bristol Brief Discord ↗</span>
+            </span>
+          </a>
           <WireList items={wire} />
           <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
@@ -243,6 +251,29 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
     color: var(--accent);
   }
   .pin-title { font-family: var(--serif-display); font-size: 17px; font-weight: 600; }
+  .discord-pin {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 8px 0 4px;
+    padding: 12px;
+    border-radius: 4px;
+    background: #5865f2;
+    color: #fff;
+    text-decoration: none;
+  }
+  .discord-pin:hover { background: #4752c4; }
+  .discord-pin:hover .dp-title { text-decoration: underline; }
+  .dp-label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .dp-title { display: block; font-family: var(--serif-display); font-size: 17px; font-weight: 600; line-height: 1.25; }
   .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
 
   .signup-row { margin-top: 44px; }

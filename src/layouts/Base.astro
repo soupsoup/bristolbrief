@@ -40,6 +40,15 @@ const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
     />
+    <!-- Google tag (gtag.js). Public pages only; the admin uses its own layout. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-TLGJ47WQV5"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TLGJ47WQV5');
+    </script>
   </head>
   <body>
     <a class="visually-hidden" href="#main">Skip to content</a>

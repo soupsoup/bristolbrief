@@ -1,0 +1,51 @@
+---
+import type { SocialPost } from '../lib/wire';
+
+interface Props {
+  post: SocialPost;
+}
+const { post } = Astro.props;
+const host = post.platform === 'link' ? new URL(post.url).hostname.replace(/^www\./, '') : null;
+const who = post.authorName || (post.handle ? `@${post.handle}` : host);
+const lines = post.text.split('\n');
+---
+{/* Readable without JavaScript; the section script upgrades X and Bluesky
+    posts to the official embeds when they scroll into view. */}
+<article class="social-post" data-platform={post.platform}>
+  {post.platform === 'x' ? (
+    <blockquote class="twitter-tweet" data-dnt="true">
+      <p>{lines.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+      &mdash; {post.authorName}{post.handle && ` (@${post.handle})`}{' '}
+      <a href={post.url}>{post.postedLabel ?? 'View on X'}</a>
+    </blockquote>
+  ) : post.platform === 'bluesky' && post.uri ? (
+    <blockquote class="bluesky-embed" data-bluesky-uri={post.uri} data-bluesky-cid={post.cid}>
+      <p>{lines.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+      &mdash; {post.authorName}{post.handle && ` (@${post.handle})`}{' '}
+      <a href={post.url}>View on Bluesky</a>
+    </blockquote>
+  ) : (
+    <blockquote class="plain-post">
+      <p>{lines.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+      &mdash; {who} <a href={post.url} rel="noopener" target="_blank">View post</a>
+    </blockquote>
+  )}
+</article>
+
+<style>
+  .social-post { min-width: 0; }
+  .social-post :global(blockquote) {
+    margin: 0;
+    padding: 14px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    background: var(--paper);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+  .social-post :global(blockquote p) { margin: 0 0 10px; font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
+  .social-post :global(.twitter-tweet-rendered),
+  .social-post :global(iframe) { margin: 0 !important; max-width: 100% !important; }
+</style>

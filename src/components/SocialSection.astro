@@ -1,0 +1,65 @@
+---
+import SocialPost from './SocialPost.astro';
+import type { SocialPost as Post } from '../lib/wire';
+
+interface Props {
+  posts: Post[];
+  columns?: 1 | 2 | 3;
+}
+const { posts, columns = 3 } = Astro.props;
+---
+{posts.length > 0 && (
+  <div class={`social-grid cols-${columns}`} data-social>
+    {posts.map((post) => <SocialPost post={post} />)}
+  </div>
+)}
+
+<script>
+  // Load the platforms' embed scripts only when posts come into view.
+  const SCRIPTS: Record<string, string> = {
+    x: 'https://platform.twitter.com/widgets.js',
+    bluesky: 'https://embed.bsky.app/static/embed.js',
+  };
+  const loaded = new Set<string>();
+
+  function load(platform: string) {
+    if (loaded.has(platform) || !SCRIPTS[platform]) return;
+    loaded.add(platform);
+    if (platform === 'x' && matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.querySelectorAll('blockquote.twitter-tweet').forEach((b) => b.setAttribute('data-theme', 'dark'));
+    }
+    const s = document.createElement('script');
+    s.src = SCRIPTS[platform];
+    s.async = true;
+    document.body.append(s);
+  }
+
+  const grids = document.querySelectorAll<HTMLElement>('[data-social]');
+  const upgrade = (grid: Element) =>
+    grid.querySelectorAll<HTMLElement>('.social-post').forEach((p) => load(p.dataset.platform!));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          upgrade(e.target);
+          io.unobserve(e.target);
+        }
+      },
+      { rootMargin: '400px' },
+    );
+    grids.forEach((g) => io.observe(g));
+  } else {
+    grids.forEach(upgrade);
+  }
+</script>
+
+<style>
+  .social-grid { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 720px) {
+    .social-grid.cols-2, .social-grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1000px) {
+    .social-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+</style>

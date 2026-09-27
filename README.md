@@ -19,6 +19,7 @@ npm test         # parser, town-matching and data tests
 - **`/section/<slug>/`** and **`/towns/<slug>/`** for all 8 sections and 20 municipalities.
 - **`/meetings/`**, **`/weather/`** (alerts and tides), **`/transit/`**, **`/sources/`**, plus About, Subscribe and Send a tip.
 - **`/stories/<slug>/`:** stories written in the admin.
+- **`/social/`:** every social post editors have added.
 - **`/rss.xml`:** the headline feed, linking to the original stories.
 
 ## How the headlines work
@@ -39,6 +40,7 @@ npm test         # parser, town-matching and data tests
 - **Feature** stories on the home page: pick the **lead**, the **second** and **third** stories under it, or add stories to the **top of the rail** ("Around the county"). Each pick lasts one hour, then the freshest news takes over; set "Keep featured until" on a story's edit page to hold it longer. Empty slots always get the freshest story automatically.
 - **Add a story** to one or more sections and towns. Give it a link to another site, or write the text and it gets its own page at `/stories/<slug>/`.
 - **Photos** are resized in the browser to 1600px, then saved to `public/uploads/`.
+- **Social:** paste a link to a post on X (or Bluesky) and it appears in the home page's "On social" section, newest first (six on the home page, all of them at `/social/`). The admin fetches the post's text and author automatically; for other sites, type the text. Tag towns to also show a post on those town pages. Posts render as plain cards and upgrade to the official X or Bluesky embed when they scroll into view.
 - **Feeds** shows how each source did on the last headline update.
 
 Every save is a commit to `src/data/editorial.json` (or a photo under `public/uploads/`) on GitHub, so Vercel redeploys and the change is live in about a minute. The git history is the edit log, and any change can be reverted there. The hourly headline job never touches `editorial.json`.

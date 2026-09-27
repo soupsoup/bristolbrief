@@ -200,3 +200,21 @@ export function pickTopStories(items: WireItem[], n: number, now = new Date(), e
   return picked;
 }
 
+
+export interface SocialPost {
+  id: string;
+  platform: 'x' | 'bluesky' | 'link';
+  url: string;
+  text: string;
+  authorName?: string;
+  handle?: string;
+  postedLabel?: string;
+  uri?: string;
+  cid?: string;
+  towns?: string[];
+  addedAt: string;
+}
+
+/** Social posts editors added, in their chosen order (newest first by default). */
+export const socialPosts = () => ((editorialData as { social?: SocialPost[] }).social ?? []) as SocialPost[];
+export const socialForTown = (town: string) => socialPosts().filter((p) => p.towns?.includes(town));

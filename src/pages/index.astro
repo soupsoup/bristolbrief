@@ -6,8 +6,9 @@ import WireCard from '../components/WireCard.astro';
 import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
+import SocialSection from '../components/SocialSection.astro';
 import { SECTIONS, TOWNS } from '../site.config';
-import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts } from '../lib/wire';
 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
 // editors added in the admin, with their edits applied (src/data/editorial.json).
@@ -27,6 +28,7 @@ const shown = new Set(top.map((i) => i.id));
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
 const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
+const social = socialPosts().slice(0, 6);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
 
@@ -59,6 +61,16 @@ const sectionRows = SECTIONS.map((sec) => ({
     <div class="signup-row">
       <NewsletterSignup variant="banner" />
     </div>
+
+    {social.length > 0 && (
+      <section class="social-row" aria-labelledby="social-head">
+        <div class="section-head">
+          <h2 id="social-head">On social</h2>
+          {socialPosts().length > social.length && <a href="/social/">More posts →</a>}
+        </div>
+        <SocialSection posts={social} />
+      </section>
+    )}
 
     <div class="lower">
       <div class="lower-main">

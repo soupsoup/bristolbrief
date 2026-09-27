@@ -164,6 +164,8 @@ const path = Astro.url.pathname;
     padding: 12px 0;
   }
   .sections-inner > ul::-webkit-scrollbar { display: none; }
+  /* Nine sections plus Towns: tighten the spacing so they all fit on tablets and small laptops. */
+  @media (max-width: 1140px) { .sections-inner > ul { gap: 14px; } }
   .sections a {
     color: var(--ink);
     text-decoration: none;

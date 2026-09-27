@@ -9,7 +9,7 @@ import SocialSection from '../../components/SocialSection.astro';
 import PoliceLog from '../../components/PoliceLog.astro';
 import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
 import { TOWNS } from '../../site.config';
-import { itemsForTown, socialForTown } from '../../lib/wire';
+import { itemsForTown, socialForTown, listingsForTown } from '../../lib/wire';
 
 export function getStaticPaths() {
   return TOWNS.map((t) => ({ params: { town: t.slug }, props: { name: t.name } }));
@@ -23,6 +23,7 @@ const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
 const hasStation = Object.values(MBTA_STATIONS).some((s) => s.town === town);
 const hasTides = TIDE_STATIONS.some((s) => s.towns.includes(town));
 const social = socialForTown(town).slice(0, 4);
+const listings = listingsForTown(town).slice(0, 4);
 ---
 <Base title={name} description={`News, public meetings and notices from ${name}, Massachusetts.`}>
   <div class="wrap">
@@ -49,6 +50,15 @@ const social = socialForTown(town).slice(0, 4);
           </>
         )}
         <PoliceLog town={town} open={5} />
+        {listings.length > 0 && (
+          <>
+            <div class="section-head">
+              <h2>Listings</h2>
+              <a href="/section/listings/">All →</a>
+            </div>
+            <WireList items={listings} showTowns={false} />
+          </>
+        )}
         {social.length > 0 && (
           <>
             <div class="section-head"><h2>On social</h2></div>

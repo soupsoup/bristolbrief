@@ -216,10 +216,26 @@ const NOT_A_STORY_RE = [
   /^vol\.?\s*\d+/i,
   /^stories,\s*photos/i,
   /\blegal advertisements?\b/i,
-  /\b(?:help wanted|for rent|for sale|yard sale|estate sale|gutter|junk|home maintenance|van driver|open house)\b/i,
+  /\b(?:help wanted|yard sale|estate sale|gutter|junk|home maintenance|van driver)\b/i,
   /\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}/, // phone numbers
 ];
-export const looksLikeListing = (title) => {
+// Real-estate listings: homes, condos and land for sale or rent. These go to
+// the Listings section instead of the news.
+const STREET = '(?:st|street|rd|road|ave|avenue|ln|lane|dr|drive|way|ct|court|pl|place|blvd|boulevard|ter|terrace|cir|circle|hwy|highway|pkwy|parkway|path|trail|row)';
+const LISTING_RES = [
+  // Titles that are just an address and a town: "49 Edgewater Way, Wareham - GEM ON THE RIVER".
+  // News headlines that start with an address ("123 Main St. fire displaces family") don't
+  // put a comma or dash right after the street.
+  new RegExp(`^\\d+[A-Za-z]?(?:-\\d+)?\\s+(?:[A-Z][\\w'.-]*\\s+){1,4}${STREET}\\.?\\s*(?:,|\\s[-–—]\\s)`, 'i'),
+  /\b(?:just listed|new listing|price (?:reduced|improvement)|under contract|for sale by owner|fsbo)\b/i,
+  // "Open house" alone is often a fire station or senior center event; a listing gives an address.
+  new RegExp(`\\bopen house\\b.*\\b\\d+[A-Za-z]?\\s+(?:[A-Z][\\w'.-]*\\s+){1,4}${STREET}\\b`, 'i'),
+  /\b(?:house|home|condo|apartment|cottage|land|lot|unit|property|duplex|ranch|colonial|cape)s? for (?:sale|rent|lease)\b/i,
+  /\b\d+\s*(?:bed(?:room)?s?|br)\b.*\b\d+(?:\.\d)?\s*(?:bath(?:room)?s?|ba)\b/i,
+];
+export const isPropertyListing = (title) => LISTING_RES.some((re) => re.test(title));
+
+export const looksLikeClassified = (title) => {
   const letters = title.replace(/[^A-Za-z]/g, '');
   const shouting = letters.length >= 8 && letters.replace(/[^A-Z]/g, '').length / letters.length > 0.6;
   return shouting || NOT_A_STORY_RE.some((re) => re.test(title.trim()));
@@ -227,7 +243,7 @@ export const looksLikeListing = (title) => {
 
 /** A story from a single-town outlet that names no other place: assume it's about the outlet's town. */
 export const aboutHomeTown = (title, summary = '') =>
-  !looksLikeListing(title) && !NEARBY_OUTSIDE_RE.test(`${title} ${summary}`) && !ELSEWHERE_RE.test(`${title} ${summary}`);
+  !looksLikeClassified(title) && !NEARBY_OUTSIDE_RE.test(`${title} ${summary}`) && !ELSEWHERE_RE.test(`${title} ${summary}`);
 
 /** Names a region that includes Bristol County, and isn't about a specific place just outside it. */
 export const mentionsRegion = (str) => (mentionsBristolCountyMA(str) || REGION_RE.test(str)) && (mentionsBristolCountyMA(str) || !NEARBY_OUTSIDE_RE.test(str));
@@ -304,7 +320,7 @@ export function normalize(entries, source, now = new Date()) {
       sourceName: source.name,
       category: source.category,
       // Headline only: summaries mislead ("the whale charged the ship" is not crime news).
-      section: source.section ?? guessSection(title),
+      section: isPropertyListing(title) ? 'listings' : source.section ?? guessSection(title),
       towns,
       ...(countywide ? { countywide: true } : {}),
       // The feed gave no date; `date` is when we first saw the item.

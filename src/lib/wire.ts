@@ -96,7 +96,7 @@ export const wireItems = (applyEditorial(rawWireItems, editorialData) as WireIte
 /** Every story kept (six months of direct feeds, 14 days of Google News), newest first. No meeting agendas. */
 export const allStories = () =>
   (applyEditorial(allWireItems, editorialData) as WireItem[]).filter(
-    (i) => i.category !== 'meetings' && isPublishedAt(i.date),
+    (i) => i.category !== 'meetings' && !isListing(i) && isPublishedAt(i.date),
   );
 export const sources = (sourcesData.sources ?? []) as Source[];
 export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
@@ -110,11 +110,18 @@ export function activeAlerts(now = new Date()): Alert[] {
     .filter((a) => (seen.has(a.event) ? false : (seen.add(a.event), true)));
 }
 
-export const newsItems = () => wireItems.filter((i) => i.category !== 'meetings');
+/** Property listings live only in the Listings section (and a small box on town pages). */
+export const isListing = (i: { sections: string[] }) => i.sections.includes('listings');
+export const listingItems = () => wireItems.filter(isListing);
+export const listingsForTown = (town: string) => listingItems().filter((i) => i.towns.includes(town));
+
+export const newsItems = () => wireItems.filter((i) => i.category !== 'meetings' && !isListing(i));
 export const meetingItems = () => wireItems.filter((i) => i.category === 'meetings');
-export const itemsForTown = (town: string) => wireItems.filter((i) => i.towns.includes(town));
+export const itemsForTown = (town: string) => wireItems.filter((i) => i.towns.includes(town) && !isListing(i));
 export const itemsForSection = (section: string) =>
-  wireItems.filter((i) => i.category !== 'meetings' && i.sections.includes(section));
+  wireItems.filter(
+    (i) => i.category !== 'meetings' && i.sections.includes(section) && (section === 'listings' || !isListing(i)),
+  );
 /** Stories an editor featured, in priority order (first is the lead). */
 export const featuredStories = () => featuredItems(wireItems) as WireItem[];
 /** Manual stories that have their own page on this site. */
@@ -191,7 +198,8 @@ export const todayLine = () =>
   });
 
 /** Stories from newsrooms and police/prosecutors (not town-hall notices or agendas). */
-export const storyItems = () => wireItems.filter((i) => i.category === 'news' || i.category === 'public-safety');
+export const storyItems = () =>
+  wireItems.filter((i) => (i.category === 'news' || i.category === 'public-safety') && !isListing(i));
 
 /**
  * Pick `n` top stories for the front page: recent items with a real summary,

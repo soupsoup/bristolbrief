@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFeed, normalize, matchTowns, mergeItems, excerpt, guessSection, normalizeNws } from '../scripts/lib/parse.mjs';
+import { parseFeed, normalize, matchTowns, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing } from '../scripts/lib/parse.mjs';
 
 const RSS = `<?xml version="1.0"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
@@ -221,4 +221,25 @@ test('single-town outlets file unnamed local stories under their town', () => {
   assert.deepEqual(items.map((i) => [i.link, i.towns.join()]), [['https://d/1', 'dartmouth'], ['https://d/2', 'fall-river']]);
   // Without homeTown the unnamed story is dropped as before.
   assert.equal(normalize(parseFeed(xml), { id: 'x', name: 'X', category: 'news' }).length, 1);
+});
+
+test('property listings are recognized and filed under Listings', () => {
+  for (const t of [
+    '49 Edgewater Way, Wareham - GEM ON THE RIVER',
+    'Open House 2 Rosemary Lane, Unit A, Wareham',
+    'House for rent in Mattapoisett',
+    '3 bed, 2 bath colonial on Smith Neck Road',
+    '45 Elm St., Dartmouth — 3 bed cape',
+  ]) assert.equal(isPropertyListing(t), true, t);
+  for (const t of [
+    '123 Main St. fire displaces family',
+    '12 Hathaway Road home sells for $1.2M',
+    'Council on Aging to hold open house Tuesday',
+    'Fire Department Open House',
+    'Town closes deal on Bliss Corner',
+  ]) assert.equal(isPropertyListing(t), false, t);
+  const xml = `<rss><channel><item><title>45 Elm St., Dartmouth - 3 bed cape</title><link>https://l/1</link></item></channel></rss>`;
+  const [item] = normalize(parseFeed(xml), { id: 'dw', name: 'Dartmouth Week', category: 'news', homeTown: 'dartmouth' });
+  assert.equal(item.section, 'listings');
+  assert.deepEqual(item.towns, ['dartmouth']);
 });

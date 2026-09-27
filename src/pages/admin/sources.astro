@@ -1,13 +1,13 @@
 ---
 import Admin from '../../layouts/Admin.astro';
-import { sources, sourceStatus, wireUpdated, rawWireItems } from '../../lib/wire';
+import { sources, sourceStatus, wireUpdated, allWireItems } from '../../lib/wire';
 import { fmtAdminDate } from '../../lib/admin/data';
 
 export const prerender = false;
 
 const status = new Map(sourceStatus.map((s) => [s.id, s]));
 const counts = new Map<string, number>();
-for (const i of rawWireItems) counts.set(i.source, (counts.get(i.source) ?? 0) + 1);
+for (const i of allWireItems) counts.set(i.source, (counts.get(i.source) ?? 0) + 1);
 const rows = sources
   .filter((s) => s.enabled)
   .map((s) => ({ ...s, st: status.get(s.id), inWire: counts.get(s.id) ?? 0 }))

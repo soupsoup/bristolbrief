@@ -108,7 +108,7 @@ test('future dates are clamped to now', () => {
 test('merge dedupes, keeps first-seen date and prunes old items', () => {
   const now = new Date('2026-09-26T12:00:00Z');
   const old = { id: 'a', title: 'Same story', date: '2026-09-25T00:00:00.000Z' };
-  const stale = { id: 'b', title: 'Ancient', date: '2026-06-01T00:00:00.000Z' };
+  const stale = { id: 'b', title: 'Ancient', date: '2026-03-01T00:00:00.000Z' };
   const merged = mergeItems([old, stale], [
     { id: 'a', title: 'Same story', date: '2026-09-26T00:00:00.000Z' },
     { id: 'c', title: 'Same  Story!', date: '2026-09-26T01:00:00.000Z' },
@@ -159,4 +159,24 @@ test('items without a feed date are flagged undated', () => {
   const xml = `<rss><channel><item><title>Westport transfer station closed</title><link>https://w/1</link></item></channel></rss>`;
   const [item] = normalize(parseFeed(xml), { id: 'w', name: 'W', category: 'government', defaultTowns: ['westport'] });
   assert.equal(item.undated, true);
+});
+
+test('direct feeds go back 45 days and stay six months; Google News stays 14 days', () => {
+  const now = new Date('2026-09-27T00:00:00Z');
+  const agg = new Set(['gn']);
+  const merged = mergeItems(
+    [
+      { id: 'kept', title: 'Archived feed story', source: 'feed', date: '2026-05-01T00:00:00.000Z' },
+      { id: 'expired', title: 'Too old', source: 'feed', date: '2026-03-01T00:00:00.000Z' },
+      { id: 'gn-old', title: 'Old Google News', source: 'gn', date: '2026-09-01T00:00:00.000Z' },
+    ],
+    [
+      { id: 'new40', title: 'Found 40 days back', source: 'feed', date: '2026-08-18T00:00:00.000Z' },
+      { id: 'new60', title: 'Found 60 days back', source: 'feed', date: '2026-07-29T00:00:00.000Z' },
+      { id: 'gn10', title: 'Google News 10 days', source: 'gn', date: '2026-09-17T00:00:00.000Z' },
+      { id: 'gn20', title: 'Google News 20 days', source: 'gn', date: '2026-09-07T00:00:00.000Z' },
+    ],
+    { now, aggregatedSources: agg },
+  );
+  assert.deepEqual(merged.map((i) => i.id), ['gn10', 'new40', 'kept']);
 });

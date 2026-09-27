@@ -13,7 +13,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { POLICE_DEPTS, POLICE_KEEP_DAYS, parseNbArrestLog, parseTauntonLog, mergePolice } from './lib/police.mjs';
+import { POLICE_DEPTS, POLICE_KEEP_DAYS, parseNbArrestLog, parseTauntonLog, parseAttleboroLog, mergePolice } from './lib/police.mjs';
 
 const run = promisify(execFile);
 const FILE = new URL('../src/data/police-log.json', import.meta.url);
@@ -52,8 +52,20 @@ function nbDate(url) {
 }
 
 async function listPdfs(dept) {
-  const html = await get(dept.index);
-  return [...new Set(html.match(dept.pdfPattern) ?? [])];
+  const pages = dept.pages?.() ?? [dept.index];
+  const found = [];
+  let ok = 0;
+  for (const page of pages) {
+    try {
+      found.push(...((await get(page)).match(dept.pdfPattern) ?? []));
+      ok++;
+    } catch (err) {
+      if (page === pages[0] && pages.length === 1) throw err;
+      console.warn(`${page}: ${err.message}`);
+    }
+  }
+  if (!ok) throw new Error(`no log page reachable for ${dept.name}`);
+  return [...new Set(found)];
 }
 
 async function pdfText(buf, dir) {
@@ -120,7 +132,8 @@ try {
     try {
       const buf = await get(url, 'buffer');
       const { text, ocr } = await pdfText(buf, dir);
-      const entries = id === 'nbpd' ? parseNbArrestLog(text, { pdf: url }) : parseTauntonLog(text);
+      const entries =
+        id === 'nbpd' ? parseNbArrestLog(text, { pdf: url }) : id === 'apd' ? parseAttleboroLog(text, { pdf: url }) : parseTauntonLog(text);
       console.log(`${id}: ${entries.length} entries from ${url.split('/').pop()}${ocr ? ' (OCR)' : ''}`);
       incoming = incoming.concat(entries);
       state.processed.push(url);

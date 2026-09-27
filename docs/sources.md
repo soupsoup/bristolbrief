@@ -57,11 +57,12 @@ Google News also stands in for three outlets with no feed: Dartmouth Week, Repor
 
 ### Police logs
 
-The Public Safety page shows two police logs, built by `scripts/police-log.mjs` (parsers in `scripts/lib/police.mjs`). Each hourly run reads the departments' log pages and processes only PDFs it hasn't seen, up to 20 per run.
+The Public Safety page shows three police logs (and each town page shows its own), built by `scripts/police-log.mjs` (parsers in `scripts/lib/police.mjs`). Each hourly run reads the departments' log pages and processes only PDFs it hasn't seen, up to 20 per run.
 
 | Department | Page | Format | Notes |
 |---|---|---|---|
 | New Bedford | `newbedfordpd.com/resources/police-logs/` | Daily "Arrest Status Report" PDF, posted a few days late | Scanned images since mid-August 2026, so they go through OCR (`pdftoppm` + `tesseract`). OCR reads cleanly at 300 dpi |
+| Attleboro | `attleboropolice.org/logs-<year>/` | Weekly "Public Police Log" PDF with text (Microsoft Reporting Services), posted a few weeks late | Calls, then an arrest table with names, home addresses, age, race and sex. The parser takes only the charges and attaches them to the matching call; calls whose arrestee is under 18 (or has no readable age) are dropped. In two-digit months the year's last digit wraps to the next line; the parser rejoins it. The 2025 page's October to December files use the same format |
 | Taunton | `tauntonpd.com/tpd-police-logs/` | One large ProPhoenix "Public Log" PDF with text, posted every few months | The current file covers Jan. 1 to July 6, 2026 (1,778 pages, about 14,000 calls). Times print on a 12-hour clock with no AM/PM; the parser infers it from the incident order. The file also contains an arrest table with names and home addresses, which the parser ignores |
 
 What the site publishes: time, street name (no house number), charges or call type, and the outcome for Taunton calls. It leaves out names and home addresses, officers, juvenile arrests (and any New Bedford arrest whose juvenile flag OCR can't read), and medical, mental-health and routine calls (patrols, building checks, alarms, parking, fender-benders). Entries are kept six months. The CI job installs `poppler-utils` and `tesseract-ocr` only when a new PDF is waiting, and a failure there never blocks the headline update.
@@ -98,7 +99,7 @@ CivicPlus feed URLs follow one pattern: `/RSSFeed.aspx?ModID=1&CID=All-newsflash
 | Fairhaven, Raynham, Rehoboth, Berkley | WordPress (Fairhaven, Berkley) and Virtual Towns & Schools (Raynham, Rehoboth) | Cloudflare returns 403 to automated requests. Google News site searches could work as a fallback |
 | Dartmouth Police | WordPress with monthly log PDFs | Cloudflare 403 |
 
-Attleboro and Dartmouth also post police log PDFs; they aren't parsed yet (Dartmouth's site returns a Cloudflare 403).
+Dartmouth also posts police log PDFs; they aren't parsed yet (its site returns a Cloudflare 403).
 
 ### Data APIs tested live
 

@@ -1,6 +1,7 @@
 ---
 import PoliceDay from './PoliceDay.astro';
 import { policeLogs, type PoliceEntry } from '../lib/wire';
+import { POLICE_DEPTS } from '../../scripts/lib/police.mjs';
 
 interface Props {
   /** Days of each department's log to include, counted back from its newest entry. */
@@ -40,7 +41,7 @@ const shortDate = (d: string) =>
           <p class="note meta">
             {d.kind === 'arrests'
               ? <>From the department's daily arrest log, latest {d.coveredThrough && shortDate(d.coveredThrough)}. Charges are not convictions.</>
-              : <>Selected calls from the department's public log, which Taunton posts every few months. The latest runs through {d.coveredThrough && shortDate(d.coveredThrough)}.</>}
+              : <>Selected calls from the department's public log, {(POLICE_DEPTS as Record<string, { schedule?: string }>)[d.id]?.schedule ?? 'posted periodically'}. The latest runs through {d.coveredThrough && shortDate(d.coveredThrough)}.</>}
             {' '}<a href={d.index}>Source</a>
           </p>
           {open.map((g) => <PoliceDay day={g.day} entries={g.entries} />)}

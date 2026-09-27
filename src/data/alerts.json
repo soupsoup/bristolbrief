@@ -1,18 +1,31 @@
 {
- "updated": "2026-09-27T21:05:49.117Z",
+ "updated": "2026-09-27T21:35:23.166Z",
  "alerts": [
   {
-   "id": "urn:oid:2.49.0.1.840.0.dda9b444497dbca8e775b5c49c6cf1b93a988236.001.1",
+   "id": "urn:oid:2.49.0.1.840.0.20b84f47df663e5a0012ffbf1cb49b64404c1d67.001.1",
    "event": "Flood Warning",
-   "headline": "Flood Warning issued September 27 at 4:26PM EDT until September 27 at 7:30PM EDT by NWS Boston/Norton MA",
+   "headline": "Flood Warning issued September 27 at 5:08PM EDT until September 27 at 9:00PM EDT by NWS Boston/Norton MA",
    "severity": "Severe",
    "urgency": "Expected",
    "areas": "Bristol, MA; Norfolk, MA; Plymouth, MA; Suffolk, MA",
-   "effective": "2026-09-27T16:26:00-04:00",
-   "expires": "2026-09-27T19:30:00-04:00",
-   "description": "* WHAT...Flooding caused by excessive rainfall is expected. * WHERE...Norfolk County in eastern Massachusetts... Southwestern Suffolk County in eastern Massachusetts... North Central Bristol County in southeastern Massachusetts... West Central Plymouth County in southeastern Massachusetts... * WHEN...Until 730 PM EDT. * IMPACTS...Flooding of rivers, creeks, streams, and other low-lying and…",
+   "effective": "2026-09-27T17:08:00-04:00",
+   "expires": "2026-09-27T21:00:00-04:00",
+   "description": "* WHAT...Flooding caused by excessive rainfall continues. * WHERE...Norfolk County in eastern Massachusetts... Southwestern Suffolk County in eastern Massachusetts... North Central Bristol County in southeastern Massachusetts... West Central Plymouth County in southeastern Massachusetts... * WHEN...Until 900 PM EDT. * IMPACTS...Flooding of rivers, creeks, streams, and other low-lying and…",
    "instruction": "Turn around, don't drown when encountering flooded roads. Most flood deaths occur in vehicles. Be aware of your surroundings and do not drive on flooded roads. Please report observed flooding to local emergency services or law enforcement and request they pass this information to the National Weather Service when you can do so safely.",
-   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.dda9b444497dbca8e775b5c49c6cf1b93a988236.001.1"
+   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.20b84f47df663e5a0012ffbf1cb49b64404c1d67.001.1"
+  },
+  {
+   "id": "urn:oid:2.49.0.1.840.0.9fed3fbc15a79c3f13fab3547aaad02895191594.001.1",
+   "event": "Flood Watch",
+   "headline": "Flood Watch issued September 27 at 5:05PM EDT until September 29 at 2:00AM EDT by NWS Boston/Norton MA",
+   "severity": "Severe",
+   "urgency": "Future",
+   "areas": "Northern Worcester; Central Middlesex County; Western Essex; Eastern Essex; Southern Worcester; Western Norfolk; Southeast Middlesex; Suffolk; Eastern Norfolk; Northern Bristol; Western Plymouth; Eastern Plymouth; Southern Bristol; Southern Plymouth; Barnstable; Dukes; Nantucket; Northwest Middlesex County; Northwest Providence; Southeast Providence; Western Kent; Eastern Kent; Bristol; Washington; Newport; Block Island",
+   "effective": "2026-09-27T17:05:00-04:00",
+   "expires": "2026-09-29T02:00:00-04:00",
+   "description": "* WHAT...Flooding caused by excessive rainfall continues to be possible. * WHERE...Portions of Massachusetts, including the following areas, Barnstable MA, Central Middlesex MA, Dukes MA, Eastern Essex MA, Eastern Norfolk MA, Eastern Plymouth MA, Nantucket MA, Northern Bristol MA, Northern Middlesex MA, Northern Worcester MA, Southeast Middlesex MA, Southern Bristol MA, Southern Plymouth MA…",
+   "instruction": "You should monitor later forecasts and be alert for possible Flood Warnings. Those living in areas prone to flooding should be prepared to take action should flooding develop.",
+   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.9fed3fbc15a79c3f13fab3547aaad02895191594.001.1"
   },
   {
    "id": "urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.003.1",
@@ -52,19 +65,6 @@
    "description": "...The National Weather Service in Norton has issued a Flood Warning for the following rivers in Massachusetts... Taunton River Near Bridgewater affecting Plymouth and Bristol Counties. For the Taunton River...including Bridgewater...Minor flooding is forecast. * WHAT...Minor flooding is forecast. * WHERE...Taunton River near Bridgewater. * WHEN...From this evening to Tuesday evening. *…",
    "instruction": "Motorists should not attempt to drive around barricades or drive cars through flooded areas. Additional information is available at www.weather.gov. The next statement will be issued late tonight at midnight EDT.",
    "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.110b2d77e32aa712dc5d42f2a9d99cdf21eeaa76.001.1"
-  },
-  {
-   "id": "urn:oid:2.49.0.1.840.0.502052aea489cc6714da12d1b9b26725753af794.001.1",
-   "event": "Flood Watch",
-   "headline": "Flood Watch issued September 27 at 2:48AM EDT until September 29 at 2:00AM EDT by NWS Boston/Norton MA",
-   "severity": "Severe",
-   "urgency": "Future",
-   "areas": "Northern Worcester; Central Middlesex County; Western Essex; Eastern Essex; Southern Worcester; Western Norfolk; Southeast Middlesex; Suffolk; Eastern Norfolk; Northern Bristol; Western Plymouth; Eastern Plymouth; Southern Bristol; Southern Plymouth; Barnstable; Dukes; Nantucket; Northwest Middlesex County; Northwest Providence; Southeast Providence; Western Kent; Eastern Kent; Bristol; Washington; Newport; Block Island",
-   "effective": "2026-09-27T02:48:00-04:00",
-   "expires": "2026-09-29T02:00:00-04:00",
-   "description": "* WHAT...Flooding caused by excessive rainfall continues to be possible. * WHERE...Portions of Massachusetts, including the following areas, Barnstable MA, Central Middlesex MA, Dukes MA, Eastern Essex MA, Eastern Norfolk MA, Eastern Plymouth MA, Nantucket MA, Northern Bristol MA, Northern Middlesex MA, Northern Worcester MA, Southeast Middlesex MA, Southern Bristol MA, Southern Plymouth MA…",
-   "instruction": "You should monitor later forecasts and be alert for possible Flood Warnings. Those living in areas prone to flooding should be prepared to take action should flooding develop.",
-   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.502052aea489cc6714da12d1b9b26725753af794.001.1"
   }
  ]
 }

@@ -24,6 +24,8 @@ export const SECTIONS = [
   { slug: 'food-drink', name: 'Food & Drink' },
   { slug: 'business', name: 'Business' },
   { slug: 'things-to-do', name: 'Things to Do' },
+  // Homes and land for sale or rent. Kept out of the news lists.
+  { slug: 'listings', name: 'Listings' },
 ] as const;
 
 export type SectionSlug = (typeof SECTIONS)[number]['slug'];

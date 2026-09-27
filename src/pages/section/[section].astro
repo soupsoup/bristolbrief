@@ -19,10 +19,14 @@ const items = itemsForSection(section);
     <header class="index-head">
       <p class="kicker">Section</p>
       <h1 class="page-title">{name}</h1>
-      <p class="page-dek">The latest {name.toLowerCase()} headlines from local newsrooms, police and town halls.</p>
+      <p class="page-dek">
+        {section === 'listings'
+          ? 'Homes, condos and land for sale or rent in Bristol County, from local papers and our editors. Listings stay out of the news pages.'
+          : `The latest ${name.toLowerCase()} headlines from local newsrooms, police and town halls.`}
+      </p>
     </header>
     <div class="index-grid">
-      <WireList items={items} showSummary empty={`No recent ${name.toLowerCase()} headlines.`} />
+      <WireList items={items} showSummary empty={section === 'listings' ? 'No listings right now.' : `No recent ${name.toLowerCase()} headlines.`} />
       <aside>
         {section === 'public-safety' && <PoliceLog />}
         <NewsletterSignup />

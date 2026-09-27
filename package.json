@@ -10,7 +10,8 @@
     "check": "astro check",
     "ingest": "NODE_USE_ENV_PROXY=1 node scripts/ingest.mjs",
     "test": "node --test test/*.test.mjs",
-    "pin": "node scripts/pin.mjs"
+    "pin": "node scripts/pin.mjs",
+    "police": "NODE_USE_ENV_PROXY=1 node scripts/police-log.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

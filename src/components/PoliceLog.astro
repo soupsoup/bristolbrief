@@ -1,0 +1,63 @@
+---
+import PoliceDay from './PoliceDay.astro';
+import { policeLogs, type PoliceEntry } from '../lib/wire';
+
+interface Props {
+  /** Days of each department's log to include, counted back from its newest entry. */
+  days?: number;
+  /** Entries shown before the rest fold under "Earlier". */
+  open?: number;
+}
+const { days = 30, open: openCount = 8 } = Astro.props;
+const depts = policeLogs(days).filter((d) => d.entries.length > 0);
+
+const byDay = (entries: PoliceEntry[]) => {
+  const groups: { day: string; entries: PoliceEntry[] }[] = [];
+  for (const e of entries) {
+    const day = e.date.slice(0, 10);
+    if (groups.at(-1)?.day !== day) groups.push({ day, entries: [] });
+    groups.at(-1)!.entries.push(e);
+  }
+  return groups;
+};
+const shortDate = (d: string) =>
+  new Date(d.slice(0, 10) + 'T12:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' });
+---
+{depts.length > 0 && (
+  <section class="police" id="police-log" aria-labelledby="police-log-h">
+    <div class="section-head"><h2 id="police-log-h">Police logs</h2></div>
+    {depts.map((d) => {
+      const open = byDay(d.entries.slice(0, openCount));
+      const rest = byDay(d.entries.slice(openCount));
+      return (
+        <div class="dept">
+          <h3>{d.kind === 'arrests' ? `${d.name.replace(/ Police$/, '')} arrests` : `${d.name.replace(/ Police$/, '')} police calls`}</h3>
+          <p class="note meta">
+            {d.kind === 'arrests'
+              ? <>From the department's daily arrest log, latest {d.coveredThrough && shortDate(d.coveredThrough)}. Charges are not convictions.</>
+              : <>Selected calls from the department's public log, which Taunton posts every few months. The latest runs through {d.coveredThrough && shortDate(d.coveredThrough)}.</>}
+            {' '}<a href={d.index}>Source</a>
+          </p>
+          {open.map((g) => <PoliceDay day={g.day} entries={g.entries} />)}
+          {rest.length > 0 && (
+            <details>
+              <summary class="meta">Earlier: {rest.reduce((n, g) => n + g.entries.length, 0)} more back to {shortDate(rest.at(-1)!.day)}</summary>
+              {rest.map((g) => <PoliceDay day={g.day} entries={g.entries} />)}
+            </details>
+          )}
+        </div>
+      );
+    })}
+    <p class="meta fine">Names and house numbers are left out. Juvenile arrests, medical calls and routine patrols are not listed.</p>
+  </section>
+)}
+
+<style>
+  .police .section-head { margin-top: 0; }
+  .dept + .dept { margin-top: 28px; }
+  h3 { font-family: var(--serif-display); font-size: 20px; line-height: 1.2; margin: 0 0 4px; }
+  .note { margin: 0 0 8px; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; }
+  .fine { margin: 16px 0 0; }
+</style>

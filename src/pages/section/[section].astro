@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import WireList from '../../components/WireList.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import PoliceLog from '../../components/PoliceLog.astro';
 import { SECTIONS } from '../../site.config';
 import { itemsForSection } from '../../lib/wire';
 
@@ -22,7 +23,10 @@ const items = itemsForSection(section);
     </header>
     <div class="index-grid">
       <WireList items={items} showSummary empty={`No recent ${name.toLowerCase()} headlines.`} />
-      <aside><NewsletterSignup /></aside>
+      <aside>
+        {section === 'public-safety' && <PoliceLog />}
+        <NewsletterSignup />
+      </aside>
     </div>
   </div>
 </Base>

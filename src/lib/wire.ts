@@ -233,3 +233,54 @@ export interface SocialPost {
 /** Social posts editors added, in their chosen order (newest first by default). */
 export const socialPosts = () => ((editorialData as { social?: SocialPost[] }).social ?? []) as SocialPost[];
 export const socialForTown = (town: string) => socialPosts().filter((p) => p.towns?.includes(town));
+
+import policeData from '../data/police-log.json';
+
+export interface PoliceEntry {
+  id: string;
+  dept: string;
+  town: string;
+  /** Local wall-clock time, YYYY-MM-DDTHH:MM, as the department printed it. */
+  date: string;
+  street: string;
+  offenses?: string[];
+  type?: string;
+  action?: string;
+  domestic?: boolean;
+  pdf?: string;
+}
+
+export interface PoliceDept {
+  id: string;
+  name: string;
+  town: string;
+  index: string;
+  kind: 'arrests' | 'calls';
+  coveredThrough: string | null;
+  entries: PoliceEntry[];
+}
+
+/**
+ * Police log entries per department, newest first, for the `days` of log
+ * ending at the department's latest entry. Departments post on their own
+ * schedules (New Bedford daily, a few days late; Taunton every few months),
+ * so the window runs back from each one's newest entry, not from today.
+ */
+export function policeLogs(days = 30): PoliceDept[] {
+  const all = (policeData.entries ?? []) as PoliceEntry[];
+  const depts = (policeData.departments ?? {}) as Record<string, Omit<PoliceDept, 'id' | 'entries'>>;
+  return Object.entries(depts).map(([id, d]) => {
+    const mine = all.filter((e) => e.dept === id);
+    const latest = mine[0]?.date;
+    const from = latest ? new Date(new Date(latest.slice(0, 10) + 'T00:00Z').valueOf() - (days - 1) * 864e5).toISOString().slice(0, 10) : '';
+    return { id, ...d, entries: mine.filter((e) => e.date >= from) };
+  });
+}
+
+// Police log times carry no zone; format them as printed.
+export const fmtLogDay = (d: string) =>
+  new Date(d.slice(0, 10) + 'T12:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' });
+export const fmtLogTime = (d: string) => {
+  const [h, m] = d.slice(11, 16).split(':').map(Number);
+  return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'a.m.' : 'p.m.'}`;
+};

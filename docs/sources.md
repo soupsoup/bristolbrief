@@ -10,7 +10,8 @@ Research notes behind `src/data/sources.json`. Every feed marked **live** was fe
 4. Items merge into `src/data/wire.json`, deduplicated by link and headline and collected and shown for 45 days and archived for six months; Google News results are collected, shown and kept for 14 days (`WIRE_WINDOWS` in `scripts/lib/parse.mjs`). The admin can see the whole archive.
 5. JSON APIs go to their own files: MBTA commuter rail alerts (`transit.json`), NOAA tides (`tides.json`) and CivicClerk meeting calendars (`calendar.json`). If an API is down, the last good file stays in place.
 6. Active National Weather Service alerts for zones MAZ017 (Northern Bristol), MAZ020 (Southern Bristol), MAC005 (county), ANZ234 (Buzzards Bay) and ANZ236 (Narragansett Bay) go to `src/data/alerts.json`.
-7. `.github/workflows/ingest.yml` runs this hourly and commits only when headlines or alerts change. Your host then rebuilds the site.
+7. `scripts/police-log.mjs` builds `src/data/police-log.json` from police log PDFs (see "Police logs" below).
+8. `.github/workflows/ingest.yml` runs this hourly and commits only when headlines or alerts change. Your host then rebuilds the site.
 
 The site shows each item's headline and the publisher's own summary, and links to the original. It never republishes full articles.
 
@@ -54,6 +55,17 @@ Google News also stands in for three outlets with no feed: Dartmouth Week, Repor
 | U.S. Attorney, District of Massachusetts | `justice.gov/feeds/justice-news.xml?type[press_release]=press_release&component[1871]=1871` | justice.gov returns 401 intermittently; the ingest retries with a browser user agent |
 | Attleboro, New Bedford, Swansea and Taunton police | WordPress `/feed/` on each department's site | Attleboro's newest post is from June |
 
+### Police logs
+
+The Public Safety page shows two police logs, built by `scripts/police-log.mjs` (parsers in `scripts/lib/police.mjs`). Each hourly run reads the departments' log pages and processes only PDFs it hasn't seen, up to 20 per run.
+
+| Department | Page | Format | Notes |
+|---|---|---|---|
+| New Bedford | `newbedfordpd.com/resources/police-logs/` | Daily "Arrest Status Report" PDF, posted a few days late | Scanned images since mid-August 2026, so they go through OCR (`pdftoppm` + `tesseract`). OCR reads cleanly at 300 dpi |
+| Taunton | `tauntonpd.com/tpd-police-logs/` | One large ProPhoenix "Public Log" PDF with text, posted every few months | The current file covers Jan. 1 to July 6, 2026 (1,778 pages, about 14,000 calls). Times print on a 12-hour clock with no AM/PM; the parser infers it from the incident order. The file also contains an arrest table with names and home addresses, which the parser ignores |
+
+What the site publishes: time, street name (no house number), charges or call type, and the outcome for Taunton calls. It leaves out names and home addresses, officers, juvenile arrests (and any New Bedford arrest whose juvenile flag OCR can't read), and medical, mental-health and routine calls (patrols, building checks, alarms, parking, fender-benders). Entries are kept six months. The CI job installs `poppler-utils` and `tesseract-ocr` only when a new PDF is waiting, and a failure there never blocks the headline update.
+
 ### Town and city halls
 
 | Municipality | Platform | News feed | Agenda feed |
@@ -86,7 +98,7 @@ CivicPlus feed URLs follow one pattern: `/RSSFeed.aspx?ModID=1&CID=All-newsflash
 | Fairhaven, Raynham, Rehoboth, Berkley | WordPress (Fairhaven, Berkley) and Virtual Towns & Schools (Raynham, Rehoboth) | Cloudflare returns 403 to automated requests. Google News site searches could work as a fallback |
 | Dartmouth Police | WordPress with monthly log PDFs | Cloudflare 403 |
 
-Police log PDFs (New Bedford, Attleboro, Dartmouth, Taunton) exist but need PDF parsing.
+Attleboro and Dartmouth also post police log PDFs; they aren't parsed yet (Dartmouth's site returns a Cloudflare 403).
 
 ### Data APIs tested live
 

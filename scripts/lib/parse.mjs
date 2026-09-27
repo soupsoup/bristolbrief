@@ -245,6 +245,8 @@ export function normalize(entries, source, now = new Date()) {
       section: source.section ?? guessSection(title),
       towns,
       ...(countywide ? { countywide: true } : {}),
+      // The feed gave no date; `date` is when we first saw the item.
+      ...(!e.date ? { undated: true } : {}),
     });
   }
   return out;

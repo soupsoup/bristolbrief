@@ -162,3 +162,29 @@ test('social posts: validation', () => {
   assert.equal(ed.social[0].cid, undefined);
   assert.equal(ed.social[0].handle, 'a.b');
 });
+
+test('social review queue: dismiss, mute, approve with image', () => {
+  let ed = op({}, { type: 'dismissSocial', id: 's-bsky-3mw123' });
+  assert.deepEqual(ed.dismissedSocial, ['s-bsky-3mw123']);
+  ed = op(ed, { type: 'muteSocial', handle: 'NWS.bsky.social' });
+  assert.deepEqual(ed.mutedSocial, ['nws.bsky.social']);
+  ed = op(ed, { type: 'unmuteSocial', handle: 'nws.bsky.social' });
+  assert.deepEqual(ed.mutedSocial, []);
+  // Approving a dismissed post takes it off the dismissed list.
+  ed = op(ed, {
+    type: 'addSocial',
+    post: {
+      url: 'https://bsky.app/profile/a.bsky.social/post/3mw123', text: 'Flooding', uri: 'at://did:plc:a/app.bsky.feed.post/3mw123',
+      cid: 'bafyabcdefghij', image: 'https://cdn.bsky.app/img/x.jpg', imageAlt: 'street', postedAt: '2026-09-26T21:00:00Z',
+    },
+  });
+  assert.equal(ed.social[0].image, 'https://cdn.bsky.app/img/x.jpg');
+  assert.equal(ed.social[0].postedAt, '2026-09-26T21:00:00.000Z');
+  assert.deepEqual(ed.dismissedSocial, []);
+  assert.throws(() => op({}, { type: 'dismissSocial', id: '../../etc' }), EditorialError);
+  assert.throws(() => op({}, { type: 'addSocial', post: { url: 'https://x.com/a/status/1', text: 'x', image: 'javascript:alert(1)' } }), EditorialError);
+  // Mastodon links need no oEmbed; text comes from the scan or the editor.
+  ed = op({}, { type: 'addSocial', post: { url: 'https://mastodon.social/@nb/111222333', text: 'Rain', handle: 'nb@mastodon.social' } });
+  assert.equal(ed.social[0].platform, 'mastodon');
+  assert.equal(ed.social[0].handle, 'nb@mastodon.social');
+});

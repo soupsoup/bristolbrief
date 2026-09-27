@@ -35,12 +35,12 @@ npm test         # parser, town-matching and data tests
 
 `/admin/` is a password-protected back end for editors:
 
-- **Stories:** everything the feeds pulled in plus stories added by hand, searchable and filterable by source, type and status.
+- **Stories:** everything the feeds pulled in plus stories added by hand, searchable and filterable by source, type, status, town and time (last 1, 3, 6 or 12 hours).
 - **Edit** a headline or summary, add sections and towns, attach a photo with a caption, or hide an item from the site. A field left at the feed's value keeps updating from the feed.
 - **Feature** stories on the home page: pick the **lead**, the **second** and **third** stories under it, or add stories to the **top of the rail** ("Around the county"). Each pick lasts one hour, then the freshest news takes over; set "Keep featured until" on a story's edit page to hold it longer. Empty slots always get the freshest story automatically.
 - **Add a story** to one or more sections and towns. Give it a link to another site, or write the text and it gets its own page at `/stories/<slug>/`.
 - **Photos** are resized in the browser to 1600px, then saved to `public/uploads/`.
-- **Social:** paste a link to a post on X (or Bluesky) and it appears in the home page's "On social" section, newest first (six on the home page, all of them at `/social/`). The admin fetches the post's text and author automatically; for other sites, type the text. Tag towns to also show a post on those town pages. Posts render as plain cards and upgrade to the official X or Bluesky embed when they scroll into view.
+- **Social:** the hourly job scans Bluesky (full-text search) and Mastodon (town hashtags on mastodon.social) for posts from the last week that mention a Bristol County town, and lists them for review. Filter by platform, town, text or time (last 1, 3, 6 or 12 hours); **Approve** a post to publish it, **Dismiss** it, or **Mute** an account (such as a busy bot) to hide its posts. You can also paste a link to any X, Bluesky or Mastodon post. The home page's "On social" column shows the most recently approved post; `/social/` shows all of them. Tag towns to also show a post on those town pages.
 - **Feeds** shows how each source did on the last headline update.
 
 Every save is a commit to `src/data/editorial.json` (or a photo under `public/uploads/`) on GitHub, so Vercel redeploys and the change is live in about a minute. The git history is the edit log, and any change can be reverted there. The hourly headline job never touches `editorial.json`.

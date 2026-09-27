@@ -5,6 +5,7 @@
 //   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
 //   src/data/tides.json        NOAA tide predictions and latest water levels
 //   src/data/calendar.json     upcoming public meetings with real dates (CivicClerk)
+//   src/data/social-candidates.json  Bluesky/Mastodon posts for editors to review
 //   src/data/feed-status.json  per-source health report
 //
 // Usage: node scripts/ingest.mjs [--only id1,id2] [--dry-run]
@@ -20,6 +21,7 @@ import {
   normalizeWaterLevel,
   normalizeCivicClerk,
 } from './lib/data.mjs';
+import { scanSocial } from './lib/social.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const path = (p) => new URL(p, ROOT);
@@ -193,15 +195,34 @@ async function ingestCalendar() {
   return { ok: errors.length < CIVICCLERK.length, meetings, error: errors.join('; ') || undefined };
 }
 
+/** Merge this run's social finds with earlier ones: newest first, a week back, 300 max. */
+async function ingestSocial() {
+  try {
+    const { posts, errors } = await scanSocial();
+    const prev = (await readJson('src/data/social-candidates.json', { posts: [] })).posts ?? [];
+    const cutoff = Date.now() - 7 * 864e5;
+    const byId = new Map(prev.map((p) => [p.id, p]));
+    for (const p of posts) byId.set(p.id, p);
+    const merged = [...byId.values()]
+      .filter((p) => new Date(p.postedAt).valueOf() >= cutoff)
+      .sort((a, b) => String(b.postedAt).localeCompare(String(a.postedAt)))
+      .slice(0, 300);
+    return { ok: posts.length > 0 || errors.length === 0, posts: merged, found: posts.length, errors };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
 const { sources } = await readJson('src/data/sources.json', { sources: [] });
 const selected = sources.filter((s) => s.enabled && (!only || only.includes(s.id)));
 
-const [results, alertResult, transit, tides, calendar] = await Promise.all([
+const [results, alertResult, transit, tides, calendar, social] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
   ingestTransit(),
   ingestTides(),
   ingestCalendar(),
+  ingestSocial(),
 ]);
 
 const incoming = results.flatMap((r) => r.items);
@@ -222,7 +243,8 @@ console.log(
 console.log(
   `MBTA: ${transit.ok ? `${transit.alerts.length} alerts` : `failed (${transit.error})`}. ` +
     `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
-    `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}.`,
+    `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
+    `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}.`,
 );
 
 if (!dryRun) {
@@ -237,6 +259,9 @@ if (!dryRun) {
   }
   if (tides.ok) {
     await writeFile(path('src/data/tides.json'), JSON.stringify({ updated: now, stations: tides.stations }, null, 1) + '\n');
+  }
+  if (social.ok) {
+    await writeFile(path('src/data/social-candidates.json'), JSON.stringify({ updated: now, posts: social.posts }, null, 1) + '\n');
   }
   if (calendar.ok) {
     await writeFile(path('src/data/calendar.json'), JSON.stringify({ updated: now, meetings: calendar.meetings }, null, 1) + '\n');

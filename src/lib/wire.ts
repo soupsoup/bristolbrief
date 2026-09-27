@@ -18,6 +18,8 @@ export interface WireItem {
   towns: string[];
   /** Names Bristol County but no specific town. Shown in the wire, not on town pages. */
   countywide?: boolean;
+  /** The feed gave no publication date; `date` is when the item was first seen. */
+  undated?: boolean;
   /** All sections the item appears in; `section` is the first. Editors can add more. */
   sections: string[];
   /** Photo added in the admin (path under /uploads/). */
@@ -203,7 +205,7 @@ export function pickTopStories(items: WireItem[], n: number, now = new Date(), e
 
 export interface SocialPost {
   id: string;
-  platform: 'x' | 'bluesky' | 'link';
+  platform: 'x' | 'bluesky' | 'mastodon' | 'link';
   url: string;
   text: string;
   authorName?: string;
@@ -212,6 +214,9 @@ export interface SocialPost {
   uri?: string;
   cid?: string;
   towns?: string[];
+  image?: string;
+  imageAlt?: string;
+  postedAt?: string;
   addedAt: string;
 }
 

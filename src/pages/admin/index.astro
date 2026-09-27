@@ -95,6 +95,13 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
       <option value="countywide">Countywide</option>
       <option value="none">No town</option>
     </select>
+    <select name="within" aria-label="Published within">
+      <option value="">Any time</option>
+      <option value="1">Last hour</option>
+      <option value="3">Last 3 hours</option>
+      <option value="6">Last 6 hours</option>
+      <option value="12">Last 12 hours</option>
+    </select>
     <select name="sort" aria-label="Sort by">
       <option value="newest">Newest first</option>
       <option value="oldest">Oldest first</option>
@@ -118,6 +125,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
           data-towns={i.towns.join(' ')}
           data-countywide={i.countywide ? '1' : undefined}
           data-date={i.date}
+          data-undated={i.undated ? '1' : undefined}
           data-source-name={i.sourceName}
           data-title={i.title}
           data-town-label={i.towns.length ? i.towns.map(townName).sort()[0] : i.countywide ? 'Countywide' : ''}
@@ -141,7 +149,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
             <a class="i-title" href={`/admin/edit/?id=${encodeURIComponent(i.id)}`}>{i.title}</a>
             {i.originalTitle && <div class="a-muted orig">Feed headline: {i.originalTitle}</div>}
             <div class="a-muted meta">
-              {i.sourceName} · {TYPE[i.category] ?? i.category} · {fmtAdminDate(i.date)}
+              {i.sourceName} · {TYPE[i.category] ?? i.category} · {i.undated ? `date unknown (first seen ${fmtAdminDate(i.date)})` : fmtAdminDate(i.date)}
               {' · '}{i.sections.map(sectionName).join(', ')}
               {i.towns.length > 0 && <> · {i.towns.map(townName).join(', ')}</>}
               {i.countywide && <> · Countywide</>}
@@ -191,7 +199,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement;
 
   const params = new URLSearchParams(location.search);
-  for (const name of ['q', 'source', 'category', 'status', 'town', 'sort']) {
+  for (const name of ['q', 'source', 'category', 'status', 'town', 'within', 'sort']) {
     const v = params.get(name);
     if (v !== null) field(name).value = v;
   }
@@ -226,6 +234,9 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     const status = String(f.get('status') ?? '');
     const town = String(f.get('town') ?? '');
     const sort = String(f.get('sort') ?? 'newest');
+    // "Last N hours" leaves out items whose feed gave no date.
+    const within = Number(f.get('within') || 0);
+    const since = within ? Date.now() - within * 3600e3 : 0;
 
     tbody.querySelectorAll('tr.group').forEach((g) => g.remove());
     const sorted = [...rows].sort(SORTS[sort] ?? newest);
@@ -237,7 +248,8 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
         (!source || r.dataset.source === source) &&
         (!category || r.dataset.category === category) &&
         (!status || r.dataset.status!.split(' ').includes(status)) &&
-        matchesTown(r, town);
+        matchesTown(r, town) &&
+        (!since || (r.dataset.undated !== '1' && Date.parse(r.dataset.date!) >= since));
       r.hidden = !ok;
       // Grouped by town: a heading row before each town's first story.
       if (ok && sort === 'town' && !town) {
@@ -311,7 +323,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   .f-title { flex: 1 1 300px; min-width: 0; }
   .f-title a { font-weight: 700; color: var(--ink); }
   .f-actions { display: flex; gap: 6px; }
-  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(5, 1fr); margin-bottom: 10px; }
+  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(6, 1fr); margin-bottom: 10px; }
   @media (max-width: 1100px) { .filters { grid-template-columns: repeat(3, 1fr); } .filters input { grid-column: 1 / -1; } }
   @media (max-width: 600px) { .filters { grid-template-columns: 1fr 1fr; } }
   table.items :global(tr.group th) {

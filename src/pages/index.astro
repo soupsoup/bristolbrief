@@ -39,7 +39,8 @@ const featureSections = FEATURE_SECTIONS.map((slug) => ({
   items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
 }));
 featureSections.forEach((sec) => sec.items.forEach((i) => shown.add(i.id)));
-const social = socialPosts().slice(0, 4);
+// Only the most recently approved post fits here; the rest are on /social/.
+const social = socialPosts().slice(0, 1);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
 
@@ -88,7 +89,7 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
       <aside class="feature-rail" aria-labelledby="social-head">
         <div class="section-head">
           <h2 id="social-head">On social</h2>
-          {socialPosts().length > 0 && <a href="/social/">All posts →</a>}
+          {socialPosts().length > 1 && <a href="/social/">More posts →</a>}
         </div>
         {social.length > 0
           ? <SocialSection posts={social} columns={1} />

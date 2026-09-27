@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site.config';
+import DiscordIcon from '../components/DiscordIcon.astro';
 ---
 <Base title="Send a tip" description="Tell The Bristol Brief what we should be covering.">
   <div class="wrap">
@@ -11,7 +12,14 @@ import { SITE } from '../site.config';
         You know your neighborhood better than we do. Tell us about the new restaurant going in on
         your corner, the agenda item nobody's talking about, or a local news source we should be following.
       </p>
-      <p><a class="btn" href={`mailto:${SITE.email}?subject=News%20tip`}>Email {SITE.email}</a></p>
+      <p class="tip-actions">
+        <a class="btn" href={`mailto:${SITE.email}?subject=News%20tip`}>Email {SITE.email}</a>
+        <a class="btn btn-discord" href={SITE.social.discord} target="_blank" rel="noopener"><DiscordIcon /> Share it on Discord</a>
+      </p>
+      <p class="meta">
+        Our Discord is a public community space, so anyone there can read what you post. Send anything
+        sensitive or confidential by email instead.
+      </p>
       <h2>Helpful details to include</h2>
       <ul>
         <li>Which town, and where (street or business name).</li>
@@ -25,3 +33,7 @@ import { SITE } from '../site.config';
     </div>
   </div>
 </Base>
+
+<style>
+  .tip-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+</style>

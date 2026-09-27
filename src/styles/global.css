@@ -126,6 +126,8 @@ a:hover { color: var(--accent); }
   text-decoration: none;
 }
 .btn:hover { filter: brightness(1.08); color: var(--accent-ink); }
+.btn-discord { display: inline-flex; align-items: center; gap: 8px; background: #5865f2; color: #fff; text-decoration: none; }
+.btn-discord:hover { background: #4752c4; color: #fff; }
 
 .prose { max-width: 40em; }
 .prose h2 { font-family: var(--serif-display); font-size: 28px; line-height: 1.2; margin: 1.6em 0 0.4em; }

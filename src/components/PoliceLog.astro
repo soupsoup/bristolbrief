@@ -7,9 +7,11 @@ interface Props {
   days?: number;
   /** Entries shown before the rest fold under "Earlier". */
   open?: number;
+  /** Only this town's department, for town pages. */
+  town?: string;
 }
-const { days = 30, open: openCount = 8 } = Astro.props;
-const depts = policeLogs(days).filter((d) => d.entries.length > 0);
+const { days = 30, open: openCount = 8, town } = Astro.props;
+const depts = policeLogs(days).filter((d) => d.entries.length > 0 && (!town || d.town === town));
 
 const byDay = (entries: PoliceEntry[]) => {
   const groups: { day: string; entries: PoliceEntry[] }[] = [];
@@ -24,8 +26,11 @@ const shortDate = (d: string) =>
   new Date(d.slice(0, 10) + 'T12:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' });
 ---
 {depts.length > 0 && (
-  <section class="police" id="police-log" aria-labelledby="police-log-h">
-    <div class="section-head"><h2 id="police-log-h">Police logs</h2></div>
+  <section class:list={['police', { top: !town }]} id="police-log" aria-labelledby="police-log-h">
+    <div class="section-head">
+      <h2 id="police-log-h">{town ? 'Police log' : 'Police logs'}</h2>
+      {town && <a href="/section/public-safety/">Public safety →</a>}
+    </div>
     {depts.map((d) => {
       const open = byDay(d.entries.slice(0, openCount));
       const rest = byDay(d.entries.slice(openCount));
@@ -53,7 +58,7 @@ const shortDate = (d: string) =>
 )}
 
 <style>
-  .police .section-head { margin-top: 0; }
+  .top .section-head { margin-top: 0; }
   .dept + .dept { margin-top: 28px; }
   h3 { font-family: var(--serif-display); font-size: 20px; line-height: 1.2; margin: 0 0 4px; }
   .note { margin: 0 0 8px; }

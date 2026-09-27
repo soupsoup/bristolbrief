@@ -182,6 +182,17 @@ const RI_COUNTY_RE = /\bbristol county,? (?:r\.?\s?i\.?\b|rhode island)|\brhode 
 
 export const mentionsBristolCountyMA = (str) => COUNTY_RE.test(str) && !RI_COUNTY_RE.test(str);
 
+// Regions that take in Bristol County. A story that names one of these but no
+// county town is tagged Region.
+const REGION_RE = /\b(?:south[ -]?coast\b|southeast(?:ern)? (?:mass(?:achusetts)?\b|ma\b)|se mass(?:achusetts)?\b|southeast mass\.)/i;
+// Places just outside the county that "South Coast" and "southeastern Mass."
+// stories are often about. A story naming one of these and no county town is
+// about that place, not the region.
+const NEARBY_OUTSIDE_RE = /\b(?:lakeville|middleboro(?:ugh)?|rochester|marion|mattapoisett|wareham|onset|carver|plymouth|kingston|halifax|bridgewater|brockton|stoughton|sharon|foxboro(?:ugh)?|wrentham|plainville|bourne|buzzards bay|cape cod|tiverton|little compton|portsmouth|providence|pawtucket|cumberland|warren,? r\.?i|bristol,? r\.?i)\b/i;
+
+/** Names a region that includes Bristol County, and isn't about a specific place just outside it. */
+export const mentionsRegion = (str) => (mentionsBristolCountyMA(str) || REGION_RE.test(str)) && (mentionsBristolCountyMA(str) || !NEARBY_OUTSIDE_RE.test(str));
+
 const SECTION_RULES = [
   ['public-safety', /\b(ICE|police|hospitalized|injured|injuries|injury|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
   ['schools', /\b(school|schools|superintendent|student|students|teacher|teachers|classroom|MCAS|DESE|graduat)/i],
@@ -209,9 +220,11 @@ export const itemId = (link, title) =>
  *
  * Everything else must name at least one of the 20 Bristol County
  * municipalities (or a village within one) in its headline or summary.
- * An item that names no town but mentions Bristol County (Massachusetts)
- * is kept as countywide: it appears in the main wire but on no town page.
- * "South Coast" doesn't count; it also covers Plymouth County towns.
+ * An item that names no town but mentions Bristol County (Massachusetts) or
+ * a region that includes it (South Coast, southeastern Massachusetts) is kept
+ * and tagged Region (`countywide`): it appears in the main wire but on no town
+ * page. A regional story about a place just outside the county (Lakeville,
+ * Wareham, Tiverton...) is dropped.
  */
 export function normalize(entries, source, now = new Date()) {
   const out = [];
@@ -228,7 +241,9 @@ export function normalize(entries, source, now = new Date()) {
     // Headline towns win; the summary often names opponents, hometowns, etc.
     const titleTowns = matchTowns(title);
     const matched = titleTowns.length ? titleTowns : matchTowns(haystack);
-    const countywide = !institutional && matched.length === 0 && mentionsBristolCountyMA(haystack);
+    // Region: headline and summary only. Feed categories ("SE Mass", "SouthCoast
+    // News") label the outlet's beat, not the story.
+    const countywide = !institutional && matched.length === 0 && (mentionsBristolCountyMA(haystack) || mentionsRegion(`${title} ${summary}`));
     if (!institutional && matched.length === 0 && !countywide) continue;
     const towns = institutional ? source.defaultTowns : matched;
     const date = e.date && e.date <= now ? e.date : now;

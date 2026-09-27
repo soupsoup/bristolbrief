@@ -92,7 +92,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     <select name="town" aria-label="Town">
       <option value="">All towns</option>
       {TOWNS.map((t) => <option value={t.slug}>{t.name}</option>)}
-      <option value="countywide">Countywide</option>
+      <option value="countywide">Region (no single town)</option>
       <option value="none">No town</option>
     </select>
     <select name="within" aria-label="Published within">
@@ -128,7 +128,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
           data-undated={i.undated ? '1' : undefined}
           data-source-name={i.sourceName}
           data-title={i.title}
-          data-town-label={i.towns.length ? i.towns.map(townName).sort()[0] : i.countywide ? 'Countywide' : ''}
+          data-town-label={i.towns.length ? i.towns.map(townName).sort()[0] : i.countywide ? 'Region' : ''}
           data-status={[
             i.featuredRank != null && 'featured',
             i.edited && 'edited',
@@ -152,7 +152,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
               {i.sourceName} · {TYPE[i.category] ?? i.category} · {i.undated ? `date unknown (first seen ${fmtAdminDate(i.date)})` : fmtAdminDate(i.date)}
               {' · '}{i.sections.map(sectionName).join(', ')}
               {i.towns.length > 0 && <> · {i.towns.map(townName).join(', ')}</>}
-              {i.countywide && <> · Countywide</>}
+              {i.countywide && <> · Region</>}
             </div>
           </td>
           <td class="act-col">
@@ -207,7 +207,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   const byText = (key: string) => (a: HTMLElement, b: HTMLElement) =>
     (a.dataset[key] ?? '').localeCompare(b.dataset[key] ?? '', 'en', { sensitivity: 'base' });
   const newest = (a: HTMLElement, b: HTMLElement) => b.dataset.date!.localeCompare(a.dataset.date!);
-  // Named towns first (A–Z), then Countywide, then items with no town.
+  // Named towns first (A–Z), then Region, then items with no town.
   const townKey = (r: HTMLElement) =>
     r.dataset.towns ? r.dataset.townLabel! : r.dataset.countywide === '1' ? '\uffff1' : '\uffff2';
   const SORTS: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {

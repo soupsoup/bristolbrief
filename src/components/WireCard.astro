@@ -11,7 +11,7 @@ const { item, variant = 'standard' } = Astro.props;
 const Heading = variant === 'lead' ? 'h1' : 'h2';
 // Stories written here open on this site; everything else opens the publisher's page.
 const ext = !item.manual || item.external ? { target: '_blank', rel: 'noopener' } : {};
-const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', ') : item.countywide ? 'Countywide' : null;
+const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', ') : item.countywide ? 'Region' : null;
 ---
 <article class={`wcard wcard-${variant}`}>
   {item.image && (

@@ -74,7 +74,7 @@ test('single-town sources fall back to their default town', () => {
   assert.equal(items[0].summary, 'agenda posted');
 });
 
-test('South Coast and Bristol County, R.I. do not qualify', () => {
+test('Bristol County, R.I. and South Coast stories about places outside the county do not qualify', () => {
   const xml = `<rss><channel>
     <item><title>Officer-involved shooting in Lakeville</title><link>https://e/1</link><description>Police across the South Coast responded.</description></item>
     <item><title>Bristol County, R.I. beaches reopen</title><link>https://e/2</link></item>
@@ -179,4 +179,20 @@ test('direct feeds go back 45 days and stay six months; Google News stays 14 day
     { now, aggregatedSources: agg },
   );
   assert.deepEqual(merged.map((i) => i.id), ['gn10', 'new40', 'kept']);
+});
+
+test('regional stories with no county town are tagged Region', () => {
+  const xml = `<rss><channel>
+    <item><title>Nor'easter slams the South Coast overnight</title><link>https://r/1</link><description>Thousands lost power.</description></item>
+    <item><title>Flood watch for southeastern Massachusetts</title><link>https://r/2</link></item>
+    <item><title>SouthCoast storm damage: New Bedford hit hardest</title><link>https://r/3</link></item>
+    <item><title>Wareham road closed as South Coast floods</title><link>https://r/4</link></item>
+    <item><title>Nor'easter impacting southern New England</title><link>https://r/5</link></item>
+  </channel></rss>`;
+  const items = normalize(parseFeed(xml), { id: 'r', name: 'R', category: 'news' });
+  assert.deepEqual(items.map((i) => i.link), ['https://r/1', 'https://r/2', 'https://r/3']);
+  assert.equal(items[0].countywide, true);
+  assert.deepEqual(items[0].towns, []);
+  assert.deepEqual(items[2].towns, ['new-bedford']);
+  assert.equal(items[2].countywide, undefined);
 });

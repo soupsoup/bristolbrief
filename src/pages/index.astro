@@ -8,7 +8,7 @@ import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
 import { SECTIONS, TOWNS } from '../site.config';
-import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection } from '../lib/wire';
 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
 // editors added in the admin, with their edits applied (src/data/editorial.json).
@@ -28,12 +28,22 @@ const shown = new Set(top.map((i) => i.id));
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
 const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
-const social = socialPosts().slice(0, 6);
+// Real Estate and Business get their own sections beside the social column.
+// They skip stories already in the top slots or the visible part of the rail.
+const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
+const FEATURE_SECTIONS = ['real-estate', 'business'] as const;
+const featureSections = FEATURE_SECTIONS.map((slug) => ({
+  slug,
+  name: SECTIONS.find((s) => s.slug === slug)!.name,
+  items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
+}));
+featureSections.forEach((sec) => sec.items.forEach((i) => shown.add(i.id)));
+const social = socialPosts().slice(0, 4);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
 
 // A row per section with at least three stories not already shown.
-const sectionRows = SECTIONS.map((sec) => ({
+const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly string[]).includes(sec.slug)).map((sec) => ({
   ...sec,
   items: stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3),
 })).filter((row) => row.items.length === 3);
@@ -62,15 +72,28 @@ const sectionRows = SECTIONS.map((sec) => ({
       <NewsletterSignup variant="banner" />
     </div>
 
-    {social.length > 0 && (
-      <section class="social-row" aria-labelledby="social-head">
+    <div class="feature-band">
+      <div class="feature-main">
+        {featureSections.map((sec) => (
+          <section aria-labelledby={`sec-${sec.slug}`}>
+            <div class="section-head">
+              <h2 id={`sec-${sec.slug}`}>{sec.name}</h2>
+              <a href={`/section/${sec.slug}/`}>All {sec.name.toLowerCase()} headlines →</a>
+            </div>
+            <WireList items={sec.items} showSummary empty={`No recent ${sec.name.toLowerCase()} headlines.`} />
+          </section>
+        ))}
+      </div>
+      <aside class="feature-rail" aria-labelledby="social-head">
         <div class="section-head">
           <h2 id="social-head">On social</h2>
-          {socialPosts().length > social.length && <a href="/social/">More posts →</a>}
+          {socialPosts().length > 0 && <a href="/social/">All posts →</a>}
         </div>
-        <SocialSection posts={social} />
-      </section>
-    )}
+        {social.length > 0
+          ? <SocialSection posts={social} columns={1} />
+          : <p class="meta">No posts yet.</p>}
+      </aside>
+    </div>
 
     <div class="lower">
       <div class="lower-main">
@@ -194,6 +217,11 @@ const sectionRows = SECTIONS.map((sec) => ({
   .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
 
   .signup-row { margin-top: 44px; }
+
+  .feature-band { display: grid; gap: 0 40px; grid-template-columns: 1fr; }
+  @media (min-width: 1000px) {
+    .feature-band { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  }
 
   .lower { display: grid; gap: 0 40px; grid-template-columns: 1fr; }
   @media (min-width: 1000px) {

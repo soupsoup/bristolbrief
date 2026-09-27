@@ -150,3 +150,7 @@ test('institutional feeds keep their own town', () => {
 test('storm outage stories are news, not business', () => {
   assert.equal(guessSection("Hundreds lose power in Attleboro area from nor'easter"), 'news');
 });
+
+test('injury stories are public safety even when they mention a store', () => {
+  assert.equal(guessSection('Man hospitalized after ladder fall at grocery store in Fall River'), 'public-safety');
+});

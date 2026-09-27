@@ -206,3 +206,19 @@ test('regional stories with no county town are tagged Region', () => {
   assert.deepEqual(items[2].towns, ['new-bedford']);
   assert.equal(items[2].countywide, undefined);
 });
+
+test('single-town outlets file unnamed local stories under their town', () => {
+  const xml = `<rss><channel>
+    <item><title>Southworth Library book sale this weekend</title><link>https://d/1</link></item>
+    <item><title>Fall River council approves budget</title><link>https://d/2</link></item>
+    <item><title>Tiverton opens new town beach lot</title><link>https://d/3</link></item>
+    <item><title>Red Sox clinch Wild Card spot in Boston</title><link>https://d/4</link></item>
+    <item><title>NEED JUNK GONE? 774-361-5520 — Mack</title><link>https://d/5</link></item>
+    <item><title>Vol 12 No 20</title><link>https://d/6</link></item>
+    <item><title>Obituaries</title><link>https://d/7</link></item>
+  </channel></rss>`;
+  const items = normalize(parseFeed(xml), { id: 'dw', name: 'Dartmouth Week', category: 'news', homeTown: 'dartmouth' });
+  assert.deepEqual(items.map((i) => [i.link, i.towns.join()]), [['https://d/1', 'dartmouth'], ['https://d/2', 'fall-river']]);
+  // Without homeTown the unnamed story is dropped as before.
+  assert.equal(normalize(parseFeed(xml), { id: 'x', name: 'X', category: 'news' }).length, 1);
+});

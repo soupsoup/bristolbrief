@@ -1,6 +1,7 @@
 ---
 import { SITE, SECTIONS, TOWNS } from '../site.config';
 import { todayLine } from '../lib/wire';
+import DiscordIcon from './DiscordIcon.astro';
 
 const path = Astro.url.pathname;
 ---
@@ -14,6 +15,9 @@ const path = Astro.url.pathname;
         <a href="/meetings/">Meetings</a>
         <a href="/tips/">Send a tip</a>
         <a href="/about/">About</a>
+        <a class="discord-link" href={SITE.social.discord} target="_blank" rel="noopener" aria-label="Join us on Discord">
+          <DiscordIcon /><span class="discord-text">Discord</span>
+        </a>
         <a class="btn btn-sm" href="/subscribe/">Subscribe</a>
       </nav>
     </div>
@@ -87,13 +91,15 @@ const path = Astro.url.pathname;
   .topbar a { color: inherit; text-decoration: none; }
   .topbar a:hover { text-decoration: underline; }
   .topbar-links { display: flex; align-items: center; gap: 16px; }
+  .discord-link { display: inline-flex; align-items: center; gap: 6px; }
   .topbar .btn-sm { padding: 6px 12px; font-size: 13px; color: var(--accent-ink); }
   .topbar .btn-sm:hover { text-decoration: none; }
   @media (max-width: 640px) {
     .today { display: none; }
     .topbar-inner { justify-content: flex-end; }
     .topbar-links { gap: 12px; }
-    .topbar-links a:nth-child(n+3):not(.btn) { display: none; }
+    .topbar-links a:nth-child(n+3):not(.btn):not(.discord-link) { display: none; }
+    .discord-text { display: none; }
   }
 
   .masthead {

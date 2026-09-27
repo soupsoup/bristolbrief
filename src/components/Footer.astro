@@ -1,5 +1,6 @@
 ---
 import { SITE, SECTIONS, TOWNS } from '../site.config';
+import DiscordIcon from './DiscordIcon.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -7,7 +8,10 @@ const year = new Date().getFullYear();
     <div class="footer-brand">
       <a href="/" class="footer-logo">The Bristol Brief</a>
       <p>{SITE.description}</p>
-      <a class="btn" href="/subscribe/">Get the newsletter</a>
+      <div class="footer-cta">
+        <a class="btn" href="/subscribe/">Get the newsletter</a>
+        <a class="btn btn-discord" href={SITE.social.discord} target="_blank" rel="noopener"><DiscordIcon /> Join our Discord</a>
+      </div>
     </div>
     <div>
       <h3>Sections</h3>
@@ -32,6 +36,7 @@ const year = new Date().getFullYear();
         <li><a href="/transit/">Commuter rail</a></li>
         <li><a href="/social/">On social</a></li>
         <li><a href="/rss.xml">RSS</a></li>
+        <li><a href={SITE.social.discord} target="_blank" rel="noopener">Discord</a></li>
         <li><a href={SITE.social.instagram}>Instagram</a></li>
         <li><a href={SITE.social.facebook}>Facebook</a></li>
       </ul>
@@ -43,6 +48,9 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
+  .footer-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn-discord { display: inline-flex; align-items: center; gap: 8px; background: #5865f2; color: #fff; }
+  .btn-discord:hover { background: #4752c4; color: #fff; }
   .site-footer {
     margin-top: 72px;
     border-top: 3px double var(--ink);

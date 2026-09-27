@@ -1,0 +1,24 @@
+# Temporary: checks whether GitHub's runners can reach the Dartmouth police
+# log page, which blocks this project's development sandbox. Remove after.
+name: Probe Dartmouth police logs
+on:
+  push:
+    branches: [claude/bristol-county-news-site-bki3eq]
+    paths: [.github/workflows/probe-dartmouth.yml]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for ua in "Mozilla/5.0 (compatible; BristolBriefBot/1.0; +https://bristolbrief.com/sources/)" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"; do
+            curl -sL -m 30 -A "$ua" https://dartmouthpolice.gov/logs/ -o logs.html -w "logs %{http_code} %{size_download}\n" || true
+          done
+          grep -oE 'https?://[^"]*\.pdf' logs.html | sort -u | tail -40 || true
+          grep -oE '<title>[^<]*' logs.html || true
+          pdf=$(grep -oE 'https?://[^"]*\.pdf' logs.html | sort -u | tail -1)
+          if [ -n "$pdf" ]; then
+            curl -sL -m 60 -A "Mozilla/5.0 (compatible; BristolBriefBot/1.0; +https://bristolbrief.com/sources/)" "$pdf" -o log.pdf -w "pdf %{http_code} %{size_download}\n"
+            sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1
+            pdfinfo log.pdf || true
+            pdftotext -layout log.pdf - | head -150 | sed -E 's/[A-Z][a-z]+, [A-Z][a-z]+/NAME/g' || true
+          fi

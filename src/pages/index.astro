@@ -28,10 +28,11 @@ const shown = new Set(top.map((i) => i.id));
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
 const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
-// Real Estate and Business get their own sections beside the social column.
+// Real Estate, Business, Food & Drink and Things to Do get their own sections
+// beside the social column.
 // They skip stories already in the top slots or the visible part of the rail.
 const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
-const FEATURE_SECTIONS = ['real-estate', 'business'] as const;
+const FEATURE_SECTIONS = ['real-estate', 'business', 'food-drink', 'things-to-do'] as const;
 const featureSections = FEATURE_SECTIONS.map((slug) => ({
   slug,
   name: SECTIONS.find((s) => s.slug === slug)!.name,

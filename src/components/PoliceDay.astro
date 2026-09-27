@@ -14,6 +14,7 @@ const { day, entries } = Astro.props;
       <span class="t">{fmtLogTime(e.date)}</span>
       <span class="what">
         {e.offenses ? e.offenses.join('; ') : e.type}
+        {e.charges && <span class="charges">Charges: {e.charges.join('; ')}</span>}
         {e.domestic && <span class="tag">Domestic</span>}
       </span>
       <span class="where meta">
@@ -47,6 +48,7 @@ const { day, entries } = Astro.props;
   }
   .t { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--ink-2); padding-top: 2px; grid-row: span 2; }
   .what { overflow-wrap: anywhere; }
+  .charges { display: block; font-size: 14px; color: var(--ink-2); }
   .where { grid-column: 2; }
   .tag {
     font-family: var(--sans);

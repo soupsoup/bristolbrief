@@ -244,6 +244,8 @@ export interface PoliceEntry {
   date: string;
   street: string;
   offenses?: string[];
+  /** Charges for a call that ended in an arrest (Attleboro). */
+  charges?: string[];
   type?: string;
   action?: string;
   domestic?: boolean;

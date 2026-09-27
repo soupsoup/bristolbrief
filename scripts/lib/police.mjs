@@ -21,7 +21,19 @@ export const POLICE_DEPTS = {
     town: 'taunton',
     index: 'https://tauntonpd.com/tpd-police-logs/',
     kind: 'calls',
+    schedule: 'which Taunton posts every few months',
     pdfPattern: /https:\/\/tauntonpd\.com\/wp-content\/uploads\/[^"'\s<>]*Public-Log[^"'\s<>]*\.pdf/gi,
+  },
+  apd: {
+    name: 'Attleboro Police',
+    town: 'attleboro',
+    index: `https://www.attleboropolice.org/logs-${new Date().getFullYear()}/`,
+    // One page per year; read last year's too so December's logs aren't
+    // missed in January.
+    pages: (now = new Date()) => [0, 1].map((n) => `https://www.attleboropolice.org/logs-${now.getFullYear() - n}/`),
+    kind: 'calls',
+    schedule: 'which Attleboro posts weekly, usually a few weeks behind',
+    pdfPattern: /https:\/\/www\.attleboropolice\.org\/wp-content\/uploads\/[^"'\s<>]*plog[^"'\s<>]*\.pdf/gi,
   },
 };
 
@@ -29,7 +41,7 @@ export const POLICE_DEPTS = {
 export const POLICE_KEEP_DAYS = 183;
 
 const SMALL = new Set(['and', 'of', 'or', 'to', 'in', 'on', 'at', 'by', 'for', 'the', 'a', 'w/', 'w/o']);
-const KEEP_UPPER = /^(OUI|OUI-LIQUOR|OUI-DRUGS|MV|A&B|ABDW|B&E|DOKT|II|III|IV|US|RMV|ID|ATV)$/;
+const KEEP_UPPER = /^(MVA|MV|M\/V|OUI|OUI-LIQUOR|OUI-DRUGS|MV|A&B|ABDW|B&E|DOKT|II|III|IV|US|RMV|ID|ATV)$/;
 
 export function titleCase(s) {
   return s
@@ -37,7 +49,7 @@ export function titleCase(s) {
     .split(/(\s+|-|\/)/)
     .map((w, i) => {
       const up = w.toUpperCase();
-      if (KEEP_UPPER.test(up)) return up;
+      if (KEEP_UPPER.test(up.replace(/[()]/g, ''))) return up;
       if (i > 0 && SMALL.has(w)) return w;
       return w.charAt(0).toUpperCase() + w.slice(1);
     })
@@ -156,15 +168,16 @@ export function parseNbArrestLog(text, { pdf } = {}) {
   return entries;
 }
 
-// Taunton's log lists every call. Keep crimes, crashes, disturbances and
-// anything that ended in an arrest or summons; drop routine patrols, alarms,
-// parking, fender-benders, and medical or mental-health calls.
-const TPD_SKIP = /property damage only|directed patrol|building check|check building|motor vehicle stop|parking|alarm|assist citizen|assist other agency|disabled motor|hang up|repossession|property (found|lost)|general information|prisoner watch|medical|mental|suicid|section c\.? ?123|overdose|well being|check person|disturbed person|wires down|tree down|bolo|transport|lockout|animal|serve|service of|funeral|escort|detail/i;
-const TPD_KEEP = /crash|b ?& ?e|breaking|assault|a ?& ?b|disturbance|fight|fraud|larceny|theft|stolen|shoplift|robbery|gunshot|shots|weapon|firearm|stabbing|vandal|malicious|graffiti|fireworks|suspicious|trespass|harass|threat|drug|narcotic|oui|hit and run|road rage|missing|protective order|restraining|warrant|kidnap|arson|fire\b|noise|complaint/i;
+// Taunton's and Attleboro's logs list every call. Keep crimes, crashes with
+// injuries, disturbances and anything that ended in an arrest or summons; drop
+// routine patrols, alarms, parking, fender-benders, and medical or
+// mental-health calls.
+const TPD_SKIP = /property damage only|prevention orders?$|mva (over|under|property)|security check|m\/v stop|traffic enforcement|abandoned 911|^restraining order$|civil matter|notification|\bmisc\b|follow up|road hazard|(returned|recovered|lost) property|illegal dumping|assist fire|erratic|directed patrol|building check|check building|motor vehicle stop|parking|alarm|assist citizen|assist other agency|disabled motor|hang up|repossession|property (found|lost)|general information|prisoner watch|medical|mental|suicid|section c\.? ?123|overdose|well being|check person|disturbed person|wires down|tree down|bolo|transport|lockout|animal|serve|service of|funeral|escort|detail/i;
+const TPD_KEEP = /crash|hit-n-run|pedestrian|break and enter|identity theft|extortion|scam|property crime|b ?& ?e|breaking|assault|a ?& ?b|disturbance|fight|fraud|larceny|theft|stolen|shoplift|robbery|gunshot|shots|weapon|firearm|stabbing|vandal|malicious|graffiti|fireworks|suspicious|trespass|harass|threat|drug|narcotic|oui|hit and run|road rage|missing|protective order|restraining|warrant|kidnap|arson|fire\b|noise|complaint/i;
 const TPD_ACTION_KEEP = /arrest|summons/i;
 const TPD_ACTION_SKIP = /unfounded|duplicate|cancelled|false alarm/i;
 
-export function tauntonNotable({ type, action }) {
+export function callNotable({ type, action }) {
   if (TPD_ACTION_KEEP.test(action)) return !/medical|mental|suicid|section c\.? ?123|overdose/i.test(type);
   if (TPD_ACTION_SKIP.test(action)) return false;
   if (TPD_SKIP.test(type)) return false;
@@ -247,7 +260,127 @@ export function parseTauntonLog(text, { pdf, all = false } = {}) {
       action: action.replace(/\s+/g, ' '),
       ...(pdf ? { pdf } : {}),
     };
-    if (all || tauntonNotable(entry)) out.push(entry);
+    if (all || callNotable(entry)) out.push(entry);
+  }
+  return out;
+}
+
+const cleanCharge = (s) =>
+  cleanOffense(
+    s
+      .trim()
+      .replace(/^\S*\d\S*\s+/, '') // leading code: 94C/34/I, 3601
+      .replace(/\s*\*\s*/g, ' '),
+  );
+
+const cleanAction = (s) => {
+  if (/arrest/i.test(s)) return 'Arrest';
+  if (/summons/i.test(s)) return 'Summons';
+  return titleCase(s);
+};
+
+/**
+ * Attleboro "Public Police Log" (Microsoft Reporting Services), pdftotext
+ * -layout output. A weekly list of calls, then an "Arrests:" table with names,
+ * home addresses and charges. Only the charges are used, attached to the
+ * matching call by incident number.
+ * @param {string} text
+ * @param {{ pdf?: string, all?: boolean }} [opts]
+ */
+export function parseAttleboroLog(text, { pdf, all = false } = {}) {
+  const lines = text.split(/\r?\n/);
+  // In two-digit months the year's last digit wraps to the next line
+  // ("12/21/202" then "5"). Put it back.
+  for (let i = 0; i < lines.length - 1; i++) {
+    const m = lines[i].match(/^(\s*\d{10}\s+\d{1,2}\/\d{1,2}\/\d{3})(?!\d)/);
+    const n = lines[i + 1].match(/^(\s+)(\d)(?=\s|$)/);
+    if (m && n) {
+      lines[i] = m[1] + n[2] + lines[i].slice(m[1].length);
+      lines[i + 1] = n[1] + ' ' + lines[i + 1].slice(n[0].length);
+    }
+  }
+  const rows = [];
+  const arrests = new Map();
+  let cur = null;
+  let arrest = null;
+  let inArrests = false;
+  let inCharges = false;
+  for (const line of lines) {
+    if (/^\s*Arrests:\s*$/.test(line)) {
+      inArrests = true;
+      cur = null;
+      continue;
+    }
+    if (/^\s*Page \d+ of \d+/.test(line) || /Attleboro Police Department|Public Police Log|Incidents and Arrests|^\s*From :/.test(line)) continue;
+    if (inArrests) {
+      const a = line.match(/^\s*(\d{10})\s+\d{1,2}\/\d{1,2}\/\d{4}\s+\d{1,2}:\d{2}\s*[AP]M\b(.*)$/);
+      if (a) {
+        const age = a[2].match(/\s(\d{1,3})\s+[A-Z]\s+[MFUX]\s*$/);
+        arrest = arrests.get(a[1]) ?? { minAge: Infinity, charges: [] };
+        // No readable age: treat as a juvenile, so the call is dropped.
+        arrest.minAge = Math.min(arrest.minAge, age ? +age[1] : 0);
+        arrests.set(a[1], arrest);
+        inCharges = false;
+        continue;
+      }
+      if (/^\s*Charges\s*$/.test(line)) {
+        inCharges = true;
+        continue;
+      }
+      if (inCharges && arrest && line.trim()) {
+        const c = cleanCharge(line);
+        if (c && !arrest.charges.includes(c)) arrest.charges.push(c);
+      }
+      continue;
+    }
+    const m = line.match(/^\s*(\d{10})\s+(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})\s*([AP]M)\s+(.*)$/);
+    if (m) {
+      const rest = m[8];
+      const cols = [];
+      const re = /\S+(?: \S+)*/g;
+      let x;
+      while ((x = re.exec(rest))) cols.push({ text: x[0], at: line.length - rest.length + x.index });
+      let h = +m[5] % 12;
+      if (m[7] === 'PM') h += 12;
+      cur = { no: m[1], date: `${m[4]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}T${String(h).padStart(2, '0')}:${m[6]}`, cols };
+      rows.push(cur);
+      continue;
+    }
+    // Wrapped address, type or action: attach to the nearest column.
+    const w = line.match(/^(\s{10,})(\S.*)$/);
+    if (cur && w) {
+      let at = w[1].length;
+      for (const part of w[2].split(/\s{2,}/)) {
+        let best = cur.cols[0];
+        for (const c of cur.cols) if (Math.abs(c.at - at) < Math.abs(best.at - at)) best = c;
+        if (best && Math.abs(best.at - at) <= 12) best.text += ' ' + part.trim();
+        at += part.length + 2;
+      }
+    } else if (!line.trim()) {
+      cur = null;
+    }
+  }
+
+  const out = [];
+  for (const r of rows) {
+    if (r.cols.length < 2) continue;
+    const [location, type, ...act] = r.cols.map((c) => c.text.replace(/\s+/g, ' '));
+    const rawAction = act.join(' ');
+    if (/juvenile/i.test(rawAction)) continue;
+    const arr = arrests.get(r.no);
+    if (arr && arr.minAge < 18) continue;
+    const entry = {
+      id: `apd-${r.no}`,
+      dept: 'apd',
+      town: 'attleboro',
+      date: r.date,
+      street: streetOnly(location),
+      type: titleCase(type),
+      action: cleanAction(rawAction),
+      ...(arr?.charges.length ? { charges: arr.charges } : {}),
+      ...(pdf ? { pdf } : {}),
+    };
+    if (all || callNotable(entry)) out.push(entry);
   }
   return out;
 }

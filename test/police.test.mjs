@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseNbArrestLog, parseTauntonLog, streetOnly, cleanOffense, mergePolice } from '../scripts/lib/police.mjs';
+import { parseNbArrestLog, parseTauntonLog, parseAttleboroLog, streetOnly, cleanOffense, mergePolice } from '../scripts/lib/police.mjs';
 
 // tesseract output from a scanned New Bedford log (names are made up).
 const NB_OCR = `ieemeee NEW BEDFORD Page: 1
@@ -82,4 +82,48 @@ test('police entries are kept six months', () => {
   const now = new Date('2026-09-27T00:00:00Z');
   const out = mergePolice([{ id: 'old', date: '2026-03-01T10:00' }], [{ id: 'new', date: '2026-09-20T10:00' }], now);
   assert.deepEqual(out.map((e) => e.id), ['new']);
+});
+
+// pdftotext -layout output from an Attleboro weekly log (names are made up).
+const APD = `                             Attleboro Police Department
+                                          Public Police Log
+Incident #      Date     Time                   Address                   Incident Type        Action Taken
+2600067869     8/9/2026     11:46 PM          ONEIL BLVD                SECURITY CHECK          SERVICE
+                                                                                               RENDERED
+2600067867     8/9/2026     11:21 PM         SECOND ST                   DISTURBANCE            PEACE
+                                                                                               RESTORED
+2600067858     8/9/2026     9:44 PM          HUDSON ST                      MEDICAL             SERVICE
+                                                                                               RENDERED
+2600067737     8/9/2026     11:32 AM        NEWPORT AVE                WARRANT SERVICE         ADULT FEMALE
+                                                                                             ARRESTED
+2600067700     8/9/2026     10:00 AM        PARK ST                    LARCENY                 JUVENILE MALE
+                                                                                             ARRESTED
+2600067690     8/9/2026     9:00 AM         SLATER ST                  ASSAULT                 ADULT MALE
+                                                                                             ARRESTED
+2500207800     12/21/202 11:50 PM             KEVIN DR                   DISTURBANCE            NO REPORT
+               5
+             Page 1 of 2                     Report Run Date an Time: 8/17/2026 10:54:42 AM
+Arrests:
+Incident #       Arrest Date /Time     Name                   Address                        Age Race Gender
+2600067737      08/09/2026   11:32 AM Doe,Jane           97 Wendell St Pawtucket, RI    40 B F
+                                                            02861
+Charges
+90/34J UNINSURED MOTOR VEHICLE c90 §34J
+
+3601 WARRANT ARREST
+
+2600067690      08/09/2026   9:00 AM Roe,Rick           1 Main St Attleboro, MA    16 W M
+Charges
+265/13A/A ASSAULT c265 §13A
+`;
+
+test('Attleboro log: notable calls, charges without names, no juveniles', () => {
+  const out = parseAttleboroLog(APD);
+  assert.deepEqual(out.map((e) => e.id), ['apd-2600067867', 'apd-2600067737', 'apd-2500207800']);
+  assert.equal(out[0].date, '2026-08-09T23:21');
+  assert.equal(out[0].action, 'Peace Restored');
+  assert.equal(out[1].action, 'Arrest');
+  assert.deepEqual(out[1].charges, ['Uninsured motor vehicle', 'Warrant arrest']);
+  assert.equal(out[2].date, '2025-12-21T23:50');
+  assert.ok(!JSON.stringify(out).match(/Doe|Roe|Wendell|Pawtucket|Slater/));
 });

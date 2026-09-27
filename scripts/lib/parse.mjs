@@ -204,7 +204,30 @@ const REGION_RE = /\b(?:south[ -]?coast\b|southeast(?:ern)? (?:mass(?:achusetts)
 // Places just outside the county that "South Coast" and "southeastern Mass."
 // stories are often about. A story naming one of these and no county town is
 // about that place, not the region.
-const NEARBY_OUTSIDE_RE = /\b(?:lakeville|middleboro(?:ugh)?|rochester|marion|mattapoisett|wareham|onset|carver|plymouth|kingston|halifax|bridgewater|brockton|stoughton|sharon|foxboro(?:ugh)?|wrentham|plainville|bourne|buzzards bay|cape cod|tiverton|little compton|portsmouth|providence|pawtucket|cumberland|warren,? r\.?i|bristol,? r\.?i)\b/i;
+const NEARBY_OUTSIDE_RE = /\b(?:adamsville|lakeville|middleboro(?:ugh)?|rochester|marion|mattapoisett|wareham|onset|carver|plymouth|kingston|halifax|bridgewater|brockton|stoughton|sharon|foxboro(?:ugh)?|wrentham|plainville|bourne|buzzards bay|cape cod|tiverton|little compton|portsmouth|providence|pawtucket|cumberland|warren,? r\.?i|bristol,? r\.?i)\b/i;
+
+// Places far enough away that a story naming them isn't a local story.
+const ELSEWHERE_RE = /\b(?:boston|cambridge|worcester|springfield|lowell|cape cod|nantucket|martha'?s vineyard|rhode island|new hampshire|connecticut|maine|vermont|new york)\b/i;
+
+// Google News also indexes these papers' classifieds, section fronts and
+// print-edition pages. Those name no town either, so screen them out.
+const NOT_A_STORY_RE = [
+  /^(?:news|obituaries|happenings|sports|opinion|letters|calendar|events|classifieds|real estate)$/i,
+  /^vol\.?\s*\d+/i,
+  /^stories,\s*photos/i,
+  /\blegal advertisements?\b/i,
+  /\b(?:help wanted|for rent|for sale|yard sale|estate sale|gutter|junk|home maintenance|van driver|open house)\b/i,
+  /\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}/, // phone numbers
+];
+export const looksLikeListing = (title) => {
+  const letters = title.replace(/[^A-Za-z]/g, '');
+  const shouting = letters.length >= 8 && letters.replace(/[^A-Z]/g, '').length / letters.length > 0.6;
+  return shouting || NOT_A_STORY_RE.some((re) => re.test(title.trim()));
+};
+
+/** A story from a single-town outlet that names no other place: assume it's about the outlet's town. */
+export const aboutHomeTown = (title, summary = '') =>
+  !looksLikeListing(title) && !NEARBY_OUTSIDE_RE.test(`${title} ${summary}`) && !ELSEWHERE_RE.test(`${title} ${summary}`);
 
 /** Names a region that includes Bristol County, and isn't about a specific place just outside it. */
 export const mentionsRegion = (str) => (mentionsBristolCountyMA(str) || REGION_RE.test(str)) && (mentionsBristolCountyMA(str) || !NEARBY_OUTSIDE_RE.test(str));
@@ -241,6 +264,9 @@ export const itemId = (link, title) =>
  * and tagged Region (`countywide`): it appears in the main wire but on no town
  * page. A regional story about a place just outside the county (Lakeville,
  * Wareham, Tiverton...) is dropped.
+ *
+ * Single-town outlets (sources with `homeTown`) file a story that names no
+ * county town under their own town, unless it names a place outside the county.
  */
 export function normalize(entries, source, now = new Date()) {
   const out = [];
@@ -260,8 +286,12 @@ export function normalize(entries, source, now = new Date()) {
     // Region: headline and summary only. Feed categories ("SE Mass", "SouthCoast
     // News") label the outlet's beat, not the story.
     const countywide = !institutional && matched.length === 0 && (mentionsBristolCountyMA(haystack) || mentionsRegion(`${title} ${summary}`));
-    if (!institutional && matched.length === 0 && !countywide) continue;
-    const towns = institutional ? source.defaultTowns : matched;
+    // Single-town outlets (Dartmouth Week, Westport Shorelines...) often skip
+    // the town name: "Southworth Library book sale". File those under the
+    // outlet's town unless the story names somewhere else.
+    const home = !institutional && matched.length === 0 && !countywide && source.homeTown && aboutHomeTown(title, summary);
+    if (!institutional && matched.length === 0 && !countywide && !home) continue;
+    const towns = institutional ? source.defaultTowns : home ? [source.homeTown] : matched;
     if (e.date && e.date > now) continue;
     const date = e.date ?? now;
     out.push({

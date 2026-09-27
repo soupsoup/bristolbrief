@@ -5,6 +5,9 @@ import statusData from '../data/feed-status.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
+import { isPublishedAt, timeAgo } from './time.mjs';
+
+export { timeAgo };
 
 export interface WireItem {
   id: string;
@@ -88,11 +91,13 @@ export const allWireItems = (wireData.items ?? []) as Omit<WireItem, 'sections'>
 export const rawWireItems = allWireItems.filter((i) => ageDays(i.date) <= wireWindow(i, aggregatedSources).show);
 
 /** Feed items plus manual stories, with editors' changes applied and hidden items removed. */
-export const wireItems = applyEditorial(rawWireItems, editorialData) as WireItem[];
+export const wireItems = (applyEditorial(rawWireItems, editorialData) as WireItem[]).filter((i) => isPublishedAt(i.date));
 
 /** Every story kept (six months of direct feeds, 14 days of Google News), newest first. No meeting agendas. */
 export const allStories = () =>
-  (applyEditorial(allWireItems, editorialData) as WireItem[]).filter((i) => i.category !== 'meetings');
+  (applyEditorial(allWireItems, editorialData) as WireItem[]).filter(
+    (i) => i.category !== 'meetings' && isPublishedAt(i.date),
+  );
 export const sources = (sourcesData.sources ?? []) as Source[];
 export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
 
@@ -114,14 +119,6 @@ export const itemsForSection = (section: string) =>
 export const featuredStories = () => featuredItems(wireItems) as WireItem[];
 /** Manual stories that have their own page on this site. */
 export const localStories = () => wireItems.filter((i) => i.manual && !i.external);
-
-export function timeAgo(iso: string, now = new Date()) {
-  const mins = Math.round((now.valueOf() - new Date(iso).valueOf()) / 60000);
-  if (mins < 60) return `${Math.max(mins, 1)}m ago`;
-  const hrs = Math.round(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  return new Date(iso).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' });
-}
 
 import transitData from '../data/transit.json';
 import tidesData from '../data/tides.json';
@@ -201,9 +198,10 @@ export const storyItems = () => wireItems.filter((i) => i.category === 'news' ||
  * at most one per source so a single outlet can't fill the top of the page.
  */
 export function pickTopStories(items: WireItem[], n: number, now = new Date(), exclude: WireItem[] = []) {
-  const recent = items.filter((i) => now.valueOf() - new Date(i.date).valueOf() < 3 * 864e5);
+  const published = items.filter((i) => isPublishedAt(i.date, now));
+  const recent = published.filter((i) => now.valueOf() - new Date(i.date).valueOf() < 3 * 864e5);
   // A real summary, not a fragment like "are in full swing."
-  const pool = (recent.length >= n ? recent : items).filter((i) => i.summary.length >= 80);
+  const pool = (recent.length >= n ? recent : published).filter((i) => i.summary.length >= 80);
   const picked: WireItem[] = [];
   const skip = new Set(exclude.map((i) => i.id));
   const sources = new Set<string>(exclude.map((i) => i.source));

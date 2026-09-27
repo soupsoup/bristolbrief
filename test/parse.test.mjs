@@ -98,18 +98,28 @@ test('Google News titles lose the publisher suffix and summary', () => {
   assert.equal(item.summary, '');
 });
 
-test('future dates are clamped to now', () => {
+test('future feed dates are excluded instead of published as now', () => {
   const now = new Date('2026-09-26T00:00:00Z');
   const xml = `<rss><channel><item><title>Seekonk event</title><link>https://e/1</link><pubDate>Tue, 01 Dec 2026 00:00:00 GMT</pubDate></item></channel></rss>`;
-  const [item] = normalize(parseFeed(xml), { id: 'z', name: 'Z', category: 'news' }, now);
-  assert.equal(item.date, now.toISOString());
+  assert.deepEqual(normalize(parseFeed(xml), { id: 'z', name: 'Z', category: 'news' }, now), []);
+});
+
+test('timezone-less feed dates are interpreted as Eastern and stored as UTC', () => {
+  const xml = `<rss><channel>
+    <item><title>New Bedford morning report</title><link>https://e/1</link><pubDate>2026-09-27T10:09:00</pubDate></item>
+    <item><title>Fall River winter update</title><link>https://e/2</link><pubDate>2026-12-27T10:09:00</pubDate></item>
+  </channel></rss>`;
+  const [summer, winter] = parseFeed(xml);
+  assert.equal(summer.date.toISOString(), '2026-09-27T14:09:00.000Z');
+  assert.equal(winter.date.toISOString(), '2026-12-27T15:09:00.000Z');
 });
 
 test('merge dedupes, keeps first-seen date and prunes old items', () => {
   const now = new Date('2026-09-26T12:00:00Z');
   const old = { id: 'a', title: 'Same story', date: '2026-09-25T00:00:00.000Z' };
   const stale = { id: 'b', title: 'Ancient', date: '2026-03-01T00:00:00.000Z' };
-  const merged = mergeItems([old, stale], [
+  const future = { id: 'future', title: 'Scheduled story', date: '2026-09-27T00:00:00.000Z' };
+  const merged = mergeItems([old, stale, future], [
     { id: 'a', title: 'Same story', date: '2026-09-26T00:00:00.000Z' },
     { id: 'c', title: 'Same  Story!', date: '2026-09-26T01:00:00.000Z' },
     { id: 'd', title: 'New story', date: '2026-09-26T02:00:00.000Z' },

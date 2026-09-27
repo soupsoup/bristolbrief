@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import DiscordIcon from '../components/DiscordIcon.astro';
 import { SITE, TOWNS } from '../site.config';
 import { sources } from '../lib/wire';
 
@@ -29,6 +30,14 @@ const count = sources.filter((s) => s.enabled).length;
         <li><strong>Weather alerts</strong> from the National Weather Service and <strong>tide times</strong> from NOAA.</li>
         <li><strong>Commuter rail alerts</strong> for the county's eight MBTA stations.</li>
       </ul>
+      <h2>Join the conversation</h2>
+      <p>
+        Talk about local news with neighbors, share what you're seeing in your town and send us story
+        ideas on our Discord.
+      </p>
+      <p>
+        <a class="btn btn-discord" href={SITE.social.discord} target="_blank" rel="noopener"><DiscordIcon /> Join our Discord</a>
+      </p>
       <h2>Coverage area</h2>
       <p>{TOWNS.map((t) => t.name).join(', ')}.</p>
       <h2>Sources and corrections</h2>
@@ -41,3 +50,8 @@ const count = sources.filter((s) => s.enabled).length;
     <div style="max-width:40em;margin-top:40px"><NewsletterSignup /></div>
   </div>
 </Base>
+
+<style>
+  .btn-discord { display: inline-flex; align-items: center; gap: 8px; background: #5865f2; color: #fff; text-decoration: none; }
+  .btn-discord:hover { background: #4752c4; color: #fff; }
+</style>

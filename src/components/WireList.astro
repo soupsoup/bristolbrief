@@ -1,6 +1,6 @@
 ---
 import type { WireItem } from '../lib/wire';
-import { timeAgo } from '../lib/wire';
+import { timeAgo, fmtTime } from '../lib/wire';
 import { townName } from '../site.config';
 
 interface Props {
@@ -8,8 +8,10 @@ interface Props {
   showSummary?: boolean;
   showTowns?: boolean;
   empty?: string;
+  /** Show the time of day instead of "3h ago" (for lists grouped under day headings). */
+  clock?: boolean;
 }
-const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.' } = Astro.props;
+const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.', clock = false } = Astro.props;
 ---
 {items.length === 0 ? (
   <p class="meta">{empty}</p>
@@ -27,7 +29,7 @@ const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.'
           {showTowns && i.towns.length > 0 && <span> · {i.towns.slice(0, 2).map(townName).join(', ')}</span>}
           {showTowns && i.countywide && <span> · Countywide</span>}
           {' · '}
-          <time datetime={i.date} data-ago>{timeAgo(i.date)}</time>
+          {clock ? <time datetime={i.date}>{fmtTime(i.date)}</time> : <time datetime={i.date} data-ago>{timeAgo(i.date)}</time>}
         </p>
         <h3 class="wire-title">
           <a href={i.link} {...(!i.manual || i.external ? { target: '_blank', rel: 'noopener' } : {})}>{i.title}</a>

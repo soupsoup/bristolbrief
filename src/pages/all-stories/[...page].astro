@@ -1,0 +1,75 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import Base from '../../layouts/Base.astro';
+import WireList from '../../components/WireList.astro';
+import { allStories, type WireItem } from '../../lib/wire';
+
+export const getStaticPaths = (({ paginate }) => paginate(allStories(), { pageSize: 100 })) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page<WireItem> };
+
+// Group by day in Eastern time.
+const dayKey = (iso: string) => new Date(iso).toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+const dayLabel = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+const days: { key: string; label: string; items: WireItem[] }[] = [];
+for (const item of page.data) {
+  const key = dayKey(item.date);
+  if (days.at(-1)?.key !== key) days.push({ key, label: dayLabel(item.date), items: [] });
+  days.at(-1)!.items.push(item);
+}
+const title = page.currentPage === 1 ? 'All stories' : `All stories, page ${page.currentPage}`;
+---
+<Base title={title} description="Every Bristol County story on the site, newest first.">
+  <div class="wrap narrow">
+    <header class="index-head">
+      <p class="kicker">Archive</p>
+      <h1 class="page-title">All stories</h1>
+      <p class="page-dek">
+        Every story on the site, newest first: {page.total.toLocaleString('en-US')} headlines from local newsrooms, police
+        departments and town halls. Feed headlines stay for six months and Google News results for 14 days.
+      </p>
+      {page.lastPage > 1 && <p class="meta">Page {page.currentPage} of {page.lastPage}</p>}
+    </header>
+
+    {days.map((d) => (
+      <section class="day" aria-labelledby={`d-${d.key}`}>
+        <h2 id={`d-${d.key}`} class="day-head">{d.label}</h2>
+        <WireList items={d.items} clock />
+      </section>
+    ))}
+    {page.total === 0 && <p class="meta">Stories will appear after the first feed update.</p>}
+
+    {page.lastPage > 1 && (
+      <nav class="pager" aria-label="Pages">
+        {page.url.prev ? <a href={page.url.prev} rel="prev">← Newer</a> : <span />}
+        <span class="meta">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? <a href={page.url.next} rel="next">Older →</a> : <span />}
+      </nav>
+    )}
+  </div>
+</Base>
+
+<style>
+  .narrow { max-width: 760px; }
+  .day-head {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--ink);
+    padding-top: 8px;
+    margin: 32px 0 4px;
+  }
+  .day:first-of-type .day-head { border-top: 0; padding-top: 0; margin-top: 24px; }
+  .pager {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin: 32px 0 48px;
+    font-family: var(--sans);
+    font-size: 15px;
+  }
+</style>

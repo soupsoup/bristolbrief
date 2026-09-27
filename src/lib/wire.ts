@@ -89,6 +89,10 @@ export const rawWireItems = allWireItems.filter((i) => ageDays(i.date) <= wireWi
 
 /** Feed items plus manual stories, with editors' changes applied and hidden items removed. */
 export const wireItems = applyEditorial(rawWireItems, editorialData) as WireItem[];
+
+/** Every story kept (six months of direct feeds, 14 days of Google News), newest first. No meeting agendas. */
+export const allStories = () =>
+  (applyEditorial(allWireItems, editorialData) as WireItem[]).filter((i) => i.category !== 'meetings');
 export const sources = (sourcesData.sources ?? []) as Source[];
 export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
 

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import SocialSection from '../components/SocialSection.astro';
+import { socialPosts } from '../lib/wire';
+
+const posts = socialPosts();
+---
+<Base title="On social" description="Posts from around Bristol County, Massachusetts, picked by our editors.">
+  <div class="wrap">
+    <header class="index-head">
+      <p class="kicker">On social</p>
+      <h1 class="page-title">From around the county</h1>
+      <p class="page-dek">Posts from local agencies, officials, newsrooms and neighbors, picked by our editors.</p>
+    </header>
+    {posts.length === 0
+      ? <p class="page-dek" style="margin-top:24px">No posts yet.</p>
+      : <div style="padding-top:18px"><SocialSection posts={posts} /></div>}
+  </div>
+</Base>

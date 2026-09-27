@@ -6,8 +6,9 @@
 // `npm run pin`. Pure functions, no file or network access.
 
 import { SECTIONS, TOWNS } from '../../src/site.config.ts';
+import { parseSocialUrl, SocialError } from './social.mjs';
 
-export const EMPTY_EDITORIAL = Object.freeze({ overrides: {}, manual: [], featured: [] });
+export const EMPTY_EDITORIAL = Object.freeze({ overrides: {}, manual: [], featured: [], social: [] });
 
 const SECTION_SLUGS = new Set(SECTIONS.map((s) => s.slug));
 const TOWN_SLUGS = new Set(TOWNS.map((t) => t.slug));
@@ -175,7 +176,34 @@ export function normalizeEditorial(doc) {
     overrides: { ...(doc?.overrides ?? {}) },
     manual: [...(doc?.manual ?? [])],
     featured: normalizeFeatured(doc?.featured ?? []),
+    social: [...(doc?.social ?? [])],
   };
+}
+
+/** Validate a social post's editable fields. */
+function validateSocial(fields, platform) {
+  const out = {};
+  for (const [key, raw] of Object.entries(fields ?? {})) {
+    const v = typeof raw === 'string' ? raw.trim() : raw;
+    const empty = v == null || v === '' || (Array.isArray(v) && v.length === 0);
+    switch (key) {
+      case 'text':
+        if (!empty && v.length > 1000) throw new EditorialError('Post text is longer than 1,000 characters');
+        out.text = empty ? null : v;
+        break;
+      case 'authorName':
+        if (!empty && v.length > 100) throw new EditorialError('Name is longer than 100 characters');
+        out.authorName = empty ? null : clean(v);
+        break;
+      case 'towns':
+        out.towns = empty ? null : checkList(v, TOWN_SLUGS, 'town');
+        break;
+      default:
+        throw new EditorialError(`Unknown field: ${key}`);
+    }
+  }
+  if (platform === 'link' && 'text' in out && !out.text) throw new EditorialError('Add the post text for links from this site');
+  return out;
 }
 
 /**
@@ -243,6 +271,65 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
       if (j >= positions.length) positions.push(null);
       [positions[i], positions[j]] = [positions[j], positions[i]];
       ed.featured = fromLayout(positions);
+      return ed;
+    }
+
+    case 'addSocial': {
+      let parsed;
+      try {
+        parsed = parseSocialUrl(op.post?.url);
+      } catch (err) {
+        throw new EditorialError(err instanceof SocialError ? err.message : 'Invalid link');
+      }
+      const id = `s-${parsed.key}`;
+      if (ed.social.some((p) => p.id === id)) throw new EditorialError('That post is already on the site');
+      const p = op.post ?? {};
+      const fields = validateSocial({ text: p.text ?? '', authorName: p.authorName ?? '', towns: p.towns ?? [] }, parsed.platform);
+      if (!fields.text) {
+        throw new EditorialError(
+          parsed.platform === 'link'
+            ? 'Add the post text for links from this site'
+            : "Couldn't load that post (it may be deleted or private). Paste its text to add it anyway.",
+        );
+      }
+      const handle = typeof p.handle === 'string' && /^[A-Za-z0-9_.:-]{1,60}$/.test(p.handle) ? p.handle : parsed.handle;
+      const uri = typeof p.uri === 'string' && /^at:\/\/did:[a-z0-9:.]+\/app\.bsky\.feed\.post\/[a-z0-9]+$/i.test(p.uri) ? p.uri : undefined;
+      const cid = typeof p.cid === 'string' && /^[a-z0-9]{10,100}$/i.test(p.cid) ? p.cid : undefined;
+      const postedLabel = typeof p.postedLabel === 'string' ? clean(p.postedLabel).slice(0, 40) : undefined;
+      const post = {
+        id,
+        platform: parsed.platform,
+        url: parsed.url,
+        ...Object.fromEntries(Object.entries(fields).filter(([, v]) => v != null)),
+        ...(handle && { handle }),
+        ...(postedLabel && { postedLabel }),
+        ...(uri && { uri }),
+        ...(cid && { cid }),
+        addedAt: now.toISOString(),
+      };
+      ed.social.unshift(post);
+      return ed;
+    }
+
+    case 'updateSocial': {
+      const i = ed.social.findIndex((p) => p.id === op.id);
+      if (i === -1) throw new EditorialError('Post not found');
+      const fields = validateSocial(op.fields, ed.social[i].platform);
+      if (fields.text === null) throw new EditorialError('Post text cannot be empty');
+      ed.social[i] = mergeFields(ed.social[i], fields);
+      return ed;
+    }
+
+    case 'removeSocial':
+      ed.social = ed.social.filter((p) => p.id !== op.id);
+      return ed;
+
+    case 'moveSocial': {
+      const i = ed.social.findIndex((p) => p.id === op.id);
+      if (i === -1) throw new EditorialError('Post not found');
+      const j = op.direction === 'up' ? i - 1 : i + 1;
+      if (j < 0 || j >= ed.social.length) return ed;
+      [ed.social[i], ed.social[j]] = [ed.social[j], ed.social[i]];
       return ed;
     }
 

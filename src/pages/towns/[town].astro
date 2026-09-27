@@ -5,9 +5,10 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import TransitAlerts from '../../components/TransitAlerts.astro';
 import TideTable from '../../components/TideTable.astro';
 import MeetingCalendar from '../../components/MeetingCalendar.astro';
+import SocialSection from '../../components/SocialSection.astro';
 import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
 import { TOWNS } from '../../site.config';
-import { itemsForTown } from '../../lib/wire';
+import { itemsForTown, socialForTown } from '../../lib/wire';
 
 export function getStaticPaths() {
   return TOWNS.map((t) => ({ params: { town: t.slug }, props: { name: t.name } }));
@@ -20,6 +21,7 @@ const headlines = townItems.filter((i) => i.category !== 'meetings').slice(0, 25
 const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);
 const hasStation = Object.values(MBTA_STATIONS).some((s) => s.town === town);
 const hasTides = TIDE_STATIONS.some((s) => s.towns.includes(town));
+const social = socialForTown(town).slice(0, 4);
 ---
 <Base title={name} description={`News, public meetings and notices from ${name}, Massachusetts.`}>
   <div class="wrap">
@@ -43,6 +45,12 @@ const hasTides = TIDE_STATIONS.some((s) => s.towns.includes(town));
           <>
             <div class="section-head"><h2>Meeting agendas</h2></div>
             <WireList items={meetings} showTowns={false} />
+          </>
+        )}
+        {social.length > 0 && (
+          <>
+            <div class="section-head"><h2>On social</h2></div>
+            <SocialSection posts={social} columns={1} />
           </>
         )}
         {hasStation && (

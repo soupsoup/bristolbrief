@@ -132,3 +132,33 @@ test('slugify', () => {
   assert.equal(slugify("Nor'easter hits Fall River — what's next?"), 'nor-easter-hits-fall-river-what-s-next');
   assert.equal(slugify('Café São João'), 'cafe-sao-joao');
 });
+
+test('social posts: add, dedupe, edit, reorder, remove', () => {
+  let ed = op({}, { type: 'addSocial', post: { url: 'https://twitter.com/NWSBoston/status/123456789?s=20', text: 'High wind warning', authorName: 'NWS Boston', handle: 'NWSBoston', postedLabel: 'September 26, 2026', towns: ['fall-river'] } });
+  assert.deepEqual(ed.social[0], {
+    id: 's-x-123456789', platform: 'x', url: 'https://x.com/NWSBoston/status/123456789', text: 'High wind warning',
+    authorName: 'NWS Boston', towns: ['fall-river'], handle: 'NWSBoston', postedLabel: 'September 26, 2026', addedAt: now.toISOString(),
+  });
+  assert.throws(() => op(ed, { type: 'addSocial', post: { url: 'https://x.com/NWSBoston/status/123456789', text: 'again' } }), /already on the site/);
+  ed = op(ed, { type: 'addSocial', post: { url: 'https://bsky.app/profile/example.com/post/abc123', text: 'Hello', uri: 'at://did:plc:xyz/app.bsky.feed.post/abc123', cid: 'bafyreicnt42y6vo6pfpv' } });
+  assert.equal(ed.social[0].platform, 'bluesky');
+  assert.equal(ed.social[0].uri, 'at://did:plc:xyz/app.bsky.feed.post/abc123');
+  ed = op(ed, { type: 'moveSocial', id: 's-x-123456789', direction: 'up' });
+  assert.equal(ed.social[0].id, 's-x-123456789');
+  ed = op(ed, { type: 'updateSocial', id: 's-x-123456789', fields: { text: 'Edited', towns: [] } });
+  assert.equal(ed.social[0].text, 'Edited');
+  assert.equal(ed.social[0].towns, undefined);
+  ed = op(ed, { type: 'removeSocial', id: 's-x-123456789' });
+  assert.equal(ed.social.length, 1);
+});
+
+test('social posts: validation', () => {
+  assert.throws(() => op({}, { type: 'addSocial', post: { url: 'javascript:alert(1)', text: 'x' } }), EditorialError);
+  assert.throws(() => op({}, { type: 'addSocial', post: { url: 'https://x.com/a/status/1' } }), /Couldn't load that post/);
+  assert.throws(() => op({}, { type: 'addSocial', post: { url: 'https://facebook.com/p/1' } }), /Add the post text/);
+  // Untrusted embed fields are dropped rather than stored.
+  const ed = op({}, { type: 'addSocial', post: { url: 'https://bsky.app/profile/a.b/post/xyz', text: 'Hi', uri: 'javascript:alert(1)', cid: '"><script>', handle: '<b>' } });
+  assert.equal(ed.social[0].uri, undefined);
+  assert.equal(ed.social[0].cid, undefined);
+  assert.equal(ed.social[0].handle, 'a.b');
+});

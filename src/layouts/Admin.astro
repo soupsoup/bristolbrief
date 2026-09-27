@@ -4,7 +4,7 @@ import { storeInfo } from '../lib/admin/store';
 
 interface Props {
   title: string;
-  active?: 'dashboard' | 'new' | 'sources';
+  active?: 'dashboard' | 'new' | 'social' | 'sources';
 }
 const { title, active } = Astro.props;
 const info = storeInfo();
@@ -25,6 +25,7 @@ const info = storeInfo();
         <nav>
           <a href="/admin/" aria-current={active === 'dashboard' ? 'page' : undefined}>Stories</a>
           <a href="/admin/new/" aria-current={active === 'new' ? 'page' : undefined}>Add story</a>
+          <a href="/admin/social/" aria-current={active === 'social' ? 'page' : undefined}>Social</a>
           <a href="/admin/sources/" aria-current={active === 'sources' ? 'page' : undefined}>Feeds</a>
           <a href="/" target="_blank" rel="noopener">View site ↗</a>
           <form method="post" action="/api/admin/logout/"><button type="submit">Sign out</button></form>

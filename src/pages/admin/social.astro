@@ -1,0 +1,184 @@
+---
+import Admin from '../../layouts/Admin.astro';
+import { readEditorial } from '../../lib/admin/store';
+import { TOWNS, townName } from '../../site.config';
+import type { SocialPost } from '../../lib/wire';
+
+export const prerender = false;
+
+const { doc } = await readEditorial();
+const posts = (doc.social ?? []) as SocialPost[];
+const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Link' };
+---
+<Admin title="Social" active="social">
+  <h1>Social posts</h1>
+  <p class="a-muted">
+    Paste a link to a post on X (or Bluesky) and it appears in the "On social" section of the home
+    page, newest first. The home page shows six; the rest are on the <a href="/social/" target="_blank">social page</a>.
+    Tag towns to also show a post on those town pages.
+  </p>
+
+  <h2>Add a post</h2>
+  <form class="add-social" novalidate>
+    <label class="field">
+      <span>Post link</span>
+      <input type="url" name="url" placeholder="https://x.com/account/status/…" required />
+    </label>
+    <p class="preview a-muted" aria-live="polite"></p>
+    <label class="field">
+      <span>Post text</span>
+      <textarea name="text" rows="4" maxlength="1000" placeholder="Filled in automatically for X and Bluesky posts. Type it for other sites."></textarea>
+    </label>
+    <label class="field">
+      <span>Name shown (optional)</span>
+      <input type="text" name="authorName" maxlength="100" placeholder="e.g. Fall River Police" />
+    </label>
+    <details>
+      <summary>Towns (optional)</summary>
+      <div class="a-checks" style="margin-top:8px">
+        {TOWNS.map((t) => <label><input type="checkbox" name="towns" value={t.slug} /> {t.name}</label>)}
+      </div>
+    </details>
+    <input type="hidden" name="handle" />
+    <input type="hidden" name="postedLabel" />
+    <input type="hidden" name="uri" />
+    <input type="hidden" name="cid" />
+    <div class="btn-row" style="margin-top:14px"><button type="submit" class="a-btn primary">Add post</button></div>
+  </form>
+
+  <h2>On the site ({posts.length})</h2>
+  {posts.length === 0 && <p class="a-muted">No posts yet.</p>}
+  <ol class="posts">
+    {posts.map((p, n) => (
+      <li data-id={p.id}>
+        <div class="p-head">
+          <span class="a-badge">{PLATFORM[p.platform]}</span>
+          <strong>{p.authorName ?? (p.handle ? `@${p.handle}` : '')}</strong>
+          {p.handle && p.authorName && <span class="a-muted">@{p.handle}</span>}
+          {n < 6 && <span class="a-badge featured">Home page</span>}
+          {p.towns?.length ? <span class="a-muted">· {p.towns.map(townName).join(', ')}</span> : null}
+        </div>
+        <p class="p-text">{p.text}</p>
+        <form class="edit-social" hidden novalidate>
+          <textarea name="text" rows="3" maxlength="1000">{p.text}</textarea>
+          <div class="a-checks">
+            {TOWNS.map((t) => <label><input type="checkbox" name="towns" value={t.slug} checked={p.towns?.includes(t.slug)} /> {t.name}</label>)}
+          </div>
+          <div class="btn-row"><button type="submit" class="a-btn primary">Save</button><button type="button" class="a-btn" data-cancel>Cancel</button></div>
+        </form>
+        <div class="btn-row">
+          <button class="a-btn" data-op="up" disabled={n === 0} aria-label="Move up">↑</button>
+          <button class="a-btn" data-op="down" disabled={n === posts.length - 1} aria-label="Move down">↓</button>
+          <button class="a-btn" data-op="edit">Edit</button>
+          <a class="a-btn" href={p.url} target="_blank" rel="noopener">Open ↗</a>
+          <button class="a-btn danger" data-op="remove">Remove</button>
+        </div>
+      </li>
+    ))}
+  </ol>
+</Admin>
+
+<script>
+  import { saveOp, toast } from '../../lib/admin/client';
+
+  const form = document.querySelector<HTMLFormElement>('.add-social')!;
+  const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement;
+  const preview = form.querySelector<HTMLElement>('.preview')!;
+  let lastUrl = '';
+
+  async function lookup() {
+    const url = field('url').value.trim();
+    if (!url || url === lastUrl) return;
+    lastUrl = url;
+    preview.textContent = 'Looking up the post…';
+    try {
+      const res = await fetch('/api/admin/social-preview/', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url }),
+      });
+      const info = await res.json();
+      if (!res.ok) {
+        preview.textContent = info.error ?? 'That link did not work.';
+        return;
+      }
+      for (const k of ['handle', 'postedLabel', 'uri', 'cid']) field(k).value = info[k] ?? '';
+      if (info.found) {
+        (form.elements.namedItem('text') as HTMLTextAreaElement).value = info.text;
+        field('authorName').value = info.authorName ?? '';
+        preview.textContent = `Loaded from ${info.platform === 'x' ? 'X' : 'Bluesky'}: ${info.authorName ?? ''}${info.handle ? ` (@${info.handle})` : ''}${info.postedLabel ? `, ${info.postedLabel}` : ''}. Edit the text if you like.`;
+      } else {
+        preview.textContent =
+          info.platform === 'link'
+            ? 'Links from this site are shown as a card. Type the post text below.'
+            : "Couldn't load that post (it may be deleted or private). Type its text below to add it anyway.";
+      }
+    } catch {
+      preview.textContent = 'Could not reach the server.';
+    }
+  }
+  field('url').addEventListener('change', lookup);
+  field('url').addEventListener('paste', () => setTimeout(lookup, 0));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!field('url').value.trim()) return toast('Paste a link to the post.', { error: true });
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    btn.disabled = true;
+    const towns = [...form.querySelectorAll<HTMLInputElement>('input[name="towns"]:checked')].map((i) => i.value);
+    const post = {
+      url: field('url').value.trim(),
+      text: (form.elements.namedItem('text') as HTMLTextAreaElement).value,
+      authorName: field('authorName').value,
+      handle: field('handle').value,
+      postedLabel: field('postedLabel').value,
+      uri: field('uri').value,
+      cid: field('cid').value,
+      towns,
+    };
+    const res = await saveOp({ type: 'addSocial', post }, `add social post ${post.url}`);
+    if (res.ok) setTimeout(() => location.reload(), 700);
+    else btn.disabled = false;
+  });
+
+  document.querySelectorAll<HTMLLIElement>('ol.posts li').forEach((li) => {
+    const id = li.dataset.id!;
+    const edit = li.querySelector<HTMLFormElement>('.edit-social')!;
+    li.addEventListener('click', async (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-op]');
+      if (!btn) return;
+      const kind = btn.dataset.op;
+      if (kind === 'edit') {
+        edit.hidden = false;
+        return;
+      }
+      if (kind === 'remove' && !confirm('Remove this post from the site?')) return;
+      btn.disabled = true;
+      const op =
+        kind === 'remove' ? { type: 'removeSocial', id } : { type: 'moveSocial', id, direction: kind };
+      const res = await saveOp(op, `${kind === 'remove' ? 'remove' : `move ${kind}`} social post`);
+      if (res.ok) setTimeout(() => location.reload(), 700);
+      else btn.disabled = false;
+    });
+    edit.querySelector('[data-cancel]')!.addEventListener('click', () => (edit.hidden = true));
+    edit.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = (edit.elements.namedItem('text') as HTMLTextAreaElement).value;
+      const towns = [...edit.querySelectorAll<HTMLInputElement>('input[name="towns"]:checked')].map((i) => i.value);
+      const res = await saveOp({ type: 'updateSocial', id, fields: { text, towns } }, 'edit social post');
+      if (res.ok) setTimeout(() => location.reload(), 700);
+    });
+  });
+</script>
+
+<style>
+  .add-social { max-width: 720px; }
+  .preview { min-height: 1.4em; margin: -8px 0 12px; font-size: 14px; }
+  details summary { cursor: pointer; font-weight: 700; font-size: 13px; }
+  .btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .posts { list-style: none; margin: 0; padding: 0; max-width: 900px; }
+  .posts li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .p-head { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+  .p-text { margin: 6px 0 10px; white-space: pre-line; }
+  .edit-social { margin: 0 0 10px; display: grid; gap: 10px; }
+</style>

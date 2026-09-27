@@ -272,8 +272,11 @@ export function normalizeNws(json) {
   });
 }
 
+/** How long headlines stay on the site. */
+export const WIRE_MAX_AGE_DAYS = 14;
+
 /** Merge new items into the stored list: dedupe, sort newest first, prune. */
-export function mergeItems(existing, incoming, { maxAgeDays = 45, maxItems = 2000, now = new Date() } = {}) {
+export function mergeItems(existing, incoming, { maxAgeDays = WIRE_MAX_AGE_DAYS, maxItems = 2000, now = new Date() } = {}) {
   const byId = new Map(existing.map((i) => [i.id, i]));
   const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const seenTitles = new Set(existing.map((i) => titleKey(i.title)));

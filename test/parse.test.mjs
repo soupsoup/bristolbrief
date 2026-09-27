@@ -160,3 +160,12 @@ test('items without a feed date are flagged undated', () => {
   const [item] = normalize(parseFeed(xml), { id: 'w', name: 'W', category: 'government', defaultTowns: ['westport'] });
   assert.equal(item.undated, true);
 });
+
+test('headlines older than 14 days are pruned', () => {
+  const now = new Date('2026-09-27T00:00:00Z');
+  const merged = mergeItems([], [
+    { id: 'new', title: 'Fresh', date: '2026-09-20T00:00:00.000Z' },
+    { id: 'old', title: 'Stale', date: '2026-09-10T00:00:00.000Z' },
+  ], { now });
+  assert.deepEqual(merged.map((i) => i.id), ['new']);
+});

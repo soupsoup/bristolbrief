@@ -49,10 +49,22 @@ const localDate = (iso?: string) => {
             <input type="url" name="link" value={item?.external ? item.link : ''} placeholder="https://" />
             <small class="a-muted">Link to another site, or leave blank and write the story below. It gets its own page here.</small>
           </label>
-          <label class="field">
-            <span>Story text (used when there's no link)</span>
-            <textarea name="body" rows="14" placeholder={'Blank line between paragraphs.\n## Subheading\n- List item\n> Quote'}>{item?.body ?? ''}</textarea>
-          </label>
+          <div class="field">
+            <label for="story-body"><span>Story text (used when there's no link)</span></label>
+            <div class="toolbar" role="toolbar" aria-label="Formatting" aria-controls="story-body">
+              <button type="button" data-fmt="bold" title="Bold (Ctrl/⌘+B)"><b>B</b></button>
+              <button type="button" data-fmt="italic" title="Italic (Ctrl/⌘+I)"><i>I</i></button>
+              <button type="button" data-fmt="link" title="Link (Ctrl/⌘+K)">Link</button>
+              <span class="sep" aria-hidden="true"></span>
+              <button type="button" data-fmt="h2" title="Subhead">Subhead</button>
+              <button type="button" data-fmt="h3" title="Small subhead">Small head</button>
+              <button type="button" data-fmt="list" title="Bulleted list">• List</button>
+              <button type="button" data-fmt="quote" title="Quote">“ Quote</button>
+              <button type="button" data-fmt="hr" title="Divider">— Divider</button>
+            </div>
+            <textarea id="story-body" name="body" rows="16" placeholder={'Write the story here. Leave a blank line between paragraphs.'}>{item?.body ?? ''}</textarea>
+            <small class="a-muted">Select text and use the buttons, or type **bold**, *italic*, [link text](https://…), ## Subhead, - list, &gt; quote.</small>
+          </div>
           <div class="two">
             <label class="field">
               <span>Byline / source</span>
@@ -83,6 +95,22 @@ const localDate = (iso?: string) => {
           ))}
         </div>
       </fieldset>
+      {manual && (
+        <section class="preview" aria-labelledby="preview-h">
+          <div class="preview-head">
+            <h2 id="preview-h">Preview</h2>
+            <span class="a-muted" data-preview-note>How the story page will look. Updates as you type.</span>
+          </div>
+          <article class="story-preview" data-preview>
+            <div class="sp-kicker" data-p="kicker"></div>
+            <h1 class="sp-title" data-p="title"></h1>
+            <p class="sp-dek" data-p="summary"></p>
+            <p class="meta sp-byline" data-p="byline"></p>
+            <figure class="sp-figure" data-p="figure" hidden><img alt="" /><figcaption class="meta"></figcaption></figure>
+            <div class="prose sp-body" data-p="body"></div>
+          </article>
+        </section>
+      )}
     </div>
 
     <aside class="side-col">
@@ -153,6 +181,7 @@ const localDate = (iso?: string) => {
 
 <script>
   import { saveOp, resizeImage, uploadImage, toast } from '../../lib/admin/client';
+  import { renderBody } from '../../lib/body';
 
   const form = document.querySelector<HTMLFormElement>('.story-form')!;
   const id = form.dataset.id!;
@@ -178,6 +207,7 @@ const localDate = (iso?: string) => {
       pendingPhoto = { dataUrl, name: file.name };
       preview.innerHTML = `<img src="${dataUrl}" alt="" />`;
       removeBtn.hidden = false;
+      form.dispatchEvent(new Event('input'));
     } catch (err: any) {
       toast(err.message, { error: true });
     }
@@ -188,6 +218,7 @@ const localDate = (iso?: string) => {
     imageInput.value = '';
     preview.innerHTML = '';
     removeBtn.hidden = true;
+    form.dispatchEvent(new Event('input'));
   });
 
   form.querySelector('[data-reset="title"]')?.addEventListener('click', () => {
@@ -280,6 +311,134 @@ const localDate = (iso?: string) => {
     if (res.ok) setTimeout(() => location.reload(), 800);
   });
 
+  // Formatting toolbar: wraps the selection or starts lines with a marker, in
+  // the same plain-text syntax the story page renders.
+  const body = form.querySelector<HTMLTextAreaElement>('textarea[name="body"]');
+  function edit(fn: (text: string, start: number, end: number) => { text: string; start: number; end: number }) {
+    if (!body) return;
+    body.focus();
+    const before = body.value;
+    const r = fn(before, body.selectionStart, body.selectionEnd);
+    // Replace only the part that changed, through execCommand where the
+    // browser supports it, so Ctrl/⌘+Z undoes a toolbar edit.
+    let p = 0;
+    while (p < before.length && p < r.text.length && before[p] === r.text[p]) p++;
+    let q = 0;
+    while (q < before.length - p && q < r.text.length - p && before[before.length - 1 - q] === r.text[r.text.length - 1 - q]) q++;
+    const mid = r.text.slice(p, r.text.length - q);
+    body.setSelectionRange(p, before.length - q);
+    const ok = mid ? document.execCommand('insertText', false, mid) : document.execCommand('delete');
+    if (!ok || body.value !== r.text) body.value = r.text;
+    body.setSelectionRange(r.start, r.end);
+    body.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+  const wrap = (mark: string, placeholder: string) =>
+    edit((t, a, b) => {
+      const sel = t.slice(a, b) || placeholder;
+      // Toggle off if the selection is already wrapped.
+      if (t.slice(a - mark.length, a) === mark && t.slice(b, b + mark.length) === mark && a !== b)
+        return { text: t.slice(0, a - mark.length) + sel + t.slice(b + mark.length), start: a - mark.length, end: b - mark.length };
+      return { text: t.slice(0, a) + mark + sel + mark + t.slice(b), start: a + mark.length, end: a + mark.length + sel.length };
+    });
+  const lines = (prefix: string, placeholder: string) =>
+    edit((t, a, b) => {
+      const ls = t.lastIndexOf('\n', a - 1) + 1;
+      let le = t.indexOf('\n', b);
+      if (le === -1) le = t.length;
+      const block = t.slice(ls, le) || placeholder;
+      const strip = /^(#{2,3} |[-*] |> ?)/;
+      const all = block.split('\n').every((l) => !l.trim() || l.startsWith(prefix));
+      const out = block
+        .split('\n')
+        .map((l) => (!l.trim() ? l : all ? l.slice(prefix.length) : prefix + l.replace(strip, '')))
+        .join('\n');
+      // Headings and quotes read better set off by blank lines.
+      const before = ls > 0 && t[ls - 2] !== '\n' && t[ls - 1] === '\n' && prefix !== '- ' ? '\n' : '';
+      return { text: t.slice(0, ls) + before + out + t.slice(le), start: ls + before.length, end: ls + before.length + out.length };
+    });
+  const actions: Record<string, () => void> = {
+    bold: () => wrap('**', 'bold text'),
+    italic: () => wrap('*', 'italic text'),
+    link: () => {
+      const url = prompt('Link address (https://…)', 'https://');
+      if (!url || url === 'https://') return;
+      if (!/^(https?:\/\/|mailto:)\S+$/.test(url)) return toast('Links must start with https:// or http:// (or mailto:).', { error: true });
+      edit((t, a, b) => {
+        const label = t.slice(a, b) || 'link text';
+        const ins = `[${label}](${url})`;
+        return { text: t.slice(0, a) + ins + t.slice(b), start: a + 1, end: a + 1 + label.length };
+      });
+    },
+    h2: () => lines('## ', 'Subhead'),
+    h3: () => lines('### ', 'Small subhead'),
+    list: () => lines('- ', 'List item'),
+    quote: () => lines('> ', 'Quote'),
+    hr: () =>
+      edit((t, a) => {
+        const pre = t.slice(0, a).replace(/\n*$/, '');
+        const ins = (pre ? '\n\n' : '') + '---\n\n';
+        return { text: pre + ins + t.slice(a).replace(/^\n*/, ''), start: pre.length + ins.length, end: pre.length + ins.length };
+      }),
+  };
+  form.querySelectorAll<HTMLButtonElement>('[data-fmt]').forEach((b) =>
+    b.addEventListener('mousedown', (e) => e.preventDefault()),
+  );
+  form.querySelectorAll<HTMLButtonElement>('[data-fmt]').forEach((b) =>
+    b.addEventListener('click', () => actions[b.dataset.fmt!]?.()),
+  );
+  body?.addEventListener('keydown', (e) => {
+    if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+    const key = { b: 'bold', i: 'italic', k: 'link' }[e.key.toLowerCase()];
+    if (key) {
+      e.preventDefault();
+      actions[key]();
+    }
+  });
+
+  // Live preview of the story page.
+  const pv = form.querySelector<HTMLElement>('[data-preview]');
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const labelFor = (name: string, value: string) =>
+    form.querySelector<HTMLInputElement>(`input[name="${name}"][value="${value}"]`)?.parentElement?.textContent?.trim() ?? value;
+  function renderPreview() {
+    if (!pv) return;
+    const part = (p: string) => pv.querySelector<HTMLElement>(`[data-p="${p}"]`)!;
+    const link = val('link');
+    const kick = [
+      ...checked('sections').map((s) => `<span class="kicker">${esc(labelFor('sections', s))}</span>`),
+      ...checked('towns').map((t) => `<span class="meta">${esc(labelFor('towns', t))}</span>`),
+    ];
+    part('kicker').innerHTML = kick.join('');
+    part('title').textContent = val('title') || 'Headline';
+    part('title').classList.toggle('empty', !val('title'));
+    part('summary').textContent = val('summary');
+    part('summary').hidden = !val('summary');
+    const when = val('date') ? new Date(val('date')) : new Date();
+    part('byline').textContent = `${val('sourceName') || 'The Bristol Brief'} · ${when.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}`;
+    const img = pendingPhoto?.dataUrl || imageInput.value;
+    const fig = part('figure');
+    fig.hidden = !img;
+    if (img) {
+      fig.querySelector('img')!.src = img;
+      fig.querySelector('figcaption')!.textContent = val('imageAlt');
+    }
+    const bodyEl = part('body');
+    if (link) bodyEl.innerHTML = `<p class="a-muted">This story links to <a href="${esc(link)}" target="_blank" rel="noopener">${esc(link)}</a>, so it won't get its own page. Clear the link to publish the text below as a story page.</p>`;
+    else bodyEl.innerHTML = renderBody(body?.value ?? '') || '<p class="a-muted">The story text will appear here.</p>';
+  }
+  let queued = false;
+  const schedule = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      renderPreview();
+    });
+  };
+  form.addEventListener('input', schedule);
+  form.addEventListener('change', schedule);
+  renderPreview();
+
   form.querySelector('[data-delete]')?.addEventListener('click', async () => {
     if (!confirm('Delete this story? This removes it from the site.')) return;
     const res = await saveOp({ type: 'deleteManual', id }, `delete "${val('title').slice(0, 60)}"`);
@@ -300,4 +459,70 @@ const localDate = (iso?: string) => {
   .save-row { padding: 6px 0 10px; }
   .save-row .primary { font-size: 15px; padding: 9px 18px; }
   label.inline { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid var(--rule);
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    background: var(--paper-2);
+  }
+  .toolbar button {
+    font: 600 13px/1 var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 6px 9px;
+    cursor: pointer;
+  }
+  .toolbar button:hover { border-color: var(--ink-2); }
+  .toolbar .sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 4px; }
+  .toolbar + textarea { border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }
+  .preview { margin-top: 28px; border-top: 3px solid var(--ink); padding-top: 10px; }
+  .preview-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; justify-content: space-between; }
+  .preview-head h2 { font: 800 14px var(--sans); letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
+  .story-preview {
+    margin-top: 12px;
+    padding: 20px 22px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper);
+  }
+</style>
+
+<style is:global>
+  /* The preview is filled in by script, so these can't be scoped. */
+  .story-preview .sp-kicker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; min-height: 1em; }
+  .story-preview .sp-title {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.08;
+    margin: 8px 0 10px;
+  }
+  .story-preview .sp-title.empty { color: var(--ink-2); opacity: 0.5; }
+  .story-preview .sp-dek { font-family: var(--serif-body); font-size: 20px; line-height: 1.4; color: var(--ink-2); margin: 0 0 10px; }
+  .story-preview .sp-byline { margin: 0 0 16px; }
+  .story-preview .sp-figure { margin: 0 0 18px; }
+  .story-preview .sp-figure img { width: 100%; display: block; }
+  .story-preview .sp-figure figcaption { margin-top: 6px; }
+  .story-preview .sp-body { font-family: var(--serif-body); font-size: 19px; line-height: 1.6; }
+  .story-preview .sp-body a { color: var(--link); }
+  /* Undo the admin's section-heading style so subheads look as they will on the site. */
+  .admin .story-preview .sp-body h2 {
+    font-family: var(--serif-display);
+    font-size: 28px;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: normal;
+    border: 0;
+    padding: 0;
+    margin: 1.6em 0 0.4em;
+  }
+  .admin .story-preview .sp-body h3 { font-family: var(--sans); font-size: 18px; text-transform: none; letter-spacing: normal; margin: 1.5em 0 0.3em; }
 </style>

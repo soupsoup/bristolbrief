@@ -6,6 +6,7 @@ import TransitAlerts from '../../components/TransitAlerts.astro';
 import TideTable from '../../components/TideTable.astro';
 import MeetingCalendar from '../../components/MeetingCalendar.astro';
 import SocialSection from '../../components/SocialSection.astro';
+import PoliceLog from '../../components/PoliceLog.astro';
 import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
 import { TOWNS } from '../../site.config';
 import { itemsForTown, socialForTown } from '../../lib/wire';
@@ -47,6 +48,7 @@ const social = socialForTown(town).slice(0, 4);
             <WireList items={meetings} showTowns={false} />
           </>
         )}
+        <PoliceLog town={town} open={5} />
         {social.length > 0 && (
           <>
             <div class="section-head"><h2>On social</h2></div>

@@ -13,6 +13,7 @@ const year = new Date().getFullYear();
       <h3>Sections</h3>
       <ul>
         {SECTIONS.map((s) => <li><a href={`/section/${s.slug}/`}>{s.name}</a></li>)}
+        <li><a href="/all-stories/">All stories</a></li>
       </ul>
     </div>
     <div class="footer-towns">

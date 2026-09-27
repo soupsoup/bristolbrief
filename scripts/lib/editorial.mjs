@@ -8,7 +8,7 @@
 import { SECTIONS, TOWNS } from '../../src/site.config.ts';
 import { parseSocialUrl, SocialError } from './social.mjs';
 
-export const EMPTY_EDITORIAL = Object.freeze({ overrides: {}, manual: [], featured: [], social: [] });
+export const EMPTY_EDITORIAL = Object.freeze({ overrides: {}, manual: [], featured: [], social: [], dismissedSocial: [], mutedSocial: [] });
 
 const SECTION_SLUGS = new Set(SECTIONS.map((s) => s.slug));
 const TOWN_SLUGS = new Set(TOWNS.map((t) => t.slug));
@@ -177,6 +177,9 @@ export function normalizeEditorial(doc) {
     manual: [...(doc?.manual ?? [])],
     featured: normalizeFeatured(doc?.featured ?? []),
     social: [...(doc?.social ?? [])],
+    // Scanned posts an editor passed on, and accounts whose posts are hidden from the scan.
+    dismissedSocial: [...(doc?.dismissedSocial ?? [])],
+    mutedSocial: [...(doc?.mutedSocial ?? [])],
   };
 }
 
@@ -197,6 +200,16 @@ function validateSocial(fields, platform) {
         break;
       case 'towns':
         out.towns = empty ? null : checkList(v, TOWN_SLUGS, 'town');
+        break;
+      case 'image':
+        if (!empty && !/^https:\/\/[^\s"'<>]{1,500}$/.test(v)) throw new EditorialError('Invalid image link');
+        out.image = empty ? null : v;
+        break;
+      case 'imageAlt':
+        out.imageAlt = empty ? null : clean(v).slice(0, 300);
+        break;
+      case 'postedAt':
+        out.postedAt = empty ? null : checkDate(v);
         break;
       default:
         throw new EditorialError(`Unknown field: ${key}`);
@@ -284,7 +297,17 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
       const id = `s-${parsed.key}`;
       if (ed.social.some((p) => p.id === id)) throw new EditorialError('That post is already on the site');
       const p = op.post ?? {};
-      const fields = validateSocial({ text: p.text ?? '', authorName: p.authorName ?? '', towns: p.towns ?? [] }, parsed.platform);
+      const fields = validateSocial(
+        {
+          text: p.text ?? '',
+          authorName: p.authorName ?? '',
+          towns: p.towns ?? [],
+          image: p.image ?? '',
+          imageAlt: p.imageAlt ?? '',
+          postedAt: p.postedAt ?? '',
+        },
+        parsed.platform,
+      );
       if (!fields.text) {
         throw new EditorialError(
           parsed.platform === 'link'
@@ -308,6 +331,23 @@ export function applyOp(doc, op, { now = new Date(), knownIds = undefined } = {}
         addedAt: now.toISOString(),
       };
       ed.social.unshift(post);
+      ed.dismissedSocial = ed.dismissedSocial.filter((d) => d !== id);
+      return ed;
+    }
+
+    case 'dismissSocial': {
+      if (typeof op.id !== 'string' || !/^s-[a-z0-9-]{3,120}$/.test(op.id)) throw new EditorialError('Invalid post id');
+      // Newest first, capped so the file doesn't grow forever.
+      ed.dismissedSocial = [op.id, ...ed.dismissedSocial.filter((d) => d !== op.id)].slice(0, 1000);
+      return ed;
+    }
+
+    case 'muteSocial':
+    case 'unmuteSocial': {
+      const handle = String(op.handle ?? '').trim().toLowerCase();
+      if (!/^[a-z0-9_.:@-]{1,120}$/.test(handle)) throw new EditorialError('Invalid account');
+      ed.mutedSocial = ed.mutedSocial.filter((h) => h !== handle);
+      if (op.type === 'muteSocial') ed.mutedSocial.unshift(handle);
       return ed;
     }
 

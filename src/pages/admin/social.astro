@@ -3,12 +3,27 @@ import Admin from '../../layouts/Admin.astro';
 import { readEditorial } from '../../lib/admin/store';
 import { TOWNS, townName } from '../../site.config';
 import type { SocialPost } from '../../lib/wire';
+import candidatesData from '../../data/social-candidates.json';
 
 export const prerender = false;
 
 const { doc } = await readEditorial();
 const posts = (doc.social ?? []) as SocialPost[];
-const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Link' };
+const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', mastodon: 'Mastodon', link: 'Link' };
+
+// Posts the hourly scan found, minus ones already approved, dismissed, or from muted accounts.
+type Candidate = SocialPost & { postedAt: string; towns: string[] };
+const approved = new Set(posts.map((p) => p.id));
+const dismissed = new Set<string>(doc.dismissedSocial ?? []);
+const muted: string[] = doc.mutedSocial ?? [];
+const mutedSet = new Set(muted);
+const allCandidates = ((candidatesData as unknown as { posts?: Candidate[] }).posts ?? []) as Candidate[];
+const candidates = allCandidates.filter(
+  (c) => !approved.has(c.id) && !dismissed.has(c.id) && !mutedSet.has(String(c.handle ?? '').toLowerCase()),
+);
+const scannedAt = (candidatesData as { updated?: string }).updated;
+const when = (iso?: string) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
 ---
 <Admin title="Social" active="social">
   <h1>Social posts</h1>
@@ -18,7 +33,74 @@ const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Li
     Tag towns to also show a post on those town pages.
   </p>
 
-  <h2>Add a post</h2>
+  <h2>Found on Bluesky &amp; Mastodon <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
+  <p class="a-muted help">
+    Posts from the last week that mention a Bristol County town, found by the hourly scan{scannedAt && <> (last run {when(scannedAt)})</>}.
+    Approve the ones worth featuring; the newest approved post is shown on the home page.
+  </p>
+  <form class="c-filters" onsubmit="return false">
+    <input type="search" name="q" placeholder="Search posts" aria-label="Search posts" />
+    <select name="platform" aria-label="Platform">
+      <option value="">All platforms</option>
+      <option value="bluesky">Bluesky</option>
+      <option value="mastodon">Mastodon</option>
+    </select>
+    <select name="town" aria-label="Town">
+      <option value="">All towns</option>
+      {TOWNS.map((t) => <option value={t.slug}>{t.name}</option>)}
+    </select>
+    <select name="within" aria-label="Posted within">
+      <option value="">Any time</option>
+      <option value="1">Last hour</option>
+      <option value="3">Last 3 hours</option>
+      <option value="6">Last 6 hours</option>
+      <option value="12">Last 12 hours</option>
+    </select>
+  </form>
+  {candidates.length === 0 && <p class="a-muted">Nothing new to review.</p>}
+  <ol class="candidates">
+    {candidates.map((c) => (
+      <li
+        data-id={c.id}
+        data-platform={c.platform}
+        data-towns={c.towns.join(' ')}
+        data-posted={c.postedAt}
+        data-q={`${c.text} ${c.authorName ?? ''} ${c.handle ?? ''}`.toLowerCase()}
+      >
+        {c.image && <img class="c-img" src={c.image} alt="" loading="lazy" referrerpolicy="no-referrer" />}
+        <div class="c-body">
+          <div class="p-head">
+            <span class="a-badge">{PLATFORM[c.platform] ?? c.platform}</span>
+            <strong>{c.authorName}</strong>
+            {c.handle && <span class="a-muted">@{c.handle}</span>}
+            <span class="a-muted">· {when(c.postedAt)} · {c.towns.map(townName).join(', ')}</span>
+          </div>
+          <p class="p-text">{c.text}</p>
+          <div class="btn-row">
+            <button class="a-btn primary" data-act="approve">Approve</button>
+            <button class="a-btn" data-act="dismiss">Dismiss</button>
+            <button class="a-btn" data-act="mute" data-handle={c.handle}>Mute account</button>
+            <a class="a-btn" href={c.url} target="_blank" rel="noopener">Open ↗</a>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <p class="a-muted c-none" hidden>No posts match.</p>
+  <script type="application/json" id="candidate-data" set:html={JSON.stringify(Object.fromEntries(candidates.map((c) => [c.id, c])))} />
+
+  {muted.length > 0 && (
+    <details class="muted-list">
+      <summary>Muted accounts ({muted.length})</summary>
+      <ul>
+        {muted.map((h) => (
+          <li>@{h} <button class="a-btn" data-unmute={h}>Unmute</button></li>
+        ))}
+      </ul>
+    </details>
+  )}
+
+  <h2>Add a post by link</h2>
   <form class="add-social" novalidate>
     <label class="field">
       <span>Post link</span>
@@ -46,7 +128,8 @@ const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Li
     <div class="btn-row" style="margin-top:14px"><button type="submit" class="a-btn primary">Add post</button></div>
   </form>
 
-  <h2>On the site ({posts.length})</h2>
+  <h2>Approved ({posts.length})</h2>
+  <p class="a-muted help">The first post is on the home page; all of them are on the <a href="/social/" target="_blank">social page</a>.</p>
   {posts.length === 0 && <p class="a-muted">No posts yet.</p>}
   <ol class="posts">
     {posts.map((p, n) => (
@@ -55,7 +138,7 @@ const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Li
           <span class="a-badge">{PLATFORM[p.platform]}</span>
           <strong>{p.authorName ?? (p.handle ? `@${p.handle}` : '')}</strong>
           {p.handle && p.authorName && <span class="a-muted">@{p.handle}</span>}
-          {n < 6 && <span class="a-badge featured">Home page</span>}
+          {n === 0 && <span class="a-badge featured">Home page</span>}
           {p.towns?.length ? <span class="a-muted">· {p.towns.map(townName).join(', ')}</span> : null}
         </div>
         <p class="p-text">{p.text}</p>
@@ -80,6 +163,80 @@ const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Li
 
 <script>
   import { saveOp, toast } from '../../lib/admin/client';
+
+  // Review queue: filters (kept in the address so they survive reloads) and actions.
+  const cForm = document.querySelector<HTMLFormElement>('.c-filters')!;
+  const cItems = [...document.querySelectorAll<HTMLLIElement>('ol.candidates li')];
+  const cCount = document.querySelector('.count')!;
+  const cNone = document.querySelector<HTMLElement>('.c-none')!;
+  const data: Record<string, any> = JSON.parse(document.getElementById('candidate-data')?.textContent || '{}');
+  const cField = (n: string) => cForm.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement;
+  const params = new URLSearchParams(location.search);
+  for (const n of ['q', 'platform', 'town', 'within']) if (params.has(n)) cField(n).value = params.get(n)!;
+
+  function filterCandidates() {
+    const f = new FormData(cForm);
+    const q = String(f.get('q') ?? '').toLowerCase().trim();
+    const platform = String(f.get('platform') ?? '');
+    const town = String(f.get('town') ?? '');
+    const within = Number(f.get('within') || 0);
+    const since = within ? Date.now() - within * 3600e3 : 0;
+    let shown = 0;
+    for (const li of cItems) {
+      const ok =
+        (!q || li.dataset.q!.includes(q)) &&
+        (!platform || li.dataset.platform === platform) &&
+        (!town || li.dataset.towns!.split(' ').includes(town)) &&
+        (!since || Date.parse(li.dataset.posted!) >= since);
+      li.hidden = !ok;
+      if (ok) shown++;
+    }
+    cCount.textContent = `(${shown} of ${cItems.length})`;
+    cNone.hidden = shown > 0 || cItems.length === 0;
+    const next = new URLSearchParams();
+    for (const [k, v] of f) if (v) next.set(k, String(v));
+    history.replaceState(null, '', next.size ? `?${next}` : location.pathname);
+  }
+  cForm.addEventListener('input', filterCandidates);
+  filterCandidates();
+
+  document.querySelector('ol.candidates')?.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-act]');
+    if (!btn) return;
+    const li = btn.closest<HTMLLIElement>('li')!;
+    const c = data[li.dataset.id!];
+    const act = btn.dataset.act;
+    const who = c.authorName || c.handle;
+    const op =
+      act === 'approve'
+        ? {
+            type: 'addSocial',
+            post: {
+              url: c.url, text: c.text, authorName: c.authorName, handle: c.handle, uri: c.uri, cid: c.cid,
+              image: c.image, imageAlt: c.imageAlt, postedAt: c.postedAt, towns: c.towns,
+            },
+          }
+        : act === 'dismiss'
+          ? { type: 'dismissSocial', id: c.id }
+          : { type: 'muteSocial', handle: c.handle };
+    if (act === 'mute' && !confirm(`Hide every post from @${c.handle} in this list?`)) return;
+    btn.disabled = true;
+    const res = await saveOp(op, `${act} social post from ${who}`);
+    if (!res.ok) return void (btn.disabled = false);
+    // Take it (or every post from a muted account) out of the list right away.
+    if (act === 'mute') cItems.filter((i) => data[i.dataset.id!]?.handle === c.handle).forEach((i) => i.remove());
+    else li.remove();
+    if (act === 'approve') setTimeout(() => location.reload(), 700);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-unmute]').forEach((b) =>
+    b.addEventListener('click', async () => {
+      b.disabled = true;
+      const res = await saveOp({ type: 'unmuteSocial', handle: b.dataset.unmute }, `unmute @${b.dataset.unmute}`);
+      if (res.ok) setTimeout(() => location.reload(), 700);
+      else b.disabled = false;
+    }),
+  );
 
   const form = document.querySelector<HTMLFormElement>('.add-social')!;
   const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement;
@@ -172,6 +329,16 @@ const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', link: 'Li
 </script>
 
 <style>
+  .help { margin: -4px 0 10px; font-size: 14px; }
+  .c-filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(3, 1fr); margin-bottom: 10px; max-width: 1000px; }
+  @media (max-width: 800px) { .c-filters { grid-template-columns: 1fr 1fr; } .c-filters input { grid-column: 1 / -1; } }
+  .candidates { list-style: none; margin: 0 0 16px; padding: 0; max-width: 1000px; }
+  .candidates li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .c-img { width: 110px; height: 110px; object-fit: cover; border-radius: 6px; flex: none; background: var(--paper-2); }
+  .c-body { flex: 1; min-width: 0; }
+  .muted-list { margin: 0 0 12px; font-size: 14px; }
+  .muted-list ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .muted-list li { display: flex; gap: 10px; align-items: center; padding: 4px 0; }
   .add-social { max-width: 720px; }
   .preview { min-height: 1.4em; margin: -8px 0 12px; font-size: 14px; }
   details summary { cursor: pointer; font-weight: 700; font-size: 13px; }

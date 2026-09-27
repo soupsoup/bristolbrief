@@ -154,3 +154,9 @@ test('storm outage stories are news, not business', () => {
 test('injury stories are public safety even when they mention a store', () => {
   assert.equal(guessSection('Man hospitalized after ladder fall at grocery store in Fall River'), 'public-safety');
 });
+
+test('items without a feed date are flagged undated', () => {
+  const xml = `<rss><channel><item><title>Westport transfer station closed</title><link>https://w/1</link></item></channel></rss>`;
+  const [item] = normalize(parseFeed(xml), { id: 'w', name: 'W', category: 'government', defaultTowns: ['westport'] });
+  assert.equal(item.undated, true);
+});

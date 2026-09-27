@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-27T18:21:55.532Z",
+ "updated": "2026-09-27T18:35:27.765Z",
  "alerts": [
   {
    "id": "1034159",
@@ -28,6 +28,23 @@
    ],
    "url": null,
    "updated": "2026-09-24T11:06:11-04:00"
+  },
+  {
+   "id": "1035142",
+   "header": "Providence Line Train 5847 (2:15 PM from South Station) is operating 5-15 minutes behind schedule between Back Bay and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-27T14:30:43-04:00",
+   "end": "2026-09-27T16:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-09-27T14:30:43-04:00"
   }
  ],
  "stopParents": {

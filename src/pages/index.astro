@@ -64,6 +64,10 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
         </div>
         <aside class="top-rail">
           <div class="rail-head">Around the county</div>
+          <a class="rail-pin" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">
+            <span class="pin-label">Power outages</span>
+            <span class="pin-title">National Grid outage map ↗</span>
+          </a>
           <WireList items={wire} />
           <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
@@ -216,6 +220,26 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
   }
   .rail-head + :global(.wire) { margin-top: 12px; }
   .top-rail:not(.fitted) :global(.wire-item:nth-child(n + 7)) { display: none; }
+  .rail-pin {
+    display: block;
+    margin: 12px 0 4px;
+    padding: 10px 12px;
+    border-left: 4px solid var(--accent);
+    background: var(--paper-2);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .rail-pin:hover .pin-title { color: var(--accent); text-decoration: underline; }
+  .pin-label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .pin-title { font-family: var(--serif-display); font-size: 17px; font-weight: 600; }
   .rail-more { display: inline-block; margin-top: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; }
 
   .signup-row { margin-top: 44px; }

@@ -183,7 +183,7 @@ const RI_COUNTY_RE = /\bbristol county,? (?:r\.?\s?i\.?\b|rhode island)|\brhode 
 export const mentionsBristolCountyMA = (str) => COUNTY_RE.test(str) && !RI_COUNTY_RE.test(str);
 
 const SECTION_RULES = [
-  ['public-safety', /\b(ICE|police|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
+  ['public-safety', /\b(ICE|police|hospitalized|injured|injuries|injury|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
   ['schools', /\b(school|schools|superintendent|student|students|teacher|teachers|classroom|MCAS|DESE|graduat)/i],
   ['government', /\b(council|select ?board|selectmen|town meeting|mayor|budget|zoning|planning board|ordinance|election|ballot|warrant|state rep|senator|legislat)/i],
   ['real-estate', /\b(housing|apartments?|development|developer|condo|real estate|home sales?|affordable housing|MBTA communities)\b/i],

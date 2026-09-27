@@ -46,6 +46,9 @@ function checkImage(v) {
 }
 
 function checkDate(v) {
+  if (typeof v !== 'string' || !/(?:Z|[+-]\d{2}:\d{2})$/i.test(v)) {
+    throw new EditorialError('Date and time must include a timezone.');
+  }
   const d = new Date(v);
   if (Number.isNaN(d.valueOf())) throw new EditorialError('Invalid date');
   return d.toISOString();

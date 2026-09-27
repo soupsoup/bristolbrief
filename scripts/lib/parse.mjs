@@ -2,6 +2,7 @@
 // unit tested against fixtures.
 import { XMLParser } from 'fast-xml-parser';
 import { createHash } from 'node:crypto';
+import { isPublishedAt, newYorkDateTimeLocalToIso } from '../../src/lib/time.mjs';
 
 const parser = new XMLParser({
   ignoreAttributes: false,
@@ -72,6 +73,21 @@ function atomLink(links) {
 function toDate(v) {
   const s = text(v);
   if (!s) return null;
+  const dateOnly = /^(\d{4}-\d{2}-\d{2})$/.exec(s);
+  const localDateTime = /^(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2})(?::(\d{2})(?:\.(\d{1,3}))?)?$/.exec(s);
+  if (dateOnly || localDateTime) {
+    try {
+      const wallTime = dateOnly ? `${dateOnly[1]}T00:00` : `${localDateTime[1]}T${localDateTime[2]}`;
+      const date = new Date(newYorkDateTimeLocalToIso(wallTime));
+      if (localDateTime) {
+        const milliseconds = Number((localDateTime[4] ?? '').padEnd(3, '0') || 0);
+        date.setTime(date.valueOf() + Number(localDateTime[3] ?? 0) * 1000 + milliseconds);
+      }
+      return date;
+    } catch {
+      return null;
+    }
+  }
   const d = new Date(s);
   return Number.isNaN(d.valueOf()) ? null : d;
 }
@@ -246,7 +262,8 @@ export function normalize(entries, source, now = new Date()) {
     const countywide = !institutional && matched.length === 0 && (mentionsBristolCountyMA(haystack) || mentionsRegion(`${title} ${summary}`));
     if (!institutional && matched.length === 0 && !countywide) continue;
     const towns = institutional ? source.defaultTowns : matched;
-    const date = e.date && e.date <= now ? e.date : now;
+    if (e.date && e.date > now) continue;
+    const date = e.date ?? now;
     out.push({
       id: itemId(e.link, title),
       title,
@@ -309,10 +326,11 @@ export const wireWindow = (item, aggregatedSources = new Set()) =>
  */
 export function mergeItems(existing, incoming, { aggregatedSources = new Set(), maxItems = 10000, now = new Date() } = {}) {
   const age = (i) => (now.valueOf() - new Date(i.date).valueOf()) / 864e5;
-  incoming = incoming.filter((i) => age(i) <= wireWindow(i, aggregatedSources).lookback);
-  const byId = new Map(existing.map((i) => [i.id, i]));
+  incoming = incoming.filter((i) => isPublishedAt(i.date, now) && age(i) <= wireWindow(i, aggregatedSources).lookback);
+  const publishedExisting = existing.filter((i) => isPublishedAt(i.date, now));
+  const byId = new Map(publishedExisting.map((i) => [i.id, i]));
   const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  const seenTitles = new Set(existing.map((i) => titleKey(i.title)));
+  const seenTitles = new Set(publishedExisting.map((i) => titleKey(i.title)));
   for (const item of incoming) {
     if (byId.has(item.id)) {
       // Keep the first-seen date so items don't jump around between runs.

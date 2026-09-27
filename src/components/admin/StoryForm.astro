@@ -1,6 +1,7 @@
 ---
 import { SECTIONS, TOWNS } from '../../site.config';
 import type { WireItem } from '../../lib/wire';
+import { toNewYorkDateTimeLocal } from '../../lib/time.mjs';
 
 interface Props {
   /** The story as currently shown (edits applied). Omit for a new story. */
@@ -14,10 +15,7 @@ const isNew = !item;
 const manual = isNew || item!.manual;
 const sections = new Set(item?.sections ?? []);
 const towns = new Set(item?.towns ?? []);
-const localDate = (iso?: string) => {
-  const d = iso ? new Date(iso) : new Date();
-  return new Date(d.valueOf() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
-};
+const localDate = (iso?: string) => toNewYorkDateTimeLocal(iso ?? new Date().toISOString());
 ---
 <form
   class="story-form"
@@ -71,8 +69,9 @@ const localDate = (iso?: string) => {
               <input type="text" name="sourceName" value={item?.sourceName ?? 'The Bristol Brief'} maxlength="80" />
             </label>
             <label class="field">
-              <span>Date and time</span>
-              <input type="datetime-local" name="date" value={localDate(item?.date)} />
+              <span>Date and time (Eastern)</span>
+              <input type="datetime-local" name="date" value={localDate(item?.date)} required />
+              <small class="a-muted">Entered in America/New_York; saved as UTC.</small>
             </label>
           </div>
         </>
@@ -182,6 +181,7 @@ const localDate = (iso?: string) => {
 <script>
   import { saveOp, resizeImage, uploadImage, toast } from '../../lib/admin/client';
   import { renderBody } from '../../lib/body';
+  import { newYorkDateTimeLocalToIso } from '../../lib/time.mjs';
 
   const form = document.querySelector<HTMLFormElement>('.story-form')!;
   const id = form.dataset.id!;
@@ -197,7 +197,14 @@ const localDate = (iso?: string) => {
   const checked = (name: string) =>
     [...form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]:checked`)].map((i) => i.value);
   const same = (a: string[], b: string[]) => a.length === b.length && a.every((x) => b.includes(x));
-  const toIso = (local: string) => (local ? new Date(local).toISOString() : null);
+  const toIso = (local: string) => {
+    if (!local) return null;
+    try {
+      return newYorkDateTimeLocalToIso(local);
+    } catch {
+      return null;
+    }
+  };
 
   form.querySelector<HTMLInputElement>('input[name="photo"]')!.addEventListener('change', async (e) => {
     const file = (e.target as HTMLInputElement).files?.[0];
@@ -264,6 +271,9 @@ const localDate = (iso?: string) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    if (manual && !toIso(val('date'))) {
+      return toast('Choose a valid Eastern date and time.', { error: true });
+    }
     const { title, fields } = collect();
     const problem = check(title, fields);
     if (problem) return toast(problem, { error: true });
@@ -413,8 +423,9 @@ const localDate = (iso?: string) => {
     part('title').classList.toggle('empty', !val('title'));
     part('summary').textContent = val('summary');
     part('summary').hidden = !val('summary');
-    const when = val('date') ? new Date(val('date')) : new Date();
-    part('byline').textContent = `${val('sourceName') || 'The Bristol Brief'} · ${when.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}`;
+    const whenIso = toIso(val('date'));
+    const when = whenIso ? new Date(whenIso) : new Date();
+    part('byline').textContent = `${val('sourceName') || 'The Bristol Brief'} · ${when.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' })}`;
     const img = pendingPhoto?.dataUrl || imageInput.value;
     const fig = part('figure');
     fig.hidden = !img;

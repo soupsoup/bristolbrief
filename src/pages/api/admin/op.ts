@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { commitOp, storeInfo } from '../../../lib/admin/store';
-import { rawWireItems } from '../../../lib/wire';
+import { allWireItems } from '../../../lib/wire';
 import { EditorialError } from '../../../../scripts/lib/editorial.mjs';
 import { parseSocialUrl, fetchOembed } from '../../../../scripts/lib/social.mjs';
 
@@ -21,7 +21,7 @@ async function enrichSocial(op: any) {
 
 export const prerender = false;
 
-const knownIds = new Set(rawWireItems.map((i) => i.id));
+const knownIds = new Set(allWireItems.map((i) => i.id));
 
 export const POST: APIRoute = async ({ request }) => {
   let payload: any;

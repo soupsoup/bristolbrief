@@ -227,7 +227,8 @@ const [results, alertResult, transit, tides, calendar, social] = await Promise.a
 
 const incoming = results.flatMap((r) => r.items);
 const wire = await readJson('src/data/wire.json', { items: [] });
-const merged = mergeItems(wire.items ?? [], incoming);
+const aggregatedSources = new Set(sources.filter((s) => s.via === 'google-news').map((s) => s.id));
+const merged = mergeItems(wire.items ?? [], incoming, { aggregatedSources });
 
 const failed = results.filter((r) => !r.status.ok);
 for (const r of results) {

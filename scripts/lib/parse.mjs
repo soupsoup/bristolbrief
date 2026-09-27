@@ -272,11 +272,29 @@ export function normalizeNws(json) {
   });
 }
 
-/** How long headlines stay on the site. */
-export const WIRE_MAX_AGE_DAYS = 14;
+/**
+ * How far back headlines go, in days. Direct feeds (news sites, police
+ * departments, town halls) are collected and shown for 45 days and kept in
+ * the archive for six months; Google News searches, which mostly repeat
+ * older links, are collected, shown and kept for 14 days.
+ */
+export const WIRE_WINDOWS = {
+  feed: { lookback: 45, show: 45, keep: 183 },
+  aggregated: { lookback: 14, show: 14, keep: 14 },
+};
 
-/** Merge new items into the stored list: dedupe, sort newest first, prune. */
-export function mergeItems(existing, incoming, { maxAgeDays = WIRE_MAX_AGE_DAYS, maxItems = 2000, now = new Date() } = {}) {
+/** Which window applies to an item, given the ids of Google News sources. */
+export const wireWindow = (item, aggregatedSources = new Set()) =>
+  aggregatedSources.has(item.source) ? WIRE_WINDOWS.aggregated : WIRE_WINDOWS.feed;
+
+/**
+ * Merge new items into the stored list: dedupe, sort newest first, prune.
+ * New items older than their lookback are skipped; stored items are kept
+ * until their archive window runs out.
+ */
+export function mergeItems(existing, incoming, { aggregatedSources = new Set(), maxItems = 10000, now = new Date() } = {}) {
+  const age = (i) => (now.valueOf() - new Date(i.date).valueOf()) / 864e5;
+  incoming = incoming.filter((i) => age(i) <= wireWindow(i, aggregatedSources).lookback);
   const byId = new Map(existing.map((i) => [i.id, i]));
   const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const seenTitles = new Set(existing.map((i) => titleKey(i.title)));
@@ -289,9 +307,8 @@ export function mergeItems(existing, incoming, { maxAgeDays = WIRE_MAX_AGE_DAYS,
       seenTitles.add(titleKey(item.title));
     }
   }
-  const cutoff = now.valueOf() - maxAgeDays * 864e5;
   return [...byId.values()]
-    .filter((i) => new Date(i.date).valueOf() >= cutoff)
+    .filter((i) => age(i) <= wireWindow(i, aggregatedSources).keep)
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, maxItems);
 }

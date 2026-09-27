@@ -4,7 +4,7 @@ import sourcesData from '../data/sources.json';
 import statusData from '../data/feed-status.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
-import { WIRE_MAX_AGE_DAYS } from '../../scripts/lib/parse.mjs';
+import { wireWindow } from '../../scripts/lib/parse.mjs';
 
 export interface WireItem {
   id: string;
@@ -76,14 +76,17 @@ export interface SourceStatus {
 }
 
 export const wireUpdated: string | null = wireData.updated;
-// The hourly job prunes old headlines too; filtering here as well means a
-// shorter window applies as soon as the site builds.
-const wireCutoff = Date.now() - WIRE_MAX_AGE_DAYS * 864e5;
-
-/** Raw feed items from the last WIRE_MAX_AGE_DAYS days, before editorial changes (the admin shows these). */
-export const rawWireItems = ((wireData.items ?? []) as Omit<WireItem, 'sections'>[]).filter(
-  (i) => new Date(i.date).valueOf() >= wireCutoff,
+const aggregatedSources = new Set(
+  ((sourcesData.sources ?? []) as { id: string; via?: string }[]).filter((s) => s.via === 'google-news').map((s) => s.id),
 );
+const ageDays = (iso: string) => (Date.now() - new Date(iso).valueOf()) / 864e5;
+
+/** Every stored feed item, up to six months back (the admin shows these). */
+export const allWireItems = (wireData.items ?? []) as Omit<WireItem, 'sections'>[];
+
+/** Feed items within their public window (45 days for direct feeds, 14 for Google News). */
+export const rawWireItems = allWireItems.filter((i) => ageDays(i.date) <= wireWindow(i, aggregatedSources).show);
+
 /** Feed items plus manual stories, with editors' changes applied and hidden items removed. */
 export const wireItems = applyEditorial(rawWireItems, editorialData) as WireItem[];
 export const sources = (sourcesData.sources ?? []) as Source[];

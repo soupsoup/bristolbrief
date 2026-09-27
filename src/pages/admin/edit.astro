@@ -2,14 +2,14 @@
 import Admin from '../../layouts/Admin.astro';
 import StoryForm from '../../components/admin/StoryForm.astro';
 import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
-import { rawWireItems } from '../../lib/wire';
+import { allWireItems } from '../../lib/wire';
 
 export const prerender = false;
 
 const id = Astro.url.searchParams.get('id') ?? '';
 const { items, until } = await loadAdminData();
 const item = items.find((i) => i.id === id);
-const raw = rawWireItems.find((i) => i.id === id);
+const raw = allWireItems.find((i) => i.id === id);
 if (!item) Astro.response.status = 404;
 const original = raw && { title: raw.title, summary: raw.summary, section: raw.section, towns: raw.towns };
 ---
@@ -18,7 +18,7 @@ const original = raw && { title: raw.title, summary: raw.summary, section: raw.s
   {!item ? (
     <>
       <h1>Story not found</h1>
-      <p class="a-muted">It may have aged out of the feed (headlines are kept for 14 days) or been deleted.</p>
+      <p class="a-muted">It may have aged out of the feed (feed headlines are kept for six months, Google News results for 14 days) or been deleted.</p>
     </>
   ) : (
     <>

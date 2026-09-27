@@ -64,10 +64,11 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
         </div>
         <aside class="top-rail">
           <div class="rail-head">Around the county</div>
-          <a class="rail-pin" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">
+          <div class="rail-pin">
             <span class="pin-label">Power outages</span>
-            <span class="pin-title">National Grid outage map ↗</span>
-          </a>
+            <a class="pin-title" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">National Grid outage map ↗</a>
+            <a class="pin-title" href="https://outagemap.eversource.com/external/default.html" target="_blank" rel="noopener">Eversource outage map ↗</a>
+          </div>
           <WireList items={wire} />
           <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
@@ -229,7 +230,9 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
     text-decoration: none;
     color: var(--ink);
   }
-  .rail-pin:hover .pin-title { color: var(--accent); text-decoration: underline; }
+  .pin-title { display: block; color: var(--ink); text-decoration: none; }
+  .pin-title + .pin-title { margin-top: 4px; }
+  .pin-title:hover { color: var(--accent); text-decoration: underline; }
   .pin-label {
     display: block;
     font-family: var(--sans);

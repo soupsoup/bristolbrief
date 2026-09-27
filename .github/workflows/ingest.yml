@@ -16,7 +16,7 @@ concurrency:
 jobs:
   ingest:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,6 +26,22 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run ingest
+      # Police logs are PDFs; New Bedford's are scanned and need OCR. Install
+      # the tools only when a new PDF is waiting. A failure here never blocks
+      # the headline update.
+      - name: Check for new police logs
+        id: police
+        continue-on-error: true
+        run: node scripts/police-log.mjs --check
+      - name: Install PDF and OCR tools
+        if: steps.police.outputs.needs_tools == 'true'
+        continue-on-error: true
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-eng
+      - name: Update police logs
+        if: steps.police.outputs.needs_tools == 'true'
+        continue-on-error: true
+        timeout-minutes: 8
+        run: node scripts/police-log.mjs
       # Commit every run, even when no headlines changed: the push makes Vercel
       # rebuild, which lets editors' featured picks expire on the hour and keeps
       # tides and alerts current.

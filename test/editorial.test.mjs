@@ -107,7 +107,7 @@ test('manual stories: add, sections, own page or external link, edit, delete', (
 test('validation rejects bad input', () => {
   const bad = [
     { type: 'update', id: 'a', fields: { title: '' } },
-    { type: 'update', id: 'a', fields: { sections: ['sports'] } },
+    { type: 'update', id: 'a', fields: { sections: ['not-a-section'] } },
     { type: 'update', id: 'a', fields: { towns: ['boston'] } },
     { type: 'update', id: 'a', fields: { image: 'https://evil.example/x.jpg' } },
     { type: 'update', id: 'a', fields: { image: '/uploads/../../etc/passwd' } },

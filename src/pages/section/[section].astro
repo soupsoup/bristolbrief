@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import WireList from '../../components/WireList.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import PoliceLog from '../../components/PoliceLog.astro';
+import SportsDesk from '../../components/SportsDesk.astro';
 import { SECTIONS } from '../../site.config';
 import { itemsForSection } from '../../lib/wire';
 
@@ -20,13 +21,19 @@ const items = itemsForSection(section);
       <p class="kicker">Section</p>
       <h1 class="page-title">{name}</h1>
       <p class="page-dek">
-        {section === 'listings'
+        {section === 'sports'
+          ? 'Bristol County high school games and the Patriots, Red Sox, Bruins, Celtics and Revolution.'
+          : section === 'listings'
           ? 'Homes, condos and land for sale or rent in Bristol County, from local papers and our editors. Listings stay out of the news pages.'
           : `The latest ${name.toLowerCase()} headlines from local newsrooms, police and town halls.`}
       </p>
     </header>
     <div class="index-grid">
-      <WireList items={items} showSummary empty={section === 'listings' ? 'No listings right now.' : `No recent ${name.toLowerCase()} headlines.`} />
+      {section === 'sports' ? (
+        <SportsDesk />
+      ) : (
+        <WireList items={items} showSummary empty={section === 'listings' ? 'No listings right now.' : `No recent ${name.toLowerCase()} headlines.`} />
+      )}
       <aside>
         {section === 'public-safety' && <PoliceLog />}
         <NewsletterSignup />

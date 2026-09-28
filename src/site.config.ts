@@ -24,8 +24,18 @@ export const SECTIONS = [
   { slug: 'food-drink', name: 'Food & Drink' },
   { slug: 'business', name: 'Business' },
   { slug: 'things-to-do', name: 'Things to Do' },
+  { slug: 'sports', name: 'Sports' },
   // Homes and land for sale or rent. Kept out of the news lists.
   { slug: 'listings', name: 'Listings' },
+] as const;
+
+// Boston-area pro teams tracked in Sports (sources with a matching `team`).
+export const TEAMS = [
+  { slug: 'patriots', name: 'Patriots', league: 'NFL' },
+  { slug: 'red-sox', name: 'Red Sox', league: 'MLB' },
+  { slug: 'bruins', name: 'Bruins', league: 'NHL' },
+  { slug: 'celtics', name: 'Celtics', league: 'NBA' },
+  { slug: 'revolution', name: 'Revolution', league: 'MLS' },
 ] as const;
 
 export type SectionSlug = (typeof SECTIONS)[number]['slug'];

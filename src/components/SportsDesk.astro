@@ -1,0 +1,73 @@
+---
+import WireList from './WireList.astro';
+import { TEAMS } from '../site.config';
+import { itemsForSection, teamItems } from '../lib/wire';
+
+const local = itemsForSection('sports').filter((i) => !i.team);
+const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug) }));
+---
+<div class="sports">
+  <section aria-labelledby="hs-h">
+    <div class="section-head"><h2 id="hs-h">Bristol County high school</h2></div>
+    <WireList items={local.slice(0, 15)} showSummary empty="No local high school sports stories yet." />
+    {local.length > 15 && (
+      <details class="more">
+        <summary class="meta">{local.length - 15} more</summary>
+        <WireList items={local.slice(15)} />
+      </details>
+    )}
+  </section>
+
+  <nav class="team-jump" aria-label="Boston teams">
+    {teams.map((t) => <a href={`#${t.slug}`}>{t.name}</a>)}
+  </nav>
+
+  <div class="team-grid">
+    {teams.map((t) => (
+      <section class="team" id={t.slug} aria-labelledby={`${t.slug}-h`}>
+        <div class="section-head">
+          <h2 id={`${t.slug}-h`}>{t.name}</h2>
+          <span class="meta">{t.league}</span>
+        </div>
+        <WireList items={t.items.slice(0, 5)} empty={`No ${t.name} stories in the last few days.`} />
+        {t.items.length > 5 && (
+          <details class="more">
+            <summary class="meta">{t.items.length - 5} more {t.name} stories</summary>
+            <WireList items={t.items.slice(5, 25)} />
+          </details>
+        )}
+      </section>
+    ))}
+  </div>
+  <p class="meta fine">
+    Boston team coverage comes from Google News and links to each publisher. It stays on this page and out of the
+    local headlines. High school stories come from the county's papers and are filed under their town too.
+  </p>
+</div>
+
+<style>
+  .sports .section-head:first-child { margin-top: 0; }
+  .more { margin-top: 8px; }
+  .more summary { cursor: pointer; }
+  .team-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 40px 0 0;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .team-jump a {
+    padding: 6px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .team-jump a:hover { border-color: var(--accent); color: var(--accent); }
+  .team-grid { display: grid; gap: 0 32px; grid-template-columns: 1fr; }
+  @media (min-width: 760px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+  .team .section-head { margin-top: 32px; }
+  .fine { margin-top: 32px; }
+</style>

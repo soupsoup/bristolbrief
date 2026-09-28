@@ -521,6 +521,72 @@
       "section": "government",
       "platform": "civicplus",
       "enabled": true
+    },
+    {
+      "id": "hs-sports",
+      "name": "Local high school sports",
+      "url": "https://news.google.com/rss/search?q=%28site%3Asouthcoasttoday.com%20OR%20site%3Aheraldnews.com%20OR%20site%3Atauntongazette.com%20OR%20site%3Athesunchronicle.com%20OR%20site%3Aenterprisenews.com%29%20%28%22high%20school%22%20OR%20football%20OR%20soccer%20OR%20volleyball%20OR%20%22field%20hockey%22%20OR%20%22cross%20country%22%20OR%20golf%20OR%20hockey%20OR%20basketball%29%20when%3A14d&hl=en-US&gl=US&ceid=US:en",
+      "category": "news",
+      "onlySection": "sports",
+      "homepage": "https://news.google.com/",
+      "via": "google-news",
+      "enabled": true,
+      "notes": "Sports from the county's papers; the town filter keeps games that name a county town or school, and only sports stories are kept."
+    },
+    {
+      "id": "patriots",
+      "name": "Patriots coverage",
+      "url": "https://news.google.com/rss/search?q=%22New%20England%20Patriots%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
+      "category": "sports",
+      "team": "patriots",
+      "maxItems": 25,
+      "homepage": "https://www.patriots.com/",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "red-sox",
+      "name": "Red Sox coverage",
+      "url": "https://news.google.com/rss/search?q=%22Boston%20Red%20Sox%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
+      "category": "sports",
+      "team": "red-sox",
+      "maxItems": 25,
+      "homepage": "https://www.mlb.com/redsox",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "bruins",
+      "name": "Bruins coverage",
+      "url": "https://news.google.com/rss/search?q=%22Boston%20Bruins%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
+      "category": "sports",
+      "team": "bruins",
+      "maxItems": 25,
+      "homepage": "https://www.nhl.com/bruins",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "celtics",
+      "name": "Celtics coverage",
+      "url": "https://news.google.com/rss/search?q=%22Boston%20Celtics%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
+      "category": "sports",
+      "team": "celtics",
+      "maxItems": 25,
+      "homepage": "https://www.nba.com/celtics",
+      "via": "google-news",
+      "enabled": true
+    },
+    {
+      "id": "revolution",
+      "name": "Revolution coverage",
+      "url": "https://news.google.com/rss/search?q=%22New%20England%20Revolution%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "category": "sports",
+      "team": "revolution",
+      "maxItems": 20,
+      "homepage": "https://www.revolutionsoccer.net/",
+      "via": "google-news",
+      "enabled": true
     }
   ]
 }

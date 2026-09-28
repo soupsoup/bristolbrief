@@ -17,7 +17,9 @@ export interface WireItem {
   date: string;
   source: string;
   sourceName: string;
-  category: 'news' | 'government' | 'public-safety' | 'meetings';
+  category: 'news' | 'government' | 'public-safety' | 'meetings' | 'sports';
+  /** Boston pro team (Sports only); see TEAMS in site.config. */
+  team?: string;
   section: string;
   towns: string[];
   /** Names Bristol County but no specific town. Shown in the wire, not on town pages. */
@@ -96,7 +98,7 @@ export const wireItems = (applyEditorial(rawWireItems, editorialData) as WireIte
 /** Every story kept (six months of direct feeds, 14 days of Google News), newest first. No meeting agendas. */
 export const allStories = () =>
   (applyEditorial(allWireItems, editorialData) as WireItem[]).filter(
-    (i) => i.category !== 'meetings' && !isListing(i) && isPublishedAt(i.date),
+    (i) => i.category !== 'meetings' && isLocal(i) && isPublishedAt(i.date),
   );
 export const sources = (sourcesData.sources ?? []) as Source[];
 export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
@@ -112,15 +114,23 @@ export function activeAlerts(now = new Date()): Alert[] {
 
 /** Property listings live only in the Listings section (and a small box on town pages). */
 export const isListing = (i: { sections: string[] }) => i.sections.includes('listings');
+/** Pro team coverage (Patriots, Red Sox...) shows only in Sports, not the local news lists. */
+export const isTeamStory = (i: { team?: string }) => Boolean(i.team);
+const isLocal = (i: { sections: string[]; team?: string }) => !isListing(i) && !isTeamStory(i);
+export const teamItems = (team: string) => wireItems.filter((i) => i.team === team);
 export const listingItems = () => wireItems.filter(isListing);
 export const listingsForTown = (town: string) => listingItems().filter((i) => i.towns.includes(town));
 
-export const newsItems = () => wireItems.filter((i) => i.category !== 'meetings' && !isListing(i));
+export const newsItems = () => wireItems.filter((i) => i.category !== 'meetings' && isLocal(i));
 export const meetingItems = () => wireItems.filter((i) => i.category === 'meetings');
 export const itemsForTown = (town: string) => wireItems.filter((i) => i.towns.includes(town) && !isListing(i));
 export const itemsForSection = (section: string) =>
   wireItems.filter(
-    (i) => i.category !== 'meetings' && i.sections.includes(section) && (section === 'listings' || !isListing(i)),
+    (i) =>
+      i.category !== 'meetings' &&
+      i.sections.includes(section) &&
+      (section === 'listings' || !isListing(i)) &&
+      (section === 'sports' || !isTeamStory(i)),
   );
 /** Stories an editor featured, in priority order (first is the lead). */
 export const featuredStories = () => featuredItems(wireItems) as WireItem[];
@@ -199,7 +209,7 @@ export const todayLine = () =>
 
 /** Stories from newsrooms and police/prosecutors (not town-hall notices or agendas). */
 export const storyItems = () =>
-  wireItems.filter((i) => (i.category === 'news' || i.category === 'public-safety') && !isListing(i));
+  wireItems.filter((i) => (i.category === 'news' || i.category === 'public-safety') && isLocal(i));
 
 /**
  * Pick `n` top stories for the front page: recent items with a real summary,

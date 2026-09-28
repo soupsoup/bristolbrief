@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFeed, normalize, matchTowns, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing } from '../scripts/lib/parse.mjs';
+import { parseFeed, normalize, matchTowns, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing, normalizeTeam } from '../scripts/lib/parse.mjs';
 
 const RSS = `<?xml version="1.0"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
@@ -242,4 +242,25 @@ test('property listings are recognized and filed under Listings', () => {
   const [item] = normalize(parseFeed(xml), { id: 'dw', name: 'Dartmouth Week', category: 'news', homeTown: 'dartmouth' });
   assert.equal(item.section, 'listings');
   assert.deepEqual(item.towns, ['dartmouth']);
+});
+
+test('high school sports: school names map to towns and games go to Sports', () => {
+  assert.deepEqual(matchTowns('Walpole ekes out win over Feehan'), ['attleboro']);
+  assert.deepEqual(matchTowns('Bishop Stang edges Bishop Connolly'), ['dartmouth', 'fall-river']);
+  assert.equal(guessSection('Fairhaven boys soccer captures rare win over Old Rochester'), 'sports');
+  assert.equal(guessSection('UMass Dartmouth football player charged in murder'), 'public-safety');
+});
+
+test('pro team coverage keeps the publisher and a short window', () => {
+  const now = new Date('2026-09-28T12:00:00Z');
+  const xml = `<rss><channel>
+    <item><title>Mike Vrabel voices concern after Patriots loss - Pats Pulpit</title><link>https://g/1</link><pubDate>Mon, 28 Sep 2026 10:00:00 GMT</pubDate></item>
+  </channel></rss>`;
+  const [item] = normalizeTeam(parseFeed(xml), { id: 'patriots', name: 'Patriots coverage', team: 'patriots' }, now);
+  assert.equal(item.title, 'Mike Vrabel voices concern after Patriots loss');
+  assert.equal(item.sourceName, 'Pats Pulpit');
+  assert.equal(item.team, 'patriots');
+  assert.equal(item.section, 'sports');
+  const merged = mergeItems([{ ...item, id: 'old', title: 'Old team story', date: '2026-09-20T00:00:00.000Z' }], [item], { now });
+  assert.deepEqual(merged.map((i) => i.id), [item.id]);
 });

@@ -30,7 +30,7 @@ const expiresText = (id: string) => {
   if (!e?.at) return 'no time limit';
   return e.kept ? `kept until ${clock(e.at)}` : `until ${clock(e.at)}, then freshest`;
 };
-const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Police & courts', government: 'Town hall', meetings: 'Agenda' };
+const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Police & courts', government: 'Town hall', meetings: 'Agenda', sports: 'Pro teams' };
 ---
 <Admin title="Stories" active="dashboard">
   {loadError && <p class="a-toast error" style="position:static;transform:none;margin:16px 0">{loadError}</p>}

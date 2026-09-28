@@ -132,20 +132,21 @@ export function parseFeed(xml) {
   throw new Error('Not an RSS, RDF or Atom document');
 }
 
-// Village and variant names map to their municipality. Longer, more specific
+// Village and variant names map to their municipality, and so do high schools
+// whose names don't include their town (sports headlines use school names). Longer, more specific
 // names are listed first so "North Attleborough" never also counts as "Attleboro".
 const PLACE_ALIASES = [
   ['north-attleborough', ['north attleborough', 'north attleboro', 'n. attleborough', 'n. attleboro', 'no. attleboro']],
-  ['attleboro', ['south attleboro', 'attleboro falls', 'attleboro']],
-  ['dartmouth', ['north dartmouth', 'south dartmouth', 'dartmouth']],
-  ['easton', ['north easton', 'south easton', 'easton']],
+  ['attleboro', ['south attleboro', 'attleboro falls', 'attleboro', 'bishop feehan', 'feehan']],
+  ['dartmouth', ['north dartmouth', 'south dartmouth', 'dartmouth', 'bishop stang']],
+  ['easton', ['north easton', 'south easton', 'easton', 'oliver ames', 'coyle & cassidy', 'coyle and cassidy', 'coyle-cassidy']],
   ['freetown', ['east freetown', 'assonet', 'freetown']],
   ['new-bedford', ['new bedford']],
-  ['fall-river', ['fall river', 'durfee']],
-  ['swansea', ['ocean grove', 'swansea']],
+  ['fall-river', ['fall river', 'durfee', 'bishop connolly', 'diman']],
+  ['swansea', ['ocean grove', 'swansea', 'joseph case']],
   ['somerset', ['pottersville', 'somerset']],
-  ['dighton', ['north dighton', 'dighton']],
-  ['taunton', ['east taunton', 'taunton']],
+  ['dighton', ['north dighton', 'dighton', 'bristol aggie', 'bristol county agricultural']],
+  ['taunton', ['east taunton', 'taunton', 'bristol-plymouth']],
   ['westport', ['westport point', 'central village', 'westport']],
   ['acushnet', ['acushnet']],
   ['berkley', ['berkley']],
@@ -249,7 +250,8 @@ export const aboutHomeTown = (title, summary = '') =>
 export const mentionsRegion = (str) => (mentionsBristolCountyMA(str) || REGION_RE.test(str)) && (mentionsBristolCountyMA(str) || !NEARBY_OUTSIDE_RE.test(str));
 
 const SECTION_RULES = [
-  ['public-safety', /\b(ICE|police|hospitalized|injured|injuries|injury|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
+  ['public-safety', /\b(ICE|police|slain|killed|fatal(?:ly)?|hospitalized|injured|injuries|injury|arrest(?:ed)?|charged|crash|fire(?:fighters?)?|shooting|stabbing|murder|homicide|district attorney|court|arraign|sentenced|indicted|overdose|rescue)\b/i],
+  ['sports', /\b(football|soccer|volleyball|field hockey|cross[- ]country|basketball|baseball|softball|lacrosse|wrestling|hockey|golf|swimming|track and field|H\.S\.|playoffs?|touchdowns?|quarterback|athlete of the week|player of the week|scoreboard)\b/i],
   ['schools', /\b(school|schools|superintendent|student|students|teacher|teachers|classroom|MCAS|DESE|graduat)/i],
   ['government', /\b(council|select ?board|selectmen|town meeting|mayor|budget|zoning|planning board|ordinance|election|ballot|warrant|state rep|senator|legislat)/i],
   ['real-estate', /\b(housing|apartments?|development|developer|condo|real estate|home sales?|affordable housing|MBTA communities)\b/i],
@@ -285,13 +287,20 @@ export const itemId = (link, title) =>
  * county town under their own town, unless it names a place outside the county.
  */
 export function normalize(entries, source, now = new Date()) {
+  if (source.team) return normalizeTeam(entries, source, now);
   const out = [];
   const institutional = source.category !== 'news' && source.defaultTowns?.length > 0;
   for (const e of entries) {
     let title = stripHtml(e.title);
     if (!title || !e.link) continue;
-    // Google News appends " - Publisher" to titles.
-    if (source.via === 'google-news') title = title.replace(/\s+-\s+[^-]{2,80}$/, '');
+    // Google News appends " - Publisher" to titles. Topic searches that span
+    // several papers credit that publisher instead of the search.
+    let sourceName = source.name;
+    if (source.via === 'google-news') {
+      const pub = title.match(/\s+-\s+([^-]{2,80})$/);
+      if (pub && source.onlySection) sourceName = pub[1].trim();
+      title = title.replace(/\s+-\s+[^-]{2,80}$/, '');
+    }
     let summary = source.via === 'google-news' ? '' : excerpt(e.summary);
     // CivicPlus and others repeat the headline as the description.
     if (summary.toLowerCase().startsWith(title.toLowerCase())) summary = summary.slice(title.length).replace(/^[\s:.-]+/, '');
@@ -308,6 +317,10 @@ export function normalize(entries, source, now = new Date()) {
     const home = !institutional && matched.length === 0 && !countywide && source.homeTown && aboutHomeTown(title, summary);
     if (!institutional && matched.length === 0 && !countywide && !home) continue;
     const towns = institutional ? source.defaultTowns : home ? [source.homeTown] : matched;
+    // Headline only: summaries mislead ("the whale charged the ship" is not crime news).
+    const section = isPropertyListing(title) ? 'listings' : source.section ?? guessSection(title);
+    // Topic searches (local high school sports) keep only stories on their topic.
+    if (source.onlySection && section !== source.onlySection) continue;
     if (e.date && e.date > now) continue;
     const date = e.date ?? now;
     out.push({
@@ -317,14 +330,45 @@ export function normalize(entries, source, now = new Date()) {
       summary,
       date: date.toISOString(),
       source: source.id,
-      sourceName: source.name,
+      sourceName,
       category: source.category,
-      // Headline only: summaries mislead ("the whale charged the ship" is not crime news).
-      section: isPropertyListing(title) ? 'listings' : source.section ?? guessSection(title),
+      section,
       towns,
       ...(countywide ? { countywide: true } : {}),
       // The feed gave no date; `date` is when we first saw the item.
       ...(!e.date ? { undated: true } : {}),
+    });
+  }
+  return out;
+}
+
+/**
+ * Boston pro team coverage (Google News searches, one per team). These stories
+ * name no county town; they're tagged with the team and shown only in Sports.
+ * Google News titles end in " - Publisher", which becomes the source name.
+ */
+export function normalizeTeam(entries, source, now = new Date()) {
+  const out = [];
+  const sorted = [...entries].sort((a, b) => (b.date?.valueOf() ?? 0) - (a.date?.valueOf() ?? 0));
+  for (const e of sorted.slice(0, source.maxItems ?? 30)) {
+    const raw = stripHtml(e.title);
+    if (!raw || !e.link) continue;
+    const m = raw.match(/^(.*\S)\s+-\s+([^-]{2,80})$/);
+    const title = m ? m[1] : raw;
+    const publisher = m ? m[2].trim() : source.name;
+    const date = e.date && e.date <= now ? e.date : now;
+    out.push({
+      id: itemId(e.link, title),
+      title,
+      link: e.link.trim(),
+      summary: '',
+      date: date.toISOString(),
+      source: source.id,
+      sourceName: publisher,
+      category: 'sports',
+      section: 'sports',
+      towns: [],
+      team: source.team,
     });
   }
   return out;
@@ -359,11 +403,13 @@ export function normalizeNws(json) {
 export const WIRE_WINDOWS = {
   feed: { lookback: 45, show: 45, keep: 183 },
   aggregated: { lookback: 14, show: 14, keep: 14 },
+  // Boston pro team coverage moves fast and there's a lot of it.
+  team: { lookback: 3, show: 5, keep: 5 },
 };
 
 /** Which window applies to an item, given the ids of Google News sources. */
 export const wireWindow = (item, aggregatedSources = new Set()) =>
-  aggregatedSources.has(item.source) ? WIRE_WINDOWS.aggregated : WIRE_WINDOWS.feed;
+  item.team ? WIRE_WINDOWS.team : aggregatedSources.has(item.source) ? WIRE_WINDOWS.aggregated : WIRE_WINDOWS.feed;
 
 /**
  * Merge new items into the stored list: dedupe, sort newest first, prune.

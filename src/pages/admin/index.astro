@@ -2,7 +2,7 @@
 import Admin from '../../layouts/Admin.astro';
 import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
 import { sources } from '../../lib/wire';
-import { sectionName, townName, TOWNS } from '../../site.config';
+import { SECTIONS, sectionName, townName, TOWNS } from '../../site.config';
 
 export const prerender = false;
 
@@ -81,6 +81,10 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
       <option value="">All types</option>
       {Object.entries(TYPE).map(([k, v]) => <option value={k}>{v}</option>)}
     </select>
+    <select name="section" aria-label="Section">
+      <option value="">All sections</option>
+      {SECTIONS.map((sec) => <option value={sec.slug}>{sec.name}</option>)}
+    </select>
     <select name="status" aria-label="Status">
       <option value="">Any status</option>
       <option value="featured">Featured</option>
@@ -105,6 +109,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     <select name="sort" aria-label="Sort by">
       <option value="newest">Newest first</option>
       <option value="oldest">Oldest first</option>
+      <option value="section">Section (site order)</option>
       <option value="town">Town (A–Z)</option>
       <option value="source">Source (A–Z)</option>
       <option value="title">Headline (A–Z)</option>
@@ -123,6 +128,9 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
           data-source={i.source}
           data-category={i.category}
           data-towns={i.towns.join(' ')}
+          data-sections={i.sections.join(' ')}
+          data-section-order={String(Math.max(0, SECTIONS.findIndex((sec) => sec.slug === i.sections[0]))).padStart(2, '0')}
+          data-section-label={sectionName(i.sections[0] ?? i.section)}
           data-countywide={i.countywide ? '1' : undefined}
           data-date={i.date}
           data-undated={i.undated ? '1' : undefined}
@@ -199,7 +207,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
   const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement;
 
   const params = new URLSearchParams(location.search);
-  for (const name of ['q', 'source', 'category', 'status', 'town', 'within', 'sort']) {
+  for (const name of ['q', 'source', 'category', 'section', 'status', 'town', 'within', 'sort']) {
     const v = params.get(name);
     if (v !== null) field(name).value = v;
   }
@@ -214,6 +222,8 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     newest,
     oldest: (a, b) => -newest(a, b),
     town: (a, b) => townKey(a).localeCompare(townKey(b)) || newest(a, b),
+    // In the order sections appear on the site, by each story's main section.
+    section: (a, b) => a.dataset.sectionOrder!.localeCompare(b.dataset.sectionOrder!) || newest(a, b),
     source: (a, b) => byText('sourceName')(a, b) || newest(a, b),
     title: byText('title'),
   };
@@ -233,6 +243,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     const category = String(f.get('category') ?? '');
     const status = String(f.get('status') ?? '');
     const town = String(f.get('town') ?? '');
+    const section = String(f.get('section') ?? '');
     const sort = String(f.get('sort') ?? 'newest');
     // "Last N hours" leaves out items whose feed gave no date.
     const within = Number(f.get('within') || 0);
@@ -248,12 +259,14 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
         (!source || r.dataset.source === source) &&
         (!category || r.dataset.category === category) &&
         (!status || r.dataset.status!.split(' ').includes(status)) &&
+        (!section || r.dataset.sections!.split(' ').includes(section)) &&
         matchesTown(r, town) &&
         (!since || (r.dataset.undated !== '1' && Date.parse(r.dataset.date!) >= since));
       r.hidden = !ok;
-      // Grouped by town: a heading row before each town's first story.
-      if (ok && sort === 'town' && !town) {
-        const label = r.dataset.townLabel || 'No town';
+      // Grouped by town or section: a heading row before each group's first story.
+      const grouped = (sort === 'town' && !town) || (sort === 'section' && !section);
+      if (ok && grouped) {
+        const label = sort === 'section' ? r.dataset.sectionLabel! : r.dataset.townLabel || 'No town';
         if (label !== lastGroup) {
           const g = document.createElement('tr');
           g.className = 'group';

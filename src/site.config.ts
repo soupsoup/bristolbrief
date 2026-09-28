@@ -4,10 +4,8 @@ export const SITE = {
   description:
     'Local headlines, public meetings, weather and transit alerts for the 20 cities and towns of Bristol County, Massachusetts, gathered from local newsrooms and town halls.',
   email: 'tips@bristolbrief.com',
-  // Point this at your newsletter provider's subscribe endpoint
-  // (beehiiv, Buttondown, Ghost, Mailchimp, etc.). Leave empty to show a
-  // "coming soon" message instead of submitting.
-  newsletterAction: '',
+  // Newsletter sign-ups go to beehiiv via /api/subscribe (BEEHIIV_API_KEY and
+  // BEEHIIV_PUBLICATION_ID on Vercel; see src/lib/newsletter.ts).
   social: {
     discord: 'https://discord.gg/VPTjAAmvWB',
     instagram: 'https://instagram.com/',

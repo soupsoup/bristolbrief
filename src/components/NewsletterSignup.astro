@@ -1,11 +1,8 @@
 ---
-import { SITE } from '../site.config';
-
 interface Props {
   variant?: 'box' | 'banner';
 }
 const { variant = 'box' } = Astro.props;
-const live = Boolean(SITE.newsletterAction);
 ---
 <section class={`signup signup-${variant}`} aria-labelledby={`signup-${variant}-title`}>
   <p class="kicker">Free newsletter</p>
@@ -14,12 +11,7 @@ const live = Boolean(SITE.newsletterAction);
     The day's headlines from New Bedford to Attleboro, plus upcoming public meetings,
     in one weekday-morning email.
   </p>
-  <form
-    class="signup-form"
-    method="post"
-    action={live ? SITE.newsletterAction : undefined}
-    data-live={live ? 'true' : 'false'}
-  >
+  <form class="signup-form" method="post" action="/api/subscribe">
     <label class="visually-hidden" for={`email-${variant}`}>Email address</label>
     <input
       id={`email-${variant}`}
@@ -29,24 +21,65 @@ const live = Boolean(SITE.newsletterAction);
       autocomplete="email"
       required
     />
+    <!-- Left empty by people; bots fill it in. -->
+    <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
     <button class="btn" type="submit">Subscribe</button>
   </form>
   <p class="signup-status meta" role="status" hidden></p>
 </section>
 
 <script>
-  document.querySelectorAll<HTMLFormElement>('.signup-form[data-live="false"]').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+  const MESSAGES: Record<string, string> = {
+    ok: 'Thanks! Check your inbox to confirm your subscription.',
+    invalid: 'That email address doesn’t look right. Please check it and try again.',
+    'not-configured': 'Sign-ups open very soon. Please try again later today.',
+    upstream: 'Something went wrong on our end. Please try again in a minute.',
+  };
+  document.querySelectorAll<HTMLFormElement>('.signup-form').forEach((form) => {
+    const status = form.nextElementSibling as HTMLElement;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const status = form.nextElementSibling as HTMLElement;
+      const data = new FormData(form);
+      button.disabled = true;
+      status.hidden = true;
+      let result = 'upstream';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: data.get('email'), website: data.get('website') }),
+        });
+        const body = await res.json().catch(() => ({}));
+        result = body.ok ? 'ok' : body.error ?? 'upstream';
+      } catch {}
       status.hidden = false;
-      status.textContent = 'Thanks! Sign-ups open soon. We’ll save you a seat.';
-      form.reset();
+      status.textContent = MESSAGES[result] ?? MESSAGES.upstream;
+      status.dataset.state = result === 'ok' ? 'ok' : 'error';
+      button.disabled = false;
+      if (result === 'ok') form.reset();
+      const gtag = (window as any).gtag;
+      if (typeof gtag === 'function') gtag('event', result === 'ok' ? 'newsletter_signup' : 'newsletter_signup_error', { result, page: location.pathname });
     });
   });
+
+  // Without JavaScript the form posts to /api/subscribe, which sends people
+  // back to /subscribe/?status=…; show that message here.
+  const s = new URLSearchParams(location.search).get('status');
+  if (s && MESSAGES[s]) {
+    const status = document.querySelector<HTMLElement>('.signup-status');
+    if (status) {
+      status.hidden = false;
+      status.textContent = MESSAGES[s];
+      status.dataset.state = s === 'ok' ? 'ok' : 'error';
+    }
+  }
 </script>
 
 <style>
+  .signup-status[data-state='ok'] { color: #1f7a3a; font-weight: 600; }
+  .signup-status[data-state='error'] { color: var(--accent); font-weight: 600; }
+  @media (prefers-color-scheme: dark) { .signup-status[data-state='ok'] { color: #6fcf8e; } }
   .signup {
     background: var(--paper-2);
     border-top: 3px solid var(--accent);

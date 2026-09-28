@@ -57,13 +57,13 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
       <p class="page-dek" style="margin-top:40px">Headlines will appear after the first feed update (<code>npm run ingest</code>).</p>
     ) : (
       <section class="top" aria-label="Top stories">
-        <div class="top-lead">
+        <div class="top-lead" data-placement="home-lead">
           <WireCard item={lead} variant="lead" />
         </div>
-        <div class="top-secondary">
+        <div class="top-secondary" data-placement="home-top">
           {secondary.map((i) => <WireCard item={i} />)}
         </div>
-        <aside class="top-rail">
+        <aside class="top-rail" data-placement="home-rail">
           <div class="rail-head">Around the county</div>
           <div class="rail-pin">
             <span class="pin-label">Power outages</span>
@@ -90,7 +90,7 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
     <div class="feature-band">
       <div class="feature-main">
         {featureSections.map((sec) => (
-          <section aria-labelledby={`sec-${sec.slug}`}>
+          <section aria-labelledby={`sec-${sec.slug}`} data-placement={`home-${sec.slug}`}>
             <div class="section-head">
               <h2 id={`sec-${sec.slug}`}>{sec.name}</h2>
               <a href={`/section/${sec.slug}/`}>All {sec.name.toLowerCase()} headlines →</a>
@@ -113,7 +113,7 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
     <div class="lower">
       <div class="lower-main">
         {sectionRows.map((row) => (
-          <section>
+          <section data-placement={`home-${row.slug}`}>
             <div class="section-head">
               <h2>{row.name}</h2>
               <a href={`/section/${row.slug}/`}>More {row.name} →</a>

@@ -13,7 +13,7 @@ const Heading = variant === 'lead' ? 'h1' : 'h2';
 const ext = !item.manual || item.external ? { target: '_blank', rel: 'noopener' } : {};
 const place = item.towns.length ? item.towns.slice(0, 2).map(townName).join(', ') : item.countywide ? 'Region' : null;
 ---
-<article class={`wcard wcard-${variant}`}>
+<article class={`wcard wcard-${variant}`} data-story-id={item.id} data-source={item.source}>
   {item.image && (
     <a href={item.link} class="wcard-img" tabindex="-1" aria-hidden="true" {...ext}>
       <img src={item.image} alt={item.imageAlt ?? ''} loading={variant === 'lead' ? 'eager' : 'lazy'} />

@@ -48,6 +48,26 @@ const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
       gtag('js', new Date());
 
       gtag('config', 'G-TLGJ47WQV5');
+
+      // Story clicks: one "story_click" event per headline or photo click, with
+      // which story, whose it is, and where on the page it was (data-placement,
+      // else the page path). Outbound links open in a new tab, so the page
+      // stays and the event always sends.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        var story = a && a.closest('[data-story-id]');
+        if (!story) return;
+        var titleEl = story.querySelector('.wire-title, .wcard-title');
+        var place = a.closest('[data-placement]');
+        gtag('event', 'story_click', {
+          story_id: story.dataset.storyId,
+          story_title: ((titleEl || a).textContent || '').trim().slice(0, 100),
+          story_source: story.dataset.source || '',
+          placement: place ? place.dataset.placement : location.pathname,
+          outbound: a.host !== location.host,
+          link_url: a.href,
+        });
+      });
     </script>
   </head>
   <body>

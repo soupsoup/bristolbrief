@@ -5,6 +5,7 @@
 //   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
 //   src/data/tides.json        NOAA tide predictions and latest water levels
 //   src/data/calendar.json     upcoming public meetings with real dates (CivicClerk)
+//   src/data/schedules.json    Red Sox and Bruins results and upcoming games
 //   src/data/social-candidates.json  Bluesky/Mastodon posts for editors to review
 //   src/data/feed-status.json  per-source health report
 //
@@ -22,6 +23,7 @@ import {
   normalizeCivicClerk,
 } from './lib/data.mjs';
 import { scanSocial } from './lib/social.mjs';
+import { SCHEDULE_TEAMS, trimSchedule } from './lib/schedules.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const path = (p) => new URL(p, ROOT);
@@ -216,13 +218,32 @@ async function ingestSocial() {
 const { sources } = await readJson('src/data/sources.json', { sources: [] });
 const selected = sources.filter((s) => s.enabled && (!only || only.includes(s.id)));
 
-const [results, alertResult, transit, tides, calendar, social] = await Promise.all([
+async function ingestSchedules() {
+  const now = new Date();
+  const teams = {};
+  const errors = [];
+  await Promise.all(
+    SCHEDULE_TEAMS.map(async (t) => {
+      try {
+        const { status, body } = await fetchText(t.url(now), { accept: 'application/json' });
+        if (status !== 200) throw new Error(`HTTP ${status}`);
+        teams[t.team] = { league: t.league, ...trimSchedule(t.normalize(JSON.parse(body)), now) };
+      } catch (err) {
+        errors.push(`${t.team}: ${err.message}`);
+      }
+    }),
+  );
+  return { ok: Object.keys(teams).length > 0, teams, errors };
+}
+
+const [results, alertResult, transit, tides, calendar, social, schedules] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
   ingestTransit(),
   ingestTides(),
   ingestCalendar(),
   ingestSocial(),
+  ingestSchedules(),
 ]);
 
 const incoming = results.flatMap((r) => r.items);
@@ -245,7 +266,8 @@ console.log(
   `MBTA: ${transit.ok ? `${transit.alerts.length} alerts` : `failed (${transit.error})`}. ` +
     `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
     `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
-    `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}.`,
+    `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}. ` +
+    `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}.`,
 );
 
 if (!dryRun) {
@@ -263,6 +285,11 @@ if (!dryRun) {
   }
   if (social.ok) {
     await writeFile(path('src/data/social-candidates.json'), JSON.stringify({ updated: now, posts: social.posts }, null, 1) + '\n');
+  }
+  if (schedules.ok) {
+    // Merge so one league's API being down keeps that team's last good copy.
+    const prev = await readJson('src/data/schedules.json', { teams: {} });
+    await writeFile(path('src/data/schedules.json'), JSON.stringify({ updated: now, teams: { ...prev.teams, ...schedules.teams } }, null, 1) + '\n');
   }
   if (calendar.ok) {
     await writeFile(path('src/data/calendar.json'), JSON.stringify({ updated: now, meetings: calendar.meetings }, null, 1) + '\n');

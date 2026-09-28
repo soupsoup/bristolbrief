@@ -306,3 +306,26 @@ export const fmtLogTime = (d: string) => {
   const [h, m] = d.slice(11, 16).split(':').map(Number);
   return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'a.m.' : 'p.m.'}`;
 };
+
+import schedulesData from '../data/schedules.json';
+
+export interface Game {
+  id: string;
+  date: string;
+  tbd?: boolean;
+  home: boolean;
+  opponent: string;
+  status: 'final' | 'live' | 'scheduled' | 'postponed';
+  us?: number;
+  them?: number;
+  result?: 'W' | 'L' | 'T' | 'OTL';
+  note?: string;
+}
+export interface TeamSchedule {
+  league: string;
+  past: Game[];
+  next: Game[];
+}
+/** Results and upcoming games for teams with a schedule feed (Red Sox, Bruins). */
+export const teamSchedule = (team: string) =>
+  ((schedulesData.teams ?? {}) as Record<string, TeamSchedule>)[team] ?? null;

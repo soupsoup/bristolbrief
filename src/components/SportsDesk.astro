@@ -1,13 +1,14 @@
 ---
 import WireList from './WireList.astro';
+import TeamSchedule from './TeamSchedule.astro';
 import { TEAMS } from '../site.config';
-import { itemsForSection, teamItems } from '../lib/wire';
+import { itemsForSection, teamItems, teamSchedule } from '../lib/wire';
 
 const local = itemsForSection('sports').filter((i) => !i.team);
-const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug) }));
+const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug), schedule: teamSchedule(t.slug) }));
 ---
 <div class="sports">
-  <section aria-labelledby="hs-h">
+  <section class="hs" aria-labelledby="hs-h">
     <div class="section-head"><h2 id="hs-h">Bristol County high school</h2></div>
     <WireList items={local.slice(0, 15)} showSummary empty="No local high school sports stories yet." />
     {local.length > 15 && (
@@ -29,6 +30,7 @@ const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug) }));
           <h2 id={`${t.slug}-h`}>{t.name}</h2>
           <span class="meta">{t.league}</span>
         </div>
+        {t.schedule && <TeamSchedule schedule={t.schedule} />}
         <WireList items={t.items.slice(0, 5)} empty={`No ${t.name} stories in the last few days.`} />
         {t.items.length > 5 && (
           <details class="more">
@@ -46,7 +48,7 @@ const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug) }));
 </div>
 
 <style>
-  .sports .section-head:first-child { margin-top: 0; }
+  .hs > .section-head { margin-top: 0; }
   .more { margin-top: 8px; }
   .more summary { cursor: pointer; }
   .team-jump {
@@ -68,6 +70,7 @@ const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug) }));
   .team-jump a:hover { border-color: var(--accent); color: var(--accent); }
   .team-grid { display: grid; gap: 0 32px; grid-template-columns: 1fr; }
   @media (min-width: 760px) { .team-grid { grid-template-columns: 1fr 1fr; } }
-  .team .section-head { margin-top: 32px; }
+  .team-grid { margin-top: 12px; }
+  .team > .section-head { margin: 28px 0 12px; }
   .fine { margin-top: 32px; }
 </style>

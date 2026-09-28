@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeMlb, normalizeNhl, trimSchedule } from '../scripts/lib/schedules.mjs';
+import { normalizeMlb, normalizeNhl, normalizeFixtures, trimSchedule } from '../scripts/lib/schedules.mjs';
 
 test('MLB schedule: results, playoff notes and upcoming games', () => {
   const team = (id, teamName) => ({ team: { id, teamName, name: `X ${teamName}` } });
@@ -29,4 +29,16 @@ test('NHL schedule: overtime losses and preseason notes', () => {
   };
   const [g] = normalizeNhl(json, 'BOS');
   assert.deepEqual([g.result, g.opponent, g.home, g.note], ['OTL', 'Capitals', false, 'Preseason · OT']);
+});
+
+test('fixturedownload schedule: Patriots results and next games', () => {
+  const json = [
+    { MatchNumber: 30, RoundNumber: 3, DateUtc: '2026-09-27 17:00:00Z', HomeTeam: 'Jacksonville Jaguars', AwayTeam: 'New England Patriots', HomeTeamScore: 35, AwayTeamScore: 6 },
+    { MatchNumber: 45, RoundNumber: 4, DateUtc: '2026-10-04 17:00:00Z', HomeTeam: 'Buffalo Bills', AwayTeam: 'New England Patriots', HomeTeamScore: null, AwayTeamScore: null },
+    { MatchNumber: 46, RoundNumber: 4, DateUtc: '2026-10-04 17:00:00Z', HomeTeam: 'Miami Dolphins', AwayTeam: 'New York Jets', HomeTeamScore: null, AwayTeamScore: null },
+  ];
+  const games = normalizeFixtures(json, 'New England Patriots', { prefix: 'nfl', week: true });
+  assert.equal(games.length, 2);
+  assert.deepEqual([games[0].result, games[0].us, games[0].them, games[0].opponent, games[0].home, games[0].note], ['L', 6, 35, 'Jaguars', false, 'Week 3']);
+  assert.deepEqual([games[1].status, games[1].opponent, games[1].date], ['scheduled', 'Bills', '2026-10-04T17:00:00.000Z']);
 });

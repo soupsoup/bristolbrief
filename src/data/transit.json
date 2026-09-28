@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T11:05:27.929Z",
+ "updated": "2026-09-28T11:35:27.202Z",
  "alerts": [
   {
    "id": "1034159",
@@ -28,6 +28,46 @@
    ],
    "url": null,
    "updated": "2026-09-24T11:06:11-04:00"
+  },
+  {
+   "id": "1035224",
+   "header": "Providence Line Train 818 (7:10 AM from Providence) has yet to depart Pawtucket/Central Falls and is 10-20 minutes due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-09-28T07:21:47-04:00",
+   "end": "2026-09-28T09:27:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-09-28T07:21:47-04:00"
+  },
+  {
+   "id": "1035228",
+   "header": "Providence Line Train 818 (7:10 AM from Providence) will originate at Pawtucket/Central Falls today due to a mechanical issue. Passengers at Providence may consider Train 820 (7:02 am from Wickford Junction).",
+   "effect": "SERVICE_CHANGE",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-28T07:23:37-04:00",
+   "end": "2026-09-28T09:27:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-09-28T07:23:37-04:00"
   }
  ],
  "stopParents": {

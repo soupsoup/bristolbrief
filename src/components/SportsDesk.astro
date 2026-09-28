@@ -25,7 +25,7 @@ const teams = TEAMS.map((t) => ({ ...t, items: teamItems(t.slug), schedule: team
 
   <div class="team-grid">
     {teams.map((t) => (
-      <section class="team" id={t.slug} aria-labelledby={`${t.slug}-h`}>
+      <section class="team" id={t.slug} aria-labelledby={`${t.slug}-h`} data-placement={`sports-${t.slug}`}>
         <div class="section-head">
           <h2 id={`${t.slug}-h`}>{t.name}</h2>
           <span class="meta">{t.league}</span>

@@ -20,6 +20,7 @@ const { items, showSummary = false, showTowns = true, empty = 'Nothing new yet.'
     {items.map((i) => (
       <li
         class="wire-item"
+        data-story-id={i.id}
         data-towns={[...i.towns, ...(i.countywide ? ['countywide'] : [])].join(' ')}
         data-source={i.source}
         data-category={i.category}

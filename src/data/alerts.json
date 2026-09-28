@@ -1,6 +1,45 @@
 {
- "updated": "2026-09-28T11:35:27.202Z",
+ "updated": "2026-09-28T12:06:12.974Z",
  "alerts": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.9aff2bb2567508cec2ae041aedd0c9c5315639ad.001.1",
+   "event": "Flood Warning",
+   "headline": "Flood Warning issued September 28 at 7:55AM EDT until September 28 at 1:45PM EDT by NWS Boston/Norton MA",
+   "severity": "Severe",
+   "urgency": "Expected",
+   "areas": "Bristol, MA; Norfolk, MA; Plymouth, MA; Worcester, MA; Providence, RI",
+   "effective": "2026-09-28T07:55:00-04:00",
+   "expires": "2026-09-28T13:45:00-04:00",
+   "description": "* WHAT...Flooding caused by prolonged heavy rainfall is expected. * WHERE...Southeastern Worcester County in central Massachusetts... Southern Norfolk County in eastern Massachusetts... Northwestern Bristol County in southeastern Massachusetts... West Central Plymouth County in southeastern Massachusetts... Northeastern Providence County in Rhode Island... * WHEN...Until 145 PM EDT. *…",
+   "instruction": "Turn around, don't drown when encountering flooded roads. Most flood deaths occur in vehicles.",
+   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.9aff2bb2567508cec2ae041aedd0c9c5315639ad.001.1"
+  },
+  {
+   "id": "urn:oid:2.49.0.1.840.0.fb18841c10bd47e74793efba605f5081ae6b05af.001.1",
+   "event": "Small Craft Advisory",
+   "headline": "Small Craft Advisory issued September 28 at 7:49AM EDT until September 28 at 2:00PM EDT by NWS Boston/Norton MA",
+   "severity": "Minor",
+   "urgency": "Expected",
+   "areas": "Narragansett Bay",
+   "effective": "2026-09-28T07:49:00-04:00",
+   "expires": "2026-09-28T14:00:00-04:00",
+   "description": "* WHAT...Northeast winds 10 to 15 kt with gusts up to 25 kt and waves 1 to 3 feet. * WHERE...Narragansett Bay. * WHEN...Until 2 PM EDT this afternoon. * IMPACTS...Conditions will be hazardous to small craft.",
+   "instruction": "Inexperienced mariners, especially those operating smaller vessels, should avoid navigating in hazardous conditions.",
+   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.fb18841c10bd47e74793efba605f5081ae6b05af.001.1"
+  },
+  {
+   "id": "urn:oid:2.49.0.1.840.0.fb18841c10bd47e74793efba605f5081ae6b05af.003.1",
+   "event": "Small Craft Advisory",
+   "headline": "Small Craft Advisory issued September 28 at 7:49AM EDT until September 28 at 8:00PM EDT by NWS Boston/Norton MA",
+   "severity": "Minor",
+   "urgency": "Expected",
+   "areas": "Nantucket Sound; Vineyard Sound; Buzzards Bay",
+   "effective": "2026-09-28T07:49:00-04:00",
+   "expires": "2026-09-28T20:00:00-04:00",
+   "description": "* WHAT...Southeast winds 10 to 15 kt with gusts up to 25 kt and seas 2 to 4 feet. * WHERE...Nantucket Sound, Vineyard Sound and Buzzards Bay. * WHEN...Until 8 PM EDT this evening. * IMPACTS...Conditions will be hazardous to small craft.",
+   "instruction": "Inexperienced mariners, especially those operating smaller vessels, should avoid navigating in hazardous conditions.",
+   "link": "https://alerts.weather.gov/search?id=urn%3Aoid%3A2.49.0.1.840.0.fb18841c10bd47e74793efba605f5081ae6b05af.003.1"
+  },
   {
    "id": "urn:oid:2.49.0.1.840.0.cd86db9efdea5c7fc1556bc997149d091185bb51.001.1",
    "event": "Flood Warning",

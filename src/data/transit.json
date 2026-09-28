@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T18:35:26.612Z",
+ "updated": "2026-09-28T19:05:46.414Z",
  "alerts": [
   {
    "id": "1034159",
@@ -30,30 +30,30 @@
    "updated": "2026-09-24T11:06:11-04:00"
   },
   {
-   "id": "1035331",
-   "header": "Providence Line Train 840 (11:57 AM from Wickford Junction) is operating 15-25 minutes behind schedule between Route 128 and South Station.",
+   "id": "1035352",
+   "header": "Providence Line Train 847 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Route 128 and Wickford Junction.",
    "effect": "DELAY",
-   "severity": 6,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-28T13:04:00-04:00",
-   "end": "2026-09-28T14:37:00-04:00",
+   "start": "2026-09-28T14:50:48-04:00",
+   "end": "2026-09-28T17:04:00-04:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-09-28T13:42:32-04:00"
+   "updated": "2026-09-28T14:50:48-04:00"
   },
   {
    "id": "1035346",
-   "header": "Stoughton Line Train 945 (2:05 PM from South Station) is operating 5-15 minutes behind schedule between Hyde Park and Stoughton.",
+   "header": "Stoughton Line Train 945 (2:05 PM from South Station) is operating 10-20 minutes behind schedule between Route 128 and Stoughton.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-28T14:34:25-04:00",
+   "start": "2026-09-28T14:34:00-04:00",
    "end": "2026-09-28T15:43:00-04:00",
    "routes": [
     "CR-Providence"
@@ -61,7 +61,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-09-28T14:34:25-04:00"
+   "updated": "2026-09-28T14:39:27-04:00"
   },
   {
    "id": "1035343",
@@ -96,55 +96,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-09-28T13:45:56-04:00"
-  },
-  {
-   "id": "1035332",
-   "header": "Providence Line Train 839 (12:20 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-28T13:09:18-04:00",
-   "end": "2026-09-28T15:05:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-09-28T13:09:18-04:00"
-  },
-  {
-   "id": "1035328",
-   "header": "Fall River Line Train 1917 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Brockton and Fall River Depot.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-28T12:55:55-04:00",
-   "end": "2026-09-28T14:45:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-09-28T12:55:55-04:00"
   }
  ],
  "stopParents": {

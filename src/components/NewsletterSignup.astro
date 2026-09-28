@@ -11,7 +11,7 @@ const { variant = 'box' } = Astro.props;
     The day's headlines from New Bedford to Attleboro, plus upcoming public meetings,
     in one weekday-morning email.
   </p>
-  <form class="signup-form" method="post" action="/api/subscribe">
+  <form class="signup-form" method="post" action="/api/subscribe/">
     <label class="visually-hidden" for={`email-${variant}`}>Email address</label>
     <input
       id={`email-${variant}`}
@@ -45,7 +45,7 @@ const { variant = 'box' } = Astro.props;
       status.hidden = true;
       let result = 'upstream';
       try {
-        const res = await fetch('/api/subscribe', {
+        const res = await fetch('/api/subscribe/', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ email: data.get('email'), website: data.get('website') }),
@@ -63,7 +63,7 @@ const { variant = 'box' } = Astro.props;
     });
   });
 
-  // Without JavaScript the form posts to /api/subscribe, which sends people
+  // Without JavaScript the form posts to /api/subscribe/, which sends people
   // back to /subscribe/?status=…; show that message here.
   const s = new URLSearchParams(location.search).get('status');
   if (s && MESSAGES[s]) {

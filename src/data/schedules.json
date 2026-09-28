@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T20:35:30.442Z",
+ "updated": "2026-09-28T20:51:28.456Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -181,6 +181,127 @@
      "tbd": false,
      "home": true,
      "opponent": "Mammoth",
+     "status": "scheduled"
+    }
+   ]
+  },
+  "patriots": {
+   "league": "NFL",
+   "past": [
+    {
+     "id": "nfl-38",
+     "date": "2026-09-27T17:00:00.000Z",
+     "home": false,
+     "opponent": "Jaguars",
+     "status": "final",
+     "us": 6,
+     "them": 35,
+     "result": "L",
+     "note": "Week 3"
+    },
+    {
+     "id": "nfl-22",
+     "date": "2026-09-20T17:00:00.000Z",
+     "home": true,
+     "opponent": "Steelers",
+     "status": "final",
+     "us": 20,
+     "them": 3,
+     "result": "W",
+     "note": "Week 2"
+    },
+    {
+     "id": "nfl-1",
+     "date": "2026-09-10T00:20:00.000Z",
+     "home": false,
+     "opponent": "Seahawks",
+     "status": "final",
+     "us": 10,
+     "them": 13,
+     "result": "L",
+     "note": "Week 1"
+    }
+   ],
+   "next": [
+    {
+     "id": "nfl-52",
+     "date": "2026-10-04T17:00:00.000Z",
+     "home": false,
+     "opponent": "Bills",
+     "status": "scheduled",
+     "note": "Week 4"
+    },
+    {
+     "id": "nfl-68",
+     "date": "2026-10-11T17:00:00.000Z",
+     "home": true,
+     "opponent": "Raiders",
+     "status": "scheduled",
+     "note": "Week 5"
+    },
+    {
+     "id": "nfl-85",
+     "date": "2026-10-18T17:00:00.000Z",
+     "home": true,
+     "opponent": "Jets",
+     "status": "scheduled",
+     "note": "Week 6"
+    },
+    {
+     "id": "nfl-94",
+     "date": "2026-10-23T00:15:00.000Z",
+     "home": false,
+     "opponent": "Bears",
+     "status": "scheduled",
+     "note": "Week 7"
+    },
+    {
+     "id": "nfl-119",
+     "date": "2026-11-01T21:25:00.000Z",
+     "home": false,
+     "opponent": "Dolphins",
+     "status": "scheduled",
+     "note": "Week 8"
+    }
+   ]
+  },
+  "celtics": {
+   "league": "NBA",
+   "past": [],
+   "next": [
+    {
+     "id": "nba-1",
+     "date": "2026-10-20T19:00:00.000Z",
+     "home": false,
+     "opponent": "Pistons",
+     "status": "scheduled"
+    },
+    {
+     "id": "nba-17",
+     "date": "2026-10-23T23:00:00.000Z",
+     "home": true,
+     "opponent": "Knicks",
+     "status": "scheduled"
+    },
+    {
+     "id": "nba-46",
+     "date": "2026-10-26T23:30:00.000Z",
+     "home": true,
+     "opponent": "Bulls",
+     "status": "scheduled"
+    },
+    {
+     "id": "nba-53",
+     "date": "2026-10-27T23:30:00.000Z",
+     "home": true,
+     "opponent": "Nets",
+     "status": "scheduled"
+    },
+    {
+     "id": "nba-73",
+     "date": "2026-10-30T23:30:00.000Z",
+     "home": true,
+     "opponent": "Bulls",
      "status": "scheduled"
     }
    ]

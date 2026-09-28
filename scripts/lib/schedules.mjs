@@ -1,6 +1,12 @@
-// Team schedules and results for the Sports page, from the leagues' own public
-// JSON APIs (no key): MLB's Stats API and the NHL's api-web. ESPN's API would
-// cover the NFL and NBA too, but it rejects automated requests.
+// Team schedules and results for the Sports page, from free public JSON (no
+// key): MLB's Stats API and the NHL's api-web for the Red Sox and Bruins, and
+// fixturedownload.com's season files for the Patriots and Celtics (ESPN's
+// site API rejects automated requests). fixturedownload covers the regular
+// season only: no preseason or playoff games.
+
+// Season files are named for the year the season starts.
+const nflSeason = (now) => (now.getUTCMonth() >= 2 ? now.getUTCFullYear() : now.getUTCFullYear() - 1);
+const nbaSeason = (now) => (now.getUTCMonth() >= 6 ? now.getUTCFullYear() : now.getUTCFullYear() - 1);
 
 export const SCHEDULE_TEAMS = [
   {
@@ -17,6 +23,18 @@ export const SCHEDULE_TEAMS = [
     league: 'NHL',
     url: () => 'https://api-web.nhle.com/v1/club-schedule-season/BOS/now',
     normalize: (json) => normalizeNhl(json, 'BOS'),
+  },
+  {
+    team: 'patriots',
+    league: 'NFL',
+    url: (now) => `https://fixturedownload.com/feed/json/nfl-${nflSeason(now)}`,
+    normalize: (json) => normalizeFixtures(json, 'New England Patriots', { prefix: 'nfl', week: true }),
+  },
+  {
+    team: 'celtics',
+    league: 'NBA',
+    url: (now) => `https://fixturedownload.com/feed/json/nba-${nbaSeason(now)}`,
+    normalize: (json) => normalizeFixtures(json, 'Boston Celtics', { prefix: 'nba' }),
   },
 ];
 
@@ -84,6 +102,32 @@ export function normalizeNhl(json, abbrev) {
       ...(status === 'final' || status === 'live' ? { us: us.score ?? 0, them: them.score ?? 0 } : {}),
       ...(result ? { result } : {}),
       ...(notes.length ? { note: notes.join(' · ') } : {}),
+    });
+  }
+  return games.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+// "Seattle Seahawks" -> "Seahawks"; two-word nicknames kept whole.
+const TWO_WORD = /\b(Trail Blazers|Red Sox|White Sox|Blue Jays)$/;
+const nickname = (name) => name.match(TWO_WORD)?.[1] ?? name.split(' ').pop();
+
+/** fixturedownload.com season file (array of matches) → games, oldest first. */
+export function normalizeFixtures(json, teamName, { prefix, week = false }) {
+  const games = [];
+  for (const m of Array.isArray(json) ? json : []) {
+    if (m.HomeTeam !== teamName && m.AwayTeam !== teamName) continue;
+    const home = m.HomeTeam === teamName;
+    const usScore = home ? m.HomeTeamScore : m.AwayTeamScore;
+    const themScore = home ? m.AwayTeamScore : m.HomeTeamScore;
+    const final = usScore != null && themScore != null;
+    games.push({
+      id: `${prefix}-${m.MatchNumber}`,
+      date: new Date(m.DateUtc.replace(' ', 'T')).toISOString(),
+      home,
+      opponent: nickname(home ? m.AwayTeam : m.HomeTeam),
+      status: final ? 'final' : 'scheduled',
+      ...(final ? { us: usScore, them: themScore, result: usScore > themScore ? 'W' : usScore < themScore ? 'L' : 'T' } : {}),
+      ...(week && m.RoundNumber ? { note: `Week ${m.RoundNumber}` } : {}),
     });
   }
   return games.sort((a, b) => a.date.localeCompare(b.date));

@@ -14,7 +14,7 @@ export type SubscribeResult =
   | { ok: true }
   | { ok: false; status: number; error: 'invalid' | 'not-configured' | 'upstream' };
 
-/** Add an address to the beehiiv publication and send its welcome email. */
+/** Add an address to the beehiiv publication; beehiiv sends a confirmation email first. */
 export async function subscribe(email: string, { referrer = '' } = {}): Promise<SubscribeResult> {
   if (!validEmail(email)) return { ok: false, status: 400, error: 'invalid' };
   if (!newsletterConfigured()) return { ok: false, status: 503, error: 'not-configured' };
@@ -27,6 +27,9 @@ export async function subscribe(email: string, { referrer = '' } = {}): Promise<
       body: JSON.stringify({
         email,
         reactivate_existing: false,
+        // Double opt-in: beehiiv emails a confirmation link and only counts the
+        // subscriber once they click it. The welcome email follows confirmation.
+        double_opt_override: 'on',
         send_welcome_email: true,
         utm_source: 'bristolbrief.com',
         utm_medium: 'website',

@@ -30,7 +30,7 @@ const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
 const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
 // Real Estate, Business, Food & Drink and Things to Do get their own sections
-// beside the social column.
+// beside the social column, freshest first.
 // They skip stories already in the top slots or the visible part of the rail.
 const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
 const FEATURE_SECTIONS = ['real-estate', 'business', 'food-drink', 'things-to-do'] as const;
@@ -40,6 +40,12 @@ const featureSections = FEATURE_SECTIONS.map((slug) => ({
   items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
 }));
 featureSections.forEach((sec) => sec.items.forEach((i) => shown.add(i.id)));
+// Sections below the top stories run freshest first: the section whose newest
+// story is most recent leads. Empty sections go last. The page rebuilds every
+// 30 minutes, so the order follows the news.
+const newest = (items: { date: string }[]) => items[0]?.date ?? '';
+const byFreshness = <T extends { items: { date: string }[] }>(a: T, b: T) => newest(b.items).localeCompare(newest(a.items));
+featureSections.sort(byFreshness);
 // Only the most recently approved post fits here; the rest are on /social/.
 const social = socialPosts().slice(0, 1);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
@@ -49,7 +55,7 @@ const meetings = meetingItems().slice(0, 6);
 const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly string[]).includes(sec.slug)).map((sec) => ({
   ...sec,
   items: stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3),
-})).filter((row) => row.items.length === 3);
+})).filter((row) => row.items.length === 3).sort(byFreshness);
 ---
 <Base>
   <div class="wrap">

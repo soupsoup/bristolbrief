@@ -29,33 +29,40 @@ const shown = new Set(top.map((i) => i.id));
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
 const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
-// Real Estate, Business, Food & Drink and Things to Do get their own sections
-// beside the social column, freshest first.
-// They skip stories already in the top slots or the visible part of the rail.
+// Stories already on the page: the top slots and the visible part of the rail.
 const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
 const FEATURE_SECTIONS = ['real-estate', 'business', 'food-drink', 'things-to-do'] as const;
-const featureSections = FEATURE_SECTIONS.map((slug) => ({
-  slug,
-  name: SECTIONS.find((s) => s.slug === slug)!.name,
-  items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
-}));
-featureSections.forEach((sec) => sec.items.forEach((i) => shown.add(i.id)));
 // Sections below the top stories run freshest first: the section whose newest
 // story is most recent leads. Empty sections go last. The page rebuilds every
 // 30 minutes, so the order follows the news.
 const newest = (items: { date: string }[]) => items[0]?.date ?? '';
 const byFreshness = <T extends { items: { date: string }[] }>(a: T, b: T) => newest(b.items).localeCompare(newest(a.items));
-featureSections.sort(byFreshness);
+
+// First block: a row per section (News, Public Safety, Schools...) with at
+// least three stories not already shown. These usually carry the freshest
+// news, so they sit right under the top stories and pick their stories first.
+// A story in several sections (News and Schools, say) goes in the first row
+// that takes it, so no story shows twice.
+const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly string[]).includes(sec.slug))
+  .map((sec) => {
+    const items = stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3);
+    if (items.length === 3) items.forEach((i) => { shown.add(i.id); visible.add(i.id); });
+    return { ...sec, items };
+  })
+  .filter((row) => row.items.length === 3)
+  .sort(byFreshness);
+
+// Second block: Real Estate, Business, Food & Drink and Things to Do as lists
+// beside the social column, skipping stories already shown above.
+const featureSections = FEATURE_SECTIONS.map((slug) => ({
+  slug,
+  name: SECTIONS.find((s) => s.slug === slug)!.name,
+  items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
+})).sort(byFreshness);
 // Only the most recently approved post fits here; the rest are on /social/.
 const social = socialPosts().slice(0, 1);
 const townHall = wireItems.filter((i) => i.category === 'government').slice(0, 6);
 const meetings = meetingItems().slice(0, 6);
-
-// A row per section with at least three stories not already shown.
-const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly string[]).includes(sec.slug)).map((sec) => ({
-  ...sec,
-  items: stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3),
-})).filter((row) => row.items.length === 3).sort(byFreshness);
 ---
 <Base>
   <div class="wrap">
@@ -91,29 +98,6 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
 
     <div class="signup-row">
       <NewsletterSignup variant="banner" />
-    </div>
-
-    <div class="feature-band">
-      <div class="feature-main">
-        {featureSections.map((sec) => (
-          <section aria-labelledby={`sec-${sec.slug}`} data-placement={`home-${sec.slug}`}>
-            <div class="section-head">
-              <h2 id={`sec-${sec.slug}`}>{sec.name}</h2>
-              <a href={`/section/${sec.slug}/`}>All {sec.name.toLowerCase()} headlines →</a>
-            </div>
-            <WireList items={sec.items} showSummary empty={`No recent ${sec.name.toLowerCase()} headlines.`} />
-          </section>
-        ))}
-      </div>
-      <aside class="feature-rail" aria-labelledby="social-head">
-        <div class="section-head">
-          <h2 id="social-head">On social</h2>
-          {socialPosts().length > 1 && <a href="/social/">More posts →</a>}
-        </div>
-        {social.length > 0
-          ? <SocialSection posts={social} columns={1} />
-          : <p class="meta">No posts yet.</p>}
-      </aside>
     </div>
 
     <div class="lower">
@@ -158,6 +142,29 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
         <ul class="town-chips">
           {TOWNS.map((t) => <li><a href={`/towns/${t.slug}/`}>{t.name}</a></li>)}
         </ul>
+      </aside>
+    </div>
+
+    <div class="feature-band">
+      <div class="feature-main">
+        {featureSections.map((sec) => (
+          <section aria-labelledby={`sec-${sec.slug}`} data-placement={`home-${sec.slug}`}>
+            <div class="section-head">
+              <h2 id={`sec-${sec.slug}`}>{sec.name}</h2>
+              <a href={`/section/${sec.slug}/`}>All {sec.name.toLowerCase()} headlines →</a>
+            </div>
+            <WireList items={sec.items} showSummary empty={`No recent ${sec.name.toLowerCase()} headlines.`} />
+          </section>
+        ))}
+      </div>
+      <aside class="feature-rail" aria-labelledby="social-head">
+        <div class="section-head">
+          <h2 id="social-head">On social</h2>
+          {socialPosts().length > 1 && <a href="/social/">More posts →</a>}
+        </div>
+        {social.length > 0
+          ? <SocialSection posts={social} columns={1} />
+          : <p class="meta">No posts yet.</p>}
       </aside>
     </div>
   </div>

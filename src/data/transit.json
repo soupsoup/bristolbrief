@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T18:35:32.945Z",
+ "updated": "2026-09-29T19:05:24.549Z",
  "alerts": [
   {
    "id": "1034159",
@@ -28,6 +28,27 @@
    ],
    "url": null,
    "updated": "2026-09-24T11:06:11-04:00"
+  },
+  {
+   "id": "1035590",
+   "header": "New Bedford Line Train 2030 (2:04 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-29T14:41:38-04:00",
+   "end": "2026-09-29T16:44:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-09-29T14:41:38-04:00"
   }
  ],
  "stopParents": {

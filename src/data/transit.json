@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T20:45:04.440Z",
+ "updated": "2026-09-29T21:05:28.675Z",
  "alerts": [
   {
    "id": "1034159",
@@ -30,28 +30,56 @@
    "updated": "2026-09-24T11:06:11-04:00"
   },
   {
-   "id": "1035598",
-   "header": "New Bedford Line Train 2021 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Campello and New Bedford.",
+   "id": "1035632",
+   "header": "New Bedford Line Train 2029 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between JFK/UMass and New Bedford.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-29T15:14:39-04:00",
-   "end": "2026-09-29T17:02:00-04:00",
+   "start": "2026-09-29T17:03:24-04:00",
+   "end": "2026-09-29T19:26:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
+    "Freetown",
+    "Fall River Depot",
     "East Taunton",
     "Church Street",
     "New Bedford"
    ],
    "towns": [
+    "freetown",
+    "fall-river",
     "taunton",
     "new-bedford"
    ],
    "url": null,
-   "updated": "2026-09-29T15:14:39-04:00"
+   "updated": "2026-09-29T17:03:24-04:00"
+  },
+  {
+   "id": "1035628",
+   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-29T17:00:49-04:00",
+   "end": "2026-09-29T18:31:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-09-29T17:00:49-04:00"
   }
  ],
  "stopParents": {

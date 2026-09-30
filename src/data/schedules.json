@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T02:35:29.118Z",
+ "updated": "2026-09-30T03:05:26.758Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -69,7 +69,7 @@
      "opponent": "Yankees",
      "status": "live",
      "us": 0,
-     "them": 2,
+     "them": 5,
      "note": "AL Wild Card Series, Game 1"
     },
     {
@@ -95,6 +95,17 @@
   "bruins": {
    "league": "NHL",
    "past": [
+    {
+     "id": "nhl-2026020003",
+     "date": "2026-09-30T00:00:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Rangers",
+     "status": "final",
+     "us": 3,
+     "them": 0,
+     "result": "W"
+    },
     {
      "id": "nhl-2026010049",
      "date": "2026-09-25T23:00:00Z",
@@ -146,16 +157,6 @@
    ],
    "next": [
     {
-     "id": "nhl-2026020003",
-     "date": "2026-09-30T00:00:00Z",
-     "tbd": false,
-     "home": true,
-     "opponent": "Rangers",
-     "status": "live",
-     "us": 0,
-     "them": 0
-    },
-    {
      "id": "nhl-2026020019",
      "date": "2026-10-03T00:00:00Z",
      "tbd": false,
@@ -185,6 +186,14 @@
      "tbd": false,
      "home": true,
      "opponent": "Mammoth",
+     "status": "scheduled"
+    },
+    {
+     "id": "nhl-2026020070",
+     "date": "2026-10-10T17:00:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Flyers",
      "status": "scheduled"
     }
    ]

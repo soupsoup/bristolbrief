@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T22:05:27.036Z",
+ "updated": "2026-09-30T22:35:28.817Z",
  "alerts": [
   {
    "id": "1034159",
@@ -30,13 +30,54 @@
    "updated": "2026-09-24T11:06:11-04:00"
   },
   {
-   "id": "1035924",
-   "header": "Providence Line Train 861 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Wickford Junction.",
+   "id": "1035950",
+   "header": "Providence Line Train 867 (5:37 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-30T17:26:26-04:00",
+   "start": "2026-09-30T18:34:49-04:00",
+   "end": "2026-09-30T20:29:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-09-30T18:34:49-04:00"
+  },
+  {
+   "id": "1035948",
+   "header": "Providence Line Train 870 (6:12 PM from Providence) is operating 5-15 minutes behind schedule between Providence and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-30T18:27:13-04:00",
+   "end": "2026-09-30T20:25:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-09-30T18:27:13-04:00"
+  },
+  {
+   "id": "1035924",
+   "header": "Providence Line Train 861 (4:52 PM from South Station) is operating 10-20 minutes behind schedule between Providence and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-09-30T17:26:00-04:00",
    "end": "2026-09-30T19:33:00-04:00",
    "routes": [
     "CR-Providence"
@@ -51,29 +92,7 @@
     "mansfield"
    ],
    "url": null,
-   "updated": "2026-09-30T17:26:26-04:00"
-  },
-  {
-   "id": "1035919",
-   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-09-30T17:17:05-04:00",
-   "end": "2026-09-30T18:31:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-09-30T17:17:05-04:00"
+   "updated": "2026-09-30T18:07:41-04:00"
   }
  ],
  "stopParents": {

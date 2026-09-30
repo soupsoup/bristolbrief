@@ -15,7 +15,7 @@ interface Props {
 const { title, description = SITE.description, image, type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
+const ogImage = new URL(image ?? '/social-card.png', Astro.site).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -32,8 +32,12 @@ const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
     <meta property="og:title" content={title ?? SITE.name} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={ogImage} />
+    {!image && <meta property="og:image:width" content="1200" />}
+    {!image && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={image ? title ?? SITE.name : `${SITE.name}: ${SITE.tagline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

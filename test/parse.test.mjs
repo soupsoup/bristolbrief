@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFeed, normalize, matchTowns, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing, normalizeTeam } from '../scripts/lib/parse.mjs';
+import { parseFeed, normalize, matchTowns, isDartmouthCollege, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing, normalizeTeam } from '../scripts/lib/parse.mjs';
 
 const RSS = `<?xml version="1.0"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
@@ -263,4 +263,14 @@ test('pro team coverage keeps the publisher and a short window', () => {
   assert.equal(item.section, 'sports');
   const merged = mergeItems([{ ...item, id: 'old', title: 'Old team story', date: '2026-09-20T00:00:00.000Z' }], [item], { now });
   assert.deepEqual(merged.map((i) => i.id), [item.id]);
+});
+
+test('Dartmouth College stories are not filed under Dartmouth, MA', () => {
+  assert.equal(isDartmouthCollege('A campus A.I. controversy is raising questions far beyond Dartmouth A Dartmouth investigation into alleged A.I. use by a top academic leader'), true);
+  assert.equal(isDartmouthCollege('UMass Dartmouth wins the conference title'), false);
+  const feed = { id: 'ml', name: 'MassLive', category: 'news', via: 'rss', section: 'news' };
+  const entry = { title: 'A campus A.I. controversy is raising questions far beyond Dartmouth', summary: 'A Dartmouth investigation into alleged A.I. use by a top academic leader is fueling debate nationwide.', link: 'https://example.com/a', date: new Date('2026-09-30T08:30:00Z'), categories: [] };
+  assert.equal(normalize([entry], feed, new Date('2026-09-30T13:00:00Z')).length, 0);
+  const old = { id: 'x', title: entry.title, summary: entry.summary, date: '2026-09-30T08:30:00.000Z', source: 'ml', towns: ['dartmouth'], category: 'news', section: 'news' };
+  assert.equal(mergeItems([old], [], { now: new Date('2026-09-30T13:00:00Z') }).length, 0);
 });

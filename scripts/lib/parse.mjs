@@ -177,6 +177,12 @@ const FALSE_FRIENDS = [
   /\bnorton (?:healthcare|antivirus|simon)\b/gi,
 ];
 
+// Dartmouth College (Hanover, NH) stories often say just "Dartmouth", so the
+// name alone can't be trusted. These cues in the headline or summary mean the
+// story is about the college.
+const DARTMOUTH_COLLEGE_CUES = /\b(?:ivy league|hanover|new hampshire|n\.h\.|academic leader|dartmouth college|dartmouth'?s (?:president|provost))\b/i;
+export const isDartmouthCollege = (text) => /\bdartmouth\b/i.test(text) && DARTMOUTH_COLLEGE_CUES.test(text);
+
 export function matchTowns(str) {
   let s = ` ${str} `;
   for (const re of FALSE_FRIENDS) s = s.replace(re, ' ');
@@ -306,8 +312,9 @@ export function normalize(entries, source, now = new Date()) {
     if (summary.toLowerCase().startsWith(title.toLowerCase())) summary = summary.slice(title.length).replace(/^[\s:.-]+/, '');
     const haystack = `${title} ${summary} ${e.categories.join(' ')}`;
     // Headline towns win; the summary often names opponents, hometowns, etc.
-    const titleTowns = matchTowns(title);
-    const matched = titleTowns.length ? titleTowns : matchTowns(haystack);
+    const notDartmouthCollege = (towns) => (isDartmouthCollege(`${title} ${summary}`) ? towns.filter((t) => t !== 'dartmouth') : towns);
+    const titleTowns = notDartmouthCollege(matchTowns(title));
+    const matched = titleTowns.length ? titleTowns : notDartmouthCollege(matchTowns(haystack));
     // Region: headline and summary only. Feed categories ("SE Mass", "SouthCoast
     // News") label the outlet's beat, not the story.
     const countywide = !institutional && matched.length === 0 && (mentionsBristolCountyMA(haystack) || mentionsRegion(`${title} ${summary}`));
@@ -419,7 +426,10 @@ export const wireWindow = (item, aggregatedSources = new Set()) =>
 export function mergeItems(existing, incoming, { aggregatedSources = new Set(), maxItems = 10000, now = new Date() } = {}) {
   const age = (i) => (now.valueOf() - new Date(i.date).valueOf()) / 864e5;
   incoming = incoming.filter((i) => isPublishedAt(i.date, now) && age(i) <= wireWindow(i, aggregatedSources).lookback);
-  const publishedExisting = existing.filter((i) => isPublishedAt(i.date, now));
+  // Drop stored Dartmouth-only stories that are really about the NH college.
+  const publishedExisting = existing.filter(
+    (i) => isPublishedAt(i.date, now) && !(i.towns?.length === 1 && i.towns[0] === 'dartmouth' && isDartmouthCollege(`${i.title} ${i.summary}`)),
+  );
   const byId = new Map(publishedExisting.map((i) => [i.id, i]));
   const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const seenTitles = new Set(publishedExisting.map((i) => titleKey(i.title)));

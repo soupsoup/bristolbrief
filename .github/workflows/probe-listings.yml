@@ -1,0 +1,43 @@
+name: probe-listings
+on:
+  push:
+    branches: [claude/bristol-county-news-site-bki3eq]
+    paths: ['.github/workflows/probe-listings.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe listing sources
+        run: |
+          UA='Mozilla/5.0 (compatible; BristolBriefBot/1.0; +https://bristolbrief.com/sources/)'
+          BR='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+          probe() {
+            for ua in "$UA" "$BR"; do
+              code=$(curl -sL -m 30 -A "$ua" -o /tmp/p.out -w '%{http_code} %{size_download} %{content_type}' "$1")
+              echo "[$([ "$ua" = "$UA" ] && echo bot || echo browser)] $code  $1"
+              if [ "$ua" = "$BR" ]; then head -c 300 /tmp/p.out | tr '\n\t' '  ' | cut -c1-200; echo; fi
+            done
+          }
+          probe https://www.hudhomestore.gov/
+          probe https://www.hudhomestore.gov/Home/Index.aspx
+          probe https://www.hudhomestore.gov/searchresult?citystate=MA
+          probe https://www.homepath.com/
+          probe https://www.homepath.com/listings
+          probe https://www.homepath.com/sitemap.xml
+          probe https://www.fallriverma.gov/
+          probe https://www.fallriverma.gov/departments/purchasing/
+          probe https://www.newbedford-ma.gov/
+          probe https://www.newbedford-ma.gov/purchasing/
+          probe https://www.newbedford-ma.gov/purchasing/bids/
+          probe https://www.tauntonma.gov/
+          probe https://www.tauntonma.gov/departments/purchasing
+          probe https://www.attleboro.gov/
+          probe https://www.mass.gov/info-details/surplus-real-property
+          probe https://www.mass.gov/lists/affordable-housing-lotteries
+          probe https://www.masshousing.com/
+          probe https://www.mass.gov/info-details/tax-title-property-auctions
+          probe https://www.zillow.com/attleboro-ma/
+          probe https://www.redfin.com/city/1779/MA/Attleboro
+          probe https://www.realtor.com/realestateandhomes-search/Attleboro_MA
+          probe https://www.homes.com/attleboro-ma/
+          probe https://providence.craigslist.org/search/rea?format=rss

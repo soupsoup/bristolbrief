@@ -1,9 +1,21 @@
 {
- "updated": "2026-10-01T03:05:28.514Z",
+ "updated": "2026-10-01T03:35:27.841Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
    "past": [
+    {
+     "id": "mlb-849848",
+     "date": "2026-10-01T00:00:00Z",
+     "tbd": false,
+     "home": false,
+     "opponent": "Yankees",
+     "status": "final",
+     "us": 2,
+     "them": 9,
+     "result": "L",
+     "note": "AL Wild Card Series, Game 2"
+    },
     {
      "id": "mlb-849851",
      "date": "2026-09-30T00:00:00Z",
@@ -48,41 +60,9 @@
      "us": 4,
      "them": 3,
      "result": "W"
-    },
-    {
-     "id": "mlb-824707",
-     "date": "2026-09-24T22:45:00Z",
-     "tbd": false,
-     "home": true,
-     "opponent": "Guardians",
-     "status": "final",
-     "us": 0,
-     "them": 1,
-     "result": "L"
     }
    ],
-   "next": [
-    {
-     "id": "mlb-849848",
-     "date": "2026-10-01T00:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Yankees",
-     "status": "live",
-     "us": 2,
-     "them": 9,
-     "note": "AL Wild Card Series, Game 2"
-    },
-    {
-     "id": "mlb-849847",
-     "date": "2026-10-02T00:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Yankees",
-     "status": "scheduled",
-     "note": "AL Wild Card Series, Game 3 (if necessary)"
-    }
-   ]
+   "next": []
   },
   "bruins": {
    "league": "NHL",

@@ -124,12 +124,71 @@ export function pickMeetings(meetings, { now = new Date(), count = 8, townName =
     .map((m) => ({ time: etTime(m.start), town: townName(m.town), title: m.title, link: m.link, hasAgenda: Boolean(m.hasAgenda) }));
 }
 
-export const subjectFor = (stories, now = new Date()) => {
-  const day = now.toLocaleDateString('en-US', { timeZone: ET, weekday: 'long', month: 'long', day: 'numeric' });
+const FILLER = /\s(?:of|and|the|a|an|at|in|on|for|to|by|with|from|or|as|after|over|amid|while|that|who|is|are|was|were)$/i;
+// Where a headline can end and still read as a thought: clause breaks first,
+// then prepositions.
+const CLAUSE_BREAKS = [': ', ' - ', ' after ', ' as ', ' while ', ' amid ', ' accused '];
+const PREP_BREAKS = [' over ', ' with ', ' for ', ' in ', ' at ', ' on ', ' from ', ' by '];
+
+/**
+ * Shorten a headline to at most `max` characters without an ellipsis. Returns
+ * the whole headline when it fits, else the longest prefix (of at least `min`
+ * characters) that ends at a clause break, else at a preposition. Returns ''
+ * when no clean cut exists; callers fall back to something else instead of
+ * printing half a sentence.
+ */
+export function shortHeadline(title, max = 70, min = 28) {
+  let t = title.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim();
+  t = t.replace(/^["']\w[^"':]{0,24}["']:\s+/, '');
+  t = t.charAt(0).toUpperCase() + t.slice(1);
+  if (t.length <= max) return t;
+  for (const breaks of [CLAUSE_BREAKS, PREP_BREAKS]) {
+    let best = '';
+    for (const b of breaks) {
+      for (let from = 0; ; ) {
+        const at = t.indexOf(b, from);
+        if (at < 0 || at > max) break;
+        const prefix = t.slice(0, at).replace(/[,:;\s-]+$/, '');
+        if (at >= min && prefix.length > best.length && !FILLER.test(prefix)) best = prefix;
+        from = at + 1;
+      }
+    }
+    if (best) return best;
+  }
+  return '';
+}
+
+const dayLabel = (now) => now.toLocaleDateString('en-US', { timeZone: ET, weekday: 'long', month: 'short', day: 'numeric' }).replace('Sept', 'Sep');
+
+/** Subject line: the lead headline, whole when it fits in 70 characters, else cut at a clause; the date when neither works. */
+export function subjectFor(stories, now = new Date(), max = 70) {
   const lead = stories[0];
-  if (!lead) return `The Bristol Brief: ${day}`;
-  return lead.title.length > 70 ? lead.title.slice(0, 67).replace(/\s+\S*$/, '') + '…' : lead.title;
-};
+  return (lead && shortHeadline(lead.title, max)) || `The Bristol Brief: ${dayLabel(now)}`;
+}
+
+/**
+ * Preview text, 100 characters or fewer. Built from facts that always read
+ * cleanly (alert, towns covered, meetings, scores) instead of clipped headlines.
+ */
+export function previewFor(stories, { alerts = [], meetings = [], scores = [] } = {}, max = 100) {
+  const towns = [];
+  for (const s of stories.slice(1)) for (const t of s.place.split(', ')) if (t !== 'Bristol County' && !towns.includes(t)) towns.push(t);
+  const list = (xs) => (xs.length === 1 ? xs[0] : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+  const extras = [];
+  if (meetings.length) extras.push(`${meetings.length} public meeting${meetings.length === 1 ? '' : 's'} today`);
+  if (scores.length) extras.push('high school scores');
+  const lead = alerts.length ? `${alerts[0].event} in effect. ` : '';
+  // Try the richest version first and drop pieces until it fits.
+  for (let n = Math.min(towns.length, 4); n >= 0; n--) {
+    for (const ex of [extras, extras.slice(0, 1), []]) {
+      const from = n ? `More from ${list(towns.slice(0, n))}` : '';
+      const tail = ex.length ? `${from ? ', plus ' : 'Plus '}${list(ex)}` : '';
+      const text = `${lead}${from}${tail}`.trim();
+      if (text && text.length + 1 <= max) return `${text}.`;
+    }
+  }
+  return stories.length ? 'Local headlines for the 20 cities and towns of Bristol County.' : 'Local news for Bristol County, Massachusetts.';
+}
 
 const NAVY = '#14325a';
 const RED = '#b3372b';
@@ -148,7 +207,7 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   const date = now.toLocaleDateString('en-US', { timeZone: ET, weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const [lead, ...rest] = stories;
   const subject = subjectFor(stories, now);
-  const preheader = stories.length > 1 ? stories.slice(1, 4).map((s) => s.title).join(' · ') : 'Local news for Bristol County, Massachusetts';
+  const preheader = previewFor(stories, { alerts, meetings: todays, scores });
 
   const h = [];
   const label = (text) => `<p style="margin:28px 0 10px;font:700 12px ${SANS};letter-spacing:.08em;text-transform:uppercase;color:${RED};">${esc(text)}</p>`;

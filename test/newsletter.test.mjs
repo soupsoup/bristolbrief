@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter } from '../scripts/lib/newsletter.mjs';
+import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
 
 const now = new Date('2026-10-01T10:00:00Z');
 const hoursAgo = (h) => new Date(now.valueOf() - h * 3600e3).toISOString();
@@ -93,4 +93,35 @@ test('buildNewsletter still produces a valid email on a quiet day', () => {
   assert.equal(out.counts.stories, 0);
   assert.match(out.subject, /^The Bristol Brief:/);
   assert.ok(out.html.includes('bristolbrief.com'));
+});
+
+test('shortHeadline keeps a headline whole, cuts at a clause or preposition, and returns nothing rather than half a sentence', () => {
+  assert.equal(shortHeadline('Short headline stays whole', 70), 'Short headline stays whole');
+  assert.equal(shortHeadline("‘Lowballed’: Churchgoers respond to the report", 80), 'Churchgoers respond to the report');
+  assert.equal(shortHeadline('AG report details decades of abuse at Fall River, Springfield, Worcester dioceses', 56), 'AG report details decades of abuse');
+  assert.equal(shortHeadline('General Manager of Fisher Bus responds after school bus driver throws several empty nips out the window', 48), 'General Manager of Fisher Bus responds');
+  // No clean break: never cut at a comma or mid-phrase.
+  assert.equal(shortHeadline('Massachusetts Teachers Association, politicians react to the new state budget proposal today', 46), '');
+  assert.equal(shortHeadline('North Attleborough Town Council votes to pause automated license plate reader program', 56), '');
+  // A cut never ends on a filler word.
+  assert.ok(!/\s(?:of|and|the|for|to)$/i.test(shortHeadline('Public invited to meet rescue horse and her foal at Rehoboth farm today for free', 60)));
+});
+
+test('subjectFor uses the headline, or the date when it cannot be cut cleanly', () => {
+  const s = (title) => ({ title });
+  assert.equal(subjectFor([s('Police investigate serious I-495 crash in Mansfield')]), 'Police investigate serious I-495 crash in Mansfield');
+  assert.equal(subjectFor([s('Massachusetts Teachers Association, politicians react to the new state budget proposal today and tomorrow')]), 'The Bristol Brief: ' + new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'short', day: 'numeric' }).replace('Sept', 'Sep'));
+  assert.equal(subjectFor([], new Date('2026-10-01T10:00:00Z')), 'The Bristol Brief: Thursday, Oct 1');
+  assert.ok(subjectFor([s('A very long lead headline about the harbor dredging project as the city weighs costs and funding options')]).length <= 70);
+});
+
+test('previewFor stays within 100 characters and reads as a sentence', () => {
+  const st = (place) => ({ title: 'x', place });
+  const stories = [st('Fall River'), st('Attleboro'), st('Somerset, Berkley'), st('Rehoboth'), st('Taunton')];
+  const p = previewFor(stories, { meetings: [{}, {}], scores: [{}] });
+  assert.ok(p.length <= 100, p);
+  assert.match(p, /^More from .+, plus .*high school scores\.$|^More from .+, plus 2 public meetings today\.$/);
+  assert.equal(previewFor(stories, { alerts: [{ event: 'Flood Warning' }] }), 'Flood Warning in effect. More from Attleboro, Somerset, Berkley and Rehoboth.');
+  assert.equal(previewFor([st('Fall River')]), 'Local headlines for the 20 cities and towns of Bristol County.');
+  assert.equal(previewFor([]), 'Local news for Bristol County, Massachusetts.');
 });

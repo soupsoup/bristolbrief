@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T17:05:25.000Z",
+ "updated": "2026-10-01T17:35:39.561Z",
  "alerts": [
   {
    "id": "1034159",
@@ -28,6 +28,23 @@
    ],
    "url": null,
    "updated": "2026-09-24T11:06:11-04:00"
+  },
+  {
+   "id": "1036107",
+   "header": "Stoughton Line Train 941 (1:05 PM from South Station) is operating 5-15 minutes behind schedule between Hyde Park and Stoughton.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-01T13:33:23-04:00",
+   "end": "2026-10-01T14:43:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-01T13:33:23-04:00"
   }
  ],
  "stopParents": {

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
+import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, pickScores, isScoreHeadline, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
 
 const now = new Date('2026-10-01T10:00:00Z');
 const hoursAgo = (h) => new Date(now.valueOf() - h * 3600e3).toISOString();
@@ -62,7 +62,11 @@ test('pickStories leads with the story several outlets ran, and keeps one copy o
 
 test('pickStories allows at most two stories per source', () => {
   const picked = pickStories(
-    ['Alpha harbor plan', 'Bravo school budget', 'Charlie library grant'].map((title) => item({ title, source: 'same' })),
+    [
+      ['Alpha harbor plan', 'Dredging begins next month along the waterfront, officials said, with several marinas affected by closures.'],
+      ['Bravo school budget', 'Committee members trimmed the proposed spending plan after parents raised concerns about class sizes.'],
+      ['Charlie library grant', 'A federal award will pay for new computers, longer hours and children programming through next summer.'],
+    ].map(([title, summary]) => item({ title, summary, source: 'same' })),
     { now },
   );
   assert.equal(picked.length, 2);
@@ -124,4 +128,58 @@ test('previewFor stays within 100 characters and reads as a sentence', () => {
   assert.equal(previewFor(stories, { alerts: [{ event: 'Flood Warning' }] }), 'Flood Warning in effect. More from Attleboro, Somerset, Berkley and Rehoboth.');
   assert.equal(previewFor([st('Fall River')]), 'Local headlines for the 20 cities and towns of Bristol County.');
   assert.equal(previewFor([]), 'Local news for Bristol County, Massachusetts.');
+});
+
+test('pickStories keeps one copy of an incident that two outlets headline differently', () => {
+  const picked = pickStories(
+    [
+      item({
+        title: 'Attleboro police seek man accused of harassing shoppers',
+        summary: 'ATTLEBORO -- City police are looking for a man accused of harassing female shoppers at Market Basket on Tuesday evening.',
+        source: 'a',
+        section: 'public-safety',
+        towns: ['attleboro'],
+      }),
+      item({
+        title: "Police looking for the public's help after man accused of accosting three females at Market Basket",
+        summary: "Police in Bristol County are looking for the public's help to capture a suspect. According to the Attleboro Police Department, APD is seeking the identification of the male who entered the Market Basket.",
+        source: 'b',
+        section: 'public-safety',
+        towns: ['attleboro'],
+      }),
+      item({
+        title: 'Attleboro council debates parking rules downtown',
+        summary: 'The council spent the evening on parking rules, with several residents speaking against the proposal for downtown.',
+        source: 'c',
+        towns: ['attleboro'],
+      }),
+    ],
+    { now },
+  );
+  assert.equal(picked.filter((s) => /market basket|harassing/i.test(s.title)).length, 1);
+  assert.equal(picked.length, 2);
+});
+
+test('trimSummary strips a dateline', () => {
+  assert.equal(trimSummary('ATTLEBORO -- City police are looking for a man.'), 'City police are looking for a man.');
+  assert.equal(trimSummary('REHOBOTH \u2014 Last month, a foal was born.'), 'Last month, a foal was born.');
+  assert.equal(trimSummary('FALL RIVER \u2500 It looks like one more step remains.'), 'It looks like one more step remains.');
+  assert.equal(trimSummary('BOSTON, FALL RIVER \u2013 On social media, folks ask why.'), 'On social media, folks ask why.');
+  assert.equal(trimSummary('The council met Tuesday.'), 'The council met Tuesday.');
+});
+
+test('pickScores lists game results only', () => {
+  const sp = (title) => item({ title, section: 'sports', source: title });
+  const got = pickScores(
+    [
+      sp('Attleboro Area Football Hall of Fame to conduct 54th annual induction ceremony Nov. 24'),
+      sp('H.S. FIELD HOCKEY: Morgan, Costa and Gilmore tally two each in King Philip win'),
+      sp('Bombardiers edge Hornets in overtime'),
+      sp('Sophomore eyes Westport sports history'),
+    ],
+    { now },
+  ).map((s) => s.title);
+  assert.deepEqual(got, ['H.S. FIELD HOCKEY: Morgan, Costa and Gilmore tally two each in King Philip win', 'Bombardiers edge Hornets in overtime']);
+  assert.equal(isScoreHeadline('H.S. GOLF: AHS nicked by Tigers'), true);
+  assert.equal(isScoreHeadline('Football Hall of Fame induction ceremony'), false);
 });

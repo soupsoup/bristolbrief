@@ -20,6 +20,9 @@ const sig = (t) => new Set(titleKey(t).split(' ').filter((w) => w.length >= 5 &&
 const overlap = (a, b) => [...a].filter((w) => b.has(w)).length;
 /** Same story from another outlet: two or more distinctive headline words in common. */
 const sameStory = (a, b) => overlap(a, b) >= 2;
+/** Headlines can differ while the story is the same: same town and four or more distinctive words across headline and summary. */
+const bodySig = (i) => sig(`${i.title} ${(i.summary ?? '').slice(0, 240)}`);
+const sameIncident = (a, b) => a.towns.some((t) => b.towns.includes(t)) && overlap(a.body, b.body) >= 4;
 
 /** Drop tracking parameters outlets add to their feed links. */
 export const cleanLink = (href) => {
@@ -40,6 +43,7 @@ export function trimSummary(text = '', max = 220) {
     .replace(/\s+/g, ' ')
     .replace(/^(?:By [A-Z][\w.' -]+,? (?:Editor|Staff Writer|Reporter)\s*)/i, '')
     .replace(/^(?:[A-Z][\w.' -]{0,50}? )?Press Release:?\s*/i, '')
+    .replace(/^[A-Z][A-Z .,'-]{2,40}\s*(?:--|\u2014|\u2013|\u2500)\s*/, '')
     .trim();
   if (clean.length <= max) return clean;
   const cut = clean.slice(0, max);
@@ -69,17 +73,19 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
       item: i,
       score: (SECTION_WEIGHT[i.section] ?? 1) + Math.min(coverage(i), 4) * 1.5 + (i.featuredRank != null ? 4 - Math.min(i.featuredRank, 3) : 0) - hoursOld(i, now) / 12,
       sig: sig(i.title),
+      body: bodySig(i),
+      towns: i.towns ?? [],
     }))
     .sort((a, b) => b.score - a.score);
   const picked = [];
   const pickedSigs = [];
-  for (const { item, sig: itemSig } of pool) {
+  for (const { item, sig: itemSig, body, towns } of pool) {
     const key = titleKey(item.title);
     if (seenTitles.has(key)) continue;
-    if (pickedSigs.some((p) => sameStory(p, itemSig))) continue;
+    if (pickedSigs.some((p) => sameStory(p.sig, itemSig) || sameIncident(p, { body, towns }))) continue;
     if ((perSource.get(item.source) ?? 0) >= 2) continue;
     seenTitles.add(key);
-    pickedSigs.push(itemSig);
+    pickedSigs.push({ sig: itemSig, body, towns });
     perSource.set(item.source, (perSource.get(item.source) ?? 0) + 1);
     picked.push({
       id: item.id,
@@ -95,12 +101,16 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
   return picked;
 }
 
+const SCORE_WORDS = /\b(?:beat|beats|edge|edges|edged|defeat|defeats|win|wins|won|top|tops|downs|blank|blanks|tie|ties|tied|rout|routs|rolls|sweep|sweeps|swept|shut out|falls?|lose|loses|lost|nicked|tally|tallies)\b/i;
+/** A game result, not a feature, schedule or ceremony: "H.S. ..." headlines and ones with a result verb. */
+export const isScoreHeadline = (title) => /^H\.?\s?S\.?\s/i.test(title) || SCORE_WORDS.test(title);
+
 /** Scores worth a line: high school results from the last day. */
 export function pickScores(items, { now = new Date(), hours = 24, count = 4 } = {}) {
   const seen = new Set();
   const out = [];
   for (const i of items) {
-    if (i.team || i.hidden || i.section !== 'sports' || i.category === 'meetings') continue;
+    if (i.team || i.hidden || i.section !== 'sports' || i.category === 'meetings' || !isScoreHeadline(i.title)) continue;
     if (new Date(i.date) > now || hoursOld(i, now) > hours) continue;
     const key = titleKey(i.title);
     if (seen.has(key)) continue;

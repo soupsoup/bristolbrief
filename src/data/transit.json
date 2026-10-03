@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T12:35:27.716Z",
+ "updated": "2026-10-03T13:05:33.361Z",
  "alerts": [
   {
    "id": "1034159",
@@ -49,6 +49,30 @@
    ],
    "url": null,
    "updated": "2026-10-03T08:07:33-04:00"
+  },
+  {
+   "id": "1036470",
+   "header": "Providence Line Train 5824 (8:15 AM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-03T08:44:13-04:00",
+   "end": "2026-10-03T10:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-03T08:44:13-04:00"
   }
  ],
  "stopParents": {

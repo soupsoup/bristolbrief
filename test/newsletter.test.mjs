@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, pickScores, isScoreHeadline, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
+import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, pickScores, isScoreHeadline, outOfState, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
 
 const now = new Date('2026-10-01T10:00:00Z');
 const hoursAgo = (h) => new Date(now.valueOf() - h * 3600e3).toISOString();
@@ -169,17 +169,51 @@ test('trimSummary strips a dateline', () => {
 });
 
 test('pickScores lists game results only', () => {
-  const sp = (title) => item({ title, section: 'sports', source: title });
+  const sp = (title, summary, towns) => item({ title, summary, towns, section: 'sports', source: title });
   const got = pickScores(
     [
-      sp('Attleboro Area Football Hall of Fame to conduct 54th annual induction ceremony Nov. 24'),
-      sp('H.S. FIELD HOCKEY: Morgan, Costa and Gilmore tally two each in King Philip win'),
-      sp('Bombardiers edge Hornets in overtime'),
-      sp('Sophomore eyes Westport sports history'),
+      sp('Attleboro Area Football Hall of Fame to conduct 54th annual induction ceremony Nov. 24', 'The banquet is at the Elks lodge with several honorees from past decades named this year.', ['attleboro']),
+      sp('H.S. FIELD HOCKEY: Morgan, Costa and Gilmore tally two each in King Philip win', 'The Warriors shut out Taunton High 8-0 on Thursday behind two goals each from three players.', ['taunton']),
+      sp('Bombardiers edge Hornets in overtime', 'Attleboro High won on a late goal after a scoreless second half at Mansfield on Tuesday.', ['attleboro', 'mansfield']),
+      sp('Sophomore eyes Westport sports history', 'A second-year student could become the first to letter in four varsity sports at the school.', ['westport']),
     ],
     { now },
   ).map((s) => s.title);
   assert.deepEqual(got, ['H.S. FIELD HOCKEY: Morgan, Costa and Gilmore tally two each in King Philip win', 'Bombardiers edge Hornets in overtime']);
   assert.equal(isScoreHeadline('H.S. GOLF: AHS nicked by Tigers'), true);
   assert.equal(isScoreHeadline('Football Hall of Fame induction ceremony'), false);
+});
+
+test('outOfState flags border-town items about Rhode Island and the like, unless the headline names the town', () => {
+  const it = (title, towns) => ({ title, towns });
+  assert.equal(outOfState(it('Crash causes heavy traffic in East Providence', ['seekonk'])), true);
+  assert.equal(outOfState(it('Seekonk man arrested after Pawtucket chase', ['seekonk'])), false);
+  assert.equal(outOfState(it('Hanover, N.H. council votes on the town budget', ['dartmouth'])), true);
+  assert.equal(outOfState(it('Seekonk planners approve a new plaza', ['seekonk'])), false);
+  assert.equal(outOfState(it('Tiverton fire crews help in Fall River', ['fall-river']), (s) => ({ 'fall-river': 'Fall River' })[s] ?? s), false);
+});
+
+test('pickStories skips out-of-state items', () => {
+  const picked = pickStories(
+    [
+      item({ title: 'Crash causes heavy traffic in East Providence', towns: ['seekonk'], source: 'a', summary: 'Traffic was backed up for several hours Friday because of a crash on the East Providence-Seekonk line.' }),
+      item({ title: 'Seekonk planners approve a new plaza on Route 6', towns: ['seekonk'], source: 'b' }),
+    ],
+    { now, townName: (s) => (s === 'seekonk' ? 'Seekonk' : s) },
+  );
+  assert.deepEqual(picked.map((s) => s.title), ['Seekonk planners approve a new plaza on Route 6']);
+});
+
+test('pickScores lists one line per game even when two outlets headline it differently', () => {
+  const sp = (title, source, summary) => item({ title, section: 'sports', source, summary, towns: ['mansfield'] });
+  const got = pickScores(
+    [
+      sp('Mansfield football blanks Natick, moves into conference play undefeated (video)', 'a', 'With Friday\u2019s win, the Hornets have shutout their opponent for the third time in four games.'),
+      sp('H.S. FOOTBALL: Powerhouse Hornets KO Natick', 'b', 'MANSFIELD -- The Mansfield High football team cruised past Natick High on Friday, winning 28-0.'),
+      sp('H.S. VOLLEYBALL: Barnstable sweeps past Attleboro', 'c', 'BARNSTABLE \u2014 The Attleboro High girls volleyball team lost 3-0.'),
+    ],
+    { now },
+  ).map((s) => s.title);
+  assert.equal(got.length, 2);
+  assert.ok(got.includes('H.S. VOLLEYBALL: Barnstable sweeps past Attleboro'));
 });

@@ -52,6 +52,17 @@ export function trimSummary(text = '', max = 220) {
   return cut.replace(/\s+\S*$/, '') + '…';
 }
 
+// Places outside Massachusetts that border Bristol County and get tagged to a
+// border town (a crash on the East Providence-Seekonk line). A story whose
+// headline names one of these and none of its own towns is not about us.
+const OUT_OF_STATE = /(?<!\w)(?:east providence|providence|pawtucket|central falls|cranston|warwick|west warwick|woonsocket|newport|middletown|portsmouth|tiverton|little compton|warren|barrington|cumberland|lincoln|johnston|smithfield|north providence|coventry|narragansett|rhode island|r\.i\.|connecticut|new hampshire|n\.h\.)(?!\w)/i;
+const esc2 = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export function outOfState(item, townName = (s) => s) {
+  if (!OUT_OF_STATE.test(item.title)) return false;
+  const named = (item.towns ?? []).some((t) => new RegExp(`\\b${esc2(townName(t))}\\b`, 'i').test(item.title));
+  return !named;
+}
+
 /**
  * Pick stories: published in the last `hours`, newsroom or public-safety items
  * with a real summary, no listings, sports-wire or agendas, at most two per
@@ -65,7 +76,7 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
   // How many other outlets ran the same story: the best signal of what matters today.
   const coverage = (i) => new Set(recent.filter((o) => o.source !== i.source && sameStory(sigs.get(i.id), sigs.get(o.id))).map((o) => o.source)).size;
   const pool = items
-    .filter((i) => !i.team && !i.hidden)
+    .filter((i) => !i.team && !i.hidden && !outOfState(i, townName))
     .filter((i) => (i.category === 'news' || i.category === 'public-safety') && !SKIP_SECTIONS.has(i.section))
     .filter((i) => new Date(i.date) <= now && hoursOld(i, now) <= hours)
     .filter((i) => trimSummary(i.summary).length >= 60)
@@ -105,16 +116,17 @@ const SCORE_WORDS = /\b(?:beat|beats|edge|edges|edged|defeat|defeats|win|wins|wo
 /** A game result, not a feature, schedule or ceremony: "H.S. ..." headlines and ones with a result verb. */
 export const isScoreHeadline = (title) => /^H\.?\s?S\.?\s/i.test(title) || SCORE_WORDS.test(title);
 
-/** Scores worth a line: high school results from the last day. */
-export function pickScores(items, { now = new Date(), hours = 24, count = 4 } = {}) {
-  const seen = new Set();
+/** Scores worth a line: high school results from the last day, one line per game. */
+export function pickScores(items, { now = new Date(), hours = 24, count = 4, townName = (s) => s } = {}) {
+  const pickedSigs = [];
   const out = [];
   for (const i of items) {
     if (i.team || i.hidden || i.section !== 'sports' || i.category === 'meetings' || !isScoreHeadline(i.title)) continue;
-    if (new Date(i.date) > now || hoursOld(i, now) > hours) continue;
-    const key = titleKey(i.title);
-    if (seen.has(key)) continue;
-    seen.add(key);
+    if (new Date(i.date) > now || hoursOld(i, now) > hours || outOfState(i, townName)) continue;
+    // The same game often comes from two outlets with different headlines.
+    const s = { sig: sig(i.title), body: bodySig(i), towns: i.towns ?? [] };
+    if (pickedSigs.some((p) => sameStory(p.sig, s.sig) || sameIncident(p, s))) continue;
+    pickedSigs.push(s);
     out.push({ title: i.title, link: i.link, source: i.sourceName });
     if (out.length === count) break;
   }
@@ -212,7 +224,7 @@ const link = (href, text, extra = '') => `<a href="${esc(href)}" style="color:${
 
 export function buildNewsletter({ items, meetings = [], alerts = [], now = new Date(), townName = (s) => s } = {}) {
   const stories = pickStories(items, { now, townName });
-  const scores = pickScores(items, { now });
+  const scores = pickScores(items, { now, townName });
   const todays = pickMeetings(meetings, { now, townName });
   const date = now.toLocaleDateString('en-US', { timeZone: ET, weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const [lead, ...rest] = stories;

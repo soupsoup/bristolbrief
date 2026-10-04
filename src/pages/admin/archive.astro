@@ -1,10 +1,10 @@
 ---
 import Admin from '../../layouts/Admin.astro';
-import StoryTable from '../../components/admin/StoryTable.astro';
+import StoryList from '../../components/admin/StoryList.astro';
 import { loadAdminData } from '../../lib/admin/data';
 import { sources } from '../../lib/wire';
-import { archivePage, splitStories, RECENT_DAYS, ARCHIVE_PAGE_SIZE, ARCHIVE_SORTS } from '../../../scripts/lib/admin-rows.mjs';
-import { SECTIONS, TOWNS, townName } from '../../site.config';
+import { queryStories, RECENT_DAYS, STORY_SORTS } from '../../../scripts/lib/admin-rows.mjs';
+import { SECTIONS, townName } from '../../site.config';
 
 export const prerender = false;
 
@@ -16,29 +16,21 @@ try {
   loadError = err?.message ?? 'Could not load editorial data';
 }
 
-// Filtering happens on the server: the archive holds thousands of stories, far too many for one page.
+// Filtering, sorting and paging happen on the server: the archive holds thousands of stories.
 const get = (k: string) => Astro.url.searchParams.get(k) ?? '';
-const filters = { q: get('q'), source: get('source'), section: get('section'), town: get('town'), sort: ARCHIVE_SORTS.includes(get('sort')) ? get('sort') : 'newest' };
-const all = data?.items ?? [];
-const { rows, total, archiveCount, page, pages } = archivePage(all, { ...filters, page: get('page'), sectionOrder: SECTIONS.map((sec) => sec.slug), townLabel: townName });
-const usedSources = sources.filter((s) => splitStories(all).archive.some((i: { source: string }) => i.source === s.id));
-
-const link = (n: number) => {
-  const next = new URLSearchParams();
-  for (const [k, v] of Object.entries(filters)) if (v && !(k === 'sort' && v === 'newest')) next.set(k, v);
-  if (n > 1) next.set('page', String(n));
-  return next.size ? `/admin/archive/?${next}` : '/admin/archive/';
+const filters = {
+  q: get('q'), source: get('source'), category: get('category'), section: get('section'),
+  status: get('status'), town: get('town'),
+  sort: STORY_SORTS.includes(get('sort')) ? get('sort') : 'newest',
 };
-const SORT_LABEL = [
-  ['newest', 'Newest first'],
-  ['oldest', 'Oldest first'],
-  ['section', 'Section (site order)'],
-  ['town', 'Town (A–Z)'],
-  ['source', 'Source (A–Z)'],
-  ['title', 'Headline (A–Z)'],
-];
-const first = total ? (page - 1) * ARCHIVE_PAGE_SIZE + 1 : 0;
-const last = Math.min(page * ARCHIVE_PAGE_SIZE, total);
+const result = queryStories(data?.items ?? [], {
+  scope: 'archive',
+  ...filters,
+  page: get('page'),
+  sectionOrder: SECTIONS.map((sec) => sec.slug),
+  townLabel: townName,
+});
+const usedSources = sources.filter((s) => result.sourceIds.includes(s.id));
 ---
 <Admin title="Archive" active="archive">
   {loadError && <p class="a-toast error" style="position:static;transform:none;margin:16px 0">{loadError}</p>}
@@ -49,55 +41,11 @@ const last = Math.min(page * ARCHIVE_PAGE_SIZE, total);
     <a href="/admin/">Stories</a> page covers the last {RECENT_DAYS} days.
   </p>
 
-  <form class="filters" method="get" action="/admin/archive/">
-    <input type="search" name="q" value={filters.q} placeholder="Search headlines" aria-label="Search headlines" />
-    <select name="source" aria-label="Source">
-      <option value="">All sources</option>
-      {usedSources.map((s) => <option value={s.id} selected={filters.source === s.id}>{s.name}</option>)}
-    </select>
-    <select name="section" aria-label="Section">
-      <option value="">All sections</option>
-      {SECTIONS.map((sec) => <option value={sec.slug} selected={filters.section === sec.slug}>{sec.name}</option>)}
-    </select>
-    <select name="town" aria-label="Town">
-      <option value="">All towns</option>
-      {TOWNS.map((t) => <option value={t.slug} selected={filters.town === t.slug}>{t.name}</option>)}
-      <option value="countywide" selected={filters.town === 'countywide'}>Region (no single town)</option>
-      <option value="none" selected={filters.town === 'none'}>No town</option>
-    </select>
-    <select name="sort" aria-label="Sort by">
-      {SORT_LABEL.map(([value, label]) => <option value={value} selected={filters.sort === value}>{label}</option>)}
-    </select>
-    <button class="a-btn" type="submit">Search</button>
-  </form>
-
-  <p class="a-muted count">
-    {total === 0
-      ? archiveCount === 0 ? 'Nothing is old enough to archive yet.' : 'No archived stories match.'
-      : `Showing ${first.toLocaleString('en-US')} to ${last.toLocaleString('en-US')} of ${total.toLocaleString('en-US')}${total !== archiveCount ? ` (${archiveCount.toLocaleString('en-US')} archived in all)` : ''}`}
-  </p>
-
-  {rows.length > 0 && <StoryTable items={rows} />}
-
-  {pages > 1 && (
-    <nav class="pager" aria-label="Archive pages">
-      {page > 1 ? <a class="a-btn" href={link(page - 1)}>← Newer</a> : <span></span>}
-      <span class="a-muted">Page {page} of {pages}</span>
-      {page < pages ? <a class="a-btn" href={link(page + 1)}>Older →</a> : <span></span>}
-    </nav>
-  )}
+  <StoryList
+    action="/admin/archive/"
+    filters={filters}
+    result={result}
+    sources={usedSources}
+    emptyText="Nothing is old enough to archive yet."
+  />
 </Admin>
-
-<script>
-  // Menus apply as soon as they change; the search box applies on Enter or the Search button.
-  const form = document.querySelector<HTMLFormElement>('form.filters')!;
-  form.querySelectorAll('select').forEach((sel) => sel.addEventListener('change', () => form.requestSubmit()));
-</script>
-
-<style>
-  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(4, 1fr) auto; margin-bottom: 10px; }
-  @media (max-width: 1100px) { .filters { grid-template-columns: repeat(3, 1fr); } .filters input { grid-column: 1 / -1; } }
-  @media (max-width: 600px) { .filters { grid-template-columns: 1fr 1fr; } }
-  .count { margin: 6px 0 10px; font-size: 14px; }
-  .pager { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 32px; }
-</style>

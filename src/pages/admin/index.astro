@@ -1,11 +1,11 @@
 ---
 import Admin from '../../layouts/Admin.astro';
-import StoryTable from '../../components/admin/StoryTable.astro';
+import StoryList from '../../components/admin/StoryList.astro';
 import { loadAdminData } from '../../lib/admin/data';
-import { SLOT_LABEL, TYPE } from '../../lib/admin/labels';
+import { SLOT_LABEL } from '../../lib/admin/labels';
 import { sources } from '../../lib/wire';
-import { adminRows, TEAM_VIEW_LIMIT, RECENT_DAYS, MAX_ROWS } from '../../../scripts/lib/admin-rows.mjs';
-import { SECTIONS, TOWNS } from '../../site.config';
+import { queryStories, RECENT_DAYS, STORY_SORTS } from '../../../scripts/lib/admin-rows.mjs';
+import { SECTIONS, townName } from '../../site.config';
 
 export const prerender = false;
 
@@ -17,13 +17,28 @@ try {
   loadError = err?.message ?? 'Could not load editorial data';
 }
 // The main page is the daily manager (last 7 days). Older stories live in the archive and
-// pro-team stories, which number in the thousands, in their own capped view.
+// pro-team stories, which number in the thousands, in their own list. Filtering, sorting and
+// paging all happen here on the server, so the page only ever carries one page of rows.
 const teamView = Astro.url.searchParams.get('teams') === '1';
-const { rows: items, teamCount, archiveCount, capped } = adminRows(data?.items ?? [], { teams: teamView });
+const get = (k: string) => Astro.url.searchParams.get(k) ?? '';
+const filters = {
+  q: get('q'), source: get('source'), category: get('category'), section: get('section'),
+  status: get('status'), town: get('town'), within: ['1', '3', '6', '12'].includes(get('within')) ? get('within') : '',
+  sort: STORY_SORTS.includes(get('sort')) ? get('sort') : 'newest',
+};
+const result = queryStories(data?.items ?? [], {
+  scope: teamView ? 'teams' : 'recent',
+  ...filters,
+  within: Number(filters.within) || 0,
+  page: get('page'),
+  sectionOrder: SECTIONS.map((sec) => sec.slug),
+  townLabel: townName,
+});
+const { counts } = result;
 const featured = data?.featured ?? [];
 const usedSources = [
   { id: 'bristol-brief', name: 'The Bristol Brief (manual)' },
-  ...sources.filter((s) => items.some((i) => i.source === s.id)),
+  ...sources.filter((s) => result.sourceIds.includes(s.id)),
 ];
 const slots = [
   ...(['lead', 'second', 'third'] as const).map((slot) => ({ label: SLOT_LABEL[slot], item: featured.find((i) => i.featuredSlot === slot) })),
@@ -74,170 +89,35 @@ const expiresText = (id: string) => {
     ))}
   </ol>
 
-  <h2>{teamView ? 'Pro team stories' : 'All stories'} <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
+  <h2>{teamView ? 'Pro team stories' : 'All stories'}</h2>
   <p class="a-muted help">
     {teamView ? (
       <>
-        Red Sox, Patriots, Bruins, Celtics and Revolution stories, newest first
-        {capped && <> (the latest {TEAM_VIEW_LIMIT} of {teamCount})</>}. <a href="/admin/">Back to the last {RECENT_DAYS} days</a>
+        Red Sox, Patriots, Bruins, Celtics and Revolution stories, newest first. <a href="/admin/">Back to the last {RECENT_DAYS} days</a>
       </>
     ) : (
       <>
-        The last {RECENT_DAYS} days{capped && <>, newest {MAX_ROWS.toLocaleString('en-US')} only</>}.
-        {archiveCount > 0 && (
-          <>{' '}<a href="/admin/archive/">{archiveCount.toLocaleString('en-US')} older {archiveCount === 1 ? 'story is' : 'stories are'} in the archive</a>.</>
+        The last {RECENT_DAYS} days.
+        {counts.archive > 0 && (
+          <>{' '}<a href="/admin/archive/">{counts.archive.toLocaleString('en-US')} older {counts.archive === 1 ? 'story is' : 'stories are'} in the archive</a>.</>
         )}
-        {teamCount > 0 && (
-          <>{' '}<a href="/admin/?teams=1">{teamCount.toLocaleString('en-US')} pro team stories</a> have their own list.</>
+        {counts.team > 0 && (
+          <>{' '}<a href="/admin/?teams=1">{counts.team.toLocaleString('en-US')} pro team stories</a> have their own list.</>
         )}
       </>
     )}
   </p>
-  <form class="filters" onsubmit="return false">
-    <input type="search" name="q" placeholder="Search headlines" aria-label="Search headlines" />
-    <select name="source" aria-label="Source">
-      <option value="">All sources</option>
-      {usedSources.map((s) => <option value={s.id}>{s.name}</option>)}
-    </select>
-    <select name="category" aria-label="Type">
-      <option value="">All types</option>
-      {Object.entries(TYPE).filter(([k]) => teamView || k !== 'sports').map(([k, v]) => <option value={k}>{v}</option>)}
-    </select>
-    <select name="section" aria-label="Section">
-      <option value="">All sections</option>
-      {SECTIONS.map((sec) => <option value={sec.slug}>{sec.name}</option>)}
-    </select>
-    <select name="status" aria-label="Status">
-      <option value="">Any status</option>
-      <option value="featured">Featured</option>
-      <option value="edited">Edited</option>
-      <option value="hidden">Hidden</option>
-      <option value="manual">Added here</option>
-      <option value="photo">Has photo</option>
-    </select>
-    <select name="town" aria-label="Town">
-      <option value="">All towns</option>
-      {TOWNS.map((t) => <option value={t.slug}>{t.name}</option>)}
-      <option value="countywide">Region (no single town)</option>
-      <option value="none">No town</option>
-    </select>
-    <select name="within" aria-label="Published within">
-      <option value="">Any time</option>
-      <option value="1">Last hour</option>
-      <option value="3">Last 3 hours</option>
-      <option value="6">Last 6 hours</option>
-      <option value="12">Last 12 hours</option>
-    </select>
-    <select name="sort" aria-label="Sort by">
-      <option value="newest">Newest first</option>
-      <option value="oldest">Oldest first</option>
-      <option value="section">Section (site order)</option>
-      <option value="town">Town (A–Z)</option>
-      <option value="source">Source (A–Z)</option>
-      <option value="title">Headline (A–Z)</option>
-    </select>
-  </form>
-
-  <StoryTable items={items} />
-  <p class="a-muted none" hidden>No stories match.</p>
+  <StoryList
+    action="/admin/"
+    filters={filters}
+    result={result}
+    sources={usedSources}
+    keep={teamView ? { teams: '1' } : {}}
+    showWithin={!teamView}
+    teams={teamView}
+    emptyText="No stories in the last 7 days."
+  />
 </Admin>
-
-<script>
-  // Filtering and sorting (client-side; the list is the last 7 days, well under a thousand rows).
-  // The choices live in the page address so they survive the reload after each action.
-  const form = document.querySelector<HTMLFormElement>('.filters')!;
-  const tbody = document.querySelector<HTMLTableSectionElement>('table.items tbody')!;
-  const rows = [...tbody.querySelectorAll<HTMLTableRowElement>('tr[data-id]')];
-  const count = document.querySelector('.count')!;
-  const none = document.querySelector<HTMLElement>('.none')!;
-  const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement;
-
-  const params = new URLSearchParams(location.search);
-  for (const name of ['q', 'source', 'category', 'section', 'status', 'town', 'within', 'sort']) {
-    const v = params.get(name);
-    if (v !== null) field(name).value = v;
-  }
-
-  const byText = (key: string) => (a: HTMLElement, b: HTMLElement) =>
-    (a.dataset[key] ?? '').localeCompare(b.dataset[key] ?? '', 'en', { sensitivity: 'base' });
-  const newest = (a: HTMLElement, b: HTMLElement) => b.dataset.date!.localeCompare(a.dataset.date!);
-  // Named towns first (A–Z), then Region, then items with no town.
-  const townKey = (r: HTMLElement) =>
-    r.dataset.towns ? r.dataset.townLabel! : r.dataset.countywide === '1' ? '\uffff1' : '\uffff2';
-  const SORTS: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
-    newest,
-    oldest: (a, b) => -newest(a, b),
-    town: (a, b) => townKey(a).localeCompare(townKey(b)) || newest(a, b),
-    // In the order sections appear on the site, by each story's main section.
-    section: (a, b) => a.dataset.sectionOrder!.localeCompare(b.dataset.sectionOrder!) || newest(a, b),
-    source: (a, b) => byText('sourceName')(a, b) || newest(a, b),
-    title: byText('title'),
-  };
-
-  function matchesTown(r: HTMLElement, town: string) {
-    if (!town) return true;
-    const towns = r.dataset.towns ? r.dataset.towns.split(' ') : [];
-    if (town === 'countywide') return r.dataset.countywide === '1';
-    if (town === 'none') return towns.length === 0 && r.dataset.countywide !== '1';
-    return towns.includes(town);
-  }
-
-  function apply() {
-    const f = new FormData(form);
-    const q = String(f.get('q') ?? '').toLowerCase().trim();
-    const source = String(f.get('source') ?? '');
-    const category = String(f.get('category') ?? '');
-    const status = String(f.get('status') ?? '');
-    const town = String(f.get('town') ?? '');
-    const section = String(f.get('section') ?? '');
-    const sort = String(f.get('sort') ?? 'newest');
-    // "Last N hours" leaves out items whose feed gave no date.
-    const within = Number(f.get('within') || 0);
-    const since = within ? Date.now() - within * 3600e3 : 0;
-
-    tbody.querySelectorAll('tr.group').forEach((g) => g.remove());
-    const sorted = [...rows].sort(SORTS[sort] ?? newest);
-    let shown = 0;
-    let lastGroup: string | null = null;
-    for (const r of sorted) {
-      const ok =
-        (!q || r.dataset.q!.includes(q)) &&
-        (!source || r.dataset.source === source) &&
-        (!category || r.dataset.category === category) &&
-        (!status || r.dataset.status!.split(' ').includes(status)) &&
-        (!section || r.dataset.sections!.split(' ').includes(section)) &&
-        matchesTown(r, town) &&
-        (!since || (r.dataset.undated !== '1' && Date.parse(r.dataset.date!) >= since));
-      r.hidden = !ok;
-      // Grouped by town or section: a heading row before each group's first story.
-      const grouped = (sort === 'town' && !town) || (sort === 'section' && !section);
-      if (ok && grouped) {
-        const label = sort === 'section' ? r.dataset.sectionLabel! : r.dataset.townLabel || 'No town';
-        if (label !== lastGroup) {
-          const g = document.createElement('tr');
-          g.className = 'group';
-          g.innerHTML = `<th colspan="3"></th>`;
-          g.firstElementChild!.textContent = label;
-          tbody.append(g);
-          lastGroup = label;
-        }
-      }
-      tbody.append(r);
-      if (ok) shown++;
-    }
-    count.textContent = `(${shown} of ${rows.length})`;
-    none.hidden = shown > 0;
-
-    const next = new URLSearchParams();
-    // The pro-team view changes which rows the server sends, so it stays in the address.
-    if (params.get('teams') === '1') next.set('teams', '1');
-    for (const [k, v] of f) if (v && !(k === 'sort' && v === 'newest')) next.set(k, String(v));
-    history.replaceState(null, '', next.size ? `?${next}` : location.pathname);
-  }
-  form.addEventListener('input', apply);
-  apply();
-
-</script>
 
 <style>
   .featured { list-style: none; margin: 0; padding: 0; }
@@ -249,11 +129,4 @@ const expiresText = (id: string) => {
   .f-title { flex: 1 1 300px; min-width: 0; }
   .f-title a { font-weight: 700; color: var(--ink); }
   .f-actions { display: flex; gap: 6px; }
-  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(6, 1fr); margin-bottom: 10px; }
-  @media (max-width: 1100px) { .filters { grid-template-columns: repeat(3, 1fr); } .filters input { grid-column: 1 / -1; } }
-  @media (max-width: 600px) { .filters { grid-template-columns: 1fr 1fr; } }
-  table.items :global(tr.group th) {
-    text-align: left; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--accent); padding: 18px 8px 6px; border-bottom: 2px solid var(--ink); background: var(--paper);
-  }
 </style>

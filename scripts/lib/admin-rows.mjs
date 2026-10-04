@@ -49,9 +49,18 @@ export const parsePage = (value) => {
 
 /**
  * One page of the archive, filtered on the server.
- * @param filters  q (headline or source text), source (id), section (slug), town (slug, "countywide" or "none"), sort ("newest" or "oldest"), page
+ * @param filters  q (headline or source text), source (id), section (slug), town (slug, "countywide" or "none"), sort (ARCHIVE_SORTS), page
+ * @param opts.sectionOrder  section slugs in site order, for the "section" sort
+ * @param opts.townLabel     slug to display name, for the "town" sort
  */
-export function archivePage(items, { now = new Date(), q = '', source = '', section = '', town = '', sort = 'newest', page = 1 } = {}) {
+export const ARCHIVE_SORTS = ['newest', 'oldest', 'section', 'town', 'source', 'title'];
+
+const byText = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' });
+
+export function archivePage(
+  items,
+  { now = new Date(), q = '', source = '', section = '', town = '', sort = 'newest', page = 1, sectionOrder = [], townLabel = (s) => s } = {},
+) {
   const { archive } = splitStories(items, { now });
   const needle = q.toLowerCase().trim();
   const matched = archive.filter(
@@ -61,7 +70,18 @@ export function archivePage(items, { now = new Date(), q = '', source = '', sect
       (!section || (i.sections ?? []).includes(section)) &&
       matchesTown(i, town),
   );
-  if (sort === 'oldest') matched.reverse();
+  // Same orderings as the main page's sort menu; ties go to the newest story.
+  const sectionKey = (i) => String(Math.max(0, sectionOrder.indexOf((i.sections ?? [])[0]))).padStart(2, '0');
+  // Named towns first (A to Z), then Region, then stories with no town.
+  const townKey = (i) => (i.towns?.length ? i.towns.map(townLabel).sort(byText)[0] : i.countywide ? '\uffff1' : '\uffff2');
+  const SORTS = {
+    oldest: (a, b) => a.date.localeCompare(b.date),
+    section: (a, b) => sectionKey(a).localeCompare(sectionKey(b)) || newestFirst(a, b),
+    town: (a, b) => townKey(a).localeCompare(townKey(b)) || newestFirst(a, b),
+    source: (a, b) => byText(a.sourceName ?? '', b.sourceName ?? '') || newestFirst(a, b),
+    title: (a, b) => byText(a.title ?? '', b.title ?? ''),
+  };
+  if (SORTS[sort]) matched.sort(SORTS[sort]);
   const pages = Math.max(1, Math.ceil(matched.length / ARCHIVE_PAGE_SIZE));
   const current = Math.min(parsePage(page), pages);
   return {

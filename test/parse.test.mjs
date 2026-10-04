@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFeed, normalize, matchTowns, isDartmouthCollege, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing, normalizeTeam } from '../scripts/lib/parse.mjs';
+import { parseFeed, normalize, matchTowns, isDartmouthCollege, mergeItems, excerpt, guessSection, normalizeNws, isPropertyListing, normalizeTeam, dropUnknownSources } from '../scripts/lib/parse.mjs';
 
 const RSS = `<?xml version="1.0"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
@@ -273,4 +273,15 @@ test('Dartmouth College stories are not filed under Dartmouth, MA', () => {
   assert.equal(normalize([entry], feed, new Date('2026-09-30T13:00:00Z')).length, 0);
   const old = { id: 'x', title: entry.title, summary: entry.summary, date: '2026-09-30T08:30:00.000Z', source: 'ml', towns: ['dartmouth'], category: 'news', section: 'news' };
   assert.equal(mergeItems([old], [], { now: new Date('2026-09-30T13:00:00Z') }).length, 0);
+});
+
+test('dropUnknownSources removes stories from sources that are no longer configured', () => {
+  const items = [
+    { id: '1', source: 'sun-chronicle' },
+    { id: '2', source: 'portuguese-times' },
+    { id: '3', source: 'disabled-but-listed' },
+  ];
+  const known = new Set(['sun-chronicle', 'disabled-but-listed']);
+  assert.deepEqual(dropUnknownSources(items, known).map((i) => i.id), ['1', '3']);
+  assert.deepEqual(dropUnknownSources([], known), []);
 });

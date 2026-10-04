@@ -419,6 +419,13 @@ export const wireWindow = (item, aggregatedSources = new Set()) =>
   item.team ? WIRE_WINDOWS.team : aggregatedSources.has(item.source) ? WIRE_WINDOWS.aggregated : WIRE_WINDOWS.feed;
 
 /**
+ * Drop stored items whose source is no longer in sources.json, so removing a
+ * source also clears its old stories on the next ingest. Disabled sources stay
+ * listed in sources.json, so their stories are kept.
+ */
+export const dropUnknownSources = (items, sourceIds) => items.filter((i) => sourceIds.has(i.source));
+
+/**
  * Merge new items into the stored list: dedupe, sort newest first, prune.
  * New items older than their lookback are skipped; stored items are kept
  * until their archive window runs out.

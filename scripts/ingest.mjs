@@ -11,7 +11,7 @@
 //
 // Usage: node scripts/ingest.mjs [--only id1,id2] [--dry-run]
 import { readFile, writeFile } from 'node:fs/promises';
-import { parseFeed, normalize, normalizeNws, mergeItems } from './lib/parse.mjs';
+import { parseFeed, normalize, normalizeNws, mergeItems, dropUnknownSources } from './lib/parse.mjs';
 import {
   MBTA_ROUTES,
   MBTA_STATIONS,
@@ -249,7 +249,7 @@ const [results, alertResult, transit, tides, calendar, social, schedules] = awai
 const incoming = results.flatMap((r) => r.items);
 const wire = await readJson('src/data/wire.json', { items: [] });
 const aggregatedSources = new Set(sources.filter((s) => s.via === 'google-news').map((s) => s.id));
-const merged = mergeItems(wire.items ?? [], incoming, { aggregatedSources });
+const merged = dropUnknownSources(mergeItems(wire.items ?? [], incoming, { aggregatedSources }), new Set(sources.map((s) => s.id)));
 
 const failed = results.filter((r) => !r.status.ok);
 for (const r of results) {

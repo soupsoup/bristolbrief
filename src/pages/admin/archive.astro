@@ -3,8 +3,8 @@ import Admin from '../../layouts/Admin.astro';
 import StoryTable from '../../components/admin/StoryTable.astro';
 import { loadAdminData } from '../../lib/admin/data';
 import { sources } from '../../lib/wire';
-import { archivePage, splitStories, RECENT_DAYS, ARCHIVE_PAGE_SIZE } from '../../../scripts/lib/admin-rows.mjs';
-import { SECTIONS, TOWNS } from '../../site.config';
+import { archivePage, splitStories, RECENT_DAYS, ARCHIVE_PAGE_SIZE, ARCHIVE_SORTS } from '../../../scripts/lib/admin-rows.mjs';
+import { SECTIONS, TOWNS, townName } from '../../site.config';
 
 export const prerender = false;
 
@@ -18,9 +18,9 @@ try {
 
 // Filtering happens on the server: the archive holds thousands of stories, far too many for one page.
 const get = (k: string) => Astro.url.searchParams.get(k) ?? '';
-const filters = { q: get('q'), source: get('source'), section: get('section'), town: get('town'), sort: get('sort') === 'oldest' ? 'oldest' : 'newest' };
+const filters = { q: get('q'), source: get('source'), section: get('section'), town: get('town'), sort: ARCHIVE_SORTS.includes(get('sort')) ? get('sort') : 'newest' };
 const all = data?.items ?? [];
-const { rows, total, archiveCount, page, pages } = archivePage(all, { ...filters, page: get('page') });
+const { rows, total, archiveCount, page, pages } = archivePage(all, { ...filters, page: get('page'), sectionOrder: SECTIONS.map((sec) => sec.slug), townLabel: townName });
 const usedSources = sources.filter((s) => splitStories(all).archive.some((i: { source: string }) => i.source === s.id));
 
 const link = (n: number) => {
@@ -29,6 +29,14 @@ const link = (n: number) => {
   if (n > 1) next.set('page', String(n));
   return next.size ? `/admin/archive/?${next}` : '/admin/archive/';
 };
+const SORT_LABEL = [
+  ['newest', 'Newest first'],
+  ['oldest', 'Oldest first'],
+  ['section', 'Section (site order)'],
+  ['town', 'Town (A–Z)'],
+  ['source', 'Source (A–Z)'],
+  ['title', 'Headline (A–Z)'],
+];
 const first = total ? (page - 1) * ARCHIVE_PAGE_SIZE + 1 : 0;
 const last = Math.min(page * ARCHIVE_PAGE_SIZE, total);
 ---
@@ -58,10 +66,9 @@ const last = Math.min(page * ARCHIVE_PAGE_SIZE, total);
       <option value="none" selected={filters.town === 'none'}>No town</option>
     </select>
     <select name="sort" aria-label="Sort by">
-      <option value="newest" selected={filters.sort === 'newest'}>Newest first</option>
-      <option value="oldest" selected={filters.sort === 'oldest'}>Oldest first</option>
+      {SORT_LABEL.map(([value, label]) => <option value={value} selected={filters.sort === value}>{label}</option>)}
     </select>
-    <button class="a-btn" type="submit">Filter</button>
+    <button class="a-btn" type="submit">Search</button>
   </form>
 
   <p class="a-muted count">
@@ -80,6 +87,12 @@ const last = Math.min(page * ARCHIVE_PAGE_SIZE, total);
     </nav>
   )}
 </Admin>
+
+<script>
+  // Menus apply as soon as they change; the search box applies on Enter or the Search button.
+  const form = document.querySelector<HTMLFormElement>('form.filters')!;
+  form.querySelectorAll('select').forEach((sel) => sel.addEventListener('change', () => form.requestSubmit()));
+</script>
 
 <style>
   .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(4, 1fr) auto; margin-bottom: 10px; }

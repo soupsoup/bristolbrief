@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { adminRows, archivePage, splitStories, parsePage, RECENT_DAYS, MAX_ROWS, TEAM_VIEW_LIMIT, ARCHIVE_PAGE_SIZE } from '../scripts/lib/admin-rows.mjs';
+import { adminRows, archivePage, splitStories, parsePage, ARCHIVE_SORTS, RECENT_DAYS, MAX_ROWS, TEAM_VIEW_LIMIT, ARCHIVE_PAGE_SIZE } from '../scripts/lib/admin-rows.mjs';
 
 const NOW = new Date('2026-10-04T12:00:00Z');
 const ago = (days) => new Date(NOW.valueOf() - days * 864e5).toISOString();
@@ -90,4 +90,24 @@ test('parsePage accepts a positive whole number and falls back to 1', () => {
   assert.equal(parsePage('4'), 4);
   assert.equal(parsePage('2.9'), 2);
   for (const bad of ['', null, undefined, '0', '-3', 'x']) assert.equal(parsePage(bad), 1);
+});
+
+test('the archive sorts like the main page: section order, town, source and headline', () => {
+  const items = [
+    story('b-story', 9, { title: 'Bravo', sourceName: 'Zeta News', sections: ['schools'], towns: ['taunton'] }),
+    story('a-story', 10, { title: 'alpha', sourceName: 'Alpha News', sections: ['news'], towns: ['attleboro'] }),
+    story('region', 11, { title: 'Charlie', sourceName: 'Alpha News', sections: ['news'], countywide: true }),
+    story('no-town', 12, { title: 'Delta', sourceName: 'Beta News', sections: ['government'] }),
+    story('b2', 8.5, { title: 'Echo', sourceName: 'Zeta News', sections: ['news'], towns: ['attleboro'] }),
+  ];
+  const opts = { now: NOW, sectionOrder: ['news', 'government', 'schools'], townLabel: (s) => ({ attleboro: 'Attleboro', taunton: 'Taunton' })[s] ?? s };
+  const ids = (sort) => archivePage(items, { ...opts, sort }).rows.map((r) => r.id);
+  assert.deepEqual(ids('newest'), ['b2', 'b-story', 'a-story', 'region', 'no-town']);
+  assert.deepEqual(ids('oldest'), ['no-town', 'region', 'a-story', 'b-story', 'b2']);
+  assert.deepEqual(ids('section'), ['b2', 'a-story', 'region', 'no-town', 'b-story']);
+  assert.deepEqual(ids('town'), ['b2', 'a-story', 'b-story', 'region', 'no-town']);
+  assert.deepEqual(ids('source'), ['a-story', 'region', 'no-town', 'b2', 'b-story']);
+  assert.deepEqual(ids('title'), ['a-story', 'b-story', 'region', 'no-town', 'b2']);
+  assert.deepEqual(ARCHIVE_SORTS, ['newest', 'oldest', 'section', 'town', 'source', 'title']);
+  assert.deepEqual(ids('bogus'), ids('newest'));
 });

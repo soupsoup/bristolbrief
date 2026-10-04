@@ -2,6 +2,7 @@
 import Admin from '../../layouts/Admin.astro';
 import { loadAdminData, fmtAdminDate } from '../../lib/admin/data';
 import { sources } from '../../lib/wire';
+import { adminRows, parseDays, TEAM_VIEW_LIMIT, DEFAULT_DAYS, MAX_ROWS } from '../../../scripts/lib/admin-rows.mjs';
 import { SECTIONS, sectionName, townName, TOWNS } from '../../site.config';
 
 export const prerender = false;
@@ -13,7 +14,11 @@ try {
 } catch (err: any) {
   loadError = err?.message ?? 'Could not load editorial data';
 }
-const items = data?.items ?? [];
+// Pro-team stories number in the thousands; they get their own capped view.
+const teamView = Astro.url.searchParams.get('teams') === '1';
+const daysParam = Astro.url.searchParams.get('days');
+const days = parseDays(daysParam);
+const { rows: items, teamCount, olderCount, capped } = adminRows(data?.items ?? [], { teams: teamView, days });
 const featured = data?.featured ?? [];
 const usedSources = [
   { id: 'bristol-brief', name: 'The Bristol Brief (manual)' },
@@ -70,7 +75,34 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     ))}
   </ol>
 
-  <h2>All stories <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
+  <h2>{teamView ? 'Pro team stories' : 'All stories'} <span class="a-muted count" style="font-weight:400;text-transform:none;letter-spacing:0"></span></h2>
+  <p class="a-muted help">
+    {teamView ? (
+      <>
+        Red Sox, Patriots, Bruins, Celtics and Revolution stories, newest first
+        {capped && <> (the latest {TEAM_VIEW_LIMIT} of {teamCount})</>}. <a href="/admin/">Back to all stories</a>
+      </>
+    ) : (
+      <>
+        {days === Infinity ? 'Everything kept' : `The last ${days} days`}
+        {capped && <>, newest {MAX_ROWS.toLocaleString('en-US')} only</>}.
+        {days !== Infinity && olderCount > 0 && (
+          <>
+            {' '}{olderCount.toLocaleString('en-US')} older {olderCount === 1 ? 'story is' : 'stories are'} hidden to keep this page fast:{' '}
+            {days < 45 && <><a href="/admin/?days=45">show 45 days</a> or </>}
+            <a href="/admin/?days=all">show everything kept</a>.
+          </>
+        )}
+        {days !== DEFAULT_DAYS && <>{' '}<a href="/admin/">Back to the last {DEFAULT_DAYS} days</a>.</>}
+        {teamCount > 0 && (
+          <>
+            {' '}{teamCount.toLocaleString('en-US')} pro team stories have their own list:{' '}
+            <a href="/admin/?teams=1">show pro team stories</a>.
+          </>
+        )}
+      </>
+    )}
+  </p>
   <form class="filters" onsubmit="return false">
     <input type="search" name="q" placeholder="Search headlines" aria-label="Search headlines" />
     <select name="source" aria-label="Source">
@@ -79,7 +111,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     </select>
     <select name="category" aria-label="Type">
       <option value="">All types</option>
-      {Object.entries(TYPE).map(([k, v]) => <option value={k}>{v}</option>)}
+      {Object.entries(TYPE).filter(([k]) => teamView || k !== 'sports').map(([k, v]) => <option value={k}>{v}</option>)}
     </select>
     <select name="section" aria-label="Section">
       <option value="">All sections</option>
@@ -197,7 +229,7 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     else img.addEventListener('error', () => pending(img));
   });
 
-  // Filtering and sorting (client-side; the list is a few hundred rows).
+  // Filtering and sorting (client-side; the list is under a thousand rows).
   // The choices live in the page address so they survive the reload after each action.
   const form = document.querySelector<HTMLFormElement>('.filters')!;
   const tbody = document.querySelector<HTMLTableSectionElement>('table.items tbody')!;
@@ -283,6 +315,8 @@ const TYPE: Record<string, string> = { news: 'News outlet', 'public-safety': 'Po
     none.hidden = shown > 0;
 
     const next = new URLSearchParams();
+    // View options live in the address too (they change which rows the server sends).
+    for (const k of ['teams', 'days']) if (params.get(k)) next.set(k, params.get(k)!);
     for (const [k, v] of f) if (v && !(k === 'sort' && v === 'newest')) next.set(k, String(v));
     history.replaceState(null, '', next.size ? `?${next}` : location.pathname);
   }

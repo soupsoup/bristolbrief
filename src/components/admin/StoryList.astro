@@ -1,0 +1,141 @@
+---
+// A filtered, sorted, paged story list, shared by the main page and the archive.
+// Everything is decided on the server (the form is a plain GET), so the page
+// only ever holds one page of rows.
+import StoryTable from './StoryTable.astro';
+import { pageNumbers } from '../../../scripts/lib/admin-rows.mjs';
+import { TYPE } from '../../lib/admin/labels';
+import { SECTIONS, TOWNS } from '../../site.config';
+import type { WireItem } from '../../lib/wire';
+
+interface Props {
+  /** The page this list lives on, e.g. /admin/. */
+  action: string;
+  /** Current filter values from the query string. */
+  filters: Record<string, string>;
+  /** One page of rows plus paging info, from queryStories. */
+  result: { rows: WireItem[]; total: number; poolSize: number; page: number; pages: number; pageSize: number };
+  sources: { id: string; name: string }[];
+  /** Fixed query parameters to keep on every link and submit (such as teams=1). */
+  keep?: Record<string, string>;
+  /** Show the "published within" menu (only meaningful for recent stories). */
+  showWithin?: boolean;
+  /** Show the Type menu's pro-team option. */
+  teams?: boolean;
+  /** Said when the list is empty and nothing is filtered. */
+  emptyText?: string;
+}
+const { action, filters, result, sources, keep = {}, showWithin = false, teams = false, emptyText = 'No stories yet.' } = Astro.props;
+
+const SORT_LABEL = [
+  ['newest', 'Newest first'],
+  ['oldest', 'Oldest first'],
+  ['section', 'Section (site order)'],
+  ['town', 'Town (A–Z)'],
+  ['source', 'Source (A–Z)'],
+  ['title', 'Headline (A–Z)'],
+];
+const WITHIN = [
+  ['1', 'Last hour'],
+  ['3', 'Last 3 hours'],
+  ['6', 'Last 6 hours'],
+  ['12', 'Last 12 hours'],
+];
+const STATUS = [
+  ['featured', 'Featured'],
+  ['edited', 'Edited'],
+  ['hidden', 'Hidden'],
+  ['manual', 'Added here'],
+  ['photo', 'Has photo'],
+];
+const { rows, total, poolSize, page, pages, pageSize } = result;
+const filtered = Object.entries(filters).some(([k, v]) => v && !(k === 'sort' && v === 'newest'));
+const link = (n: number) => {
+  const next = new URLSearchParams(keep);
+  for (const [k, v] of Object.entries(filters)) if (v && !(k === 'sort' && v === 'newest')) next.set(k, v);
+  if (n > 1) next.set('page', String(n));
+  return next.size ? `${action}?${next}` : action;
+};
+const first = total ? (page - 1) * pageSize + 1 : 0;
+const last = Math.min(page * pageSize, total);
+const num = (n: number) => n.toLocaleString('en-US');
+---
+<form class="filters" method="get" action={action}>
+  {Object.entries(keep).map(([k, v]) => <input type="hidden" name={k} value={v} />)}
+  <input type="search" name="q" value={filters.q} placeholder="Search headlines" aria-label="Search headlines" />
+  <select name="source" aria-label="Source">
+    <option value="">All sources</option>
+    {sources.map((s) => <option value={s.id} selected={filters.source === s.id}>{s.name}</option>)}
+  </select>
+  <select name="category" aria-label="Type">
+    <option value="">All types</option>
+    {Object.entries(TYPE).filter(([k]) => teams || k !== 'sports').map(([k, v]) => <option value={k} selected={filters.category === k}>{v}</option>)}
+  </select>
+  <select name="section" aria-label="Section">
+    <option value="">All sections</option>
+    {SECTIONS.map((sec) => <option value={sec.slug} selected={filters.section === sec.slug}>{sec.name}</option>)}
+  </select>
+  <select name="status" aria-label="Status">
+    <option value="">Any status</option>
+    {STATUS.map(([k, v]) => <option value={k} selected={filters.status === k}>{v}</option>)}
+  </select>
+  <select name="town" aria-label="Town">
+    <option value="">All towns</option>
+    {TOWNS.map((t) => <option value={t.slug} selected={filters.town === t.slug}>{t.name}</option>)}
+    <option value="countywide" selected={filters.town === 'countywide'}>Region (no single town)</option>
+    <option value="none" selected={filters.town === 'none'}>No town</option>
+  </select>
+  {showWithin && (
+    <select name="within" aria-label="Published within">
+      <option value="">Any time</option>
+      {WITHIN.map(([k, v]) => <option value={k} selected={filters.within === k}>{v}</option>)}
+    </select>
+  )}
+  <select name="sort" aria-label="Sort by">
+    {SORT_LABEL.map(([k, v]) => <option value={k} selected={filters.sort === k}>{v}</option>)}
+  </select>
+  <button class="a-btn" type="submit">Search</button>
+  {filtered && <a class="a-btn" href={keep && Object.keys(keep).length ? `${action}?${new URLSearchParams(keep)}` : action}>Clear</a>}
+</form>
+
+<p class="a-muted count" role="status">
+  {total === 0
+    ? poolSize === 0 ? emptyText : 'No stories match.'
+    : `Showing ${num(first)} to ${num(last)} of ${num(total)}${total !== poolSize ? ` (${num(poolSize)} in this list)` : ''}`}
+</p>
+
+{rows.length > 0 && <StoryTable items={rows} />}
+
+{pages > 1 && (
+  <nav class="pager" aria-label="Pages">
+    {page > 1 ? <a class="a-btn" href={link(page - 1)}>← Previous</a> : <span class="a-btn off" aria-hidden="true">← Previous</span>}
+    <span class="nums">
+      {pageNumbers(page, pages).map((n) =>
+        n === null ? <span class="gap">…</span> : n === page ? <span class="cur" aria-current="page">{n}</span> : <a href={link(n)}>{n}</a>,
+      )}
+    </span>
+    {page < pages ? <a class="a-btn" href={link(page + 1)}>Next →</a> : <span class="a-btn off" aria-hidden="true">Next →</span>}
+  </nav>
+)}
+
+<script>
+  // Menus apply as soon as they change; the search box applies on Enter or the Search button.
+  const form = document.querySelector<HTMLFormElement>('form.filters')!;
+  form.querySelectorAll('select').forEach((sel) => sel.addEventListener('change', () => form.requestSubmit()));
+</script>
+
+<style>
+  .filters { display: grid; gap: 8px; grid-template-columns: 2fr repeat(6, 1fr) auto; margin-bottom: 10px; }
+  .filters:has(select[name='within']) { grid-template-columns: 2fr repeat(7, 1fr) auto; }
+  @media (max-width: 1100px) { .filters, .filters:has(select[name='within']) { grid-template-columns: repeat(3, 1fr); } .filters input[type='search'] { grid-column: 1 / -1; } }
+  @media (max-width: 600px) { .filters, .filters:has(select[name='within']) { grid-template-columns: 1fr 1fr; } }
+  .count { margin: 6px 0 10px; font-size: 14px; }
+  .pager { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 32px; flex-wrap: wrap; }
+  .pager .off { opacity: 0.35; pointer-events: none; }
+  .nums { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .nums a, .nums .cur, .nums .gap { min-width: 32px; text-align: center; padding: 5px 8px; font-weight: 600; text-decoration: none; }
+  .nums a { color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; }
+  .nums a:hover { border-color: var(--ink); }
+  .nums .cur { background: var(--ink); color: var(--paper); border-radius: 4px; }
+  .nums .gap { color: var(--ink-2); }
+</style>

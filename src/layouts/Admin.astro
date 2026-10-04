@@ -4,7 +4,7 @@ import { storeInfo } from '../lib/admin/store';
 
 interface Props {
   title: string;
-  active?: 'dashboard' | 'new' | 'social' | 'sources';
+  active?: 'dashboard' | 'archive' | 'new' | 'social' | 'sources';
 }
 const { title, active } = Astro.props;
 const info = storeInfo();
@@ -24,6 +24,7 @@ const info = storeInfo();
         <a class="a-brand" href="/admin/">Bristol Brief <span>admin</span></a>
         <nav>
           <a href="/admin/" aria-current={active === 'dashboard' ? 'page' : undefined}>Stories</a>
+          <a href="/admin/archive/" aria-current={active === 'archive' ? 'page' : undefined}>Archive</a>
           <a href="/admin/new/" aria-current={active === 'new' ? 'page' : undefined}>Add story</a>
           <a href="/admin/social/" aria-current={active === 'social' ? 'page' : undefined}>Social</a>
           <a href="/admin/sources/" aria-current={active === 'sources' ? 'page' : undefined}>Feeds</a>

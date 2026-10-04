@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T12:35:26.207Z",
+ "updated": "2026-10-04T13:05:27.850Z",
  "alerts": [
   {
    "id": "1034159",
@@ -30,26 +30,28 @@
    "updated": "2026-09-24T11:06:11-04:00"
   },
   {
-   "id": "1036646",
-   "header": "Providence Line Train 5815 (6:45 AM from South Station) is operating 25-35 minutes behind schedule between Attleboro and Providence due to a switch issue.",
+   "id": "1036649",
+   "header": "Providence Line Train 5824 (8:15 AM from Providence) is operating 15-25 minutes behind schedule between Providence and South Station due to a switch issue.",
    "effect": "DELAY",
    "severity": 6,
    "lifecycle": "NEW",
-   "cause": "SWITCH_ISSUE",
-   "start": "2026-10-04T07:51:00-04:00",
-   "end": "2026-10-04T09:01:00-04:00",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-04T08:37:15-04:00",
+   "end": "2026-10-04T10:30:00-04:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [
     "South Attleboro",
-    "Attleboro"
+    "Attleboro",
+    "Mansfield"
    ],
    "towns": [
-    "attleboro"
+    "attleboro",
+    "mansfield"
    ],
    "url": null,
-   "updated": "2026-10-04T08:26:01-04:00"
+   "updated": "2026-10-04T08:37:15-04:00"
   }
  ],
  "stopParents": {

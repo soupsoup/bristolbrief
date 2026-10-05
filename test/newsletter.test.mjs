@@ -217,3 +217,44 @@ test('pickScores lists one line per game even when two outlets headline it diffe
   assert.equal(got.length, 2);
   assert.ok(got.includes('H.S. VOLLEYBALL: Barnstable sweeps past Attleboro'));
 });
+
+test('isScoreHeadline accepts game results and rejects features, matchup stubs and ceremonies', () => {
+  const yes = [
+    'H.S. FOOTBALL: North rules the trenches in rout',
+    'H.S. GOLF: AHS nicked by Tigers',
+    'Bombardiers edge Hornets in overtime',
+    'Hornets blank Natick, 28-0',
+    'Shamrocks fall to Concord Carlisle',
+  ];
+  const no = [
+    '32 Greater Taunton girls volleyball players starring this fall',
+    'H.S. Football: North Attleboro High vs. Canton High',
+    'Attleboro Area Football Hall of Fame to conduct 54th annual induction ceremony Nov. 24',
+    'Fall sports preview: who to watch',
+    'Sophomore eyes Westport sports history',
+  ];
+  for (const t of yes) assert.equal(isScoreHeadline(t), true, t);
+  for (const t of no) assert.equal(isScoreHeadline(t), false, t);
+  // A matchup headline is a result when the summary carries the score.
+  assert.equal(isScoreHeadline('H.S. Football: North Attleboro High vs. Canton High', 'North Attleboro won 35-14 on Friday.'), true);
+});
+
+test('pickScores skips Google News redirect links', () => {
+  const sp = (title, link) => item({ title, link, section: 'sports', source: title, summary: 'The Hornets won 28-0 on Friday night in front of a full house at home.', towns: [title] });
+  const got = pickScores([sp('H.S. FOOTBALL: A beats B', 'https://news.google.com/rss/articles/abc?oc=5'), sp('H.S. FOOTBALL: C beats D', 'https://example.com/c')], { now });
+  assert.deepEqual(got.map((s) => s.link), ['https://example.com/c']);
+});
+
+test('with no real scores the issue has no scores section at all', () => {
+  const out = buildNewsletter({
+    items: [
+      item({ title: 'Council votes on harbor plan after a long meeting', source: 'a' }),
+      item({ title: '32 Greater Taunton girls volleyball players starring this fall', section: 'sports', source: 'b', link: 'https://example.com/v' }),
+    ],
+    now,
+  });
+  assert.equal(out.counts.scores, 0);
+  assert.ok(!out.html.includes('High school scores'));
+  assert.ok(!out.text.includes('HIGH SCHOOL SCORES'));
+  assert.ok(!out.preheader.includes('high school scores'));
+});

@@ -112,16 +112,37 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
   return picked;
 }
 
-const SCORE_WORDS = /\b(?:beat|beats|edge|edges|edged|defeat|defeats|win|wins|won|top|tops|downs|blank|blanks|tie|ties|tied|rout|routs|rolls|sweep|sweeps|swept|shut out|falls?|lose|loses|lost|nicked|tally|tallies)\b/i;
-/** A game result, not a feature, schedule or ceremony: "H.S. ..." headlines and ones with a result verb. */
-export const isScoreHeadline = (title) => /^H\.?\s?S\.?\s/i.test(title) || SCORE_WORDS.test(title);
+// "falls to" is a result; "this fall" is a season, so the bare word is not here.
+const SCORE_WORDS = /\b(?:beat|beats|edge|edges|edged|defeat|defeats|win|wins|won|top|tops|downs|blank|blanks|tie|ties|tied|rout|routs|rolls|sweep|sweeps|swept|shut out|falls? to|lose|loses|lost|nicked|tally|tallies)\b/i;
+const hostOf = (href = '') => {
+  try {
+    return new URL(href).hostname;
+  } catch {
+    return '';
+  }
+};
+const SCORELINE = /\b\d{1,3}\s?[-\u2013]\s?\d{1,3}\b/;
+// Features, matchups and ceremonies that mention a sport without reporting a result.
+const NOT_A_RESULT = /\b(?:vs\.?|versus|preview|previews|schedule|hall of fame|induction|players?|starring|honored|awards?)\b/i;
+
+/**
+ * A game result: an "H.S. ..." headline, a result verb or a score like 28-0, and
+ * not a matchup stub ("X vs. Y"), schedule, feature or ceremony without a score.
+ */
+export function isScoreHeadline(title, summary = '') {
+  const scored = SCORELINE.test(`${title} ${summary}`);
+  if (NOT_A_RESULT.test(title) && !scored) return false;
+  return /^H\.?\s?S\.?\s/i.test(title) || SCORE_WORDS.test(title) || scored;
+}
 
 /** Scores worth a line: high school results from the last day, one line per game. */
 export function pickScores(items, { now = new Date(), hours = 24, count = 4, townName = (s) => s } = {}) {
   const pickedSigs = [];
   const out = [];
   for (const i of items) {
-    if (i.team || i.hidden || i.section !== 'sports' || i.category === 'meetings' || !isScoreHeadline(i.title)) continue;
+    if (i.team || i.hidden || i.section !== 'sports' || i.category === 'meetings' || !isScoreHeadline(i.title, i.summary)) continue;
+    // Google News links are opaque redirects; a score line should name where it goes.
+    if (/(^|\.)news\.google\.com$/.test(hostOf(i.link))) continue;
     if (new Date(i.date) > now || hoursOld(i, now) > hours || outOfState(i, townName)) continue;
     // The same game often comes from two outlets with different headlines.
     const s = { sig: sig(i.title), body: bodySig(i), towns: i.towns ?? [] };

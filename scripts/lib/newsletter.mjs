@@ -241,7 +241,24 @@ const RULE = '#d9d4c6';
 const FONT = "Georgia, 'Times New Roman', serif";
 const SANS = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif";
 
-const link = (href, text, extra = '') => `<a href="${esc(href)}" style="color:${NAVY};text-decoration:underline;${extra}">${text}</a>`;
+// beehiiv and email clients add their own rules to links and paragraphs (italic
+// links in the publication's link color, extra paragraph spacing). Inline
+// declarations marked !important win over those even when theirs are
+// !important too, so every style here is marked, text sits in plain divs
+// instead of paragraphs, and link text is wrapped in a span of its own.
+const imp = (css) =>
+  css
+    .split(';')
+    .map((d) => d.trim())
+    .filter(Boolean)
+    .map((d) => `${d}!important`)
+    .join(';');
+const type = (family, weight, size, lineHeight) => `font-family:${family};font-weight:${weight};font-size:${size}px;line-height:${lineHeight}px;font-style:normal`;
+const box = (css, inner) => `<div style="${imp(css)}">${inner}</div>`;
+const link = (href, text, { color = NAVY, underline = true } = {}) => {
+  const css = `color:${color};text-decoration:${underline ? 'underline' : 'none'};font-style:normal`;
+  return `<a href="${esc(href)}" style="${imp(css)}"><span style="${imp(css)}">${text}</span></a>`;
+};
 
 export function buildNewsletter({ items, meetings = [], alerts = [], now = new Date(), townName = (s) => s } = {}) {
   const stories = pickStories(items, { now, townName });
@@ -253,54 +270,66 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   const preheader = previewFor(stories, { alerts, meetings: todays, scores });
 
   const h = [];
-  const label = (text) => `<p style="margin:28px 0 10px;font:700 12px ${SANS};letter-spacing:.08em;text-transform:uppercase;color:${RED};">${esc(text)}</p>`;
+  const label = (text) => box(`margin:24px 0 8px;${type(SANS, 700, 12, 16)};letter-spacing:.08em;text-transform:uppercase;color:${RED}`, esc(text));
 
   h.push(`<div style="display:none;max-height:0;overflow:hidden;color:transparent;">${esc(preheader)}</div>`);
   h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fbfaf6;"><tr><td align="center" style="padding:0 12px;">`);
   h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;font-family:${FONT};color:${INK};">`);
   h.push(`<tr><td style="padding:24px 0 8px;border-bottom:3px solid ${NAVY};">`);
-  h.push(`<p style="margin:0;font:700 26px ${FONT};color:${NAVY};">The Bristol Brief</p>`);
-  h.push(`<p style="margin:4px 0 0;font:14px ${SANS};color:${MUTED};">${esc(date)}</p>`);
-  h.push(`</td></tr><tr><td style="padding:8px 0 0;">`);
+  h.push(box(`margin:0;${type(FONT, 700, 26, 32)};color:${NAVY}`, 'The Bristol Brief'));
+  h.push(box(`margin:2px 0 0;${type(SANS, 400, 14, 18)};color:${MUTED}`, esc(date)));
+  h.push(`</td></tr><tr><td style="padding:4px 0 0;">`);
 
   if (alerts.length) {
     h.push(label('Alerts'));
     for (const a of alerts) {
-      h.push(`<p style="margin:0 0 8px;font:15px/1.45 ${SANS};padding:10px 12px;background:#fdf1ef;border-left:4px solid ${RED};"><strong>${esc(a.event)}</strong>${a.areas ? ` for ${esc(trimSummary(a.areas, 120))}` : ''}.${a.link ? ` ${link(a.link, 'Details')}` : ''}</p>`);
+      h.push(
+        box(
+          `margin:0 0 8px;${type(SANS, 400, 15, 21)};padding:10px 12px;background:#fdf1ef;border-left:4px solid ${RED}`,
+          `<strong style="${imp('font-weight:700;font-style:normal')}">${esc(a.event)}</strong>${a.areas ? ` for ${esc(trimSummary(a.areas, 120))}` : ''}.${a.link ? ` ${link(a.link, 'Details')}` : ''}`,
+        ),
+      );
     }
   }
 
   if (lead) {
     h.push(label(`Top story · ${lead.place}`));
-    h.push(`<p style="margin:0 0 8px;font:700 24px/1.25 ${FONT};">${link(lead.link, esc(lead.title), 'color:' + INK + ';text-decoration:none;')}</p>`);
-    h.push(`<p style="margin:0 0 6px;font:17px/1.55 ${FONT};">${esc(lead.summary)}</p>`);
-    h.push(`<p style="margin:0;font:13px ${SANS};color:${MUTED};">${link(lead.link, 'Read at ' + esc(lead.source))}</p>`);
+    h.push(box(`margin:0 0 6px;${type(FONT, 700, 24, 30)}`, link(lead.link, esc(lead.title), { color: INK, underline: false })));
+    h.push(box(`margin:0 0 4px;${type(FONT, 400, 17, 24)}`, esc(lead.summary)));
+    h.push(box(`margin:0;${type(SANS, 400, 13, 18)};color:${MUTED}`, link(lead.link, 'Read at ' + esc(lead.source))));
   }
 
   if (rest.length) {
     h.push(label('Also this morning'));
     for (const s of rest) {
-      h.push(`<p style="margin:0 0 4px;font:700 18px/1.3 ${FONT};">${link(s.link, esc(s.title), 'color:' + INK + ';text-decoration:none;')}</p>`);
-      h.push(`<p style="margin:0 0 4px;font:16px/1.5 ${FONT};">${esc(s.summary)}</p>`);
-      h.push(`<p style="margin:0 0 16px;font:13px ${SANS};color:${MUTED};">${esc(s.place)} · ${esc(s.source)}</p>`);
+      h.push(box(`margin:0 0 3px;${type(FONT, 700, 18, 23)}`, link(s.link, esc(s.title), { color: INK, underline: false })));
+      h.push(box(`margin:0 0 3px;${type(FONT, 400, 16, 22)}`, esc(s.summary)));
+      h.push(box(`margin:0 0 14px;${type(SANS, 400, 13, 18)};color:${MUTED}`, `${esc(s.place)} · ${esc(s.source)}`));
     }
   }
 
   if (todays.length) {
     h.push(label('Public meetings today'));
-    h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font:15px/1.4 ${SANS};">`);
+    h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="${imp(`${type(SANS, 400, 15, 21)}`)}">`);
     for (const m of todays) {
-      h.push(`<tr><td style="padding:6px 12px 6px 0;white-space:nowrap;color:${MUTED};vertical-align:top;border-top:1px solid ${RULE};">${esc(m.time)}</td><td style="padding:6px 0;vertical-align:top;border-top:1px solid ${RULE};"><strong>${esc(m.town)}</strong>: ${link(m.link, esc(m.title))}${m.hasAgenda ? ' <span style="color:' + MUTED + ';">(agenda posted)</span>' : ''}</td></tr>`);
+      h.push(
+        `<tr><td style="padding:6px 12px 6px 0;white-space:nowrap;color:${MUTED};vertical-align:top;border-top:1px solid ${RULE};">${esc(m.time)}</td><td style="padding:6px 0;vertical-align:top;border-top:1px solid ${RULE};"><strong style="${imp('font-weight:700;font-style:normal')}">${esc(m.town)}</strong>: ${link(m.link, esc(m.title))}${m.hasAgenda ? ` <span style="${imp(`color:${MUTED};font-style:normal`)}">(agenda posted)</span>` : ''}</td></tr>`,
+      );
     }
     h.push(`</table>`);
   }
 
   if (scores.length) {
     h.push(label('High school scores'));
-    for (const s of scores) h.push(`<p style="margin:0 0 6px;font:15px/1.4 ${SANS};">${link(s.link, esc(s.title))}</p>`);
+    for (const s of scores) h.push(box(`margin:0 0 5px;${type(SANS, 400, 15, 21)}`, link(s.link, esc(s.title))));
   }
 
-  h.push(`<p style="margin:32px 0 0;padding:14px 0;border-top:1px solid ${RULE};font:15px/1.5 ${SANS};">More from all 20 cities and towns at ${link(SITE_URL, 'bristolbrief.com')}. Got a tip? Reply to this email or write <a href="mailto:tips@bristolbrief.com" style="color:${NAVY};">tips@bristolbrief.com</a>.</p>`);
+  h.push(
+    box(
+      `margin:28px 0 0;padding:14px 0;border-top:1px solid ${RULE};${type(SANS, 400, 15, 22)}`,
+      `More from all 20 cities and towns at ${link(SITE_URL, 'bristolbrief.com')}. Got a tip? Reply to this email or write ${link('mailto:tips@bristolbrief.com', 'tips@bristolbrief.com')}.`,
+    ),
+  );
   h.push(`</td></tr></table></td></tr></table>`);
 
   const t = [];

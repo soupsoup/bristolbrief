@@ -258,3 +258,25 @@ test('with no real scores the issue has no scores section at all', () => {
   assert.ok(!out.text.includes('HIGH SCHOOL SCORES'));
   assert.ok(!out.preheader.includes('high school scores'));
 });
+
+test('the email markup resists host styles: divs not paragraphs, spans inside links, every declaration !important', () => {
+  const out = buildNewsletter({
+    items: [item({ title: 'Council votes on harbor plan after a long meeting', source: 'a' }), item({ title: 'Library receives a state grant for new computers', source: 'b', summary: 'The grant pays for new computers and longer hours at the main branch through the next fiscal year.' })],
+    alerts: [{ event: 'Flood Warning', areas: 'Bristol, MA', link: 'https://alerts.test/1' }],
+    now,
+  });
+  const html = out.html;
+  assert.ok(!/<p[\s>]/.test(html), 'no paragraph tags for host stylesheets to space out');
+  assert.ok(!/<em[\s>]|<i[\s>]/.test(html));
+  // Every link wraps its text in a span that sets its own color and style.
+  const links = html.match(/<a [^>]*>.*?<\/a>/g) ?? [];
+  assert.ok(links.length >= 3);
+  for (const l of links) assert.match(l, /<a [^>]*font-style:normal!important[^>]*><span [^>]*font-style:normal!important[^>]*>/);
+  // No inline style on a text block leaves a declaration without !important (layout tables and the hidden preheader are exempt).
+  for (const m of html.matchAll(/<(?:div|span|a|strong) style="([^"]*)"/g)) {
+    if (/display:none/.test(m[1])) continue;
+    for (const d of m[1].split(';').filter(Boolean)) assert.ok(d.endsWith('!important'), d);
+  }
+  // Nothing italic anywhere.
+  assert.ok(!/font-style:\s*italic/.test(html));
+});

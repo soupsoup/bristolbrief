@@ -11,6 +11,8 @@ import { XMLParser } from 'fast-xml-parser';
 import { matchTowns, mentionsBristolCountyMA, mentionsRegion, isDartmouthCollege } from './parse.mjs';
 
 export const VIDEO_KEEP_DAYS = 7;
+/** How old a video can be and still be featured on the home page. */
+export const FEATURED_VIDEO_DAYS = 3;
 const ET = 'America/New_York';
 const xml = new XMLParser({ ignoreAttributes: false, processEntities: true });
 
@@ -126,15 +128,17 @@ const titleNamesCounty = (v) => {
 };
 
 /**
- * The video to feature on the home page. A Bristol County video always wins when one
- * exists: the newest whose headline names a town or the county, else the newest that
- * is about the county in its description. With none, the newest video of any kind.
- * All come from the stored week, and weather forecasts are never picked (they match
- * on "Southeastern Mass" but are not a story). Returns undefined when nothing qualifies.
+ * The video to feature on the home page, from the last FEATURED_VIDEO_DAYS days. A Bristol
+ * County video always wins when one exists: the newest whose headline names a town or the
+ * county, else the newest that is about the county in its description. With none, the newest
+ * video of any kind. Weather forecasts are never picked (they match on "Southeastern Mass"
+ * but are not a story). Returns undefined when nothing qualifies, so an old video never
+ * sits above the news.
  */
-export function featuredVideo(videos, { now = new Date() } = {}) {
+export function featuredVideo(videos, { now = new Date(), days = FEATURED_VIDEO_DAYS } = {}) {
+  const since = now.valueOf() - days * 864e5;
   const candidates = videos
-    .filter((v) => !v.weather && Date.parse(v.published) <= now.valueOf())
+    .filter((v) => !v.weather && Date.parse(v.published) <= now.valueOf() && Date.parse(v.published) >= since)
     .sort((a, b) => b.published.localeCompare(a.published));
   const local = candidates.filter((v) => v.local);
   return local.find(titleNamesCounty) ?? local[0] ?? candidates[0];

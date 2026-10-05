@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import { videosLastDay, videosEarlierThisWeek, videoChannels, videosUpdated, timeAgo, type Video } from '../lib/wire';
+import { townName } from '../site.config';
+
+const now = new Date();
+const latest = videosLastDay(now);
+const earlier = videosEarlierThisWeek(now);
+const localCount = latest.filter((v) => v.local).length;
+const channelsShown = videoChannels.filter((c) => latest.some((v) => v.channel === c.id));
+const where = (v: Video) => (v.towns.length ? v.towns.map(townName).join(', ') : v.countywide ? 'Bristol County' : '');
+const clock = (iso: string) => new Date(iso).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+---
+<Base title="Videos" description="Video from the TV newsrooms that cover Bristol County, from the last 24 hours.">
+  <div class="wrap">
+    <header class="index-head">
+      <p class="kicker">Video</p>
+      <h1 class="page-title">Videos</h1>
+      <p class="page-dek">
+        The last 24 hours of video from the TV newsrooms that cover Bristol County. Videos about our towns are marked with the
+        town; use the filter to see only those. Everything plays on YouTube.
+      </p>
+      {videosUpdated && <p class="meta">Updated {timeAgo(videosUpdated)}</p>}
+    </header>
+
+    {latest.length > 0 && (
+      <div class="filters" role="group" aria-label="Filter videos">
+        <button type="button" class="pill" data-filter="all" aria-pressed="true">All <span>{latest.length}</span></button>
+        <button type="button" class="pill" data-filter="local" aria-pressed="false">Bristol County <span>{localCount}</span></button>
+        {channelsShown.map((c) => (
+          <button type="button" class="pill" data-filter={`channel:${c.id}`} aria-pressed="false">
+            {c.name} <span>{latest.filter((v) => v.channel === c.id).length}</span>
+          </button>
+        ))}
+      </div>
+    )}
+
+    {latest.length > 0 ? (
+      <ul class="grid" data-grid>
+        {latest.map((v) => (
+          <li class="card" data-channel={v.channel} data-local={v.local ? '1' : undefined} data-story-id={`video-${v.id}`} data-source={v.channel} data-placement="videos">
+            <a class="thumb" href={v.link} target="_blank" rel="noopener" aria-label={`Watch: ${v.title}`}>
+              <img src={v.thumbnail} alt="" width="320" height="180" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true">▶</span>
+            </a>
+            <div class="body">
+              {where(v) && <p class="where">{where(v)}</p>}
+              <h2 class="wcard-title"><a href={v.link} target="_blank" rel="noopener">{v.title}</a></h2>
+              <p class="meta">{v.channelName} · <time datetime={v.published}>{timeAgo(v.published)}</time> · {clock(v.published)}{v.short && ' · Short'}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">No new videos in the last 24 hours. Check back after the next update.</p>
+    )}
+    <p class="meta none" hidden>No videos match that filter.</p>
+
+    {earlier.length > 0 && (
+      <section class="earlier" aria-labelledby="earlier-h">
+        <h2 id="earlier-h" class="day-head">Earlier this week</h2>
+        <p class="meta">Videos about Bristol County from the last seven days.</p>
+        <ul class="list">
+          {earlier.map((v) => (
+            <li data-story-id={`video-${v.id}`} data-source={v.channel} data-placement="videos-earlier">
+              <a class="wcard-title" href={v.link} target="_blank" rel="noopener">{v.title}</a>
+              <span class="meta">{where(v) && `${where(v)} · `}{v.channelName} · {new Date(v.published).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' })}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <p class="credit meta">
+      Video from {videoChannels.map((c, n) => (
+        <>{n > 0 && ', '}<a href={`https://www.youtube.com/${c.handle}`} target="_blank" rel="noopener">{c.name}</a></>
+      ))}. Rhode Island and Southeastern Massachusetts stations (WPRI, NBC 10) are listed in full; Boston stations appear when a
+      video is about Bristol County. All video belongs to the stations and plays on their YouTube channels.
+    </p>
+  </div>
+</Base>
+
+<script>
+  // Filter the grid by pill. The choice is kept in the address (?show=local or ?show=channel:wpri).
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-grid] .card')];
+  const none = document.querySelector<HTMLElement>('.none');
+  function apply(filter: string) {
+    let shown = 0;
+    for (const c of cards) {
+      const ok = filter === 'all' || (filter === 'local' ? c.dataset.local === '1' : c.dataset.channel === filter.slice(8));
+      c.hidden = !ok;
+      if (ok) shown++;
+    }
+    pills.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.filter === filter)));
+    if (none) none.hidden = shown > 0;
+    const url = new URL(location.href);
+    if (filter === 'all') url.searchParams.delete('show');
+    else url.searchParams.set('show', filter);
+    history.replaceState(null, '', url);
+  }
+  pills.forEach((p) => p.addEventListener('click', () => apply(p.dataset.filter!)));
+  const want = new URLSearchParams(location.search).get('show');
+  if (want && pills.some((p) => p.dataset.filter === want)) apply(want);
+</script>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 18px; }
+  .pill {
+    font: 600 14px var(--sans); padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px;
+    background: var(--paper); color: var(--ink); cursor: pointer;
+  }
+  .pill span { color: var(--ink-2); font-weight: 500; margin-left: 2px; }
+  .pill:hover { border-color: var(--ink); }
+  .pill[aria-pressed='true'] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .pill[aria-pressed='true'] span { color: inherit; opacity: 0.8; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px 18px; grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card[hidden] { display: none; }
+  .thumb { position: relative; display: block; aspect-ratio: 16 / 9; background: var(--paper-2); overflow: hidden; border-radius: 4px; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .play {
+    position: absolute; right: 8px; bottom: 8px; width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7); color: #fff; font-size: 12px; display: grid; place-items: center; padding-left: 2px;
+  }
+  .body { padding-top: 8px; }
+  .where { margin: 0 0 2px; font: 800 11px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .wcard-title { margin: 0 0 4px; font-family: var(--serif-display); font-size: 18px; line-height: 1.25; }
+  .wcard-title a { color: var(--ink); text-decoration: none; }
+  .wcard-title a:hover { color: var(--accent); text-decoration: underline; }
+  .body .meta { margin: 0; }
+  .empty { margin: 24px 0; font-size: 17px; }
+  .none { margin: 24px 0; }
+  .earlier { margin-top: 40px; }
+  .day-head { font-family: var(--sans); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; border-top: 3px solid var(--ink); padding-top: 8px; margin: 0 0 4px; }
+  .list { list-style: none; margin: 10px 0 0; padding: 0; }
+  .list li { padding: 8px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; }
+  .list .wcard-title { font-size: 17px; color: var(--ink); text-decoration: none; }
+  .list .wcard-title:hover { color: var(--accent); text-decoration: underline; }
+  .credit { margin: 32px 0 48px; max-width: 70ch; }
+</style>

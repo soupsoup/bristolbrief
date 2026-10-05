@@ -110,17 +110,33 @@ test('recentVideos returns the last 24 hours only', () => {
   assert.deepEqual(recentVideos([vid('a', 30)], { now, hours: 48 }).map((v) => v.id), ['a']);
 });
 
-test('featuredVideo is the newest Bristol County video from the last 48 hours, never a forecast', () => {
+test('featuredVideo is the newest Bristol County video when one exists, never a forecast', () => {
   const videos = [
     vid('wx', 1, { local: true, weather: true, countywide: true }),
-    vid('rhode-island', 2),
-    vid('newest-local', 5, { local: true, towns: ['swansea'] }),
-    vid('older-local', 20, { local: true, towns: ['fall-river'] }),
-    vid('stale-local', 60, { local: true }),
+    vid('newer-not-local', 2),
+    vid('Swansea crash', 30, { local: true, towns: ['swansea'] }),
+    vid('Fall River fire', 100, { local: true, towns: ['fall-river'] }),
   ];
-  assert.equal(featuredVideo(videos, { now }).id, 'newest-local');
-  assert.equal(featuredVideo(videos.slice(0, 2), { now }), undefined);
-  assert.equal(featuredVideo([vid('stale-local', 60, { local: true })], { now }), undefined);
-  assert.equal(featuredVideo([vid('stale-local', 60, { local: true })], { now, hours: 72 }).id, 'stale-local');
+  // A local video wins even though a non-local one is newer and the local one is days old.
+  assert.equal(featuredVideo(videos, { now }).id, 'Swansea crash');
+  assert.equal(featuredVideo([...videos].reverse(), { now }).id, 'Swansea crash');
+});
+
+test('among Bristol County videos, one whose headline names a town beats a description-only match', () => {
+  const videos = [
+    vid('Deadly stabbing sparks debate in Providence', 20, { local: true, towns: ['dartmouth'] }),
+    vid('Fall River bat maker supplies training tools', 26, { local: true, towns: ['fall-river'] }),
+  ];
+  assert.equal(featuredVideo(videos, { now }).id, 'Fall River bat maker supplies training tools');
+  // With only the description-only match, it is still the Bristol County pick.
+  assert.equal(featuredVideo([videos[0], vid('Providence mayor speaks', 1)], { now }).id, 'Deadly stabbing sparks debate in Providence');
+  // A headline naming the county or region counts too; Dartmouth College does not.
+  assert.equal(featuredVideo([vid('SouthCoast farmers market opens', 40, { local: true, countywide: true }), vid('Hockey at Dartmouth College', 5, { local: true, towns: ['dartmouth'] })], { now }).id, 'SouthCoast farmers market opens');
+});
+
+test('without a Bristol County video the newest video of any kind is featured', () => {
+  const videos = [vid('wx', 1, { weather: true, local: true }), vid('older', 9), vid('newest', 3), vid('future', -2)];
+  assert.equal(featuredVideo(videos, { now }).id, 'newest');
+  assert.equal(featuredVideo([vid('wx', 1, { weather: true })], { now }), undefined);
   assert.equal(featuredVideo([], { now }), undefined);
 });

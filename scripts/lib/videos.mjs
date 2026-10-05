@@ -117,10 +117,25 @@ export function mergeVideos(existing, incoming, { channelIds, now = new Date() }
 export const recentVideos = (videos, { now = new Date(), hours = 24 } = {}) =>
   videos.filter((v) => now.valueOf() - Date.parse(v.published) <= hours * 3600e3 && Date.parse(v.published) <= now.valueOf());
 
+// Does the headline itself name a Bristol County town or the county? Videos that only
+// mention one in the description ("a UMass Dartmouth player") are about Bristol County
+// less clearly.
+const titleNamesCounty = (v) => {
+  const towns = matchTowns(v.title).filter((t) => !(t === 'dartmouth' && isDartmouthCollege(v.title)));
+  return towns.length > 0 || mentionsBristolCountyMA(v.title) || mentionsRegion(v.title);
+};
+
 /**
- * The video to feature on the home page: the newest one about Bristol County from the
- * last `hours` hours. Weather forecasts are skipped (they match on "Southeastern Mass"
- * but are not a story). Returns undefined when there is none.
+ * The video to feature on the home page. A Bristol County video always wins when one
+ * exists: the newest whose headline names a town or the county, else the newest that
+ * is about the county in its description. With none, the newest video of any kind.
+ * All come from the stored week, and weather forecasts are never picked (they match
+ * on "Southeastern Mass" but are not a story). Returns undefined when nothing qualifies.
  */
-export const featuredVideo = (videos, { now = new Date(), hours = 48 } = {}) =>
-  recentVideos(videos, { now, hours }).find((v) => v.local && !v.weather);
+export function featuredVideo(videos, { now = new Date() } = {}) {
+  const candidates = videos
+    .filter((v) => !v.weather && Date.parse(v.published) <= now.valueOf())
+    .sort((a, b) => b.published.localeCompare(a.published));
+  const local = candidates.filter((v) => v.local);
+  return local.find(titleNamesCounty) ?? local[0] ?? candidates[0];
+}

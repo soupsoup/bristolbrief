@@ -11,9 +11,11 @@ import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
 import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection, featuredVideo, timeAgo } from '../lib/wire';
 
-// A Bristol County video from the TV newsrooms' YouTube channels, shown above the rail when there is one.
+// The featured video from the TV newsrooms' YouTube channels, shown above the rail: the newest
+// Bristol County video if there is one, else the newest video of any kind.
 const video = featuredVideo();
-const videoWhere = video ? (video.towns.length ? video.towns.map(townName).join(', ') : 'Bristol County') : '';
+// Name the place only when the video is about Bristol County; a fallback pick from a Rhode Island station gets none.
+const videoWhere = video?.local ? (video.towns.length ? video.towns.map(townName).join(', ') : 'Bristol County') : '';
 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
 // editors added in the admin, with their edits applied (src/data/editorial.json).

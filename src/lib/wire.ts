@@ -366,5 +366,5 @@ export const videosLastDay = (now = new Date()) => recentVideos(storedVideos, { 
 export const videosEarlierThisWeek = (now = new Date(), max = 24) =>
   storedVideos.filter((v) => v.local && !recentVideos([v], { now, hours: 24 }).length).slice(0, max);
 
-/** The Bristol County video featured on the home page, if there is a recent one. */
+/** The video featured on the home page: the newest Bristol County video, else the newest of any kind. */
 export const featuredVideo = (now = new Date()) => pickFeaturedVideo(storedVideos, { now }) as Video | undefined;

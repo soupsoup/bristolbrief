@@ -2,9 +2,12 @@ import wireData from '../data/wire.json';
 import alertsData from '../data/alerts.json';
 import sourcesData from '../data/sources.json';
 import statusData from '../data/feed-status.json';
+import videosData from '../data/videos.json';
+import videoChannelsData from '../data/video-channels.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
+import { recentVideos } from '../../scripts/lib/videos.mjs';
 import { isPublishedAt, timeAgo } from './time.mjs';
 
 export { timeAgo };
@@ -329,3 +332,36 @@ export interface TeamSchedule {
 /** Results and upcoming games for teams with a schedule feed (Red Sox, Bruins). */
 export const teamSchedule = (team: string) =>
   ((schedulesData.teams ?? {}) as Record<string, TeamSchedule>)[team] ?? null;
+
+export interface Video {
+  id: string;
+  title: string;
+  link: string;
+  published: string;
+  channel: string;
+  channelName: string;
+  thumbnail: string;
+  towns: string[];
+  local?: boolean;
+  countywide?: boolean;
+  weather?: boolean;
+  short?: boolean;
+}
+export interface VideoChannel {
+  id: string;
+  name: string;
+  handle: string;
+  channelId: string;
+  scope: 'region' | 'boston';
+  enabled: boolean;
+}
+
+export const videoChannels = ((videoChannelsData as { channels?: VideoChannel[] }).channels ?? []).filter((c) => c.enabled);
+export const videosUpdated: string | null = (videosData as { updated?: string }).updated ?? null;
+const storedVideos = ((videosData as { videos?: Video[] }).videos ?? []).filter((v) => isPublishedAt(v.published));
+
+/** Videos from the last day, newest first. */
+export const videosLastDay = (now = new Date()) => recentVideos(storedVideos, { now, hours: 24 });
+/** Bristol County videos from earlier in the week (older than a day), newest first. */
+export const videosEarlierThisWeek = (now = new Date(), max = 24) =>
+  storedVideos.filter((v) => v.local && !recentVideos([v], { now, hours: 24 }).length).slice(0, max);

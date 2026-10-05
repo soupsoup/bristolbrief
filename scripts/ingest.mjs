@@ -12,6 +12,7 @@
 // Usage: node scripts/ingest.mjs [--only id1,id2] [--dry-run]
 import { readFile, writeFile } from 'node:fs/promises';
 import { parseFeed, normalize, normalizeNws, mergeItems, dropUnknownSources } from './lib/parse.mjs';
+import { parseYouTubeFeed, normalizeVideos, mergeVideos, feedUrl } from './lib/videos.mjs';
 import {
   MBTA_ROUTES,
   MBTA_STATIONS,
@@ -236,7 +237,33 @@ async function ingestSchedules() {
   return { ok: Object.keys(teams).length > 0, teams, errors };
 }
 
-const [results, alertResult, transit, tides, calendar, social, schedules] = await Promise.all([
+// TV newsroom YouTube channels. Each feed lists only the latest 15 uploads, so the
+// hourly run adds to what earlier runs saw and the page works from the stored week.
+async function ingestVideos() {
+  const { channels = [] } = await readJson('src/data/video-channels.json', { channels: [] });
+  const now = new Date();
+  const videos = [];
+  const status = [];
+  await Promise.all(
+    channels
+      .filter((c) => c.enabled)
+      .map(async (c) => {
+        try {
+          const { status: http, body } = await fetchText(feedUrl(c.channelId), { accept: 'application/atom+xml' });
+          if (http !== 200) throw new Error(`HTTP ${http}`);
+          const entries = parseYouTubeFeed(body);
+          const kept = normalizeVideos(entries, c, now);
+          videos.push(...kept);
+          status.push({ id: c.id, name: c.name, ok: true, entries: entries.length, kept: kept.length });
+        } catch (err) {
+          status.push({ id: c.id, name: c.name, ok: false, error: err.message });
+        }
+      }),
+  );
+  return { ok: status.some((s) => s.ok), videos, status, channelIds: new Set(channels.map((c) => c.id)), now };
+}
+
+const [results, alertResult, transit, tides, calendar, social, schedules, videoResult] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
   ingestTransit(),
@@ -244,6 +271,7 @@ const [results, alertResult, transit, tides, calendar, social, schedules] = awai
   ingestCalendar(),
   ingestSocial(),
   ingestSchedules(),
+  ingestVideos(),
 ]);
 
 const incoming = results.flatMap((r) => r.items);
@@ -267,7 +295,8 @@ console.log(
     `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
     `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
     `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}. ` +
-    `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}.`,
+    `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}. ` +
+    `Videos: ${videoResult.ok ? `${videoResult.videos.length} from ${videoResult.status.filter((s) => s.ok).length}/${videoResult.status.length} channels` : 'failed'}${videoResult.status.some((s) => !s.ok) ? ` (failed: ${videoResult.status.filter((s) => !s.ok).map((s) => `${s.id}: ${s.error}`).join('; ')})` : ''}.`,
 );
 
 if (!dryRun) {
@@ -290,6 +319,12 @@ if (!dryRun) {
     // Merge so one league's API being down keeps that team's last good copy.
     const prev = await readJson('src/data/schedules.json', { teams: {} });
     await writeFile(path('src/data/schedules.json'), JSON.stringify({ updated: now, teams: { ...prev.teams, ...schedules.teams } }, null, 1) + '\n');
+  }
+  if (videoResult.ok) {
+    // Keep the last good copy when YouTube is down; a channel that fails keeps its stored videos.
+    const prev = await readJson('src/data/videos.json', { videos: [] });
+    const videos = mergeVideos(prev.videos ?? [], videoResult.videos, { channelIds: videoResult.channelIds, now: videoResult.now });
+    await writeFile(path('src/data/videos.json'), JSON.stringify({ updated: now, channels: videoResult.status, videos }, null, 1) + '\n');
   }
   if (calendar.ok) {
     await writeFile(path('src/data/calendar.json'), JSON.stringify({ updated: now, meetings: calendar.meetings }, null, 1) + '\n');

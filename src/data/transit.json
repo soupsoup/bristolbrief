@@ -1,6 +1,52 @@
 {
- "updated": "2026-10-05T12:35:48.546Z",
- "alerts": [],
+ "updated": "2026-10-05T13:05:30.516Z",
+ "alerts": [
+  {
+   "id": "1036790",
+   "header": "New Bedford Line Train 2055 (8:16 AM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and New Bedford due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-05T08:40:40-04:00",
+   "end": "2026-10-05T09:47:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-10-05T08:40:40-04:00"
+  },
+  {
+   "id": "1036791",
+   "header": "New Bedford Line Train 2018 (8:20 AM from New Bedford) is operating 5-15 minutes behind schedule between Church Street and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-05T08:48:25-04:00",
+   "end": "2026-10-05T11:00:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-05T08:48:25-04:00"
+  }
+ ],
  "stopParents": {
   "NEC-1919": "place-NEC-1919",
   "NEC-1919-01": "place-NEC-1919",

@@ -4,6 +4,9 @@ export const SITE = {
   description:
     'Local headlines, public meetings, weather and transit alerts for the 20 cities and towns of Bristol County, Massachusetts, gathered from local newsrooms and town halls.',
   email: 'tips@bristolbrief.com',
+  // The National Grid and Eversource outage-map links at the top of the home page's right
+  // rail. Off for now; set to true during severe weather (storms, widespread outages).
+  showOutageMaps: false,
   // Newsletter sign-ups go to beehiiv via /api/subscribe (BEEHIIV_API_KEY and
   // BEEHIIV_PUBLICATION_ID on Vercel; see src/lib/newsletter.ts).
   social: {

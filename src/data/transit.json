@@ -1,6 +1,28 @@
 {
- "updated": "2026-10-05T15:06:22.134Z",
+ "updated": "2026-10-05T15:36:22.174Z",
  "alerts": [
+  {
+   "id": "1036830",
+   "header": "New Bedford Line Train 2061 (10:58 AM from East Taunton) has departed East Taunton and is operating 25-35 minutes behind schedule due to police activity.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-05T11:18:00-04:00",
+   "end": "2026-10-05T12:23:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-10-05T11:29:50-04:00"
+  },
   {
    "id": "1036814",
    "header": "Fall River Line Train 1974 (10:28 AM from Fall River Depot) has departed Fall River and is operating 10-20 minutes behind schedule due to earlier police activity in the Bridgewater area.",

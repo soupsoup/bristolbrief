@@ -7,7 +7,7 @@ import videoChannelsData from '../data/video-channels.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
-import { recentVideos } from '../../scripts/lib/videos.mjs';
+import { recentVideos, featuredVideo as pickFeaturedVideo } from '../../scripts/lib/videos.mjs';
 import { isPublishedAt, timeAgo } from './time.mjs';
 
 export { timeAgo };
@@ -365,3 +365,6 @@ export const videosLastDay = (now = new Date()) => recentVideos(storedVideos, { 
 /** Bristol County videos from earlier in the week (older than a day), newest first. */
 export const videosEarlierThisWeek = (now = new Date(), max = 24) =>
   storedVideos.filter((v) => v.local && !recentVideos([v], { now, hours: 24 }).length).slice(0, max);
+
+/** The video featured on the home page: the newest Bristol County video, else the newest of any kind. */
+export const featuredVideo = (now = new Date()) => pickFeaturedVideo(storedVideos, { now }) as Video | undefined;

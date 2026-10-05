@@ -7,9 +7,15 @@ import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
-import { SITE, SECTIONS, TOWNS } from '../site.config';
+import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
-import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection } from '../lib/wire';
+import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection, featuredVideo, timeAgo } from '../lib/wire';
+
+// The featured video from the TV newsrooms' YouTube channels, shown above the rail: the newest
+// Bristol County video if there is one, else the newest video of any kind.
+const video = featuredVideo();
+// Name the place only when the video is about Bristol County; a fallback pick from a Rhode Island station gets none.
+const videoWhere = video?.local ? (video.towns.length ? video.towns.map(townName).join(', ') : 'Bristol County') : '';
 
 // Stories come from the ingested feeds (scripts/ingest.mjs) plus anything
 // editors added in the admin, with their edits applied (src/data/editorial.json).
@@ -77,6 +83,19 @@ const meetings = meetingItems().slice(0, 6);
           {secondary.map((i) => <WireCard item={i} />)}
         </div>
         <aside class="top-rail" data-placement="home-rail">
+          {video && (
+            <div class="rail-video" data-placement="home-video" data-story-id={`video-${video.id}`} data-source={video.channel}>
+              <div class="rail-head">Video</div>
+              <a class="rv-thumb" href={video.link} target="_blank" rel="noopener" aria-label={`Watch: ${video.title}`}>
+                <img src={video.thumbnail} alt="" width="320" height="180" decoding="async" />
+                <span class="rv-play" aria-hidden="true">▶</span>
+              </a>
+              <p class="rv-where">{videoWhere}</p>
+              <h2 class="wcard-title rv-title"><a href={video.link} target="_blank" rel="noopener">{video.title}</a></h2>
+              <p class="meta rv-meta">{video.channelName} · <time datetime={video.published}>{timeAgo(video.published)}</time></p>
+              <a class="video-more" href="/videos/">More videos →</a>
+            </div>
+          )}
           <div class="rail-head">Around the county</div>
           <div class="rail-pin">
             <span class="pin-label">Power outages</span>
@@ -172,8 +191,9 @@ const meetings = meetingItems().slice(0, 6);
 
 <script>
   // Show only as many rail headlines as fit beside the lead + secondary stories.
-  const MIN = 4;
   const rail = document.querySelector<HTMLElement>('.top-rail');
+  // The featured video takes about as much room as two headlines.
+  const MIN = rail?.querySelector('.rail-video') ? 2 : 4;
   const left = document.querySelector<HTMLElement>('.top-secondary');
 
   function fit() {
@@ -240,6 +260,20 @@ const meetings = meetingItems().slice(0, 6);
     padding-top: 8px;
     margin-bottom: 8px;
   }
+  .rail-video { margin-bottom: 24px; }
+  .rv-thumb { position: relative; display: block; aspect-ratio: 16 / 9; background: var(--paper-2); overflow: hidden; border-radius: 4px; margin-top: 12px; }
+  .rv-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .rv-play {
+    position: absolute; right: 8px; bottom: 8px; width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7); color: #fff; font-size: 12px; display: grid; place-items: center; padding-left: 2px;
+  }
+  .rv-where { margin: 10px 0 2px; font: 800 11px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .rv-where:empty { display: none; }
+  .rv-title { margin: 0 0 4px; font-family: var(--serif-display); font-size: 19px; line-height: 1.25; }
+  .rv-title a { color: var(--ink); text-decoration: none; }
+  .rv-title a:hover { color: var(--accent); text-decoration: underline; }
+  .rv-meta { margin: 0 0 6px; }
+  .video-more { display: inline-block; font-family: var(--sans); font-size: 13px; font-weight: 600; }
   .rail-head + :global(.wire) { margin-top: 12px; }
   .top-rail:not(.fitted) :global(.wire-item:nth-child(n + 7)) { display: none; }
   .rail-pin {

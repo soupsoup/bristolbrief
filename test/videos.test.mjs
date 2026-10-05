@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseYouTubeFeed, descriptionBody, videoPlaces, normalizeVideos, mergeVideos, recentVideos, isWeather, feedUrl, VIDEO_KEEP_DAYS } from '../scripts/lib/videos.mjs';
+import { parseYouTubeFeed, descriptionBody, videoPlaces, normalizeVideos, mergeVideos, recentVideos, featuredVideo, isWeather, feedUrl, VIDEO_KEEP_DAYS } from '../scripts/lib/videos.mjs';
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
@@ -108,4 +108,19 @@ test('recentVideos returns the last 24 hours only', () => {
   const got = recentVideos([vid('a', 1), vid('b', 23.9), vid('c', 24.1), vid('d', -1)], { now });
   assert.deepEqual(got.map((v) => v.id), ['a', 'b']);
   assert.deepEqual(recentVideos([vid('a', 30)], { now, hours: 48 }).map((v) => v.id), ['a']);
+});
+
+test('featuredVideo is the newest Bristol County video from the last 48 hours, never a forecast', () => {
+  const videos = [
+    vid('wx', 1, { local: true, weather: true, countywide: true }),
+    vid('rhode-island', 2),
+    vid('newest-local', 5, { local: true, towns: ['swansea'] }),
+    vid('older-local', 20, { local: true, towns: ['fall-river'] }),
+    vid('stale-local', 60, { local: true }),
+  ];
+  assert.equal(featuredVideo(videos, { now }).id, 'newest-local');
+  assert.equal(featuredVideo(videos.slice(0, 2), { now }), undefined);
+  assert.equal(featuredVideo([vid('stale-local', 60, { local: true })], { now }), undefined);
+  assert.equal(featuredVideo([vid('stale-local', 60, { local: true })], { now, hours: 72 }).id, 'stale-local');
+  assert.equal(featuredVideo([], { now }), undefined);
 });

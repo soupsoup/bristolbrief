@@ -116,3 +116,11 @@ export function mergeVideos(existing, incoming, { channelIds, now = new Date() }
 /** Videos published in the last `hours` hours, newest first. */
 export const recentVideos = (videos, { now = new Date(), hours = 24 } = {}) =>
   videos.filter((v) => now.valueOf() - Date.parse(v.published) <= hours * 3600e3 && Date.parse(v.published) <= now.valueOf());
+
+/**
+ * The video to feature on the home page: the newest one about Bristol County from the
+ * last `hours` hours. Weather forecasts are skipped (they match on "Southeastern Mass"
+ * but are not a story). Returns undefined when there is none.
+ */
+export const featuredVideo = (videos, { now = new Date(), hours = 48 } = {}) =>
+  recentVideos(videos, { now, hours }).find((v) => v.local && !v.weather);

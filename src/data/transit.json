@@ -1,6 +1,31 @@
 {
- "updated": "2026-10-05T13:05:30.516Z",
+ "updated": "2026-10-05T13:35:40.874Z",
  "alerts": [
+  {
+   "id": "1036805",
+   "header": "Fall River Line Train 1909 (8:18 AM from South Station) is stopped before Bridgewater and is 20-30 minutes behind schedule due to police activity in the Bridgewater area.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "POLICE_ACTIVITY",
+   "start": "2026-10-05T09:31:39-04:00",
+   "end": "2026-10-05T11:02:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-05T09:31:39-04:00"
+  },
   {
    "id": "1036790",
    "header": "New Bedford Line Train 2055 (8:16 AM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and New Bedford due to a mechanical issue.",
@@ -24,27 +49,6 @@
    ],
    "url": null,
    "updated": "2026-10-05T08:40:40-04:00"
-  },
-  {
-   "id": "1036791",
-   "header": "New Bedford Line Train 2018 (8:20 AM from New Bedford) is operating 5-15 minutes behind schedule between Church Street and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-05T08:48:25-04:00",
-   "end": "2026-10-05T11:00:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton"
-   ],
-   "towns": [
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-05T08:48:25-04:00"
   }
  ],
  "stopParents": {

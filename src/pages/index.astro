@@ -97,18 +97,13 @@ const meetings = meetingItems().slice(0, 6);
             </div>
           )}
           <div class="rail-head">Around the county</div>
-          <div class="rail-pin">
-            <span class="pin-label">Power outages</span>
-            <a class="pin-title" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">National Grid outage map ↗</a>
-            <a class="pin-title" href="https://outagemap.eversource.com/external/default.html" target="_blank" rel="noopener">Eversource outage map ↗</a>
-          </div>
-          <a class="discord-pin" href={SITE.social.discord} target="_blank" rel="noopener">
-            <DiscordIcon size={28} />
-            <span>
-              <span class="dp-label">Join the conversation</span>
-              <span class="dp-title">Talk local news with neighbors on the Bristol Brief Discord ↗</span>
-            </span>
-          </a>
+          {SITE.showOutageMaps && (
+            <div class="rail-pin">
+              <span class="pin-label">Power outages</span>
+              <a class="pin-title" href="https://outagemap.ma.nationalgridus.com/" target="_blank" rel="noopener">National Grid outage map ↗</a>
+              <a class="pin-title" href="https://outagemap.eversource.com/external/default.html" target="_blank" rel="noopener">Eversource outage map ↗</a>
+            </div>
+          )}
           <WireList items={wire} />
           <a class="rail-more" href="/news/">All local headlines →</a>
         </aside>
@@ -134,6 +129,13 @@ const meetings = meetingItems().slice(0, 6);
         ))}
       </div>
       <aside class="lower-rail">
+        <a class="discord-pin" href={SITE.social.discord} target="_blank" rel="noopener">
+          <DiscordIcon size={28} />
+          <span>
+            <span class="dp-label">Join the conversation</span>
+            <span class="dp-title">Talk local news with neighbors on the Bristol Brief Discord ↗</span>
+          </span>
+        </a>
         <div class="section-head">
           <h2>Commuter rail</h2>
           <a href="/transit/">More →</a>
@@ -302,7 +304,7 @@ const meetings = meetingItems().slice(0, 6);
     display: flex;
     gap: 12px;
     align-items: center;
-    margin: 8px 0 4px;
+    margin: 0 0 24px;
     padding: 12px;
     border-radius: 4px;
     background: #5865f2;

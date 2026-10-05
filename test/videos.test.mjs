@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseYouTubeFeed, descriptionBody, videoPlaces, normalizeVideos, mergeVideos, recentVideos, featuredVideo, isWeather, feedUrl, VIDEO_KEEP_DAYS } from '../scripts/lib/videos.mjs';
+import { parseYouTubeFeed, descriptionBody, videoPlaces, normalizeVideos, mergeVideos, recentVideos, featuredVideo, isWeather, feedUrl, VIDEO_KEEP_DAYS, FEATURED_VIDEO_DAYS } from '../scripts/lib/videos.mjs';
 
 const FEED = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
@@ -115,7 +115,7 @@ test('featuredVideo is the newest Bristol County video when one exists, never a 
     vid('wx', 1, { local: true, weather: true, countywide: true }),
     vid('newer-not-local', 2),
     vid('Swansea crash', 30, { local: true, towns: ['swansea'] }),
-    vid('Fall River fire', 100, { local: true, towns: ['fall-river'] }),
+    vid('Fall River fire', 60, { local: true, towns: ['fall-river'] }),
   ];
   // A local video wins even though a non-local one is newer and the local one is days old.
   assert.equal(featuredVideo(videos, { now }).id, 'Swansea crash');
@@ -139,4 +139,16 @@ test('without a Bristol County video the newest video of any kind is featured', 
   assert.equal(featuredVideo(videos, { now }).id, 'newest');
   assert.equal(featuredVideo([vid('wx', 1, { weather: true })], { now }), undefined);
   assert.equal(featuredVideo([], { now }), undefined);
+});
+
+test('the featured video is never more than 3 days old', () => {
+  assert.equal(FEATURED_VIDEO_DAYS, 3);
+  const day = 24;
+  // An older Bristol County video no longer beats a fresh non-local one: it is simply out of the running.
+  assert.equal(featuredVideo([vid('old-local', 3 * day + 1, { local: true, towns: ['swansea'] }), vid('fresh', 5)], { now }).id, 'fresh');
+  assert.equal(featuredVideo([vid('old-local', 3 * day + 1, { local: true }), vid('older', 5 * day)], { now }), undefined);
+  // Just inside the cap still counts, and a local one inside it still wins.
+  assert.equal(featuredVideo([vid('edge-local', 3 * day - 1, { local: true, towns: ['swansea'] }), vid('fresh', 5)], { now }).id, 'edge-local');
+  // The window can be widened by the caller.
+  assert.equal(featuredVideo([vid('old-local', 5 * day, { local: true })], { now, days: 7 }).id, 'old-local');
 });

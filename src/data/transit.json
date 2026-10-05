@@ -1,14 +1,14 @@
 {
- "updated": "2026-10-05T13:35:40.874Z",
+ "updated": "2026-10-05T14:05:42.371Z",
  "alerts": [
   {
    "id": "1036805",
-   "header": "Fall River Line Train 1909 (8:18 AM from South Station) is stopped before Bridgewater and is 20-30 minutes behind schedule due to police activity in the Bridgewater area.",
+   "header": "Fall River Line Train 1909 (8:18 AM from South Station) is operating 30-40 minutes behind schedule between Campello and Fall River due to earlier police activity in the Bridgewater area.",
    "effect": "DELAY",
-   "severity": 7,
+   "severity": 8,
    "lifecycle": "NEW",
    "cause": "POLICE_ACTIVITY",
-   "start": "2026-10-05T09:31:39-04:00",
+   "start": "2026-10-05T09:31:00-04:00",
    "end": "2026-10-05T11:02:00-04:00",
    "routes": [
     "CR-NewBedford"
@@ -24,31 +24,7 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-10-05T09:31:39-04:00"
-  },
-  {
-   "id": "1036790",
-   "header": "New Bedford Line Train 2055 (8:16 AM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and New Bedford due to a mechanical issue.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-05T08:40:40-04:00",
-   "end": "2026-10-05T09:47:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-10-05T08:40:40-04:00"
+   "updated": "2026-10-05T09:47:41-04:00"
   }
  ],
  "stopParents": {

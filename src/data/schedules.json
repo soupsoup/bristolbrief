@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T02:06:19.706Z",
+ "updated": "2026-10-06T02:35:47.229Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -68,6 +68,17 @@
    "league": "NHL",
    "past": [
     {
+     "id": "nhl-2026020041",
+     "date": "2026-10-05T23:30:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Senators",
+     "status": "final",
+     "us": 1,
+     "them": 4,
+     "result": "L"
+    },
+    {
      "id": "nhl-2026020031",
      "date": "2026-10-04T00:00:00Z",
      "tbd": false,
@@ -112,31 +123,9 @@
      "them": 3,
      "result": "OTL",
      "note": "Preseason · OT"
-    },
-    {
-     "id": "nhl-2026010040",
-     "date": "2026-09-24T23:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Flyers",
-     "status": "final",
-     "us": 0,
-     "them": 2,
-     "result": "L",
-     "note": "Preseason"
     }
    ],
    "next": [
-    {
-     "id": "nhl-2026020041",
-     "date": "2026-10-05T23:30:00Z",
-     "tbd": false,
-     "home": true,
-     "opponent": "Senators",
-     "status": "live",
-     "us": 1,
-     "them": 4
-    },
     {
      "id": "nhl-2026020056",
      "date": "2026-10-08T23:00:00Z",
@@ -167,6 +156,14 @@
      "tbd": false,
      "home": false,
      "opponent": "Ducks",
+     "status": "scheduled"
+    },
+    {
+     "id": "nhl-2026020132",
+     "date": "2026-10-18T01:00:00Z",
+     "tbd": false,
+     "home": false,
+     "opponent": "Kings",
      "status": "scheduled"
     }
    ]

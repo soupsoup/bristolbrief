@@ -1,20 +1,6 @@
 {
- "updated": "2026-10-06T16:05:29.910Z",
+ "updated": "2026-10-06T16:35:26.216Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -23,11 +9,18 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "wpri",
@@ -37,6 +30,13 @@
    "kept": 15
   },
   {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -44,14 +44,86 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "fIdNwE5nyAw",
+   "title": "Trial begins for ex-detective charged in Sandra Birchmore's death",
+   "link": "https://www.youtube.com/watch?v=fIdNwE5nyAw",
+   "published": "2026-10-06T16:32:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fIdNwE5nyAw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Ovn03uC2RSo",
+   "title": "Jury selection to begin for trial of suspect in 2019 hookah lounge killing",
+   "link": "https://www.youtube.com/watch?v=Ovn03uC2RSo",
+   "published": "2026-10-06T16:31:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ovn03uC2RSo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "lrxdufEGkEA",
+   "title": "WPRI 12 Weather Forecast for 10/6/26:  Cool and breezy this afternoon.",
+   "link": "https://www.youtube.com/watch?v=lrxdufEGkEA",
+   "published": "2026-10-06T16:28:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lrxdufEGkEA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "Ybq0qdRD_Bk",
+   "title": "18-year-old hit, killed by car in Raynham",
+   "link": "https://www.youtube.com/watch?v=Ybq0qdRD_Bk",
+   "published": "2026-10-06T16:27:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ybq0qdRD_Bk/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "FGH48v7pkGs",
+   "title": "Pedestrian struck and killed on Route 44 in Raynham",
+   "link": "https://www.youtube.com/watch?v=FGH48v7pkGs",
+   "published": "2026-10-06T16:16:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/FGH48v7pkGs/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "gik2iqvVvHU",
+   "title": "Man, 18, fatally struck while crossing Route 44 in Raynham",
+   "link": "https://www.youtube.com/watch?v=gik2iqvVvHU",
+   "published": "2026-10-06T16:06:14.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/gik2iqvVvHU/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
   {
    "id": "VpnOC5Y1PJM",
    "title": "Teen dies after being struck by SUV on Route 44 in Raynham",
@@ -121,19 +193,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/6l3zdxxJ5mE/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "frAwyVMdot8",
-   "title": "WPRI 12 Weather Now 10/6/26: Cooler today; Frost Advisory tonight",
-   "link": "https://www.youtube.com/watch?v=frAwyVMdot8",
-   "published": "2026-10-06T13:33:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/frAwyVMdot8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "dGk7Lb6K4zY",

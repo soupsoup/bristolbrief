@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T21:35:32.546Z",
+ "updated": "2026-10-06T22:05:28.201Z",
  "alerts": [
   {
    "id": "1037166",
@@ -17,6 +17,23 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-06T17:32:03-04:00"
+  },
+  {
+   "id": "1037182",
+   "header": "Stoughton Line Train 966 (6:00 PM from Stoughton) is expected to depart Stoughton 5-15 minutes behind schedule due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-06T18:00:00-04:00",
+   "end": "2026-10-06T19:39:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-06T17:36:58-04:00"
   },
   {
    "id": "1037173",

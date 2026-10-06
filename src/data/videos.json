@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-06T21:05:47.512Z",
+ "updated": "2026-10-06T21:35:32.546Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -9,8 +16,22 @@
    "kept": 15
   },
   {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -28,30 +49,86 @@
    "ok": true,
    "entries": 15,
    "kept": 2
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "J9TcDaf5yXg",
+   "title": "Rhode Island expands affordable mortgage program for first-time homebuyers",
+   "link": "https://www.youtube.com/watch?v=J9TcDaf5yXg",
+   "published": "2026-10-06T21:31:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/J9TcDaf5yXg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ORTOfFR2o3c",
+   "title": "Health official discusses measles prevention as cases surge nationwide",
+   "link": "https://www.youtube.com/watch?v=ORTOfFR2o3c",
+   "published": "2026-10-06T21:18:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ORTOfFR2o3c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1sRoKbCppyc",
+   "title": "What RI voters need to know about 5 statewide bond questions appearing on ballot",
+   "link": "https://www.youtube.com/watch?v=1sRoKbCppyc",
+   "published": "2026-10-06T21:17:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1sRoKbCppyc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "E7PL6t2c6ok",
+   "title": "Chipotle worker struck and killed on Route 44 in Raynham",
+   "link": "https://www.youtube.com/watch?v=E7PL6t2c6ok",
+   "published": "2026-10-06T21:13:57.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/E7PL6t2c6ok/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "dMHSsj6ohDI",
+   "title": "Colorful electric boxes bring beauty and community to the streets of Central Falls #shorts",
+   "link": "https://www.youtube.com/shorts/dMHSsj6ohDI",
+   "published": "2026-10-06T21:12:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/dMHSsj6ohDI/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "GfsvGusX06U",
+   "title": "18-year-old killed in crash on Route 44 in Raynham",
+   "link": "https://www.youtube.com/watch?v=GfsvGusX06U",
+   "published": "2026-10-06T21:10:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GfsvGusX06U/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "Z22GLviQw3w",
+   "title": "Suspect charged in 1985 Newport murder cold case",
+   "link": "https://www.youtube.com/watch?v=Z22GLviQw3w",
+   "published": "2026-10-06T21:09:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Z22GLviQw3w/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "oC12TG8z7wY",
    "title": "Meet the candidates: Jay Gotra for RI Governor",

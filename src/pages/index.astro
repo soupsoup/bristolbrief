@@ -9,6 +9,7 @@ import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
 import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
+import { sig, sameStory } from '../../scripts/lib/dedupe.mjs';
 import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection, featuredVideo, timeAgo } from '../lib/wire';
 
 // The featured video from the TV newsrooms' YouTube channels, shown above the rail: the newest
@@ -33,10 +34,33 @@ const shown = new Set(top.map((i) => i.id));
 // Render a few extra; the script below trims the rail to the height of the
 // stories beside it. Without JS (and on narrow screens) CSS shows six.
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
-const wire = [...railPicks, ...stories.filter((i) => !shown.has(i.id) && i.featuredRank == null)].slice(0, 12);
+// One story, one slot: the rail skips a headline that repeats the featured video or a top story,
+// and keeps only the first outlet's version when several run the same news.
+const told = [video?.title, ...top.map((i) => i.title)].filter(Boolean).map((t) => sig(t as string));
+const railCandidates = stories.filter((i) => !shown.has(i.id) && i.featuredRank == null).filter((i) => {
+  const s = sig(i.title);
+  if (told.some((t) => sameStory(t, s))) return false;
+  told.push(s);
+  return true;
+});
+const wire = [...railPicks, ...railCandidates].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
 // Stories already on the page: the top slots and the visible part of the rail.
 const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
+// Headlines already on the page, so the rows below skip another outlet's version of the same story.
+const onPage = [video?.title, ...top.map((i) => i.title), ...wire.slice(0, 6).map((i) => i.title)].filter(Boolean).map((t) => sig(t as string));
+const repeats = (title: string) => onPage.some((t) => sameStory(t, sig(title)));
+// Up to n stories not already told; also drops repeats within the list itself.
+const takeNew = <T extends { id: string; title: string }>(list: T[], n: number) => {
+  const got: T[] = [];
+  for (const i of list) {
+    if (repeats(i.title) || got.some((g) => sameStory(sig(g.title), sig(i.title)))) continue;
+    got.push(i);
+    if (got.length === n) break;
+  }
+  return got;
+};
+const commit = (items: { title: string }[]) => items.forEach((i) => onPage.push(sig(i.title)));
 const FEATURE_SECTIONS = ['real-estate', 'business', 'food-drink', 'things-to-do'] as const;
 // Sections below the top stories run freshest first: the section whose newest
 // story is most recent leads. Empty sections go last. The page rebuilds every
@@ -51,8 +75,8 @@ const byFreshness = <T extends { items: { date: string }[] }>(a: T, b: T) => new
 // that takes it, so no story shows twice.
 const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly string[]).includes(sec.slug))
   .map((sec) => {
-    const items = stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)).slice(0, 3);
-    if (items.length === 3) items.forEach((i) => { shown.add(i.id); visible.add(i.id); });
+    const items = takeNew(stories.filter((i) => i.sections.includes(sec.slug) && !shown.has(i.id)), 3);
+    if (items.length === 3) { items.forEach((i) => { shown.add(i.id); visible.add(i.id); }); commit(items); }
     return { ...sec, items };
   })
   .filter((row) => row.items.length === 3)
@@ -63,7 +87,7 @@ const sectionRows = SECTIONS.filter((sec) => !(FEATURE_SECTIONS as readonly stri
 const featureSections = FEATURE_SECTIONS.map((slug) => ({
   slug,
   name: SECTIONS.find((s) => s.slug === slug)!.name,
-  items: itemsForSection(slug).filter((i) => !visible.has(i.id)).slice(0, 5),
+  items: takeNew(itemsForSection(slug).filter((i) => !visible.has(i.id)), 5),
 })).sort(byFreshness);
 // Only the most recently approved post fits here; the rest are on /social/.
 const social = socialPosts().slice(0, 1);

@@ -1,31 +1,6 @@
 {
- "updated": "2026-10-06T18:35:37.856Z",
+ "updated": "2026-10-06T19:05:33.077Z",
  "alerts": [
-  {
-   "id": "1037078",
-   "header": "Fall River Line Train 1917 (12:05 PM from South Station) is operating 35-45 minutes behind schedule between Brockton and Fall River due to an earlier medical emergency.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-06T12:18:00-04:00",
-   "end": "2026-10-06T14:45:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-06T13:25:42-04:00"
-  },
   {
    "id": "1037083",
    "header": "Fall River Line Train 1980 (2:00 PM from Fall River Depot) has departed Fall River and is operating 20-30 minutes behind schedule due to an earlier medical emergency.",
@@ -42,6 +17,23 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-06T14:28:16-04:00"
+  },
+  {
+   "id": "1037111",
+   "header": "New Bedford Line Train 2030 (2:04 PM from New Bedford) is operating 10-20 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-06T14:43:00-04:00",
+   "end": "2026-10-06T16:44:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-06T14:44:11-04:00"
   },
   {
    "id": "1037107",
@@ -112,6 +104,23 @@
    ],
    "url": null,
    "updated": "2026-10-06T13:42:53-04:00"
+  },
+  {
+   "id": "1037117",
+   "header": "New Bedford Line Train 2069 (2:31 PM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-06T14:51:49-04:00",
+   "end": "2026-10-06T15:56:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-06T14:51:49-04:00"
   }
  ],
  "stopParents": {

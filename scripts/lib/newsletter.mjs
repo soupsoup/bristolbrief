@@ -4,6 +4,8 @@
 // paste into a beehiiv post. beehiiv adds its own header, unsubscribe link
 // and footer, so none of those are included here.
 
+import { titleKey, sig, overlap, sameStory } from './dedupe.mjs';
+
 export const SITE_URL = 'https://bristolbrief.com';
 const ET = 'America/New_York';
 
@@ -13,13 +15,6 @@ const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<
 const SECTION_WEIGHT = { 'public-safety': 3, government: 3, schools: 2, news: 2, business: 1, 'food-drink': 0.5, 'things-to-do': 0.5 };
 const SKIP_SECTIONS = new Set(['listings', 'sports', 'real-estate']);
 
-const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-
-const STOP = new Set('about after again against announces being between could county from have into over report reports says state their there these this those under what when where which while with would their local police city town'.split(' '));
-const sig = (t) => new Set(titleKey(t).split(' ').filter((w) => w.length >= 5 && !STOP.has(w)));
-const overlap = (a, b) => [...a].filter((w) => b.has(w)).length;
-/** Same story from another outlet: two or more distinctive headline words in common. */
-const sameStory = (a, b) => overlap(a, b) >= 2;
 /** Headlines can differ while the story is the same: same town and four or more distinctive words across headline and summary. */
 const bodySig = (i) => sig(`${i.title} ${(i.summary ?? '').slice(0, 240)}`);
 const sameIncident = (a, b) => a.towns.some((t) => b.towns.includes(t)) && overlap(a.body, b.body) >= 4;

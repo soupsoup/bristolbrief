@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T17:35:32.055Z",
+ "updated": "2026-10-06T18:05:47.929Z",
  "alerts": [
   {
    "id": "1037078",
@@ -42,6 +42,51 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-06T13:21:01-04:00"
+  },
+  {
+   "id": "1037099",
+   "header": "New Bedford Line Train 2028 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station due to train traffic.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-06T13:47:12-04:00",
+   "end": "2026-10-06T15:44:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-06T13:47:12-04:00"
+  },
+  {
+   "id": "1037096",
+   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-06T13:42:53-04:00",
+   "end": "2026-10-06T15:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-06T13:42:53-04:00"
   },
   {
    "id": "1037080",

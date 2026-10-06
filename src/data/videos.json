@@ -1,41 +1,19 @@
 {
- "updated": "2026-10-06T03:05:34.100Z",
+ "updated": "2026-10-06T07:06:29.185Z",
  "channels": [
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "cbs-boston",
@@ -43,9 +21,125 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "iWl66NTc1Lw",
+   "title": "WPRI 12 Weather Forecast 10-5/26 Much Cooler Next Few Days",
+   "link": "https://www.youtube.com/watch?v=iWl66NTc1Lw",
+   "published": "2026-10-06T03:27:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/iWl66NTc1Lw/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "OISgstquKyU",
+   "title": "Johnston dog rescued after falling into septic tank during cleaning",
+   "link": "https://www.youtube.com/watch?v=OISgstquKyU",
+   "published": "2026-10-06T03:23:50.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/OISgstquKyU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "-k4_LY8YIFw",
+   "title": "New Bedford School Committee Adopts PROTECT Act policy amid recent ICE activity",
+   "link": "https://www.youtube.com/watch?v=-k4_LY8YIFw",
+   "published": "2026-10-06T03:19:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/-k4_LY8YIFw/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "HeBCQRTULtk",
+   "title": "Hometown Hero: Alyssa Parenteau, La Salle",
+   "link": "https://www.youtube.com/watch?v=HeBCQRTULtk",
+   "published": "2026-10-06T03:14:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HeBCQRTULtk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7kP-fPmWR8Q",
+   "title": "Gov. Maura Healey discusses winter heating costs",
+   "link": "https://www.youtube.com/watch?v=7kP-fPmWR8Q",
+   "published": "2026-10-06T02:53:45.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/7kP-fPmWR8Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "0-XeDeqi9gU",
+   "title": "Wife donates kidney to husband just days before wedding anniversary",
+   "link": "https://www.youtube.com/watch?v=0-XeDeqi9gU",
+   "published": "2026-10-06T02:14:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0-XeDeqi9gU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "BkAGFvbUYUA",
+   "title": "Providence officers gift new bike to boy after his was stolen #shorts",
+   "link": "https://www.youtube.com/shorts/BkAGFvbUYUA",
+   "published": "2026-10-06T02:00:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BkAGFvbUYUA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "ZGydYtp3-gA",
+   "title": "Bermuda mother, son identified among passengers aboard missing plane off Nantucket #shorts",
+   "link": "https://www.youtube.com/shorts/ZGydYtp3-gA",
+   "published": "2026-10-06T00:59:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZGydYtp3-gA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "dY2bZX-67YA",
    "title": "Driver charged with attempted murder after striking 2 college students on campus #shorts",
@@ -178,19 +272,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/sYAtmKwBqn4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "dWDOHgc0ae0",
-   "title": "WPRI 12 Weather Forecast 10-5-26  Clear Chilly Overnight",
-   "link": "https://www.youtube.com/watch?v=dWDOHgc0ae0",
-   "published": "2026-10-05T21:59:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dWDOHgc0ae0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "mUWI7NoK7k4",
@@ -471,16 +552,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/5cSSUy6-2tU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7kP-fPmWR8Q",
-   "title": "Gov. Maura Healey discusses winter heating costs",
-   "link": "https://www.youtube.com/watch?v=7kP-fPmWR8Q",
-   "published": "2026-10-05T14:02:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/7kP-fPmWR8Q/mqdefault.jpg",
    "towns": []
   },
   {

@@ -7,6 +7,7 @@ import videoChannelsData from '../data/video-channels.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
+import { storyTracker } from '../../scripts/lib/dedupe.mjs';
 import { sortByPosted } from '../../scripts/lib/social.mjs';
 import { recentVideos, featuredVideo as pickFeaturedVideo } from '../../scripts/lib/videos.mjs';
 import { isPublishedAt, timeAgo } from './time.mjs';
@@ -217,7 +218,8 @@ export const storyItems = () =>
 
 /**
  * Pick `n` top stories for the front page: recent items with a real summary,
- * at most one per source so a single outlet can't fill the top of the page.
+ * at most one per source so a single outlet can't fill the top of the page, and
+ * never two outlets' versions of the same story.
  */
 export function pickTopStories(items: WireItem[], n: number, now = new Date(), exclude: WireItem[] = []) {
   const published = items.filter((i) => isPublishedAt(i.date, now));
@@ -227,9 +229,12 @@ export function pickTopStories(items: WireItem[], n: number, now = new Date(), e
   const picked: WireItem[] = [];
   const skip = new Set(exclude.map((i) => i.id));
   const sources = new Set<string>(exclude.map((i) => i.source));
+  // Another outlet's version of a story already placed does not take a second slot.
+  const told = storyTracker(exclude);
   for (const item of pool) {
-    if (skip.has(item.id) || sources.has(item.source)) continue;
+    if (skip.has(item.id) || sources.has(item.source) || told.has(item)) continue;
     picked.push(item);
+    told.add(item);
     sources.add(item.source);
     if (picked.length === n) break;
   }

@@ -9,7 +9,7 @@ import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
 import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
-import { sig, sameStory } from '../../scripts/lib/dedupe.mjs';
+import { storyTracker } from '../../scripts/lib/dedupe.mjs';
 import { storyItems, meetingItems, wireItems, pickTopStories, featuredStories, socialPosts, itemsForSection, featuredVideo, timeAgo } from '../lib/wire';
 
 // The featured video from the TV newsrooms' YouTube channels, shown above the rail: the newest
@@ -34,33 +34,33 @@ const shown = new Set(top.map((i) => i.id));
 // Render a few extra; the script below trims the rail to the height of the
 // stories beside it. Without JS (and on narrow screens) CSS shows six.
 const railPicks = featured.filter((i) => i.featuredSlot === 'rail');
-// One story, one slot: the rail skips a headline that repeats the featured video or a top story,
+// One story, one slot: the rail skips a story that repeats the featured video or a top story,
 // and keeps only the first outlet's version when several run the same news.
-const told = [video?.title, ...top.map((i) => i.title)].filter(Boolean).map((t) => sig(t as string));
+const placedRail = storyTracker([video, ...top, ...railPicks].filter(Boolean) as any[]);
 const railCandidates = stories.filter((i) => !shown.has(i.id) && i.featuredRank == null).filter((i) => {
-  const s = sig(i.title);
-  if (told.some((t) => sameStory(t, s))) return false;
-  told.push(s);
+  if (placedRail.has(i)) return false;
+  placedRail.add(i);
   return true;
 });
 const wire = [...railPicks, ...railCandidates].slice(0, 12);
 wire.forEach((i) => shown.add(i.id));
 // Stories already on the page: the top slots and the visible part of the rail.
 const visible = new Set([...top, ...wire.slice(0, 6)].map((i) => i.id));
-// Headlines already on the page, so the rows below skip another outlet's version of the same story.
-const onPage = [video?.title, ...top.map((i) => i.title), ...wire.slice(0, 6).map((i) => i.title)].filter(Boolean).map((t) => sig(t as string));
-const repeats = (title: string) => onPage.some((t) => sameStory(t, sig(title)));
+// Stories already on the page, so the rows below skip another outlet's version of the same story.
+const onPage = storyTracker([video, ...top, ...wire.slice(0, 6)].filter(Boolean) as any[]);
 // Up to n stories not already told; also drops repeats within the list itself.
 const takeNew = <T extends { id: string; title: string }>(list: T[], n: number) => {
+  const local = storyTracker();
   const got: T[] = [];
   for (const i of list) {
-    if (repeats(i.title) || got.some((g) => sameStory(sig(g.title), sig(i.title)))) continue;
+    if (onPage.has(i) || local.has(i)) continue;
+    local.add(i);
     got.push(i);
     if (got.length === n) break;
   }
   return got;
 };
-const commit = (items: { title: string }[]) => items.forEach((i) => onPage.push(sig(i.title)));
+const commit = (items: { title: string }[]) => items.forEach((i) => onPage.add(i));
 const FEATURE_SECTIONS = ['real-estate', 'business', 'food-drink', 'things-to-do'] as const;
 // Sections below the top stories run freshest first: the section whose newest
 // story is most recent leads. Empty sections go last. The page rebuilds every

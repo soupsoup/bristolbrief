@@ -1,41 +1,12 @@
 {
- "updated": "2026-10-07T02:35:30.055Z",
+ "updated": "2026-10-07T07:05:44.341Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
@@ -43,9 +14,193 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "J9tsMCk_kDY",
+   "title": "WPRI 12 Weather Forecast 10-6-26 Cold Start, Mild Finish Wednesday",
+   "link": "https://www.youtube.com/watch?v=J9tsMCk_kDY",
+   "published": "2026-10-07T03:29:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J9tsMCk_kDY/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "h1DUPv_YeQY",
+   "title": "Providence police arrest woman accused of starting fire in her bedroom",
+   "link": "https://www.youtube.com/watch?v=h1DUPv_YeQY",
+   "published": "2026-10-07T03:13:20.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/h1DUPv_YeQY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "M-R9jILFV2U",
+   "title": "Report: Johnston FD has responded to Amazon Warehouse around 200 times",
+   "link": "https://www.youtube.com/watch?v=M-R9jILFV2U",
+   "published": "2026-10-07T03:10:14.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/M-R9jILFV2U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "F7TVCScGyuU",
+   "title": "Phase 3 for the RI AnchorHome program",
+   "link": "https://www.youtube.com/watch?v=F7TVCScGyuU",
+   "published": "2026-10-07T03:07:02.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/F7TVCScGyuU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "E66GhNkmPP8",
+   "title": "Providence woman charged with arson after setting fire in bedroom",
+   "link": "https://www.youtube.com/watch?v=E66GhNkmPP8",
+   "published": "2026-10-07T03:06:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/E66GhNkmPP8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "k5tr-71ze34",
+   "title": "Providence man found guilty of 2021 Pawtucket murder",
+   "link": "https://www.youtube.com/watch?v=k5tr-71ze34",
+   "published": "2026-10-07T03:05:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/k5tr-71ze34/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "h3nn0oPUI5Q",
+   "title": "New Bedford man convicted in deadly 2023 shooting",
+   "link": "https://www.youtube.com/watch?v=h3nn0oPUI5Q",
+   "published": "2026-10-07T03:02:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/h3nn0oPUI5Q/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "jvyOAKjgBYo",
+   "title": "Jamestown, Narragansett mull sharing a superintendent",
+   "link": "https://www.youtube.com/watch?v=jvyOAKjgBYo",
+   "published": "2026-10-07T03:02:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jvyOAKjgBYo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6prmLeIcQiE",
+   "title": "Portsmouth and Mt. Hope draw 2-2 in girls soccer",
+   "link": "https://www.youtube.com/watch?v=6prmLeIcQiE",
+   "published": "2026-10-07T02:50:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6prmLeIcQiE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "T5Z5tvIVyHc",
+   "title": "What are the RI ballot questions for 2026? #shorts",
+   "link": "https://www.youtube.com/shorts/T5Z5tvIVyHc",
+   "published": "2026-10-07T02:17:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/T5Z5tvIVyHc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "KhbTGzz4OAI",
+   "title": "Providence finding identity with Pate eligibility in limbo",
+   "link": "https://www.youtube.com/watch?v=KhbTGzz4OAI",
+   "published": "2026-10-07T01:58:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/KhbTGzz4OAI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1Es2Ox-JARw",
+   "title": "Air ambulance operator identifies crew presumed dead after plane disappears off Nantucket",
+   "link": "https://www.youtube.com/watch?v=1Es2Ox-JARw",
+   "published": "2026-10-07T01:44:38.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1Es2Ox-JARw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ibVNBzzPOrc",
+   "title": "Why white rectangles are appearing on Providence sidewalks #shorts",
+   "link": "https://www.youtube.com/shorts/ibVNBzzPOrc",
+   "published": "2026-10-07T01:28:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ibVNBzzPOrc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "rfXKpzCmWyI",
+   "title": "Civil trial begins over 2023 attack that seriously injured RI Hospital nurse #shorts",
+   "link": "https://www.youtube.com/shorts/rfXKpzCmWyI",
+   "published": "2026-10-07T00:23:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rfXKpzCmWyI/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "V7d0XsD0JoE",
    "title": "Feinberg sees positives in Paramount-Warner Bros. merger",
@@ -248,19 +403,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/CjrMTS1xGZQ/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "ePxJNbxBJSA",
-   "title": "WPRI 12 Weather Forecast 10-6-26 Patchy Frost After Midnight",
-   "link": "https://www.youtube.com/watch?v=ePxJNbxBJSA",
-   "published": "2026-10-06T21:31:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ePxJNbxBJSA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "ynlvzGD6Fs8",
@@ -610,16 +752,6 @@
     "raynham"
    ],
    "local": true
-  },
-  {
-   "id": "F7TVCScGyuU",
-   "title": "Phase 3 for the RI AnchorHome program",
-   "link": "https://www.youtube.com/watch?v=F7TVCScGyuU",
-   "published": "2026-10-06T14:33:19.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/F7TVCScGyuU/mqdefault.jpg",
-   "towns": []
   },
   {
    "id": "B1yWpKxFmHg",

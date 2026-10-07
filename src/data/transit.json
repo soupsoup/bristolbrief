@@ -1,6 +1,32 @@
 {
- "updated": "2026-10-07T12:05:32.074Z",
- "alerts": [],
+ "updated": "2026-10-07T12:35:32.228Z",
+ "alerts": [
+  {
+   "id": "1037289",
+   "header": "Fall River Line Train 1909 (8:18 AM from South Station) is operating 5-15 minutes behind schedule between South Station and Fall River due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-07T08:34:09-04:00",
+   "end": "2026-10-07T11:02:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-07T08:34:09-04:00"
+  }
+ ],
  "stopParents": {
   "NEC-1919": "place-NEC-1919",
   "NEC-1919-01": "place-NEC-1919",

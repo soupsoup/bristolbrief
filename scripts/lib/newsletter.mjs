@@ -4,7 +4,7 @@
 // paste into a beehiiv post. beehiiv adds its own header, unsubscribe link
 // and footer, so none of those are included here.
 
-import { titleKey, sig, overlap, sameStory } from './dedupe.mjs';
+import { titleKey, sig, sameStory, bodySig, sameIncident } from './dedupe.mjs';
 
 export const SITE_URL = 'https://bristolbrief.com';
 const ET = 'America/New_York';
@@ -14,10 +14,6 @@ const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<
 // Section weight: what a Bristol County reader most needs first.
 const SECTION_WEIGHT = { 'public-safety': 3, government: 3, schools: 2, news: 2, business: 1, 'food-drink': 0.5, 'things-to-do': 0.5 };
 const SKIP_SECTIONS = new Set(['listings', 'sports', 'real-estate']);
-
-/** Headlines can differ while the story is the same: same town and four or more distinctive words across headline and summary. */
-const bodySig = (i) => sig(`${i.title} ${(i.summary ?? '').slice(0, 240)}`);
-const sameIncident = (a, b) => a.towns.some((t) => b.towns.includes(t)) && overlap(a.body, b.body) >= 4;
 
 /** Drop tracking parameters outlets add to their feed links. */
 export const cleanLink = (href) => {

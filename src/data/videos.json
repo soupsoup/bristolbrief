@@ -1,16 +1,37 @@
 {
- "updated": "2026-10-07T21:35:30.292Z",
+ "updated": "2026-10-07T22:05:27.948Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,35 +44,37 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "qx9Hon8tNyo",
+   "title": "Rhode Island fire officials warn of rising lithium-ion battery fire risks",
+   "link": "https://www.youtube.com/watch?v=qx9Hon8tNyo",
+   "published": "2026-10-07T21:43:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qx9Hon8tNyo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mu_dWya_0eg",
+   "title": "Chipotle worker identified in deadly Raynham crash",
+   "link": "https://www.youtube.com/watch?v=mu_dWya_0eg",
+   "published": "2026-10-07T21:43:25.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/mu_dWya_0eg/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
   {
    "id": "hpq_1TuTiWI",
    "title": "Jury selection continues in Matthew Farwell murder trial",

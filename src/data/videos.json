@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-07T11:35:50.596Z",
+ "updated": "2026-10-07T12:05:32.074Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -16,20 +30,6 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
@@ -37,8 +37,8 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,6 +53,53 @@
  ],
  "videos": [
   {
+   "id": "SCqtgQN3mbs",
+   "title": "Meet the candidates: Gabe Amo for RI Congress",
+   "link": "https://www.youtube.com/watch?v=SCqtgQN3mbs",
+   "published": "2026-10-07T11:58:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/SCqtgQN3mbs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "a1i1yDZF0mw",
+   "title": "NBC 10 is hosting a debate with the candidates for Rhode Island Governor",
+   "link": "https://www.youtube.com/shorts/a1i1yDZF0mw",
+   "published": "2026-10-07T11:51:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/a1i1yDZF0mw/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "UriLDv3Isdk",
+   "title": "WPRI 12 Weather Forecast for 10/7/26:  Cold start, milder this afternoon",
+   "link": "https://www.youtube.com/watch?v=UriLDv3Isdk",
+   "published": "2026-10-07T11:40:35.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UriLDv3Isdk/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "UfPeWWySFhY",
+   "title": "Driver hospitalized after East Providence crash",
+   "link": "https://www.youtube.com/watch?v=UfPeWWySFhY",
+   "published": "2026-10-07T11:36:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UfPeWWySFhY/mqdefault.jpg",
+   "towns": []
+  },
+  {
    "id": "ub98aRmqXhU",
    "title": "Behind the Smiles Photo for 10/7/26 from Tim in North Smithfield",
    "link": "https://www.youtube.com/watch?v=ub98aRmqXhU",
@@ -63,19 +110,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "cE17c_HZZr4",
-   "title": "WPRI 12 Weather Forecast for 10/7/26:  Chilly and Frosty Start, Milder This Afternoon",
-   "link": "https://www.youtube.com/watch?v=cE17c_HZZr4",
-   "published": "2026-10-07T09:02:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cE17c_HZZr4/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "J9tsMCk_kDY",

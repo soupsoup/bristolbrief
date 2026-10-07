@@ -3,7 +3,7 @@ export const SITE = {
   tagline: 'Local news for Bristol County, Massachusetts',
   description:
     'Local headlines, public meetings, weather and transit alerts for the 20 cities and towns of Bristol County, Massachusetts, gathered from local newsrooms and town halls.',
-  email: 'tips@bristolbrief.com',
+  email: 'bristolbrief@gmail.com',
   // The National Grid and Eversource outage-map links at the top of the home page's right
   // rail. Off for now; set to true during severe weather (storms, widespread outages).
   showOutageMaps: false,

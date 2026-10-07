@@ -318,7 +318,7 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   h.push(
     box(
       `margin:28px 0 0;padding:14px 0;border-top:1px solid ${RULE};${type(SANS, 400, 15, 22)}`,
-      `More from all 20 cities and towns at ${link(SITE_URL, 'bristolbrief.com')}. Got a tip? Reply to this email or write ${link('mailto:tips@bristolbrief.com', 'tips@bristolbrief.com')}.`,
+      `More from all 20 cities and towns at ${link(SITE_URL, 'bristolbrief.com')}. Got a tip? Reply to this email or write ${link('mailto:bristolbrief@gmail.com', 'bristolbrief@gmail.com')}.`,
     ),
   );
   h.push(`</td></tr></table></td></tr></table>`);
@@ -341,7 +341,7 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
     for (const s of scores) t.push(`${s.title} ${s.link}`);
     t.push('');
   }
-  t.push(`More from all 20 cities and towns: ${SITE_URL}`, 'Got a tip? tips@bristolbrief.com');
+  t.push(`More from all 20 cities and towns: ${SITE_URL}`, 'Got a tip? bristolbrief@gmail.com');
 
   return { subject, preheader, html: h.join('\n'), text: t.join('\n'), counts: { stories: stories.length, meetings: todays.length, scores: scores.length, alerts: alerts.length }, stories };
 }

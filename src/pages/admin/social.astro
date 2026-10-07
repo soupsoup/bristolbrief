@@ -3,12 +3,13 @@ import Admin from '../../layouts/Admin.astro';
 import { readEditorial } from '../../lib/admin/store';
 import { TOWNS, townName } from '../../site.config';
 import type { SocialPost } from '../../lib/wire';
+import { sortByPosted } from '../../../scripts/lib/social.mjs';
 import candidatesData from '../../data/social-candidates.json';
 
 export const prerender = false;
 
 const { doc } = await readEditorial();
-const posts = (doc.social ?? []) as SocialPost[];
+const posts = sortByPosted((doc.social ?? []) as SocialPost[]) as SocialPost[];
 const PLATFORM: Record<string, string> = { x: 'X', bluesky: 'Bluesky', mastodon: 'Mastodon', link: 'Link' };
 
 // Posts the hourly scan found, minus ones already approved, dismissed, or from muted accounts.
@@ -29,7 +30,7 @@ const when = (iso?: string) =>
   <h1>Social posts</h1>
   <p class="a-muted">
     Paste a link to a post on X (or Bluesky) and it appears in the "On social" section of the home
-    page, newest first. The home page shows six; the rest are on the <a href="/social/" target="_blank">social page</a>.
+    page, newest first by when it was posted on its platform. The home page shows six; the rest are on the <a href="/social/" target="_blank">social page</a>.
     Tag towns to also show a post on those town pages.
   </p>
 
@@ -129,7 +130,7 @@ const when = (iso?: string) =>
   </form>
 
   <h2>Approved ({posts.length})</h2>
-  <p class="a-muted help">The first post is on the home page; all of them are on the <a href="/social/" target="_blank">social page</a>.</p>
+  <p class="a-muted help">Posts run newest first by when they went up on their own platform. The first is on the home page; all of them are on the <a href="/social/" target="_blank">social page</a>.</p>
   {posts.length === 0 && <p class="a-muted">No posts yet.</p>}
   <ol class="posts">
     {posts.map((p, n) => (
@@ -150,8 +151,6 @@ const when = (iso?: string) =>
           <div class="btn-row"><button type="submit" class="a-btn primary">Save</button><button type="button" class="a-btn" data-cancel>Cancel</button></div>
         </form>
         <div class="btn-row">
-          <button class="a-btn" data-op="up" disabled={n === 0} aria-label="Move up">↑</button>
-          <button class="a-btn" data-op="down" disabled={n === posts.length - 1} aria-label="Move down">↓</button>
           <button class="a-btn" data-op="edit">Edit</button>
           <a class="a-btn" href={p.url} target="_blank" rel="noopener">Open ↗</a>
           <button class="a-btn danger" data-op="remove">Remove</button>

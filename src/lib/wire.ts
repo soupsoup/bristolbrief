@@ -7,6 +7,7 @@ import videoChannelsData from '../data/video-channels.json';
 import editorialData from '../data/editorial.json';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
+import { sortByPosted } from '../../scripts/lib/social.mjs';
 import { recentVideos, featuredVideo as pickFeaturedVideo } from '../../scripts/lib/videos.mjs';
 import { isPublishedAt, timeAgo } from './time.mjs';
 
@@ -253,8 +254,8 @@ export interface SocialPost {
   addedAt: string;
 }
 
-/** Social posts editors added, in their chosen order (newest first by default). */
-export const socialPosts = () => ((editorialData as { social?: SocialPost[] }).social ?? []) as SocialPost[];
+/** Social posts editors approved, newest first by when each was posted on its own platform. */
+export const socialPosts = () => sortByPosted(((editorialData as { social?: SocialPost[] }).social ?? []) as SocialPost[]) as SocialPost[];
 export const socialForTown = (town: string) => socialPosts().filter((p) => p.towns?.includes(town));
 
 import policeData from '../data/police-log.json';

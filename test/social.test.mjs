@@ -82,3 +82,15 @@ test('scan keeps clear Bristol County posts and drops look-alikes', () => {
   assert.deepEqual(socialTowns('Beautiful day in Westport, CT'), []);
   assert.deepEqual(socialTowns('Swansea MA town meeting tonight'), ['swansea']);
 });
+
+test('posts sort newest first by when they were posted, not when they were added', async () => {
+  const { sortByPosted, postedTime } = await import('../scripts/lib/social.mjs');
+  const posts = [
+    { id: 'old-added-late', postedAt: '2026-10-02T17:31:09.802Z', addedAt: '2026-10-07T19:09:00Z' },
+    { id: 'newest', postedAt: '2026-10-07T13:03:41.147Z', addedAt: '2026-10-07T19:08:00Z' },
+    { id: 'x-label-only', postedLabel: 'October 5, 2026', addedAt: '2026-10-05T12:00:00Z' },
+    { id: 'no-times', addedAt: '2026-10-06T08:00:00Z' },
+  ];
+  assert.deepEqual(sortByPosted(posts).map((p) => p.id), ['newest', 'no-times', 'x-label-only', 'old-added-late']);
+  assert.equal(postedTime({}), 0);
+});

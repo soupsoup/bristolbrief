@@ -257,3 +257,22 @@ export async function fetchOembed(parsed, { fetchImpl = fetch } = {}) {
     return null;
   }
 }
+
+/**
+ * When a post went up on its own platform, in ms. Bluesky and Mastodon give an exact time
+ * (`postedAt`); X's embed gives only a date label ("September 26, 2026"). A post with neither
+ * falls back to when an editor added it.
+ */
+export function postedTime(post) {
+  for (const raw of [post?.postedAt, post?.postedLabel]) {
+    const t = raw ? Date.parse(raw) : NaN;
+    if (Number.isFinite(t)) return t;
+  }
+  const added = Date.parse(post?.addedAt ?? '');
+  return Number.isFinite(added) ? added : 0;
+}
+
+/** Newest first by the time posted on the original platform; ties go to the one added later. */
+export function sortByPosted(posts) {
+  return [...posts].sort((a, b) => postedTime(b) - postedTime(a) || Date.parse(b.addedAt ?? '') - Date.parse(a.addedAt ?? '') || 0);
+}

@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-08T21:35:28.901Z",
+ "updated": "2026-10-08T22:05:31.250Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,22 +16,8 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,14 +30,71 @@
    "kept": 15
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "9Y0WqjniT4c",
+   "title": "Jury selection continues in Matthew Farwell murder trial",
+   "link": "https://www.youtube.com/watch?v=9Y0WqjniT4c",
+   "published": "2026-10-08T22:00:31.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/9Y0WqjniT4c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RoQrhIdwh4A",
+   "title": "Students at Brown University rally against sexual violence on college campuses",
+   "link": "https://www.youtube.com/watch?v=RoQrhIdwh4A",
+   "published": "2026-10-08T21:46:07.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/RoQrhIdwh4A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "UXdj2cu4l4U",
+   "title": "Brown, MIT among universities under investigation for visa fraud",
+   "link": "https://www.youtube.com/watch?v=UXdj2cu4l4U",
+   "published": "2026-10-08T21:39:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UXdj2cu4l4U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "LfOY5iim9kI",
+   "title": "Acushnet 9-year-old turns hockey shots into hope for local families",
+   "link": "https://www.youtube.com/watch?v=LfOY5iim9kI",
+   "published": "2026-10-08T21:35:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/LfOY5iim9kI/mqdefault.jpg",
+   "towns": [
+    "acushnet"
+   ],
+   "local": true
+  },
   {
    "id": "jpXKUrS7zbs",
    "title": "RI reports 1st human case of West Nile virus this year",

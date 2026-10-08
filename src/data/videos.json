@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T02:06:29.658Z",
+ "updated": "2026-10-08T02:35:48.708Z",
  "channels": [
   {
    "id": "nbc10-wjar",
@@ -8,14 +8,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -26,26 +20,67 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "kept": 15
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
    "error": "HTTP 500"
   }
  ],
  "videos": [
+  {
+   "id": "XvBrJh8-ZTw",
+   "title": "Lawyer: TF Green worker caught with gun was director of operations",
+   "link": "https://www.youtube.com/watch?v=XvBrJh8-ZTw",
+   "published": "2026-10-08T02:34:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XvBrJh8-ZTw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "WJ53DQe-6bc",
+   "title": "WPRI 12 Weather Now 10-7-26  Dry Warmer Thursday",
+   "link": "https://www.youtube.com/watch?v=WJ53DQe-6bc",
+   "published": "2026-10-08T02:30:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/WJ53DQe-6bc/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "oRzkjnTtN0A",
+   "title": "Mother, 2-year-old stabbed in Providence #shorts",
+   "link": "https://www.youtube.com/shorts/oRzkjnTtN0A",
+   "published": "2026-10-08T00:59:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/oRzkjnTtN0A/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "4gyEBhNWGlE",
    "title": "NBC 10 hosts debate with Gubernatorial candidates",
@@ -203,19 +238,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/3w8Hm66Nnw8/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "VCwccDygBng",
-   "title": "WPRI 12 Weather Forecast 10-7-26 Warmer Dry Thursday",
-   "link": "https://www.youtube.com/watch?v=VCwccDygBng",
-   "published": "2026-10-07T22:26:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VCwccDygBng/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "-gZnAgPn-JA",

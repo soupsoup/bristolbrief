@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-08T21:05:25.054Z",
+ "updated": "2026-10-08T21:35:28.901Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,8 +23,15 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -42,16 +49,42 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "jpXKUrS7zbs",
+   "title": "RI reports 1st human case of West Nile virus this year",
+   "link": "https://www.youtube.com/watch?v=jpXKUrS7zbs",
+   "published": "2026-10-08T21:10:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jpXKUrS7zbs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JwM0Fp8vnBs",
+   "title": "Fall River man accused of recording people in his bathroom with hidden camera",
+   "link": "https://www.youtube.com/watch?v=JwM0Fp8vnBs",
+   "published": "2026-10-08T21:08:08.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JwM0Fp8vnBs/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "HgyebMTGKPQ",
+   "title": "Man accused of stabbing 2-year-old and mother deemed not a public threat in July",
+   "link": "https://www.youtube.com/watch?v=HgyebMTGKPQ",
+   "published": "2026-10-08T21:07:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HgyebMTGKPQ/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "A3IFtdkj7Ak",
    "title": "Hispanic Heritage Month: Meet Elvys Ruiz",

@@ -1,28 +1,11 @@
 {
- "updated": "2026-10-08T19:06:08.683Z",
+ "updated": "2026-10-08T19:35:28.831Z",
  "alerts": [
   {
-   "id": "1037641",
-   "header": "Fall River Line Train 1919 (1:05 PM from South Station) is now operating 10-20 minutes behind schedule between Campello and Fall River due to an earlier unruly passenger.",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNRULY_PASSENGER",
-   "start": "2026-10-08T13:32:00-04:00",
-   "end": "2026-10-08T15:50:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-08T14:12:02-04:00"
-  },
-  {
    "id": "1037667",
-   "header": "Fall River Line Train 1984 (3:13 PM from Fall River Depot) is expected to depart Fall River Depot 5-15 minutes behind schedule due to an earlier unruly passenger.",
+   "header": "Fall River Line Train 1984 (3:13 PM from Fall River Depot) has departed Fall River Depot and is operating near schedule.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 1,
    "lifecycle": "NEW",
    "cause": "UNRULY_PASSENGER",
    "start": "2026-10-08T15:13:00-04:00",
@@ -33,7 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-08T14:54:34-04:00"
+   "updated": "2026-10-08T15:15:54-04:00"
   }
  ],
  "stopParents": {

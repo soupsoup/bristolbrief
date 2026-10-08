@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-08T17:05:32.574Z",
+ "updated": "2026-10-08T17:35:31.232Z",
  "alerts": [
+  {
+   "id": "1037641",
+   "header": "Fall River Line Train 1919 (1:05 PM from South Station) is stopped at Quincy Center and is 10-20 minutes behind schedule due to an unruly passenger.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNRULY_PASSENGER",
+   "start": "2026-10-08T13:32:09-04:00",
+   "end": "2026-10-08T15:50:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-08T13:32:09-04:00"
+  },
   {
    "id": "1037631",
    "header": "Providence Line Train 840 (11:57 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",

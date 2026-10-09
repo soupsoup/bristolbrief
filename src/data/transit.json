@@ -1,22 +1,22 @@
 {
- "updated": "2026-10-09T21:05:26.779Z",
+ "updated": "2026-10-09T21:35:27.745Z",
  "alerts": [
   {
-   "id": "1037936",
-   "header": "Stoughton Line Train 955 (3:55 PM from South Station) has departed South Station and is operating 20-30 minutes behind schedule due to late equipment from the train yard.",
+   "id": "1037959",
+   "header": "Providence Line Train 864 (4:35 PM from Wickford Junction) is operating 5-15 minutes behind schedule between Providence and South Station.",
    "effect": "DELAY",
-   "severity": 7,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-09T16:12:00-04:00",
-   "end": "2026-10-09T17:34:00-04:00",
+   "start": "2026-10-09T17:17:11-04:00",
+   "end": "2026-10-09T19:18:00-04:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-09T16:18:30-04:00"
+   "updated": "2026-10-09T17:17:11-04:00"
   },
   {
    "id": "1037949",
@@ -34,30 +34,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-09T16:52:09-04:00"
-  },
-  {
-   "id": "1037916",
-   "header": "Providence Line Train 851 (3:20 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-09T15:40:15-04:00",
-   "end": "2026-10-09T17:30:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-10-09T15:40:15-04:00"
   }
  ],
  "stopParents": {

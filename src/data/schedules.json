@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T01:36:14.573Z",
+ "updated": "2026-10-09T02:05:36.690Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -68,6 +68,17 @@
    "league": "NHL",
    "past": [
     {
+     "id": "nhl-2026020056",
+     "date": "2026-10-08T23:00:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Mammoth",
+     "status": "final",
+     "us": 6,
+     "them": 1,
+     "result": "W"
+    },
+    {
      "id": "nhl-2026020041",
      "date": "2026-10-05T23:30:00Z",
      "tbd": false,
@@ -111,31 +122,9 @@
      "us": 3,
      "them": 0,
      "result": "W"
-    },
-    {
-     "id": "nhl-2026010049",
-     "date": "2026-09-25T23:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Capitals",
-     "status": "final",
-     "us": 2,
-     "them": 3,
-     "result": "OTL",
-     "note": "Preseason · OT"
     }
    ],
    "next": [
-    {
-     "id": "nhl-2026020056",
-     "date": "2026-10-08T23:00:00Z",
-     "tbd": false,
-     "home": true,
-     "opponent": "Mammoth",
-     "status": "live",
-     "us": 6,
-     "them": 1
-    },
     {
      "id": "nhl-2026020070",
      "date": "2026-10-10T17:00:00Z",
@@ -166,6 +155,14 @@
      "tbd": false,
      "home": false,
      "opponent": "Kings",
+     "status": "scheduled"
+    },
+    {
+     "id": "nhl-2026020147",
+     "date": "2026-10-21T00:00:00Z",
+     "tbd": false,
+     "home": false,
+     "opponent": "Stars",
      "status": "scheduled"
     }
    ]

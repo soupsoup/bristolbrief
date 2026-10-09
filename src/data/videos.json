@@ -1,19 +1,11 @@
 {
- "updated": "2026-10-09T02:05:36.690Z",
+ "updated": "2026-10-09T04:35:23.803Z",
  "channels": [
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
@@ -23,11 +15,10 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
@@ -37,6 +28,13 @@
    "kept": 15
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -44,14 +42,89 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "xuWK_wkd95Y",
+   "title": "WPRI 12 Weather Forecast 10-8-26 More Sunshine Friday",
+   "link": "https://www.youtube.com/watch?v=xuWK_wkd95Y",
+   "published": "2026-10-09T03:28:28.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xuWK_wkd95Y/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "Y1_E7ehFvJg",
+   "title": "WPRI 12 Now 10-8-26  Sunny Next Few Days",
+   "link": "https://www.youtube.com/watch?v=Y1_E7ehFvJg",
+   "published": "2026-10-09T03:19:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Y1_E7ehFvJg/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "0g3nxRgOpIo",
+   "title": "Local basketball legend Tom Cannon honored at Valley Country Club",
+   "link": "https://www.youtube.com/watch?v=0g3nxRgOpIo",
+   "published": "2026-10-09T03:14:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0g3nxRgOpIo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "-kOxQPpKNvg",
+   "title": "Neighbors react to a man stabbing a mother and her daughter in Providence",
+   "link": "https://www.youtube.com/watch?v=-kOxQPpKNvg",
+   "published": "2026-10-09T03:14:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/-kOxQPpKNvg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "SCFBCXDG0lw",
+   "title": "Moses Brown tops Barrington in D1 field hockey, 3-1",
+   "link": "https://www.youtube.com/watch?v=SCFBCXDG0lw",
+   "published": "2026-10-09T03:12:08.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/SCFBCXDG0lw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "de7EaLCeN-Q",
+   "title": "Johnston neighborhood plagued by rat infestation",
+   "link": "https://www.youtube.com/watch?v=de7EaLCeN-Q",
+   "published": "2026-10-09T02:43:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/de7EaLCeN-Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vbvc6ztvWtU",
+   "title": "Man accused of stabbing 2-year-old and mother has lengthy criminal history",
+   "link": "https://www.youtube.com/watch?v=vbvc6ztvWtU",
+   "published": "2026-10-09T02:41:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/vbvc6ztvWtU/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "y_Jacy5iuos",
    "title": "Man accused of stabbing 2-year-old and mother deemed not a public threat in July #shorts",
@@ -153,19 +226,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/8J4FKFIUp6A/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "X-lOfGHihsM",
-   "title": "WPRI 12 Weather Now 10-8-26 Clear Cooler Tonight",
-   "link": "https://www.youtube.com/watch?v=X-lOfGHihsM",
-   "published": "2026-10-08T22:37:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/X-lOfGHihsM/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "xZESYn0PAUw",

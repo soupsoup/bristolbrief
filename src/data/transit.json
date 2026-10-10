@@ -1,14 +1,48 @@
 {
- "updated": "2026-10-10T20:05:30.493Z",
+ "updated": "2026-10-10T20:35:38.470Z",
  "alerts": [
   {
+   "id": "1038100",
+   "header": "Fall River Line Train 6921 (2:20 PM from South Station) remains stopped at Freetown and is now 40-50 minutes behind schedule due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-10T16:08:00-04:00",
+   "end": "2026-10-10T17:04:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-10T16:26:31-04:00"
+  },
+  {
+   "id": "1038102",
+   "header": "Fall River Line Train 6936 (4:39 PM from Fall River Depot) is now expected to depart Fall River at least 30 minutes behind schedule due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-10T16:39:00-04:00",
+   "end": "2026-10-10T19:14:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-10T16:28:43-04:00"
+  },
+  {
    "id": "1038097",
-   "header": "Providence Line Train 5856 (3:47 PM from Providence) has yet to depart Providence and is 10-20 minutes behind schedule.",
+   "header": "Providence Line Train 5856 (3:47 PM from Providence) has departed Providence and is operating 10-20 minutes behind schedule.",
    "effect": "DELAY",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-10T15:59:12-04:00",
+   "start": "2026-10-10T15:59:00-04:00",
    "end": "2026-10-10T18:05:00-04:00",
    "routes": [
     "CR-Providence"
@@ -16,7 +50,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-10T15:59:12-04:00"
+   "updated": "2026-10-10T16:05:11-04:00"
   }
  ],
  "stopParents": {

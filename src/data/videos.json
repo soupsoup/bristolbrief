@@ -1,15 +1,9 @@
 {
- "updated": "2026-10-10T01:35:31.480Z",
+ "updated": "2026-10-10T02:35:29.218Z",
  "channels": [
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -20,16 +14,24 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -41,11 +43,25 @@
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 500"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "B4-TZaxLPLA",
+   "title": "WPRI 12 Weather Now 10-9-26  More Sunshine Saturday",
+   "link": "https://www.youtube.com/watch?v=B4-TZaxLPLA",
+   "published": "2026-10-10T01:56:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/B4-TZaxLPLA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "wMVieFoUVc0",
    "title": "Saltwater Sessions: Kelsey Bailey of Boat U.S. #shorts",
@@ -232,19 +248,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/TJkHcZj02nw/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "px_GUPA2uUw",
-   "title": "WPRI 12 Weather Forecast  10-9-26 Clear Tonight, Nice Saturday",
-   "link": "https://www.youtube.com/watch?v=px_GUPA2uUw",
-   "published": "2026-10-09T21:27:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/px_GUPA2uUw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "IotaRKO-ZjA",
@@ -3369,19 +3372,6 @@
    "thumbnail": "https://i.ytimg.com/vi/3dASL3TV-Iw/mqdefault.jpg",
    "towns": [
     "dartmouth"
-   ],
-   "local": true
-  },
-  {
-   "id": "MXVDFkDzbJY",
-   "title": "Fall River bat maker supplies training tools to Major League Baseball teams",
-   "link": "https://www.youtube.com/watch?v=MXVDFkDzbJY",
-   "published": "2026-10-03T02:24:09.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/MXVDFkDzbJY/mqdefault.jpg",
-   "towns": [
-    "fall-river"
    ],
    "local": true
   }

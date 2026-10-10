@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-10T22:05:31.908Z",
+ "updated": "2026-10-10T22:35:50.266Z",
  "alerts": [
   {
    "id": "1038102",
-   "header": "Fall River Line Train 6936 (4:39 PM from Fall River Depot) has departed Fall River and is operating approximately 1 hour behind schedule due to an earlier mechanical issue.",
+   "header": "Fall River Line Train 6936 (4:39 PM from Fall River Depot) is operating approximately 1 hour 20 minutes behind schedule between East Taunton and South Station due to an earlier mechanical issue.",
    "effect": "DELAY",
    "severity": 9,
    "lifecycle": "NEW",
@@ -16,7 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-10T17:48:24-04:00"
+   "updated": "2026-10-10T18:21:46-04:00"
   },
   {
    "id": "1038114",
@@ -34,6 +34,23 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-10T17:06:32-04:00"
+  },
+  {
+   "id": "1038125",
+   "header": "Providence Line Train 5867 (5:45 PM from South Station) is operating 5-15 minutes behind schedule between Route 128 and Providence.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-10T18:19:35-04:00",
+   "end": "2026-10-10T20:01:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-10T18:19:35-04:00"
   }
  ],
  "stopParents": {

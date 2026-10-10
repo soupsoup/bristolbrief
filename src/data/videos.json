@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-10T22:05:31.908Z",
+ "updated": "2026-10-10T22:35:50.266Z",
  "channels": [
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "cbs-boston",
@@ -16,6 +16,19 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
@@ -23,8 +36,8 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -35,20 +48,6 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [

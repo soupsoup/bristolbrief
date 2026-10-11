@@ -1,9 +1,16 @@
 {
- "updated": "2026-10-10T23:35:36.387Z",
+ "updated": "2026-10-11T07:06:23.520Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,49 +23,197 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
   {
-   "id": "SPz9LeARxNU",
-   "title": "WPRI 12 Weather Now 10/10/26: Dry, cool tonight; rain develops Sunday afternoon",
-   "link": "https://www.youtube.com/watch?v=SPz9LeARxNU",
-   "published": "2026-10-10T21:34:36.000Z",
+   "id": "e5NQcfN22BM",
+   "title": "Braga Bridge reopens after wrong-way motorcycle crash sends rider to hospital",
+   "link": "https://www.youtube.com/watch?v=e5NQcfN22BM",
+   "published": "2026-10-11T03:32:45.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/e5NQcfN22BM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "4w_hjY_HTUA",
+   "title": "Family releases photo of injured two-year-old, asking for help with medical expenses",
+   "link": "https://www.youtube.com/watch?v=4w_hjY_HTUA",
+   "published": "2026-10-11T03:27:55.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/4w_hjY_HTUA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "I2n_g661iR0",
+   "title": "Rhode Island grown pumpkin surpasses world record at weigh off",
+   "link": "https://www.youtube.com/watch?v=I2n_g661iR0",
+   "published": "2026-10-11T03:21:57.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/I2n_g661iR0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "hIugF5q_ciA",
+   "title": "3 displaced by Fairhaven house fire",
+   "link": "https://www.youtube.com/watch?v=hIugF5q_ciA",
+   "published": "2026-10-11T03:08:55.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SPz9LeARxNU/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/hIugF5q_ciA/mqdefault.jpg",
+   "towns": [
+    "fairhaven"
+   ],
+   "local": true
+  },
+  {
+   "id": "u1-URaPtFaM",
+   "title": "Woman sues Track 15 over outdoor propane heater explosion",
+   "link": "https://www.youtube.com/watch?v=u1-URaPtFaM",
+   "published": "2026-10-11T02:39:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/u1-URaPtFaM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qsbZUEEhGu8",
+   "title": "Man seriously injured in wrong-way crash on Braga Bridge",
+   "link": "https://www.youtube.com/watch?v=qsbZUEEhGu8",
+   "published": "2026-10-11T02:38:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qsbZUEEhGu8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "I8enE65sKB8",
+   "title": "Man dead after officer-involved shooting in Stoughton",
+   "link": "https://www.youtube.com/watch?v=I8enE65sKB8",
+   "published": "2026-10-11T02:37:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/I8enE65sKB8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "fbpt4PB6xZg",
+   "title": "Shooting leaves 9 dead including suspect in Erie, Pennsylvania, police say",
+   "link": "https://www.youtube.com/watch?v=fbpt4PB6xZg",
+   "published": "2026-10-11T02:36:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fbpt4PB6xZg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GYAzkRT1yZk",
+   "title": "Man charged after breaking into school",
+   "link": "https://www.youtube.com/watch?v=GYAzkRT1yZk",
+   "published": "2026-10-11T02:35:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GYAzkRT1yZk/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "Rdlc-Eg6z_0",
+   "title": "MSPCA takes in 30+ dogs ahead of Hurricane Isaias",
+   "link": "https://www.youtube.com/watch?v=Rdlc-Eg6z_0",
+   "published": "2026-10-11T02:31:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Rdlc-Eg6z_0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "bJ0ez0ldMWw",
+   "title": "RI man grows first recorded pumpkin over 3,000 pounds",
+   "link": "https://www.youtube.com/watch?v=bJ0ez0ldMWw",
+   "published": "2026-10-11T02:31:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bJ0ez0ldMWw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Ypijlszk2lo",
+   "title": "Autumnfest 2026 returns to Woonsocket",
+   "link": "https://www.youtube.com/watch?v=Ypijlszk2lo",
+   "published": "2026-10-11T02:25:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ypijlszk2lo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "C5XXJlF3hHY",
+   "title": "Childs powers Brown past Bryant, 28-13",
+   "link": "https://www.youtube.com/watch?v=C5XXJlF3hHY",
+   "published": "2026-10-11T02:14:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/C5XXJlF3hHY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZZuOu1df7FE",
+   "title": "WPRI 12 Weather Now 10/10/26: Showers Develop Sunday Afternoon; Widespread Rain Sunday Night",
+   "link": "https://www.youtube.com/watch?v=ZZuOu1df7FE",
+   "published": "2026-10-11T02:13:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZZuOu1df7FE/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "7Bpss9C_TaE",
+   "title": "Bay Foreast for Sunday and Monday from 10/10/26",
+   "link": "https://www.youtube.com/watch?v=7Bpss9C_TaE",
+   "published": "2026-10-11T00:28:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7Bpss9C_TaE/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
   },
   {
    "id": "aNNaTi4PVUQ",
@@ -3444,26 +3599,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/i1gvpr0EgtY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "t3lrA1RBNZQ",
-   "title": "Dueling ICE demonstrations in Warwick",
-   "link": "https://www.youtube.com/watch?v=t3lrA1RBNZQ",
-   "published": "2026-10-04T03:25:11.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/t3lrA1RBNZQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "KPBAs77C3p0",
-   "title": "Brown University announces two new spaces devoted to public safety",
-   "link": "https://www.youtube.com/watch?v=KPBAs77C3p0",
-   "published": "2026-10-04T03:22:25.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/KPBAs77C3p0/mqdefault.jpg",
    "towns": []
   }
  ]

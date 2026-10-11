@@ -1,6 +1,24 @@
 {
- "updated": "2026-10-11T01:05:30.686Z",
- "alerts": [],
+ "updated": "2026-10-11T01:35:50.415Z",
+ "alerts": [
+  {
+   "id": "1038154",
+   "header": "New Bedford Line Train 7039 (8:00 PM from South Station) is operating about 5-15 minutes behind schedule.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-10T21:26:40-04:00",
+   "end": "2026-10-10T22:41:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-10T21:26:40-04:00"
+  }
+ ],
  "stopParents": {
   "NEC-1919": "place-NEC-1919",
   "NEC-1919-01": "place-NEC-1919",

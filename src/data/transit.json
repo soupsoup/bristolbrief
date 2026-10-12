@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-12T18:35:37.376Z",
+ "updated": "2026-10-12T19:05:43.861Z",
  "alerts": [
   {
    "id": "1038340",
-   "header": "Providence Line Train 848 (2:10 PM from Providence) has departed Providence and is operating 5-15 minutes behind schedule due to late equipment from the train yard.",
+   "header": "Providence Line Train 848 (2:10 PM from Providence) is now operating near schedule between Mansfield and South Station.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 1,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-10-12T14:14:00-04:00",
@@ -16,48 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-12T14:16:47-04:00"
-  },
-  {
-   "id": "1038337",
-   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-12T14:05:56-04:00",
-   "end": "2026-10-12T15:28:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-10-12T14:05:56-04:00"
-  },
-  {
-   "id": "1038332",
-   "header": "Stoughton Line Train 942 (1:10 PM from Stoughton) is operating 5-15 minutes behind schedule between Canton Junction and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-12T13:32:22-04:00",
-   "end": "2026-10-12T14:48:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-12T13:32:22-04:00"
+   "updated": "2026-10-12T14:48:49-04:00"
   }
  ],
  "stopParents": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T15:05:52.395Z",
+ "updated": "2026-10-12T15:35:34.873Z",
  "alerts": [
   {
    "id": "1038309",
@@ -21,6 +21,23 @@
    ],
    "url": null,
    "updated": "2026-10-12T10:28:21-04:00"
+  },
+  {
+   "id": "1038315",
+   "header": "Providence Line Train 831 (10:35 AM from South Station) is stopped at Sharon and is 20-30 minutes behind schedule due to a mechanical issue. ",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-12T11:32:32-04:00",
+   "end": "2026-10-12T12:45:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-12T11:32:32-04:00"
   }
  ],
  "stopParents": {

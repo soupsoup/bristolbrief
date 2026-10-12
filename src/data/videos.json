@@ -1,13 +1,6 @@
 {
- "updated": "2026-10-12T03:05:46.011Z",
+ "updated": "2026-10-12T05:35:31.770Z",
  "channels": [
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
@@ -21,14 +14,14 @@
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -39,8 +32,15 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": false,
    "error": "HTTP 404"
   }
@@ -3609,26 +3609,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/4gL89yothS0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QFnwoVql3Mg",
-   "title": "Couple saves rescue animals as fire tears through Woonsocket home",
-   "link": "https://www.youtube.com/watch?v=QFnwoVql3Mg",
-   "published": "2026-10-05T04:19:10.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/QFnwoVql3Mg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "G1pi1vMLvSg",
-   "title": "Coast Guard suspends search for 6 aboard missing medical transport aircraft off Nantucket",
-   "link": "https://www.youtube.com/watch?v=G1pi1vMLvSg",
-   "published": "2026-10-05T04:16:30.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/G1pi1vMLvSg/mqdefault.jpg",
    "towns": []
   }
  ]

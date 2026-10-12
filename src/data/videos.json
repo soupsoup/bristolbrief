@@ -1,9 +1,16 @@
 {
- "updated": "2026-10-12T17:35:28.273Z",
+ "updated": "2026-10-12T18:05:26.981Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,8 +23,15 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,28 +44,24 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "cKq8VTF9Dgw",
+   "title": "Spotlight New England: Real Talk Rhody with Bekah Berger",
+   "link": "https://www.youtube.com/watch?v=cKq8VTF9Dgw",
+   "published": "2026-10-12T18:01:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/cKq8VTF9Dgw/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "kGtKzuE93EE",
    "title": "Providence police detain, release 3 in altercation on Federal Hill",
@@ -3724,16 +3734,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/IjQO_S585nk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "erwdHweksc8",
-   "title": "Former GOP House Speaker Hastert dies at 84",
-   "link": "https://www.youtube.com/watch?v=erwdHweksc8",
-   "published": "2026-10-05T18:01:14.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/erwdHweksc8/mqdefault.jpg",
    "towns": []
   }
  ]

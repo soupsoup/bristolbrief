@@ -1,6 +1,27 @@
 {
- "updated": "2026-10-13T17:35:12.800Z",
+ "updated": "2026-10-13T18:05:29.985Z",
  "alerts": [
+  {
+   "id": "1038527",
+   "header": "Providence Line Train 844 (1:15 PM from Providence) is operating 5-15 minutes behind schedule between Mansfield and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-13T13:58:46-04:00",
+   "end": "2026-10-13T15:29:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Mansfield"
+   ],
+   "towns": [
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-13T13:58:46-04:00"
+  },
   {
    "id": "1038519",
    "header": "Providence Line Train 840 (11:57 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station.",

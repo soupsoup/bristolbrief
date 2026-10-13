@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-13T20:35:30.785Z",
+ "updated": "2026-10-13T21:05:52.204Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -11,6 +11,13 @@
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,25 +30,18 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
@@ -52,6 +52,79 @@
   }
  ],
  "videos": [
+  {
+   "id": "BzVt5P9QKHE",
+   "title": "Republican Dave Talan sees possible path to victory in Providence mayor's race",
+   "link": "https://www.youtube.com/watch?v=BzVt5P9QKHE",
+   "published": "2026-10-13T21:00:10.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/BzVt5P9QKHE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "EPeHmzuxsZI",
+   "title": "First witnesses testify at Matthew Farwell trial in Sandra Birchmore's killing",
+   "link": "https://www.youtube.com/watch?v=EPeHmzuxsZI",
+   "published": "2026-10-13T20:57:46.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/EPeHmzuxsZI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "TBKfCNDJuPs",
+   "title": "Police: New Bedford woman seen on video assaulting puppy",
+   "link": "https://www.youtube.com/watch?v=TBKfCNDJuPs",
+   "published": "2026-10-13T20:47:18.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/TBKfCNDJuPs/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "TN7YLNYsX84",
+   "title": "RI early voting in the 2026 midterm election begins Wednesday",
+   "link": "https://www.youtube.com/watch?v=TN7YLNYsX84",
+   "published": "2026-10-13T20:45:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/TN7YLNYsX84/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qOSz4iPfqF0",
+   "title": "1 dead, several injured in incident involving Six Flags roller coaster in Georgia",
+   "link": "https://www.youtube.com/watch?v=qOSz4iPfqF0",
+   "published": "2026-10-13T20:40:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qOSz4iPfqF0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FspBhzM1m1k",
+   "title": "New data shows spike in RI Energy customers getting their services shut off",
+   "link": "https://www.youtube.com/watch?v=FspBhzM1m1k",
+   "published": "2026-10-13T20:39:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FspBhzM1m1k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1geQxUePV1w",
+   "title": "$975K in unclaimed property returned to Mass. residents during Big E initiative",
+   "link": "https://www.youtube.com/watch?v=1geQxUePV1w",
+   "published": "2026-10-13T20:32:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1geQxUePV1w/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "5diGvKWwWjM",
    "title": "“Operation Wicked Safe” cracks down on dangerous driving this week",
@@ -3621,49 +3694,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/Z22GLviQw3w/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oC12TG8z7wY",
-   "title": "Meet the candidates: Jay Gotra for RI Governor",
-   "link": "https://www.youtube.com/watch?v=oC12TG8z7wY",
-   "published": "2026-10-06T20:55:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oC12TG8z7wY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Ok2SZ5bBtOc",
-   "title": "Colorful electric boxes bring beauty and community to the streets of Central Falls",
-   "link": "https://www.youtube.com/watch?v=Ok2SZ5bBtOc",
-   "published": "2026-10-06T20:45:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Ok2SZ5bBtOc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "gMwZfCuPl3U",
-   "title": "Fall River uses funding for substance abuse prevention",
-   "link": "https://www.youtube.com/watch?v=gMwZfCuPl3U",
-   "published": "2026-10-06T20:42:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gMwZfCuPl3U/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "YpPvCYMcH0M",
-   "title": "New designated scooter, bike parking spots seen in Providence",
-   "link": "https://www.youtube.com/watch?v=YpPvCYMcH0M",
-   "published": "2026-10-06T20:38:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YpPvCYMcH0M/mqdefault.jpg",
    "towns": []
   }
  ]

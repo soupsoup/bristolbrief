@@ -1,12 +1,13 @@
 // Build the morning newsletter from the day's data: a lead story, a handful
 // more, today's public meetings, and any active alerts. Output is email-safe
 // HTML (divs and inline styles, no external CSS) plus a plain-text copy, to paste into a
-// MailerLite custom HTML campaign. MailerLite adds its own unsubscribe link and footer, so
-// none of those are included here.
+// MailerLite custom HTML campaign. The footer carries MailerLite's {$unsubscribe} tag, which
+// MailerLite replaces with each reader's unsubscribe link when it sends.
 
 import { titleKey, sig, sameStory, bodySig, sameIncident } from './dedupe.mjs';
 
 export const SITE_URL = 'https://bristolbrief.com';
+export const UNSUBSCRIBE = '{$unsubscribe}';
 const ET = 'America/New_York';
 
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -321,6 +322,8 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
       `More from all 20 cities and towns at ${link(SITE_URL, 'bristolbrief.com')}. Got a tip? Reply to this email or write ${link('mailto:bristolbrief@gmail.com', 'bristolbrief@gmail.com')}.`,
     ),
   );
+  // MailerLite's custom HTML editor needs its own unsubscribe tag in the message; it fills in the link when sending.
+  h.push(box(`margin:0;padding:0 0 28px;${type(SANS, 400, 12, 18)};color:${MUTED}`, `You are receiving this because you subscribed at bristolbrief.com. ${link(UNSUBSCRIBE, 'Unsubscribe', { color: MUTED })}`));
   h.push(`</td></tr></table></td></tr></table>`);
 
   const t = [];
@@ -341,7 +344,7 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
     for (const s of scores) t.push(`${s.title} ${s.link}`);
     t.push('');
   }
-  t.push(`More from all 20 cities and towns: ${SITE_URL}`, 'Got a tip? bristolbrief@gmail.com');
+  t.push(`More from all 20 cities and towns: ${SITE_URL}`, 'Got a tip? bristolbrief@gmail.com', '', `Unsubscribe: ${UNSUBSCRIBE}`);
 
   return { subject, preheader, html: h.join('\n'), text: t.join('\n'), counts: { stories: stories.length, meetings: todays.length, scores: scores.length, alerts: alerts.length }, stories };
 }

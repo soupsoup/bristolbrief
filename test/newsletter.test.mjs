@@ -280,3 +280,9 @@ test('the email markup resists host styles: divs not paragraphs, spans inside li
   // Nothing italic anywhere.
   assert.ok(!/font-style:\s*italic/.test(html));
 });
+
+test('the footer carries the MailerLite unsubscribe tag in both versions', () => {
+  const out = buildNewsletter({ items: [], now: new Date('2026-10-13T12:00:00Z') });
+  assert.ok(out.html.includes('href="{$unsubscribe}"'));
+  assert.ok(out.text.includes('Unsubscribe: {$unsubscribe}'));
+});

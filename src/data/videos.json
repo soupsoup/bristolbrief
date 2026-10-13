@@ -1,17 +1,19 @@
 {
- "updated": "2026-10-13T02:02:34.271Z",
+ "updated": "2026-10-13T02:35:27.420Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "cbs-boston",
@@ -20,10 +22,11 @@
    "error": "HTTP 404"
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -32,8 +35,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -48,6 +51,29 @@
  ],
  "videos": [
   {
+   "id": "crGsHrFO4SA",
+   "title": "WPRI Weather Now 10-12-26 Cloudy, A Few Showers Tuesday",
+   "link": "https://www.youtube.com/watch?v=crGsHrFO4SA",
+   "published": "2026-10-13T02:08:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/crGsHrFO4SA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "WO9LdO8I8ZM",
+   "title": "Hometown Hero: Tom Cannon, Local basketball legend",
+   "link": "https://www.youtube.com/watch?v=WO9LdO8I8ZM",
+   "published": "2026-10-13T02:03:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/WO9LdO8I8ZM/mqdefault.jpg",
+   "towns": []
+  },
+  {
    "id": "3HRKcNITCUs",
    "title": "Travelers face higher airfare heading into holiday season #shorts",
    "link": "https://www.youtube.com/shorts/3HRKcNITCUs",
@@ -57,19 +83,6 @@
    "thumbnail": "https://i.ytimg.com/vi/3HRKcNITCUs/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "Ydf2r3kQQFs",
-   "title": "WPRI 12 Weather Forecast 10-12-26 Occasional Light Showers Tuesday",
-   "link": "https://www.youtube.com/watch?v=Ydf2r3kQQFs",
-   "published": "2026-10-13T00:01:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Ydf2r3kQQFs/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "yCUIeeI-hSc",
@@ -3673,16 +3686,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/7kP-fPmWR8Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0-XeDeqi9gU",
-   "title": "Wife donates kidney to husband just days before wedding anniversary",
-   "link": "https://www.youtube.com/watch?v=0-XeDeqi9gU",
-   "published": "2026-10-06T02:14:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0-XeDeqi9gU/mqdefault.jpg",
    "towns": []
   }
  ]

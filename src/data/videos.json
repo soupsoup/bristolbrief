@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-13T13:35:29.894Z",
+ "updated": "2026-10-13T14:05:41.789Z",
  "channels": [
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -16,13 +16,6 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
@@ -30,8 +23,8 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,14 +37,32 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "FLTjTWAiRQc",
+   "title": "Train crashes into car on tracks",
+   "link": "https://www.youtube.com/shorts/FLTjTWAiRQc",
+   "published": "2026-10-13T13:45:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/FLTjTWAiRQc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "hOpESC3UdtA",
    "title": "WPRI 12 Weather Forecast for 10/13/26:  Cloudy, little drizzle today; much warmer tomorrow",
@@ -3726,16 +3737,6 @@
    ],
    "local": true,
    "short": true
-  },
-  {
-   "id": "6l3zdxxJ5mE",
-   "title": "RI rolls out app to help quit smoking and vaping",
-   "link": "https://www.youtube.com/watch?v=6l3zdxxJ5mE",
-   "published": "2026-10-06T13:51:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6l3zdxxJ5mE/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

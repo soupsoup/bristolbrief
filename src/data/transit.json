@@ -1,28 +1,23 @@
 {
- "updated": "2026-10-13T14:05:41.789Z",
+ "updated": "2026-10-13T14:36:26.009Z",
  "alerts": [
   {
-   "id": "1038486",
-   "header": "Providence Line Train 828 (8:38 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
+   "id": "1038493",
+   "header": "On Monday, October 26, a new Fall/Winter schedule will be in effect. Some times have been adjusted for seasonal effects and all train numbers have changed to 4-digits. Visit mbta.com/cr for more information.",
+   "effect": "SCHEDULE_CHANGE",
+   "severity": 3,
+   "lifecycle": "UPCOMING",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-13T09:41:31-04:00",
-   "end": "2026-10-13T11:26:00-04:00",
+   "start": "2026-10-26T03:00:00-04:00",
+   "end": "2026-11-02T03:00:00-05:00",
    "routes": [
+    "CR-NewBedford",
     "CR-Providence"
    ],
-   "stations": [
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
+   "stations": [],
+   "towns": [],
    "url": null,
-   "updated": "2026-10-13T09:41:31-04:00"
+   "updated": "2026-10-13T10:16:14-04:00"
   }
  ],
  "stopParents": {

@@ -7,8 +7,8 @@ export const SITE = {
   // The National Grid and Eversource outage-map links at the top of the home page's right
   // rail. Off for now; set to true during severe weather (storms, widespread outages).
   showOutageMaps: false,
-  // Newsletter sign-ups go to beehiiv via /api/subscribe (BEEHIIV_API_KEY and
-  // BEEHIIV_PUBLICATION_ID on Vercel; see src/lib/newsletter.ts).
+  // Newsletter sign-ups go to MailerLite via /api/subscribe (MAILERLITE_API_KEY and
+  // MAILERLITE_GROUP_ID on Vercel; see src/lib/newsletter.ts).
   social: {
     discord: 'https://discord.gg/VPTjAAmvWB',
     instagram: 'https://instagram.com/',

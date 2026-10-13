@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Build today's newsletter draft for beehiiv.
+// Build today's newsletter draft for MailerLite.
 //
 // Usage: node scripts/newsletter.mjs [--ref origin/main] [--out newsletter-draft] [--now ISO]
 //   --ref  read src/data from this git ref instead of the working tree, so a

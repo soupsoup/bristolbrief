@@ -70,7 +70,7 @@ The hourly headline job commits and triggers a rebuild every hour, so expired pi
 
 ## Before launch
 
-1. **Connect the newsletter.** Set `newsletterAction` in `src/site.config.ts` to your provider's form endpoint (beehiiv, Buttondown, Ghost, Mailchimp). Until then the form shows a "sign-ups open soon" message.
+1. **Connect the newsletter.** Add `MAILERLITE_API_KEY` and `MAILERLITE_GROUP_ID` as Vercel environment variables (see `src/lib/newsletter.ts`). Until then the form shows a "sign-ups open soon" message.
 2. **Set the domain** with the `SITE_URL` environment variable, and the contact email and social links in `src/site.config.ts`.
 3. **Merge to the default branch** so the hourly GitHub Actions job can run.
 

@@ -1,8 +1,8 @@
 // Build the morning newsletter from the day's data: a lead story, a handful
 // more, today's public meetings, and any active alerts. Output is email-safe
-// HTML (tables and inline styles, no external CSS) plus a plain-text copy, to
-// paste into a beehiiv post. beehiiv adds its own header, unsubscribe link
-// and footer, so none of those are included here.
+// HTML (divs and inline styles, no external CSS) plus a plain-text copy, to paste into a
+// MailerLite custom HTML campaign. MailerLite adds its own unsubscribe link and footer, so
+// none of those are included here.
 
 import { titleKey, sig, sameStory, bodySig, sameIncident } from './dedupe.mjs';
 
@@ -232,7 +232,7 @@ const RULE = '#d9d4c6';
 const FONT = "Georgia, 'Times New Roman', serif";
 const SANS = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif";
 
-// beehiiv and email clients add their own rules to links and paragraphs (italic
+// MailerLite and email clients add their own rules to links and paragraphs (italic
 // links in the publication's link color, extra paragraph spacing). Inline
 // declarations marked !important win over those even when theirs are
 // !important too, so every style here is marked, text sits in plain divs

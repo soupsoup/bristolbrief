@@ -4,7 +4,7 @@ import { subscribe } from '../../lib/newsletter';
 export const prerender = false;
 
 // A few tries per address per minute per server instance, to blunt scripted
-// abuse. beehiiv also deduplicates.
+// abuse. MailerLite also deduplicates.
 const recent = new Map<string, number[]>();
 function limited(key: string) {
   const now = Date.now();

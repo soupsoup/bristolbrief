@@ -1,41 +1,12 @@
 {
- "updated": "2026-10-13T03:35:38.397Z",
+ "updated": "2026-10-13T07:06:41.522Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
@@ -43,21 +14,116 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
   {
-   "id": "crGsHrFO4SA",
-   "title": "WPRI Weather Now 10-12-26 Cloudy, A Few Showers Tuesday",
-   "link": "https://www.youtube.com/watch?v=crGsHrFO4SA",
-   "published": "2026-10-13T02:08:44.000Z",
+   "id": "BsN5SnDpoFk",
+   "title": "High School Roundup: La Salle volleyball sweeps, PCD soccer rolls",
+   "link": "https://www.youtube.com/watch?v=BsN5SnDpoFk",
+   "published": "2026-10-13T03:43:09.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/crGsHrFO4SA/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/BsN5SnDpoFk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "YceG6Rdco08",
+   "title": "WPRI 12 Weather Forecast 10-12-26 Clouds And A Few Showers Tuesday",
+   "link": "https://www.youtube.com/watch?v=YceG6Rdco08",
+   "published": "2026-10-13T03:28:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YceG6Rdco08/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "mwOd4qjAQe0",
+   "title": "Family remembers New Hampshire man found dead aboard boat after leaving Block Island",
+   "link": "https://www.youtube.com/watch?v=mwOd4qjAQe0",
+   "published": "2026-10-13T03:13:50.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/mwOd4qjAQe0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RvMlGRgJGlc",
+   "title": "Neighbors raise safety concerns after train strikes car at Woonsocket crossing",
+   "link": "https://www.youtube.com/watch?v=RvMlGRgJGlc",
+   "published": "2026-10-13T03:11:02.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/RvMlGRgJGlc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FXEKBdzREkE",
+   "title": "Cybersecurity breach disrupts some Stop & Shop services",
+   "link": "https://www.youtube.com/watch?v=FXEKBdzREkE",
+   "published": "2026-10-13T02:54:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FXEKBdzREkE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "iCqSRO_IHKk",
+   "title": "‘Breaking Bad’ actor RJ Mitte dies at 34",
+   "link": "https://www.youtube.com/watch?v=iCqSRO_IHKk",
+   "published": "2026-10-13T02:53:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/iCqSRO_IHKk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RSXr3-CmVeI",
+   "title": "Nick-A-Nees fans rally around struggling dive bar",
+   "link": "https://www.youtube.com/watch?v=RSXr3-CmVeI",
+   "published": "2026-10-13T02:48:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RSXr3-CmVeI/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "WO9LdO8I8ZM",

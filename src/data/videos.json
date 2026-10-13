@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-13T11:05:29.658Z",
+ "updated": "2026-10-13T11:35:49.672Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
@@ -9,11 +23,11 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "wcvb",
@@ -30,28 +44,25 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "txxloxzkYpY",
+   "title": "Stop and Shop is experiencing a cybersecurity issue",
+   "link": "https://www.youtube.com/shorts/txxloxzkYpY",
+   "published": "2026-10-13T11:16:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/txxloxzkYpY/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "QQJ_Io4OZAI",
    "title": "WPRI 12 Weather Forecast for 10/13/26: Cloudy, cool today with a couple of showers",
@@ -3706,16 +3717,6 @@
    ],
    "local": true,
    "short": true
-  },
-  {
-   "id": "j_s_AoH6FFs",
-   "title": "Jury selection begins in trial of Mathew Farwell for death of Sandra Birchmore",
-   "link": "https://www.youtube.com/watch?v=j_s_AoH6FFs",
-   "published": "2026-10-06T11:06:56.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/j_s_AoH6FFs/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

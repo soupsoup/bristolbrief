@@ -1,23 +1,25 @@
 {
- "updated": "2026-10-13T00:05:46.195Z",
+ "updated": "2026-10-13T01:35:29.918Z",
  "channels": [
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
@@ -27,25 +29,63 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 500"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "3HRKcNITCUs",
+   "title": "Travelers face higher airfare heading into holiday season #shorts",
+   "link": "https://www.youtube.com/shorts/3HRKcNITCUs",
+   "published": "2026-10-13T00:52:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3HRKcNITCUs/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "Ydf2r3kQQFs",
+   "title": "WPRI 12 Weather Forecast 10-12-26 Occasional Light Showers Tuesday",
+   "link": "https://www.youtube.com/watch?v=Ydf2r3kQQFs",
+   "published": "2026-10-13T00:01:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ydf2r3kQQFs/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "yCUIeeI-hSc",
+   "title": "Coventry family urges owner of dog in riverwalk attack to come forward #shorts",
+   "link": "https://www.youtube.com/shorts/yCUIeeI-hSc",
+   "published": "2026-10-12T23:52:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/yCUIeeI-hSc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "z6QApr1uO24",
    "title": "Investigating erosion at Scarborough Beach #shorts",
@@ -181,19 +221,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/x4gl32B5mp8/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "SDekzx2LSV0",
-   "title": "WPRI 12 Weather Now 10-12-26 Light Showers Tuesday",
-   "link": "https://www.youtube.com/watch?v=SDekzx2LSV0",
-   "published": "2026-10-12T21:26:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SDekzx2LSV0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "B6FNTfeYlbA",
@@ -3670,17 +3697,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/BkAGFvbUYUA/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "ZGydYtp3-gA",
-   "title": "Bermuda mother, son identified among passengers aboard missing plane off Nantucket #shorts",
-   "link": "https://www.youtube.com/shorts/ZGydYtp3-gA",
-   "published": "2026-10-06T00:59:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZGydYtp3-gA/mqdefault.jpg",
    "towns": [],
    "short": true
   }

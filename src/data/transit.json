@@ -1,6 +1,28 @@
 {
- "updated": "2026-10-13T18:05:29.985Z",
+ "updated": "2026-10-13T18:35:32.247Z",
  "alerts": [
+  {
+   "id": "1038533",
+   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-13T14:21:06-04:00",
+   "end": "2026-10-13T15:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-10-13T14:21:06-04:00"
+  },
   {
    "id": "1038527",
    "header": "Providence Line Train 844 (1:15 PM from Providence) is operating 5-15 minutes behind schedule between Mansfield and South Station.",

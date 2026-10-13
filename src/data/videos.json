@@ -1,47 +1,23 @@
 {
- "updated": "2026-10-12T23:05:31.761Z",
+ "updated": "2026-10-13T00:05:46.195Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
@@ -49,6 +25,24 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
@@ -3689,38 +3683,6 @@
    "thumbnail": "https://i.ytimg.com/vi/ZGydYtp3-gA/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "dY2bZX-67YA",
-   "title": "Driver charged with attempted murder after striking 2 college students on campus #shorts",
-   "link": "https://www.youtube.com/shorts/dY2bZX-67YA",
-   "published": "2026-10-06T00:03:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dY2bZX-67YA/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "ueMpWj0600M",
-   "title": "Driver charged with attempted murder after hitting two students at Bridgewater State #shorts",
-   "link": "https://www.youtube.com/shorts/ueMpWj0600M",
-   "published": "2026-10-06T00:00:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ueMpWj0600M/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "6pNaNlXRu88",
-   "title": "Gov. Maura Healey declares a state of emergency and offers one-time relief to tackle winter costs",
-   "link": "https://www.youtube.com/watch?v=6pNaNlXRu88",
-   "published": "2026-10-05T23:44:14.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/6pNaNlXRu88/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-13T21:05:52.204Z",
+ "updated": "2026-10-14T07:07:19.022Z",
  "channels": [
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
@@ -9,15 +16,22 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -35,23 +49,284 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "aF-5i9L0tIE",
+   "title": "Election, public safety officials discuss election preparedness ahead of early voting",
+   "link": "https://www.youtube.com/watch?v=aF-5i9L0tIE",
+   "published": "2026-10-14T05:35:32.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/aF-5i9L0tIE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5WFUmkvWJ4g",
+   "title": "WPRI 12 Weather Forecast 10-13-26  Much Warmer Nice Wednesday",
+   "link": "https://www.youtube.com/watch?v=5WFUmkvWJ4g",
+   "published": "2026-10-14T03:31:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/5WFUmkvWJ4g/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "Yq3tQxxYOL4",
+   "title": "Petition to remove Exeter-West Greenwich principal draws more than 500 signatures",
+   "link": "https://www.youtube.com/watch?v=Yq3tQxxYOL4",
+   "published": "2026-10-14T03:13:17.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Yq3tQxxYOL4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "YDdmArGSbB4",
+   "title": "Moses Brown cruises past East Greenwich, 5-1",
+   "link": "https://www.youtube.com/watch?v=YDdmArGSbB4",
+   "published": "2026-10-14T03:11:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YDdmArGSbB4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "MEXi4-2VMBU",
+   "title": "Puppy recovering, available for adoption after alleged abuse in New Bedford",
+   "link": "https://www.youtube.com/watch?v=MEXi4-2VMBU",
+   "published": "2026-10-14T03:07:43.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/MEXi4-2VMBU/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "lp6iS0B_sYA",
+   "title": "Amtrak worker hurt in 20-foot fall from rail car files lawsuit",
+   "link": "https://www.youtube.com/watch?v=lp6iS0B_sYA",
+   "published": "2026-10-14T02:56:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lp6iS0B_sYA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vQVT3YjSygM",
+   "title": "12 News/Emerson Poll: Dems lead for Congress in RI; nuclear plant beats data centers",
+   "link": "https://www.youtube.com/watch?v=vQVT3YjSygM",
+   "published": "2026-10-14T02:17:08.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/vQVT3YjSygM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "eD3l5LJa2uk",
+   "title": "Providence City Council to discuss ending Flock camera contract",
+   "link": "https://www.youtube.com/watch?v=eD3l5LJa2uk",
+   "published": "2026-10-14T02:16:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eD3l5LJa2uk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "c-9GfD213iY",
+   "title": "New initiative looks to help Medicaid enrollees understand federal changes",
+   "link": "https://www.youtube.com/watch?v=c-9GfD213iY",
+   "published": "2026-10-14T02:16:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/c-9GfD213iY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "BrJl1xNezOw",
+   "title": "Employees knock down fire at Providence restaurant",
+   "link": "https://www.youtube.com/watch?v=BrJl1xNezOw",
+   "published": "2026-10-14T02:15:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BrJl1xNezOw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "txA4mKHeryY",
+   "title": "First witnesses testify in trial of Matthew Farwell in killing of Sandra Birchmore",
+   "link": "https://www.youtube.com/shorts/txA4mKHeryY",
+   "published": "2026-10-14T01:03:35.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/txA4mKHeryY/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "0wfXmBFOGa0",
+   "title": "RI Energy shutoffs more than double as customers struggle to pay bills #shorts",
+   "link": "https://www.youtube.com/shorts/0wfXmBFOGa0",
+   "published": "2026-10-14T00:45:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0wfXmBFOGa0/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "n7brV8xMpbY",
+   "title": "Man accused of entering Fall River Catholic school also approached charter school",
+   "link": "https://www.youtube.com/watch?v=n7brV8xMpbY",
+   "published": "2026-10-14T00:37:12.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/n7brV8xMpbY/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "gvrAzD1hL00",
+   "title": "Rhode Island officials say election preparations are complete ahead of early voting",
+   "link": "https://www.youtube.com/watch?v=gvrAzD1hL00",
+   "published": "2026-10-13T23:03:54.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/gvrAzD1hL00/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "gIFEr2gsTnw",
+   "title": "Employees knock down fire at Providence restaurant",
+   "link": "https://www.youtube.com/watch?v=gIFEr2gsTnw",
+   "published": "2026-10-13T22:54:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gIFEr2gsTnw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "XABQ_lFi4M4",
+   "title": "In-depth analysis: 12 News/Emerson College October 2026 Poll #shorts",
+   "link": "https://www.youtube.com/shorts/XABQ_lFi4M4",
+   "published": "2026-10-13T22:45:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XABQ_lFi4M4/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "yjTenquu4VQ",
+   "title": "Petition to remove Exeter-West Greenwich principal draws more than 400 signatures",
+   "link": "https://www.youtube.com/watch?v=yjTenquu4VQ",
+   "published": "2026-10-13T22:37:55.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/yjTenquu4VQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "bKI5tTbvL4w",
+   "title": "Testimony begins in Matthew Farwell murder trial in Sandra Birchmore case",
+   "link": "https://www.youtube.com/watch?v=bKI5tTbvL4w",
+   "published": "2026-10-13T22:37:40.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/bKI5tTbvL4w/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "hGq8T2j-Qoo",
+   "title": "Police: Suspect admitted to Providence stabbing in Instagram message",
+   "link": "https://www.youtube.com/watch?v=hGq8T2j-Qoo",
+   "published": "2026-10-13T22:36:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/hGq8T2j-Qoo/mqdefault.jpg",
+   "towns": [
+    "dartmouth"
+   ],
+   "local": true
+  },
+  {
+   "id": "pVjCDzVv-zw",
+   "title": "Man charged in DUI crash that killed child was previously arrested in hit-and-run",
+   "link": "https://www.youtube.com/watch?v=pVjCDzVv-zw",
+   "published": "2026-10-13T22:27:29.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/pVjCDzVv-zw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DiA4IN8OFOQ",
+   "title": "Cybersecurity breach disrupts some Stop & Shop services",
+   "link": "https://www.youtube.com/watch?v=DiA4IN8OFOQ",
+   "published": "2026-10-13T22:21:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DiA4IN8OFOQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "J0-BV5hxlN8",
+   "title": "Hasbro’s move to Boston affecting nearly 600 positions",
+   "link": "https://www.youtube.com/watch?v=J0-BV5hxlN8",
+   "published": "2026-10-13T22:16:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J0-BV5hxlN8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RlipdfMry0M",
+   "title": "A.J. McCarron excited for opportunity to lead new Rhode Island UFL team",
+   "link": "https://www.youtube.com/watch?v=RlipdfMry0M",
+   "published": "2026-10-13T22:15:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RlipdfMry0M/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3hUo3ob0jGE",
+   "title": "Hasbro files WARN notice that 587 positions in Pawtucket are affected by move to Boston",
+   "link": "https://www.youtube.com/watch?v=3hUo3ob0jGE",
+   "published": "2026-10-13T22:13:47.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/3hUo3ob0jGE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "cffyXMtROZ0",
+   "title": "All-you-can-carry pumpkin sale a huge hit at South Kingstown farm",
+   "link": "https://www.youtube.com/watch?v=cffyXMtROZ0",
+   "published": "2026-10-13T22:03:39.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/cffyXMtROZ0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "EPeHmzuxsZI",
+   "title": "First witnesses testify at Matthew Farwell trial in Sandra Birchmore's killing",
+   "link": "https://www.youtube.com/watch?v=EPeHmzuxsZI",
+   "published": "2026-10-13T21:16:28.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/EPeHmzuxsZI/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "BzVt5P9QKHE",
    "title": "Republican Dave Talan sees possible path to victory in Providence mayor's race",
@@ -60,16 +335,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/BzVt5P9QKHE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "EPeHmzuxsZI",
-   "title": "First witnesses testify at Matthew Farwell trial in Sandra Birchmore's killing",
-   "link": "https://www.youtube.com/watch?v=EPeHmzuxsZI",
-   "published": "2026-10-13T20:57:46.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/EPeHmzuxsZI/mqdefault.jpg",
    "towns": []
   },
   {
@@ -144,19 +409,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/1MG4eLtLbo4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "SMU8seltz0U",
-   "title": "WPRI 12 Weather Now 10-13-26 Much Warmer By Wednesday",
-   "link": "https://www.youtube.com/watch?v=SMU8seltz0U",
-   "published": "2026-10-13T20:28:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SMU8seltz0U/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "7n5D_zdol5g",
@@ -237,16 +489,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/yRnB5Wz0ACE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "aF-5i9L0tIE",
-   "title": "Election, public safety officials discuss election preparedness ahead of early voting",
-   "link": "https://www.youtube.com/watch?v=aF-5i9L0tIE",
-   "published": "2026-10-13T17:01:16.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/aF-5i9L0tIE/mqdefault.jpg",
    "towns": []
   },
   {
@@ -3266,435 +3508,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "J9tsMCk_kDY",
-   "title": "WPRI 12 Weather Forecast 10-6-26 Cold Start, Mild Finish Wednesday",
-   "link": "https://www.youtube.com/watch?v=J9tsMCk_kDY",
-   "published": "2026-10-07T03:29:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/J9tsMCk_kDY/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "h1DUPv_YeQY",
-   "title": "Providence police arrest woman accused of starting fire in her bedroom",
-   "link": "https://www.youtube.com/watch?v=h1DUPv_YeQY",
-   "published": "2026-10-07T03:13:20.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/h1DUPv_YeQY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "M-R9jILFV2U",
-   "title": "Report: Johnston FD has responded to Amazon Warehouse around 200 times",
-   "link": "https://www.youtube.com/watch?v=M-R9jILFV2U",
-   "published": "2026-10-07T03:10:14.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/M-R9jILFV2U/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "F7TVCScGyuU",
-   "title": "Phase 3 for the RI AnchorHome program",
-   "link": "https://www.youtube.com/watch?v=F7TVCScGyuU",
-   "published": "2026-10-07T03:07:02.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/F7TVCScGyuU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "E66GhNkmPP8",
-   "title": "Providence woman charged with arson after setting fire in bedroom",
-   "link": "https://www.youtube.com/watch?v=E66GhNkmPP8",
-   "published": "2026-10-07T03:06:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/E66GhNkmPP8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "k5tr-71ze34",
-   "title": "Providence man found guilty of 2021 Pawtucket murder",
-   "link": "https://www.youtube.com/watch?v=k5tr-71ze34",
-   "published": "2026-10-07T03:05:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/k5tr-71ze34/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "h3nn0oPUI5Q",
-   "title": "New Bedford man convicted in deadly 2023 shooting",
-   "link": "https://www.youtube.com/watch?v=h3nn0oPUI5Q",
-   "published": "2026-10-07T03:02:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/h3nn0oPUI5Q/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "jvyOAKjgBYo",
-   "title": "Jamestown, Narragansett mull sharing a superintendent",
-   "link": "https://www.youtube.com/watch?v=jvyOAKjgBYo",
-   "published": "2026-10-07T03:02:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jvyOAKjgBYo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "6prmLeIcQiE",
-   "title": "Portsmouth and Mt. Hope draw 2-2 in girls soccer",
-   "link": "https://www.youtube.com/watch?v=6prmLeIcQiE",
-   "published": "2026-10-07T02:50:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6prmLeIcQiE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "T5Z5tvIVyHc",
-   "title": "What are the RI ballot questions for 2026? #shorts",
-   "link": "https://www.youtube.com/shorts/T5Z5tvIVyHc",
-   "published": "2026-10-07T02:17:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/T5Z5tvIVyHc/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "KhbTGzz4OAI",
-   "title": "Providence finding identity with Pate eligibility in limbo",
-   "link": "https://www.youtube.com/watch?v=KhbTGzz4OAI",
-   "published": "2026-10-07T01:58:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/KhbTGzz4OAI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "1Es2Ox-JARw",
-   "title": "Air ambulance operator identifies crew presumed dead after plane disappears off Nantucket",
-   "link": "https://www.youtube.com/watch?v=1Es2Ox-JARw",
-   "published": "2026-10-07T01:44:38.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1Es2Ox-JARw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ibVNBzzPOrc",
-   "title": "Why white rectangles are appearing on Providence sidewalks #shorts",
-   "link": "https://www.youtube.com/shorts/ibVNBzzPOrc",
-   "published": "2026-10-07T01:28:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ibVNBzzPOrc/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "rfXKpzCmWyI",
-   "title": "Civil trial begins over 2023 attack that seriously injured RI Hospital nurse #shorts",
-   "link": "https://www.youtube.com/shorts/rfXKpzCmWyI",
-   "published": "2026-10-07T00:23:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/rfXKpzCmWyI/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "V7d0XsD0JoE",
-   "title": "Feinberg sees positives in Paramount-Warner Bros. merger",
-   "link": "https://www.youtube.com/watch?v=V7d0XsD0JoE",
-   "published": "2026-10-06T23:18:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/V7d0XsD0JoE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lo47AVbCD1g",
-   "title": "Pedestrian killed in crash on Rt. 44 in Raynham #shorts",
-   "link": "https://www.youtube.com/shorts/lo47AVbCD1g",
-   "published": "2026-10-06T23:18:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lo47AVbCD1g/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true,
-   "short": true
-  },
-  {
-   "id": "m4YECStN5rw",
-   "title": "Providence man convicted in 2021 Pawtucket murder",
-   "link": "https://www.youtube.com/watch?v=m4YECStN5rw",
-   "published": "2026-10-06T23:11:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/m4YECStN5rw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "SKKJcFuWpOU",
-   "title": "South Kingstown police chief to retire",
-   "link": "https://www.youtube.com/watch?v=SKKJcFuWpOU",
-   "published": "2026-10-06T23:05:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SKKJcFuWpOU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3YcUGsNus3k",
-   "title": "RI AnchorHome program expands",
-   "link": "https://www.youtube.com/watch?v=3YcUGsNus3k",
-   "published": "2026-10-06T23:05:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3YcUGsNus3k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-5-0tPP68b0",
-   "title": "Woonsocket making progress in helping homeless people",
-   "link": "https://www.youtube.com/watch?v=-5-0tPP68b0",
-   "published": "2026-10-06T23:01:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-5-0tPP68b0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Tj2npz_VzKE",
-   "title": "Jury selection begins in trial of Matthew Farwell for death of Sandra Birchmore",
-   "link": "https://www.youtube.com/watch?v=Tj2npz_VzKE",
-   "published": "2026-10-06T22:57:59.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Tj2npz_VzKE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "eH1PFOJMzWo",
-   "title": "Fall River gets funding to combat overdose epidemic",
-   "link": "https://www.youtube.com/watch?v=eH1PFOJMzWo",
-   "published": "2026-10-06T22:57:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/eH1PFOJMzWo/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "LQJAQxBQCbk",
-   "title": "Chipotle worker, 18, struck and killed on Route 44 in Raynham, company confirms",
-   "link": "https://www.youtube.com/watch?v=LQJAQxBQCbk",
-   "published": "2026-10-06T22:55:07.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/LQJAQxBQCbk/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true
-  },
-  {
-   "id": "gtqGrStiH0s",
-   "title": "Easton community rallies to clean 91-year-old Vietnam War vet's overgrown property",
-   "link": "https://www.youtube.com/watch?v=gtqGrStiH0s",
-   "published": "2026-10-06T22:52:46.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/gtqGrStiH0s/mqdefault.jpg",
-   "towns": [
-    "easton"
-   ],
-   "local": true
-  },
-  {
-   "id": "sEEYYqUAb14",
-   "title": "Red Cross helping 2 after East Providence fire",
-   "link": "https://www.youtube.com/watch?v=sEEYYqUAb14",
-   "published": "2026-10-06T22:45:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/sEEYYqUAb14/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lDx9nPIJCK4",
-   "title": "DNA evidence leads to arrest in 1985 Newport murder",
-   "link": "https://www.youtube.com/watch?v=lDx9nPIJCK4",
-   "published": "2026-10-06T22:43:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lDx9nPIJCK4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ACynpAjfmoM",
-   "title": "Providence woman charged with arson",
-   "link": "https://www.youtube.com/watch?v=ACynpAjfmoM",
-   "published": "2026-10-06T22:43:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ACynpAjfmoM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "z-tfS9QIZNE",
-   "title": "Providence putting in parking spaces for electric scooters",
-   "link": "https://www.youtube.com/watch?v=z-tfS9QIZNE",
-   "published": "2026-10-06T22:39:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/z-tfS9QIZNE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RyGlRCaOSIw",
-   "title": "Smithfield man charged with murder in 1985 killing of Jamestown woman",
-   "link": "https://www.youtube.com/watch?v=RyGlRCaOSIw",
-   "published": "2026-10-06T22:10:22.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RyGlRCaOSIw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "F1GdGdTkS14",
-   "title": "Long-vacant Wickford Elementary School sold, set to become apartments",
-   "link": "https://www.youtube.com/watch?v=F1GdGdTkS14",
-   "published": "2026-10-06T21:55:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/F1GdGdTkS14/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7n0LvUQCBLY",
-   "title": "Civil trial begins over 2023 attack that seriously injured RI Hospital nurse",
-   "link": "https://www.youtube.com/watch?v=7n0LvUQCBLY",
-   "published": "2026-10-06T21:49:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7n0LvUQCBLY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "J9TcDaf5yXg",
-   "title": "Rhode Island expands affordable mortgage program for first-time homebuyers",
-   "link": "https://www.youtube.com/watch?v=J9TcDaf5yXg",
-   "published": "2026-10-06T21:31:59.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/J9TcDaf5yXg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "CjrMTS1xGZQ",
-   "title": "Jury seated in RI Hospital nurse attack civil trial",
-   "link": "https://www.youtube.com/watch?v=CjrMTS1xGZQ",
-   "published": "2026-10-06T21:31:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/CjrMTS1xGZQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ynlvzGD6Fs8",
-   "title": "Mass. awarded funding towards 4 infrastructure, redevelopment projects",
-   "link": "https://www.youtube.com/watch?v=ynlvzGD6Fs8",
-   "published": "2026-10-06T21:30:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ynlvzGD6Fs8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ORTOfFR2o3c",
-   "title": "Health official discusses measles prevention as cases surge nationwide",
-   "link": "https://www.youtube.com/watch?v=ORTOfFR2o3c",
-   "published": "2026-10-06T21:18:51.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ORTOfFR2o3c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "1sRoKbCppyc",
-   "title": "What RI voters need to know about 5 statewide bond questions appearing on ballot",
-   "link": "https://www.youtube.com/watch?v=1sRoKbCppyc",
-   "published": "2026-10-06T21:17:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/1sRoKbCppyc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "E7PL6t2c6ok",
-   "title": "Chipotle worker struck and killed on Route 44 in Raynham",
-   "link": "https://www.youtube.com/watch?v=E7PL6t2c6ok",
-   "published": "2026-10-06T21:13:57.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/E7PL6t2c6ok/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true
-  },
-  {
-   "id": "dMHSsj6ohDI",
-   "title": "Colorful electric boxes bring beauty and community to the streets of Central Falls #shorts",
-   "link": "https://www.youtube.com/shorts/dMHSsj6ohDI",
-   "published": "2026-10-06T21:12:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dMHSsj6ohDI/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "GfsvGusX06U",
-   "title": "18-year-old killed in crash on Route 44 in Raynham",
-   "link": "https://www.youtube.com/watch?v=GfsvGusX06U",
-   "published": "2026-10-06T21:10:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GfsvGusX06U/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true
-  },
-  {
-   "id": "Z22GLviQw3w",
-   "title": "Suspect charged in 1985 Newport murder cold case",
-   "link": "https://www.youtube.com/watch?v=Z22GLviQw3w",
-   "published": "2026-10-06T21:09:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Z22GLviQw3w/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

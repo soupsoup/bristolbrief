@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-14T10:35:25.500Z",
+ "updated": "2026-10-14T11:05:30.123Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -9,22 +16,8 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,21 +30,41 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "ody-tcBhK-w",
+   "title": "WPRI 12 Weather Forecast for 10/14/26:  Warmer today",
+   "link": "https://www.youtube.com/watch?v=ody-tcBhK-w",
+   "published": "2026-10-14T10:56:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ody-tcBhK-w/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "y2ScH9Zk9Rk",
    "title": "Behind the Smiles Photo for 10/14/26 from Michelle in New Bedford",
@@ -64,19 +77,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "dsr1xU7l5Zs",
-   "title": "WPRI 12 Weather Forecast for 10/14/26: Hint of summer, then we cool off tomorrow",
-   "link": "https://www.youtube.com/watch?v=dsr1xU7l5Zs",
-   "published": "2026-10-14T09:09:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dsr1xU7l5Zs/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "aF-5i9L0tIE",
@@ -3522,18 +3522,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/UfPeWWySFhY/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "ub98aRmqXhU",
-   "title": "Behind the Smiles Photo for 10/7/26 from Tim in North Smithfield",
-   "link": "https://www.youtube.com/watch?v=ub98aRmqXhU",
-   "published": "2026-10-07T10:35:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ub98aRmqXhU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
   }
  ]
 }

@@ -1,19 +1,12 @@
 {
- "updated": "2026-10-14T21:35:26.978Z",
+ "updated": "2026-10-14T22:05:40.645Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
    "id": "7news-boston",
@@ -23,15 +16,15 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -44,14 +37,74 @@
    "kept": 15
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "qSHYWkggGZo",
+   "title": "Connect to Providence: Mayor Smiley talks about Morales, city violence, and flock cameras",
+   "link": "https://www.youtube.com/watch?v=qSHYWkggGZo",
+   "published": "2026-10-14T21:51:05.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/qSHYWkggGZo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "G4wTnqUbDGc",
+   "title": "Two older adults and cat found dead in Attleboro home",
+   "link": "https://www.youtube.com/watch?v=G4wTnqUbDGc",
+   "published": "2026-10-14T21:44:23.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/G4wTnqUbDGc/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "Kn4M4eJjxe0",
+   "title": "Cornell suspends fraternity parties, gives state police role in investigating campus assault reports",
+   "link": "https://www.youtube.com/watch?v=Kn4M4eJjxe0",
+   "published": "2026-10-14T21:40:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Kn4M4eJjxe0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RMrT1cWX7sY",
+   "title": "Guckian calls on Foulkes to answer questions about CVS opioid settlement",
+   "link": "https://www.youtube.com/watch?v=RMrT1cWX7sY",
+   "published": "2026-10-14T21:39:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RMrT1cWX7sY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ido4j2FRDx8",
+   "title": "Family of man killed in motorcycle crash wants justice after suspected ring theft",
+   "link": "https://www.youtube.com/watch?v=ido4j2FRDx8",
+   "published": "2026-10-14T21:37:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ido4j2FRDx8/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "k3mJEh5l9pI",
    "title": "Sandra Birchmore Case Daily Debrief: Prosecutors challenge thoroughness of investigation",
@@ -3586,29 +3639,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/mmkUaNCORs4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "qx9Hon8tNyo",
-   "title": "Rhode Island fire officials warn of rising lithium-ion battery fire risks",
-   "link": "https://www.youtube.com/watch?v=qx9Hon8tNyo",
-   "published": "2026-10-07T21:43:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qx9Hon8tNyo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mu_dWya_0eg",
-   "title": "Chipotle worker identified in deadly Raynham crash",
-   "link": "https://www.youtube.com/watch?v=mu_dWya_0eg",
-   "published": "2026-10-07T21:43:25.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/mu_dWya_0eg/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true
   }
  ]
 }

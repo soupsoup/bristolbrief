@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-14T20:05:33.997Z",
+ "updated": "2026-10-14T20:35:29.014Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -23,20 +37,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
@@ -44,14 +44,124 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "2g13l0Q2NC4",
+   "title": "Mass. state grants funding to promote healthy social media use by students",
+   "link": "https://www.youtube.com/watch?v=2g13l0Q2NC4",
+   "published": "2026-10-14T20:31:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2g13l0Q2NC4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "8REQP_Vt0lU",
+   "title": "WPRI 12 Weather Now 10-14-26 Back To Cooler Air Thursday",
+   "link": "https://www.youtube.com/watch?v=8REQP_Vt0lU",
+   "published": "2026-10-14T20:29:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/8REQP_Vt0lU/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "AmQ0Coxgpg0",
+   "title": "Community Focus: Angélica Infante-Green, RI Education Commissioner",
+   "link": "https://www.youtube.com/watch?v=AmQ0Coxgpg0",
+   "published": "2026-10-14T20:25:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/AmQ0Coxgpg0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3fQ1qdF8joI",
+   "title": "RI cancer summit held in Warwick",
+   "link": "https://www.youtube.com/watch?v=3fQ1qdF8joI",
+   "published": "2026-10-14T20:20:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3fQ1qdF8joI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "LZYlK_xH_Bg",
+   "title": "Man accused of stabbing in Providence arraigned",
+   "link": "https://www.youtube.com/watch?v=LZYlK_xH_Bg",
+   "published": "2026-10-14T20:18:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/LZYlK_xH_Bg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "XBk9iAeNN_0",
+   "title": "Raynham man sentenced for armed robbery of courier in Swansea",
+   "link": "https://www.youtube.com/watch?v=XBk9iAeNN_0",
+   "published": "2026-10-14T20:17:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XBk9iAeNN_0/mqdefault.jpg",
+   "towns": [
+    "swansea",
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "45XDnwpFJbw",
+   "title": "Wednesday kicks off early voting in the Rhode Island General Election",
+   "link": "https://www.youtube.com/watch?v=45XDnwpFJbw",
+   "published": "2026-10-14T20:13:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/45XDnwpFJbw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1AQp6XZDtZM",
+   "title": "Laura Afonso of ‘Buns & Bites’, Honey Buns Social discusses food marketing, social media trends",
+   "link": "https://www.youtube.com/watch?v=1AQp6XZDtZM",
+   "published": "2026-10-14T20:12:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1AQp6XZDtZM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "hEcI8EKosK0",
+   "title": "‘Ever Hope Center’ to provide healing, support after mass shootings in RI",
+   "link": "https://www.youtube.com/watch?v=hEcI8EKosK0",
+   "published": "2026-10-14T20:07:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/hEcI8EKosK0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "siKj-JnEVuM",
+   "title": "2 adults, 1 cat found dead in Attleboro home",
+   "link": "https://www.youtube.com/watch?v=siKj-JnEVuM",
+   "published": "2026-10-14T20:06:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/siKj-JnEVuM/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
   {
    "id": "F6ZRtzM1yTk",
    "title": "Del aula al mural: la otra pasión de una maestra de Central Falls",
@@ -107,19 +217,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/oqfnUYOWIGQ/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "CjMDspeXYVE",
-   "title": "WPRI 12 Weather Forecast 10/14/26: Warm, Nice This Afternoon; Much Cooler Temps Ahead",
-   "link": "https://www.youtube.com/watch?v=CjMDspeXYVE",
-   "published": "2026-10-14T16:28:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/CjMDspeXYVE/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "jWyQXlb2aNE",
@@ -3491,16 +3588,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/T5Ii3UI6fJY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "XcOgpUZXQaE",
-   "title": "Newly refurbished La Pigna reinstalled on Federal Hill",
-   "link": "https://www.youtube.com/watch?v=XcOgpUZXQaE",
-   "published": "2026-10-07T20:23:58.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/XcOgpUZXQaE/mqdefault.jpg",
    "towns": []
   }
  ]

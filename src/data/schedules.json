@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T05:35:35.258Z",
+ "updated": "2026-10-14T06:05:29.406Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -68,6 +68,17 @@
    "league": "NHL",
    "past": [
     {
+     "id": "nhl-2026020105",
+     "date": "2026-10-14T03:00:00Z",
+     "tbd": false,
+     "home": false,
+     "opponent": "Sharks",
+     "status": "final",
+     "us": 6,
+     "them": 3,
+     "result": "W"
+    },
+    {
      "id": "nhl-2026020070",
      "date": "2026-10-10T17:00:00Z",
      "tbd": false,
@@ -110,31 +121,9 @@
      "us": 1,
      "them": 4,
      "result": "L"
-    },
-    {
-     "id": "nhl-2026020019",
-     "date": "2026-10-03T00:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Jets",
-     "status": "final",
-     "us": 4,
-     "them": 3,
-     "result": "W",
-     "note": "OT"
     }
    ],
    "next": [
-    {
-     "id": "nhl-2026020105",
-     "date": "2026-10-14T03:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Sharks",
-     "status": "live",
-     "us": 5,
-     "them": 3
-    },
     {
      "id": "nhl-2026020120",
      "date": "2026-10-17T02:00:00Z",
@@ -165,6 +154,14 @@
      "tbd": false,
      "home": true,
      "opponent": "Predators",
+     "status": "scheduled"
+    },
+    {
+     "id": "nhl-2026020170",
+     "date": "2026-10-24T23:00:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Sharks",
      "status": "scheduled"
     }
    ]

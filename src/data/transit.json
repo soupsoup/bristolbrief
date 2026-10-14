@@ -1,6 +1,53 @@
 {
- "updated": "2026-10-14T20:35:29.014Z",
+ "updated": "2026-10-14T21:05:29.178Z",
  "alerts": [
+  {
+   "id": "1038861",
+   "header": "Fall River Line Train 1925 (3:38 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River Depot.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-14T16:41:19-04:00",
+   "end": "2026-10-14T18:24:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-14T16:41:19-04:00"
+  },
+  {
+   "id": "1038859",
+   "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-14T16:39:37-04:00",
+   "end": "2026-10-14T18:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-10-14T16:39:37-04:00"
+  },
   {
    "id": "1038817",
    "header": "Providence Line Train 852 (2:25 PM from Wickford Junction) is operating 5-15 minutes behind schedule between TF Green Airport and South Station.",
@@ -24,23 +71,6 @@
    ],
    "url": null,
    "updated": "2026-10-14T14:53:02-04:00"
-  },
-  {
-   "id": "1038816",
-   "header": "New Bedford Line Train 2021 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Quincy Center and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-14T14:42:24-04:00",
-   "end": "2026-10-14T17:02:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-14T14:42:24-04:00"
   },
   {
    "id": "1038493",
@@ -72,18 +102,13 @@
   "NEC-2040": "place-NEC-2040",
   "NEC-2040-01": "place-NEC-2040",
   "NEC-2040-02": "place-NEC-2040",
-  "NBM-0546-B": "place-NBM-0546",
   "NBM-0546-S": "place-NBM-0546",
-  "NBM-0523-B": "place-NBM-0523",
   "NBM-0523-S": "place-NBM-0523",
-  "FRS-0109-B": "place-FRS-0109",
   "FRS-0109-S": "place-FRS-0109",
-  "FRS-0054-B": "place-FRS-0054",
   "FRS-0054-S": "place-FRS-0054",
   "NBM-0374": "place-NBM-0374",
   "NBM-0374-01": "place-NBM-0374",
   "NBM-0374-02": "place-NBM-0374",
-  "NBM-0374-B": "place-NBM-0374",
   "door-NBM-0374-elevator": "place-NBM-0374",
   "door-NBM-0374-ramp": "place-NBM-0374",
   "node-778-bridge": "place-NBM-0374",

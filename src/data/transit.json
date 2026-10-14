@@ -1,14 +1,35 @@
 {
- "updated": "2026-10-14T00:35:24.827Z",
+ "updated": "2026-10-14T01:05:35.159Z",
  "alerts": [
   {
+   "id": "1038666",
+   "header": "Fall River Line Train 1942 (7:41 PM from Fall River Depot) is operating more than an hour behind schedule between Freetown and South Station due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 9,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-13T20:50:52-04:00",
+   "end": "2026-10-13T22:15:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown"
+   ],
+   "towns": [
+    "freetown"
+   ],
+   "url": null,
+   "updated": "2026-10-13T20:50:52-04:00"
+  },
+  {
    "id": "1038658",
-   "header": "Fall River Line Train 1987 (8:01 PM from East Taunton) is operating 10-20 minutes behind schedule between East Taunton and Fall River Depot.",
+   "header": "Fall River Line Train 1987 (8:01 PM from East Taunton) is operating 35-45 minutes behind schedule between East Taunton and Fall River due to assisting a train with a mechanical issue ahead.",
    "effect": "DELAY",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-13T20:22:52-04:00",
+   "start": "2026-10-13T20:22:00-04:00",
    "end": "2026-10-13T21:25:00-04:00",
    "routes": [
     "CR-NewBedford"
@@ -24,7 +45,7 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-10-13T20:22:52-04:00"
+   "updated": "2026-10-13T20:45:42-04:00"
   },
   {
    "id": "1038493",

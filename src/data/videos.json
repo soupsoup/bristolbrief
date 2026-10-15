@@ -1,9 +1,43 @@
 {
- "updated": "2026-10-15T00:35:28.173Z",
+ "updated": "2026-10-15T03:05:29.947Z",
  "channels": [
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -11,41 +45,80 @@
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "tylzoQkjV20",
+   "title": "Rally for Question 1 held at Rhode Island College",
+   "link": "https://www.youtube.com/watch?v=tylzoQkjV20",
+   "published": "2026-10-15T02:48:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/tylzoQkjV20/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7NxajLYmN58",
+   "title": "WPRI 12 Weather Now 10-14-26 Sunny Cooler Thursday",
+   "link": "https://www.youtube.com/watch?v=7NxajLYmN58",
+   "published": "2026-10-15T02:27:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7NxajLYmN58/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "vkrds1xFd6M",
+   "title": "New Bedford man killed in head-on Texas crash",
+   "link": "https://www.youtube.com/watch?v=vkrds1xFd6M",
+   "published": "2026-10-15T02:11:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/vkrds1xFd6M/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "ZCTToV4F2DY",
+   "title": "Man hit, killed by 2 cars in North Kingstown",
+   "link": "https://www.youtube.com/watch?v=ZCTToV4F2DY",
+   "published": "2026-10-15T02:09:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZCTToV4F2DY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "jLfmY-SiY04",
+   "title": "Behind the Story: Justin Silverman on NEFAC’s first public records victory #shorts",
+   "link": "https://www.youtube.com/shorts/jLfmY-SiY04",
+   "published": "2026-10-15T01:33:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jLfmY-SiY04/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "EW8qF-qb2z8",
+   "title": "Early voting begins in Rhode Island #shorts",
+   "link": "https://www.youtube.com/shorts/EW8qF-qb2z8",
+   "published": "2026-10-15T00:22:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EW8qF-qb2z8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "Bniqyds4beE",
    "title": "Pope Leo eating, recovering after cancer surgery #shorts",
@@ -92,19 +165,6 @@
     "fall-river"
    ],
    "local": true
-  },
-  {
-   "id": "-gaSxV2ZetA",
-   "title": "WPRI 12 Weather Forecast 10-14-26 Sunny Cooler Thursday",
-   "link": "https://www.youtube.com/watch?v=-gaSxV2ZetA",
-   "published": "2026-10-14T22:38:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-gaSxV2ZetA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "lhNBq-uG878",
@@ -3551,67 +3611,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/qtK9BTMr-5E/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "lKPdRX5orEg",
-   "title": "Lincoln improves to 9-2 with sweep of Pawtucket",
-   "link": "https://www.youtube.com/watch?v=lKPdRX5orEg",
-   "published": "2026-10-08T02:47:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lKPdRX5orEg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "cwJQx9H0LPY",
-   "title": "Tattoo shop owner injured in East Providence crash",
-   "link": "https://www.youtube.com/watch?v=cwJQx9H0LPY",
-   "published": "2026-10-08T02:36:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cwJQx9H0LPY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "u053_y6_XRg",
-   "title": "Ball python pulled out of car engine in West Warwick",
-   "link": "https://www.youtube.com/watch?v=u053_y6_XRg",
-   "published": "2026-10-08T02:35:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/u053_y6_XRg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "hNx5GaXIUy4",
-   "title": "Man charged after mother, 2-year-old stabbed in Providence",
-   "link": "https://www.youtube.com/watch?v=hNx5GaXIUy4",
-   "published": "2026-10-08T02:34:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/hNx5GaXIUy4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "XvBrJh8-ZTw",
-   "title": "Lawyer: TF Green worker caught with gun was director of operations",
-   "link": "https://www.youtube.com/watch?v=XvBrJh8-ZTw",
-   "published": "2026-10-08T02:34:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/XvBrJh8-ZTw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oRzkjnTtN0A",
-   "title": "Mother, 2-year-old stabbed in Providence #shorts",
-   "link": "https://www.youtube.com/shorts/oRzkjnTtN0A",
-   "published": "2026-10-08T00:59:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oRzkjnTtN0A/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

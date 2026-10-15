@@ -1,30 +1,23 @@
 {
- "updated": "2026-10-15T22:05:29.097Z",
+ "updated": "2026-10-15T22:36:00.344Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,11 +30,18 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 2
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -52,6 +52,62 @@
   }
  ],
  "videos": [
+  {
+   "id": "CzZZQGPptTg",
+   "title": "Newport school leaders express commitment to improving scores",
+   "link": "https://www.youtube.com/watch?v=CzZZQGPptTg",
+   "published": "2026-10-15T22:30:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CzZZQGPptTg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Yo46OLFgPC0",
+   "title": "Man pleads guilty to vandalizing 2 Freetown cemeteries",
+   "link": "https://www.youtube.com/watch?v=Yo46OLFgPC0",
+   "published": "2026-10-15T22:25:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Yo46OLFgPC0/mqdefault.jpg",
+   "towns": [
+    "freetown"
+   ],
+   "local": true
+  },
+  {
+   "id": "CvrvR4v6mSw",
+   "title": "Massachusetts approves fire code requiring recalled sprinkler replacement",
+   "link": "https://www.youtube.com/watch?v=CvrvR4v6mSw",
+   "published": "2026-10-15T22:24:55.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/CvrvR4v6mSw/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "Jm6kcaQYcd4",
+   "title": "Newport Cliff Walk repairs clear major hurdle, with completion eyed for 2029",
+   "link": "https://www.youtube.com/watch?v=Jm6kcaQYcd4",
+   "published": "2026-10-15T22:20:12.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Jm6kcaQYcd4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "xdAJ4RQIQg4",
+   "title": "Democrat Kim Ahern talks about her priorities if elected Rhode Island attorney general",
+   "link": "https://www.youtube.com/watch?v=xdAJ4RQIQg4",
+   "published": "2026-10-15T22:00:14.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/xdAJ4RQIQg4/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "rPSz_ZYBYcg",
    "title": "Police ID man hit, killed by 2 cars in North Kingstown #shorts",
@@ -121,7 +177,7 @@
   },
   {
    "id": "Ir9vK3Bfpps",
-   "title": "Cold Cases: Suspect charged in 1985 Newport murder cold case",
+   "title": "Suspect’s rape conviction surfaces after arrest in 1985 Newport murder",
    "link": "https://www.youtube.com/watch?v=Ir9vK3Bfpps",
    "published": "2026-10-15T21:12:45.000Z",
    "channel": "wpri",
@@ -3634,69 +3690,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/8J4FKFIUp6A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "xZESYn0PAUw",
-   "title": "Candidates outline visions for Bristol County district attorney's office",
-   "link": "https://www.youtube.com/watch?v=xZESYn0PAUw",
-   "published": "2026-10-08T22:35:10.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/xZESYn0PAUw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "_yKiEVUVvAU",
-   "title": "NBC10 I-Team: Court records detail accused Providence stabber’s violent history",
-   "link": "https://www.youtube.com/watch?v=_yKiEVUVvAU",
-   "published": "2026-10-08T22:30:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/_yKiEVUVvAU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RQ2OB1z4KjY",
-   "title": "South County Health joins Mayo Clinic Care Network",
-   "link": "https://www.youtube.com/watch?v=RQ2OB1z4KjY",
-   "published": "2026-10-08T22:29:18.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RQ2OB1z4KjY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "UJIVC_OQ8jQ",
-   "title": "Bystanders rushed to help toddler, mother stabbed at Providence bus stop",
-   "link": "https://www.youtube.com/watch?v=UJIVC_OQ8jQ",
-   "published": "2026-10-08T22:19:01.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/UJIVC_OQ8jQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PA_OSeQhFhc",
-   "title": "New England Nation OT: Patriots win in Buffalo #shorts",
-   "link": "https://www.youtube.com/shorts/PA_OSeQhFhc",
-   "published": "2026-10-08T22:11:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PA_OSeQhFhc/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "UWcOmWnGro0",
-   "title": "Lawsuit over 2023 attack on RI Hospital nurse settles after jurors see assault video",
-   "link": "https://www.youtube.com/watch?v=UWcOmWnGro0",
-   "published": "2026-10-08T22:10:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/UWcOmWnGro0/mqdefault.jpg",
    "towns": []
   }
  ]

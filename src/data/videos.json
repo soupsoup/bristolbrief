@@ -1,6 +1,41 @@
 {
- "updated": "2026-10-15T05:35:37.096Z",
+ "updated": "2026-10-15T07:07:15.879Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -9,43 +44,73 @@
    "kept": 3
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "W_WbRGQ9hfg",
+   "title": "WPRI 12 Weather Forecast 10-14-26 Dry Much Cooler Thursday",
+   "link": "https://www.youtube.com/watch?v=W_WbRGQ9hfg",
+   "published": "2026-10-15T03:27:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/W_WbRGQ9hfg/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "BxxFEY1m11k",
+   "title": "Providence proposal would ban right turns on red downtown, then citywide",
+   "link": "https://www.youtube.com/watch?v=BxxFEY1m11k",
+   "published": "2026-10-15T03:26:38.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/BxxFEY1m11k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GCe2YbEp9W0",
+   "title": "Ever Hope Center hopes to bring healing following mass shootings in Rhode Island",
+   "link": "https://www.youtube.com/watch?v=GCe2YbEp9W0",
+   "published": "2026-10-15T03:23:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/GCe2YbEp9W0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "4YA2xql3zpo",
+   "title": "Attleboro couple found dead inside home with evidence of fire",
+   "link": "https://www.youtube.com/watch?v=4YA2xql3zpo",
+   "published": "2026-10-15T03:15:01.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/4YA2xql3zpo/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "Txhlx-UOHQY",
+   "title": "2 people found dead in Attleboro home after fire",
+   "link": "https://www.youtube.com/watch?v=Txhlx-UOHQY",
+   "published": "2026-10-15T03:09:35.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Txhlx-UOHQY/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
   {
    "id": "tylzoQkjV20",
    "title": "Rally for Question 1 held at Rhode Island College",
@@ -55,19 +120,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/tylzoQkjV20/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "7NxajLYmN58",
-   "title": "WPRI 12 Weather Now 10-14-26 Sunny Cooler Thursday",
-   "link": "https://www.youtube.com/watch?v=7NxajLYmN58",
-   "published": "2026-10-15T02:27:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7NxajLYmN58/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "vkrds1xFd6M",
@@ -714,16 +766,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/0Z7ceBnKyCw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "GCe2YbEp9W0",
-   "title": "Ever Hope Center hopes to bring healing following mass shootings in Rhode Island",
-   "link": "https://www.youtube.com/watch?v=GCe2YbEp9W0",
-   "published": "2026-10-14T14:45:21.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/GCe2YbEp9W0/mqdefault.jpg",
    "towns": []
   },
   {

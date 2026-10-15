@@ -1,6 +1,44 @@
 {
- "updated": "2026-10-15T21:05:27.575Z",
+ "updated": "2026-10-15T21:35:49.848Z",
  "alerts": [
+  {
+   "id": "1039132",
+   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between South Attleboro and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-15T17:18:02-04:00",
+   "end": "2026-10-15T18:31:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-10-15T17:18:02-04:00"
+  },
+  {
+   "id": "1039130",
+   "header": "Fall River Line Train 1936 (4:41 PM from Fall River Depot) is operating 5-15 minutes behind schedule between Freetown and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-15T17:10:10-04:00",
+   "end": "2026-10-15T19:25:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-15T17:10:10-04:00"
+  },
   {
    "id": "1039117",
    "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",

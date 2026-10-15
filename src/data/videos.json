@@ -1,15 +1,9 @@
 {
- "updated": "2026-10-14T22:35:27.869Z",
+ "updated": "2026-10-15T00:33:24.976Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -20,32 +14,168 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 500"
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "Bniqyds4beE",
+   "title": "Pope Leo eating, recovering after cancer surgery #shorts",
+   "link": "https://www.youtube.com/shorts/Bniqyds4beE",
+   "published": "2026-10-14T23:36:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Bniqyds4beE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "P7Gb2MGkfoE",
+   "title": "State police trooper questioned for hours at Farwell trial about Birchmore investigation",
+   "link": "https://www.youtube.com/watch?v=P7Gb2MGkfoE",
+   "published": "2026-10-14T23:09:54.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/P7Gb2MGkfoE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Pn0j37_Fwws",
+   "title": "Two older adults, cat found dead in Mass. home after welfare check",
+   "link": "https://www.youtube.com/watch?v=Pn0j37_Fwws",
+   "published": "2026-10-14T23:06:57.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/Pn0j37_Fwws/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "lTWkQSeWcIU",
+   "title": "Fall River officers awarded for bravery during Gabriel House response",
+   "link": "https://www.youtube.com/watch?v=lTWkQSeWcIU",
+   "published": "2026-10-14T22:38:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lTWkQSeWcIU/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "-gaSxV2ZetA",
+   "title": "WPRI 12 Weather Forecast 10-14-26 Sunny Cooler Thursday",
+   "link": "https://www.youtube.com/watch?v=-gaSxV2ZetA",
+   "published": "2026-10-14T22:38:35.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-gaSxV2ZetA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "lhNBq-uG878",
+   "title": "Tenants rally for talks with Providence apartment landlord",
+   "link": "https://www.youtube.com/watch?v=lhNBq-uG878",
+   "published": "2026-10-14T22:37:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lhNBq-uG878/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6gsubWouKpU",
+   "title": "Early voting begins in RI as governor's race tightens",
+   "link": "https://www.youtube.com/watch?v=6gsubWouKpU",
+   "published": "2026-10-14T22:35:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6gsubWouKpU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "dFMj8NPNJLQ",
+   "title": "Death investigation underway at Attleboro home",
+   "link": "https://www.youtube.com/watch?v=dFMj8NPNJLQ",
+   "published": "2026-10-14T22:35:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/dFMj8NPNJLQ/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "21AD58zowsA",
+   "title": "18 officers from five departments honored for bravery with Trooper George L. Hanna Memorial Awards",
+   "link": "https://www.youtube.com/watch?v=21AD58zowsA",
+   "published": "2026-10-14T22:28:40.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/21AD58zowsA/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "lcoVA0g4ftU",
+   "title": "Ever Hope Center hopes to bring healing following mass shootings",
+   "link": "https://www.youtube.com/watch?v=lcoVA0g4ftU",
+   "published": "2026-10-14T22:25:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/lcoVA0g4ftU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "0KNLtZyhr-w",
+   "title": "CVS opioid settlement leads Guckian, Block to criticize Foulkes",
+   "link": "https://www.youtube.com/watch?v=0KNLtZyhr-w",
+   "published": "2026-10-14T22:15:25.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/0KNLtZyhr-w/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "kspuUa3EAPE",
    "title": "Southeastern Regional Vocational Technical students refurbish car for single mom",
@@ -321,19 +451,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/2g13l0Q2NC4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "8REQP_Vt0lU",
-   "title": "WPRI 12 Weather Now 10-14-26 Back To Cooler Air Thursday",
-   "link": "https://www.youtube.com/watch?v=8REQP_Vt0lU",
-   "published": "2026-10-14T20:29:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8REQP_Vt0lU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "AmQ0Coxgpg0",
@@ -3499,164 +3616,6 @@
    "thumbnail": "https://i.ytimg.com/vi/oRzkjnTtN0A/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "4gyEBhNWGlE",
-   "title": "NBC 10 hosts debate with Gubernatorial candidates",
-   "link": "https://www.youtube.com/watch?v=4gyEBhNWGlE",
-   "published": "2026-10-08T00:26:27.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/4gyEBhNWGlE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ZccQDnC3utA",
-   "title": "Behind the Story: Johnny Villella, Tim White investigate La Pigna #shorts",
-   "link": "https://www.youtube.com/shorts/ZccQDnC3utA",
-   "published": "2026-10-08T00:06:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZccQDnC3utA/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "pylM8uWVjXg",
-   "title": "Jury shown video of attack on RI Hospital nurse in civil trial #shorts",
-   "link": "https://www.youtube.com/shorts/pylM8uWVjXg",
-   "published": "2026-10-07T23:29:14.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/pylM8uWVjXg/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "0fv_xP4WOXE",
-   "title": "Sabina Matos, John Loughlin face off in NBC 10 debate",
-   "link": "https://www.youtube.com/watch?v=0fv_xP4WOXE",
-   "published": "2026-10-07T23:00:02.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/0fv_xP4WOXE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "blGuMMO4ETU",
-   "title": "Coldstuff Ice Cream co-owner’s post defending teenage employees goes viral",
-   "link": "https://www.youtube.com/watch?v=blGuMMO4ETU",
-   "published": "2026-10-07T22:54:12.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/blGuMMO4ETU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "as0UVV6r41Q",
-   "title": "Narragansett, Jamestown schools consider sharing superintendent",
-   "link": "https://www.youtube.com/watch?v=as0UVV6r41Q",
-   "published": "2026-10-07T22:52:24.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/as0UVV6r41Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "a9ZbW9QJEUg",
-   "title": "2-year-old, woman stabbed in Providence",
-   "link": "https://www.youtube.com/watch?v=a9ZbW9QJEUg",
-   "published": "2026-10-07T22:49:51.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/a9ZbW9QJEUg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3sLofgPZF5w",
-   "title": "Attorney says man arrested with gun at T.F. Green was hired as director of operations",
-   "link": "https://www.youtube.com/watch?v=3sLofgPZF5w",
-   "published": "2026-10-07T22:49:28.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/3sLofgPZF5w/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mbxxWlM_ars",
-   "title": "Uxbridge High School student killed in crash identified",
-   "link": "https://www.youtube.com/watch?v=mbxxWlM_ars",
-   "published": "2026-10-07T22:42:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mbxxWlM_ars/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "75qsM2_zkj0",
-   "title": "Officials ID 18-year-old hit, killed by SUV in Raynham",
-   "link": "https://www.youtube.com/watch?v=75qsM2_zkj0",
-   "published": "2026-10-07T22:41:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/75qsM2_zkj0/mqdefault.jpg",
-   "towns": [
-    "raynham"
-   ],
-   "local": true
-  },
-  {
-   "id": "a004UCqEjZc",
-   "title": "Auditor General analyzes opioid treatment program claims",
-   "link": "https://www.youtube.com/watch?v=a004UCqEjZc",
-   "published": "2026-10-07T22:40:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/a004UCqEjZc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qP1WaST_D3M",
-   "title": "New Bedford man sentenced to life for deadly shooting",
-   "link": "https://www.youtube.com/watch?v=qP1WaST_D3M",
-   "published": "2026-10-07T22:39:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qP1WaST_D3M/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "0CBUHT9n-cg",
-   "title": "Tax bill sparks federal lawsuit against Woonsocket",
-   "link": "https://www.youtube.com/watch?v=0CBUHT9n-cg",
-   "published": "2026-10-07T22:38:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0CBUHT9n-cg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "huSs0oD3ktU",
-   "title": "Recently purchased Providence home damaged by fire",
-   "link": "https://www.youtube.com/watch?v=huSs0oD3ktU",
-   "published": "2026-10-07T22:36:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/huSs0oD3ktU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3w8Hm66Nnw8",
-   "title": "Mother, 2-year-old stabbed in Providence",
-   "link": "https://www.youtube.com/watch?v=3w8Hm66Nnw8",
-   "published": "2026-10-07T22:36:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3w8Hm66Nnw8/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

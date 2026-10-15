@@ -1,6 +1,31 @@
 {
- "updated": "2026-10-15T11:35:34.303Z",
+ "updated": "2026-10-15T12:05:34.016Z",
  "alerts": [
+  {
+   "id": "1038966",
+   "header": "Fall River Line Train 1905 (6:45 AM from South Station) is operating 5-15 minutes behind schedule between Campello and Fall River due to a switch issue near Bridgewater.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-15T07:45:07-04:00",
+   "end": "2026-10-15T09:34:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-15T07:45:07-04:00"
+  },
   {
    "id": "1038493",
    "header": "On Monday, October 26, a new Fall/Winter schedule will be in effect. Some times have been adjusted for seasonal effects and all train numbers have changed to 4-digits. Visit mbta.com/cr for more information.",

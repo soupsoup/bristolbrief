@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T15:05:34.696Z",
+ "updated": "2026-10-15T15:35:34.787Z",
  "alerts": [
   {
    "id": "1039016",
@@ -27,14 +27,14 @@
    "updated": "2026-10-15T10:29:43-04:00"
   },
   {
-   "id": "1039011",
-   "header": "New Bedford Line Train 2059 (9:43 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "id": "1039026",
+   "header": "New Bedford Line Train 2061 (10:58 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-15T10:04:38-04:00",
-   "end": "2026-10-15T11:08:00-04:00",
+   "start": "2026-10-15T11:18:38-04:00",
+   "end": "2026-10-15T12:23:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -48,30 +48,28 @@
     "new-bedford"
    ],
    "url": null,
-   "updated": "2026-10-15T10:04:38-04:00"
+   "updated": "2026-10-15T11:18:38-04:00"
   },
   {
-   "id": "1039003",
-   "header": "Providence Line Train 828 (8:38 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station.",
+   "id": "1039025",
+   "header": "New Bedford Line Train 2024 (10:33 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-15T09:46:38-04:00",
-   "end": "2026-10-15T11:26:00-04:00",
+   "start": "2026-10-15T11:15:45-04:00",
+   "end": "2026-10-15T13:13:00-04:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
    "stations": [
-    "Attleboro",
-    "Mansfield"
+    "East Taunton"
    ],
    "towns": [
-    "attleboro",
-    "mansfield"
+    "taunton"
    ],
    "url": null,
-   "updated": "2026-10-15T09:46:38-04:00"
+   "updated": "2026-10-15T11:15:45-04:00"
   },
   {
    "id": "1038493",

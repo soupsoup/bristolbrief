@@ -1,46 +1,23 @@
 {
- "updated": "2026-10-15T03:05:29.947Z",
+ "updated": "2026-10-15T04:35:24.700Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 3
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
@@ -48,6 +25,24 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3558,59 +3553,6 @@
    "thumbnail": "https://i.ytimg.com/vi/4iTi-zHraJA/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "5qp2ikpubSQ",
-   "title": "Foulkes, Guckian, Block spar over housing, Morales, abortion in NBC 10 debate",
-   "link": "https://www.youtube.com/watch?v=5qp2ikpubSQ",
-   "published": "2026-10-08T03:30:23.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/5qp2ikpubSQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "edJInx6z1bA",
-   "title": "Ball python recovering after rescue from vehicle engine in West Warwick",
-   "link": "https://www.youtube.com/watch?v=edJInx6z1bA",
-   "published": "2026-10-08T03:27:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/edJInx6z1bA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "IsYlpE8Sm3U",
-   "title": "WPRI 12 Weather Forecast 10-7-26 Dry Skies Next Several Days",
-   "link": "https://www.youtube.com/watch?v=IsYlpE8Sm3U",
-   "published": "2026-10-08T03:27:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/IsYlpE8Sm3U/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "RkRoeqONqDo",
-   "title": "Mother, 2-year-old daughter hospitalized after Providence stabbing; suspect arrested",
-   "link": "https://www.youtube.com/watch?v=RkRoeqONqDo",
-   "published": "2026-10-08T03:23:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RkRoeqONqDo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qtK9BTMr-5E",
-   "title": "Blitz 12 Player of the Week - Nick Stafford, North Kingstown",
-   "link": "https://www.youtube.com/watch?v=qtK9BTMr-5E",
-   "published": "2026-10-08T03:08:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qtK9BTMr-5E/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

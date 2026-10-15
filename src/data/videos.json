@@ -1,27 +1,6 @@
 {
- "updated": "2026-10-15T19:35:47.094Z",
+ "updated": "2026-10-15T20:05:50.616Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -37,11 +16,11 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 2
   },
   {
    "id": "nbc10-wjar",
@@ -49,9 +28,43 @@
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "wHLPlrNMvro",
+   "title": "WPRI 12 Weather Now 10/15/26: Cool, Dry This Evening; Showers at Times Friday",
+   "link": "https://www.youtube.com/watch?v=wHLPlrNMvro",
+   "published": "2026-10-15T19:32:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wHLPlrNMvro/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "uTP0AmynsmA",
    "title": "AI Explained: Boston AI conference",
@@ -82,19 +95,6 @@
    "thumbnail": "https://i.ytimg.com/vi/Ky1D1pwyR7w/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "b8EDS0b-udQ",
-   "title": "WPRI 12 Weather Forecast for 10/15/26:  Cooler today; chance for showers tomorrow",
-   "link": "https://www.youtube.com/watch?v=b8EDS0b-udQ",
-   "published": "2026-10-15T16:27:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/b8EDS0b-udQ/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "6GzfqomxSRw",
@@ -3682,16 +3682,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/KhH6fbDmxUY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "EL3PDZq7bXc",
-   "title": "Providence Police Chief Perez discusses double stabbing on 'Gene Off Script'",
-   "link": "https://www.youtube.com/watch?v=EL3PDZq7bXc",
-   "published": "2026-10-08T19:48:34.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/EL3PDZq7bXc/mqdefault.jpg",
    "towns": []
   }
  ]

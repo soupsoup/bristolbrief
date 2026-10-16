@@ -1,25 +1,11 @@
 {
- "updated": "2026-10-16T03:05:45.227Z",
+ "updated": "2026-10-16T06:05:29.425Z",
  "channels": [
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
@@ -28,11 +14,22 @@
    "error": "HTTP 404"
   },
   {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
@@ -42,8 +39,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": false,
    "error": "HTTP 404"
   }
@@ -3667,61 +3664,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "xuWK_wkd95Y",
-   "title": "WPRI 12 Weather Forecast 10-8-26 More Sunshine Friday",
-   "link": "https://www.youtube.com/watch?v=xuWK_wkd95Y",
-   "published": "2026-10-09T03:28:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xuWK_wkd95Y/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "Y1_E7ehFvJg",
-   "title": "WPRI 12 Now 10-8-26  Sunny Next Few Days",
-   "link": "https://www.youtube.com/watch?v=Y1_E7ehFvJg",
-   "published": "2026-10-09T03:19:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Y1_E7ehFvJg/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "0g3nxRgOpIo",
-   "title": "Local basketball legend Tom Cannon honored at Valley Country Club",
-   "link": "https://www.youtube.com/watch?v=0g3nxRgOpIo",
-   "published": "2026-10-09T03:14:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0g3nxRgOpIo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-kOxQPpKNvg",
-   "title": "Neighbors react to a man stabbing a mother and her daughter in Providence",
-   "link": "https://www.youtube.com/watch?v=-kOxQPpKNvg",
-   "published": "2026-10-09T03:14:16.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/-kOxQPpKNvg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "SCFBCXDG0lw",
-   "title": "Moses Brown tops Barrington in D1 field hockey, 3-1",
-   "link": "https://www.youtube.com/watch?v=SCFBCXDG0lw",
-   "published": "2026-10-09T03:12:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SCFBCXDG0lw/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

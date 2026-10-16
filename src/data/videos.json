@@ -1,16 +1,23 @@
 {
- "updated": "2026-10-16T16:05:28.250Z",
+ "updated": "2026-10-16T16:35:39.451Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,13 +30,6 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -37,21 +37,107 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Z17hPldLRkU",
+   "title": "Ribbon cutting held in Providence for Frank D. Spaziano School",
+   "link": "https://www.youtube.com/watch?v=Z17hPldLRkU",
+   "published": "2026-10-16T16:32:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Z17hPldLRkU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vVE4vj7yaVI",
+   "title": "Election 2026 Debate: Rhode Island's 2nd Congressional District",
+   "link": "https://www.youtube.com/watch?v=vVE4vj7yaVI",
+   "published": "2026-10-16T16:26:54.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/vVE4vj7yaVI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "MULBtPmwDwg",
+   "title": "Providence City Council refers license plate reader ordinance to committee",
+   "link": "https://www.youtube.com/watch?v=MULBtPmwDwg",
+   "published": "2026-10-16T16:26:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/MULBtPmwDwg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZEYKPA0pcU0",
+   "title": "WPRI 12 Weather Forecast for 10/16/26:  Showers this afternoon; evening t'storms possible",
+   "link": "https://www.youtube.com/watch?v=ZEYKPA0pcU0",
+   "published": "2026-10-16T16:25:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZEYKPA0pcU0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "3wiagwRWffc",
+   "title": "Family of pregnant Rehoboth murder victim asking for public's support",
+   "link": "https://www.youtube.com/watch?v=3wiagwRWffc",
+   "published": "2026-10-16T16:24:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3wiagwRWffc/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
+  {
+   "id": "2dS0-Xunkcc",
+   "title": "Stop & Shop offering 10% discount following app, website issues",
+   "link": "https://www.youtube.com/watch?v=2dS0-Xunkcc",
+   "published": "2026-10-16T16:18:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2dS0-Xunkcc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3GfuU3BayiU",
+   "title": "Teen shooter kills 4 at Oregon elementary school before being shot by a witness, police say",
+   "link": "https://www.youtube.com/watch?v=3GfuU3BayiU",
+   "published": "2026-10-16T16:15:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3GfuU3BayiU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5RLx1WcZlxs",
+   "title": "Helena Foulkes responds to CVS settlement",
+   "link": "https://www.youtube.com/watch?v=5RLx1WcZlxs",
+   "published": "2026-10-16T16:13:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/5RLx1WcZlxs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "L7CCTIPzg68",
    "title": "Newsmakers 10/16/2026: Political roundtable",
@@ -144,19 +230,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/EIrC4yLEPno/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "Wbcgyk-KP60",
-   "title": "WPRI 12 Weather Forecast for 10/16/26:  Showers this morning and again this evening.  Some thunder,",
-   "link": "https://www.youtube.com/watch?v=Wbcgyk-KP60",
-   "published": "2026-10-16T12:58:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Wbcgyk-KP60/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "1Jofdnjv6Vs",
@@ -3688,56 +3761,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/07CSLqW2YPQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tMfLuCGr4Hs",
-   "title": "Superhero's wash windows at Hasbro Children's Hospital",
-   "link": "https://www.youtube.com/watch?v=tMfLuCGr4Hs",
-   "published": "2026-10-09T16:32:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/tMfLuCGr4Hs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "xpCc5HxdJTY",
-   "title": "Mike Ditka, the quintessential Chicago Bear, dies at 86",
-   "link": "https://www.youtube.com/watch?v=xpCc5HxdJTY",
-   "published": "2026-10-09T16:29:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xpCc5HxdJTY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QqDxoPN6hEQ",
-   "title": "Investigation following \"critical incident\" at Providence Career & Technical Academy",
-   "link": "https://www.youtube.com/watch?v=QqDxoPN6hEQ",
-   "published": "2026-10-09T16:28:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QqDxoPN6hEQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "v-p8JHKpEzw",
-   "title": "Magaziner, Mellor debate: RI 2nd Congressional District",
-   "link": "https://www.youtube.com/watch?v=v-p8JHKpEzw",
-   "published": "2026-10-09T16:26:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/v-p8JHKpEzw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lXky5lrsWP8",
-   "title": "New report on RI schools: Students improved math scores; RIDE may push for mandatory summer school",
-   "link": "https://www.youtube.com/watch?v=lXky5lrsWP8",
-   "published": "2026-10-09T16:23:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lXky5lrsWP8/mqdefault.jpg",
    "towns": []
   }
  ]

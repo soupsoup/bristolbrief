@@ -1,35 +1,47 @@
 {
- "updated": "2026-10-16T06:05:29.425Z",
+ "updated": "2026-10-16T07:06:54.436Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "cbs-boston",
@@ -37,15 +49,29 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "kr2_HnclSOU",
+   "title": "Providence board orders 8-day closure of Kulture nightclub after reported stabbing",
+   "link": "https://www.youtube.com/watch?v=kr2_HnclSOU",
+   "published": "2026-10-16T03:15:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/kr2_HnclSOU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "OmN2gFUjHdo",
+   "title": "Providence City Council advances proposal to ban Flock cameras",
+   "link": "https://www.youtube.com/watch?v=OmN2gFUjHdo",
+   "published": "2026-10-16T03:11:22.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/OmN2gFUjHdo/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "HxBgLL2RW4s",
    "title": "Blitz 12 Player of the Week: Cumberland QB Brady Smith",

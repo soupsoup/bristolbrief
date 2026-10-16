@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-16T11:05:49.934Z",
+ "updated": "2026-10-16T11:35:30.465Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -23,8 +37,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -35,23 +49,36 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "FqGHP2nm5tA",
+   "title": "WPRI 12 Weather Forecast for 10/16/26:  Showers/t'storm this morning; more showers/t'storm this even",
+   "link": "https://www.youtube.com/watch?v=FqGHP2nm5tA",
+   "published": "2026-10-16T11:28:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FqGHP2nm5tA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "1Jofdnjv6Vs",
+   "title": "A possible ban on Flock cameras advances in Providence",
+   "link": "https://www.youtube.com/shorts/1Jofdnjv6Vs",
+   "published": "2026-10-16T11:21:05.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1Jofdnjv6Vs/mqdefault.jpg",
+   "towns": [
+    "easton"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "Df23fwl5zC0",
    "title": "Friend of Sandra Birchmore testifies at Matthew Farwell trial",
@@ -73,19 +100,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "GPvBkmNBqk4",
-   "title": "WPRI 12 Weather Forecast for 10/16/26:  Showers this morning and again this evening; maybe some t'st",
-   "link": "https://www.youtube.com/watch?v=GPvBkmNBqk4",
-   "published": "2026-10-16T09:03:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GPvBkmNBqk4/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "kr2_HnclSOU",
@@ -3703,16 +3717,6 @@
    "thumbnail": "https://i.ytimg.com/vi/vH5Ib2BiKpQ/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "6NXaeoz1uCY",
-   "title": "Meet the candidates: Kellie Keenan for RI Congress",
-   "link": "https://www.youtube.com/watch?v=6NXaeoz1uCY",
-   "published": "2026-10-09T11:23:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6NXaeoz1uCY/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

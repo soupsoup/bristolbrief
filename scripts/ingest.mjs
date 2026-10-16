@@ -2,6 +2,7 @@
 // Pull every enabled source in src/data/sources.json and write:
 //   src/data/wire.json         headlines for the site (merged with prior runs)
 //   src/data/alerts.json       active National Weather Service alerts
+//   src/data/forecast.json     National Weather Service seven-day forecast
 //   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
 //   src/data/tides.json        NOAA tide predictions and latest water levels
 //   src/data/calendar.json     upcoming public meetings with real dates (CivicClerk)
@@ -25,6 +26,7 @@ import {
 } from './lib/data.mjs';
 import { scanSocial } from './lib/social.mjs';
 import { SCHEDULE_TEAMS, trimSchedule } from './lib/schedules.mjs';
+import { FORECAST_URL, normalizeForecast } from './lib/forecast.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const path = (p) => new URL(p, ROOT);
@@ -127,6 +129,18 @@ async function ingestAlerts() {
     return { ok: true, alerts };
   } catch (err) {
     return { ok: false, error: err.message, alerts: null };
+  }
+}
+
+async function ingestForecast() {
+  try {
+    const { status, body } = await fetchText(FORECAST_URL, { accept: 'application/geo+json' });
+    if (status !== 200) throw new Error(`HTTP ${status}`);
+    const forecast = normalizeForecast(JSON.parse(body));
+    if (!forecast.periods.length) throw new Error('no forecast periods');
+    return { ok: true, forecast };
+  } catch (err) {
+    return { ok: false, error: err.message };
   }
 }
 
@@ -263,9 +277,10 @@ async function ingestVideos() {
   return { ok: status.some((s) => s.ok), videos, status, channelIds: new Set(channels.map((c) => c.id)), now };
 }
 
-const [results, alertResult, transit, tides, calendar, social, schedules, videoResult] = await Promise.all([
+const [results, alertResult, forecast, transit, tides, calendar, social, schedules, videoResult] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
+  ingestForecast(),
   ingestTransit(),
   ingestTides(),
   ingestCalendar(),
@@ -295,6 +310,7 @@ console.log(
     `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
     `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
     `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}. ` +
+    `Forecast: ${forecast.ok ? `${forecast.forecast.periods.length} periods` : `failed (${forecast.error})`}. ` +
     `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}. ` +
     `Videos: ${videoResult.ok ? `${videoResult.videos.length} from ${videoResult.status.filter((s) => s.ok).length}/${videoResult.status.length} channels` : 'failed'}${videoResult.status.some((s) => !s.ok) ? ` (failed: ${videoResult.status.filter((s) => !s.ok).map((s) => `${s.id}: ${s.error}`).join('; ')})` : ''}.`,
 );
@@ -306,6 +322,9 @@ if (!dryRun) {
     await writeFile(path('src/data/alerts.json'), JSON.stringify({ updated: now, alerts: alertResult.alerts }, null, 1) + '\n');
   }
   // Keep the last good copy when an API is down.
+  if (forecast.ok) {
+    await writeFile(path('src/data/forecast.json'), JSON.stringify({ updated: now, ...forecast.forecast }, null, 1) + '\n');
+  }
   if (transit.ok) {
     await writeFile(path('src/data/transit.json'), JSON.stringify({ updated: now, alerts: transit.alerts, stopParents: transit.stopParents }, null, 1) + '\n');
   }

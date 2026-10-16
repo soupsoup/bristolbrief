@@ -1,6 +1,27 @@
 {
- "updated": "2026-10-16T13:35:31.460Z",
+ "updated": "2026-10-16T14:05:29.484Z",
  "alerts": [
+  {
+   "id": "1039277",
+   "header": "Providence Line Train 828 (8:38 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Mansfield and South Station due to Amtrak train traffic.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "AMTRAK_TRAIN_TRAFFIC",
+   "start": "2026-10-16T09:54:00-04:00",
+   "end": "2026-10-16T11:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Mansfield"
+   ],
+   "towns": [
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-16T09:57:08-04:00"
+  },
   {
    "id": "1039258",
    "header": "Providence Line Train 825 (8:25 AM from South Station) is operating 5-15 minutes behind schedule between South Station and Providence.",

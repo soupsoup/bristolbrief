@@ -1,6 +1,30 @@
 {
- "updated": "2026-10-16T15:35:41.364Z",
+ "updated": "2026-10-16T16:05:28.250Z",
  "alerts": [
+  {
+   "id": "1039300",
+   "header": "Providence Line Train 835 (11:15 AM from South Station) is operating 5-15 minutes behind schedule between Hyde Park and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-16T11:45:01-04:00",
+   "end": "2026-10-16T13:35:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-16T11:45:01-04:00"
+  },
   {
    "id": "1038493",
    "header": "On Monday, October 26, a new Fall/Winter schedule will be in effect. Some times have been adjusted for seasonal effects and all train numbers have changed to 4-digits. Visit mbta.com/cr for more information.",

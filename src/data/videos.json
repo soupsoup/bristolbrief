@@ -1,30 +1,9 @@
 {
- "updated": "2026-10-16T20:35:27.724Z",
+ "updated": "2026-10-16T21:05:43.371Z",
  "channels": [
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -37,8 +16,15 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -49,9 +35,87 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "yUG64imNetQ",
+   "title": "I-195 to be closed in both directions overnight Friday, Nov. 6",
+   "link": "https://www.youtube.com/watch?v=yUG64imNetQ",
+   "published": "2026-10-16T21:04:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/yUG64imNetQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nWu2R4K4rJs",
+   "title": "Jack-O-Lantern Spectacular canceled tonight due to inclement weather",
+   "link": "https://www.youtube.com/watch?v=nWu2R4K4rJs",
+   "published": "2026-10-16T20:57:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nWu2R4K4rJs/mqdefault.jpg",
+   "towns": [],
+   "weather": true
+  },
+  {
+   "id": "rS5zs8WF6i8",
+   "title": "Meet the Candidates: Mayor Christopher Beauchamp",
+   "link": "https://www.youtube.com/watch?v=rS5zs8WF6i8",
+   "published": "2026-10-16T20:54:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rS5zs8WF6i8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "J5js-KAzZgw",
+   "title": "White House press secretary Katie Zacharia leaves role after 1 week",
+   "link": "https://www.youtube.com/watch?v=J5js-KAzZgw",
+   "published": "2026-10-16T20:42:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J5js-KAzZgw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "POHwuY39HGY",
+   "title": "Rialto Theater in Providence to be demolished",
+   "link": "https://www.youtube.com/watch?v=POHwuY39HGY",
+   "published": "2026-10-16T20:41:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/POHwuY39HGY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FVOvslp1PJk",
+   "title": "Harm reduction bags raise concerns at Fall River City Council meeting",
+   "link": "https://www.youtube.com/watch?v=FVOvslp1PJk",
+   "published": "2026-10-16T20:40:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FVOvslp1PJk/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
   {
    "id": "g6TvDImVa8s",
    "title": "Community Focus: Flu vaccination campaign",
@@ -213,19 +277,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/MULBtPmwDwg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "ZEYKPA0pcU0",
-   "title": "WPRI 12 Weather Forecast for 10/16/26:  Showers this afternoon; evening t'storms possible",
-   "link": "https://www.youtube.com/watch?v=ZEYKPA0pcU0",
-   "published": "2026-10-16T16:25:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZEYKPA0pcU0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "3wiagwRWffc",
@@ -3685,56 +3736,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/FA9u4e70KMo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lLjErJLw5Cs",
-   "title": "Community Focus: Superintendent of Providence Schools",
-   "link": "https://www.youtube.com/watch?v=lLjErJLw5Cs",
-   "published": "2026-10-09T20:53:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lLjErJLw5Cs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "J5iyeTW8NF0",
-   "title": "New 12+ Episode: Newport Boat Show & Boat U.S. with Kelsey Bailey",
-   "link": "https://www.youtube.com/watch?v=J5iyeTW8NF0",
-   "published": "2026-10-09T20:49:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/J5iyeTW8NF0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "zetu3M2Xhts",
-   "title": "Cheat Sheet: Massachusetts ballot questions for 2026",
-   "link": "https://www.youtube.com/watch?v=zetu3M2Xhts",
-   "published": "2026-10-09T20:47:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zetu3M2Xhts/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RK1WYMC23e0",
-   "title": "Matthew Farwell’s murder trial underway in federal court",
-   "link": "https://www.youtube.com/watch?v=RK1WYMC23e0",
-   "published": "2026-10-09T20:44:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/RK1WYMC23e0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0WohIG71MYc",
-   "title": "Vance expresses doubts about plan to livestream Fort Hood shooter’s execution",
-   "link": "https://www.youtube.com/watch?v=0WohIG71MYc",
-   "published": "2026-10-09T20:41:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0WohIG71MYc/mqdefault.jpg",
    "towns": []
   }
  ]

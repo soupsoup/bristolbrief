@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import TransitAlerts from '../components/TransitAlerts.astro';
+import { activeAlerts } from '../lib/wire';
+
+const alerts = activeAlerts();
+const fmt = (iso: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' }) : 'further notice';
+---
+<Base title="Traffic" description="Live traffic cameras, weather alerts and commuter rail alerts for Bristol County, Massachusetts.">
+  <div class="wrap narrow">
+    <p class="kicker" style="margin:32px 0 0">Getting around</p>
+    <h1 class="page-title" style="margin-top:4px">Traffic</h1>
+    <p class="page-dek">
+      Where to see roads right now in Bristol County: live cameras from the state, plus the weather
+      and commuter rail alerts that affect your commute.
+    </p>
+
+    <div class="section-head"><h2>Live traffic cameras</h2></div>
+    <p class="note">
+      Cameras are run by the state highway departments, so they open on their sites. Look for the
+      camera icons along I-195, I-95, Route 24, Route 140 and Route 44.
+    </p>
+    <div class="cams">
+      <a class="cam" href="https://mass511.com/" target="_blank" rel="noopener">
+        <span class="cam-label">Massachusetts</span>
+        <strong>Mass511 camera map</strong>
+        <span class="cam-text">MassDOT's traffic map with live camera images, incidents and construction. Switch on the camera layer.</span>
+        <span class="cam-go">Open Mass511 ↗</span>
+      </a>
+      <a class="cam" href="https://www.dot.ri.gov/travel/cameras_metro.php" target="_blank" rel="noopener">
+        <span class="cam-label">Rhode Island</span>
+        <strong>RIDOT live cameras</strong>
+        <span class="cam-text">Cameras across the border, including the I-195 approaches into Providence and the East Bay.</span>
+        <span class="cam-go">Open RIDOT cameras ↗</span>
+      </a>
+    </div>
+    <p class="meta">Camera images belong to MassDOT and RIDOT. We link to them rather than copying them.</p>
+
+    <div class="section-head"><h2>Weather alerts</h2></div>
+    {alerts.length === 0 ? (
+      <p>No active National Weather Service alerts right now.</p>
+    ) : (
+      <ul class="alerts">
+        {alerts.map((a) => (
+          <li>
+            <strong>{a.event}</strong>
+            <span class="meta"> · {a.severity} · until {fmt(a.expires)}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+    <p class="meta"><a href="/weather/">All alert details and tides</a></p>
+
+    <div class="section-head"><h2>Commuter rail alerts</h2></div>
+    <TransitAlerts />
+    <p class="meta"><a href="/transit/">Stations and lines</a></p>
+  </div>
+</Base>
+
+<style>
+  .narrow { max-width: 820px; }
+  .note { font-family: var(--sans); font-size: 15px; color: var(--ink-2); margin: 0 0 14px; }
+  .cams { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 10px; }
+  .cam { display: block; border: 1px solid var(--rule); border-top: 3px solid var(--navy); padding: 14px 16px 16px; text-decoration: none; color: var(--ink); background: var(--paper-2); }
+  .cam:hover { border-top-color: var(--accent); }
+  .cam-label { display: block; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .cam strong { display: block; font-family: var(--serif-display); font-size: 21px; margin-bottom: 6px; }
+  .cam-text { display: block; font-family: var(--sans); font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+  .cam-go { display: block; margin-top: 10px; font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--link); }
+  .alerts { list-style: none; margin: 0 0 6px; padding: 0; font-family: var(--sans); font-size: 15px; }
+  .alerts li { padding: 6px 0; border-bottom: 1px solid var(--rule); }
+</style>

@@ -3,6 +3,17 @@ import Base from '../layouts/Base.astro';
 import TideTable from '../components/TideTable.astro';
 import { activeAlerts } from '../lib/wire';
 import alertsData from '../data/alerts.json';
+import forecastData from '../data/forecast.json';
+import { groupDays } from '../../scripts/lib/forecast.mjs';
+
+const periods = (forecastData as { periods?: any[] }).periods ?? [];
+const today = periods[0];
+const next = periods[1];
+const days = groupDays(periods);
+const dayName = (key: string, i: number) =>
+  i === 0 ? 'Today' : new Date(`${key}T12:00:00-04:00`).toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' });
+const when = (iso?: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
 
 const alerts = activeAlerts();
 const fmt = (iso: string | null) =>
@@ -34,6 +45,45 @@ const fmt = (iso: string | null) =>
       Source: <a href="https://www.weather.gov/box/">National Weather Service Boston/Norton</a>.
     </p>
 
+    {today && (
+      <section id="forecast">
+        <div class="section-head"><h2>Today's report</h2></div>
+        <div class="today">
+          <article>
+            <h3>{today.name}</h3>
+            <p class="big">{today.temp}°{today.unit} <span class="meta">· {today.short}</span></p>
+            <p>{today.detail}</p>
+          </article>
+          {next && (
+            <article>
+              <h3>{next.name}</h3>
+              <p class="big">{next.temp}°{next.unit} <span class="meta">· {next.short}</span></p>
+              <p>{next.detail}</p>
+            </article>
+          )}
+        </div>
+
+        <div class="section-head"><h2>Extended forecast</h2></div>
+        <ol class="days">
+          {days.map((d, i) => (
+            <li>
+              <span class="d-name">{dayName(d.date, i)}</span>
+              <span class="d-temp">
+                <strong>{d.high != null ? `${d.high}°` : '—'}</strong>
+                <span class="d-lo">{d.low != null ? `${d.low}°` : '—'}</span>
+              </span>
+              <span class="d-short">{d.short}</span>
+              <span class="d-pop">{d.pop >= 10 ? `${d.pop}% rain` : ''}</span>
+            </li>
+          ))}
+        </ol>
+        <p class="meta">
+          Forecast for the Taunton area from the <a href="https://www.weather.gov/box/">National Weather Service</a>,
+          which publishes seven days ahead. Updated {fmt(forecastData.updated)}.
+        </p>
+      </section>
+    )}
+
     <section id="tides">
       <div class="section-head"><h2>Tides</h2></div>
       <div class="tide-grid"><TideTable count={8} /></div>
@@ -45,6 +95,18 @@ const fmt = (iso: string | null) =>
   .alert { border-top: 3px solid var(--accent); padding: 12px 0 8px; max-width: 46em; }
   .alert h2 { font-family: var(--serif-display); font-size: 26px; margin: 0 0 4px; }
   .alert .meta { margin: 0 0 4px; }
+  h3 { font-family: var(--serif-display); font-size: 20px; margin: 0 0 4px; }
+  .today { display: grid; gap: 8px 36px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 60em; }
+  .today p { margin: 0 0 8px; font-family: var(--serif); font-size: 16px; line-height: 1.5; }
+  .today .big { font-family: var(--serif-display); font-size: 30px; line-height: 1.1; }
+  .today .big .meta { font-family: var(--sans); font-size: 15px; }
+  .days { list-style: none; margin: 0 0 8px; padding: 0; max-width: 46em; font-family: var(--sans); font-size: 15px; }
+  .days li { display: grid; grid-template-columns: 7.5em 5.5em 1fr 5em; gap: 8px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+  .d-name { font-weight: 700; }
+  .d-lo { color: var(--ink-2); margin-left: 6px; }
+  .d-short { color: var(--ink); }
+  .d-pop { color: var(--navy); text-align: right; font-size: 14px; }
+  @media (max-width: 560px) { .days li { grid-template-columns: 6.5em 5em 1fr; } .d-pop { display: none; } }
   .tide-grid :global(.tides) { display: grid; gap: 8px 32px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
   .tide-grid :global(.tide-note) { grid-column: 1 / -1; }
 </style>

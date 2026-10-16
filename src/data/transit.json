@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-16T00:35:44.066Z",
+ "updated": "2026-10-16T01:05:34.521Z",
  "alerts": [
+  {
+   "id": "1039219",
+   "header": "Fall River Line Train 1939 (7:35 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-15T20:42:24-04:00",
+   "end": "2026-10-15T22:18:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-15T20:42:24-04:00"
+  },
   {
    "id": "1039218",
    "header": "Fall River Line Train 1942 (7:41 PM from Fall River Depot) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
@@ -56,33 +73,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-13T11:05:58-04:00"
-  },
-  {
-   "id": "1039177",
-   "header": "New Bedford Line Train 2038 (6:10 PM from New Bedford) is now operating near schedule between East Taunton and South Station.",
-   "effect": "DELAY",
-   "severity": 1,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-15T18:29:00-04:00",
-   "end": "2026-10-15T20:59:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton",
-    "Church Street"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-10-15T18:52:57-04:00"
   }
  ],
  "stopParents": {

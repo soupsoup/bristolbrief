@@ -1,9 +1,30 @@
 {
- "updated": "2026-10-16T10:35:51.412Z",
+ "updated": "2026-10-16T11:05:49.934Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,20 +37,6 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -37,21 +44,24 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Df23fwl5zC0",
+   "title": "Friend of Sandra Birchmore testifies at Matthew Farwell trial",
+   "link": "https://www.youtube.com/watch?v=Df23fwl5zC0",
+   "published": "2026-10-16T10:53:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Df23fwl5zC0/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "XfmrB8L62K0",
    "title": "Behind the Smiles Photo for 10/16/26 from Shannon in Chepachet",
@@ -3703,18 +3713,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/6NXaeoz1uCY/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "ShDKbi5LSiw",
-   "title": "Behind the Smiles Photo for 10/9/26 from Danielle in Mapleville",
-   "link": "https://www.youtube.com/watch?v=ShDKbi5LSiw",
-   "published": "2026-10-09T10:36:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ShDKbi5LSiw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
   }
  ]
 }

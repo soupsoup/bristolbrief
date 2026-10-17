@@ -1,19 +1,26 @@
 {
- "updated": "2026-10-17T14:05:28.368Z",
+ "updated": "2026-10-17T14:11:47.085Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "nbc10-boston",
@@ -30,13 +37,6 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -44,14 +44,24 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "lt3j89FkBVw",
+   "title": "What`s Happening: OktoberVets 5K & German Festival",
+   "link": "https://www.youtube.com/watch?v=lt3j89FkBVw",
+   "published": "2026-10-17T13:55:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lt3j89FkBVw/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "pzwOdmr2YFA",
    "title": "WPRI 12 Weather Forecast 10/17/26: Chilly, Gusty Today; Less Wind, Nicer Sunday",

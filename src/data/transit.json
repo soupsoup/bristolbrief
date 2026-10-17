@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-17T18:35:33.747Z",
+ "updated": "2026-10-17T19:05:50.038Z",
  "alerts": [
+  {
+   "id": "1039501",
+   "header": "Providence Line Train 5847 (2:15 PM from South Station) is operating 10-20 minutes behind schedule between Route 128 and Providence.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-17T14:59:46-04:00",
+   "end": "2026-10-17T16:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-17T14:59:46-04:00"
+  },
   {
    "id": "1039488",
    "header": "New Bedford Line Train 7028 (1:03 PM from New Bedford) is operating 10-20 minutes behind schedule between Bridgewater and South Station due to a temporary speed restriction in effect at a crossing in the Bridgewater area.",
@@ -19,21 +36,38 @@
    "updated": "2026-10-17T14:01:20-04:00"
   },
   {
-   "id": "1039472",
-   "header": "Fall River Line Train 6917 (12:05 PM from South Station) is operating 10-20 minutes behind schedule between Bridgewater and Fall River Depot due to a temporary speed restriction in effect at a crossing in the Bridgewater area.",
+   "id": "1039498",
+   "header": "Providence Line Train 5846 (1:45 PM from Providence) is operating 5-15 minutes behind schedule between Readville and South Station.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
-   "cause": "CROSSING_ISSUE",
-   "start": "2026-10-17T12:56:00-04:00",
-   "end": "2026-10-17T14:45:00-04:00",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-17T14:46:51-04:00",
+   "end": "2026-10-17T16:00:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-17T14:46:51-04:00"
+  },
+  {
+   "id": "1039497",
+   "header": "Fall River Line Train 6921 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between South Station and Fall River due to train traffic.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-17T14:43:35-04:00",
+   "end": "2026-10-17T17:04:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-17T13:13:43-04:00"
+   "updated": "2026-10-17T14:43:35-04:00"
   },
   {
    "id": "1039490",

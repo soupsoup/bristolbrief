@@ -1,40 +1,17 @@
 {
- "updated": "2026-10-16T23:35:33.014Z",
+ "updated": "2026-10-17T01:05:32.860Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
@@ -44,11 +21,28 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3691,69 +3685,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/ipUNDjHoL8I/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "wMVieFoUVc0",
-   "title": "Saltwater Sessions: Kelsey Bailey of Boat U.S. #shorts",
-   "link": "https://www.youtube.com/shorts/wMVieFoUVc0",
-   "published": "2026-10-10T00:49:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wMVieFoUVc0/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "qdLF51TucXQ",
-   "title": "South County Health, Mayo Clinic discuss clinical collaboration on Health Check 10 special",
-   "link": "https://www.youtube.com/watch?v=qdLF51TucXQ",
-   "published": "2026-10-10T00:30:11.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/qdLF51TucXQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "W19-zm0rIBQ",
-   "title": "Providence school sends cryptic message about ‘critical incident’ #shorts",
-   "link": "https://www.youtube.com/shorts/W19-zm0rIBQ",
-   "published": "2026-10-10T00:24:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/W19-zm0rIBQ/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "ANN-0eKaa_8",
-   "title": "Extended Interview: 2003 stabbing victims react to suspect’s latest arrest",
-   "link": "https://www.youtube.com/watch?v=ANN-0eKaa_8",
-   "published": "2026-10-09T23:58:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ANN-0eKaa_8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QSj1n4YZYZI",
-   "title": "FBI reports 176 regional arrests during ‘Operation Summer Heat 2.0’",
-   "link": "https://www.youtube.com/watch?v=QSj1n4YZYZI",
-   "published": "2026-10-09T23:44:21.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/QSj1n4YZYZI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "LbGV3KTFyWU",
-   "title": "‘I knew it was him’: 2003 stabbing victims react to suspect’s latest arrest #shorts",
-   "link": "https://www.youtube.com/shorts/LbGV3KTFyWU",
-   "published": "2026-10-09T23:39:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/LbGV3KTFyWU/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

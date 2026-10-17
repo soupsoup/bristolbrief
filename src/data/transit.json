@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-17T17:35:26.852Z",
+ "updated": "2026-10-17T18:05:27.079Z",
  "alerts": [
+  {
+   "id": "1039488",
+   "header": "New Bedford Line Train 7028 (1:03 PM from New Bedford) is operating 10-20 minutes behind schedule between Bridgewater and South Station due to a temporary speed restriction in effect at a crossing in the Bridgewater area.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "CROSSING_ISSUE",
+   "start": "2026-10-17T14:01:20-04:00",
+   "end": "2026-10-17T15:45:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-17T14:01:20-04:00"
+  },
   {
    "id": "1039472",
    "header": "Fall River Line Train 6917 (12:05 PM from South Station) is operating 10-20 minutes behind schedule between Bridgewater and Fall River Depot due to a temporary speed restriction in effect at a crossing in the Bridgewater area.",

@@ -1,16 +1,23 @@
 {
- "updated": "2026-10-17T11:05:26.119Z",
+ "updated": "2026-10-17T11:35:31.101Z",
  "channels": [
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,35 +30,41 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "b0aKKf75Blg",
+   "title": "Firefighters honored for service in fire at Fall River assisted living facility",
+   "link": "https://www.youtube.com/watch?v=b0aKKf75Blg",
+   "published": "2026-10-17T11:00:23.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/b0aKKf75Blg/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
   {
    "id": "8dsSjXKySBM",
    "title": "WPRI 12 Weather Forecast 10/17/26: Chilly, Gusty Today; Dry Stretch Takes Over",

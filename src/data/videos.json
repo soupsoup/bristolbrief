@@ -1,12 +1,19 @@
 {
- "updated": "2026-10-18T21:05:58.186Z",
+ "updated": "2026-10-18T21:35:24.836Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "7news-boston",
@@ -16,25 +23,18 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
    "id": "boston25",
@@ -44,14 +44,27 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Bb7aSNmfgu4",
+   "title": "Shawn Oliver suspends Lt. Gov. campaign in wake of OUI arrest",
+   "link": "https://www.youtube.com/watch?v=Bb7aSNmfgu4",
+   "published": "2026-10-18T21:12:57.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/Bb7aSNmfgu4/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "gyCTlbExhM4",
    "title": "Spotlight New England: 92 PRO-FM's Bekah Berger talks 'Housewives' #shorts",

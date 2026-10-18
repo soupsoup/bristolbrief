@@ -1,9 +1,22 @@
 {
- "updated": "2026-10-18T02:35:34.061Z",
+ "updated": "2026-10-18T03:05:25.785Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -14,26 +27,6 @@
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": false,
@@ -42,6 +35,12 @@
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": false,
    "error": "HTTP 404"
   }
@@ -3706,48 +3705,6 @@
     "fairhaven"
    ],
    "local": true
-  },
-  {
-   "id": "u1-URaPtFaM",
-   "title": "Woman sues Track 15 over outdoor propane heater explosion",
-   "link": "https://www.youtube.com/watch?v=u1-URaPtFaM",
-   "published": "2026-10-11T02:39:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/u1-URaPtFaM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qsbZUEEhGu8",
-   "title": "Man seriously injured in wrong-way crash on Braga Bridge",
-   "link": "https://www.youtube.com/watch?v=qsbZUEEhGu8",
-   "published": "2026-10-11T02:38:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qsbZUEEhGu8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "I8enE65sKB8",
-   "title": "Man dead after officer-involved shooting in Stoughton",
-   "link": "https://www.youtube.com/watch?v=I8enE65sKB8",
-   "published": "2026-10-11T02:37:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/I8enE65sKB8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "fbpt4PB6xZg",
-   "title": "Shooting leaves 9 dead including suspect in Erie, Pennsylvania, police say",
-   "link": "https://www.youtube.com/watch?v=fbpt4PB6xZg",
-   "published": "2026-10-11T02:36:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fbpt4PB6xZg/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

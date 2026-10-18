@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T15:05:48.538Z",
+ "updated": "2026-10-18T15:35:25.564Z",
  "channels": [
   {
    "id": "boston25",
@@ -9,22 +9,15 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 1
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,11 +30,11 @@
    "kept": 15
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
   },
   {
    "id": "7news-boston",
@@ -49,9 +42,29 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "T0JlC58w8hA",
+   "title": "Shawn Oliver, candidate for Lt. Gov. arrested on OUI charges",
+   "link": "https://www.youtube.com/watch?v=T0JlC58w8hA",
+   "published": "2026-10-18T14:57:11.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/T0JlC58w8hA/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "fdTLovbxF30",
    "title": "WPRI 12 Weather Now 10/18/26: Sunny and Cool Today; Dry Start to Work Week",
@@ -3681,26 +3694,6 @@
     "fairhaven"
    ],
    "local": true
-  },
-  {
-   "id": "OhYrpTc-lDo",
-   "title": "New England Nation: Week 5 Game Picks",
-   "link": "https://www.youtube.com/watch?v=OhYrpTc-lDo",
-   "published": "2026-10-11T15:30:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/OhYrpTc-lDo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PWlnPsBHkXk",
-   "title": "Keys to the Game Raiders at Patriots",
-   "link": "https://www.youtube.com/watch?v=PWlnPsBHkXk",
-   "published": "2026-10-11T15:30:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PWlnPsBHkXk/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

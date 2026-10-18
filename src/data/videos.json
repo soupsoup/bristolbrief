@@ -1,16 +1,28 @@
 {
- "updated": "2026-10-18T00:05:28.852Z",
+ "updated": "2026-10-18T00:35:25.293Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -23,11 +35,11 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
    "id": "nbc10-wjar",
@@ -35,20 +47,6 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
@@ -3769,18 +3767,6 @@
    "local": true,
    "countywide": true,
    "weather": true
-  },
-  {
-   "id": "7Bpss9C_TaE",
-   "title": "Bay Foreast for Sunday and Monday from 10/10/26",
-   "link": "https://www.youtube.com/watch?v=7Bpss9C_TaE",
-   "published": "2026-10-11T00:28:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7Bpss9C_TaE/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
   }
  ]
 }

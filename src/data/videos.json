@@ -1,6 +1,34 @@
 {
- "updated": "2026-10-18T03:05:25.785Z",
+ "updated": "2026-10-18T07:07:14.887Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
@@ -11,41 +39,42 @@
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "OYOtKDK821w",
+   "title": "WPRI 12 Weather Forecast 10/17/26",
+   "link": "https://www.youtube.com/watch?v=OYOtKDK821w",
+   "published": "2026-10-18T03:28:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/OYOtKDK821w/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "ag7e3H9HLA0",
+   "title": "Honor-system firewood fundraiser leaves Foxborough Troop 32 with $1, community responds",
+   "link": "https://www.youtube.com/watch?v=ag7e3H9HLA0",
+   "published": "2026-10-18T03:09:06.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ag7e3H9HLA0/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "ccpcCgKgKos",
    "title": "WaterFire held to celebrate United Way's 100th anniversary",
@@ -95,19 +124,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/bbCz3anR4YQ/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "dO4MDRRe3UU",
-   "title": "WPRI 12 Weather Forecast 10/17/26",
-   "link": "https://www.youtube.com/watch?v=dO4MDRRe3UU",
-   "published": "2026-10-18T02:14:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dO4MDRRe3UU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "_mahi90xMXM",
@@ -3662,49 +3678,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/PWlnPsBHkXk/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "e5NQcfN22BM",
-   "title": "Braga Bridge reopens after wrong-way motorcycle crash sends rider to hospital",
-   "link": "https://www.youtube.com/watch?v=e5NQcfN22BM",
-   "published": "2026-10-11T03:32:45.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/e5NQcfN22BM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "4w_hjY_HTUA",
-   "title": "Family releases photo of injured two-year-old, asking for help with medical expenses",
-   "link": "https://www.youtube.com/watch?v=4w_hjY_HTUA",
-   "published": "2026-10-11T03:27:55.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/4w_hjY_HTUA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "I2n_g661iR0",
-   "title": "Rhode Island grown pumpkin surpasses world record at weigh off",
-   "link": "https://www.youtube.com/watch?v=I2n_g661iR0",
-   "published": "2026-10-11T03:21:57.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/I2n_g661iR0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "hIugF5q_ciA",
-   "title": "3 displaced by Fairhaven house fire",
-   "link": "https://www.youtube.com/watch?v=hIugF5q_ciA",
-   "published": "2026-10-11T03:08:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/hIugF5q_ciA/mqdefault.jpg",
-   "towns": [
-    "fairhaven"
-   ],
-   "local": true
   }
  ]
 }

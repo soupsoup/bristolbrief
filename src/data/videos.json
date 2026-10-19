@@ -1,6 +1,12 @@
 {
- "updated": "2026-10-19T02:05:33.541Z",
+ "updated": "2026-10-19T04:35:25.930Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -10,19 +16,12 @@
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -33,11 +32,10 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
@@ -3697,39 +3695,6 @@
     "rehoboth"
    ],
    "local": true
-  },
-  {
-   "id": "ETtr9oaw8oo",
-   "title": "Car crashes into Macray’s Seafood in Tiverton",
-   "link": "https://www.youtube.com/watch?v=ETtr9oaw8oo",
-   "published": "2026-10-12T03:36:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ETtr9oaw8oo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "5Zn8ztNAX-g",
-   "title": "WPRI 12 Weather Forecast 10/11/26",
-   "link": "https://www.youtube.com/watch?v=5Zn8ztNAX-g",
-   "published": "2026-10-12T03:33:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5Zn8ztNAX-g/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "3l_Bc15h3Ds",
-   "title": "Oganesian goes back-to-back",
-   "link": "https://www.youtube.com/watch?v=3l_Bc15h3Ds",
-   "published": "2026-10-12T02:12:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3l_Bc15h3Ds/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

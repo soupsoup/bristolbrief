@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T23:05:23.588Z",
+ "updated": "2026-10-19T23:35:26.027Z",
  "alerts": [
   {
    "id": "1039865",
@@ -26,7 +26,7 @@
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-10-19T15:00:00-04:00",
-   "end": "2026-10-19T21:05:00-04:00",
+   "end": "2026-10-19T21:35:00-04:00",
    "routes": [
     "CR-Providence"
    ],
@@ -40,7 +40,7 @@
    "header": "Providence Line Train 880 (7:42 PM from Wickford Junction) is expected to depart Wickford Junction 15-25 minutes behind schedule due to a downed tree on the right of way.",
    "effect": "DELAY",
    "severity": 6,
-   "lifecycle": "UPCOMING",
+   "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-10-19T19:42:00-04:00",
    "end": "2026-10-19T22:27:00-04:00",
@@ -54,12 +54,12 @@
   },
   {
    "id": "1039894",
-   "header": "Providence Line Train 870 (6:12 PM from Providence) is operating 5-15 minutes behind schedule between Mansfield and South Station due to a mechanical issue.",
+   "header": "Providence Line Train 870 (6:12 PM from Providence) is operating 10-20 minutes behind schedule between Route 128 and South Station due to a mechanical issue.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "MECHANICAL_ISSUE",
-   "start": "2026-10-19T18:55:29-04:00",
+   "start": "2026-10-19T18:55:00-04:00",
    "end": "2026-10-19T20:29:00-04:00",
    "routes": [
     "CR-Providence"
@@ -71,24 +71,7 @@
     "mansfield"
    ],
    "url": null,
-   "updated": "2026-10-19T18:55:29-04:00"
-  },
-  {
-   "id": "1039866",
-   "header": "Providence Line Train 861 (4:45 PM from South Station) is operating 5-15 minutes behind schedule between Route 128 and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T17:18:05-04:00",
-   "end": "2026-10-19T19:33:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-19T17:18:05-04:00"
+   "updated": "2026-10-19T19:24:46-04:00"
   },
   {
    "id": "1038493",

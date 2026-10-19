@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-19T22:36:20.307Z",
+ "updated": "2026-10-19T23:05:23.588Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -27,31 +41,123 @@
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "uBUR0cH1inA",
+   "title": "Gov. McKee, state police share policy guideline for use of automatic license plate readers",
+   "link": "https://www.youtube.com/watch?v=uBUR0cH1inA",
+   "published": "2026-10-19T22:56:43.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/uBUR0cH1inA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Wlditb3eecA",
+   "title": "Bon Jovi announces 2027 concert at Gillette Stadium",
+   "link": "https://www.youtube.com/watch?v=Wlditb3eecA",
+   "published": "2026-10-19T22:43:01.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Wlditb3eecA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "XZo0CWsJj58",
+   "title": "RI Democratic Party chair's husband indicted in Ohio racketeering case",
+   "link": "https://www.youtube.com/watch?v=XZo0CWsJj58",
+   "published": "2026-10-19T22:42:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XZo0CWsJj58/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nG01JtD37ZA",
+   "title": "Fire destroys Providence home",
+   "link": "https://www.youtube.com/watch?v=nG01JtD37ZA",
+   "published": "2026-10-19T22:40:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nG01JtD37ZA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1Bo82yvWJBA",
+   "title": "State trooper arrested in Jamestown",
+   "link": "https://www.youtube.com/watch?v=1Bo82yvWJBA",
+   "published": "2026-10-19T22:39:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1Bo82yvWJBA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "kR6ub4AwES8",
+   "title": "Former Fall River Mayor Will Flanagan to run in 2027",
+   "link": "https://www.youtube.com/watch?v=kR6ub4AwES8",
+   "published": "2026-10-19T22:37:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/kR6ub4AwES8/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "_2iFmcBk134",
+   "title": "Foulkes, Block, Guckian to face off Tuesday night at 7",
+   "link": "https://www.youtube.com/watch?v=_2iFmcBk134",
+   "published": "2026-10-19T22:36:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_2iFmcBk134/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "gH5xm92lab0",
+   "title": "Minogue reminds voters not to cross GOP Lt. gov. off the ballot",
+   "link": "https://www.youtube.com/watch?v=gH5xm92lab0",
+   "published": "2026-10-19T22:35:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gH5xm92lab0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RAAapJW8z-8",
+   "title": "Candidate for Massachusetts Lt. gov. arraigned on OUI charge",
+   "link": "https://www.youtube.com/watch?v=RAAapJW8z-8",
+   "published": "2026-10-19T22:33:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RAAapJW8z-8/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "pWEZku-hhfU",
+   "title": "McKee releases guidelines for Flock, ALPR cameras",
+   "link": "https://www.youtube.com/watch?v=pWEZku-hhfU",
+   "published": "2026-10-19T22:32:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/pWEZku-hhfU/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "FRdDaeYNJ3I",
    "title": "Husband of Rhode Island Democratic Party chair accused of stealing $20M in education funds",

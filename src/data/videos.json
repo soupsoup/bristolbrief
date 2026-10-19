@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-19T19:35:33.149Z",
+ "updated": "2026-10-19T20:05:26.740Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -14,20 +28,6 @@
    "ok": true,
    "entries": 15,
    "kept": 2
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   },
   {
    "id": "wpri",
@@ -44,14 +44,39 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 3
+   "kept": 2
   }
  ],
  "videos": [
+  {
+   "id": "4Ev-C5AuQHw",
+   "title": "Shawn Oliver, Republican candidate for Massachusetts Lt. Gov., suspends campaign after arrest",
+   "link": "https://www.youtube.com/shorts/4Ev-C5AuQHw",
+   "published": "2026-10-19T19:58:38.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/4Ev-C5AuQHw/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "GHABS5plIjE",
+   "title": "Street Stories Unpaved: Alzheimer's Association Rhode Island Chapter #shorts",
+   "link": "https://www.youtube.com/shorts/GHABS5plIjE",
+   "published": "2026-10-19T19:41:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GHABS5plIjE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "dAduJq2CmEo",
    "title": "Mike Minogue comments after Shawn Oliver's arrest",
@@ -3868,16 +3893,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/Hnt3r8QhWfo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "E1hJtFo1x-M",
-   "title": "Federal agents search home of Democratic U.S. Rep. Ilhan Omar",
-   "link": "https://www.youtube.com/watch?v=E1hJtFo1x-M",
-   "published": "2026-10-12T19:44:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/E1hJtFo1x-M/mqdefault.jpg",
    "towns": []
   }
  ]

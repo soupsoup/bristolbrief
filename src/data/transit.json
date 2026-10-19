@@ -1,22 +1,22 @@
 {
- "updated": "2026-10-19T18:35:31.002Z",
+ "updated": "2026-10-19T19:05:26.784Z",
  "alerts": [
   {
-   "id": "1039792",
-   "header": "Providence Line Train 840 (11:57 AM from Wickford Junction) is operating 10-20 minutes behind schedule between Attleboro and South Station due to a mechanical issue.",
+   "id": "1039811",
+   "header": "New Bedford Line Train 2030 (2:04 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
-   "cause": "MECHANICAL_ISSUE",
-   "start": "2026-10-19T13:03:40-04:00",
-   "end": "2026-10-19T14:43:00-04:00",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-19T14:41:59-04:00",
+   "end": "2026-10-19T16:44:00-04:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-19T13:03:40-04:00"
+   "updated": "2026-10-19T14:41:59-04:00"
   },
   {
    "id": "1039806",
@@ -53,30 +53,6 @@
    "updated": "2026-10-19T14:06:29-04:00"
   },
   {
-   "id": "1039798",
-   "header": "New Bedford Line Train 2067 (1:28 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T13:41:05-04:00",
-   "end": "2026-10-19T14:53:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-10-19T13:41:05-04:00"
-  },
-  {
    "id": "1039797",
    "header": "New Bedford Line Train 2028 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
    "effect": "DELAY",
@@ -92,23 +68,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-19T13:40:21-04:00"
-  },
-  {
-   "id": "1039791",
-   "header": "Fall River Line Train 1917 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Brockton and Fall River.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T12:56:46-04:00",
-   "end": "2026-10-19T14:45:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-19T12:56:46-04:00"
   },
   {
    "id": "1038493",

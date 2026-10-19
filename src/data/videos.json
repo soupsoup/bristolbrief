@@ -1,16 +1,9 @@
 {
- "updated": "2026-10-19T21:35:35.657Z",
+ "updated": "2026-10-19T22:06:18.452Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -23,13 +16,6 @@
    "kept": 1
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -37,11 +23,25 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 2
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "nbc10-wjar",
@@ -52,6 +52,49 @@
   }
  ],
  "videos": [
+  {
+   "id": "BbtswkCOIrU",
+   "title": "2 cemetery workers injured in Providence box cutter attack",
+   "link": "https://www.youtube.com/watch?v=BbtswkCOIrU",
+   "published": "2026-10-19T21:54:30.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/BbtswkCOIrU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "tcjwDe1PSps",
+   "title": "Richard Charest seeks ethics commission advisory on new CEO position",
+   "link": "https://www.youtube.com/watch?v=tcjwDe1PSps",
+   "published": "2026-10-19T21:38:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/tcjwDe1PSps/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "xnPGEHB9R2Q",
+   "title": "McKee shares guidelines for automated license plate readers",
+   "link": "https://www.youtube.com/watch?v=xnPGEHB9R2Q",
+   "published": "2026-10-19T21:37:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xnPGEHB9R2Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "yFps0KuGWnk",
+   "title": "WPRI 12 Weather Forecast 10/19/26",
+   "link": "https://www.youtube.com/watch?v=yFps0KuGWnk",
+   "published": "2026-10-19T21:29:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/yFps0KuGWnk/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "rGikxR-cuQM",
    "title": "Sandra Birchmore Daily Debrief: Jury hears more graphic text messages",
@@ -167,19 +210,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/1CYLscaDHOw/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "061fe5l2h9k",
-   "title": "WPRI 12 Weather Forecast 10/19/26",
-   "link": "https://www.youtube.com/watch?v=061fe5l2h9k",
-   "published": "2026-10-19T20:36:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/061fe5l2h9k/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "LhWeCLP2VjU",
@@ -3961,39 +3991,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/lpXi7sjR_Lk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "um2hxB4lTUE",
-   "title": "Crowds gather for annual Autumnfest parade in Woonsocket",
-   "link": "https://www.youtube.com/watch?v=um2hxB4lTUE",
-   "published": "2026-10-12T21:47:29.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/um2hxB4lTUE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "iC7evJVfPZk",
-   "title": "Fire cuts short opening weekend at Norton pizza shop",
-   "link": "https://www.youtube.com/watch?v=iC7evJVfPZk",
-   "published": "2026-10-12T21:45:46.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/iC7evJVfPZk/mqdefault.jpg",
-   "towns": [
-    "norton"
-   ],
-   "local": true
-  },
-  {
-   "id": "x4gl32B5mp8",
-   "title": "Oceanographer explains challenges in search for medical jet missing off Nantucket",
-   "link": "https://www.youtube.com/watch?v=x4gl32B5mp8",
-   "published": "2026-10-12T21:40:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/x4gl32B5mp8/mqdefault.jpg",
    "towns": []
   }
  ]

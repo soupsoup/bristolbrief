@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T17:35:32.104Z",
+ "updated": "2026-10-19T18:05:44.522Z",
  "alerts": [
   {
    "id": "1039792",
@@ -17,6 +17,47 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-19T13:03:40-04:00"
+  },
+  {
+   "id": "1039798",
+   "header": "New Bedford Line Train 2067 (1:28 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-19T13:41:05-04:00",
+   "end": "2026-10-19T14:53:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-10-19T13:41:05-04:00"
+  },
+  {
+   "id": "1039797",
+   "header": "New Bedford Line Train 2028 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-19T13:40:21-04:00",
+   "end": "2026-10-19T15:44:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-19T13:40:21-04:00"
   },
   {
    "id": "1039791",

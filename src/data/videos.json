@@ -1,16 +1,23 @@
 {
- "updated": "2026-10-19T17:35:32.104Z",
+ "updated": "2026-10-19T18:05:44.522Z",
  "channels": [
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 2
@@ -21,13 +28,6 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
   },
   {
    "id": "boston25",
@@ -44,14 +44,28 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 2
   }
  ],
  "videos": [
+  {
+   "id": "dAduJq2CmEo",
+   "title": "Mike Minogue comments after Shawn Oliver's arrest",
+   "link": "https://www.youtube.com/shorts/dAduJq2CmEo",
+   "published": "2026-10-19T17:54:30.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/dAduJq2CmEo/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "A58-TEI0bbE",
    "title": "Video: Aftermath of alleged drunk driving crash involving GOP candidate for lt. governor in Mass.",
@@ -3887,16 +3901,6 @@
    "thumbnail": "https://i.ytimg.com/vi/V3iJN_ca7kY/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "cKq8VTF9Dgw",
-   "title": "Spotlight New England: Real Talk Rhody with Bekah Berger",
-   "link": "https://www.youtube.com/watch?v=cKq8VTF9Dgw",
-   "published": "2026-10-12T18:01:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cKq8VTF9Dgw/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

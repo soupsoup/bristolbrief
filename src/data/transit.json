@@ -1,14 +1,14 @@
 {
- "updated": "2026-10-19T20:05:26.740Z",
+ "updated": "2026-10-19T20:35:30.610Z",
  "alerts": [
   {
    "id": "1039834",
-   "header": "Providence Line Train 851 (3:20 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Providence.",
+   "header": "Providence Line Train 851 (3:20 PM from South Station) is operating 20-30 minutes behind schedule between Sharon and Providence due to a mechanical issue.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 7,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T15:44:25-04:00",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-19T15:44:00-04:00",
    "end": "2026-10-19T17:30:00-04:00",
    "routes": [
     "CR-Providence"
@@ -16,41 +16,48 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-19T15:44:25-04:00"
+   "updated": "2026-10-19T16:15:48-04:00"
   },
   {
-   "id": "1039821",
-   "header": "New Bedford Line Train 2021 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Brockton and New Bedford.",
+   "id": "1039841",
+   "header": "Providence Line Train 855 (3:40 PM from South Station) is operating 20-30 minutes behind schedule between Ruggles and Wickford Junction due to a downed tree on the right of way in the Ruggles area.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-19T16:08:37-04:00",
+   "end": "2026-10-19T18:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-19T16:08:37-04:00"
+  },
+  {
+   "id": "1039843",
+   "header": "Providence Line Train 857 (4:15 PM from South Station) is operating 5-15 minutes behind schedule between South Station and Providence.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T15:13:42-04:00",
-   "end": "2026-10-19T17:02:00-04:00",
+   "start": "2026-10-19T16:27:42-04:00",
+   "end": "2026-10-19T18:31:00-04:00",
    "routes": [
-    "CR-NewBedford"
+    "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-19T15:13:42-04:00"
-  },
-  {
-   "id": "1039811",
-   "header": "New Bedford Line Train 2030 (2:04 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-19T14:41:59-04:00",
-   "end": "2026-10-19T16:44:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-19T14:41:59-04:00"
+   "updated": "2026-10-19T16:27:42-04:00"
   },
   {
    "id": "1038493",

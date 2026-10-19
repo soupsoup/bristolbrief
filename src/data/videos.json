@@ -1,6 +1,27 @@
 {
- "updated": "2026-10-19T21:05:47.774Z",
+ "updated": "2026-10-19T21:35:35.657Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -9,8 +30,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -23,35 +44,80 @@
    "kept": 2
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 3
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "rGikxR-cuQM",
+   "title": "Sandra Birchmore Daily Debrief: Jury hears more graphic text messages",
+   "link": "https://www.youtube.com/watch?v=rGikxR-cuQM",
+   "published": "2026-10-19T21:21:09.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rGikxR-cuQM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5tSRuvAkFyc",
+   "title": "‘We grieve him’: Providence teen’s 1997 murder remains unsolved",
+   "link": "https://www.youtube.com/watch?v=5tSRuvAkFyc",
+   "published": "2026-10-19T21:20:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/5tSRuvAkFyc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Ox-J9SBpP1U",
+   "title": "Husband of RI Democratic Party Chair charged in Ohio racketeering case",
+   "link": "https://www.youtube.com/watch?v=Ox-J9SBpP1U",
+   "published": "2026-10-19T21:17:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ox-J9SBpP1U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wo2rgIEDAVI",
+   "title": "Pawtucket man charged with breaking into Attleboro middle school",
+   "link": "https://www.youtube.com/watch?v=wo2rgIEDAVI",
+   "published": "2026-10-19T21:13:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wo2rgIEDAVI/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "JvTBJYirIa4",
+   "title": "Rhode Island state trooper faces DUI charge",
+   "link": "https://www.youtube.com/watch?v=JvTBJYirIa4",
+   "published": "2026-10-19T21:11:52.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/JvTBJYirIa4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7VhZFIQCTcg",
+   "title": "GOP nominee for Mass. Lt. gov. pleaded not guilty following an OUI arrest",
+   "link": "https://www.youtube.com/watch?v=7VhZFIQCTcg",
+   "published": "2026-10-19T21:07:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7VhZFIQCTcg/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "R2yqGTxmijI",
    "title": "New 12+ Episode: Walk to End Alzheimer’s",
@@ -114,16 +180,6 @@
    "local": true,
    "countywide": true,
    "weather": true
-  },
-  {
-   "id": "rGikxR-cuQM",
-   "title": "Sandra Birchmore Daily Debrief: Jury hears more graphic text messages",
-   "link": "https://www.youtube.com/watch?v=rGikxR-cuQM",
-   "published": "2026-10-19T20:33:13.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/rGikxR-cuQM/mqdefault.jpg",
-   "towns": []
   },
   {
    "id": "LhWeCLP2VjU",

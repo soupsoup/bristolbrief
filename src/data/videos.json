@@ -1,16 +1,9 @@
 {
- "updated": "2026-10-19T22:06:18.452Z",
+ "updated": "2026-10-19T22:36:20.307Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -23,11 +16,32 @@
    "kept": 15
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 1
   },
   {
    "id": "7news-boston",
@@ -35,23 +49,60 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "FRdDaeYNJ3I",
+   "title": "Husband of Rhode Island Democratic Party chair accused of stealing $20M in education funds",
+   "link": "https://www.youtube.com/watch?v=FRdDaeYNJ3I",
+   "published": "2026-10-19T22:18:10.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/FRdDaeYNJ3I/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "VsVaPZYnauY",
+   "title": "Shawn Oliver pleads not guilty to OUI after New Bedford rollover crash",
+   "link": "https://www.youtube.com/watch?v=VsVaPZYnauY",
+   "published": "2026-10-19T22:12:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/VsVaPZYnauY/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "ORM8-kPToyw",
+   "title": "GOP candidate for Mass. lieutenant governor charged with OUI #shorts",
+   "link": "https://www.youtube.com/shorts/ORM8-kPToyw",
+   "published": "2026-10-19T22:10:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ORM8-kPToyw/mqdefault.jpg",
+   "towns": [
+    "dartmouth",
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "PvBA4RHRFDE",
+   "title": "Man held on bail after alleged break-in at Attleboro middle school",
+   "link": "https://www.youtube.com/watch?v=PvBA4RHRFDE",
+   "published": "2026-10-19T22:05:56.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/PvBA4RHRFDE/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
   {
    "id": "BbtswkCOIrU",
    "title": "2 cemetery workers injured in Providence box cutter attack",
@@ -3889,109 +3940,6 @@
    "thumbnail": "https://i.ytimg.com/vi/yCUIeeI-hSc/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "z6QApr1uO24",
-   "title": "Investigating erosion at Scarborough Beach #shorts",
-   "link": "https://www.youtube.com/shorts/z6QApr1uO24",
-   "published": "2026-10-12T22:30:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/z6QApr1uO24/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "PQL4NwZqtxM",
-   "title": "At least 15 motorcyclists killed in Rhode Island, Bristol County crashes since May",
-   "link": "https://www.youtube.com/watch?v=PQL4NwZqtxM",
-   "published": "2026-10-12T22:19:45.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/PQL4NwZqtxM/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "3DkQthMy5NQ",
-   "title": "Nor'easter causes erosion along Scarborough State Beach shoreline",
-   "link": "https://www.youtube.com/watch?v=3DkQthMy5NQ",
-   "published": "2026-10-12T22:18:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3DkQthMy5NQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "OdU1CffUTWc",
-   "title": "Security guard stabbed at Providence nightclub, police say",
-   "link": "https://www.youtube.com/watch?v=OdU1CffUTWc",
-   "published": "2026-10-12T22:16:00.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/OdU1CffUTWc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "LnCRml28vYw",
-   "title": "Projo to stop publishing print editions on some holidays",
-   "link": "https://www.youtube.com/watch?v=LnCRml28vYw",
-   "published": "2026-10-12T22:15:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/LnCRml28vYw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "u3J8BjEptDM",
-   "title": "Fight begins inside Federal Hill restaurant, spills outside",
-   "link": "https://www.youtube.com/watch?v=u3J8BjEptDM",
-   "published": "2026-10-12T22:14:03.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/u3J8BjEptDM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lvmyfNiSs2w",
-   "title": "Block debuts TV ads; union plans $500K for Foulkes",
-   "link": "https://www.youtube.com/watch?v=lvmyfNiSs2w",
-   "published": "2026-10-12T22:12:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lvmyfNiSs2w/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "i5kqCLlP00A",
-   "title": "Results from 12 News/Emerson poll to be released Tuesday",
-   "link": "https://www.youtube.com/watch?v=i5kqCLlP00A",
-   "published": "2026-10-12T22:12:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/i5kqCLlP00A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_RpC_0TT2-k",
-   "title": "Coventry family urges owner of dog in riverwalk attack to come forward",
-   "link": "https://www.youtube.com/watch?v=_RpC_0TT2-k",
-   "published": "2026-10-12T22:10:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_RpC_0TT2-k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lpXi7sjR_Lk",
-   "title": "Tiverton restaurant significantly damaged by crash",
-   "link": "https://www.youtube.com/watch?v=lpXi7sjR_Lk",
-   "published": "2026-10-12T22:06:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lpXi7sjR_Lk/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

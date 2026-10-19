@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-19T11:05:31.800Z",
+ "updated": "2026-10-19T11:35:30.814Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -16,8 +23,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -30,13 +37,6 @@
    "kept": 1
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
@@ -44,14 +44,40 @@
    "kept": 2
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "9AmS0xUZoik",
+   "title": "WPRI 12 Weather Forecast for 10/19/26:  Sun and clouds today, staying dry",
+   "link": "https://www.youtube.com/watch?v=9AmS0xUZoik",
+   "published": "2026-10-19T11:10:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9AmS0xUZoik/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "bCfp0r0YoCs",
+   "title": "Massachusetts LG candidate suspends campaign after arrest",
+   "link": "https://www.youtube.com/watch?v=bCfp0r0YoCs",
+   "published": "2026-10-19T11:09:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bCfp0r0YoCs/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "dFCtlFSxD_4",
    "title": "Providence Police respond to reported stabbing at cemetery",
@@ -84,19 +110,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "fzrigiAL54g",
-   "title": "WPRI 12 Weather Forecast for 10/19/26:  Sunny, pleasant today",
-   "link": "https://www.youtube.com/watch?v=fzrigiAL54g",
-   "published": "2026-10-19T09:00:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fzrigiAL54g/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "w7jGW5YUefM",

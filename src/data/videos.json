@@ -1,9 +1,16 @@
 {
- "updated": "2026-10-19T08:05:27.629Z",
+ "updated": "2026-10-19T08:35:25.473Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -16,25 +23,18 @@
    "kept": 1
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 2
   },
   {
    "id": "7news-boston",
@@ -44,14 +44,27 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "dy_vvS4Mqlw",
+   "title": "WPRI 12 Weather Now 10/19/26: Sunny, pleasant today",
+   "link": "https://www.youtube.com/watch?v=dy_vvS4Mqlw",
+   "published": "2026-10-19T08:18:01.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/dy_vvS4Mqlw/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "w7jGW5YUefM",
    "title": "Pawtucket man faces charges after allegedly breaking into Attleboro middle school",
@@ -127,19 +140,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/oBoHNIgYnog/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "MOM9bQ95zJs",
-   "title": "WPRI 12 Weather Forecast 10/18/26",
-   "link": "https://www.youtube.com/watch?v=MOM9bQ95zJs",
-   "published": "2026-10-19T04:07:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MOM9bQ95zJs/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "cBMgSU8EIow",

@@ -1,31 +1,6 @@
 {
- "updated": "2026-10-20T22:16:53.237Z",
+ "updated": "2026-10-20T22:35:29.089Z",
  "alerts": [
-  {
-   "id": "1040087",
-   "header": "Fall River Line Train 1925 (3:38 PM from South Station) is operating 20-30 minutes behind schedule between Middleborough and Fall River due to train traffic.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-20T15:54:00-04:00",
-   "end": "2026-10-20T18:24:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-20T17:14:12-04:00"
-  },
   {
    "id": "1040044",
    "header": "The previously scheduled diversions for the Fall River/New Bedford, Greenbush, and Kingston Lines from Fri, Oct 23 through Mon, Oct 26 have been cancelled. Full train service will operate as scheduled on mbta.com/cr.",
@@ -44,25 +19,28 @@
    "updated": "2026-10-20T13:47:06-04:00"
   },
   {
-   "id": "1040109",
-   "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 10-20 minutes behind schedule between South Attleboro and Wickford Junction.",
+   "id": "1040151",
+   "header": "Providence Line Train 867 (5:37 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Wickford Junction.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-20T16:57:28-04:00",
-   "end": "2026-10-20T18:30:00-04:00",
+   "start": "2026-10-20T18:21:37-04:00",
+   "end": "2026-10-20T20:29:00-04:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [
-    "South Attleboro"
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
    ],
    "towns": [
-    "attleboro"
+    "attleboro",
+    "mansfield"
    ],
    "url": null,
-   "updated": "2026-10-20T16:57:28-04:00"
+   "updated": "2026-10-20T18:21:37-04:00"
   },
   {
    "id": "1040133",
@@ -114,23 +92,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-20T17:34:15-04:00"
-  },
-  {
-   "id": "1040119",
-   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-20T17:19:21-04:00",
-   "end": "2026-10-20T18:31:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-20T17:19:21-04:00"
   },
   {
    "id": "1040115",

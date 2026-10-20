@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T21:35:29.174Z",
+ "updated": "2026-10-20T22:05:29.791Z",
  "alerts": [
   {
    "id": "1040087",
@@ -63,6 +63,40 @@
    ],
    "url": null,
    "updated": "2026-10-20T16:57:28-04:00"
+  },
+  {
+   "id": "1040133",
+   "header": "Stoughton Line Train 966 (6:00 PM from Stoughton) is expected to depart Stoughton 5-15 minutes behind schedule.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-20T18:00:00-04:00",
+   "end": "2026-10-20T19:39:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-20T17:47:31-04:00"
+  },
+  {
+   "id": "1040125",
+   "header": "Fall River Line Train 1931 (5:05 PM from South Station) is operating 5-15 minutes behind schedule between Braintree and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-20T17:36:31-04:00",
+   "end": "2026-10-20T19:47:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-20T17:36:31-04:00"
   },
   {
    "id": "1040122",
@@ -135,6 +169,23 @@
    ],
    "url": null,
    "updated": "2026-10-20T15:58:37-04:00"
+  },
+  {
+   "id": "1040135",
+   "header": "Providence Line Train 874 (6:46 PM from Wickford Junction) is expected to depart Wickford Junction 5-15 minutes behind schedule.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "UPCOMING",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-20T18:46:00-04:00",
+   "end": "2026-10-20T21:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-20T17:49:09-04:00"
   },
   {
    "id": "1038493",

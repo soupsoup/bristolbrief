@@ -1,37 +1,22 @@
 {
- "updated": "2026-10-20T02:05:47.495Z",
+ "updated": "2026-10-20T02:35:26.398Z",
  "channels": [
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,14 +29,62 @@
    "kept": 1
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "dkFChBXqwoM",
+   "title": "Former Fall River mayor to run for office next year",
+   "link": "https://www.youtube.com/watch?v=dkFChBXqwoM",
+   "published": "2026-10-20T02:24:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/dkFChBXqwoM/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "q2p8IhWu0OQ",
+   "title": "Minogue, Healey react to GOP LG candidate Oliver's New Bedford crash, OUI charges",
+   "link": "https://www.youtube.com/watch?v=q2p8IhWu0OQ",
+   "published": "2026-10-20T02:21:20.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/q2p8IhWu0OQ/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "TT8Nxr5g_4k",
+   "title": "McKee shares guidelines for automated license plate readers",
+   "link": "https://www.youtube.com/watch?v=TT8Nxr5g_4k",
+   "published": "2026-10-20T02:21:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/TT8Nxr5g_4k/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "GDgPaxXaknc",
    "title": "Shawn Oliver attends finance meeting after crash",

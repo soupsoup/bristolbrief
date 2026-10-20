@@ -1,13 +1,6 @@
 {
- "updated": "2026-10-20T12:05:53.426Z",
+ "updated": "2026-10-20T12:35:37.476Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -16,11 +9,11 @@
    "kept": 2
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
   },
   {
    "id": "nbc10-boston",
@@ -30,11 +23,18 @@
    "kept": 1
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
@@ -52,6 +52,39 @@
   }
  ],
  "videos": [
+  {
+   "id": "6M5D9RSS7ik",
+   "title": "Former Fall River mayor Will Flanagan announces run for office",
+   "link": "https://www.youtube.com/watch?v=6M5D9RSS7ik",
+   "published": "2026-10-20T12:31:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6M5D9RSS7ik/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "QKVCx7R_6S8",
+   "title": "Foulkes leads RI governor's race by double digits, new Salve poll finds",
+   "link": "https://www.youtube.com/watch?v=QKVCx7R_6S8",
+   "published": "2026-10-20T12:29:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/QKVCx7R_6S8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "CSS3utQWDbE",
+   "title": "McKee extends pause on ALPR systems in RI after 60-day review",
+   "link": "https://www.youtube.com/watch?v=CSS3utQWDbE",
+   "published": "2026-10-20T12:28:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CSS3utQWDbE/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "I223KmpTnfo",
    "title": "New Bedford City Council refuses to answer NBC 10’s questions on his drunk driving charges",
@@ -4017,79 +4050,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/D_fE6wFRm5U/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "9o1IRJyLG30",
-   "title": "Tonight at 5: Results from latest 12 News/Emerson poll",
-   "link": "https://www.youtube.com/watch?v=9o1IRJyLG30",
-   "published": "2026-10-13T12:34:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/9o1IRJyLG30/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "arg-kfGijmY",
-   "title": "Today is RI’s mail ballot request deadline",
-   "link": "https://www.youtube.com/watch?v=arg-kfGijmY",
-   "published": "2026-10-13T12:34:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/arg-kfGijmY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7yOWxW158a0",
-   "title": "New Norton pizza shop closed after fire",
-   "link": "https://www.youtube.com/watch?v=7yOWxW158a0",
-   "published": "2026-10-13T12:33:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7yOWxW158a0/mqdefault.jpg",
-   "towns": [
-    "norton"
-   ],
-   "local": true
-  },
-  {
-   "id": "8zMebP2RUwc",
-   "title": "Cybersecurity breach disrupts Stop & Shop’s online services",
-   "link": "https://www.youtube.com/watch?v=8zMebP2RUwc",
-   "published": "2026-10-13T12:32:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8zMebP2RUwc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2lzRb9LHj34",
-   "title": "Testimony begins in Matthew Farwell's federal trial",
-   "link": "https://www.youtube.com/watch?v=2lzRb9LHj34",
-   "published": "2026-10-13T12:30:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2lzRb9LHj34/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Ii7nruIS1kI",
-   "title": "Coventry family urges owner of dog in riverwalk attack to come forward",
-   "link": "https://www.youtube.com/watch?v=Ii7nruIS1kI",
-   "published": "2026-10-13T12:30:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Ii7nruIS1kI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Gta3cy4VgA4",
-   "title": "Foxboro police search for missing person",
-   "link": "https://www.youtube.com/watch?v=Gta3cy4VgA4",
-   "published": "2026-10-13T12:28:43.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Gta3cy4VgA4/mqdefault.jpg",
    "towns": []
   }
  ]

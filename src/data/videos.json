@@ -1,12 +1,26 @@
 {
- "updated": "2026-10-20T16:05:31.995Z",
+ "updated": "2026-10-20T16:35:49.275Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
@@ -23,15 +37,8 @@
    "kept": 1
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -42,28 +49,64 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
   }
  ],
  "videos": [
   {
-   "id": "K1nNP98Z-zY",
-   "title": "WPRI 12 Weather Now 10/20/26: Breezy with sun and clouds today",
-   "link": "https://www.youtube.com/watch?v=K1nNP98Z-zY",
-   "published": "2026-10-20T15:50:36.000Z",
+   "id": "xgd8zWERuYU",
+   "title": "Taunton to consider A.I. data center moratorium",
+   "link": "https://www.youtube.com/watch?v=xgd8zWERuYU",
+   "published": "2026-10-20T16:29:38.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/K1nNP98Z-zY/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/xgd8zWERuYU/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "pP8sF2yLlaQ",
+   "title": "Ammunition found inside Warwick school",
+   "link": "https://www.youtube.com/watch?v=pP8sF2yLlaQ",
+   "published": "2026-10-20T16:28:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/pP8sF2yLlaQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "LttD7HE3pH4",
+   "title": "Elaine Pelino files Board of Elections complaint against Aaron Guckian",
+   "link": "https://www.youtube.com/watch?v=LttD7HE3pH4",
+   "published": "2026-10-20T16:25:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/LttD7HE3pH4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "eZ3dQziHD-Y",
+   "title": "WPRI 12 Weather Forecast for 10/20/26:  Breezy, dry today",
+   "link": "https://www.youtube.com/watch?v=eZ3dQziHD-Y",
+   "published": "2026-10-20T16:25:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eZ3dQziHD-Y/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "sav9R5XmhEI",
+   "title": "RI governor candidates set to square off in 12 News debate",
+   "link": "https://www.youtube.com/watch?v=sav9R5XmhEI",
+   "published": "2026-10-20T16:22:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sav9R5XmhEI/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "fFcX3-KRd8A",
@@ -3992,66 +4035,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/yRnB5Wz0ACE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Eg83j4256uw",
-   "title": "Hasbro files WARN notice that 587 positions in Pawtucket are affected by move to Boston",
-   "link": "https://www.youtube.com/watch?v=Eg83j4256uw",
-   "published": "2026-10-13T16:34:04.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Eg83j4256uw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "V1YdgDkAUGA",
-   "title": "Pope Leo XIV admitted to hospital in Rome for surgery to remove lung nodule",
-   "link": "https://www.youtube.com/watch?v=V1YdgDkAUGA",
-   "published": "2026-10-13T16:15:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/V1YdgDkAUGA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "maYOwm8BBYo",
-   "title": "Stop & Shop, Hannaford websites & apps offline due to cyber security issue",
-   "link": "https://www.youtube.com/watch?v=maYOwm8BBYo",
-   "published": "2026-10-13T16:14:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/maYOwm8BBYo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "W7Omf96cXCU",
-   "title": "RI’s mail ballot request deadline is Oct. 13",
-   "link": "https://www.youtube.com/watch?v=W7Omf96cXCU",
-   "published": "2026-10-13T16:12:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/W7Omf96cXCU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "o0KYoCcQk1g",
-   "title": "Exclusive 12 News poll results to be released Tuesday",
-   "link": "https://www.youtube.com/watch?v=o0KYoCcQk1g",
-   "published": "2026-10-13T16:09:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/o0KYoCcQk1g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "eZDsFNty6PY",
-   "title": "Hasbro laying off nearly 600 employees in Pawtucket ahead of move to Boston",
-   "link": "https://www.youtube.com/watch?v=eZDsFNty6PY",
-   "published": "2026-10-13T16:09:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/eZDsFNty6PY/mqdefault.jpg",
    "towns": []
   }
  ]

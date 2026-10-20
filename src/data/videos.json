@@ -1,28 +1,15 @@
 {
- "updated": "2026-10-20T03:05:25.693Z",
+ "updated": "2026-10-20T04:44:51.214Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -33,16 +20,29 @@
    "error": "HTTP 404"
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3998,49 +3998,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/3VDc0jNtiqg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "BsN5SnDpoFk",
-   "title": "High School Roundup: La Salle volleyball sweeps, PCD soccer rolls",
-   "link": "https://www.youtube.com/watch?v=BsN5SnDpoFk",
-   "published": "2026-10-13T03:43:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/BsN5SnDpoFk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "YceG6Rdco08",
-   "title": "WPRI 12 Weather Forecast 10-12-26 Clouds And A Few Showers Tuesday",
-   "link": "https://www.youtube.com/watch?v=YceG6Rdco08",
-   "published": "2026-10-13T03:28:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YceG6Rdco08/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "mwOd4qjAQe0",
-   "title": "Family remembers New Hampshire man found dead aboard boat after leaving Block Island",
-   "link": "https://www.youtube.com/watch?v=mwOd4qjAQe0",
-   "published": "2026-10-13T03:13:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/mwOd4qjAQe0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RvMlGRgJGlc",
-   "title": "Neighbors raise safety concerns after train strikes car at Woonsocket crossing",
-   "link": "https://www.youtube.com/watch?v=RvMlGRgJGlc",
-   "published": "2026-10-13T03:11:02.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RvMlGRgJGlc/mqdefault.jpg",
    "towns": []
   }
  ]

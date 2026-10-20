@@ -1,16 +1,30 @@
 {
- "updated": "2026-10-20T17:05:26.342Z",
+ "updated": "2026-10-20T17:35:31.115Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,13 +37,6 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -37,21 +44,24 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "qoIEZTGAG8M",
+   "title": "Foulkes leads Block by 11 points in new poll by Salve Regina University's Pell Center",
+   "link": "https://www.youtube.com/watch?v=qoIEZTGAG8M",
+   "published": "2026-10-20T17:29:05.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/qoIEZTGAG8M/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "PNkLJAHfMs4",
    "title": "Providence city department leaders to attend snow readiness preparation meetings",
@@ -4056,16 +4066,6 @@
    "thumbnail": "https://i.ytimg.com/vi/P_rLourkBF4/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "hiOZtj7auJw",
-   "title": "Spotlight New England: Love Farms Harvest Series Underway in Cape Cod",
-   "link": "https://www.youtube.com/watch?v=hiOZtj7auJw",
-   "published": "2026-10-13T17:31:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/hiOZtj7auJw/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

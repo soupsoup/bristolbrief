@@ -1,41 +1,12 @@
 {
- "updated": "2026-10-20T04:44:51.214Z",
+ "updated": "2026-10-20T07:07:10.961Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
@@ -43,9 +14,103 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "mPQ57_F9ec0",
+   "title": "Taunton weighs one-year data center freeze as developer warns deal is at risk",
+   "link": "https://www.youtube.com/watch?v=mPQ57_F9ec0",
+   "published": "2026-10-20T03:17:17.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/mPQ57_F9ec0/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "OQM16gYl_uE",
+   "title": "Shawn Oliver declines to discuss OUI arrest after returning to New Bedford City Hall",
+   "link": "https://www.youtube.com/watch?v=OQM16gYl_uE",
+   "published": "2026-10-20T03:15:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/OQM16gYl_uE/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "XnRtAMb1XbU",
+   "title": "WPRI 12 Weather Forecast 10/19/26",
+   "link": "https://www.youtube.com/watch?v=XnRtAMb1XbU",
+   "published": "2026-10-20T03:11:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XnRtAMb1XbU/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "VQikJodbN-U",
+   "title": "Cumberland tops Lincoln in D2 field hockey, 6-2",
+   "link": "https://www.youtube.com/watch?v=VQikJodbN-U",
+   "published": "2026-10-20T03:08:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/VQikJodbN-U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mI1WPKFsMYg",
+   "title": "Hometown Hero: Marielle Nassiff, Moses Brown",
+   "link": "https://www.youtube.com/watch?v=mI1WPKFsMYg",
+   "published": "2026-10-20T02:39:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mI1WPKFsMYg/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "dkFChBXqwoM",
    "title": "Former Fall River mayor to run for office next year",
@@ -83,6 +148,19 @@
    "towns": []
   },
   {
+   "id": "MI7uIDABA08",
+   "title": "Stitches visible on Shawn Oliver as he attends council meeting after OUI crash",
+   "link": "https://www.youtube.com/watch?v=MI7uIDABA08",
+   "published": "2026-10-20T02:11:03.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/MI7uIDABA08/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
    "id": "GDgPaxXaknc",
    "title": "Shawn Oliver attends finance meeting after crash",
    "link": "https://www.youtube.com/shorts/GDgPaxXaknc",
@@ -95,19 +173,6 @@
    ],
    "local": true,
    "short": true
-  },
-  {
-   "id": "YZ5QvPdH05Y",
-   "title": "WPRI 12 Weather Forecast 10/19/26",
-   "link": "https://www.youtube.com/watch?v=YZ5QvPdH05Y",
-   "published": "2026-10-20T00:46:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YZ5QvPdH05Y/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "IFnfWOajxHk",

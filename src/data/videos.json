@@ -1,12 +1,17 @@
 {
- "updated": "2026-10-20T00:06:01.980Z",
+ "updated": "2026-10-20T01:05:25.051Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
@@ -16,25 +21,11 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   },
   {
    "id": "wpri",
@@ -42,6 +33,12 @@
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
@@ -53,15 +50,30 @@
  ],
  "videos": [
   {
-   "id": "s4enJ6NuTT4",
-   "title": "Beyond the Forecast: Predicting the weather for Halloween festivities #shorts",
-   "link": "https://www.youtube.com/shorts/s4enJ6NuTT4",
-   "published": "2026-10-19T23:17:42.000Z",
+   "id": "YZ5QvPdH05Y",
+   "title": "WPRI 12 Weather Forecast 10/19/26",
+   "link": "https://www.youtube.com/watch?v=YZ5QvPdH05Y",
+   "published": "2026-10-20T00:46:35.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/s4enJ6NuTT4/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/YZ5QvPdH05Y/mqdefault.jpg",
    "towns": [],
-   "weather": true,
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "IFnfWOajxHk",
+   "title": "Man pleads not guilty to Attleboro school break-in #shorts",
+   "link": "https://www.youtube.com/shorts/IFnfWOajxHk",
+   "published": "2026-10-20T00:32:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/IFnfWOajxHk/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true,
    "short": true
   },
   {
@@ -4023,17 +4035,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/WO9LdO8I8ZM/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "3HRKcNITCUs",
-   "title": "Travelers face higher airfare heading into holiday season #shorts",
-   "link": "https://www.youtube.com/shorts/3HRKcNITCUs",
-   "published": "2026-10-13T00:52:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3HRKcNITCUs/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

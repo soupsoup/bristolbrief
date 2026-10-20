@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T02:35:26.398Z",
+ "updated": "2026-10-20T03:05:25.693Z",
  "channels": [
   {
    "id": "nbc10-boston",
@@ -9,28 +9,26 @@
    "kept": 1
   },
   {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -43,9 +41,8 @@
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4044,36 +4041,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/RvMlGRgJGlc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "FXEKBdzREkE",
-   "title": "Cybersecurity breach disrupts some Stop & Shop services",
-   "link": "https://www.youtube.com/watch?v=FXEKBdzREkE",
-   "published": "2026-10-13T02:54:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/FXEKBdzREkE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "iCqSRO_IHKk",
-   "title": "‘Breaking Bad’ actor RJ Mitte dies at 34",
-   "link": "https://www.youtube.com/watch?v=iCqSRO_IHKk",
-   "published": "2026-10-13T02:53:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/iCqSRO_IHKk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RSXr3-CmVeI",
-   "title": "Nick-A-Nees fans rally around struggling dive bar",
-   "link": "https://www.youtube.com/watch?v=RSXr3-CmVeI",
-   "published": "2026-10-13T02:48:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/RSXr3-CmVeI/mqdefault.jpg",
    "towns": []
   }
  ]

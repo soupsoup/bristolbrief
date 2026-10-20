@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-20T22:35:29.089Z",
+ "updated": "2026-10-20T23:05:33.969Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -9,11 +16,25 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "wpri",
@@ -28,30 +49,175 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "KCZ0weiT8O0",
+   "title": "Johnston Fire Department, Amazon hold \"productive\" meeting over safety concerns",
+   "link": "https://www.youtube.com/watch?v=KCZ0weiT8O0",
+   "published": "2026-10-20T22:57:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/KCZ0weiT8O0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "D-cOT91SCDI",
+   "title": "Suspect arrested in Block Island stabbing",
+   "link": "https://www.youtube.com/watch?v=D-cOT91SCDI",
+   "published": "2026-10-20T22:56:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/D-cOT91SCDI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "PEsxKYtQcJM",
+   "title": "North Kingstown residents sue asphalt plant for ‘noxious odors’",
+   "link": "https://www.youtube.com/watch?v=PEsxKYtQcJM",
+   "published": "2026-10-20T22:55:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/PEsxKYtQcJM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "v1I2tzq2lJ8",
+   "title": "Mass. lawmakers to vote on spending bill without gas tax suspension",
+   "link": "https://www.youtube.com/watch?v=v1I2tzq2lJ8",
+   "published": "2026-10-20T22:54:01.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/v1I2tzq2lJ8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "sXN5r9bnRk0",
+   "title": "ACI inmate pleads no contest to escaping",
+   "link": "https://www.youtube.com/watch?v=sXN5r9bnRk0",
+   "published": "2026-10-20T22:53:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sXN5r9bnRk0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZBif1WJRFh0",
+   "title": "9-year-old Attleboro boy to represent USA in world Muay Thai competition",
+   "link": "https://www.youtube.com/watch?v=ZBif1WJRFh0",
+   "published": "2026-10-20T22:50:46.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ZBif1WJRFh0/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "IKVhzAXaZhI",
+   "title": "Coming Up: 12 News Debate at Rhode Island College",
+   "link": "https://www.youtube.com/watch?v=IKVhzAXaZhI",
+   "published": "2026-10-20T22:50:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/IKVhzAXaZhI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wRhWDF4ytwg",
+   "title": "Kayem recalls 1.6 million pounds of hot dogs, bacon, deli meats",
+   "link": "https://www.youtube.com/watch?v=wRhWDF4ytwg",
+   "published": "2026-10-20T22:43:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wRhWDF4ytwg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FRGCoLTgnsc",
+   "title": "Curfews help keep the peace overnight in Paris",
+   "link": "https://www.youtube.com/watch?v=FRGCoLTgnsc",
+   "published": "2026-10-20T22:42:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FRGCoLTgnsc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "tHmksZTCUE8",
+   "title": "LIVE: RI Governor Debate",
+   "link": "https://www.youtube.com/watch?v=tHmksZTCUE8",
+   "published": "2026-10-20T22:40:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/tHmksZTCUE8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nYl8tXqRIpY",
+   "title": "Attleboro FD holds award ceremony",
+   "link": "https://www.youtube.com/watch?v=nYl8tXqRIpY",
+   "published": "2026-10-20T22:39:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nYl8tXqRIpY/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "CCOhfeftBxU",
+   "title": "RI Ballot Question 5: Green Economy Bond",
+   "link": "https://www.youtube.com/watch?v=CCOhfeftBxU",
+   "published": "2026-10-20T22:38:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CCOhfeftBxU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "zfWsrulal_Q",
+   "title": "Patriots get ready for Thursday game against Chicago",
+   "link": "https://www.youtube.com/watch?v=zfWsrulal_Q",
+   "published": "2026-10-20T22:36:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/zfWsrulal_Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "K3PuhHYDhpk",
+   "title": "Spooky State House returns Oct. 29",
+   "link": "https://www.youtube.com/watch?v=K3PuhHYDhpk",
+   "published": "2026-10-20T22:35:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/K3PuhHYDhpk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "VMqpBpjMaC4",
+   "title": "Stop & Shop website, app back up after cyberattack",
+   "link": "https://www.youtube.com/watch?v=VMqpBpjMaC4",
+   "published": "2026-10-20T22:34:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/VMqpBpjMaC4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "G3PSJPJch5o",
+   "title": "Woonsocket marks completion of apartment complex",
+   "link": "https://www.youtube.com/watch?v=G3PSJPJch5o",
+   "published": "2026-10-20T22:32:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/G3PSJPJch5o/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "5EvIzejlSTs",
    "title": "Boston Celtics open NBA season with Rhode Islander Joe Mazzulla at the helm",
@@ -4050,70 +4216,6 @@
    "thumbnail": "https://i.ytimg.com/vi/n7brV8xMpbY/mqdefault.jpg",
    "towns": [
     "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "gvrAzD1hL00",
-   "title": "Rhode Island officials say election preparations are complete ahead of early voting",
-   "link": "https://www.youtube.com/watch?v=gvrAzD1hL00",
-   "published": "2026-10-13T23:03:54.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/gvrAzD1hL00/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "gIFEr2gsTnw",
-   "title": "Employees knock down fire at Providence restaurant",
-   "link": "https://www.youtube.com/watch?v=gIFEr2gsTnw",
-   "published": "2026-10-13T22:54:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gIFEr2gsTnw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "XABQ_lFi4M4",
-   "title": "In-depth analysis: 12 News/Emerson College October 2026 Poll #shorts",
-   "link": "https://www.youtube.com/shorts/XABQ_lFi4M4",
-   "published": "2026-10-13T22:45:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/XABQ_lFi4M4/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "yjTenquu4VQ",
-   "title": "Petition to remove Exeter-West Greenwich principal draws more than 400 signatures",
-   "link": "https://www.youtube.com/watch?v=yjTenquu4VQ",
-   "published": "2026-10-13T22:37:55.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/yjTenquu4VQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "bKI5tTbvL4w",
-   "title": "Testimony begins in Matthew Farwell murder trial in Sandra Birchmore case",
-   "link": "https://www.youtube.com/watch?v=bKI5tTbvL4w",
-   "published": "2026-10-13T22:37:40.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/bKI5tTbvL4w/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "hGq8T2j-Qoo",
-   "title": "Police: Suspect admitted to Providence stabbing in Instagram message",
-   "link": "https://www.youtube.com/watch?v=hGq8T2j-Qoo",
-   "published": "2026-10-13T22:36:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/hGq8T2j-Qoo/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
    ],
    "local": true
   }

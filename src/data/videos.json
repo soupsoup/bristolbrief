@@ -1,9 +1,30 @@
 {
- "updated": "2026-10-21T13:05:34.051Z",
+ "updated": "2026-10-21T13:35:32.539Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,27 +44,6 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -52,6 +52,39 @@
   }
  ],
  "videos": [
+  {
+   "id": "NuPPVsltpQY",
+   "title": "Meet the candidates: James Diossa for RI Treasurer",
+   "link": "https://www.youtube.com/watch?v=NuPPVsltpQY",
+   "published": "2026-10-21T13:09:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/NuPPVsltpQY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "W4rkvSX81-M",
+   "title": "WPRI 12 Weather Forecast for 10/21/26: Increasing clouds today, breezy and cool",
+   "link": "https://www.youtube.com/watch?v=W4rkvSX81-M",
+   "published": "2026-10-21T13:02:48.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/W4rkvSX81-M/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "te7sP7_tJzo",
+   "title": "Providence School Board set to discuss president's potential removal",
+   "link": "https://www.youtube.com/watch?v=te7sP7_tJzo",
+   "published": "2026-10-21T13:02:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/te7sP7_tJzo/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "YWuMc6zKS84",
    "title": "Former Fall River mayor says he's like to serve again",
@@ -98,19 +131,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/S-8jAQrgCkU/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "pcTLST8m81U",
-   "title": "WPRI 12 Weather Forecast for 10/21/26:  Lots of clouds, breezy and dry today",
-   "link": "https://www.youtube.com/watch?v=pcTLST8m81U",
-   "published": "2026-10-21T11:11:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/pcTLST8m81U/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "_gcSw-y1Djs",
@@ -4348,29 +4368,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/0Z7ceBnKyCw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "H3QEPMUR8bk",
-   "title": "Police: Suspect admitted to Providence stabbing in Instagram message",
-   "link": "https://www.youtube.com/watch?v=H3QEPMUR8bk",
-   "published": "2026-10-14T13:16:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/H3QEPMUR8bk/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
-   ],
-   "local": true
-  },
-  {
-   "id": "g_nC06v__jk",
-   "title": "Early voting begins Wednesday in Rhode Island",
-   "link": "https://www.youtube.com/watch?v=g_nC06v__jk",
-   "published": "2026-10-14T13:08:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/g_nC06v__jk/mqdefault.jpg",
    "towns": []
   }
  ]

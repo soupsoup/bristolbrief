@@ -1,16 +1,37 @@
 {
- "updated": "2026-10-21T22:35:46.322Z",
+ "updated": "2026-10-21T23:05:30.426Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,35 +44,27 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "1QGh-MifPr8",
+   "title": "Neighbors react to arrest of woman accused of orchestrating marriage fraud scheme",
+   "link": "https://www.youtube.com/watch?v=1QGh-MifPr8",
+   "published": "2026-10-21T22:44:12.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1QGh-MifPr8/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
   {
    "id": "guboaIag1QM",
    "title": "WPRI 12 Weather Forecast 10-21-26 Mainly Dry Next Several Days",
@@ -4211,52 +4224,6 @@
    "channel": "wcvb",
    "channelName": "WCVB Channel 5",
    "thumbnail": "https://i.ytimg.com/vi/Pn0j37_Fwws/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "lTWkQSeWcIU",
-   "title": "Fall River officers awarded for bravery during Gabriel House response",
-   "link": "https://www.youtube.com/watch?v=lTWkQSeWcIU",
-   "published": "2026-10-14T22:38:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lTWkQSeWcIU/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "lhNBq-uG878",
-   "title": "Tenants rally for talks with Providence apartment landlord",
-   "link": "https://www.youtube.com/watch?v=lhNBq-uG878",
-   "published": "2026-10-14T22:37:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lhNBq-uG878/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "6gsubWouKpU",
-   "title": "Early voting begins in RI as governor's race tightens",
-   "link": "https://www.youtube.com/watch?v=6gsubWouKpU",
-   "published": "2026-10-14T22:35:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6gsubWouKpU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "dFMj8NPNJLQ",
-   "title": "Death investigation underway at Attleboro home",
-   "link": "https://www.youtube.com/watch?v=dFMj8NPNJLQ",
-   "published": "2026-10-14T22:35:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dFMj8NPNJLQ/mqdefault.jpg",
    "towns": [
     "attleboro"
    ],

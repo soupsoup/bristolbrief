@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T16:05:35.067Z",
+ "updated": "2026-10-21T16:35:29.542Z",
  "alerts": [
   {
    "id": "1040044",
@@ -19,6 +19,48 @@
    "updated": "2026-10-20T13:47:06-04:00"
   },
   {
+   "id": "1040305",
+   "header": "Fall River Line Train 1917 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Quincy Center and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-21T12:32:28-04:00",
+   "end": "2026-10-21T14:45:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-21T12:32:28-04:00"
+  },
+  {
+   "id": "1040300",
+   "header": "Providence Line Train 835 (11:20 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence due to an earlier switch issue.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-21T12:19:00-04:00",
+   "end": "2026-10-21T13:35:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-21T12:23:39-04:00"
+  },
+  {
    "id": "1040291",
    "header": "Fall River Line Train 1915 (10:50 AM from South Station) is operating 5-15 minutes behind schedule between Brockton and Fall River.",
    "effect": "DELAY",
@@ -36,23 +78,6 @@
    "updated": "2026-10-21T11:54:52-04:00"
   },
   {
-   "id": "1040289",
-   "header": "Providence Line Train 836 (11:12 AM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-21T11:41:58-04:00",
-   "end": "2026-10-21T13:29:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-21T11:41:58-04:00"
-  },
-  {
    "id": "1040286",
    "header": "New Bedford Line Train 2024 (10:33 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
    "effect": "DELAY",
@@ -68,23 +93,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-21T11:18:01-04:00"
-  },
-  {
-   "id": "1040284",
-   "header": "Fall River Line Train 1911 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between East Taunton and Fall River.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-21T11:06:35-04:00",
-   "end": "2026-10-21T12:18:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-21T11:06:35-04:00"
   },
   {
    "id": "1038493",

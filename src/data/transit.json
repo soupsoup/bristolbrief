@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T21:05:33.489Z",
+ "updated": "2026-10-21T21:35:48.733Z",
  "alerts": [
   {
    "id": "1040044",
@@ -19,6 +19,40 @@
    "updated": "2026-10-20T13:47:06-04:00"
   },
   {
+   "id": "1040368",
+   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-21T17:19:49-04:00",
+   "end": "2026-10-21T18:31:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-21T17:19:49-04:00"
+  },
+  {
+   "id": "1040366",
+   "header": "New Bedford Line Train 2029 (4:40 PM from South Station) is operating 10-20 minutes behind schedule between Quincy Center and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-21T17:12:45-04:00",
+   "end": "2026-10-21T19:26:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-21T17:12:45-04:00"
+  },
+  {
    "id": "1040364",
    "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and Wickford Junction.",
    "effect": "DELAY",
@@ -34,6 +68,30 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-21T17:04:39-04:00"
+  },
+  {
+   "id": "1040373",
+   "header": "Providence Line Train 861 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-21T17:33:14-04:00",
+   "end": "2026-10-21T19:33:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-21T17:33:14-04:00"
   },
   {
    "id": "1038493",

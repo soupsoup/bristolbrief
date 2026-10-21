@@ -1,35 +1,21 @@
 {
- "updated": "2026-10-21T01:05:27.707Z",
+ "updated": "2026-10-21T03:05:44.600Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -41,13 +27,185 @@
    "kept": 0
   },
   {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": false,
-   "error": "HTTP 500"
+   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "2yFQ8ekHQs4",
+   "title": "Taunton councilors approve data center moratorium",
+   "link": "https://www.youtube.com/watch?v=2yFQ8ekHQs4",
+   "published": "2026-10-21T02:44:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2yFQ8ekHQs4/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "-YBOisaAgu4",
+   "title": "ACI inmate sentenced to 8 years for 2024 escape",
+   "link": "https://www.youtube.com/watch?v=-YBOisaAgu4",
+   "published": "2026-10-21T02:40:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-YBOisaAgu4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mU8rrXS7jaQ",
+   "title": "RI gubernatorial candidates spar in final televised debate",
+   "link": "https://www.youtube.com/watch?v=mU8rrXS7jaQ",
+   "published": "2026-10-21T02:31:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mU8rrXS7jaQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "K2Jnqng8gKI",
+   "title": "Johnston Fire Department, Amazon address concerns",
+   "link": "https://www.youtube.com/watch?v=K2Jnqng8gKI",
+   "published": "2026-10-21T02:24:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/K2Jnqng8gKI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "fGrodkSyzEA",
+   "title": "RI governor candidates square off in 12 News #RIGovDebate #shorts",
+   "link": "https://www.youtube.com/shorts/fGrodkSyzEA",
+   "published": "2026-10-21T02:23:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fGrodkSyzEA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "jtiq0imGFn0",
+   "title": "Rhode Island Hospital doctors ratify union contract",
+   "link": "https://www.youtube.com/watch?v=jtiq0imGFn0",
+   "published": "2026-10-21T02:21:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jtiq0imGFn0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "BRmcI1pTMU0",
+   "title": "Providence councilors take proactive approach to snow removal after blizzard fiasco",
+   "link": "https://www.youtube.com/watch?v=BRmcI1pTMU0",
+   "published": "2026-10-21T02:21:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BRmcI1pTMU0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "IN6cIMh5L7c",
+   "title": "Debate Debrief: Breaking down WPRI 12’s RI governor debate",
+   "link": "https://www.youtube.com/watch?v=IN6cIMh5L7c",
+   "published": "2026-10-21T02:05:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/IN6cIMh5L7c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Zi8eXBICzHo",
+   "title": "RI Governor Debate: Closing statements",
+   "link": "https://www.youtube.com/watch?v=Zi8eXBICzHo",
+   "published": "2026-10-21T01:59:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Zi8eXBICzHo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "xgo-EVSer7E",
+   "title": "RI Governor Debate: Healthcare",
+   "link": "https://www.youtube.com/watch?v=xgo-EVSer7E",
+   "published": "2026-10-21T01:52:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xgo-EVSer7E/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RGAjpp3RMQ8",
+   "title": "RI Governor Debate: Pension reform and the state budget",
+   "link": "https://www.youtube.com/watch?v=RGAjpp3RMQ8",
+   "published": "2026-10-21T01:51:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RGAjpp3RMQ8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "eAremybHUHQ",
+   "title": "Taunton councilors considering data center moratorium #shorts",
+   "link": "https://www.youtube.com/shorts/eAremybHUHQ",
+   "published": "2026-10-21T01:48:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eAremybHUHQ/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "9Rh2Rle9O4c",
+   "title": "RI Governor Debate: Automated license plate readers",
+   "link": "https://www.youtube.com/watch?v=9Rh2Rle9O4c",
+   "published": "2026-10-21T01:34:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9Rh2Rle9O4c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "2fXi7jFnHU0",
+   "title": "RI governor candidates square off in 12 News debate",
+   "link": "https://www.youtube.com/watch?v=2fXi7jFnHU0",
+   "published": "2026-10-21T01:30:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2fXi7jFnHU0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Ct9V-VrHJCo",
+   "title": "RI Governor Debate: The Housing Crisis",
+   "link": "https://www.youtube.com/watch?v=Ct9V-VrHJCo",
+   "published": "2026-10-21T01:21:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Ct9V-VrHJCo/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "tHmksZTCUE8",
    "title": "LIVE: RI Governor Debate",
@@ -4191,56 +4349,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "lp6iS0B_sYA",
-   "title": "Amtrak worker hurt in 20-foot fall from rail car files lawsuit",
-   "link": "https://www.youtube.com/watch?v=lp6iS0B_sYA",
-   "published": "2026-10-14T02:56:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lp6iS0B_sYA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vQVT3YjSygM",
-   "title": "12 News/Emerson Poll: Dems lead for Congress in RI; nuclear plant beats data centers",
-   "link": "https://www.youtube.com/watch?v=vQVT3YjSygM",
-   "published": "2026-10-14T02:17:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vQVT3YjSygM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "eD3l5LJa2uk",
-   "title": "Providence City Council to discuss ending Flock camera contract",
-   "link": "https://www.youtube.com/watch?v=eD3l5LJa2uk",
-   "published": "2026-10-14T02:16:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/eD3l5LJa2uk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "c-9GfD213iY",
-   "title": "New initiative looks to help Medicaid enrollees understand federal changes",
-   "link": "https://www.youtube.com/watch?v=c-9GfD213iY",
-   "published": "2026-10-14T02:16:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/c-9GfD213iY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "BrJl1xNezOw",
-   "title": "Employees knock down fire at Providence restaurant",
-   "link": "https://www.youtube.com/watch?v=BrJl1xNezOw",
-   "published": "2026-10-14T02:15:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/BrJl1xNezOw/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

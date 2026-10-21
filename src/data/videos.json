@@ -1,18 +1,6 @@
 {
- "updated": "2026-10-21T03:05:44.600Z",
+ "updated": "2026-10-21T05:35:39.152Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
@@ -20,31 +8,41 @@
    "error": "HTTP 404"
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   }
  ],
  "videos": [
@@ -101,6 +99,19 @@
    "thumbnail": "https://i.ytimg.com/vi/fGrodkSyzEA/mqdefault.jpg",
    "towns": [],
    "short": true
+  },
+  {
+   "id": "irMMPpnAp-Q",
+   "title": "Attleboro first responders honored, reunited with people they saved",
+   "link": "https://www.youtube.com/watch?v=irMMPpnAp-Q",
+   "published": "2026-10-21T02:22:25.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/irMMPpnAp-Q/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
   },
   {
    "id": "jtiq0imGFn0",
@@ -4303,52 +4314,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/aF-5i9L0tIE/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "5WFUmkvWJ4g",
-   "title": "WPRI 12 Weather Forecast 10-13-26  Much Warmer Nice Wednesday",
-   "link": "https://www.youtube.com/watch?v=5WFUmkvWJ4g",
-   "published": "2026-10-14T03:31:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5WFUmkvWJ4g/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "Yq3tQxxYOL4",
-   "title": "Petition to remove Exeter-West Greenwich principal draws more than 500 signatures",
-   "link": "https://www.youtube.com/watch?v=Yq3tQxxYOL4",
-   "published": "2026-10-14T03:13:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Yq3tQxxYOL4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "YDdmArGSbB4",
-   "title": "Moses Brown cruises past East Greenwich, 5-1",
-   "link": "https://www.youtube.com/watch?v=YDdmArGSbB4",
-   "published": "2026-10-14T03:11:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YDdmArGSbB4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "MEXi4-2VMBU",
-   "title": "Puppy recovering, available for adoption after alleged abuse in New Bedford",
-   "link": "https://www.youtube.com/watch?v=MEXi4-2VMBU",
-   "published": "2026-10-14T03:07:43.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/MEXi4-2VMBU/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

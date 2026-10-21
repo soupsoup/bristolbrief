@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-21T12:35:29.972Z",
+ "updated": "2026-10-21T13:05:34.051Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
@@ -16,8 +23,8 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,13 +37,6 @@
    "kept": 1
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
@@ -44,14 +44,28 @@
    "kept": 1
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "YWuMc6zKS84",
+   "title": "Former Fall River mayor says he's like to serve again",
+   "link": "https://www.youtube.com/shorts/YWuMc6zKS84",
+   "published": "2026-10-21T12:41:47.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/YWuMc6zKS84/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "N8ilywPwZ9w",
    "title": "Q&A: Did Rhode Island's final governor debate move the needle?",
@@ -4357,16 +4371,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/g_nC06v__jk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-Z1W76AebNQ",
-   "title": "Providence City Council to discuss ending Flock camera contract",
-   "link": "https://www.youtube.com/watch?v=-Z1W76AebNQ",
-   "published": "2026-10-14T12:35:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-Z1W76AebNQ/mqdefault.jpg",
    "towns": []
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T12:35:29.972Z",
+ "updated": "2026-10-21T13:05:34.051Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -226,7 +226,18 @@
   },
   "celtics": {
    "league": "NBA",
-   "past": [],
+   "past": [
+    {
+     "id": "nba-1",
+     "date": "2026-10-20T19:00:00.000Z",
+     "home": false,
+     "opponent": "Pistons",
+     "status": "final",
+     "us": 113,
+     "them": 121,
+     "result": "L"
+    }
+   ],
    "next": [
     {
      "id": "nba-17",

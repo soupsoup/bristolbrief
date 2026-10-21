@@ -1,19 +1,17 @@
 {
- "updated": "2026-10-21T00:38:55.629Z",
+ "updated": "2026-10-21T01:05:27.707Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
@@ -23,11 +21,17 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
@@ -37,18 +41,10 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
@@ -4245,28 +4241,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/BrJl1xNezOw/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "txA4mKHeryY",
-   "title": "First witnesses testify in trial of Matthew Farwell in killing of Sandra Birchmore",
-   "link": "https://www.youtube.com/shorts/txA4mKHeryY",
-   "published": "2026-10-14T01:03:35.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/txA4mKHeryY/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "0wfXmBFOGa0",
-   "title": "RI Energy shutoffs more than double as customers struggle to pay bills #shorts",
-   "link": "https://www.youtube.com/shorts/0wfXmBFOGa0",
-   "published": "2026-10-14T00:45:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0wfXmBFOGa0/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

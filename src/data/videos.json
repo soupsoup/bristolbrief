@@ -1,23 +1,30 @@
 {
- "updated": "2026-10-21T17:35:29.661Z",
+ "updated": "2026-10-21T18:05:32.912Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,13 +37,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -44,14 +44,24 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "GUYhH7dIlKE",
+   "title": "Community rallies around Warren business owner ahead of mass removal surgery",
+   "link": "https://www.youtube.com/watch?v=GUYhH7dIlKE",
+   "published": "2026-10-21T17:46:40.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/GUYhH7dIlKE/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "1mk42llZmdI",
    "title": "Spotlight New England: Personalized Beauty & Skin Wellness",
@@ -4403,17 +4413,6 @@
     "attleboro"
    ],
    "local": true,
-   "short": true
-  },
-  {
-   "id": "Irrn3f-_5No",
-   "title": "In-depth analysis: 12 News/Emerson Oct. 2026 Poll #shorts",
-   "link": "https://www.youtube.com/shorts/Irrn3f-_5No",
-   "published": "2026-10-14T17:38:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Irrn3f-_5No/mqdefault.jpg",
-   "towns": [],
    "short": true
   }
  ]

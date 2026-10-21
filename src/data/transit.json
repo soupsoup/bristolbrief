@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T22:05:27.630Z",
+ "updated": "2026-10-21T22:35:46.322Z",
  "alerts": [
   {
    "id": "1040044",
@@ -19,21 +19,28 @@
    "updated": "2026-10-20T13:47:06-04:00"
   },
   {
-   "id": "1040368",
-   "header": "Providence Line Train 857 (4:20 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
+   "id": "1040391",
+   "header": "Providence Line Train 867 (5:37 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-21T17:19:49-04:00",
-   "end": "2026-10-21T18:31:00-04:00",
+   "start": "2026-10-21T18:28:06-04:00",
+   "end": "2026-10-21T20:29:00-04:00",
    "routes": [
     "CR-Providence"
    ],
-   "stations": [],
-   "towns": [],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
    "url": null,
-   "updated": "2026-10-21T17:19:49-04:00"
+   "updated": "2026-10-21T18:28:06-04:00"
   },
   {
    "id": "1040366",
@@ -51,23 +58,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-21T17:12:45-04:00"
-  },
-  {
-   "id": "1040364",
-   "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-21T17:04:39-04:00",
-   "end": "2026-10-21T18:30:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-21T17:04:39-04:00"
   },
   {
    "id": "1040373",

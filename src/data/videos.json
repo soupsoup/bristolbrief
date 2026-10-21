@@ -1,12 +1,33 @@
 {
- "updated": "2026-10-21T15:35:26.978Z",
+ "updated": "2026-10-21T16:05:35.067Z",
  "channels": [
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "nbc10-boston",
@@ -20,28 +41,7 @@
    "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   },
   {
    "id": "wpri",
@@ -52,6 +52,19 @@
   }
  ],
  "videos": [
+  {
+   "id": "_dOCgL6CR6s",
+   "title": "WPRI 12 Weather Now 10/21/26: Breezy, chilly and dry this afternoon",
+   "link": "https://www.youtube.com/watch?v=_dOCgL6CR6s",
+   "published": "2026-10-21T15:48:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_dOCgL6CR6s/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "2nXyDiOaU5g",
    "title": "Federal prosecutors announce dismantling of 'marriage fraud ring' in Massachusetts",
@@ -71,19 +84,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/NuPPVsltpQY/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "W4rkvSX81-M",
-   "title": "WPRI 12 Weather Forecast for 10/21/26: Increasing clouds today, breezy and cool",
-   "link": "https://www.youtube.com/watch?v=W4rkvSX81-M",
-   "published": "2026-10-21T13:02:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/W4rkvSX81-M/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "te7sP7_tJzo",
@@ -4368,16 +4368,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/J-QjY2utkOY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0Z7ceBnKyCw",
-   "title": "Pope Leo's recovery from lung cancer surgery progressing, Vatican says",
-   "link": "https://www.youtube.com/watch?v=0Z7ceBnKyCw",
-   "published": "2026-10-14T15:54:11.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/0Z7ceBnKyCw/mqdefault.jpg",
    "towns": []
   }
  ]

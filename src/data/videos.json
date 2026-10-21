@@ -1,41 +1,26 @@
 {
- "updated": "2026-10-21T05:35:39.152Z",
+ "updated": "2026-10-21T07:06:55.972Z",
  "channels": [
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -43,9 +28,66 @@
    "ok": true,
    "entries": 15,
    "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "gTOT3UHtbuY",
+   "title": "WPRI 12 Governor Debate: Candidates square off in 12 News televised debate",
+   "link": "https://www.youtube.com/watch?v=gTOT3UHtbuY",
+   "published": "2026-10-21T05:28:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gTOT3UHtbuY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "oAjO_R8qJKs",
+   "title": "WPRI 12 Weather Forecast 10-20-26 Blustery Cooler Wednesday",
+   "link": "https://www.youtube.com/watch?v=oAjO_R8qJKs",
+   "published": "2026-10-21T03:29:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/oAjO_R8qJKs/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "gMZOPFJexz0",
+   "title": "Taunton councilors ban data centers, approve moratorium",
+   "link": "https://www.youtube.com/watch?v=gMZOPFJexz0",
+   "published": "2026-10-21T03:18:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gMZOPFJexz0/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
   {
    "id": "2yFQ8ekHQs4",
    "title": "Taunton councilors approve data center moratorium",
@@ -528,19 +570,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/E2-djnAkKFg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "QacSr3sJ3IA",
-   "title": "WPRI 12 Weather Forecast 10-20-26 Dry Breezy Cooler Wednesday",
-   "link": "https://www.youtube.com/watch?v=QacSr3sJ3IA",
-   "published": "2026-10-20T21:58:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QacSr3sJ3IA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "cqeGoYfTESc",
@@ -4304,16 +4333,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "aF-5i9L0tIE",
-   "title": "Election, public safety officials discuss election preparedness ahead of early voting",
-   "link": "https://www.youtube.com/watch?v=aF-5i9L0tIE",
-   "published": "2026-10-14T05:35:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/aF-5i9L0tIE/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

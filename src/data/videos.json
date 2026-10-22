@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-22T12:05:30.284Z",
+ "updated": "2026-10-22T12:35:32.657Z",
  "channels": [
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,11 +30,11 @@
    "kept": 1
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
    "id": "wpri",
@@ -35,23 +49,19 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "51jWbOvMXvk",
+   "title": "RI's first Costco is coming to Smithfield",
+   "link": "https://www.youtube.com/watch?v=51jWbOvMXvk",
+   "published": "2026-10-22T12:27:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/51jWbOvMXvk/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "1eJ3PR1oJ9I",
    "title": "Providence stabbing suspect due in court for competency hearing",
@@ -4259,26 +4269,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/hYO5xYogdeg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "UfvdFANS0ec",
-   "title": "Providence City Council to consider ban on Flock cameras",
-   "link": "https://www.youtube.com/watch?v=UfvdFANS0ec",
-   "published": "2026-10-15T12:33:52.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/UfvdFANS0ec/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mnsaUVKT3ok",
-   "title": "Throwback: When Providence was the set of 'Providence'",
-   "link": "https://www.youtube.com/watch?v=mnsaUVKT3ok",
-   "published": "2026-10-15T12:24:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/mnsaUVKT3ok/mqdefault.jpg",
    "towns": []
   }
  ]

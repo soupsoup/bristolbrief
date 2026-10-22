@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T23:05:30.426Z",
+ "updated": "2026-10-22T01:05:30.156Z",
  "channels": [
   {
    "id": "cbs-boston",
@@ -9,46 +9,40 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4183,51 +4177,6 @@
    "thumbnail": "https://i.ytimg.com/vi/jLfmY-SiY04/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "EW8qF-qb2z8",
-   "title": "Early voting begins in Rhode Island #shorts",
-   "link": "https://www.youtube.com/shorts/EW8qF-qb2z8",
-   "published": "2026-10-15T00:22:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/EW8qF-qb2z8/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "Bniqyds4beE",
-   "title": "Pope Leo eating, recovering after cancer surgery #shorts",
-   "link": "https://www.youtube.com/shorts/Bniqyds4beE",
-   "published": "2026-10-14T23:36:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Bniqyds4beE/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "P7Gb2MGkfoE",
-   "title": "State police trooper questioned for hours at Farwell trial about Birchmore investigation",
-   "link": "https://www.youtube.com/watch?v=P7Gb2MGkfoE",
-   "published": "2026-10-14T23:09:54.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/P7Gb2MGkfoE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Pn0j37_Fwws",
-   "title": "Two older adults, cat found dead in Mass. home after welfare check",
-   "link": "https://www.youtube.com/watch?v=Pn0j37_Fwws",
-   "published": "2026-10-14T23:06:57.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/Pn0j37_Fwws/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
   }
  ]
 }

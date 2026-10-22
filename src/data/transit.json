@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T22:05:46.516Z",
+ "updated": "2026-10-22T22:19:34.232Z",
  "alerts": [
   {
    "id": "1040044",
@@ -37,12 +37,12 @@
   },
   {
    "id": "1040621",
-   "header": "Fall River Line Train 1936 (4:41 PM from Fall River Depot) is operating 10-20 minutes behind schedule between Brockton and South Station.",
+   "header": "Fall River Line Train 1936 (4:41 PM from Fall River Depot) is operating 10-20 minutes behind schedule between Brockton and South Station due to a road vehicle striking a railroad bridge in the Brockton area.",
    "effect": "DELAY",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-22T17:53:27-04:00",
+   "start": "2026-10-22T17:53:00-04:00",
    "end": "2026-10-22T19:25:00-04:00",
    "routes": [
     "CR-NewBedford"
@@ -50,7 +50,24 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-22T17:53:27-04:00"
+   "updated": "2026-10-22T18:18:21-04:00"
+  },
+  {
+   "id": "1040628",
+   "header": "Fall River Line Train 1931 (5:05 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River due to a road vehicle striking a railroad bridge in the Brockton area.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-22T18:16:00-04:00",
+   "end": "2026-10-22T19:47:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-22T18:17:21-04:00"
   },
   {
    "id": "1040596",

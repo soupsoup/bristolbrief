@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T16:35:44.060Z",
+ "updated": "2026-10-22T17:06:14.633Z",
  "alerts": [
   {
    "id": "1040044",
@@ -20,7 +20,7 @@
   },
   {
    "id": "1040491",
-   "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary construction schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to Providence Line service which makes additional stops between Sharon and Hyde Park. ",
+   "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
    "effect": "SCHEDULE_CHANGE",
    "severity": 7,
    "lifecycle": "UPCOMING",
@@ -33,7 +33,41 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-22T10:07:27-04:00"
+   "updated": "2026-10-22T12:55:43-04:00"
+  },
+  {
+   "id": "1040535",
+   "header": "New Bedford Line Train 2026 (11:48 AM from New Bedford) is operating 5-15 minutes behind schedule between Montello and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-22T13:01:26-04:00",
+   "end": "2026-10-22T14:30:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-22T13:01:26-04:00"
+  },
+  {
+   "id": "1040533",
+   "header": "Fall River Line Train 1917 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Brockton and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-22T12:56:44-04:00",
+   "end": "2026-10-22T14:45:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-22T12:56:44-04:00"
   },
   {
    "id": "1038493",

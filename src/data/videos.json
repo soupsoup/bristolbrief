@@ -1,25 +1,6 @@
 {
- "updated": "2026-10-22T01:05:30.156Z",
+ "updated": "2026-10-22T02:35:23.904Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -27,8 +8,35 @@
    "error": "HTTP 404"
   },
   {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "boston25",
    "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -36,16 +44,129 @@
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "error": "HTTP 500"
   }
  ],
  "videos": [
+  {
+   "id": "bwtX2PwDEis",
+   "title": "WPRI Weather Now 10-21-26 Breezy Dry Thursday",
+   "link": "https://www.youtube.com/watch?v=bwtX2PwDEis",
+   "published": "2026-10-22T02:26:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bwtX2PwDEis/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "nxbo9TnY08k",
+   "title": "Former US ambassador to Russia visits RI as Ukraine war rages on",
+   "link": "https://www.youtube.com/watch?v=nxbo9TnY08k",
+   "published": "2026-10-22T02:21:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nxbo9TnY08k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "gZSsAI3iUd4",
+   "title": "Mass. reaches $10M settlement in autistic teen’s death",
+   "link": "https://www.youtube.com/watch?v=gZSsAI3iUd4",
+   "published": "2026-10-22T02:16:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gZSsAI3iUd4/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "rWSc2sW4tGg",
+   "title": "Where They Stand: Flock cameras #shorts",
+   "link": "https://www.youtube.com/shorts/rWSc2sW4tGg",
+   "published": "2026-10-22T01:10:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rWSc2sW4tGg/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "CdK7CbrBy3A",
+   "title": "Suspect in deadly 2017 Glocester crash gets home confinement #shorts",
+   "link": "https://www.youtube.com/shorts/CdK7CbrBy3A",
+   "published": "2026-10-22T00:13:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CdK7CbrBy3A/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "EHw-R3bG9os",
+   "title": "Clancy judge denies defense request for evidence",
+   "link": "https://www.youtube.com/watch?v=EHw-R3bG9os",
+   "published": "2026-10-21T23:29:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EHw-R3bG9os/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "O3skwPxRdNU",
+   "title": "Newport man admits to groping teen during flight",
+   "link": "https://www.youtube.com/watch?v=O3skwPxRdNU",
+   "published": "2026-10-21T23:27:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/O3skwPxRdNU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "xgXxk28ljuA",
+   "title": "Providence man pleads guilty to involvement in multi-state car theft ring",
+   "link": "https://www.youtube.com/watch?v=xgXxk28ljuA",
+   "published": "2026-10-21T23:26:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xgXxk28ljuA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ysnCmif0pkI",
+   "title": "New England Nation: Week 7 Game Picks",
+   "link": "https://www.youtube.com/watch?v=ysnCmif0pkI",
+   "published": "2026-10-21T23:18:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ysnCmif0pkI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "g3lQMRFErzI",
+   "title": "New England Nation: Keys to the Game Patriots at Bears",
+   "link": "https://www.youtube.com/watch?v=g3lQMRFErzI",
+   "published": "2026-10-21T23:11:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/g3lQMRFErzI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JvYG4aRgXsQ",
+   "title": "Lawsuit accuses former Providence bishop, two priests of abusing altar boy #shorts",
+   "link": "https://www.youtube.com/shorts/JvYG4aRgXsQ",
+   "published": "2026-10-21T23:04:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JvYG4aRgXsQ/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "1QGh-MifPr8",
    "title": "Neighbors react to arrest of woman accused of orchestrating marriage fraud scheme",
@@ -58,19 +179,6 @@
     "fall-river"
    ],
    "local": true
-  },
-  {
-   "id": "guboaIag1QM",
-   "title": "WPRI 12 Weather Forecast 10-21-26 Mainly Dry Next Several Days",
-   "link": "https://www.youtube.com/watch?v=guboaIag1QM",
-   "published": "2026-10-21T22:26:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/guboaIag1QM/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "uc_soNsUdkM",
@@ -4143,40 +4251,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/tylzoQkjV20/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "vkrds1xFd6M",
-   "title": "New Bedford man killed in head-on Texas crash",
-   "link": "https://www.youtube.com/watch?v=vkrds1xFd6M",
-   "published": "2026-10-15T02:11:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vkrds1xFd6M/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "ZCTToV4F2DY",
-   "title": "Man hit, killed by 2 cars in North Kingstown",
-   "link": "https://www.youtube.com/watch?v=ZCTToV4F2DY",
-   "published": "2026-10-15T02:09:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZCTToV4F2DY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "jLfmY-SiY04",
-   "title": "Behind the Story: Justin Silverman on NEFAC’s first public records victory #shorts",
-   "link": "https://www.youtube.com/shorts/jLfmY-SiY04",
-   "published": "2026-10-15T01:33:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jLfmY-SiY04/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

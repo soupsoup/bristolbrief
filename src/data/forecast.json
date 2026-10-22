@@ -1,9 +1,20 @@
 {
- "updated": "2026-10-22T10:05:36.408Z",
+ "updated": "2026-10-22T10:08:38.617Z",
  "generated": "2026-10-22T06:34:27+00:00",
  "periods": [
   {
-   "name": "Today",
+   "name": "Overnight",
+   "start": "2026-10-22T05:00:00-04:00",
+   "day": false,
+   "temp": 48,
+   "unit": "F",
+   "pop": 11,
+   "wind": "N 14 mph",
+   "short": "Cloudy",
+   "detail": "Cloudy, with a low around 48. North wind around 14 mph, with gusts as high as 26 mph."
+  },
+  {
+   "name": "Thursday",
    "start": "2026-10-22T06:00:00-04:00",
    "day": true,
    "temp": 59,
@@ -14,7 +25,7 @@
    "detail": "Partly sunny, with a high near 59. North wind 10 to 15 mph, with gusts as high as 29 mph."
   },
   {
-   "name": "Tonight",
+   "name": "Thursday Night",
    "start": "2026-10-22T18:00:00-04:00",
    "day": false,
    "temp": 36,
@@ -144,17 +155,6 @@
    "wind": "E 5 mph",
    "short": "Mostly Sunny",
    "detail": "Mostly sunny, with a high near 58. East wind around 5 mph."
-  },
-  {
-   "name": "Wednesday Night",
-   "start": "2026-10-28T18:00:00-04:00",
-   "day": false,
-   "temp": 40,
-   "unit": "F",
-   "pop": 3,
-   "wind": "W 0 to 3 mph",
-   "short": "Mostly Cloudy",
-   "detail": "Mostly cloudy, with a low around 40. West wind 0 to 3 mph."
   }
  ]
 }

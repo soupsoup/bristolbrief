@@ -1,10 +1,10 @@
 {
- "updated": "2026-10-22T17:35:45.063Z",
+ "updated": "2026-10-22T18:05:52.765Z",
  "alerts": [
   {
    "id": "1040538",
-   "header": "Providence Line Train 839 (12:20 PM from South Station) remains stopped at Mansfield and is 25-35 minutes behind schedule due to a mechanical issue.",
-   "effect": "DELAY",
+   "header": "Providence Line Train 839 (12:20 PM from South Station) has terminated at Mansfield due to a mechanical issue. Passengers will be accommodated by Providence Line Train 843 (1:17 PM from South Station), or Train 847 (2:20 PM from South Station).",
+   "effect": "SUSPENSION",
    "severity": 8,
    "lifecycle": "NEW",
    "cause": "MECHANICAL_ISSUE",
@@ -13,10 +13,33 @@
    "routes": [
     "CR-Providence"
    ],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-22T13:58:43-04:00"
+  },
+  {
+   "id": "1040553",
+   "header": "Providence Line Train 852 (2:25 PM from Wickford Junction) is cancelled today due to a mechanical issue. Passengers between Providence & Back Bay can consider Train 856 (3:56 PM from Providence). The next train from Wickford Junction is Train 864.",
+   "effect": "CANCELLATION",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-22T14:25:00-04:00",
+   "end": "2026-10-22T17:09:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-22T13:24:40-04:00"
+   "updated": "2026-10-22T13:56:08-04:00"
   },
   {
    "id": "1040044",
@@ -51,6 +74,44 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-22T12:55:43-04:00"
+  },
+  {
+   "id": "1040554",
+   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating about 15-25 minutes behind schedule between Canton Junction and Providence due to a train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-22T14:02:35-04:00",
+   "end": "2026-10-22T15:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-22T14:02:35-04:00"
+  },
+  {
+   "id": "1040546",
+   "header": "New Bedford Line Train 2028 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station due to train traffic.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-22T13:40:23-04:00",
+   "end": "2026-10-22T15:44:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-22T13:40:23-04:00"
   },
   {
    "id": "1040542",

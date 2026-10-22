@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-22T21:35:42.597Z",
+ "updated": "2026-10-22T22:05:46.516Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
   },
   {
    "id": "wpri",
@@ -16,6 +16,20 @@
    "kept": 15
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
@@ -23,15 +37,8 @@
    "kept": 1
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -42,16 +49,105 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Cj7FEsvbIGk",
+   "title": "Middletown Town Council rejects proposal for clothing-optional area at Third Beach",
+   "link": "https://www.youtube.com/watch?v=Cj7FEsvbIGk",
+   "published": "2026-10-22T21:44:25.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Cj7FEsvbIGk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mL-vXYs_TAQ",
+   "title": "Community Focus: Ken Block",
+   "link": "https://www.youtube.com/watch?v=mL-vXYs_TAQ",
+   "published": "2026-10-22T21:39:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mL-vXYs_TAQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "He7V-3ezuaU",
+   "title": "High school idea to pro athlete clients: Norton man builds growing auto detail business",
+   "link": "https://www.youtube.com/watch?v=He7V-3ezuaU",
+   "published": "2026-10-22T21:39:41.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/He7V-3ezuaU/mqdefault.jpg",
+   "towns": [
+    "norton"
+   ],
+   "local": true
+  },
+  {
+   "id": "-N9gu9QBU4E",
+   "title": "Boon Street Market cause for controversy at Narragansett Town Council",
+   "link": "https://www.youtube.com/watch?v=-N9gu9QBU4E",
+   "published": "2026-10-22T21:34:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-N9gu9QBU4E/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "9HVBTmstPrs",
+   "title": "Clavicular pleads not guilty to Cape Cod rape allegation",
+   "link": "https://www.youtube.com/watch?v=9HVBTmstPrs",
+   "published": "2026-10-22T21:34:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9HVBTmstPrs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6FYLE6Qndw0",
+   "title": "Massachusetts voter registration deadline in Saturday, Oct. 24",
+   "link": "https://www.youtube.com/watch?v=6FYLE6Qndw0",
+   "published": "2026-10-22T21:31:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6FYLE6Qndw0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "lZ3D7bFh-cY",
+   "title": "New movie theater opens in Swansea",
+   "link": "https://www.youtube.com/watch?v=lZ3D7bFh-cY",
+   "published": "2026-10-22T21:31:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lZ3D7bFh-cY/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
+  },
+  {
+   "id": "v1hMP4DJIXM",
+   "title": "Globe RI: New lawsuit accused former bishop of sexual assault",
+   "link": "https://www.youtube.com/watch?v=v1hMP4DJIXM",
+   "published": "2026-10-22T21:28:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/v1hMP4DJIXM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ijv8yC8veno",
+   "title": "Quest Diagnostics reports cyber breach affecting ‘certain patient records’",
+   "link": "https://www.youtube.com/watch?v=ijv8yC8veno",
+   "published": "2026-10-22T21:27:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ijv8yC8veno/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "vf9ZfTlQUjc",
    "title": "Sandra Birchmore Case Daily Debrief: Father of Sandra Birchmore's unborn child testifies",
@@ -4010,40 +4106,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/Jm6kcaQYcd4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "xdAJ4RQIQg4",
-   "title": "Democrat Kim Ahern talks about her priorities if elected Rhode Island attorney general",
-   "link": "https://www.youtube.com/watch?v=xdAJ4RQIQg4",
-   "published": "2026-10-15T22:00:14.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/xdAJ4RQIQg4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "rPSz_ZYBYcg",
-   "title": "Police ID man hit, killed by 2 cars in North Kingstown #shorts",
-   "link": "https://www.youtube.com/shorts/rPSz_ZYBYcg",
-   "published": "2026-10-15T21:56:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/rPSz_ZYBYcg/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "xVlS31yTvfc",
-   "title": "New Bedford remembers former Feast president Carl Colangelo, killed in Texas crash",
-   "link": "https://www.youtube.com/watch?v=xVlS31yTvfc",
-   "published": "2026-10-15T21:41:46.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/xVlS31yTvfc/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

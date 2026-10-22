@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-22T18:05:52.765Z",
+ "updated": "2026-10-22T18:35:30.667Z",
  "alerts": [
+  {
+   "id": "1040554",
+   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating about 30-40 minutes behind schedule between Mansfield and Providence due to a train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-22T14:02:00-04:00",
+   "end": "2026-10-22T15:28:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-22T14:32:33-04:00"
+  },
   {
    "id": "1040538",
    "header": "Providence Line Train 839 (12:20 PM from South Station) has terminated at Mansfield due to a mechanical issue. Passengers will be accommodated by Providence Line Train 843 (1:17 PM from South Station), or Train 847 (2:20 PM from South Station).",
@@ -76,21 +93,21 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1040554",
-   "header": "Providence Line Train 843 (1:17 PM from South Station) is operating about 15-25 minutes behind schedule between Canton Junction and Providence due to a train with a mechanical issue ahead.",
+   "id": "1040557",
+   "header": "Providence Line Train 848 (2:10 PM from Providence) is operating 5-15 minutes behind schedule between Providence and South Station.",
    "effect": "DELAY",
-   "severity": 6,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-22T14:02:35-04:00",
-   "end": "2026-10-22T15:28:00-04:00",
+   "start": "2026-10-22T14:20:44-04:00",
+   "end": "2026-10-22T16:21:00-04:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-22T14:02:35-04:00"
+   "updated": "2026-10-22T14:20:44-04:00"
   },
   {
    "id": "1040546",
@@ -154,23 +171,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-22T13:07:08-04:00"
-  },
-  {
-   "id": "1040535",
-   "header": "New Bedford Line Train 2026 (11:48 AM from New Bedford) is operating 5-15 minutes behind schedule between Montello and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-22T13:01:26-04:00",
-   "end": "2026-10-22T14:30:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-22T13:01:26-04:00"
   },
   {
    "id": "1040533",

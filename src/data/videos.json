@@ -1,23 +1,9 @@
 {
- "updated": "2026-10-22T10:35:29.153Z",
+ "updated": "2026-10-22T11:05:36.204Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -27,11 +13,18 @@
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,14 +37,34 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "xJKtNvEsSDU",
+   "title": "Cement truck rollover causing delays on I-495",
+   "link": "https://www.youtube.com/watch?v=xJKtNvEsSDU",
+   "published": "2026-10-22T10:38:27.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/xJKtNvEsSDU/mqdefault.jpg",
+   "towns": [
+    "mansfield"
+   ],
+   "local": true
+  },
   {
    "id": "ewa2LGilYTs",
    "title": "WPRI 12 Weather Forecast for 10/22/26:  Clearing this morning, staying breezy today",

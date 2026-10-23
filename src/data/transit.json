@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T20:36:06.029Z",
+ "updated": "2026-10-23T21:05:34.077Z",
  "alerts": [
   {
    "id": "1040044",
@@ -53,6 +53,40 @@
    "updated": "2026-10-23T15:57:37-04:00"
   },
   {
+   "id": "1040853",
+   "header": "Providence Line Train 855 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-23T16:37:57-04:00",
+   "end": "2026-10-23T18:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-23T16:37:57-04:00"
+  },
+  {
+   "id": "1040852",
+   "header": "Fall River Line Train 1925 (3:38 PM from South Station) is operating 5-15 minutes behind schedule between Campello and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-23T16:35:47-04:00",
+   "end": "2026-10-23T18:24:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-23T16:35:47-04:00"
+  },
+  {
    "id": "1040841",
    "header": "New Bedford Line Train 2034 (3:20 PM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
    "effect": "DELAY",
@@ -68,40 +102,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-23T15:55:53-04:00"
-  },
-  {
-   "id": "1040816",
-   "header": "New Bedford Line Train 2030 (2:04 PM from New Bedford) is operating 5-15 minutes behind schedule between Bridgewater and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-23T15:00:58-04:00",
-   "end": "2026-10-23T16:44:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-23T15:00:58-04:00"
-  },
-  {
-   "id": "1040815",
-   "header": "New Bedford Line Train 2021 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and New Bedford. ",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-23T15:00:04-04:00",
-   "end": "2026-10-23T17:02:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-23T15:00:04-04:00"
   },
   {
    "id": "1038493",

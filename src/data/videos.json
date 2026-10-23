@@ -1,35 +1,26 @@
 {
- "updated": "2026-10-23T03:35:49.632Z",
+ "updated": "2026-10-23T07:27:32.897Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "nbc10-boston",
@@ -39,13 +30,240 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "rR7SGVb9mGI",
+   "title": "Davies holds off Ponaganset, 20-12",
+   "link": "https://www.youtube.com/watch?v=rR7SGVb9mGI",
+   "published": "2026-10-23T03:40:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rR7SGVb9mGI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7SUuqKGWvlU",
+   "title": "WPRI 12 Weather Forecast 10-22-26 Sunny Cooler Friday",
+   "link": "https://www.youtube.com/watch?v=7SUuqKGWvlU",
+   "published": "2026-10-23T03:29:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7SUuqKGWvlU/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "fyKF7yGFlio",
+   "title": "New Bedford City Council votes to ban Flock cameras after officers fired for alleged misuse",
+   "link": "https://www.youtube.com/watch?v=fyKF7yGFlio",
+   "published": "2026-10-23T03:20:17.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/fyKF7yGFlio/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "6aqPU4YJxKc",
+   "title": "Rehabilitation hospital in North Smithfield evacuated",
+   "link": "https://www.youtube.com/watch?v=6aqPU4YJxKc",
+   "published": "2026-10-23T03:17:01.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/6aqPU4YJxKc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "iOdPEDCNre8",
+   "title": "2 New Bedford police officers fired, accused of misusing Flock cameras",
+   "link": "https://www.youtube.com/watch?v=iOdPEDCNre8",
+   "published": "2026-10-23T03:07:56.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/iOdPEDCNre8/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "HuoVQiytOD8",
+   "title": "North Smithfield rehabilitation hospital evacuated",
+   "link": "https://www.youtube.com/watch?v=HuoVQiytOD8",
+   "published": "2026-10-23T02:56:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HuoVQiytOD8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "bUKqEkyyi4c",
+   "title": "RI's gubernatorial candidates react to Costco news",
+   "link": "https://www.youtube.com/watch?v=bUKqEkyyi4c",
+   "published": "2026-10-23T02:44:01.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bUKqEkyyi4c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "PUYc3pTUjUc",
+   "title": "Skunk tests positive for rabies in Glocester",
+   "link": "https://www.youtube.com/watch?v=PUYc3pTUjUc",
+   "published": "2026-10-23T02:25:14.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/PUYc3pTUjUc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "YAq1VMEGmiw",
+   "title": "Planes with no pilot being tested in Smithfield",
+   "link": "https://www.youtube.com/watch?v=YAq1VMEGmiw",
+   "published": "2026-10-23T02:24:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YAq1VMEGmiw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "X55nzLas8QU",
+   "title": "West Warwick police procession honors late K-9",
+   "link": "https://www.youtube.com/watch?v=X55nzLas8QU",
+   "published": "2026-10-23T02:22:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/X55nzLas8QU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "-7JSitmT700",
+   "title": "RIDOT details flood prevention plan for Cranston intersection",
+   "link": "https://www.youtube.com/watch?v=-7JSitmT700",
+   "published": "2026-10-23T02:19:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-7JSitmT700/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "R8MWvLel4Ek",
+   "title": "Charlestown man charged with DUI after nearly hitting officer in construction zone",
+   "link": "https://www.youtube.com/watch?v=R8MWvLel4Ek",
+   "published": "2026-10-23T02:19:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/R8MWvLel4Ek/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "92IoWAD7pVo",
+   "title": "New Bedford City Council votes to ban use of Flock cameras",
+   "link": "https://www.youtube.com/watch?v=92IoWAD7pVo",
+   "published": "2026-10-23T02:19:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/92IoWAD7pVo/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "_4IIRAhwuVk",
+   "title": "Saltwater Sessions - In the Galley: Seafood Creations Summer '26",
+   "link": "https://www.youtube.com/watch?v=_4IIRAhwuVk",
+   "published": "2026-10-23T02:15:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_4IIRAhwuVk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "aN29KcznC5E",
+   "title": "New England Nation OT: Patriots IR list #shorts",
+   "link": "https://www.youtube.com/shorts/aN29KcznC5E",
+   "published": "2026-10-23T00:58:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/aN29KcznC5E/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "XDeLhTIMSo8",
+   "title": "Mass. Ballot Question 3: State party primaries #shorts",
+   "link": "https://www.youtube.com/shorts/XDeLhTIMSo8",
+   "published": "2026-10-23T00:21:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XDeLhTIMSo8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "XcgUSWfm1g4",
+   "title": "Father of Sandra Birchmore's unborn child testifies in Farwell trial",
+   "link": "https://www.youtube.com/shorts/XcgUSWfm1g4",
+   "published": "2026-10-23T00:00:07.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/XcgUSWfm1g4/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "cCbFEgw7RQQ",
+   "title": "Mass. settles with David Almond's estate for $10 million #shorts",
+   "link": "https://www.youtube.com/shorts/cCbFEgw7RQQ",
+   "published": "2026-10-22T23:26:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/cCbFEgw7RQQ/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "YEjkiYkUzKs",
+   "title": "Two New Bedford police officers fired for alleged misuse of license plate cameras",
+   "link": "https://www.youtube.com/watch?v=YEjkiYkUzKs",
+   "published": "2026-10-22T23:02:31.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/YEjkiYkUzKs/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "9y5xvwqYPWk",
    "title": "Norton couple's nonprofit farm rescues animals, serves as refuge for people",
@@ -195,19 +413,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/4ZEhh34k81M/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "KzXYSPCMQbA",
-   "title": "WPRI 12 Weather Forecast 10-22-26 Sunny Breezy Cooler Friday",
-   "link": "https://www.youtube.com/watch?v=KzXYSPCMQbA",
-   "published": "2026-10-22T22:25:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/KzXYSPCMQbA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "gM89D3tgN0c",

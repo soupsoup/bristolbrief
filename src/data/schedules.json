@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T13:05:33.600Z",
+ "updated": "2026-10-23T13:22:37.128Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -113,6 +113,17 @@
    "league": "NFL",
    "past": [
     {
+     "id": "nfl-94",
+     "date": "2026-10-23T00:15:00.000Z",
+     "home": false,
+     "opponent": "Bears",
+     "status": "final",
+     "us": 24,
+     "them": 30,
+     "result": "L",
+     "note": "Week 7"
+    },
+    {
      "id": "nfl-85",
      "date": "2026-10-18T17:00:00.000Z",
      "home": true,
@@ -155,17 +166,6 @@
      "them": 35,
      "result": "L",
      "note": "Week 3"
-    },
-    {
-     "id": "nfl-22",
-     "date": "2026-09-20T17:00:00.000Z",
-     "home": true,
-     "opponent": "Steelers",
-     "status": "final",
-     "us": 20,
-     "them": 3,
-     "result": "W",
-     "note": "Week 2"
     }
    ],
    "next": [

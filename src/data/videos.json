@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-23T17:05:44.760Z",
+ "updated": "2026-10-23T17:35:30.074Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
@@ -9,29 +16,8 @@
    "kept": 3
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -44,14 +30,38 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "6LSN5fiHp8o",
+   "title": "Cranston, state outline plans to address chronic flooding at underpass",
+   "link": "https://www.youtube.com/watch?v=6LSN5fiHp8o",
+   "published": "2026-10-23T17:12:42.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/6LSN5fiHp8o/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "_wWCTAzjt0I",
    "title": "Newsmakers 10/23/2026: RI governor debate recap; Healey vs. Minogue",
@@ -4270,17 +4280,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/VGrfqVmrDFw/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "mfBAueEfES0",
-   "title": "AI Explained: Thriving in the age of AI #shorts",
-   "link": "https://www.youtube.com/shorts/mfBAueEfES0",
-   "published": "2026-10-16T17:15:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mfBAueEfES0/mqdefault.jpg",
    "towns": [],
    "short": true
   }

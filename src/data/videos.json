@@ -1,19 +1,29 @@
 {
- "updated": "2026-10-22T23:05:26.541Z",
+ "updated": "2026-10-23T01:35:25.162Z",
  "channels": [
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
@@ -23,32 +33,16 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4180,39 +4174,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/ouXP6f8g9z8/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "ErflCNjI2dU",
-   "title": "Coventry man charged after attempted break-in #shorts",
-   "link": "https://www.youtube.com/shorts/ErflCNjI2dU",
-   "published": "2026-10-16T01:22:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ErflCNjI2dU/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "C9xTsdwLk6s",
-   "title": "RI man diagnosed with brain cancer seeks assistance paying for clinical treatment #shorts",
-   "link": "https://www.youtube.com/shorts/C9xTsdwLk6s",
-   "published": "2026-10-16T00:40:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/C9xTsdwLk6s/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "iQHU8E5qsAo",
-   "title": "Holdout juror in #LindsayClancy trial reveals why he voted to convict her #shorts",
-   "link": "https://www.youtube.com/shorts/iQHU8E5qsAo",
-   "published": "2026-10-15T23:45:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/iQHU8E5qsAo/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

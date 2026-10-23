@@ -1,26 +1,12 @@
 {
- "updated": "2026-10-23T14:05:28.377Z",
+ "updated": "2026-10-23T14:35:31.838Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   },
   {
    "id": "nbc10-boston",
@@ -30,11 +16,18 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wpri",
@@ -44,14 +37,35 @@
    "kept": 15
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
   }
  ],
  "videos": [
+  {
+   "id": "5YQm9ssX-wg",
+   "title": "Two New Bedford police officers fired after alleged misuse of Flock cameras",
+   "link": "https://www.youtube.com/shorts/5YQm9ssX-wg",
+   "published": "2026-10-23T14:06:30.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/5YQm9ssX-wg/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "XdJX3Jw6hsE",
    "title": "WPRI 12 Weather Forecast 10/23/26: Sunny, Cool, and Dry Next Few Days",
@@ -4281,16 +4295,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/tEooqbLWQLg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "xsajbRB0FRA",
-   "title": "Helena Foulkes speaks to NBC 10 about her time with CVS and its recent opioid settlement",
-   "link": "https://www.youtube.com/watch?v=xsajbRB0FRA",
-   "published": "2026-10-16T14:32:45.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/xsajbRB0FRA/mqdefault.jpg",
    "towns": []
   }
  ]

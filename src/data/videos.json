@@ -1,16 +1,9 @@
 {
- "updated": "2026-10-24T00:38:51.380Z",
+ "updated": "2026-10-24T01:35:27.522Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -18,13 +11,18 @@
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -35,14 +33,14 @@
    "error": "HTTP 404"
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -4209,31 +4207,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/wajRpL0zSTg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "TX48N5aDoNA",
-   "title": "Fall River City Council pushes back on harm reduction bags",
-   "link": "https://www.youtube.com/shorts/TX48N5aDoNA",
-   "published": "2026-10-17T01:27:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TX48N5aDoNA/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true,
-   "short": true
-  },
-  {
-   "id": "NZtuoBCBHR8",
-   "title": "RI ACLU: Public excluded from Flock review #shorts",
-   "link": "https://www.youtube.com/shorts/NZtuoBCBHR8",
-   "published": "2026-10-17T00:39:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NZtuoBCBHR8/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

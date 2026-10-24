@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T21:35:33.263Z",
+ "updated": "2026-10-24T22:05:44.822Z",
  "alerts": [
   {
    "id": "1040044",
@@ -19,6 +19,23 @@
    "updated": "2026-10-22T11:07:09-04:00"
   },
   {
+   "id": "1041017",
+   "header": "New Bedford Line Train 7029 (4:52 PM from South Station) is operating 20-30 minutes behind schedule between Braintree and New Bedford due to late equipment from the train yard and train traffic.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-24T16:55:00-04:00",
+   "end": "2026-10-24T19:33:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-24T17:47:00-04:00"
+  },
+  {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
    "effect": "SCHEDULE_CHANGE",
@@ -36,21 +53,21 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1041017",
-   "header": "New Bedford Line Train 7029 (4:52 PM from South Station) has departed South Station and is operating 15-25 minutes behind schedule due to late equipment from the train yard.",
+   "id": "1041033",
+   "header": "New Bedford Line Train 7040 (6:48 PM from New Bedford) is expected to depart New Bedford 10-20 minutes behind schedule due to train traffic.",
    "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-24T16:55:00-04:00",
-   "end": "2026-10-24T19:33:00-04:00",
+   "severity": 5,
+   "lifecycle": "UPCOMING",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-24T18:48:00-04:00",
+   "end": "2026-10-24T21:27:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-24T17:12:17-04:00"
+   "updated": "2026-10-24T17:51:00-04:00"
   },
   {
    "id": "1038493",

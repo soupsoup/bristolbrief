@@ -1,20 +1,6 @@
 {
- "updated": "2026-10-24T23:10:11.891Z",
+ "updated": "2026-10-24T23:35:28.047Z",
  "channels": [
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -23,11 +9,18 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wpri",
@@ -37,21 +30,41 @@
    "kept": 15
   },
   {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "ALLn3HER6VY",
+   "title": "WPRI 12 Weather Now 10/24/26: Chilly with Clear Skies Tonight; Milder Sunday",
+   "link": "https://www.youtube.com/watch?v=ALLn3HER6VY",
+   "published": "2026-10-24T23:21:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ALLn3HER6VY/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "dc3zNhQw0iw",
    "title": "Providence celebrates 3rd annual Rhode Island Palestine Day",
@@ -87,19 +100,6 @@
     "fall-river"
    ],
    "local": true
-  },
-  {
-   "id": "wphrITT-ujc",
-   "title": "WPRI 12 Weather Forecast 10/24/26: Sunny, Pleasant Next Few Days",
-   "link": "https://www.youtube.com/watch?v=wphrITT-ujc",
-   "published": "2026-10-24T14:27:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wphrITT-ujc/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "EYc6sAyGgs4",

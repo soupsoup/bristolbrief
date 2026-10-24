@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T18:06:24.012Z",
+ "updated": "2026-10-24T18:35:47.636Z",
  "alerts": [
   {
    "id": "1040044",
@@ -36,25 +36,21 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1040970",
-   "header": "Providence Line Train 5839 (12:15 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Providence.",
+   "id": "1040992",
+   "header": "New Bedford Line Train 7028 (1:03 PM from New Bedford) is operating 10-20 minutes behind schedule between Montello and South Station due to a mechanical issue.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 5,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-24T13:10:46-04:00",
-   "end": "2026-10-24T14:28:00-04:00",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-10-24T14:19:51-04:00",
+   "end": "2026-10-24T15:45:00-04:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
-   "stations": [
-    "Mansfield"
-   ],
-   "towns": [
-    "mansfield"
-   ],
+   "stations": [],
+   "towns": [],
    "url": null,
-   "updated": "2026-10-24T13:10:46-04:00"
+   "updated": "2026-10-24T14:19:51-04:00"
   },
   {
    "id": "1038493",

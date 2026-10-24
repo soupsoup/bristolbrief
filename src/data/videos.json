@@ -1,16 +1,22 @@
 {
- "updated": "2026-10-24T01:35:27.522Z",
+ "updated": "2026-10-24T02:05:26.237Z",
  "channels": [
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -21,29 +27,22 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4183,29 +4182,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/i0xteoMoBVQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "j0rFiouNNY8",
-   "title": "After debate, Healey makes pitch to South Coast voters",
-   "link": "https://www.youtube.com/watch?v=j0rFiouNNY8",
-   "published": "2026-10-17T01:59:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/j0rFiouNNY8/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "wajRpL0zSTg",
-   "title": "RIDOT to shut down I-195 for bridge demolition next month",
-   "link": "https://www.youtube.com/watch?v=wajRpL0zSTg",
-   "published": "2026-10-17T01:56:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wajRpL0zSTg/mqdefault.jpg",
    "towns": []
   }
  ]

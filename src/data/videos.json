@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-24T22:35:26.451Z",
+ "updated": "2026-10-24T23:05:28.337Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -30,28 +44,37 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "dc3zNhQw0iw",
+   "title": "Providence celebrates 3rd annual Rhode Island Palestine Day",
+   "link": "https://www.youtube.com/watch?v=dc3zNhQw0iw",
+   "published": "2026-10-24T22:55:07.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/dc3zNhQw0iw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "KD0R5QBKjYI",
+   "title": "One person hospitalized after truck crashes into Fall River home",
+   "link": "https://www.youtube.com/watch?v=KD0R5QBKjYI",
+   "published": "2026-10-24T22:50:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/KD0R5QBKjYI/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
   {
    "id": "InaMkUIclrk",
    "title": "Truck slams into Fall River apartment building, injures 1 resident",
@@ -4187,29 +4210,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/bbCz3anR4YQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_mahi90xMXM",
-   "title": "Man pleads guilty to Freetown cemetery vandalism after four-year investigation",
-   "link": "https://www.youtube.com/watch?v=_mahi90xMXM",
-   "published": "2026-10-17T23:03:16.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/_mahi90xMXM/mqdefault.jpg",
-   "towns": [
-    "freetown"
-   ],
-   "local": true
-  },
-  {
-   "id": "kUyOh28L6bc",
-   "title": "Kingstown Free Library celebrates 250 years",
-   "link": "https://www.youtube.com/watch?v=kUyOh28L6bc",
-   "published": "2026-10-17T22:48:12.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/kUyOh28L6bc/mqdefault.jpg",
    "towns": []
   }
  ]

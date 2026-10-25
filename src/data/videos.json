@@ -1,35 +1,12 @@
 {
- "updated": "2026-10-25T02:35:39.691Z",
+ "updated": "2026-10-25T07:06:56.933Z",
  "channels": [
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "wcvb",
@@ -39,25 +16,136 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
   {
-   "id": "ALLn3HER6VY",
-   "title": "WPRI 12 Weather Now 10/24/26: Chilly with Clear Skies Tonight; Milder Sunday",
-   "link": "https://www.youtube.com/watch?v=ALLn3HER6VY",
-   "published": "2026-10-24T23:21:47.000Z",
+   "id": "07AT5AcPn6E",
+   "title": "Truck slams into Fall River home, pinning person underneath vehicle",
+   "link": "https://www.youtube.com/watch?v=07AT5AcPn6E",
+   "published": "2026-10-25T05:28:32.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/07AT5AcPn6E/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "UHbzvYSQL1Q",
+   "title": "Hundreds attend Walk to End Alzheimer’s in Scituate",
+   "link": "https://www.youtube.com/watch?v=UHbzvYSQL1Q",
+   "published": "2026-10-25T03:52:26.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ALLn3HER6VY/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/UHbzvYSQL1Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wy05on4PK5A",
+   "title": "Red Cross holds disaster volunteer training session",
+   "link": "https://www.youtube.com/watch?v=wy05on4PK5A",
+   "published": "2026-10-25T03:51:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wy05on4PK5A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "sCqBpGt9Ous",
+   "title": "Organizers hold third annual Rhode Island Palestine Day",
+   "link": "https://www.youtube.com/watch?v=sCqBpGt9Ous",
+   "published": "2026-10-25T03:51:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sCqBpGt9Ous/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "R7cyatHapDE",
+   "title": "Resident injured after car crashes into Fall River home",
+   "link": "https://www.youtube.com/watch?v=R7cyatHapDE",
+   "published": "2026-10-25T03:50:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/R7cyatHapDE/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "WHA0RAUD0zc",
+   "title": "Man facing OUI charges after truck crashes into Route 6 home",
+   "link": "https://www.youtube.com/watch?v=WHA0RAUD0zc",
+   "published": "2026-10-25T03:50:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/WHA0RAUD0zc/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
+  },
+  {
+   "id": "Jvu0f4W4DOs",
+   "title": "WPRI 12 Weather Forecast 10/24/26",
+   "link": "https://www.youtube.com/watch?v=Jvu0f4W4DOs",
+   "published": "2026-10-25T03:28:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Jvu0f4W4DOs/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "1SVNtVtcfvk",
+   "title": "Swansea movie theater returns under new franchise owners",
+   "link": "https://www.youtube.com/watch?v=1SVNtVtcfvk",
+   "published": "2026-10-25T03:12:48.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1SVNtVtcfvk/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
   },
   {
    "id": "dc3zNhQw0iw",
@@ -4131,29 +4219,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/nM6-wuP7nqE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "OYOtKDK821w",
-   "title": "WPRI 12 Weather Forecast 10/17/26",
-   "link": "https://www.youtube.com/watch?v=OYOtKDK821w",
-   "published": "2026-10-18T03:28:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/OYOtKDK821w/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "ag7e3H9HLA0",
-   "title": "Honor-system firewood fundraiser leaves Foxborough Troop 32 with $1, community responds",
-   "link": "https://www.youtube.com/watch?v=ag7e3H9HLA0",
-   "published": "2026-10-18T03:09:06.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ag7e3H9HLA0/mqdefault.jpg",
    "towns": []
   }
  ]

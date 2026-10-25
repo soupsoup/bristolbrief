@@ -1,40 +1,35 @@
 {
- "updated": "2026-10-25T02:05:28.092Z",
+ "updated": "2026-10-25T02:35:39.691Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
@@ -46,9 +41,8 @@
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4160,56 +4154,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/ag7e3H9HLA0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ccpcCgKgKos",
-   "title": "WaterFire held to celebrate United Way's 100th anniversary",
-   "link": "https://www.youtube.com/watch?v=ccpcCgKgKos",
-   "published": "2026-10-18T02:26:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ccpcCgKgKos/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "a8vUI2RjSWc",
-   "title": "Pawtucket police respond to altercation involving machete",
-   "link": "https://www.youtube.com/watch?v=a8vUI2RjSWc",
-   "published": "2026-10-18T02:23:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/a8vUI2RjSWc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "23f3QDyF-B0",
-   "title": "Several No Kings: Vote Early events held across R.I., Mass.",
-   "link": "https://www.youtube.com/watch?v=23f3QDyF-B0",
-   "published": "2026-10-18T02:23:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/23f3QDyF-B0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "v4lgDsoUhoU",
-   "title": "One lane to remain open on I-95 N Saturday night",
-   "link": "https://www.youtube.com/watch?v=v4lgDsoUhoU",
-   "published": "2026-10-18T02:21:43.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/v4lgDsoUhoU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "bbCz3anR4YQ",
-   "title": "Providence pulls away for convincing 87-64 exhibition win over Pitt",
-   "link": "https://www.youtube.com/watch?v=bbCz3anR4YQ",
-   "published": "2026-10-18T02:15:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/bbCz3anR4YQ/mqdefault.jpg",
    "towns": []
   }
  ]

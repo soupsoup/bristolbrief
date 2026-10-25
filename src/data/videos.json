@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-25T22:35:26.360Z",
+ "updated": "2026-10-25T23:05:27.222Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
   },
   {
    "id": "cbs-boston",
@@ -23,11 +23,18 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 15
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
@@ -37,21 +44,27 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "kept": 2
   }
  ],
  "videos": [
+  {
+   "id": "HUCMsVCcey8",
+   "title": "WPRI 12 Weather Now 10/25/26: Chilly, Dry Tonight; Even Warmer Monday",
+   "link": "https://www.youtube.com/watch?v=HUCMsVCcey8",
+   "published": "2026-10-25T22:45:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HUCMsVCcey8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "MJPpqKoYaLQ",
    "title": "ICE protestors gather in New Bedford for 'Free Them All' rally",
@@ -147,19 +160,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/vroWh8bIBQU/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "L_ukoytP0mc",
-   "title": "WPRI 12 Weather Now 10/25/26: Bright, Nice Today; Bit Warmer Monday",
-   "link": "https://www.youtube.com/watch?v=L_ukoytP0mc",
-   "published": "2026-10-25T13:08:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/L_ukoytP0mc/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "D1eSccXyb4o",
@@ -4245,19 +4245,6 @@
    "channel": "nbc10-boston",
    "channelName": "NBC10 Boston",
    "thumbnail": "https://i.ytimg.com/vi/HRGTPzspoHA/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "ShQM-j0VnL4",
-   "title": "Republican candidate for Mass. Lt. Gov. Shawn Oliver suspends campaign after DUI arrest",
-   "link": "https://www.youtube.com/watch?v=ShQM-j0VnL4",
-   "published": "2026-10-18T22:48:46.000Z",
-   "channel": "cbs-boston",
-   "channelName": "CBS Boston (WBZ)",
-   "thumbnail": "https://i.ytimg.com/vi/ShQM-j0VnL4/mqdefault.jpg",
    "towns": [
     "new-bedford"
    ],

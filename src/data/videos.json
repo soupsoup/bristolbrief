@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-25T15:35:26.620Z",
+ "updated": "2026-10-25T16:05:24.557Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,20 +16,6 @@
    "kept": 1
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -37,11 +23,18 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "nbc10-wjar",
@@ -49,9 +42,43 @@
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "LQnauw92zXE",
+   "title": "Swansea man charged with OUI after truck crashes into home on Route 6",
+   "link": "https://www.youtube.com/shorts/LQnauw92zXE",
+   "published": "2026-10-25T16:00:42.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/LQnauw92zXE/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "jZL_bzAaDZ8",
+   "title": "New video shows truck slamming into Swansea home",
+   "link": "https://www.youtube.com/watch?v=jZL_bzAaDZ8",
+   "published": "2026-10-25T15:29:57.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/jZL_bzAaDZ8/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
+  },
   {
    "id": "vroWh8bIBQU",
    "title": "Sunday Brunch: Maple chocololate chip pancake muffins",
@@ -4220,26 +4247,6 @@
    "thumbnail": "https://i.ytimg.com/vi/gyCTlbExhM4/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "7S5oM_oOuaM",
-   "title": "New England Nation: Keys to the Game Jets at Patriots",
-   "link": "https://www.youtube.com/watch?v=7S5oM_oOuaM",
-   "published": "2026-10-18T16:00:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7S5oM_oOuaM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "p93Zus2OPr4",
-   "title": "New England Nation: Week 6 Game Picks",
-   "link": "https://www.youtube.com/watch?v=p93Zus2OPr4",
-   "published": "2026-10-18T16:00:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/p93Zus2OPr4/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

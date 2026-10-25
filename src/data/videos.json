@@ -1,54 +1,48 @@
 {
- "updated": "2026-10-25T23:05:27.222Z",
+ "updated": "2026-10-25T23:35:23.702Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
   }
  ],
  "videos": [
@@ -4232,19 +4226,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/d8LR-j7OrSA/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "HRGTPzspoHA",
-   "title": "After suspected drunken crash, Mass. candidate for lt. gov. suspends campaign",
-   "link": "https://www.youtube.com/watch?v=HRGTPzspoHA",
-   "published": "2026-10-18T23:30:48.000Z",
-   "channel": "nbc10-boston",
-   "channelName": "NBC10 Boston",
-   "thumbnail": "https://i.ytimg.com/vi/HRGTPzspoHA/mqdefault.jpg",
    "towns": [
     "new-bedford"
    ],

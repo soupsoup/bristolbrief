@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-26T16:05:30.047Z",
+ "updated": "2026-10-26T16:35:33.134Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
@@ -9,8 +23,15 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,29 +44,8 @@
    "kept": 15
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,17 +53,50 @@
  ],
  "videos": [
   {
-   "id": "UmhobyhOEm0",
-   "title": "WPRI 12 Weather Now 10/26/26: Warm this afternoon; much cooler tomorrow",
-   "link": "https://www.youtube.com/watch?v=UmhobyhOEm0",
-   "published": "2026-10-26T15:42:10.000Z",
+   "id": "O9vJ5G8-bnw",
+   "title": "Striped bass survey shows reproduction and population concerns",
+   "link": "https://www.youtube.com/watch?v=O9vJ5G8-bnw",
+   "published": "2026-10-26T16:27:45.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/UmhobyhOEm0/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/O9vJ5G8-bnw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "HdSECMS2yb8",
+   "title": "WPRI 12 Weather Forecast for 10/26/26:  warm this afternoon; cooler weather ahead",
+   "link": "https://www.youtube.com/watch?v=HdSECMS2yb8",
+   "published": "2026-10-26T16:27:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HdSECMS2yb8/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "NZUZPYBcDuI",
+   "title": "Heavily restricted travel begins on Newport Pell Bridge",
+   "link": "https://www.youtube.com/watch?v=NZUZPYBcDuI",
+   "published": "2026-10-26T16:18:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/NZUZPYBcDuI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6zJkJhB9AZM",
+   "title": "OUI suspect accused of crashing into Swansea home remains injured",
+   "link": "https://www.youtube.com/watch?v=6zJkJhB9AZM",
+   "published": "2026-10-26T16:17:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6zJkJhB9AZM/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
   },
   {
    "id": "BmAopln9mZQ",
@@ -4049,75 +4082,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/Brvrz16pjjQ/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "1cX19YQPASw",
-   "title": "Providence city council getting proactive on snow preps",
-   "link": "https://www.youtube.com/watch?v=1cX19YQPASw",
-   "published": "2026-10-19T16:25:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/1cX19YQPASw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "U7mmzrsHLOg",
-   "title": "Mt. Hope Bridge night work pushed back one week",
-   "link": "https://www.youtube.com/watch?v=U7mmzrsHLOg",
-   "published": "2026-10-19T16:22:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/U7mmzrsHLOg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Vq3Kfrj4SYU",
-   "title": "FM Insurance donates $5M to United Way of RI",
-   "link": "https://www.youtube.com/watch?v=Vq3Kfrj4SYU",
-   "published": "2026-10-19T16:12:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Vq3Kfrj4SYU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "aM5BvECZO9c",
-   "title": "Former Mass. Lt. Gov. candidate faces charges in OUI crash",
-   "link": "https://www.youtube.com/watch?v=aM5BvECZO9c",
-   "published": "2026-10-19T16:10:38.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/aM5BvECZO9c/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "Q5Z1UN3RGYo",
-   "title": "Man arrested in Attleboro Brennan Middle School break-in",
-   "link": "https://www.youtube.com/watch?v=Q5Z1UN3RGYo",
-   "published": "2026-10-19T16:09:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Q5Z1UN3RGYo/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "gvaaBSFCG48",
-   "title": "Candidate for Mass. Lt. Gov. faces judge on OUI charge",
-   "link": "https://www.youtube.com/watch?v=gvaaBSFCG48",
-   "published": "2026-10-19T16:08:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gvaaBSFCG48/mqdefault.jpg",
    "towns": [
     "new-bedford"
    ],

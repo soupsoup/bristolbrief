@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T16:05:30.047Z",
+ "updated": "2026-10-26T16:35:33.134Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,29 +19,45 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1041257",
-   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River.",
+   "id": "1041285",
+   "header": "New Bedford Line Train 8057 (12:13 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-26T10:36:47-04:00",
-   "end": "2026-10-26T12:18:00-04:00",
+   "start": "2026-10-26T12:26:29-04:00",
+   "end": "2026-10-26T13:38:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
    ],
    "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
+    "taunton",
+    "new-bedford"
    ],
    "url": null,
-   "updated": "2026-10-26T10:36:47-04:00"
+   "updated": "2026-10-26T12:26:29-04:00"
+  },
+  {
+   "id": "1041281",
+   "header": "Providence Line Train 6013 (11:20 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-26T12:20:14-04:00",
+   "end": "2026-10-26T13:35:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-26T12:20:14-04:00"
   },
   {
    "id": "1038493",

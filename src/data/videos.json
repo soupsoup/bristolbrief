@@ -1,19 +1,19 @@
 {
- "updated": "2026-10-26T11:35:31.631Z",
+ "updated": "2026-10-26T12:05:31.677Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "7news-boston",
@@ -37,11 +37,11 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "boston25",
@@ -52,6 +52,20 @@
   }
  ],
  "videos": [
+  {
+   "id": "i_UAouw6phE",
+   "title": "Rally held against ICE in New Bedford",
+   "link": "https://www.youtube.com/shorts/i_UAouw6phE",
+   "published": "2026-10-26T11:48:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/i_UAouw6phE/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "qNhZjO_p4fE",
    "title": "WPRI 12 Weather Forecast for 10/26/26:  Sunny, warm today",
@@ -4146,16 +4160,6 @@
    "thumbnail": "https://i.ytimg.com/vi/_vT-UpPOISM/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "G5U16kf2p4c",
-   "title": "RI's pause on Flock camera installations reaches deadline",
-   "link": "https://www.youtube.com/watch?v=G5U16kf2p4c",
-   "published": "2026-10-19T11:49:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/G5U16kf2p4c/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

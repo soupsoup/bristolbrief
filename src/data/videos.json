@@ -1,16 +1,9 @@
 {
- "updated": "2026-10-26T17:35:30.018Z",
+ "updated": "2026-10-26T18:05:26.130Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,6 +16,13 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
@@ -30,8 +30,15 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -42,16 +49,19 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "7ByTmqG7kjs",
+   "title": "Costume contest raises money for Warwick Animal Shelter",
+   "link": "https://www.youtube.com/watch?v=7ByTmqG7kjs",
+   "published": "2026-10-26T17:38:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/7ByTmqG7kjs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "M4G-xucy7qs",
    "title": "Swansea man faces OUI charges after crashing truck into a home",
@@ -4057,20 +4067,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/GHABS5plIjE/mqdefault.jpg",
    "towns": [],
-   "short": true
-  },
-  {
-   "id": "dAduJq2CmEo",
-   "title": "Mike Minogue comments after Shawn Oliver's arrest",
-   "link": "https://www.youtube.com/shorts/dAduJq2CmEo",
-   "published": "2026-10-19T17:54:30.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/dAduJq2CmEo/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true,
    "short": true
   }
  ]

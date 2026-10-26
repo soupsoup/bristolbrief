@@ -1,30 +1,9 @@
 {
- "updated": "2026-10-26T11:05:28.885Z",
+ "updated": "2026-10-26T11:35:31.631Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -37,11 +16,18 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "nbc10-boston",
@@ -49,9 +35,36 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "qNhZjO_p4fE",
+   "title": "WPRI 12 Weather Forecast for 10/26/26:  Sunny, warm today",
+   "link": "https://www.youtube.com/watch?v=qNhZjO_p4fE",
+   "published": "2026-10-26T11:08:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qNhZjO_p4fE/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "gK9shbvNTsc",
    "title": "Behind the Smiles Photo for 10/26/26 from Ashley in Hope Valley",
@@ -63,19 +76,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "SlRH8eXgnz8",
-   "title": "WPRI 12 Weather Forecast for 10/26/26:  Sunny, dry and warm today",
-   "link": "https://www.youtube.com/watch?v=SlRH8eXgnz8",
-   "published": "2026-10-26T08:58:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SlRH8eXgnz8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "xDesEiSww1E",
@@ -4156,19 +4156,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/G5U16kf2p4c/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "bCfp0r0YoCs",
-   "title": "Massachusetts LG candidate suspends campaign after arrest",
-   "link": "https://www.youtube.com/watch?v=bCfp0r0YoCs",
-   "published": "2026-10-19T11:09:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/bCfp0r0YoCs/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

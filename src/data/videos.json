@@ -1,15 +1,16 @@
 {
- "updated": "2026-10-25T23:35:23.702Z",
+ "updated": "2026-10-26T01:05:26.908Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -20,22 +21,11 @@
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-boston",
@@ -43,17 +33,84 @@
    "ok": true,
    "entries": 15,
    "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
   {
-   "id": "HUCMsVCcey8",
-   "title": "WPRI 12 Weather Now 10/25/26: Chilly, Dry Tonight; Even Warmer Monday",
-   "link": "https://www.youtube.com/watch?v=HUCMsVCcey8",
-   "published": "2026-10-25T22:45:26.000Z",
+   "id": "z2539shnric",
+   "title": "La Salle wins overall title at Game Day Cheer Championships",
+   "link": "https://www.youtube.com/watch?v=z2539shnric",
+   "published": "2026-10-26T00:42:58.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/HUCMsVCcey8/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/z2539shnric/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7wG0lFhMRjk",
+   "title": "Massachusetts officers pull man from burning vehicle",
+   "link": "https://www.youtube.com/watch?v=7wG0lFhMRjk",
+   "published": "2026-10-25T23:40:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7wG0lFhMRjk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JXoUxwf0AaY",
+   "title": "Ground broken on apartments at old Woonsocket school",
+   "link": "https://www.youtube.com/watch?v=JXoUxwf0AaY",
+   "published": "2026-10-25T23:39:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JXoUxwf0AaY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RJmjGZhoGgM",
+   "title": "No criminal charges filed in Uxbridge officer’s death",
+   "link": "https://www.youtube.com/watch?v=RJmjGZhoGgM",
+   "published": "2026-10-25T23:36:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RJmjGZhoGgM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "V2Q80YaWof8",
+   "title": "Neighbor speaks after truck crashes into home in Swansea",
+   "link": "https://www.youtube.com/watch?v=V2Q80YaWof8",
+   "published": "2026-10-25T23:36:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/V2Q80YaWof8/mqdefault.jpg",
+   "towns": [
+    "swansea"
+   ],
+   "local": true
+  },
+  {
+   "id": "3bCUdwB0Rk8",
+   "title": "WPRI 12 Weather Forecast 10/25/26",
+   "link": "https://www.youtube.com/watch?v=3bCUdwB0Rk8",
+   "published": "2026-10-25T22:58:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3bCUdwB0Rk8/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
@@ -4217,19 +4274,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/2rGBNtFoDYg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "d8LR-j7OrSA",
-   "title": "Shawn Oliver suspends campaign for Massachusetts lieutenant governor following OUI",
-   "link": "https://www.youtube.com/watch?v=d8LR-j7OrSA",
-   "published": "2026-10-18T23:36:47.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/d8LR-j7OrSA/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

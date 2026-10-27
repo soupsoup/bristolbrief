@@ -1,35 +1,12 @@
 {
- "updated": "2026-10-27T00:05:28.828Z",
+ "updated": "2026-10-27T00:35:25.319Z",
  "channels": [
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
@@ -41,11 +18,119 @@
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "gbYP92CdGEI",
+   "title": "Lane closures begin on Newport Pell and Mount Hope bridges #shorts",
+   "link": "https://www.youtube.com/shorts/gbYP92CdGEI",
+   "published": "2026-10-27T00:05:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gbYP92CdGEI/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "OxwaghTExH8",
+   "title": "What the RI governor candidates would do in their first 100 days #shorts",
+   "link": "https://www.youtube.com/shorts/OxwaghTExH8",
+   "published": "2026-10-26T22:47:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/OxwaghTExH8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "BWPZWpI5UPo",
+   "title": "Proposed ordinance in East Greenwich aims to restore historic homes in town",
+   "link": "https://www.youtube.com/watch?v=BWPZWpI5UPo",
+   "published": "2026-10-26T22:43:33.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/BWPZWpI5UPo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_YwtJ0Fzwxw",
+   "title": "Trump and Obama campaign for Senate candidates in Michigan",
+   "link": "https://www.youtube.com/watch?v=_YwtJ0Fzwxw",
+   "published": "2026-10-26T22:41:17.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/_YwtJ0Fzwxw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZqchHi5KAiU",
+   "title": "Jurors in Matthew Farwell trial hear from his twin brother about Sandra Birchmore",
+   "link": "https://www.youtube.com/shorts/ZqchHi5KAiU",
+   "published": "2026-10-26T22:34:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ZqchHi5KAiU/mqdefault.jpg",
+   "towns": [
+    "easton"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "-4dxaAGvPog",
+   "title": "Rhode Island general treasurer candidate answers questions about his personal finances",
+   "link": "https://www.youtube.com/watch?v=-4dxaAGvPog",
+   "published": "2026-10-26T22:33:48.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/-4dxaAGvPog/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "AP_m8GQgOTY",
+   "title": "Jurors in Matthew Farwell trial hear from his twin brother about Sandra Birchmore",
+   "link": "https://www.youtube.com/watch?v=AP_m8GQgOTY",
+   "published": "2026-10-26T22:32:46.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/AP_m8GQgOTY/mqdefault.jpg",
+   "towns": [
+    "easton"
+   ],
+   "local": true
+  },
   {
    "id": "t8t3heHn-G4",
    "title": "More than 200 Flock cameras operated by RI police",
@@ -3855,20 +3940,6 @@
    "thumbnail": "https://i.ytimg.com/vi/GDgPaxXaknc/mqdefault.jpg",
    "towns": [
     "new-bedford"
-   ],
-   "local": true,
-   "short": true
-  },
-  {
-   "id": "IFnfWOajxHk",
-   "title": "Man pleads not guilty to Attleboro school break-in #shorts",
-   "link": "https://www.youtube.com/shorts/IFnfWOajxHk",
-   "published": "2026-10-20T00:32:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/IFnfWOajxHk/mqdefault.jpg",
-   "towns": [
-    "attleboro"
    ],
    "local": true,
    "short": true

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T22:35:30.557Z",
+ "updated": "2026-10-27T23:05:29.077Z",
  "alerts": [
   {
    "id": "1041594",
@@ -19,6 +19,23 @@
    "updated": "2026-10-27T18:32:06-04:00"
   },
   {
+   "id": "1041598",
+   "header": "Providence/Stoughton Line passengers are likely to experience delays of up to 30 minutes or longer due to a disabled train on the right of way in the Ruggles area.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T18:35:46-04:00",
+   "end": "2026-10-27T20:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-27T18:35:46-04:00"
+  },
+  {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
    "effect": "SCHEDULE_CHANGE",
@@ -34,6 +51,47 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-22T12:55:43-04:00"
+  },
+  {
+   "id": "1041603",
+   "header": "New Bedford Line Train 8023 (6:38 PM from South Station) is operating 10-20 minutes behind schedule between JFK/UMass and New Bedford.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T18:56:35-04:00",
+   "end": "2026-10-27T21:21:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-27T18:56:35-04:00"
+  },
+  {
+   "id": "1041606",
+   "header": "New Bedford Line Train 8021 (5:40 PM from South Station) is operating 5-15 minutes behind schedule between Middleborough and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T19:03:45-04:00",
+   "end": "2026-10-27T20:25:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-10-27T19:03:45-04:00"
   },
   {
    "id": "1041591",
@@ -171,23 +229,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-27T17:21:05-04:00"
-  },
-  {
-   "id": "1041556",
-   "header": "Stoughton Line Train 6321 (5:00 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Stoughton.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T17:18:04-04:00",
-   "end": "2026-10-27T18:40:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T17:18:04-04:00"
   },
   {
    "id": "1038493",

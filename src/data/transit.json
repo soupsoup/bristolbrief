@@ -1,6 +1,30 @@
 {
- "updated": "2026-10-27T20:05:32.527Z",
+ "updated": "2026-10-27T20:35:48.402Z",
  "alerts": [
+  {
+   "id": "1041528",
+   "header": "Providence Line Train 6023 (3:47 PM from South Station) is stopped after Ruggles and is 30-40 minutes behind schedule due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T16:05:00-04:00",
+   "end": "2026-10-27T18:30:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-27T16:31:28-04:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",

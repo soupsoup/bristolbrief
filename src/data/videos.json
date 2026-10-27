@@ -1,23 +1,26 @@
 {
- "updated": "2026-10-27T02:02:44.555Z",
+ "updated": "2026-10-27T02:36:07.384Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
@@ -33,19 +36,94 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "j1yZM3qG08o",
+   "title": "Tiverton councilors approve $50K in special funding to address PFAS contamination",
+   "link": "https://www.youtube.com/watch?v=j1yZM3qG08o",
+   "published": "2026-10-27T02:23:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/j1yZM3qG08o/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "e1EAcvOPG4A",
+   "title": "WPRI Weather Now 10-26-26 Much Cooler, Dry Tuesday.",
+   "link": "https://www.youtube.com/watch?v=e1EAcvOPG4A",
+   "published": "2026-10-27T02:09:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/e1EAcvOPG4A/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "2vXn69nB_BQ",
+   "title": "Hometown Hero: Nick Stafford, North Kingstown",
+   "link": "https://www.youtube.com/watch?v=2vXn69nB_BQ",
+   "published": "2026-10-27T02:04:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2vXn69nB_BQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "jlCUNu_GoWw",
+   "title": "RI has one of the most haunted roads in the world",
+   "link": "https://www.youtube.com/watch?v=jlCUNu_GoWw",
+   "published": "2026-10-27T01:54:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jlCUNu_GoWw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3C63g8LdCDY",
+   "title": "RI sues Meta, claims company profited from scam ads",
+   "link": "https://www.youtube.com/watch?v=3C63g8LdCDY",
+   "published": "2026-10-27T01:53:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3C63g8LdCDY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DeCrkdDOdGY",
+   "title": "Amore: RI's early voter turnout has been \"remarkable\"",
+   "link": "https://www.youtube.com/watch?v=DeCrkdDOdGY",
+   "published": "2026-10-27T01:44:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DeCrkdDOdGY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "obeOTsGYkRs",
+   "title": "2 injured in Hopkinton motorcycle crash",
+   "link": "https://www.youtube.com/watch?v=obeOTsGYkRs",
+   "published": "2026-10-27T01:42:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/obeOTsGYkRs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "4A8XHpFVcJ8",
    "title": "DEM to thin Arcadia Management Area of diseased trees #shorts",
@@ -219,19 +297,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/7Ey8S5XNRCs/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "kxlSjjNrkgE",
-   "title": "WPRI 12 Weather Forecast 10-26-26 Much Cooler, Dry Tuesday",
-   "link": "https://www.youtube.com/watch?v=kxlSjjNrkgE",
-   "published": "2026-10-26T21:58:02.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/kxlSjjNrkgE/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "pYJ-vrRJe_Q",
@@ -3885,55 +3950,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/mI1WPKFsMYg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "dkFChBXqwoM",
-   "title": "Former Fall River mayor to run for office next year",
-   "link": "https://www.youtube.com/watch?v=dkFChBXqwoM",
-   "published": "2026-10-20T02:24:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dkFChBXqwoM/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "q2p8IhWu0OQ",
-   "title": "Minogue, Healey react to GOP LG candidate Oliver's New Bedford crash, OUI charges",
-   "link": "https://www.youtube.com/watch?v=q2p8IhWu0OQ",
-   "published": "2026-10-20T02:21:20.000Z",
-   "channel": "nbc10-boston",
-   "channelName": "NBC10 Boston",
-   "thumbnail": "https://i.ytimg.com/vi/q2p8IhWu0OQ/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "TT8Nxr5g_4k",
-   "title": "McKee shares guidelines for automated license plate readers",
-   "link": "https://www.youtube.com/watch?v=TT8Nxr5g_4k",
-   "published": "2026-10-20T02:21:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TT8Nxr5g_4k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "MI7uIDABA08",
-   "title": "Stitches visible on Shawn Oliver as he attends council meeting after OUI crash",
-   "link": "https://www.youtube.com/watch?v=MI7uIDABA08",
-   "published": "2026-10-20T02:11:03.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/MI7uIDABA08/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

@@ -1,14 +1,38 @@
 {
- "updated": "2026-10-27T23:05:29.077Z",
+ "updated": "2026-10-27T23:35:49.803Z",
  "alerts": [
   {
-   "id": "1041594",
-   "header": "Providence Line Train 6029 (5:37 PM from South Station) has yet to depart South Station and is approximately 1 hour behind schedule due to a train with a mechanical issue ahead.",
+   "id": "1041617",
+   "header": "Providence Line Train 6031 (6:22 PM from South Station) is operating approximately 1 hour and 10 minutes behind schedule between South Station and Providence due to an earlier train with a mechanical issue and an equipment shortage.",
    "effect": "DELAY",
    "severity": 9,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:32:06-04:00",
+   "start": "2026-10-27T19:32:24-04:00",
+   "end": "2026-10-27T20:36:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-10-27T19:32:24-04:00"
+  },
+  {
+   "id": "1041594",
+   "header": "Providence Line Train 6029 (5:37 PM from South Station) has departed South Station and is operating approximately 1 hour and 40 minutes behind schedule due to a train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 9,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T18:32:00-04:00",
    "end": "2026-10-27T20:29:00-04:00",
    "routes": [
     "CR-Providence"
@@ -16,7 +40,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-27T18:32:06-04:00"
+   "updated": "2026-10-27T19:29:41-04:00"
   },
   {
    "id": "1041598",
@@ -25,7 +49,7 @@
    "severity": 8,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:35:46-04:00",
+   "start": "2026-10-27T18:35:00-04:00",
    "end": "2026-10-27T20:30:00-04:00",
    "routes": [
     "CR-Providence"
@@ -33,7 +57,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-27T18:35:46-04:00"
+   "updated": "2026-10-27T19:31:03-04:00"
   },
   {
    "id": "1040491",
@@ -68,6 +92,48 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-27T18:56:35-04:00"
+  },
+  {
+   "id": "1041619",
+   "header": "Stoughton Line Train 6330 (8:05 PM from Stoughton) is expected to depart Stoughton 5-15 minutes behind schedule due to an earlier train with a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T20:05:00-04:00",
+   "end": "2026-10-27T21:43:00-04:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-27T19:34:38-04:00"
+  },
+  {
+   "id": "1041612",
+   "header": "Fall River Line Train 8171 (7:01 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and Fall River Depot.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T19:25:12-04:00",
+   "end": "2026-10-27T20:25:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-10-27T19:25:12-04:00"
   },
   {
    "id": "1041606",
@@ -139,69 +205,11 @@
    "updated": "2026-10-27T18:22:36-04:00"
   },
   {
-   "id": "1041583",
-   "header": "New Bedford Line Train 8017 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:10:44-04:00",
-   "end": "2026-10-27T19:26:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T18:10:44-04:00"
-  },
-  {
-   "id": "1041572",
-   "header": "Stoughton Line Train 6323 (5:52 PM from South Station) is expected to depart South Station 5-15 minutes behind schedule due to an equipment shortage.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T17:52:00-04:00",
-   "end": "2026-10-27T19:31:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T17:49:42-04:00"
-  },
-  {
-   "id": "1041551",
-   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Wickford Junction due to an earlier train with a mechanical issue ahead.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T17:14:25-04:00",
-   "end": "2026-10-27T19:33:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-10-27T17:14:25-04:00"
-  },
-  {
    "id": "1041586",
    "header": "Providence Line Train 6038 (7:42 PM from Wickford Junction) is expected to depart Wickford Junction at least 25 minutes behind schedule due to an equipment shortage.",
    "effect": "DELAY",
    "severity": 3,
-   "lifecycle": "UPCOMING",
+   "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-10-27T19:42:00-04:00",
    "end": "2026-10-27T22:23:00-04:00",
@@ -212,23 +220,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-27T18:16:53-04:00"
-  },
-  {
-   "id": "1041558",
-   "header": "Fall River Line Train 8126 (4:41 PM from Fall River Depot) is operating 5-15 minutes behind schedule between Middleborough and South Station.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T17:21:05-04:00",
-   "end": "2026-10-27T19:25:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T17:21:05-04:00"
   },
   {
    "id": "1038493",

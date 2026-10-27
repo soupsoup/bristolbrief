@@ -1,6 +1,27 @@
 {
- "updated": "2026-10-27T22:05:27.539Z",
+ "updated": "2026-10-27T22:35:30.557Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
@@ -9,11 +30,11 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
    "id": "boston25",
@@ -28,30 +49,115 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "vlKV7SNylvg",
+   "title": "Coventry man, 19, killed in stabbing",
+   "link": "https://www.youtube.com/watch?v=vlKV7SNylvg",
+   "published": "2026-10-27T22:25:48.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/vlKV7SNylvg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "H2ljO_y2sHw",
+   "title": "Police ID man killed in Coventry stabbing",
+   "link": "https://www.youtube.com/watch?v=H2ljO_y2sHw",
+   "published": "2026-10-27T22:20:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/H2ljO_y2sHw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JeY4j-lOC7U",
+   "title": "Rhode Island voters to decide on $120M housing bond, with projects starting in 2028",
+   "link": "https://www.youtube.com/watch?v=JeY4j-lOC7U",
+   "published": "2026-10-27T22:17:45.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/JeY4j-lOC7U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6JzCfidXXls",
+   "title": "Kylee Monteiro’s family urges community to oppose proposed plea deal in killing",
+   "link": "https://www.youtube.com/watch?v=6JzCfidXXls",
+   "published": "2026-10-27T22:15:33.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/6JzCfidXXls/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
+  {
+   "id": "rbbpqEmjttM",
+   "title": "Rhode Island general treasurer says restoring some pension benefits could cost billions",
+   "link": "https://www.youtube.com/watch?v=rbbpqEmjttM",
+   "published": "2026-10-27T22:15:04.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rbbpqEmjttM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "iy2znIHSEX0",
+   "title": "Why Providence's Question 7 is dividing voters",
+   "link": "https://www.youtube.com/watch?v=iy2znIHSEX0",
+   "published": "2026-10-27T22:12:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/iy2znIHSEX0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rCDLdAxVoI8",
+   "title": "WPRI 12 Weather Now 10-27-26 Dry Skies Colder Overnight",
+   "link": "https://www.youtube.com/watch?v=rCDLdAxVoI8",
+   "published": "2026-10-27T22:12:14.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rCDLdAxVoI8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "bHVif5oh_4A",
+   "title": "Sandra Birchmore Case Daily Debrief: Matthew Farwell's twin brother continues testimony",
+   "link": "https://www.youtube.com/watch?v=bHVif5oh_4A",
+   "published": "2026-10-27T22:09:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/bHVif5oh_4A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "71qo7DFrJG0",
+   "title": "MSPCA seeks adopters after taking in 26 chinchillas",
+   "link": "https://www.youtube.com/watch?v=71qo7DFrJG0",
+   "published": "2026-10-27T22:03:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/71qo7DFrJG0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "35OXVPu4Bks",
+   "title": "22-year-old helps widower in tough spot with free whole-house cleanout, fundraiser",
+   "link": "https://www.youtube.com/watch?v=35OXVPu4Bks",
+   "published": "2026-10-27T22:03:39.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/35OXVPu4Bks/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "_RbDCS4rh9M",
    "title": "UHC, Humana canceling some Medicare Advantage plans",
@@ -217,16 +323,6 @@
    "towns": []
   },
   {
-   "id": "bHVif5oh_4A",
-   "title": "Sandra Birchmore Case Daily Debrief: Matthew Farwell's twin brother continues testimony",
-   "link": "https://www.youtube.com/watch?v=bHVif5oh_4A",
-   "published": "2026-10-27T20:55:14.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/bHVif5oh_4A/mqdefault.jpg",
-   "towns": []
-  },
-  {
    "id": "_mUOor6tctk",
    "title": "Barus and Holley to finish building renovations next summer",
    "link": "https://www.youtube.com/watch?v=_mUOor6tctk",
@@ -275,19 +371,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/l4thZHW0qGI/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "xogqvRCZ0Vc",
-   "title": "WPRI 12 Weather Now 10-27-26 Dry Colder Tonight",
-   "link": "https://www.youtube.com/watch?v=xogqvRCZ0Vc",
-   "published": "2026-10-27T20:30:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xogqvRCZ0Vc/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "AJUwWpkHDYs",
@@ -3843,110 +3926,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/zfWsrulal_Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "K3PuhHYDhpk",
-   "title": "Spooky State House returns Oct. 29",
-   "link": "https://www.youtube.com/watch?v=K3PuhHYDhpk",
-   "published": "2026-10-20T22:35:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/K3PuhHYDhpk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "VMqpBpjMaC4",
-   "title": "Stop & Shop website, app back up after cyberattack",
-   "link": "https://www.youtube.com/watch?v=VMqpBpjMaC4",
-   "published": "2026-10-20T22:34:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VMqpBpjMaC4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "G3PSJPJch5o",
-   "title": "Woonsocket marks completion of apartment complex",
-   "link": "https://www.youtube.com/watch?v=G3PSJPJch5o",
-   "published": "2026-10-20T22:32:40.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/G3PSJPJch5o/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "5EvIzejlSTs",
-   "title": "Boston Celtics open NBA season with Rhode Islander Joe Mazzulla at the helm",
-   "link": "https://www.youtube.com/watch?v=5EvIzejlSTs",
-   "published": "2026-10-20T22:28:57.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/5EvIzejlSTs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RL-na8zUGZ0",
-   "title": "Sandra Birchmore Case Daily Debrief: Dispatcher, OB-GYN take the stand",
-   "link": "https://www.youtube.com/watch?v=RL-na8zUGZ0",
-   "published": "2026-10-20T22:28:26.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RL-na8zUGZ0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Wcy7v6BZiJ4",
-   "title": "Hometown Hero: Marielle Nassiff, Moses Brown #shorts",
-   "link": "https://www.youtube.com/shorts/Wcy7v6BZiJ4",
-   "published": "2026-10-20T22:23:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Wcy7v6BZiJ4/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "PlkjhfnwN74",
-   "title": "Mini football field in front of Antonio Gibson's Foxborough home draws attention",
-   "link": "https://www.youtube.com/watch?v=PlkjhfnwN74",
-   "published": "2026-10-20T22:23:29.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/PlkjhfnwN74/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8XfXEdCBfm4",
-   "title": "One year after near-fatal stabbing, Former Fall River Mayor William Flanagan eyes 2027 run",
-   "link": "https://www.youtube.com/watch?v=8XfXEdCBfm4",
-   "published": "2026-10-20T22:20:29.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/8XfXEdCBfm4/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "vsTpxJaou-Q",
-   "title": "Liz Beretta-Perik resigns as Democratic Party chair amid husband's indictment in Ohio",
-   "link": "https://www.youtube.com/watch?v=vsTpxJaou-Q",
-   "published": "2026-10-20T22:12:36.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/vsTpxJaou-Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "zw1gyw3xk4s",
-   "title": "North Kingstown residents sue asphalt plant for \"noxious odors\"",
-   "link": "https://www.youtube.com/watch?v=zw1gyw3xk4s",
-   "published": "2026-10-20T22:08:52.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zw1gyw3xk4s/mqdefault.jpg",
    "towns": []
   }
  ]

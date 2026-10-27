@@ -1,40 +1,23 @@
 {
- "updated": "2026-10-27T01:05:31.456Z",
+ "updated": "2026-10-27T02:02:44.555Z",
  "channels": [
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
@@ -44,11 +27,22 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3940,20 +3934,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "GDgPaxXaknc",
-   "title": "Shawn Oliver attends finance meeting after crash",
-   "link": "https://www.youtube.com/shorts/GDgPaxXaknc",
-   "published": "2026-10-20T01:12:35.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/GDgPaxXaknc/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true,
-   "short": true
   }
  ]
 }

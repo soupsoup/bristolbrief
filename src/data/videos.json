@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-27T02:36:07.384Z",
+ "updated": "2026-10-27T07:07:17.999Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,34 +23,68 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "t2HyLP9lnFk",
+   "title": "WPRI 12 Weather Forecast 10-26-26 Sunny But Cooler Tuesday",
+   "link": "https://www.youtube.com/watch?v=t2HyLP9lnFk",
+   "published": "2026-10-27T03:28:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/t2HyLP9lnFk/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "ZTUvAj8naWM",
+   "title": "Pawtucket mayor, residents push back on Hasbro CEO’s comments about city",
+   "link": "https://www.youtube.com/watch?v=ZTUvAj8naWM",
+   "published": "2026-10-27T03:16:08.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ZTUvAj8naWM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "H34qfGyDdNM",
+   "title": "Police pursuit leads to crash, suspect’s arrest on I-95 in Providence",
+   "link": "https://www.youtube.com/watch?v=H34qfGyDdNM",
+   "published": "2026-10-27T03:09:49.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/H34qfGyDdNM/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "j1yZM3qG08o",
    "title": "Tiverton councilors approve $50K in special funding to address PFAS contamination",
@@ -60,19 +94,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/j1yZM3qG08o/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "e1EAcvOPG4A",
-   "title": "WPRI Weather Now 10-26-26 Much Cooler, Dry Tuesday.",
-   "link": "https://www.youtube.com/watch?v=e1EAcvOPG4A",
-   "published": "2026-10-27T02:09:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/e1EAcvOPG4A/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "2vXn69nB_BQ",
@@ -3890,65 +3911,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/Mns6qHWF9FM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mPQ57_F9ec0",
-   "title": "Taunton weighs one-year data center freeze as developer warns deal is at risk",
-   "link": "https://www.youtube.com/watch?v=mPQ57_F9ec0",
-   "published": "2026-10-20T03:17:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/mPQ57_F9ec0/mqdefault.jpg",
-   "towns": [
-    "taunton"
-   ],
-   "local": true
-  },
-  {
-   "id": "OQM16gYl_uE",
-   "title": "Shawn Oliver declines to discuss OUI arrest after returning to New Bedford City Hall",
-   "link": "https://www.youtube.com/watch?v=OQM16gYl_uE",
-   "published": "2026-10-20T03:15:03.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/OQM16gYl_uE/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "XnRtAMb1XbU",
-   "title": "WPRI 12 Weather Forecast 10/19/26",
-   "link": "https://www.youtube.com/watch?v=XnRtAMb1XbU",
-   "published": "2026-10-20T03:11:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/XnRtAMb1XbU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "VQikJodbN-U",
-   "title": "Cumberland tops Lincoln in D2 field hockey, 6-2",
-   "link": "https://www.youtube.com/watch?v=VQikJodbN-U",
-   "published": "2026-10-20T03:08:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VQikJodbN-U/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mI1WPKFsMYg",
-   "title": "Hometown Hero: Marielle Nassiff, Moses Brown",
-   "link": "https://www.youtube.com/watch?v=mI1WPKFsMYg",
-   "published": "2026-10-20T02:39:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mI1WPKFsMYg/mqdefault.jpg",
    "towns": []
   }
  ]

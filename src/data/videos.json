@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-28T10:35:26.751Z",
+ "updated": "2026-10-28T11:05:27.949Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,29 +30,8 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -49,9 +42,28 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "UpxsX6HqwgY",
+   "title": "Behind the Smiles Photo for 10/28/26 from Kathryn Phillips in Coventry",
+   "link": "https://www.youtube.com/watch?v=UpxsX6HqwgY",
+   "published": "2026-10-28T10:30:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UpxsX6HqwgY/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
   {
    "id": "UFybSlPwh_c",
    "title": "WPRI 12 Weather Forecast for 10/28/26:  Partly sunny, dry today",
@@ -3656,29 +3668,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/S-8jAQrgCkU/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "_gcSw-y1Djs",
-   "title": "School superintendent defends response to classroom stabbing",
-   "link": "https://www.youtube.com/watch?v=_gcSw-y1Djs",
-   "published": "2026-10-21T10:51:47.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/_gcSw-y1Djs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "FTGHKBePYcY",
-   "title": "Taunton City Council unanimously approves data center ban",
-   "link": "https://www.youtube.com/watch?v=FTGHKBePYcY",
-   "published": "2026-10-21T10:46:25.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/FTGHKBePYcY/mqdefault.jpg",
-   "towns": [
-    "taunton"
-   ],
-   "local": true
   }
  ]
 }

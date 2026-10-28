@@ -1,27 +1,6 @@
 {
- "updated": "2026-10-28T17:05:34.358Z",
+ "updated": "2026-10-28T17:35:30.445Z",
  "alerts": [
-  {
-   "id": "1041732",
-   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is operating 50-60 minutes behind schedule between Bridgewater and South Station due to a switch issue near East Taunton.",
-   "effect": "DELAY",
-   "severity": 9,
-   "lifecycle": "NEW",
-   "cause": "SWITCH_ISSUE",
-   "start": "2026-10-28T10:33:00-04:00",
-   "end": "2026-10-28T13:13:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton"
-   ],
-   "towns": [
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-28T12:09:57-04:00"
-  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -38,31 +17,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-22T12:55:43-04:00"
-  },
-  {
-   "id": "1041747",
-   "header": "Fall River Line Train 8107 (10:50 AM from South Station) is operating 5-15 minutes behind schedule between Braintree and Fall River due to train traffic.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-10-28T11:25:39-04:00",
-   "end": "2026-10-28T13:30:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-28T11:25:39-04:00"
   },
   {
    "id": "1038493",

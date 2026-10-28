@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T00:05:28.082Z",
+ "updated": "2026-10-28T00:35:32.039Z",
  "alerts": [
   {
    "id": "1041617",
@@ -24,40 +24,6 @@
    ],
    "url": null,
    "updated": "2026-10-27T19:32:24-04:00"
-  },
-  {
-   "id": "1041594",
-   "header": "Providence Line Train 6029 (5:37 PM from South Station) has departed South Station and is operating approximately 1 hour and 40 minutes behind schedule due to a train with a mechanical issue ahead.",
-   "effect": "DELAY",
-   "severity": 9,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:32:00-04:00",
-   "end": "2026-10-27T20:29:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T19:29:41-04:00"
-  },
-  {
-   "id": "1041598",
-   "header": "Providence/Stoughton Line passengers are likely to experience delays of up to 30 minutes or longer due to a disabled train on the right of way in the Ruggles area.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:35:00-04:00",
-   "end": "2026-10-27T20:30:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T19:31:03-04:00"
   },
   {
    "id": "1041623",
@@ -112,7 +78,7 @@
   },
   {
    "id": "1041619",
-   "header": "Stoughton Line Train 6330 (8:05 PM from Stoughton) is expected to depart Stoughton 5-15 minutes behind schedule due to an earlier train with a mechanical issue.",
+   "header": "Stoughton Line Train 6330 (8:05 PM from Stoughton) has departed Stoughton and is 20-30 minutes behind schedule due to an earlier train with a mechanical issue.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
@@ -125,56 +91,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-27T19:34:38-04:00"
-  },
-  {
-   "id": "1041612",
-   "header": "Fall River Line Train 8171 (7:01 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and Fall River Depot.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T19:25:12-04:00",
-   "end": "2026-10-27T20:25:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-27T19:25:12-04:00"
-  },
-  {
-   "id": "1041606",
-   "header": "New Bedford Line Train 8021 (5:40 PM from South Station) is operating 5-15 minutes behind schedule between Middleborough and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T19:03:45-04:00",
-   "end": "2026-10-27T20:25:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-10-27T19:03:45-04:00"
+   "updated": "2026-10-27T20:31:34-04:00"
   },
   {
    "id": "1041590",
@@ -203,6 +120,23 @@
    ],
    "url": null,
    "updated": "2026-10-27T18:22:36-04:00"
+  },
+  {
+   "id": "1041626",
+   "header": "Fall River Line Train 8173 (8:01 PM from East Taunton) is operating 20-30 minutes behind schedule between East Taunton and Fall River.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-10-27T20:29:47-04:00",
+   "end": "2026-10-27T21:25:00-04:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-10-27T20:29:47-04:00"
   },
   {
    "id": "1041586",

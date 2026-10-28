@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-28T22:05:28.490Z",
+ "updated": "2026-10-28T23:35:43.672Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,8 +16,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -30,28 +30,260 @@
    "kept": 0
   },
   {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "s8-T5qqIbbE",
+   "title": "Witches of Rhode Island stop by NBC 10",
+   "link": "https://www.youtube.com/watch?v=s8-T5qqIbbE",
+   "published": "2026-10-28T23:20:21.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/s8-T5qqIbbE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qbiQDvvTtCs",
+   "title": "I-Team: Documents shed light on \"lower-level\" airport worker gun arrest",
+   "link": "https://www.youtube.com/watch?v=qbiQDvvTtCs",
+   "published": "2026-10-28T22:59:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/qbiQDvvTtCs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "0TV0aNYceTE",
+   "title": "La Generación Z aumentó su deuda con tarjetas y pagos aplazados",
+   "link": "https://www.youtube.com/watch?v=0TV0aNYceTE",
+   "published": "2026-10-28T22:26:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0TV0aNYceTE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DukxxXyndU4",
+   "title": "Capron Park Zoo prepares to welcome new mystery animal",
+   "link": "https://www.youtube.com/watch?v=DukxxXyndU4",
+   "published": "2026-10-28T22:25:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DukxxXyndU4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "8w8qguVL09U",
+   "title": "Decision delayed on possible plea deal in killing of 18-year-old Rehoboth woman",
+   "link": "https://www.youtube.com/watch?v=8w8qguVL09U",
+   "published": "2026-10-28T22:23:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/8w8qguVL09U/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
+  {
+   "id": "tBp69_Mtz6Q",
+   "title": "Healey, Driscoll hold campaign rally in New Bedford",
+   "link": "https://www.youtube.com/watch?v=tBp69_Mtz6Q",
+   "published": "2026-10-28T22:20:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/tBp69_Mtz6Q/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "_wdvlwKPinQ",
+   "title": "Healey visits Attleboro seniors to talk about heating costs",
+   "link": "https://www.youtube.com/watch?v=_wdvlwKPinQ",
+   "published": "2026-10-28T22:19:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_wdvlwKPinQ/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "WAELe_tOczg",
+   "title": "Local bank employees volunteer to build beds for children in need",
+   "link": "https://www.youtube.com/watch?v=WAELe_tOczg",
+   "published": "2026-10-28T22:18:44.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/WAELe_tOczg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5ICyTObWD40",
+   "title": "Witnesses take the stand in bail hearing for Central Falls murder suspects",
+   "link": "https://www.youtube.com/watch?v=5ICyTObWD40",
+   "published": "2026-10-28T22:18:26.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/5ICyTObWD40/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "EDD6fA0_7G0",
+   "title": "Charges downgraded against former Blackstone Valley Prep teacher accused of abuse",
+   "link": "https://www.youtube.com/watch?v=EDD6fA0_7G0",
+   "published": "2026-10-28T22:16:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EDD6fA0_7G0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JmE8Rj8kj6c",
+   "title": "Ed Markey faces John Deaton in Mass. Senate race",
+   "link": "https://www.youtube.com/watch?v=JmE8Rj8kj6c",
+   "published": "2026-10-28T22:15:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JmE8Rj8kj6c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "31_UF96A1BA",
+   "title": "Bail hearing reveals new details in 24-year-old Central Falls woman's murder case",
+   "link": "https://www.youtube.com/watch?v=31_UF96A1BA",
+   "published": "2026-10-28T22:15:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/31_UF96A1BA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "jG1VxHghKVk",
+   "title": "RIC breaks ground on business school upgrades",
+   "link": "https://www.youtube.com/watch?v=jG1VxHghKVk",
+   "published": "2026-10-28T22:13:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jG1VxHghKVk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "2NJOa0NDrho",
+   "title": "Police seek suspect in Providence double stabbing",
+   "link": "https://www.youtube.com/watch?v=2NJOa0NDrho",
+   "published": "2026-10-28T22:12:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2NJOa0NDrho/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GbevJzRA8PQ",
+   "title": "Possible plea deal remains undecided for man accused of killing pregnant girlfriend",
+   "link": "https://www.youtube.com/watch?v=GbevJzRA8PQ",
+   "published": "2026-10-28T22:12:02.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/GbevJzRA8PQ/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
+  {
+   "id": "GR1A0GonooU",
+   "title": "Cornell preps for no-confidence vote against president after Jane Doe’s allegations",
+   "link": "https://www.youtube.com/watch?v=GR1A0GonooU",
+   "published": "2026-10-28T22:11:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GR1A0GonooU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "XMYmCVKzQYY",
+   "title": "Boston Globe endorses GOP nominee Dionne for Mass. treasurer",
+   "link": "https://www.youtube.com/watch?v=XMYmCVKzQYY",
+   "published": "2026-10-28T22:11:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/XMYmCVKzQYY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "slUd9O76ZuM",
+   "title": "US cruise ship suspends voyage in Asia due to fuel costs, stranding 200 passengers",
+   "link": "https://www.youtube.com/watch?v=slUd9O76ZuM",
+   "published": "2026-10-28T22:09:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/slUd9O76ZuM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "SRh_zUNmaGA",
+   "title": "Rhode Islanders move in together amid affordability crisis",
+   "link": "https://www.youtube.com/watch?v=SRh_zUNmaGA",
+   "published": "2026-10-28T22:08:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/SRh_zUNmaGA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GAN38R_3fhY",
+   "title": "Analysis shows Halloween candy prices jumped 15%, leaving families feeling the pinch",
+   "link": "https://www.youtube.com/watch?v=GAN38R_3fhY",
+   "published": "2026-10-28T22:08:45.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/GAN38R_3fhY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "eZhDdkcQpVs",
+   "title": "RIDOT reminds drivers of upcoming I-195 closure in East Providence",
+   "link": "https://www.youtube.com/watch?v=eZhDdkcQpVs",
+   "published": "2026-10-28T22:06:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eZhDdkcQpVs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "IX3LcA2T6Sk",
+   "title": "Supporters, opponents weigh in on Massachusetts ballot question about gun law",
+   "link": "https://www.youtube.com/watch?v=IX3LcA2T6Sk",
+   "published": "2026-10-28T22:04:18.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/IX3LcA2T6Sk/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "DhiT4vLtn3E",
    "title": "Prosecution, defense seek to resolve Rehoboth murder case before trial",
@@ -3489,185 +3721,6 @@
    "thumbnail": "https://i.ytimg.com/vi/MnA0LdC5t3Y/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "EHw-R3bG9os",
-   "title": "Clancy judge denies defense request for evidence",
-   "link": "https://www.youtube.com/watch?v=EHw-R3bG9os",
-   "published": "2026-10-21T23:29:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/EHw-R3bG9os/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "O3skwPxRdNU",
-   "title": "Newport man admits to groping teen during flight",
-   "link": "https://www.youtube.com/watch?v=O3skwPxRdNU",
-   "published": "2026-10-21T23:27:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/O3skwPxRdNU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "xgXxk28ljuA",
-   "title": "Providence man pleads guilty to involvement in multi-state car theft ring",
-   "link": "https://www.youtube.com/watch?v=xgXxk28ljuA",
-   "published": "2026-10-21T23:26:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xgXxk28ljuA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "a0J4B5VZL1g",
-   "title": "Massachusetts voters weigh Question 3 proposal for top-two primary ahead of Election Day",
-   "link": "https://www.youtube.com/watch?v=a0J4B5VZL1g",
-   "published": "2026-10-21T23:19:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/a0J4B5VZL1g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ysnCmif0pkI",
-   "title": "New England Nation: Week 7 Game Picks",
-   "link": "https://www.youtube.com/watch?v=ysnCmif0pkI",
-   "published": "2026-10-21T23:18:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ysnCmif0pkI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-mYVAs5uijk",
-   "title": "Jurors hear testimony from Birchmore's friends, Farwell's former colleagues",
-   "link": "https://www.youtube.com/shorts/-mYVAs5uijk",
-   "published": "2026-10-21T23:18:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/-mYVAs5uijk/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "g3lQMRFErzI",
-   "title": "New England Nation: Keys to the Game Patriots at Bears",
-   "link": "https://www.youtube.com/watch?v=g3lQMRFErzI",
-   "published": "2026-10-21T23:11:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/g3lQMRFErzI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "JvYG4aRgXsQ",
-   "title": "Lawsuit accuses former Providence bishop, two priests of abusing altar boy #shorts",
-   "link": "https://www.youtube.com/shorts/JvYG4aRgXsQ",
-   "published": "2026-10-21T23:04:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/JvYG4aRgXsQ/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "1QGh-MifPr8",
-   "title": "Neighbors react to arrest of woman accused of orchestrating marriage fraud scheme",
-   "link": "https://www.youtube.com/watch?v=1QGh-MifPr8",
-   "published": "2026-10-21T22:44:12.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1QGh-MifPr8/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "uc_soNsUdkM",
-   "title": "Federal prosecutors say 6 people from Bristol County charged in marriage fraud ring",
-   "link": "https://www.youtube.com/watch?v=uc_soNsUdkM",
-   "published": "2026-10-21T22:25:06.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/uc_soNsUdkM/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "jVWmzXFHy-s",
-   "title": "Portsmouth cuts ribbon on new senior center, affordable housing",
-   "link": "https://www.youtube.com/watch?v=jVWmzXFHy-s",
-   "published": "2026-10-21T22:20:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jVWmzXFHy-s/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "XG43MhXZgyw",
-   "title": "NBC10 I-Team: Rising costs push Rhode Island school districts into budget deficits",
-   "link": "https://www.youtube.com/watch?v=XG43MhXZgyw",
-   "published": "2026-10-21T22:18:13.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/XG43MhXZgyw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ummFow0x_vo",
-   "title": "Central Falls teacher receives Milken Award",
-   "link": "https://www.youtube.com/watch?v=ummFow0x_vo",
-   "published": "2026-10-21T22:14:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ummFow0x_vo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "New8b_3f7Kw",
-   "title": "ICE says it arrested 82 people in Southeastern Mass. last month",
-   "link": "https://www.youtube.com/watch?v=New8b_3f7Kw",
-   "published": "2026-10-21T22:11:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/New8b_3f7Kw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "tBrwPvQwORg",
-   "title": "6 facing charges in alleged marriage fraud ring",
-   "link": "https://www.youtube.com/watch?v=tBrwPvQwORg",
-   "published": "2026-10-21T22:09:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/tBrwPvQwORg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "llQIPCZOsrg",
-   "title": "Former Providence bishop accused of rape in new lawsuit",
-   "link": "https://www.youtube.com/watch?v=llQIPCZOsrg",
-   "published": "2026-10-21T22:08:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/llQIPCZOsrg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PzJatPbH40s",
-   "title": "RI Democrats name new party chair",
-   "link": "https://www.youtube.com/watch?v=PzJatPbH40s",
-   "published": "2026-10-21T22:07:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PzJatPbH40s/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

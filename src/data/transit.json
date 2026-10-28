@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-28T14:35:25.898Z",
+ "updated": "2026-10-28T15:05:57.071Z",
  "alerts": [
   {
    "id": "1041721",
-   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 40-50 minutes behind schedule between Church Street and South Station due to a switch issue in the East Taunton area.",
+   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 50-60 minutes behind schedule between East Taunton and South Station due to a switch issue in the East Taunton area.",
    "effect": "DELAY",
-   "severity": 8,
+   "severity": 9,
    "lifecycle": "NEW",
    "cause": "SWITCH_ISSUE",
    "start": "2026-10-28T09:47:00-04:00",
@@ -16,49 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-28T10:29:48-04:00"
-  },
-  {
-   "id": "1041725",
-   "header": "New Bedford Line Train 8053 (9:43 AM from East Taunton) has yet to depart East Taunton and is now 35-45 minutes behind schedule due to a switch issue near East Taunton.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-28T09:51:00-04:00",
-   "end": "2026-10-28T11:08:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-28T10:21:41-04:00"
-  },
-  {
-   "id": "1041726",
-   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is now operating 25-35 minutes behind schedule between East Taunton and Fall River due to a switch issue near East Taunton.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-28T09:53:00-04:00",
-   "end": "2026-10-28T11:02:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-28T10:16:03-04:00"
+   "updated": "2026-10-28T10:37:01-04:00"
   },
   {
    "id": "1040491",
@@ -79,9 +37,9 @@
   },
   {
    "id": "1041732",
-   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is expected to depart New Bedford at least 20 minutes behind schedule due to a switch issue near East Taunton. ",
+   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is now expected to depart New Bedford at 15-25 minutes behind schedule due to a switch issue near East Taunton. ",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 6,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-10-28T10:33:00-04:00",
@@ -92,17 +50,17 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-28T10:26:43-04:00"
+   "updated": "2026-10-28T10:48:18-04:00"
   },
   {
-   "id": "1041734",
-   "header": "Fall River Line Train 8166 (10:28 AM from Fall River Depot) has not departed Fall River and is 5-15 minutes behind schedule due to a switch issue near East Taunton.",
+   "id": "1041740",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 10-20 minutes behind schedule between East Taunton and Fall River due to a switch issue near East Taunton.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 5,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-28T10:34:58-04:00",
-   "end": "2026-10-28T11:49:00-04:00",
+   "cause": "SWITCH_ISSUE",
+   "start": "2026-10-28T11:04:26-04:00",
+   "end": "2026-10-28T12:18:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -117,11 +75,11 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-10-28T10:34:58-04:00"
+   "updated": "2026-10-28T11:04:26-04:00"
   },
   {
    "id": "1041731",
-   "header": "Fall River Line Train 8166 (10:28 AM from Fall River Depot) is expected to depart Fall River 5-15 minutes behind schedule due to a switch issue near East Taunton. ",
+   "header": "Fall River Line Train 8166 (10:28 AM from Fall River Depot) has departed Fall River and is operating 5-15 minutes behind schedule due to a switch issue near East Taunton. ",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
@@ -134,7 +92,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-10-28T10:23:53-04:00"
+   "updated": "2026-10-28T10:47:31-04:00"
   },
   {
    "id": "1041724",
@@ -159,29 +117,6 @@
    ],
    "url": null,
    "updated": "2026-10-28T09:50:55-04:00"
-  },
-  {
-   "id": "1041719",
-   "header": "Providence Line Train 6016 (8:38 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station due to Amtrak train traffic.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-28T09:43:26-04:00",
-   "end": "2026-10-28T11:26:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-10-28T09:43:26-04:00"
   },
   {
    "id": "1038493",

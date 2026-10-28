@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T16:05:50.913Z",
+ "updated": "2026-10-28T16:35:55.608Z",
  "channels": [
   {
    "id": "cbs-boston",
@@ -7,13 +7,6 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   },
   {
    "id": "wcvb",
@@ -30,11 +23,11 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "boston25",
@@ -44,14 +37,90 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "FzC4S4WarEo",
+   "title": "Spotlight New England:",
+   "link": "https://www.youtube.com/watch?v=FzC4S4WarEo",
+   "published": "2026-10-28T16:32:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FzC4S4WarEo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "egZf2xr9olo",
+   "title": "Healey champions winter energy relief proposal in Attleboro",
+   "link": "https://www.youtube.com/watch?v=egZf2xr9olo",
+   "published": "2026-10-28T16:31:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/egZf2xr9olo/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "1RTNM7oyeGs",
+   "title": "WPRI 12 Weather Forecast for 10/28/26:  P. sunny, cool and dry this afternoon",
+   "link": "https://www.youtube.com/watch?v=1RTNM7oyeGs",
+   "published": "2026-10-28T16:30:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1RTNM7oyeGs/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "Bz22lIVadF0",
+   "title": "After fleeing Brazil, defeated presidential candidate Flávio Bolsonaro and his family land in Miami",
+   "link": "https://www.youtube.com/watch?v=Bz22lIVadF0",
+   "published": "2026-10-28T16:27:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Bz22lIVadF0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "-xtl4c6WfVw",
+   "title": "Former Bradley Hospital worker pleads no contest to sexually assaulting underage patient",
+   "link": "https://www.youtube.com/watch?v=-xtl4c6WfVw",
+   "published": "2026-10-28T16:26:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-xtl4c6WfVw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "eMynaNVuC-s",
+   "title": "Family of 18-year-old killed in Rehoboth last year gathers outside court",
+   "link": "https://www.youtube.com/watch?v=eMynaNVuC-s",
+   "published": "2026-10-28T16:24:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eMynaNVuC-s/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
   {
    "id": "Ym763iSbJZg",
    "title": "Providence parents raise concerns over the district's use of AI reading program",
@@ -61,19 +130,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/Ym763iSbJZg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "-Y0GzRPrBYw",
-   "title": "WPRI 12 Weather Now 10/28/26: P. Sunny, dry and cool this afternoon",
-   "link": "https://www.youtube.com/watch?v=-Y0GzRPrBYw",
-   "published": "2026-10-28T15:47:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-Y0GzRPrBYw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "8B2TqMSdLKw",
@@ -3584,97 +3640,6 @@
    ],
    "local": true,
    "short": true
-  },
-  {
-   "id": "Fq0XVYA08kk",
-   "title": "Candidates for RI Traffic Tribunal vacancies narrowed down to 10",
-   "link": "https://www.youtube.com/watch?v=Fq0XVYA08kk",
-   "published": "2026-10-21T16:30:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Fq0XVYA08kk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "g6EfjlM3gT8",
-   "title": "HealthSource RI helps navigate healthcare selection process through RIMAP",
-   "link": "https://www.youtube.com/watch?v=g6EfjlM3gT8",
-   "published": "2026-10-21T16:28:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/g6EfjlM3gT8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8uPnC6RE0Vc",
-   "title": "New housing, senior center openings in Portsmouth",
-   "link": "https://www.youtube.com/watch?v=8uPnC6RE0Vc",
-   "published": "2026-10-21T16:24:43.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8uPnC6RE0Vc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ittsrcSVUYk",
-   "title": "Russia frees American after 4 years in prison, during US envoy visit",
-   "link": "https://www.youtube.com/watch?v=ittsrcSVUYk",
-   "published": "2026-10-21T16:23:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ittsrcSVUYk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "X3dEUEqVshw",
-   "title": "URI celebrates new track and field facility",
-   "link": "https://www.youtube.com/watch?v=X3dEUEqVshw",
-   "published": "2026-10-21T16:21:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/X3dEUEqVshw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2UvG6ihBzXI",
-   "title": "URI unveils new track and field facility #shorts",
-   "link": "https://www.youtube.com/shorts/2UvG6ihBzXI",
-   "published": "2026-10-21T16:19:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2UvG6ihBzXI/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "s7vx5GKa8yY",
-   "title": "RI governor candidates discuss housing plans during 12 News debate",
-   "link": "https://www.youtube.com/watch?v=s7vx5GKa8yY",
-   "published": "2026-10-21T16:17:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/s7vx5GKa8yY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "IyCxLAQ-DIw",
-   "title": "New lawsuit alleges sexual assault by Providence Bishop Gelineau",
-   "link": "https://www.youtube.com/watch?v=IyCxLAQ-DIw",
-   "published": "2026-10-21T16:14:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/IyCxLAQ-DIw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vwRCnqNwaV8",
-   "title": "Connecticut man enters plea of no contest in head-on Glocester 2017 deadly crash",
-   "link": "https://www.youtube.com/watch?v=vwRCnqNwaV8",
-   "published": "2026-10-21T16:11:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vwRCnqNwaV8/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

@@ -1,9 +1,16 @@
 {
- "updated": "2026-10-28T13:05:28.234Z",
+ "updated": "2026-10-28T13:35:39.197Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,15 +23,22 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -35,23 +49,35 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "J_zqbmLe1W4",
+   "title": "Rehoboth man to be charged with girlfriend’s murder due back in court",
+   "link": "https://www.youtube.com/watch?v=J_zqbmLe1W4",
+   "published": "2026-10-28T13:19:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J_zqbmLe1W4/mqdefault.jpg",
+   "towns": [
+    "rehoboth"
+   ],
+   "local": true
+  },
+  {
+   "id": "lcVV3yctcg0",
+   "title": "WPRI 12 Weather Forecast for 10/28/26: Partly sunny, cool and dry today",
+   "link": "https://www.youtube.com/watch?v=lcVV3yctcg0",
+   "published": "2026-10-28T13:07:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lcVV3yctcg0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "KVsFo9km3r8",
    "title": "5 charged with murder of Central Falls woman due in court",
@@ -72,19 +98,6 @@
    "thumbnail": "https://i.ytimg.com/vi/X2Pgr8GIvlg/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "Ics2ByxCrik",
-   "title": "WPRI 12 Weather Forecast for 10/28/26: Partly sunny, dry and cool today",
-   "link": "https://www.youtube.com/watch?v=Ics2ByxCrik",
-   "published": "2026-10-28T11:10:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Ics2ByxCrik/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "UpxsX6HqwgY",
@@ -3621,16 +3634,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/vwRCnqNwaV8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NuPPVsltpQY",
-   "title": "Meet the candidates: James Diossa for RI Treasurer",
-   "link": "https://www.youtube.com/watch?v=NuPPVsltpQY",
-   "published": "2026-10-21T13:09:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NuPPVsltpQY/mqdefault.jpg",
    "towns": []
   }
  ]

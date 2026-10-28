@@ -1,22 +1,29 @@
 {
- "updated": "2026-10-28T01:05:50.461Z",
+ "updated": "2026-10-28T01:35:31.893Z",
  "alerts": [
   {
-   "id": "1041623",
-   "header": "Providence Line Train 6033 (7:18 PM from South Station) is operating 20-30 minutes behind schedule between Ruggles and Providence.",
+   "id": "1041586",
+   "header": "Providence Line Train 6038 (7:42 PM from Wickford Junction) has departed Wickford Junction and is operating approximately 1 hour and 40 minutes behind schedule due to an earlier train with a mechanical issue ahead and an equipment shortage.",
    "effect": "DELAY",
-   "severity": 7,
+   "severity": 9,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T19:54:44-04:00",
-   "end": "2026-10-27T21:33:00-04:00",
+   "start": "2026-10-27T19:42:00-04:00",
+   "end": "2026-10-27T22:23:00-04:00",
    "routes": [
     "CR-Providence"
    ],
-   "stations": [],
-   "towns": [],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
    "url": null,
-   "updated": "2026-10-27T19:54:44-04:00"
+   "updated": "2026-10-27T21:29:42-04:00"
   },
   {
    "id": "1040491",
@@ -36,23 +43,6 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1041603",
-   "header": "New Bedford Line Train 8023 (6:38 PM from South Station) is operating 10-20 minutes behind schedule between JFK/UMass and New Bedford.",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T18:56:35-04:00",
-   "end": "2026-10-27T21:21:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T18:56:35-04:00"
-  },
-  {
    "id": "1041619",
    "header": "Stoughton Line Train 6330 (8:05 PM from Stoughton) has departed Stoughton and is 20-30 minutes behind schedule due to an earlier train with a mechanical issue.",
    "effect": "DELAY",
@@ -68,40 +58,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-10-27T20:31:34-04:00"
-  },
-  {
-   "id": "1041626",
-   "header": "Fall River Line Train 8173 (8:01 PM from East Taunton) is operating 20-30 minutes behind schedule between East Taunton and Fall River.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T20:29:47-04:00",
-   "end": "2026-10-27T21:25:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T20:29:47-04:00"
-  },
-  {
-   "id": "1041586",
-   "header": "Providence Line Train 6038 (7:42 PM from Wickford Junction) is expected to depart Wickford Junction at least 25 minutes behind schedule due to an equipment shortage.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-27T19:42:00-04:00",
-   "end": "2026-10-27T22:23:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-27T18:16:53-04:00"
   },
   {
    "id": "1038493",

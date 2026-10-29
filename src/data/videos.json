@@ -1,33 +1,12 @@
 {
- "updated": "2026-10-29T22:05:26.595Z",
+ "updated": "2026-10-29T22:35:24.817Z",
  "channels": [
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   },
   {
    "id": "boston25",
@@ -37,18 +16,34 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
@@ -3683,142 +3678,6 @@
    "thumbnail": "https://i.ytimg.com/vi/tCVP0S20mvE/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "wlEFO7MRwb4",
-   "title": "Massachusetts voters to decide whether to overhaul primary election system",
-   "link": "https://www.youtube.com/watch?v=wlEFO7MRwb4",
-   "published": "2026-10-22T22:31:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wlEFO7MRwb4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "JTWvZzTsbjY",
-   "title": "Question 6 could support more housing in Providence",
-   "link": "https://www.youtube.com/watch?v=JTWvZzTsbjY",
-   "published": "2026-10-22T22:31:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/JTWvZzTsbjY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "FXoPkn4Ybd4",
-   "title": "Massachusetts reaches $10M settlement in autistic teen’s 2020 death",
-   "link": "https://www.youtube.com/watch?v=FXoPkn4Ybd4",
-   "published": "2026-10-22T22:30:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/FXoPkn4Ybd4/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "cZYXsfu4iSk",
-   "title": "7 people charged in alleged scheme to defraud Medicaid in Rhode Island",
-   "link": "https://www.youtube.com/watch?v=cZYXsfu4iSk",
-   "published": "2026-10-22T22:30:38.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/cZYXsfu4iSk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "VDEV0A0bZxY",
-   "title": "UnitedHealthcare, Humana ending Medicare Advantage plans",
-   "link": "https://www.youtube.com/watch?v=VDEV0A0bZxY",
-   "published": "2026-10-22T22:29:56.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VDEV0A0bZxY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qGA5My8rl3g",
-   "title": "Seven charged with Medicaid fraud",
-   "link": "https://www.youtube.com/watch?v=qGA5My8rl3g",
-   "published": "2026-10-22T22:28:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qGA5My8rl3g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "TpYZiSlpl_Q",
-   "title": "Crews respond to Providence apartment fire",
-   "link": "https://www.youtube.com/watch?v=TpYZiSlpl_Q",
-   "published": "2026-10-22T22:26:52.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TpYZiSlpl_Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "GewoUnqevPA",
-   "title": "New Bedford fires 2 police officers over Flock abuse",
-   "link": "https://www.youtube.com/watch?v=GewoUnqevPA",
-   "published": "2026-10-22T22:26:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GewoUnqevPA/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "4ZEhh34k81M",
-   "title": "RI’s first Costco is coming to Smithfield",
-   "link": "https://www.youtube.com/watch?v=4ZEhh34k81M",
-   "published": "2026-10-22T22:25:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/4ZEhh34k81M/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "gM89D3tgN0c",
-   "title": "NBC10 I-Team: Warwick mayor questions school district’s finances as deficit looms",
-   "link": "https://www.youtube.com/watch?v=gM89D3tgN0c",
-   "published": "2026-10-22T22:20:44.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/gM89D3tgN0c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "sbhvo1HERXk",
-   "title": "Narragansett limits Boon Street Market alcohol hours over noise, parking concerns",
-   "link": "https://www.youtube.com/watch?v=sbhvo1HERXk",
-   "published": "2026-10-22T22:11:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/sbhvo1HERXk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Zwm1EEVnWeo",
-   "title": "Why your next Airbnb stay may come with fewer chores",
-   "link": "https://www.youtube.com/watch?v=Zwm1EEVnWeo",
-   "published": "2026-10-22T22:08:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Zwm1EEVnWeo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vZ_6A3q_j1A",
-   "title": "Man invites neighbors to homemade 'Pumpkin Spectacular'; everyone attends",
-   "link": "https://www.youtube.com/watch?v=vZ_6A3q_j1A",
-   "published": "2026-10-22T22:06:02.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/vZ_6A3q_j1A/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

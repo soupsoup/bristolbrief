@@ -1,12 +1,33 @@
 {
- "updated": "2026-10-29T22:35:24.817Z",
+ "updated": "2026-10-29T23:35:26.743Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "boston25",
@@ -16,37 +37,145 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 500"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Dzg3QXtApXc",
+   "title": "New England Nation OT: Karen Guregian on the Patriots' season #shorts",
+   "link": "https://www.youtube.com/shorts/Dzg3QXtApXc",
+   "published": "2026-10-29T23:13:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Dzg3QXtApXc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "1AdmdwAbEKU",
+   "title": "Woman wants to bring Rocky Point's Corkscrew roller coaster back to Rhode Island",
+   "link": "https://www.youtube.com/watch?v=1AdmdwAbEKU",
+   "published": "2026-10-29T22:56:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1AdmdwAbEKU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Me1ORRHukbE",
+   "title": "Rhode Island voters to decide on $50 million bond for history center, preservation grants",
+   "link": "https://www.youtube.com/watch?v=Me1ORRHukbE",
+   "published": "2026-10-29T22:44:36.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Me1ORRHukbE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "E-HQXAWpWus",
+   "title": "Providence councilor prevails in free speech lawsuit against governor's staff",
+   "link": "https://www.youtube.com/watch?v=E-HQXAWpWus",
+   "published": "2026-10-29T22:41:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/E-HQXAWpWus/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "e3oAvZVURfU",
+   "title": "Project aims to create more affordable housing in Middletown",
+   "link": "https://www.youtube.com/watch?v=e3oAvZVURfU",
+   "published": "2026-10-29T22:36:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/e3oAvZVURfU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "NQgx3hVOvOo",
+   "title": "RI Division of Taxation warns of phone scam",
+   "link": "https://www.youtube.com/watch?v=NQgx3hVOvOo",
+   "published": "2026-10-29T22:33:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/NQgx3hVOvOo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DSDvnFn7dJo",
+   "title": "DCYF pauses intakes, referrals to Ocean Tides in Narragansett",
+   "link": "https://www.youtube.com/watch?v=DSDvnFn7dJo",
+   "published": "2026-10-29T22:33:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DSDvnFn7dJo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "jSG__QKaP8M",
+   "title": "Matos criticizes Loughlin over campaign finance error",
+   "link": "https://www.youtube.com/watch?v=jSG__QKaP8M",
+   "published": "2026-10-29T22:28:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jSG__QKaP8M/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "gXuphJjIzmI",
+   "title": "WPRI Weather Forecast 10-29-26 Warm Dry Friday",
+   "link": "https://www.youtube.com/watch?v=gXuphJjIzmI",
+   "published": "2026-10-29T22:26:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gXuphJjIzmI/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "KtqZ2YFjYcQ",
+   "title": "RI Board of Elections: Direct mailers don't count toward campaign spending limits",
+   "link": "https://www.youtube.com/watch?v=KtqZ2YFjYcQ",
+   "published": "2026-10-29T22:26:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/KtqZ2YFjYcQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mXl8mVb-8RE",
+   "title": "Spending on RI governor's race lowest in years",
+   "link": "https://www.youtube.com/watch?v=mXl8mVb-8RE",
+   "published": "2026-10-29T22:22:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mXl8mVb-8RE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "8NxVqZxQoHg",
+   "title": "Westerly veterans find connection and camaraderie over free breakfasts",
+   "link": "https://www.youtube.com/watch?v=8NxVqZxQoHg",
+   "published": "2026-10-29T22:20:32.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/8NxVqZxQoHg/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "f4lOCaQ2nTY",
    "title": "Providence for Palestine responds to opposition to divestment ordinance",
@@ -66,6 +195,19 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/cBtAiBoQm_4/mqdefault.jpg",
    "towns": []
+  },
+  {
+   "id": "6CVfZY2uIUU",
+   "title": "Lizzie Borden: A Forever Mystery",
+   "link": "https://www.youtube.com/watch?v=6CVfZY2uIUU",
+   "published": "2026-10-29T22:00:28.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/6CVfZY2uIUU/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
   },
   {
    "id": "9BunX5LIjK4",
@@ -177,19 +319,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/giXiu5iC4-I/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "rSXVXZxLopw",
-   "title": "12 WPRI 12 Weather Now 10-29-26 Very Mild Through Friday",
-   "link": "https://www.youtube.com/watch?v=rSXVXZxLopw",
-   "published": "2026-10-29T20:57:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/rSXVXZxLopw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "5m0RRrqguPw",
@@ -3595,87 +3724,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/XcgUSWfm1g4/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "cCbFEgw7RQQ",
-   "title": "Mass. settles with David Almond's estate for $10 million #shorts",
-   "link": "https://www.youtube.com/shorts/cCbFEgw7RQQ",
-   "published": "2026-10-22T23:26:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cCbFEgw7RQQ/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true,
-   "short": true
-  },
-  {
-   "id": "YEjkiYkUzKs",
-   "title": "Two New Bedford police officers fired for alleged misuse of license plate cameras",
-   "link": "https://www.youtube.com/watch?v=YEjkiYkUzKs",
-   "published": "2026-10-22T23:02:31.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/YEjkiYkUzKs/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "9y5xvwqYPWk",
-   "title": "Norton couple's nonprofit farm rescues animals, serves as refuge for people",
-   "link": "https://www.youtube.com/watch?v=9y5xvwqYPWk",
-   "published": "2026-10-22T22:52:17.000Z",
-   "channel": "cbs-boston",
-   "channelName": "CBS Boston (WBZ)",
-   "thumbnail": "https://i.ytimg.com/vi/9y5xvwqYPWk/mqdefault.jpg",
-   "towns": [
-    "norton"
-   ],
-   "local": true
-  },
-  {
-   "id": "x0mBwkFf820",
-   "title": "Experts question impact of federal oil release on soaring home heating costs",
-   "link": "https://www.youtube.com/watch?v=x0mBwkFf820",
-   "published": "2026-10-22T22:49:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/x0mBwkFf820/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "LPhUBKz9hhk",
-   "title": "Costco chooses Smithfield for first Rhode Island store",
-   "link": "https://www.youtube.com/watch?v=LPhUBKz9hhk",
-   "published": "2026-10-22T22:49:03.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/LPhUBKz9hhk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ExMY3OXMtHI",
-   "title": "North Kingstown residents sue asphalt plant over foul odor affecting quality of life",
-   "link": "https://www.youtube.com/watch?v=ExMY3OXMtHI",
-   "published": "2026-10-22T22:45:33.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ExMY3OXMtHI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tCVP0S20mvE",
-   "title": "Airbnb guests no longer have to wash dishes, strip beds at checkout #shorts",
-   "link": "https://www.youtube.com/shorts/tCVP0S20mvE",
-   "published": "2026-10-22T22:36:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/tCVP0S20mvE/mqdefault.jpg",
    "towns": [],
    "short": true
   }

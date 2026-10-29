@@ -1,41 +1,47 @@
 {
- "updated": "2026-10-29T04:05:29.808Z",
+ "updated": "2026-10-29T07:07:16.759Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
@@ -46,6 +52,141 @@
   }
  ],
  "videos": [
+  {
+   "id": "HG4_y5OyzXs",
+   "title": "WPRI 12 Weather Forecast 10-28-26 Dry Now Thru The Weekend",
+   "link": "https://www.youtube.com/watch?v=HG4_y5OyzXs",
+   "published": "2026-10-29T03:27:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HG4_y5OyzXs/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "DdtjNJ2lu5I",
+   "title": "Portsmouth man arrested after Tiverton campaign sign thefts; 22 signs recovered",
+   "link": "https://www.youtube.com/watch?v=DdtjNJ2lu5I",
+   "published": "2026-10-29T03:13:02.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/DdtjNJ2lu5I/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DIZ0SRjuJyw",
+   "title": "Police investigating potential threat targeting Cranston West",
+   "link": "https://www.youtube.com/watch?v=DIZ0SRjuJyw",
+   "published": "2026-10-29T03:10:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DIZ0SRjuJyw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7Dw0r5le9aw",
+   "title": "Study: 75% of former NFL players who died over 15-year span had CTE",
+   "link": "https://www.youtube.com/watch?v=7Dw0r5le9aw",
+   "published": "2026-10-29T03:10:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7Dw0r5le9aw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "MtlwOAfabyk",
+   "title": "5-year-old student leaves school grounds during recess at Dighton Elementary School",
+   "link": "https://www.youtube.com/watch?v=MtlwOAfabyk",
+   "published": "2026-10-29T03:07:18.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/MtlwOAfabyk/mqdefault.jpg",
+   "towns": [
+    "dighton"
+   ],
+   "local": true
+  },
+  {
+   "id": "mdOMiKaPcqg",
+   "title": "Former NYFD chief describes surviving 9/11 tower collapse",
+   "link": "https://www.youtube.com/watch?v=mdOMiKaPcqg",
+   "published": "2026-10-29T02:32:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mdOMiKaPcqg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Auj4WJfiHm4",
+   "title": "Study: 75% of former NFL players who died over 15-year span had CTE",
+   "link": "https://www.youtube.com/watch?v=Auj4WJfiHm4",
+   "published": "2026-10-29T02:20:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Auj4WJfiHm4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7qiVQAq_5cM",
+   "title": "North Kingstown crash victim’s mom ‘shocked, not surprised’ after suspect skips sentencing #shorts",
+   "link": "https://www.youtube.com/shorts/7qiVQAq_5cM",
+   "published": "2026-10-29T02:00:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7qiVQAq_5cM/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "eQwTdLfZ1CU",
+   "title": "Gov. Healey joins ribbon-cutting for Route 79 project; councilor calls visit premature",
+   "link": "https://www.youtube.com/watch?v=eQwTdLfZ1CU",
+   "published": "2026-10-29T01:07:50.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/eQwTdLfZ1CU/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "2w-UX4SO_zI",
+   "title": "Capron Park Zoo prepares to welcome new mystery animal #shorts",
+   "link": "https://www.youtube.com/shorts/2w-UX4SO_zI",
+   "published": "2026-10-29T01:03:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2w-UX4SO_zI/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "ZVkd4QeqObE",
+   "title": "Orphaned kittens meet sharks and stingrays on an aquarium field trip at the Mall of America",
+   "link": "https://www.youtube.com/watch?v=ZVkd4QeqObE",
+   "published": "2026-10-29T00:48:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZVkd4QeqObE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "b0p23-ehVes",
+   "title": "5 charged in Central Falls murder face judge #shorts",
+   "link": "https://www.youtube.com/shorts/b0p23-ehVes",
+   "published": "2026-10-29T00:01:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/b0p23-ehVes/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "s8-T5qqIbbE",
    "title": "Witches of Rhode Island stop by NBC 10",
@@ -300,19 +441,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/7yFFHPKXwBI/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "h5_TynExWyU",
-   "title": "WPRI 12 Weather Forecast 10-28-26 Much Milder Thursday/Friday",
-   "link": "https://www.youtube.com/watch?v=h5_TynExWyU",
-   "published": "2026-10-28T21:57:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/h5_TynExWyU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "0_UnWa7nSo8",

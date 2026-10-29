@@ -1,15 +1,9 @@
 {
- "updated": "2026-10-29T01:35:31.191Z",
+ "updated": "2026-10-29T04:05:29.808Z",
  "channels": [
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -20,31 +14,35 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": false,
-   "error": "HTTP 500"
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3596,92 +3594,6 @@
    "thumbnail": "https://i.ytimg.com/vi/xJKtNvEsSDU/mqdefault.jpg",
    "towns": [
     "mansfield"
-   ],
-   "local": true
-  },
-  {
-   "id": "gcrjg5Dyao0",
-   "title": "WPRI 12 Weather Forecast 10-21-26 Becoming Sunny, Breezy Thursday",
-   "link": "https://www.youtube.com/watch?v=gcrjg5Dyao0",
-   "published": "2026-10-22T03:30:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gcrjg5Dyao0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "2nXyDiOaU5g",
-   "title": "Federal prosecutors announce dismantling of 'marriage fraud ring' in Massachusetts",
-   "link": "https://www.youtube.com/watch?v=2nXyDiOaU5g",
-   "published": "2026-10-22T03:22:26.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/2nXyDiOaU5g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "kT7S4KYo8LY",
-   "title": "North Smithfield improves to 15-0 with win over Lincoln",
-   "link": "https://www.youtube.com/watch?v=kT7S4KYo8LY",
-   "published": "2026-10-22T03:18:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/kT7S4KYo8LY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Jo-MUioOg3c",
-   "title": "Providence School Board weighs removing president amid leadership dispute",
-   "link": "https://www.youtube.com/watch?v=Jo-MUioOg3c",
-   "published": "2026-10-22T03:10:53.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Jo-MUioOg3c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0QXR1Fd-6Ek",
-   "title": "Providence school board president accuses RIDE commissioner of interference",
-   "link": "https://www.youtube.com/watch?v=0QXR1Fd-6Ek",
-   "published": "2026-10-22T03:06:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0QXR1Fd-6Ek/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PU7lzW29v3s",
-   "title": "Blitz 12 Player of the Week: Davies RB/CB Rocco Gentilella",
-   "link": "https://www.youtube.com/watch?v=PU7lzW29v3s",
-   "published": "2026-10-22T03:02:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PU7lzW29v3s/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "nxbo9TnY08k",
-   "title": "Former US ambassador to Russia visits RI as Ukraine war rages on",
-   "link": "https://www.youtube.com/watch?v=nxbo9TnY08k",
-   "published": "2026-10-22T02:21:56.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/nxbo9TnY08k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "gZSsAI3iUd4",
-   "title": "Mass. reaches $10M settlement in autistic teen’s death",
-   "link": "https://www.youtube.com/watch?v=gZSsAI3iUd4",
-   "published": "2026-10-22T02:16:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gZSsAI3iUd4/mqdefault.jpg",
-   "towns": [
-    "fall-river"
    ],
    "local": true
   }

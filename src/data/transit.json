@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T12:05:41.046Z",
+ "updated": "2026-10-29T12:35:45.827Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,44 +19,29 @@
    "updated": "2026-10-22T12:55:43-04:00"
   },
   {
-   "id": "1041916",
-   "header": "Fall River Line Train 8160 (7:18 AM from Fall River Depot) is operating 15-25 minutes behind schedule between Freetown and East Taunton due to a mechanical issue.",
+   "id": "1041923",
+   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 15-25 minutes behind schedule between Middleborough and Fall River due to train traffic.",
    "effect": "DELAY",
    "severity": 6,
    "lifecycle": "NEW",
-   "cause": "MECHANICAL_ISSUE",
-   "start": "2026-10-29T07:49:00-04:00",
-   "end": "2026-10-29T08:39:00-04:00",
+   "cause": "TRAIN_TRAFFIC",
+   "start": "2026-10-29T07:59:00-04:00",
+   "end": "2026-10-29T09:34:00-04:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
     "Freetown",
+    "Fall River Depot",
     "East Taunton"
    ],
    "towns": [
     "freetown",
+    "fall-river",
     "taunton"
    ],
    "url": null,
-   "updated": "2026-10-29T07:53:12-04:00"
-  },
-  {
-   "id": "1041923",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is stopped after Middleborough and is 5-15 minutes behind schedule due to train traffic.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-10-29T07:59:35-04:00",
-   "end": "2026-10-29T09:34:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-29T07:59:35-04:00"
+   "updated": "2026-10-29T08:11:45-04:00"
   },
   {
    "id": "1041917",
@@ -80,69 +65,6 @@
    ],
    "url": null,
    "updated": "2026-10-29T07:52:07-04:00"
-  },
-  {
-   "id": "1041911",
-   "header": "Providence Line Train 6003 (6:35 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction due to Amtrak train traffic.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "AMTRAK_TRAIN_TRAFFIC",
-   "start": "2026-10-29T07:37:09-04:00",
-   "end": "2026-10-29T09:20:00-04:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-10-29T07:37:09-04:00"
-  },
-  {
-   "id": "1041906",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 5-15 minutes behind schedule between South Station and Fall River due to a mechanical issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-29T07:01:00-04:00",
-   "end": "2026-10-29T09:34:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-10-29T07:01:58-04:00"
-  },
-  {
-   "id": "1041899",
-   "header": "New Bedford Line Train 8006 (5:52 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-29T06:32:29-04:00",
-   "end": "2026-10-29T08:32:00-04:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-29T06:32:29-04:00"
   },
   {
    "id": "1038493",

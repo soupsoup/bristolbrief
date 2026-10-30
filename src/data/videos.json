@@ -1,9 +1,16 @@
 {
- "updated": "2026-10-30T14:05:39.138Z",
+ "updated": "2026-10-30T14:35:25.426Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,13 +23,6 @@
    "kept": 2
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -30,15 +30,8 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -49,6 +42,13 @@
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3660,30 +3660,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/gSYKWYc_yZ4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "rgTNhbw0CII",
-   "title": "Video Now: Gov. McKee discusses housing affordability",
-   "link": "https://www.youtube.com/watch?v=rgTNhbw0CII",
-   "published": "2026-10-23T14:34:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/rgTNhbw0CII/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "5YQm9ssX-wg",
-   "title": "Two New Bedford police officers fired after alleged misuse of Flock cameras",
-   "link": "https://www.youtube.com/shorts/5YQm9ssX-wg",
-   "published": "2026-10-23T14:06:30.000Z",
-   "channel": "cbs-boston",
-   "channelName": "CBS Boston (WBZ)",
-   "thumbnail": "https://i.ytimg.com/vi/5YQm9ssX-wg/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true,
-   "short": true
   }
  ]
 }

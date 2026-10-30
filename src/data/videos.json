@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-30T18:35:28.633Z",
+ "updated": "2026-10-30T19:05:30.326Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
@@ -9,11 +23,18 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "boston25",
@@ -28,33 +49,23 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
   {
+   "id": "KCVUzAitcK4",
+   "title": "Providence superintendent announces exit from district #shorts",
+   "link": "https://www.youtube.com/shorts/KCVUzAitcK4",
+   "published": "2026-10-30T18:34:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/KCVUzAitcK4/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
    "id": "SywrU3YfYtQ",
-   "title": "Sandra Birchmore Case Daily Debrief: Defense continues case",
+   "title": "Sandra Birchmore Case Daily Debrief: Mental health expert testifies for defense",
    "link": "https://www.youtube.com/watch?v=SywrU3YfYtQ",
    "published": "2026-10-30T18:18:17.000Z",
    "channel": "nbc10-wjar",
@@ -3628,27 +3639,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/pZ9ZCW4fRL4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0fbhqXWG6fg",
-   "title": "Watch Rhode Island Sports Weekly with Gresh on WPRI 12+ #sponsored",
-   "link": "https://www.youtube.com/shorts/0fbhqXWG6fg",
-   "published": "2026-10-23T18:48:40.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0fbhqXWG6fg/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "RTxQ35HE4QU",
-   "title": "Ken Block, candidate for Rhode Island governor, talks polling, Washington Bridge",
-   "link": "https://www.youtube.com/watch?v=RTxQ35HE4QU",
-   "published": "2026-10-23T18:42:55.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/RTxQ35HE4QU/mqdefault.jpg",
    "towns": []
   }
  ]

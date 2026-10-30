@@ -1,23 +1,23 @@
 {
- "updated": "2026-10-30T20:46:24.943Z",
+ "updated": "2026-10-30T21:05:45.948Z",
  "channels": [
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,21 +37,44 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "CzV1lG5g7rM",
+   "title": "WPRI 12 Weather Now 10-30-26 Much Cooler This Weekend",
+   "link": "https://www.youtube.com/watch?v=CzV1lG5g7rM",
+   "published": "2026-10-30T20:57:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CzV1lG5g7rM/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "DCrgGRxeQ0E",
+   "title": "Leo XIV becomes first pope in history to vote in US general election",
+   "link": "https://www.youtube.com/watch?v=DCrgGRxeQ0E",
+   "published": "2026-10-30T20:45:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DCrgGRxeQ0E/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "AY0UzIuagMY",
    "title": "Senator Reed, Bryant University team up to launch new business AI training program",
@@ -228,19 +251,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/1sev8qGLNpo/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "p9T3AiV37WA",
-   "title": "WPRI 12 Weather Forecast 10/30/26: Mild, Dry Today; Cooler This Weekend",
-   "link": "https://www.youtube.com/watch?v=p9T3AiV37WA",
-   "published": "2026-10-30T16:56:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/p9T3AiV37WA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "DZQS71rqrYs",
@@ -3695,76 +3705,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/je3MTpOExo4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "kazqICkhpEI",
-   "title": "RI leaders pay tribute to Rhode Island Nine killed in Beirut",
-   "link": "https://www.youtube.com/watch?v=kazqICkhpEI",
-   "published": "2026-10-23T21:02:14.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/kazqICkhpEI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "wFSxwOv5XtU",
-   "title": "Mass. State Police announce training academy reforms",
-   "link": "https://www.youtube.com/watch?v=wFSxwOv5XtU",
-   "published": "2026-10-23T21:00:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wFSxwOv5XtU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qWL2R7yNhh0",
-   "title": "Ronald Fischer sentencing date delayed",
-   "link": "https://www.youtube.com/watch?v=qWL2R7yNhh0",
-   "published": "2026-10-23T20:56:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qWL2R7yNhh0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7jvL8O23j5g",
-   "title": "Postal worker charged with stealing guns, stockpiling drugs",
-   "link": "https://www.youtube.com/watch?v=7jvL8O23j5g",
-   "published": "2026-10-23T20:50:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7jvL8O23j5g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mmnSgTlYOWc",
-   "title": "RIPTA bus involved in crash on Wampanoag Trail",
-   "link": "https://www.youtube.com/watch?v=mmnSgTlYOWc",
-   "published": "2026-10-23T20:48:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mmnSgTlYOWc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vd-e1QUgOz8",
-   "title": "2026 Housing Fact Book: Most Rhode Islanders still struggle to afford housing",
-   "link": "https://www.youtube.com/watch?v=vd-e1QUgOz8",
-   "published": "2026-10-23T20:48:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vd-e1QUgOz8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "C_BLgnJ3L6s",
-   "title": "Sandra Birchmore Case Daily Debrief: Sandra's therapist testifies",
-   "link": "https://www.youtube.com/watch?v=C_BLgnJ3L6s",
-   "published": "2026-10-23T20:46:26.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/C_BLgnJ3L6s/mqdefault.jpg",
    "towns": []
   }
  ]

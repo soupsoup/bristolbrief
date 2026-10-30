@@ -1,51 +1,134 @@
 {
- "updated": "2026-10-30T01:35:30.338Z",
+ "updated": "2026-10-30T07:06:50.328Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "5_BWNGjKvE0",
+   "title": "Coast Guard House looks back on Superstorm Sandy",
+   "link": "https://www.youtube.com/shorts/5_BWNGjKvE0",
+   "published": "2026-10-30T03:15:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/5_BWNGjKvE0/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "UknG6uYFQA0",
+   "title": "Lebanese Pita Pocket receives outpouring of support after hateful calls",
+   "link": "https://www.youtube.com/watch?v=UknG6uYFQA0",
+   "published": "2026-10-30T03:12:27.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/UknG6uYFQA0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "9z5xRePd1QE",
+   "title": "WPRI 12 Weather Forecast 10-29-26 Sunny Breezy Mild Friday",
+   "link": "https://www.youtube.com/watch?v=9z5xRePd1QE",
+   "published": "2026-10-30T03:12:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9z5xRePd1QE/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "UNqXDWJyH-A",
+   "title": "Rhode Island Hospital nurse calls for more security after staff car break-ins",
+   "link": "https://www.youtube.com/watch?v=UNqXDWJyH-A",
+   "published": "2026-10-30T03:07:43.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/UNqXDWJyH-A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JDCLWmM9x8I",
+   "title": "Coast Guard House looks back on Superstorm Sandy 14 years later",
+   "link": "https://www.youtube.com/watch?v=JDCLWmM9x8I",
+   "published": "2026-10-30T02:21:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JDCLWmM9x8I/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "huTlKUnREV4",
+   "title": "4 Providence schools struggle with heating issues",
+   "link": "https://www.youtube.com/watch?v=huTlKUnREV4",
+   "published": "2026-10-30T02:21:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/huTlKUnREV4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "xjMZDywXeRU",
+   "title": "Watching Your Wallet: HSA vs. FSA #shorts",
+   "link": "https://www.youtube.com/shorts/xjMZDywXeRU",
+   "published": "2026-10-30T01:01:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xjMZDywXeRU/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "kQ7Ds6vEnSM",
    "title": "Woman starts effort to bring Rocky Point's Corkscrew roller coaster back to Rhode Island",
@@ -56,6 +139,16 @@
    "thumbnail": "https://i.ytimg.com/vi/kQ7Ds6vEnSM/mqdefault.jpg",
    "towns": [],
    "short": true
+  },
+  {
+   "id": "HnRTETSXc9k",
+   "title": "Blitz 12 Player of the Week: Classical RB Tahmeed Moshood",
+   "link": "https://www.youtube.com/watch?v=HnRTETSXc9k",
+   "published": "2026-10-29T23:27:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HnRTETSXc9k/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "P6hA3s1k7VE",
@@ -147,19 +240,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/jSG__QKaP8M/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "gXuphJjIzmI",
-   "title": "WPRI Weather Forecast 10-29-26 Warm Dry Friday",
-   "link": "https://www.youtube.com/watch?v=gXuphJjIzmI",
-   "published": "2026-10-29T22:26:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gXuphJjIzmI/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "KtqZ2YFjYcQ",
@@ -3555,158 +3635,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/o9JiaVsHJxo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "rR7SGVb9mGI",
-   "title": "Davies holds off Ponaganset, 20-12",
-   "link": "https://www.youtube.com/watch?v=rR7SGVb9mGI",
-   "published": "2026-10-23T03:40:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/rR7SGVb9mGI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7SUuqKGWvlU",
-   "title": "WPRI 12 Weather Forecast 10-22-26 Sunny Cooler Friday",
-   "link": "https://www.youtube.com/watch?v=7SUuqKGWvlU",
-   "published": "2026-10-23T03:29:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7SUuqKGWvlU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "fyKF7yGFlio",
-   "title": "New Bedford City Council votes to ban Flock cameras after officers fired for alleged misuse",
-   "link": "https://www.youtube.com/watch?v=fyKF7yGFlio",
-   "published": "2026-10-23T03:20:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/fyKF7yGFlio/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "6aqPU4YJxKc",
-   "title": "Rehabilitation hospital in North Smithfield evacuated",
-   "link": "https://www.youtube.com/watch?v=6aqPU4YJxKc",
-   "published": "2026-10-23T03:17:01.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/6aqPU4YJxKc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "iOdPEDCNre8",
-   "title": "2 New Bedford police officers fired, accused of misusing Flock cameras",
-   "link": "https://www.youtube.com/watch?v=iOdPEDCNre8",
-   "published": "2026-10-23T03:07:56.000Z",
-   "channel": "cbs-boston",
-   "channelName": "CBS Boston (WBZ)",
-   "thumbnail": "https://i.ytimg.com/vi/iOdPEDCNre8/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "HuoVQiytOD8",
-   "title": "North Smithfield rehabilitation hospital evacuated",
-   "link": "https://www.youtube.com/watch?v=HuoVQiytOD8",
-   "published": "2026-10-23T02:56:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/HuoVQiytOD8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "bUKqEkyyi4c",
-   "title": "RI's gubernatorial candidates react to Costco news",
-   "link": "https://www.youtube.com/watch?v=bUKqEkyyi4c",
-   "published": "2026-10-23T02:44:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/bUKqEkyyi4c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PUYc3pTUjUc",
-   "title": "Skunk tests positive for rabies in Glocester",
-   "link": "https://www.youtube.com/watch?v=PUYc3pTUjUc",
-   "published": "2026-10-23T02:25:14.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PUYc3pTUjUc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "YAq1VMEGmiw",
-   "title": "Planes with no pilot being tested in Smithfield",
-   "link": "https://www.youtube.com/watch?v=YAq1VMEGmiw",
-   "published": "2026-10-23T02:24:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YAq1VMEGmiw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "X55nzLas8QU",
-   "title": "West Warwick police procession honors late K-9",
-   "link": "https://www.youtube.com/watch?v=X55nzLas8QU",
-   "published": "2026-10-23T02:22:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/X55nzLas8QU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-7JSitmT700",
-   "title": "RIDOT details flood prevention plan for Cranston intersection",
-   "link": "https://www.youtube.com/watch?v=-7JSitmT700",
-   "published": "2026-10-23T02:19:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-7JSitmT700/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "R8MWvLel4Ek",
-   "title": "Charlestown man charged with DUI after nearly hitting officer in construction zone",
-   "link": "https://www.youtube.com/watch?v=R8MWvLel4Ek",
-   "published": "2026-10-23T02:19:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/R8MWvLel4Ek/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "92IoWAD7pVo",
-   "title": "New Bedford City Council votes to ban use of Flock cameras",
-   "link": "https://www.youtube.com/watch?v=92IoWAD7pVo",
-   "published": "2026-10-23T02:19:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/92IoWAD7pVo/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "_4IIRAhwuVk",
-   "title": "Saltwater Sessions - In the Galley: Seafood Creations Summer '26",
-   "link": "https://www.youtube.com/watch?v=_4IIRAhwuVk",
-   "published": "2026-10-23T02:15:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_4IIRAhwuVk/mqdefault.jpg",
    "towns": []
   }
  ]

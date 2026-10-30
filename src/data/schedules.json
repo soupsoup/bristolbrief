@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T02:35:28.476Z",
+ "updated": "2026-10-30T03:05:28.717Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -9,6 +9,17 @@
   "bruins": {
    "league": "NHL",
    "past": [
+    {
+     "id": "nhl-2026020207",
+     "date": "2026-10-30T00:00:00Z",
+     "tbd": false,
+     "home": false,
+     "opponent": "Blues",
+     "status": "final",
+     "us": 1,
+     "them": 4,
+     "result": "L"
+    },
     {
      "id": "nhl-2026020189",
      "date": "2026-10-28T00:00:00Z",
@@ -53,30 +64,9 @@
      "them": 3,
      "result": "OTL",
      "note": "OT"
-    },
-    {
-     "id": "nhl-2026020132",
-     "date": "2026-10-18T01:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Kings",
-     "status": "final",
-     "us": 4,
-     "them": 1,
-     "result": "W"
     }
    ],
    "next": [
-    {
-     "id": "nhl-2026020207",
-     "date": "2026-10-30T00:00:00Z",
-     "tbd": false,
-     "home": false,
-     "opponent": "Blues",
-     "status": "live",
-     "us": 1,
-     "them": 4
-    },
     {
      "id": "nhl-2026020217",
      "date": "2026-10-31T17:00:00Z",
@@ -107,6 +97,14 @@
      "tbd": false,
      "home": true,
      "opponent": "Panthers",
+     "status": "scheduled"
+    },
+    {
+     "id": "nhl-2026020299",
+     "date": "2026-11-13T00:00:00Z",
+     "tbd": false,
+     "home": true,
+     "opponent": "Canadiens",
      "status": "scheduled"
     }
    ]

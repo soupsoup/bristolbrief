@@ -1,6 +1,13 @@
 {
- "updated": "2026-10-30T10:35:24.505Z",
+ "updated": "2026-10-30T11:05:28.460Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -16,29 +23,22 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 2
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,6 +53,54 @@
  ],
  "videos": [
   {
+   "id": "xfRpgk6rW_8",
+   "title": "WPRI 12 Weather Forecast for 10/30/26:  Very mild and dry today with sunshine",
+   "link": "https://www.youtube.com/watch?v=xfRpgk6rW_8",
+   "published": "2026-10-30T10:57:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xfRpgk6rW_8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "NFM4lMIWd8c",
+   "title": "Fire breaks out at abandoned mill in Central Falls",
+   "link": "https://www.youtube.com/watch?v=NFM4lMIWd8c",
+   "published": "2026-10-30T10:57:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/NFM4lMIWd8c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7pEcj0HGKdY",
+   "title": "Dartmouth provost resigns over AI use",
+   "link": "https://www.youtube.com/watch?v=7pEcj0HGKdY",
+   "published": "2026-10-30T10:40:27.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/7pEcj0HGKdY/mqdefault.jpg",
+   "towns": [
+    "dartmouth"
+   ],
+   "local": true
+  },
+  {
+   "id": "TvtBId0L4-I",
+   "title": "Behind the Smiles Photo for 10/30/26 from Jasmin in Lincoln",
+   "link": "https://www.youtube.com/watch?v=TvtBId0L4-I",
+   "published": "2026-10-30T10:36:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/TvtBId0L4-I/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
    "id": "Wk61sgZ-SrU",
    "title": "Wake Up Call from Easton: Happy Halloween",
    "link": "https://www.youtube.com/watch?v=Wk61sgZ-SrU",
@@ -64,19 +112,6 @@
     "easton"
    ],
    "local": true
-  },
-  {
-   "id": "aGlk-txPyVc",
-   "title": "WPRI 12 Weather Forecast for 10/30/26:  Very mild and dry today",
-   "link": "https://www.youtube.com/watch?v=aGlk-txPyVc",
-   "published": "2026-10-30T08:55:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/aGlk-txPyVc/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "5_BWNGjKvE0",
@@ -3618,19 +3653,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/i_01Pwy3QPs/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "zebuNhADOsw",
-   "title": "New Bedford City Council passes ordinance to ban automated license plate readers",
-   "link": "https://www.youtube.com/watch?v=zebuNhADOsw",
-   "published": "2026-10-23T11:03:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zebuNhADOsw/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

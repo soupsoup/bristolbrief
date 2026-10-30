@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-30T11:35:26.375Z",
+ "updated": "2026-10-30T12:05:33.583Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,8 +23,8 @@
    "kept": 2
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,21 +37,35 @@
    "kept": 15
   },
   {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "bja8QjXSp5k",
+   "title": "Lebanese restaurant in Dartmouth gets outpour of love following hateful calls",
+   "link": "https://www.youtube.com/shorts/bja8QjXSp5k",
+   "published": "2026-10-30T11:32:30.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/bja8QjXSp5k/mqdefault.jpg",
+   "towns": [
+    "dartmouth"
+   ],
+   "local": true,
+   "short": true
+  },
   {
    "id": "xfRpgk6rW_8",
    "title": "WPRI 12 Weather Forecast for 10/30/26:  Very mild and dry today with sunshine",

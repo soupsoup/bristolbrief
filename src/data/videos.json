@@ -1,27 +1,6 @@
 {
- "updated": "2026-10-29T23:35:26.743Z",
+ "updated": "2026-10-30T01:35:30.338Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
@@ -30,28 +9,64 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "kQ7Ds6vEnSM",
+   "title": "Woman starts effort to bring Rocky Point's Corkscrew roller coaster back to Rhode Island",
+   "link": "https://www.youtube.com/shorts/kQ7Ds6vEnSM",
+   "published": "2026-10-30T01:01:11.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/kQ7Ds6vEnSM/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "P6hA3s1k7VE",
+   "title": "Sen. Reed seeks more aid as heating oil spikes and Northeast reserves release looms",
+   "link": "https://www.youtube.com/watch?v=P6hA3s1k7VE",
+   "published": "2026-10-29T23:23:49.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/P6hA3s1k7VE/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "Dzg3QXtApXc",
    "title": "New England Nation OT: Karen Guregian on the Patriots' season #shorts",
@@ -3693,39 +3708,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/_4IIRAhwuVk/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "aN29KcznC5E",
-   "title": "New England Nation OT: Patriots IR list #shorts",
-   "link": "https://www.youtube.com/shorts/aN29KcznC5E",
-   "published": "2026-10-23T00:58:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/aN29KcznC5E/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "XDeLhTIMSo8",
-   "title": "Mass. Ballot Question 3: State party primaries #shorts",
-   "link": "https://www.youtube.com/shorts/XDeLhTIMSo8",
-   "published": "2026-10-23T00:21:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/XDeLhTIMSo8/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "XcgUSWfm1g4",
-   "title": "Father of Sandra Birchmore's unborn child testifies in Farwell trial",
-   "link": "https://www.youtube.com/shorts/XcgUSWfm1g4",
-   "published": "2026-10-23T00:00:07.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/XcgUSWfm1g4/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

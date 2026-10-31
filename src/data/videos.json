@@ -1,6 +1,12 @@
 {
- "updated": "2026-10-31T00:44:57.317Z",
+ "updated": "2026-10-31T02:05:36.051Z",
  "channels": [
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
@@ -8,20 +14,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -32,20 +26,48 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "ZCY-n4ACCDY",
+   "title": "South Kingstown police officers sue chief, department, town #shorts",
+   "link": "https://www.youtube.com/shorts/ZCY-n4ACCDY",
+   "published": "2026-10-31T01:30:28.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZCY-n4ACCDY/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "-aa8tALeRDQ",
+   "title": "RI governor’s race spending lowest in years, at nearly $10 million #shorts",
+   "link": "https://www.youtube.com/shorts/-aa8tALeRDQ",
+   "published": "2026-10-30T23:44:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-aa8tALeRDQ/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "CzRCkvss_Ao",
    "title": "Charges expected after police find 140 fish fillets aboard boat off Middletown",
@@ -3672,30 +3694,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/GMgT99yFRpM/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "y2v7B4ujf6Y",
-   "title": "Mitchell: New Bedford won't renew Flock contract",
-   "link": "https://www.youtube.com/watch?v=y2v7B4ujf6Y",
-   "published": "2026-10-24T01:59:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/y2v7B4ujf6Y/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "T7IRDG4p0t8",
-   "title": "Recalls: Swing seats, laminators, finger lights #shorts",
-   "link": "https://www.youtube.com/shorts/T7IRDG4p0t8",
-   "published": "2026-10-24T01:09:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/T7IRDG4p0t8/mqdefault.jpg",
    "towns": [],
    "short": true
   }

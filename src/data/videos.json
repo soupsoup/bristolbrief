@@ -1,26 +1,12 @@
 {
- "updated": "2026-10-30T23:35:49.175Z",
+ "updated": "2026-10-31T00:35:49.086Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -32,23 +18,32 @@
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 500"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
@@ -3704,27 +3699,6 @@
    "thumbnail": "https://i.ytimg.com/vi/T7IRDG4p0t8/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "mlYrn6RrKWc",
-   "title": "Report: Housing costs continue to outweigh income in RI #shorts",
-   "link": "https://www.youtube.com/shorts/mlYrn6RrKWc",
-   "published": "2026-10-24T00:14:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mlYrn6RrKWc/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "HR6IMWJ-Jtg",
-   "title": "North Smithfield rehabilitation hospital evacuated due to high temperature",
-   "link": "https://www.youtube.com/watch?v=HR6IMWJ-Jtg",
-   "published": "2026-10-23T23:49:41.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/HR6IMWJ-Jtg/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

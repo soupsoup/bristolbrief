@@ -1,6 +1,25 @@
 {
- "updated": "2026-10-31T02:05:36.051Z",
+ "updated": "2026-10-31T02:35:31.033Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
@@ -8,14 +27,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -26,23 +39,11 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "kept": 0
   }
  ],
  "videos": [
@@ -3685,17 +3686,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/tgbYzU1FO7Q/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "GMgT99yFRpM",
-   "title": "Beaver dams causing concern in Cumberland #shorts",
-   "link": "https://www.youtube.com/shorts/GMgT99yFRpM",
-   "published": "2026-10-24T02:26:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GMgT99yFRpM/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

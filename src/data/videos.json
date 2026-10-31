@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-31T13:37:37.360Z",
+ "updated": "2026-10-31T14:05:28.535Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,20 +30,6 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -37,15 +37,15 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,17 +53,27 @@
  ],
  "videos": [
   {
-   "id": "_fBhgOmTOPA",
-   "title": "WPRI 12 Weather Forecast 10/31/26: Dry Streak Continues; Chilly for Trick or Treating",
-   "link": "https://www.youtube.com/watch?v=_fBhgOmTOPA",
-   "published": "2026-10-31T10:41:07.000Z",
+   "id": "xn-mdLKcrG4",
+   "title": "WPRI 12 Weather Forecast 10/31/26: Bright, Cool Today; Chilly This Evening",
+   "link": "https://www.youtube.com/watch?v=xn-mdLKcrG4",
+   "published": "2026-10-31T13:59:30.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_fBhgOmTOPA/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/xn-mdLKcrG4/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "Fs7Zz63Veug",
+   "title": "What's Happening: Lizzie Borden House",
+   "link": "https://www.youtube.com/watch?v=Fs7Zz63Veug",
+   "published": "2026-10-31T13:56:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Fs7Zz63Veug/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "jiInEXXoRtE",
@@ -3711,16 +3721,6 @@
     "fall-river"
    ],
    "local": true
-  },
-  {
-   "id": "EYc6sAyGgs4",
-   "title": "What's Happening: Jack-O-Lantern Spectacular",
-   "link": "https://www.youtube.com/watch?v=EYc6sAyGgs4",
-   "published": "2026-10-24T13:56:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/EYc6sAyGgs4/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

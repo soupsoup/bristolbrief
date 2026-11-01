@@ -1,41 +1,33 @@
 {
- "updated": "2026-11-01T05:35:40.990Z",
+ "updated": "2026-11-01T07:06:32.170Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -43,21 +35,118 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
   {
-   "id": "ihfvWbiXZmo",
-   "title": "WPRI 12 Weather Now 10/31/26: Cold Halloween Night, Clocks Fall Back; Cool and Dry Sunday",
-   "link": "https://www.youtube.com/watch?v=ihfvWbiXZmo",
-   "published": "2026-10-31T23:52:51.000Z",
+   "id": "7OEkcGlRGIs",
+   "title": "Man hospitalized after stabbing at Federal Hill restaurant",
+   "link": "https://www.youtube.com/watch?v=7OEkcGlRGIs",
+   "published": "2026-11-01T03:36:26.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ihfvWbiXZmo/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/7OEkcGlRGIs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qyTxG3bMvi0",
+   "title": "Crews put out fire at North Providence home",
+   "link": "https://www.youtube.com/watch?v=qyTxG3bMvi0",
+   "published": "2026-11-01T03:36:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qyTxG3bMvi0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZAvk8XZ3rCM",
+   "title": "High School Roundup: La Salle, East Providence, Pilgrim win girls tennis team titles",
+   "link": "https://www.youtube.com/watch?v=ZAvk8XZ3rCM",
+   "published": "2026-11-01T03:32:43.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZAvk8XZ3rCM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "LRYZz5rs71k",
+   "title": "Halloween night in Providence shifts from kids’ costumes to college partying",
+   "link": "https://www.youtube.com/watch?v=LRYZz5rs71k",
+   "published": "2026-11-01T03:28:09.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/LRYZz5rs71k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "LuZdUB0YV20",
+   "title": "WPRI 12 Weather Forecast 10/31/26",
+   "link": "https://www.youtube.com/watch?v=LuZdUB0YV20",
+   "published": "2026-11-01T03:27:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/LuZdUB0YV20/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "sAJ2FwDxpbA",
+   "title": "Friends remember impact of Aram Garabedian after his passing",
+   "link": "https://www.youtube.com/watch?v=sAJ2FwDxpbA",
+   "published": "2026-11-01T02:43:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sAJ2FwDxpbA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "uj27Ngw0x2w",
+   "title": "Providence police investigating early morning stabbing",
+   "link": "https://www.youtube.com/watch?v=uj27Ngw0x2w",
+   "published": "2026-11-01T02:43:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/uj27Ngw0x2w/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "DbNHEnAlboI",
+   "title": "Foxboro ambulance involved in motor vehicle crash",
+   "link": "https://www.youtube.com/watch?v=DbNHEnAlboI",
+   "published": "2026-11-01T02:42:49.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DbNHEnAlboI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "r-BXQxHgLYw",
+   "title": "Police searching for missing Westport teenager",
+   "link": "https://www.youtube.com/watch?v=r-BXQxHgLYw",
+   "published": "2026-11-01T02:42:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/r-BXQxHgLYw/mqdefault.jpg",
+   "towns": [
+    "westport"
+   ],
+   "local": true
   },
   {
    "id": "FNctPKeWgSQ",

@@ -1,6 +1,18 @@
 {
- "updated": "2026-11-01T01:05:34.608Z",
+ "updated": "2026-11-01T05:35:40.990Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
@@ -8,36 +20,14 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -45,7 +35,14 @@
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": false,
-   "error": "HTTP 500"
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3607,101 +3604,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/vdGN4f1lvUE/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "07AT5AcPn6E",
-   "title": "Truck slams into Fall River home, pinning person underneath vehicle",
-   "link": "https://www.youtube.com/watch?v=07AT5AcPn6E",
-   "published": "2026-10-25T05:28:32.000Z",
-   "channel": "nbc10-boston",
-   "channelName": "NBC10 Boston",
-   "thumbnail": "https://i.ytimg.com/vi/07AT5AcPn6E/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "UHbzvYSQL1Q",
-   "title": "Hundreds attend Walk to End Alzheimer’s in Scituate",
-   "link": "https://www.youtube.com/watch?v=UHbzvYSQL1Q",
-   "published": "2026-10-25T03:52:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/UHbzvYSQL1Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "wy05on4PK5A",
-   "title": "Red Cross holds disaster volunteer training session",
-   "link": "https://www.youtube.com/watch?v=wy05on4PK5A",
-   "published": "2026-10-25T03:51:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wy05on4PK5A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "sCqBpGt9Ous",
-   "title": "Organizers hold third annual Rhode Island Palestine Day",
-   "link": "https://www.youtube.com/watch?v=sCqBpGt9Ous",
-   "published": "2026-10-25T03:51:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/sCqBpGt9Ous/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "R7cyatHapDE",
-   "title": "Resident injured after car crashes into Fall River home",
-   "link": "https://www.youtube.com/watch?v=R7cyatHapDE",
-   "published": "2026-10-25T03:50:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/R7cyatHapDE/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "WHA0RAUD0zc",
-   "title": "Man facing OUI charges after truck crashes into Route 6 home",
-   "link": "https://www.youtube.com/watch?v=WHA0RAUD0zc",
-   "published": "2026-10-25T03:50:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/WHA0RAUD0zc/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
-  },
-  {
-   "id": "Jvu0f4W4DOs",
-   "title": "WPRI 12 Weather Forecast 10/24/26",
-   "link": "https://www.youtube.com/watch?v=Jvu0f4W4DOs",
-   "published": "2026-10-25T03:28:23.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Jvu0f4W4DOs/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "1SVNtVtcfvk",
-   "title": "Swansea movie theater returns under new franchise owners",
-   "link": "https://www.youtube.com/watch?v=1SVNtVtcfvk",
-   "published": "2026-10-25T03:12:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1SVNtVtcfvk/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
   }
  ]
 }

@@ -1,18 +1,39 @@
 {
- "updated": "2026-11-01T00:35:46.550Z",
+ "updated": "2026-11-01T01:05:34.608Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -21,31 +42,36 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "error": "HTTP 500"
   }
  ],
  "videos": [
+  {
+   "id": "ihfvWbiXZmo",
+   "title": "WPRI 12 Weather Now 10/31/26: Cold Halloween Night, Clocks Fall Back; Cool and Dry Sunday",
+   "link": "https://www.youtube.com/watch?v=ihfvWbiXZmo",
+   "published": "2026-10-31T23:52:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ihfvWbiXZmo/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "FNctPKeWgSQ",
+   "title": "Notre Dame beats Navy 35-13 in first New England matchup",
+   "link": "https://www.youtube.com/watch?v=FNctPKeWgSQ",
+   "published": "2026-10-31T22:52:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/FNctPKeWgSQ/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "rgclYwfnJCY",
    "title": "Annual Scouting for Food drive",
@@ -55,19 +81,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/rgclYwfnJCY/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "qfuWlsYz1mk",
-   "title": "WPRI 12 Weather Now 10/31/26: Much Cooler Today; Chilly This Evening",
-   "link": "https://www.youtube.com/watch?v=qfuWlsYz1mk",
-   "published": "2026-10-31T14:08:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qfuWlsYz1mk/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "Fs7Zz63Veug",

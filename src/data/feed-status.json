@@ -1,311 +1,307 @@
 {
- "updated": "2026-11-01T15:35:26.146Z",
+ "updated": "2026-11-01T16:00:42.714Z",
  "sources": [
   {
    "id": "new-bedford-light",
    "name": "The New Bedford Light",
    "url": "https://newbedfordlight.org/feed/",
-   "checkedAt": "2026-11-01T15:35:16.924Z",
+   "checkedAt": "2026-11-01T15:59:23.583Z",
    "http": 200,
    "ok": true,
    "entries": 10,
    "kept": 1,
    "newest": "2026-10-30T19:33:51.000Z",
-   "ms": 259
+   "ms": 185
   },
   {
    "id": "fall-river-reporter",
    "name": "Fall River Reporter",
    "url": "https://fallriverreporter.com/feed/",
-   "checkedAt": "2026-11-01T15:35:16.945Z",
+   "checkedAt": "2026-11-01T15:59:23.640Z",
    "http": 200,
    "ok": true,
    "entries": 10,
-   "kept": 4,
-   "newest": "2026-11-01T14:56:37.000Z",
-   "ms": 248
+   "kept": 3,
+   "newest": "2026-11-01T15:54:10.000Z",
+   "ms": 237
   },
   {
    "id": "new-bedford-guide",
    "name": "New Bedford Guide",
    "url": "https://www.newbedfordguide.com/feed",
-   "checkedAt": "2026-11-01T15:35:16.946Z",
+   "checkedAt": "2026-11-01T15:59:23.642Z",
    "http": 200,
    "ok": true,
    "entries": 10,
    "kept": 4,
    "newest": "2026-11-01T14:53:27.000Z",
-   "ms": 439
+   "ms": 356
   },
   {
    "id": "wbsm",
    "name": "WBSM 1420",
    "url": "https://wbsm.com/category/news/feed/",
-   "checkedAt": "2026-11-01T15:35:16.947Z",
+   "checkedAt": "2026-11-01T15:59:23.643Z",
    "http": 200,
    "ok": true,
    "entries": 35,
    "kept": 25,
    "newest": "2026-10-29T20:57:04.000Z",
-   "ms": 1967
+   "ms": 350
   },
   {
    "id": "wsar",
    "name": "WSAR 1480",
    "url": "https://wsar.com/wsar-news/feed.xml",
-   "checkedAt": "2026-11-01T15:35:16.947Z",
+   "checkedAt": "2026-11-01T15:59:23.644Z",
    "http": 200,
    "ok": true,
    "entries": 50,
    "kept": 31,
    "newest": "2026-10-31T19:14:00.000Z",
-   "ms": 852
+   "ms": 621
   },
   {
    "id": "fairhaven-neighborhood-news",
    "name": "Fairhaven Neighborhood News",
    "url": "https://fairhavenneighborhoodnews.com/feed/",
-   "checkedAt": "2026-11-01T15:35:16.948Z",
-   "http": 200,
-   "ok": true,
-   "entries": 10,
-   "kept": 10,
-   "newest": "2026-10-29T01:26:26.000Z",
-   "ms": 443
+   "checkedAt": "2026-11-01T15:59:23.646Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "sun-chronicle",
    "name": "The Sun Chronicle",
    "url": "https://www.thesunchronicle.com/search/?f=rss&t=article&l=50&s=start_time&sd=desc",
-   "checkedAt": "2026-11-01T15:35:17.183Z",
+   "checkedAt": "2026-11-01T15:59:23.768Z",
    "http": 200,
    "ok": true,
    "entries": 50,
    "kept": 0,
-   "newest": "2026-11-01T15:24:46.000Z",
-   "ms": 1204
+   "newest": "2026-11-01T15:37:04.000Z",
+   "ms": 778
   },
   {
    "id": "publics-radio",
    "name": "The Public's Radio",
    "url": "https://thepublicsradio.org/feed/",
-   "checkedAt": "2026-11-01T15:35:17.193Z",
+   "checkedAt": "2026-11-01T15:59:23.877Z",
    "http": 200,
    "ok": true,
    "entries": 1000,
    "kept": 0,
    "newest": "2026-10-10T17:34:01.000Z",
-   "ms": 1300
+   "ms": 853
   },
   {
    "id": "wpri",
    "name": "WPRI 12 (SE Mass)",
    "url": "https://www.wpri.com/news/local-news/se-mass/feed/",
-   "checkedAt": "2026-11-01T15:35:17.385Z",
+   "checkedAt": "2026-11-01T15:59:23.993Z",
    "http": 200,
    "ok": true,
    "entries": 30,
    "kept": 29,
    "newest": "2026-10-31T21:46:53.000Z",
-   "ms": 1209
+   "ms": 574
   },
   {
    "id": "patch-attleboro",
    "name": "Attleboro Patch",
    "url": "https://patch.com/feeds/aol/massachusetts/attleboro",
-   "checkedAt": "2026-11-01T15:35:17.391Z",
+   "checkedAt": "2026-11-01T15:59:23.998Z",
    "http": 200,
    "ok": true,
-   "entries": 11,
+   "entries": 10,
    "kept": 5,
    "newest": "2026-10-30T20:53:09.000Z",
-   "ms": 1106
+   "ms": 738
   },
   {
    "id": "patch-mansfield",
    "name": "Mansfield Patch",
    "url": "https://patch.com/feeds/aol/massachusetts/mansfield-ma",
-   "checkedAt": "2026-11-01T15:35:17.799Z",
+   "checkedAt": "2026-11-01T15:59:24.265Z",
    "http": 200,
    "ok": true,
-   "entries": 11,
+   "entries": 10,
    "kept": 5,
    "newest": "2026-10-30T21:25:32.000Z",
-   "ms": 714
+   "ms": 627
   },
   {
    "id": "commonwealth-beacon",
    "name": "CommonWealth Beacon",
    "url": "https://commonwealthbeacon.org/feed/",
-   "checkedAt": "2026-11-01T15:35:18.388Z",
+   "checkedAt": "2026-11-01T15:59:24.546Z",
    "http": 200,
    "ok": true,
    "entries": 10,
    "kept": 1,
    "newest": "2026-10-31T18:55:11.000Z",
-   "ms": 176
+   "ms": 211
   },
   {
    "id": "ri-current",
    "name": "Rhode Island Current",
    "url": "https://rhodeislandcurrent.com/feed/",
-   "checkedAt": "2026-11-01T15:35:18.493Z",
+   "checkedAt": "2026-11-01T15:59:24.567Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 0,
    "newest": "2026-11-01T12:00:19.000Z",
-   "ms": 546
+   "ms": 299
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
    "url": "https://www.boston25news.com/arc/outboundfeeds/rss/?outputType=xml",
-   "checkedAt": "2026-11-01T15:35:18.497Z",
+   "checkedAt": "2026-11-01T15:59:24.730Z",
    "http": 200,
    "ok": true,
    "entries": 15,
    "kept": 0,
-   "newest": "2026-11-01T13:53:25.000Z",
-   "ms": 320
+   "newest": "2026-11-01T15:42:14.000Z",
+   "ms": 141
   },
   {
    "id": "wbz",
    "name": "WBZ CBS Boston",
    "url": "https://www.cbsnews.com/boston/latest/rss/main",
-   "checkedAt": "2026-11-01T15:35:18.513Z",
+   "checkedAt": "2026-11-01T15:59:24.736Z",
    "http": 200,
    "ok": true,
    "entries": 30,
    "kept": 0,
    "newest": "2026-11-01T14:52:00.000Z",
-   "ms": 396
+   "ms": 57
   },
   {
    "id": "masslive",
    "name": "MassLive",
    "url": "https://www.masslive.com/arc/outboundfeeds/rss/?outputType=xml",
-   "checkedAt": "2026-11-01T15:35:18.565Z",
+   "checkedAt": "2026-11-01T15:59:24.757Z",
    "http": 200,
    "ok": true,
    "entries": 50,
    "kept": 0,
-   "newest": "2026-11-01T15:33:13.000Z",
-   "ms": 1237
+   "newest": "2026-11-01T15:50:23.000Z",
+   "ms": 754
   },
   {
    "id": "standard-times",
    "name": "The Standard-Times",
    "url": "https://news.google.com/rss/search?q=site:southcoasttoday.com&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:18.594Z",
+   "checkedAt": "2026-11-01T15:59:24.793Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 12,
    "newest": "2026-10-31T20:11:03.000Z",
-   "ms": 754
+   "ms": 829
   },
   {
    "id": "herald-news",
    "name": "The Herald News",
    "url": "https://news.google.com/rss/search?q=site:heraldnews.com&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:18.817Z",
+   "checkedAt": "2026-11-01T15:59:24.866Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 50,
    "newest": "2026-10-31T09:02:00.000Z",
-   "ms": 578
+   "ms": 882
   },
   {
    "id": "taunton-gazette",
    "name": "Taunton Daily Gazette",
    "url": "https://news.google.com/rss/search?q=site:tauntongazette.com&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:18.909Z",
+   "checkedAt": "2026-11-01T15:59:24.871Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 57,
    "newest": "2026-11-01T02:40:46.000Z",
-   "ms": 427
+   "ms": 850
   },
   {
    "id": "the-enterprise",
    "name": "The Enterprise",
    "url": "https://news.google.com/rss/search?q=site:enterprisenews.com+(Easton+OR+Raynham)&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:18.914Z",
+   "checkedAt": "2026-11-01T15:59:24.892Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 98,
    "newest": "2026-10-31T02:32:00.000Z",
-   "ms": 553
+   "ms": 793
   },
   {
    "id": "dartmouth-week",
    "name": "Dartmouth Week",
    "url": "https://news.google.com/rss/search?q=site:dartmouth.theweektoday.com&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:19.040Z",
+   "checkedAt": "2026-11-01T15:59:25.511Z",
    "http": 200,
    "ok": true,
    "entries": 100,
-   "kept": 91,
+   "kept": 92,
    "newest": "2026-11-01T01:34:50.000Z",
-   "ms": 517
+   "ms": 448
   },
   {
    "id": "reporter-today",
    "name": "Reporter Today",
    "url": "https://news.google.com/rss/search?q=site:reportertoday.com&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:19.336Z",
+   "checkedAt": "2026-11-01T15:59:25.622Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 0,
    "newest": "2026-10-30T22:23:32.000Z",
-   "ms": 446
+   "ms": 486
   },
   {
    "id": "westport-shorelines",
    "name": "Westport Shorelines",
    "url": "https://news.google.com/rss/search?q=site:eastbayri.com+Westport&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:19.348Z",
+   "checkedAt": "2026-11-01T15:59:25.685Z",
    "http": 200,
    "ok": true,
-   "entries": 58,
-   "kept": 57,
-   "newest": "2026-10-30T18:47:31.000Z",
-   "ms": 292
+   "entries": 100,
+   "kept": 95,
+   "newest": "2026-10-30T05:13:36.000Z",
+   "ms": 454
   },
   {
    "id": "bristol-da",
    "name": "Bristol County District Attorney",
    "url": "https://news.google.com/rss/search?q=%22Bristol+County+District+Attorney%22&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:19.395Z",
+   "checkedAt": "2026-11-01T15:59:25.721Z",
    "http": 200,
    "ok": true,
-   "entries": 55,
-   "kept": 48,
-   "newest": "2026-10-30T09:01:00.000Z",
-   "ms": 351
+   "entries": 100,
+   "kept": 74,
+   "newest": "2026-10-31T23:44:59.000Z",
+   "ms": 498
   },
   {
    "id": "us-attorney-ma",
    "name": "U.S. Attorney, District of Massachusetts",
    "url": "https://www.justice.gov/feeds/justice-news.xml?type[press_release]=press_release&component[1871]=1871",
-   "checkedAt": "2026-11-01T15:35:19.467Z",
+   "checkedAt": "2026-11-01T15:59:25.748Z",
    "http": 200,
    "ok": true,
    "entries": 25,
    "kept": 0,
    "newest": "2027-10-29T12:00:00.000Z",
-   "ms": 214
+   "ms": 64
   },
   {
    "id": "attleboro-police",
    "name": "Attleboro Police",
    "url": "https://www.attleboropolice.org/feed/",
-   "checkedAt": "2026-11-01T15:35:19.557Z",
+   "checkedAt": "2026-11-01T15:59:25.812Z",
    "http": 200,
    "ok": false,
    "error": "Not an RSS, RDF or Atom document"
@@ -314,19 +310,19 @@
    "id": "new-bedford-police",
    "name": "New Bedford Police",
    "url": "https://www.newbedfordpd.com/feed/",
-   "checkedAt": "2026-11-01T15:35:19.640Z",
+   "checkedAt": "2026-11-01T15:59:25.959Z",
    "http": 200,
    "ok": true,
    "entries": 10,
    "kept": 10,
    "newest": "2026-09-30T14:33:16.000Z",
-   "ms": 202
+   "ms": 140
   },
   {
    "id": "swansea-police",
    "name": "Swansea Police",
    "url": "https://swanseapolice.com/feed/",
-   "checkedAt": "2026-11-01T15:35:19.681Z",
+   "checkedAt": "2026-11-01T15:59:26.099Z",
    "http": 403,
    "ok": false,
    "error": "HTTP 403"
@@ -335,43 +331,35 @@
    "id": "taunton-police",
    "name": "Taunton Police",
    "url": "https://tauntonpd.com/feed/",
-   "checkedAt": "2026-11-01T15:35:19.746Z",
+   "checkedAt": "2026-11-01T15:59:26.108Z",
    "http": 200,
    "ok": true,
    "entries": 10,
    "kept": 10,
    "newest": "2026-09-22T22:58:34.000Z",
-   "ms": 484
+   "ms": 117
   },
   {
    "id": "dartmouth-news",
    "name": "Town of Dartmouth",
    "url": "https://www.dartmouthma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:19.782Z",
-   "http": 200,
-   "ok": true,
-   "entries": 4,
-   "kept": 4,
-   "newest": "2026-10-20T20:16:45.000Z",
-   "ms": 452
+   "checkedAt": "2026-11-01T15:59:26.139Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "dighton-news",
    "name": "Town of Dighton",
    "url": "https://www.dighton-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:19.802Z",
-   "http": 200,
-   "ok": true,
-   "entries": 7,
-   "kept": 7,
-   "newest": "2026-10-29T19:50:00.000Z",
-   "ms": 859
+   "checkedAt": "2026-11-01T15:59:26.219Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "mansfield-news",
    "name": "Town of Mansfield",
    "url": "https://www.mansfieldma.com/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:19.842Z",
+   "checkedAt": "2026-11-01T15:59:26.225Z",
    "http": 403,
    "ok": false,
    "error": "HTTP 403"
@@ -380,265 +368,214 @@
    "id": "north-attleborough-news",
    "name": "Town of North Attleborough",
    "url": "https://www.northattleborough.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:20.004Z",
-   "http": 200,
-   "ok": true,
-   "entries": 14,
-   "kept": 14,
-   "newest": "2026-10-30T14:30:32.000Z",
-   "ms": 542
+   "checkedAt": "2026-11-01T15:59:26.352Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "seekonk-news",
    "name": "Town of Seekonk",
    "url": "https://www.seekonk-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:20.230Z",
-   "http": 200,
-   "ok": true,
-   "entries": 5,
-   "kept": 5,
-   "newest": "2026-10-28T16:18:00.000Z",
-   "ms": 485
+   "checkedAt": "2026-11-01T15:59:27.742Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "somerset-news",
    "name": "Town of Somerset",
    "url": "https://www.townofsomerset.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:20.234Z",
-   "http": 200,
-   "ok": true,
-   "entries": 0,
-   "kept": 0,
-   "newest": null,
-   "ms": 690
+   "checkedAt": "2026-11-01T15:59:27.842Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "taunton-news",
    "name": "City of Taunton",
    "url": "https://www.taunton-ma.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
-   "checkedAt": "2026-11-01T15:35:20.546Z",
-   "http": 200,
-   "ok": true,
-   "entries": 6,
-   "kept": 6,
-   "newest": "2026-10-30T12:57:27.000Z",
-   "ms": 3161
+   "checkedAt": "2026-11-01T15:59:49.212Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "westport-news",
    "name": "Town of Westport",
    "url": "https://www.westport-ma.com/rss.xml",
-   "checkedAt": "2026-11-01T15:35:20.661Z",
+   "checkedAt": "2026-11-01T15:59:51.211Z",
    "http": 200,
    "ok": true,
    "entries": 12,
    "kept": 12,
    "newest": null,
-   "ms": 327
+   "ms": 292
   },
   {
    "id": "new-bedford-city",
    "name": "City of New Bedford",
    "url": "https://news.google.com/rss/search?q=site:newbedford-ma.gov&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:20.715Z",
+   "checkedAt": "2026-11-01T15:59:51.212Z",
    "http": 200,
    "ok": true,
-   "entries": 100,
-   "kept": 100,
-   "newest": "2026-09-02T07:00:00.000Z",
-   "ms": 401
+   "entries": 61,
+   "kept": 61,
+   "newest": "2026-10-27T17:06:00.000Z",
+   "ms": 244
   },
   {
    "id": "acushnet-agendas",
    "name": "Acushnet meeting agendas",
    "url": "https://www.acushnet.ma.us/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:20.924Z",
+   "checkedAt": "2026-11-01T15:59:51.456Z",
    "http": 200,
    "ok": true,
    "entries": 8,
    "kept": 8,
    "newest": "2026-10-30T14:59:36.000Z",
-   "ms": 498
+   "ms": 445
   },
   {
    "id": "attleboro-agendas",
    "name": "Attleboro meeting agendas",
    "url": "https://www.cityofattleboro.us/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:20.988Z",
-   "http": 200,
-   "ok": true,
-   "entries": 19,
-   "kept": 19,
-   "newest": "2026-10-30T16:19:06.000Z",
-   "ms": 648
+   "checkedAt": "2026-11-01T15:59:51.503Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "dartmouth-agendas",
    "name": "Dartmouth meeting agendas",
    "url": "https://www.dartmouthma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.116Z",
-   "http": 200,
-   "ok": true,
-   "entries": 21,
-   "kept": 21,
-   "newest": "2026-10-29T13:36:03.000Z",
-   "ms": 466
+   "checkedAt": "2026-11-01T15:59:51.711Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "dighton-agendas",
    "name": "Dighton meeting agendas",
    "url": "https://www.dighton-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.422Z",
-   "http": 200,
-   "ok": true,
-   "entries": 13,
-   "kept": 13,
-   "newest": "2026-10-29T14:53:11.000Z",
-   "ms": 840
+   "checkedAt": "2026-11-01T15:59:51.901Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "mansfield-agendas",
    "name": "Mansfield meeting agendas",
    "url": "https://www.mansfieldma.com/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.440Z",
-   "http": 200,
-   "ok": true,
-   "entries": 19,
-   "kept": 19,
-   "newest": "2026-10-30T16:12:27.000Z",
-   "ms": 727
+   "checkedAt": "2026-11-01T15:59:53.211Z",
+   "http": 403,
+   "ok": false,
+   "error": "HTTP 403"
   },
   {
    "id": "north-attleborough-agendas",
    "name": "North Attleborough meeting agendas",
    "url": "https://www.northattleborough.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.582Z",
-   "http": 200,
-   "ok": true,
-   "entries": 28,
-   "kept": 28,
-   "newest": "2026-10-30T18:29:19.000Z",
-   "ms": 724
+   "checkedAt": "2026-11-01T15:59:53.212Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "norton-agendas",
    "name": "Norton meeting agendas",
    "url": "https://www.nortonma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.588Z",
-   "http": 200,
-   "ok": true,
-   "entries": 22,
-   "kept": 22,
-   "newest": "2026-10-30T15:37:40.000Z",
-   "ms": 474
+   "checkedAt": "2026-11-01T15:59:54.775Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "seekonk-agendas",
    "name": "Seekonk meeting agendas",
    "url": "https://www.seekonk-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.636Z",
-   "http": 200,
-   "ok": true,
-   "entries": 19,
-   "kept": 19,
-   "newest": "2026-10-29T19:24:23.000Z",
-   "ms": 237
+   "checkedAt": "2026-11-01T16:00:14.692Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "somerset-agendas",
    "name": "Somerset meeting agendas",
    "url": "https://www.townofsomerset.org/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:21.873Z",
-   "http": 200,
-   "ok": true,
-   "entries": 13,
-   "kept": 13,
-   "newest": "2026-10-30T16:01:58.000Z",
-   "ms": 361
+   "checkedAt": "2026-11-01T16:00:16.690Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "taunton-agendas",
    "name": "Taunton meeting agendas",
    "url": "https://www.taunton-ma.gov/RSSFeed.aspx?ModID=65&CID=All-0",
-   "checkedAt": "2026-11-01T15:35:22.062Z",
-   "http": 200,
-   "ok": true,
-   "entries": 19,
-   "kept": 19,
-   "newest": "2026-11-01T00:04:31.000Z",
-   "ms": 4063
+   "checkedAt": "2026-11-01T16:00:17.189Z",
+   "ok": false,
+   "error": "fetch failed"
   },
   {
    "id": "hs-sports",
    "name": "Local high school sports",
    "url": "https://news.google.com/rss/search?q=%28site%3Asouthcoasttoday.com%20OR%20site%3Aheraldnews.com%20OR%20site%3Atauntongazette.com%20OR%20site%3Athesunchronicle.com%20OR%20site%3Aenterprisenews.com%29%20%28%22high%20school%22%20OR%20football%20OR%20soccer%20OR%20volleyball%20OR%20%22field%20hockey%22%20OR%20%22cross%20country%22%20OR%20golf%20OR%20hockey%20OR%20basketball%29%20when%3A14d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.167Z",
+   "checkedAt": "2026-11-01T16:00:17.190Z",
    "http": 200,
    "ok": true,
    "entries": 100,
-   "kept": 33,
+   "kept": 30,
    "newest": "2026-11-01T14:00:00.000Z",
-   "ms": 557
+   "ms": 447
   },
   {
    "id": "patriots",
    "name": "Patriots coverage",
    "url": "https://news.google.com/rss/search?q=%22New%20England%20Patriots%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.234Z",
+   "checkedAt": "2026-11-01T16:00:17.637Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 25,
-   "newest": "2026-11-01T15:18:00.000Z",
-   "ms": 427
+   "newest": "2026-11-01T15:44:24.000Z",
+   "ms": 456
   },
   {
    "id": "red-sox",
    "name": "Red Sox coverage",
    "url": "https://news.google.com/rss/search?q=%22Boston%20Red%20Sox%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.262Z",
+   "checkedAt": "2026-11-01T16:00:18.093Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 25,
    "newest": "2026-11-01T15:30:00.000Z",
-   "ms": 458
+   "ms": 405
   },
   {
    "id": "bruins",
    "name": "Bruins coverage",
    "url": "https://news.google.com/rss/search?q=%22Boston%20Bruins%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.306Z",
+   "checkedAt": "2026-11-01T16:00:18.498Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 25,
-   "newest": "2026-11-01T14:31:23.000Z",
-   "ms": 394
+   "newest": "2026-11-01T15:49:05.000Z",
+   "ms": 422
   },
   {
    "id": "celtics",
    "name": "Celtics coverage",
    "url": "https://news.google.com/rss/search?q=%22Boston%20Celtics%22%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.661Z",
+   "checkedAt": "2026-11-01T16:00:18.688Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 25,
-   "newest": "2026-11-01T15:30:03.000Z",
-   "ms": 401
+   "newest": "2026-11-01T15:49:30.000Z",
+   "ms": 422
   },
   {
    "id": "revolution",
    "name": "Revolution coverage",
    "url": "https://news.google.com/rss/search?q=%22New%20England%20Revolution%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "checkedAt": "2026-11-01T15:35:22.700Z",
+   "checkedAt": "2026-11-01T16:00:18.920Z",
    "http": 200,
    "ok": true,
    "entries": 100,
    "kept": 20,
    "newest": "2026-11-01T15:06:39.000Z",
-   "ms": 366
+   "ms": 504
   }
  ]
 }

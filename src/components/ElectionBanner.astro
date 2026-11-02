@@ -1,0 +1,45 @@
+---
+import election from '../data/election.json';
+import electionResults from '../data/election-results.json';
+
+// Site-wide banner just below the main menu, from a week before the election until a week after.
+// Dates compare as America/New_York calendar days, and the site rebuilds on every ingest, so the
+// wording follows the clock: before, on, and after Election Day.
+const todayET = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+const days = Math.round((Date.parse(`${election.date}T00:00:00Z`) - Date.parse(`${todayET}T00:00:00Z`)) / 864e5);
+const live = Object.keys((electionResults as { races?: object }).races ?? {}).length > 0;
+const show = days <= 7 && days >= -7;
+const title = live
+  ? 'Election results'
+  : days > 1
+    ? 'Election Day is Tuesday, Nov. 3'
+    : days === 1
+      ? 'Election Day is tomorrow, Nov. 3'
+      : days === 0
+        ? 'Election Day: polls close at 8 p.m.'
+        : 'Election results';
+const text = live
+  ? 'Unofficial Bristol County results and the nine ballot questions, updated every 30 minutes.'
+  : days >= 0
+    ? 'Polling places, who is on the ballot in Bristol County and the nine statewide questions.'
+    : 'Results will post here as the state reports them.';
+---
+{show && (
+  <a class="election-banner" href="/election/" role="region" aria-label="Election Day">
+    <span class="wrap eb-inner">
+      <strong>{title}</strong>
+      <span class="eb-text">{text}</span>
+      <span class="eb-go">Open the Election Day page ›</span>
+    </span>
+  </a>
+)}
+
+<style>
+  .election-banner { display: block; background: var(--navy); color: #fff; font-family: var(--sans); text-decoration: none; border-bottom: 3px solid var(--accent); }
+  .election-banner:hover { background: #0f2540; color: #fff; }
+  .eb-inner { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; padding-top: 10px; padding-bottom: 10px; }
+  .election-banner strong { font-family: var(--serif-display); font-size: 19px; }
+  .eb-text { font-size: 14px; opacity: .9; }
+  .eb-go { margin-left: auto; font-size: 14px; font-weight: 700; }
+  @media (max-width: 640px) { .eb-go { margin-left: 0; } }
+</style>

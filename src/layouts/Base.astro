@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AlertBanner from '../components/AlertBanner.astro';
+import ElectionBanner from '../components/ElectionBanner.astro';
 import { SITE } from '../site.config';
 
 interface Props {
@@ -77,6 +78,7 @@ const ogImage = new URL(image ?? '/social-card.png', Astro.site).toString();
   <body>
     <a class="visually-hidden" href="#main">Skip to content</a>
     <Header />
+    <ElectionBanner />
     <AlertBanner />
     <main id="main">
       <slot />

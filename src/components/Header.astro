@@ -46,6 +46,9 @@ const path = Astro.url.pathname;
             </a>
           </li>
         ))}
+        <li class="election-tab">
+          <a href="/election/" aria-current={path.startsWith('/election') ? 'page' : undefined}>Election</a>
+        </li>
       </ul>
       <details class="towns">
         <summary>Towns</summary>
@@ -203,4 +206,5 @@ const path = Astro.url.pathname;
     width: min(420px, calc(100vw - 2 * var(--gutter)));
   }
   .towns-menu a { display: block; padding: 4px 0; font-weight: 500; }
+  .election-tab a { color: var(--accent); font-weight: 800; }
 </style>

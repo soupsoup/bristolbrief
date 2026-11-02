@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-02T09:05:53.103Z",
+ "updated": "2026-11-02T09:35:39.618Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
@@ -23,13 +30,6 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
@@ -44,14 +44,27 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "gSXEWrKXLTc",
+   "title": "WPRI 12 Weather Now 11/2/26: Sunny, warm and dry today",
+   "link": "https://www.youtube.com/watch?v=gSXEWrKXLTc",
+   "published": "2026-11-02T09:13:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gSXEWrKXLTc/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "9qE4T4L7IGg",
    "title": "High School Roundup: Moses Brown, Lincoln, Tiverton Co-Op win field hockey state titles",

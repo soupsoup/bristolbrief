@@ -1,0 +1,291 @@
+---
+import Base from '../layouts/Base.astro';
+import { TOWNS, townName } from '../site.config';
+import election from '../data/election.json';
+import resultsData from '../data/election-results.json';
+
+type Cand = { name: string; party?: string | null; town?: string | null };
+type Race = { key: string; office: string; district: string | null; group: string; note?: string; candidates: Cand[] };
+type Res = {
+  election_id: string;
+  total_votes: number;
+  candidates: { name: string; party?: string | null; votes: number; pct: number | null; state_winner?: boolean }[];
+  bristol?: { towns: number; candidates: { name: string; votes: number; pct: number | null }[] };
+};
+
+const races = election.races as Race[];
+const results = (resultsData as { races?: Record<string, Res>; updated?: string | null }).races ?? {};
+const updated = (resultsData as { updated?: string | null }).updated;
+const live = Object.keys(results).length > 0;
+
+const fmt = (iso?: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: '2-digit' }) + ' ET' : '';
+const n = (v: number) => v.toLocaleString('en-US');
+const raceTitle = (r: Race) => (r.district ? `${r.office}, ${r.district}` : r.office);
+const groups: { id: string; title: string; dek?: string }[] = [
+  { id: 'statewide', title: 'Statewide' },
+  { id: 'congress', title: 'U.S. House', dek: 'Bristol County towns are in the 4th and 9th Districts. Use the state lookup if you are not sure which one you live in.' },
+  { id: 'council', title: "Governor's Council" },
+  { id: 'senate', title: 'State Senate' },
+  { id: 'house', title: 'State House' },
+  { id: 'county', title: 'Bristol County offices' },
+];
+const racesIn = (g: string) => races.filter((r) => r.group === g);
+const leader = (r?: Res) => (r && r.candidates.length > 1 && r.candidates[0].votes > r.candidates[1].votes ? r.candidates[0].name : null);
+const q = election.questions;
+const pct = (v: number | null) => (v != null ? `${v}%` : '');
+const topLine = (r?: Res) => (r ? r.candidates.slice(0, 3).map((c) => `${c.name} ${pct(c.pct)}`).join(' · ') : '');
+const summaryRaces = races.filter((r) => results[r.key] && ['statewide', 'congress', 'council', 'county'].includes(r.group));
+const summaryQuestions = q.filter((x) => results[`q${x.n}`]);
+const links = election.links;
+---
+<Base title="Election Day 2026" description="Polling places, who is on the ballot in Bristol County, the nine statewide ballot questions and unofficial results for the Nov. 3, 2026 election.">
+  <div class="wrap narrow">
+    <p class="kicker" style="margin:32px 0 0">Election Day</p>
+    <h1 class="page-title" style="margin-top:4px">{election.headline}</h1>
+    <p class="page-dek">
+      Polls close at {election.polls.close} {election.polls.note}
+    </p>
+
+    <nav class="jump" aria-label="On this page">
+      <a href="#results">Results</a>
+      <a href="#polling">Polling places</a>
+      <a href="#questions">Ballot questions</a>
+      <a href="#candidates">Who is running</a>
+    </nav>
+
+    <section id="results">
+      <div class="section-head"><h2>Results</h2></div>
+      {live ? (
+        <p class="meta">
+          Unofficial results from the Massachusetts Secretary of the Commonwealth, last checked {fmt(updated)}. We check every 30 minutes.
+          Counts are incomplete until every city and town reports, and "leading" is not a call.
+        </p>
+      ) : (
+        <p class="note">
+          Results will appear here after the polls close at 8 p.m. This page checks the state's unofficial results every 30 minutes
+          and shows Bristol County totals for statewide races and ballot questions. The full count is on the
+          <a href={links.results} target="_blank" rel="noopener">state results site</a>.
+        </p>
+      )}
+      {live && (
+        <div class="summary">
+          {summaryRaces.length > 0 && (
+            <>
+              <h3>Races</h3>
+              <ul>
+                {summaryRaces.map((r) => (
+                  <li><a href={`#${r.key}`}>{raceTitle(r)}</a><span>{topLine(results[r.key])}</span></li>
+                ))}
+              </ul>
+            </>
+          )}
+          {summaryQuestions.length > 0 && (
+            <>
+              <h3>Ballot questions</h3>
+              <ul>
+                {summaryQuestions.map((x) => (
+                  <li><a href={`#q${x.n}`}>Question {x.n}: {x.title}</a><span>{topLine(results[`q${x.n}`])}</span></li>
+                ))}
+              </ul>
+            </>
+          )}
+          <p class="meta">State House and State Senate results are in each race below.</p>
+        </div>
+      )}
+    </section>
+
+    <section id="polling">
+      <div class="section-head"><h2>Polling places</h2></div>
+      <p class="note">
+        Your polling place depends on your address. The Secretary of the Commonwealth's lookup shows yours.
+      </p>
+      <p><a class="btn" href={links.find_polling_place} target="_blank" rel="noopener">Find your polling place</a></p>
+
+      {election.polling_changes.length > 0 && (
+        <div class="changes">
+          <h3>Polling place changes</h3>
+          <ul>
+            {election.polling_changes.map((c) => (
+              <li>
+                <strong>{townName(c.town)}, {c.precinct}:</strong> now at {c.to} (was {c.from}).
+              </li>
+            ))}
+          </ul>
+          <p class="meta">Source: New Bedford city officials, via The New Bedford Light. New Bedford Board of Election Commissioners: (508) 979-1420.</p>
+        </div>
+      )}
+
+      <div class="towns-grid">
+        {TOWNS.map((t) => (
+          <a href={`/towns/${t.slug}/`}>{t.name}</a>
+        ))}
+      </div>
+      <p class="meta">
+        Other towns have not announced changes that we have seen. Call your town or city clerk with questions. Town pages have local news.
+      </p>
+    </section>
+
+    <section id="questions">
+      <div class="section-head"><h2>Statewide ballot questions</h2></div>
+      <p class="note">Nine binding questions are on every Massachusetts ballot. Wording below follows the Secretary of the Commonwealth's summaries.</p>
+      {q.map((x) => {
+        const r = results[`q${x.n}`];
+        return (
+          <article class="question" id={`q${x.n}`}>
+            <p class="q-label">Question {x.n} · {x.type}</p>
+            <h3>{x.title}</h3>
+            <p>{x.summary}</p>
+            <dl class="yn">
+              <dt>A yes vote</dt><dd>{x.yes}</dd>
+              <dt>A no vote</dt><dd>{x.no}</dd>
+            </dl>
+            {r && (
+              <div class="res">
+                <table>
+                  <caption>Statewide, unofficial</caption>
+                  <tbody>
+                    {r.candidates.map((c) => (
+                      <tr><th scope="row">{c.name}</th><td>{n(c.votes)}</td><td>{c.pct != null ? `${c.pct}%` : ''}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+                {r.bristol && (
+                  <table>
+                    <caption>Bristol County, {r.bristol.towns} of 20 towns</caption>
+                    <tbody>
+                      {r.bristol.candidates.map((c) => (
+                        <tr><th scope="row">{c.name}</th><td>{n(c.votes)}</td><td>{c.pct != null ? `${c.pct}%` : ''}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            )}
+          </article>
+        );
+      })}
+      {election.nonbinding.map((x) => (
+        <article class="question nonbinding">
+          <p class="q-label">Local, non-binding</p>
+          <h3>{x.title}</h3>
+          <p>{x.text}</p>
+          <p class="meta">{x.note} In Bristol County it appears in the {x.districts[0]}.</p>
+        </article>
+      ))}
+      <p class="meta">
+        Full text and the Information for Voters booklet: <a href={links.questions} target="_blank" rel="noopener">Secretary of the Commonwealth</a>.
+      </p>
+    </section>
+
+    <section id="candidates">
+      <div class="section-head"><h2>Who is running</h2></div>
+      <p class="note">Candidates on the November ballot in races that include Bristol County, as listed by the Secretary of the Commonwealth.
+        Where only one name is listed, that candidate is unopposed on the printed ballot.</p>
+      {groups.map((g) => {
+        const list = racesIn(g.id);
+        if (!list.length) return null;
+        return (
+          <div class="group">
+            <h3 class="group-title">{g.title}</h3>
+            {g.dek && <p class="meta">{g.dek}</p>}
+            <div class="races">
+              {list.map((r) => {
+                const res = results[r.key];
+                const lead = leader(res);
+                return (
+                  <article class="race" id={r.key}>
+                    <h4>{raceTitle(r)}</h4>
+                    <ul>
+                      {r.candidates.map((c) => (
+                        <li>
+                          <span class="cname">{c.name}</span>
+                          <span class="cmeta">{[c.party, c.town].filter(Boolean).join(' · ')}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {r.candidates.length === 1 && <p class="meta">Only candidate listed.</p>}
+                    {r.note && <p class="meta">{r.note}</p>}
+                    {res && res.candidates.length > 0 && (
+                      <table class="res-table">
+                        <caption>{res.bristol ? 'Statewide, unofficial' : 'Unofficial results'}</caption>
+                        <tbody>
+                          {res.candidates.map((c) => (
+                            <tr class={c.name === lead ? 'lead' : ''}>
+                              <th scope="row">{c.name}{c.party ? ` (${c.party[0]})` : ''}{c.name === lead ? ' · leading' : ''}</th>
+                              <td>{n(c.votes)}</td>
+                              <td>{c.pct != null ? `${c.pct}%` : ''}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                    {res?.bristol && (
+                      <table class="res-table">
+                        <caption>Bristol County, {res.bristol.towns} of 20 towns</caption>
+                        <tbody>
+                          {res.bristol.candidates.map((c) => (
+                            <tr><th scope="row">{c.name}</th><td>{n(c.votes)}</td><td>{c.pct != null ? `${c.pct}%` : ''}</td></tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+
+    <p class="meta sources">
+      Sources:
+      {election.sources.map((s, i) => (<><a href={s.url} target="_blank" rel="noopener">{s.label}</a>{i < election.sources.length - 1 ? '; ' : '.'}</>))}
+      Candidate and question information prepared {election.prepared}. Always check the state's pages for late changes.
+    </p>
+  </div>
+</Base>
+
+{live && <script is:inline>setTimeout(function () { location.reload(); }, 5 * 60 * 1000);</script>}
+
+<style>
+  .narrow { max-width: 860px; }
+  .note { font-family: var(--sans); font-size: 15px; color: var(--ink-2); margin: 0 0 14px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 6px 0 4px; font-family: var(--sans); font-size: 14px; font-weight: 700; }
+  section { scroll-margin-top: 12px; }
+  .changes { border: 1px solid var(--rule); border-left: 4px solid var(--accent); background: var(--paper-2); padding: 12px 16px; margin: 18px 0; font-family: var(--sans); }
+  .changes h3 { margin: 0 0 6px; font-size: 16px; }
+  .changes ul { margin: 0 0 6px; padding-left: 18px; font-size: 15px; line-height: 1.45; }
+  .towns-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 14px; margin: 16px 0 6px; font-family: var(--sans); font-size: 14px; }
+  .question { border: 1px solid var(--rule); border-top: 3px solid var(--navy); padding: 14px 16px 12px; margin: 0 0 16px; background: var(--paper-2); }
+  .question.nonbinding { border-top-color: var(--accent); }
+  .q-label { margin: 0 0 4px; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .question h3 { margin: 0 0 6px; font-family: var(--serif-display); font-size: 22px; }
+  .question p { font-size: 16px; line-height: 1.5; margin: 0 0 8px; }
+  .yn { margin: 8px 0 4px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
+  .yn dt { font-weight: 700; margin-top: 6px; }
+  .yn dd { margin: 0; color: var(--ink-2); }
+  .group { margin: 22px 0 6px; }
+  .group-title { font-family: var(--serif-display); font-size: 24px; margin: 0 0 4px; }
+  .races { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
+  .race { border: 1px solid var(--rule); padding: 10px 14px 10px; background: var(--paper-2); }
+  .race h4 { margin: 0 0 6px; font-family: var(--sans); font-size: 15px; }
+  .race ul { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: 14px; }
+  .race li { padding: 3px 0; border-bottom: 1px solid var(--rule); }
+  .race li:last-child { border-bottom: 0; }
+  .cname { font-weight: 700; display: block; }
+  .cmeta { color: var(--ink-2); font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14px; margin: 8px 0 4px; }
+  caption { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); padding-bottom: 2px; }
+  th[scope='row'] { text-align: left; font-weight: 400; padding: 3px 8px 3px 0; }
+  td { text-align: right; padding: 3px 0 3px 8px; font-variant-numeric: tabular-nums; }
+  tr.lead th, tr.lead td { font-weight: 700; }
+  .res { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 24px; }
+  .sources { margin-top: 28px; }
+  .summary { font-family: var(--sans); margin: 10px 0 6px; }
+  .summary h3 { font-size: 15px; margin: 14px 0 4px; }
+  .summary ul { list-style: none; margin: 0; padding: 0; }
+  .summary li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 5px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .summary li span { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+</style>

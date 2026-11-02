@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T13:05:30.332Z",
+ "updated": "2026-11-02T13:35:32.510Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,52 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1042790",
+   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 10-20 minutes behind schedule between Middleborough and Fall River due to an earlier road vehicle on the right of way.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-02T08:15:53-05:00",
+   "end": "2026-11-02T09:34:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-02T08:15:53-05:00"
+  },
+  {
+   "id": "1042780",
+   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 10-20 minutes behind schedule between East Taunton and South Station due to an earlier road vehicle on the right of way.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-02T08:08:07-05:00",
+   "end": "2026-11-02T10:05:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-02T08:08:07-05:00"
   }
  ],
  "stopParents": {

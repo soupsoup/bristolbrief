@@ -1,9 +1,23 @@
 {
- "updated": "2026-11-02T16:35:50.893Z",
+ "updated": "2026-11-02T17:05:39.103Z",
  "channels": [
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,20 +44,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
@@ -52,6 +52,19 @@
   }
  ],
  "videos": [
+  {
+   "id": "6ptggbdqVb4",
+   "title": "WPRI 12 Weather Now 11/2/26: Sunny, warm this afternoon",
+   "link": "https://www.youtube.com/watch?v=6ptggbdqVb4",
+   "published": "2026-11-02T16:43:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6ptggbdqVb4/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "EIifQE1IhN0",
    "title": "In full: Defense, commonwealth argue motion to dismiss charges against Lindsay Clancy",
@@ -82,19 +95,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/n5_TJiZceMc/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "oCG1CJ4h5PQ",
-   "title": "WPRI 12 Weather Forecast for 11/2/26:  Milder and dry today",
-   "link": "https://www.youtube.com/watch?v=oCG1CJ4h5PQ",
-   "published": "2026-11-02T14:12:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oCG1CJ4h5PQ/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "8YfcydQdoYQ",
@@ -3585,19 +3585,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/7ByTmqG7kjs/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "M4G-xucy7qs",
-   "title": "Swansea man faces OUI charges after crashing truck into a home",
-   "link": "https://www.youtube.com/watch?v=M4G-xucy7qs",
-   "published": "2026-10-26T16:59:27.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/M4G-xucy7qs/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
   }
  ]
 }

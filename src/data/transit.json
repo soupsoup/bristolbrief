@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T14:05:29.754Z",
+ "updated": "2026-11-02T14:35:49.947Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,14 +19,14 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1042790",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 10-20 minutes behind schedule between Middleborough and Fall River due to an earlier road vehicle on the right of way.",
+   "id": "1042812",
+   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River Depot.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-02T08:15:53-05:00",
-   "end": "2026-11-02T09:34:00-05:00",
+   "start": "2026-11-02T09:34:21-05:00",
+   "end": "2026-11-02T11:02:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -41,28 +41,31 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-02T08:15:53-05:00"
+   "updated": "2026-11-02T09:34:21-05:00"
   },
   {
-   "id": "1042780",
-   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 10-20 minutes behind schedule between East Taunton and South Station due to an earlier road vehicle on the right of way.",
+   "id": "1042811",
+   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 5-15 minutes behind schedule between New Bedford and South Station due to a signal issue.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-02T08:08:07-05:00",
-   "end": "2026-11-02T10:05:00-05:00",
+   "cause": "SIGNAL_ISSUE",
+   "start": "2026-11-02T09:32:33-05:00",
+   "end": "2026-11-02T11:58:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
-    "East Taunton"
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
    ],
    "towns": [
-    "taunton"
+    "taunton",
+    "new-bedford"
    ],
    "url": null,
-   "updated": "2026-11-02T08:08:07-05:00"
+   "updated": "2026-11-02T09:32:33-05:00"
   }
  ],
  "stopParents": {

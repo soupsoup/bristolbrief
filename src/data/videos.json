@@ -1,23 +1,23 @@
 {
- "updated": "2026-11-02T16:05:57.663Z",
+ "updated": "2026-11-02T16:35:50.893Z",
  "channels": [
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,6 +30,13 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -37,21 +44,35 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "EIifQE1IhN0",
+   "title": "In full: Defense, commonwealth argue motion to dismiss charges against Lindsay Clancy",
+   "link": "https://www.youtube.com/watch?v=EIifQE1IhN0",
+   "published": "2026-11-02T16:03:45.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/EIifQE1IhN0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "WRr3ZpMn6wA",
+   "title": "Judge, defense attorney mix it up over using juror's name in open court",
+   "link": "https://www.youtube.com/shorts/WRr3ZpMn6wA",
+   "published": "2026-11-02T15:55:47.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/WRr3ZpMn6wA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "n5_TJiZceMc",
    "title": "Final poll gives glimpse on where voters stand ahead of Election Day",
@@ -77,7 +98,7 @@
   },
   {
    "id": "8YfcydQdoYQ",
-   "title": "Judge hears motion to dismiss charges in Lindsay Clancy case",
+   "title": "Judge hears 3 motions in Lindsay Clancy case",
    "link": "https://www.youtube.com/watch?v=8YfcydQdoYQ",
    "published": "2026-11-02T14:04:28.000Z",
    "channel": "nbc10-wjar",
@@ -3573,39 +3594,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/M4G-xucy7qs/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
-  },
-  {
-   "id": "O9vJ5G8-bnw",
-   "title": "Striped bass survey shows reproduction and population concerns",
-   "link": "https://www.youtube.com/watch?v=O9vJ5G8-bnw",
-   "published": "2026-10-26T16:27:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/O9vJ5G8-bnw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NZUZPYBcDuI",
-   "title": "Heavily restricted travel begins on Newport Pell Bridge",
-   "link": "https://www.youtube.com/watch?v=NZUZPYBcDuI",
-   "published": "2026-10-26T16:18:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NZUZPYBcDuI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "6zJkJhB9AZM",
-   "title": "OUI suspect accused of crashing into Swansea home remains injured",
-   "link": "https://www.youtube.com/watch?v=6zJkJhB9AZM",
-   "published": "2026-10-26T16:17:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6zJkJhB9AZM/mqdefault.jpg",
    "towns": [
     "swansea"
    ],

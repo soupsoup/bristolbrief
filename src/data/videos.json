@@ -1,30 +1,9 @@
 {
- "updated": "2026-11-02T17:35:34.291Z",
+ "updated": "2026-11-02T18:05:27.791Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,8 +16,15 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -49,21 +35,85 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
   {
-   "id": "6ptggbdqVb4",
-   "title": "WPRI 12 Weather Now 11/2/26: Sunny, warm this afternoon",
-   "link": "https://www.youtube.com/watch?v=6ptggbdqVb4",
-   "published": "2026-11-02T16:43:25.000Z",
+   "id": "k2VJjPsUf7M",
+   "title": "Lindsay Clancy Case Daily Debrief: Potential retrial in March",
+   "link": "https://www.youtube.com/watch?v=k2VJjPsUf7M",
+   "published": "2026-11-02T17:56:40.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/k2VJjPsUf7M/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "UMF7pPnAlNk",
+   "title": "FDA approves generic twice-a-year HIV prevention shot",
+   "link": "https://www.youtube.com/watch?v=UMF7pPnAlNk",
+   "published": "2026-11-02T17:26:26.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6ptggbdqVb4/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/UMF7pPnAlNk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3kBFn0Cm_WU",
+   "title": "WPRI 12 Weather Forecast for 11/2/26:  Beautiful this afternoon",
+   "link": "https://www.youtube.com/watch?v=3kBFn0Cm_WU",
+   "published": "2026-11-02T17:26:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3kBFn0Cm_WU/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "MNEJ1cIddgY",
+   "title": "Providence Board of Licenses to meet after pizza restaurant stabbing",
+   "link": "https://www.youtube.com/watch?v=MNEJ1cIddgY",
+   "published": "2026-11-02T17:24:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/MNEJ1cIddgY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "59D_875LCiQ",
+   "title": "Lindsay Clancy returns to court for legal motions decisions",
+   "link": "https://www.youtube.com/watch?v=59D_875LCiQ",
+   "published": "2026-11-02T17:22:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/59D_875LCiQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ob8I68PGblo",
+   "title": "Residents cast ballots on final early voting day ahead of election",
+   "link": "https://www.youtube.com/watch?v=ob8I68PGblo",
+   "published": "2026-11-02T17:20:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ob8I68PGblo/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "EIifQE1IhN0",
@@ -3574,16 +3624,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/D4IK9IJNUdg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7ByTmqG7kjs",
-   "title": "Costume contest raises money for Warwick Animal Shelter",
-   "link": "https://www.youtube.com/watch?v=7ByTmqG7kjs",
-   "published": "2026-10-26T17:38:19.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/7ByTmqG7kjs/mqdefault.jpg",
    "towns": []
   }
  ]

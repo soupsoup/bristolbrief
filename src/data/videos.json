@@ -1,6 +1,18 @@
 {
- "updated": "2026-11-02T00:40:23.821Z",
+ "updated": "2026-11-02T01:05:28.193Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -8,25 +20,17 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
    "id": "nbc10-boston",
@@ -36,18 +40,10 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3566,16 +3562,6 @@
    "local": true,
    "countywide": true,
    "weather": true
-  },
-  {
-   "id": "z2539shnric",
-   "title": "La Salle wins overall title at Game Day Cheer Championships",
-   "link": "https://www.youtube.com/watch?v=z2539shnric",
-   "published": "2026-10-26T00:42:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/z2539shnric/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

@@ -1,33 +1,30 @@
 {
- "updated": "2026-11-02T01:05:28.193Z",
+ "updated": "2026-11-02T08:07:18.917Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -40,13 +37,74 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "9qE4T4L7IGg",
+   "title": "High School Roundup: Moses Brown, Lincoln, Tiverton Co-Op win field hockey state titles",
+   "link": "https://www.youtube.com/watch?v=9qE4T4L7IGg",
+   "published": "2026-11-02T05:34:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9qE4T4L7IGg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "zwE-Cz-A4wA",
+   "title": "All licenses suspended for Providence restaurant ahead of hearing",
+   "link": "https://www.youtube.com/watch?v=zwE-Cz-A4wA",
+   "published": "2026-11-02T05:18:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/zwE-Cz-A4wA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5UTM6b9MDns",
+   "title": "Iggy’s mourns loss of co-founder after battle with dementia",
+   "link": "https://www.youtube.com/watch?v=5UTM6b9MDns",
+   "published": "2026-11-02T05:18:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/5UTM6b9MDns/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "uFZ0RkPspQw",
+   "title": "WPRI 12 Weather Now 11/1/26: Dry, Much Milder Monday with Sunshine",
+   "link": "https://www.youtube.com/watch?v=uFZ0RkPspQw",
+   "published": "2026-11-02T04:46:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/uFZ0RkPspQw/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "-GF1yoi9S7w",
+   "title": "Poll shows Foulkes opening up big lead over Block with election two days away",
+   "link": "https://www.youtube.com/watch?v=-GF1yoi9S7w",
+   "published": "2026-11-02T04:43:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-GF1yoi9S7w/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "3RRFWnv2oL0",
    "title": "West Warwick shop's 'Rhode Island is not the problem' magnets draw attention",
@@ -66,19 +124,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/mQgva7zJHxo/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "St2u0lFVUtg",
-   "title": "WPRI 12 Weather Now 11/1/26: Chilly Tonight with Clear Skies; Much Milder Monday",
-   "link": "https://www.youtube.com/watch?v=St2u0lFVUtg",
-   "published": "2026-11-01T22:40:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/St2u0lFVUtg/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "3qhgyZQZRP8",
@@ -3549,19 +3594,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "xDesEiSww1E",
-   "title": "WPRI 12 Weather Forecast 10/25/26",
-   "link": "https://www.youtube.com/watch?v=xDesEiSww1E",
-   "published": "2026-10-26T03:28:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xDesEiSww1E/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   }
  ]
 }

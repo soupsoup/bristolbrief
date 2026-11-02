@@ -1,27 +1,6 @@
 {
- "updated": "2026-11-01T23:35:26.298Z",
+ "updated": "2026-11-02T00:05:34.543Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -32,23 +11,38 @@
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3577,49 +3571,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/z2539shnric/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "7wG0lFhMRjk",
-   "title": "Massachusetts officers pull man from burning vehicle",
-   "link": "https://www.youtube.com/watch?v=7wG0lFhMRjk",
-   "published": "2026-10-25T23:40:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7wG0lFhMRjk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "JXoUxwf0AaY",
-   "title": "Ground broken on apartments at old Woonsocket school",
-   "link": "https://www.youtube.com/watch?v=JXoUxwf0AaY",
-   "published": "2026-10-25T23:39:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/JXoUxwf0AaY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RJmjGZhoGgM",
-   "title": "No criminal charges filed in Uxbridge officer’s death",
-   "link": "https://www.youtube.com/watch?v=RJmjGZhoGgM",
-   "published": "2026-10-25T23:36:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/RJmjGZhoGgM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "V2Q80YaWof8",
-   "title": "Neighbor speaks after truck crashes into home in Swansea",
-   "link": "https://www.youtube.com/watch?v=V2Q80YaWof8",
-   "published": "2026-10-25T23:36:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/V2Q80YaWof8/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
   }
  ]
 }

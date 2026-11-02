@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T14:35:49.947Z",
+ "updated": "2026-11-02T15:05:28.577Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,58 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1042811",
+   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 15-25 minutes behind schedule between New Bedford and South Station due to a signal issue.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "SIGNAL_ISSUE",
+   "start": "2026-11-02T09:32:00-05:00",
+   "end": "2026-11-02T11:58:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-02T09:52:04-05:00"
+  },
+  {
+   "id": "1042820",
+   "header": "New Bedford Line Train 8053 (9:43 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford due to a signal issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-02T09:58:45-05:00",
+   "end": "2026-11-02T11:08:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-02T09:58:45-05:00"
   },
   {
    "id": "1042812",
@@ -42,30 +94,6 @@
    ],
    "url": null,
    "updated": "2026-11-02T09:34:21-05:00"
-  },
-  {
-   "id": "1042811",
-   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 5-15 minutes behind schedule between New Bedford and South Station due to a signal issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "SIGNAL_ISSUE",
-   "start": "2026-11-02T09:32:33-05:00",
-   "end": "2026-11-02T11:58:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-11-02T09:32:33-05:00"
   }
  ],
  "stopParents": {

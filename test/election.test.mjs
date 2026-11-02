@@ -189,3 +189,15 @@ test('the Bristol County seats on the ballot are all listed', () => {
   for (let i = 1; i <= 14; i++) assert.ok(have.has(`house-${i}`), `house-${i}`);
   for (const k of ['district-attorney', 'register-of-probate', 'county-treasurer', 'county-commissioner', 'senate', 'governor']) assert.ok(have.has(k), k);
 });
+
+test('every race box has an office description and at least one nonpartisan or official link', () => {
+  for (const r of doc.races) {
+    assert.ok(r.about?.role, `${r.key} role`);
+    assert.ok(r.about.links.length > 0, `${r.key} links`);
+    for (const l of r.about.links) assert.match(l.url, /^https:\/\//, `${r.key} ${l.label}`);
+  }
+});
+
+test('every ballot question links to the official arguments', () => {
+  for (const q of doc.questions) assert.ok(q.links.some((l) => l.url.includes('information-for-voters')), `question ${q.n}`);
+});

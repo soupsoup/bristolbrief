@@ -5,7 +5,8 @@ import election from '../data/election.json';
 import resultsData from '../data/election-results.json';
 
 type Cand = { name: string; party?: string | null; town?: string | null };
-type Race = { key: string; office: string; district: string | null; group: string; note?: string; candidates: Cand[] };
+type Link = { label: string; url: string };
+type Race = { key: string; office: string; district: string | null; group: string; note?: string; candidates: Cand[]; about?: { role: string; status: string[]; links: Link[] } };
 type Res = {
   election_id: string;
   total_votes: number;
@@ -140,6 +141,9 @@ const links = election.links;
               <dt>A yes vote</dt><dd>{x.yes}</dd>
               <dt>A no vote</dt><dd>{x.no}</dd>
             </dl>
+            {x.links && (
+              <p class="about-links">{x.links.map((l, i) => (<><a href={l.url} target="_blank" rel="noopener">{l.label}</a>{i < x.links.length - 1 ? ' · ' : ''}</>))}</p>
+            )}
             {r && (
               <div class="res">
                 <table>
@@ -182,6 +186,14 @@ const links = election.links;
       <div class="section-head"><h2>Who is running</h2></div>
       <p class="note">Candidates on the November ballot in races that include Bristol County, as listed by the Secretary of the Commonwealth.
         Where only one name is listed, that candidate is unopposed on the printed ballot.</p>
+      <div class="resources">
+        <p>{election.resources.intro}</p>
+        <ul>
+          {election.resources.items.map((i) => (
+            <li><a href={i.url} target="_blank" rel="noopener">{i.label}</a>: {i.text}</li>
+          ))}
+        </ul>
+      </div>
       {groups.map((g) => {
         const list = racesIn(g.id);
         if (!list.length) return null;
@@ -206,6 +218,13 @@ const links = election.links;
                     </ul>
                     {r.candidates.length === 1 && <p class="meta">Only candidate listed.</p>}
                     {r.note && <p class="meta">{r.note}</p>}
+                    {r.about && (
+                      <div class="about">
+                        <p class="about-role"><strong>About the office.</strong> {r.about.role}</p>
+                        {r.about.status.map((t) => <p class="about-fact">{t}</p>)}
+                        <p class="about-links">{r.about.links.map((l, i) => (<><a href={l.url} target="_blank" rel="noopener">{l.label}</a>{i < r.about!.links.length - 1 ? ' · ' : ''}</>))}</p>
+                      </div>
+                    )}
                     {res && res.candidates.length > 0 && (
                       <table class="res-table">
                         <caption>{res.bristol ? 'Statewide, unofficial' : 'Unofficial results'}</caption>
@@ -283,6 +302,14 @@ const links = election.links;
   tr.lead th, tr.lead td { font-weight: 700; }
   .res { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 24px; }
   .sources { margin-top: 28px; }
+  .resources { border: 1px solid var(--rule); border-left: 4px solid var(--navy); background: var(--paper-2); padding: 10px 16px; margin: 0 0 8px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
+  .resources p { margin: 0 0 6px; }
+  .resources ul { margin: 0; padding-left: 18px; }
+  .about { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+  .about p { margin: 0 0 5px; }
+  .about-fact { color: var(--ink); font-weight: 600; }
+  .about-links { font-size: 13px; }
+  .question .about-links { font-family: var(--sans); margin: 4px 0 8px; }
   .summary { font-family: var(--sans); margin: 10px 0 6px; }
   .summary h3 { font-size: 15px; margin: 14px 0 4px; }
   .summary ul { list-style: none; margin: 0; padding: 0; }

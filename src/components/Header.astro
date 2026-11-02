@@ -15,7 +15,6 @@ const path = Astro.url.pathname;
         <a href="/videos/">Videos</a>
         <a href="/meetings/">Meetings</a>
         <a href="/traffic/">Traffic</a>
-        <a href="/election/">Election</a>
         <a href="/tips/">Send a tip</a>
         <a href="/about/">About</a>
         <a class="discord-link" href={SITE.social.discord} target="_blank" rel="noopener" aria-label="Join us on Discord">
@@ -47,6 +46,9 @@ const path = Astro.url.pathname;
             </a>
           </li>
         ))}
+        <li class="election-tab">
+          <a href="/election/" aria-current={path.startsWith('/election') ? 'page' : undefined}>Election</a>
+        </li>
       </ul>
       <details class="towns">
         <summary>Towns</summary>
@@ -204,4 +206,5 @@ const path = Astro.url.pathname;
     width: min(420px, calc(100vw - 2 * var(--gutter)));
   }
   .towns-menu a { display: block; padding: 4px 0; font-weight: 500; }
+  .election-tab a { color: var(--accent); font-weight: 800; }
 </style>

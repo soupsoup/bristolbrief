@@ -1,0 +1,301 @@
+---
+import Base from '../layouts/Base.astro';
+import verifiedImpacts from '../data/flood-verified.json';
+
+const impacts = verifiedImpacts as {
+  town: string;
+  summary: string;
+  verifiedAt: string;
+  source: string;
+  sourceUrl?: string;
+}[];
+---
+
+<Base
+  title="Taunton River flood warning"
+  description="Live Taunton River stage, NWS flood forecast, and Bristol County impacts verified by Bristol Brief."
+>
+  <article class="river-page wrap" data-river-page>
+    <header class="river-heading">
+      <p class="kicker">Bristol County · River desk</p>
+      <h1 class="page-title">Taunton River, tracked.</h1>
+      <p class="page-dek">A live look at the river near Bridgewater, with official forecasts kept apart from impacts we’ve independently verified.</p>
+      <p class="river-location meta">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Gauge: Taunton River near Bridgewater</span>
+        <span class="location-divider" aria-hidden="true">/</span>
+        <span>USGS 01108000 · NWPS BDGM3</span>
+      </p>
+    </header>
+
+    <section class="river-hero" aria-labelledby="stage-title">
+      <div class="hero-reading">
+        <p class="hero-label" id="stage-title">Latest observed stage</p>
+        <div class="hero-number"><span data-stage-value>—</span><span class="hero-unit">ft</span></div>
+        <p class="hero-status" data-stage-status>Connecting to live gauge data…</p>
+      </div>
+      <div class="hero-threshold">
+        <p class="hero-label">Flood stage</p>
+        <strong>8.00 <span>ft</span></strong>
+        <p data-observed-time>Observation time loading…</p>
+        <span class="hero-asof" data-checked-time>Checking official feeds…</span>
+      </div>
+      <div class="stage-meter" role="img" aria-label="River stage compared with the 8 foot flood stage">
+        <div class="meter-labels"><span>0 ft</span><span>8.0 ft flood stage</span><span>10 ft</span></div>
+        <div class="meter-track">
+          <span class="meter-fill" data-meter-fill></span>
+          <span class="meter-threshold" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-panel" aria-labelledby="chart-title">
+      <div class="chart-heading">
+        <div>
+          <p class="kicker">Measured + projected</p>
+          <h2 id="chart-title">River stage, past 48 hours and forecast</h2>
+        </div>
+        <span class="chart-unit">Feet</span>
+      </div>
+      <div class="chart-frame">
+        <svg data-stage-chart viewBox="0 0 980 330" role="img" aria-label="Taunton River observed and forecast stage chart">
+          <text x="490" y="165" text-anchor="middle">Loading gauge history and forecast…</text>
+        </svg>
+      </div>
+      <div class="chart-legend" aria-label="Chart legend">
+        <span><i class="legend-observed"></i>Observed · USGS</span>
+        <span><i class="legend-forecast"></i>Forecast · NOAA NWPS</span>
+        <span><i class="legend-threshold"></i>Flood stage · 8.0 ft</span>
+      </div>
+      <p class="chart-note" data-chart-note>Official gauge and forecast values; times shown in Eastern Time.</p>
+    </section>
+
+    <div class="report-grid">
+      <section class="report-panel forecast-panel" aria-labelledby="forecast-title">
+        <div class="panel-heading">
+          <span class="panel-tag">Forecast</span>
+          <span class="panel-source">National Weather Service</span>
+        </div>
+        <h2 id="forecast-title">What the river may do next</h2>
+        <p class="warning-headline" data-warning-headline>Checking for an active Taunton River warning…</p>
+        <div class="crest-callout" data-crest-callout hidden>
+          <span>Forecast crest</span>
+          <strong><span data-crest-stage>—</span> <small>ft</small></strong>
+          <time data-crest-time></time>
+        </div>
+        <p class="forecast-copy" data-forecast-copy>Official NWS forecast details will appear when the alert feed loads.</p>
+        <div class="official-impact" data-official-impact hidden>
+          <strong>NWS impact guidance</strong>
+          <p data-impact-copy></p>
+          <small>This is official forecast guidance, not a Bristol Brief-confirmed local impact.</small>
+        </div>
+        <p class="alert-asof" data-alert-asof></p>
+        <a class="source-link" data-warning-link href="https://api.weather.gov/alerts/active?area=MA" target="_blank" rel="noopener">Open active NWS alerts ↗</a>
+        <div class="active-alerts" data-active-alerts aria-live="polite">
+          <p class="meta">Loading active alerts for Bristol County…</p>
+        </div>
+      </section>
+
+      <section class="report-panel verified-panel" aria-labelledby="verified-title">
+        <div class="panel-heading">
+          <span class="panel-tag">Verified</span>
+          <span class="panel-source">What we can confirm</span>
+        </div>
+        <h2 id="verified-title">Observed conditions</h2>
+        <div class="verified-reading">
+          <span>USGS gauge reading</span>
+          <strong><span data-verified-stage>—</span> <small>ft</small></strong>
+          <time data-verified-time>Waiting for the latest observation…</time>
+        </div>
+        <p class="provisional-note">Gauge observations are provisional and may be revised. A river reading does not confirm flooding at a particular road, home, or business.</p>
+        <div class="impact-heading">
+          <h3>Impacts verified by Bristol Brief</h3>
+          <span>{impacts.length} recorded</span>
+        </div>
+        {impacts.length ? (
+          <ul class="impact-list">
+            {impacts.map((impact) => (
+              <li>
+                <strong>{impact.town}</strong>
+                <p>{impact.summary}</p>
+                <span class="meta">Verified {impact.verifiedAt} · {impact.source}</span>
+                {impact.sourceUrl && <a href={impact.sourceUrl} target="_blank" rel="noopener">Source ↗</a>}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="no-impacts">No local impacts have been independently verified for this update.</p>
+        )}
+        <p class="edit-note">Editors can add verified items in <code>src/data/flood-verified.json</code>. NWS impact statements stay in the forecast panel until locally confirmed.</p>
+      </section>
+    </div>
+
+    <div class="page-error" data-page-error hidden role="status"></div>
+    <p class="data-credits">
+      Data: <a href="https://waterdata.usgs.gov/monitoring-location/01108000/" target="_blank" rel="noopener">USGS Water Services · 01108000 ↗</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://water.noaa.gov/gauges/BDGM3" target="_blank" rel="noopener">NOAA NWPS · BDGM3 ↗</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://api.weather.gov/alerts/active?area=MA" target="_blank" rel="noopener">NWS alerts ↗</a>
+    </p>
+  </article>
+</Base>
+
+<script src="../lib/taunton-river.ts"></script>
+
+<style>
+  .river-page { padding-bottom: 56px; }
+  .river-heading { max-width: 850px; margin: 34px auto 24px; text-align: center; }
+  .river-heading .kicker { margin: 0 0 8px; }
+  .river-heading .page-title { margin: 0 0 12px; }
+  .river-heading .page-dek { margin: 0 auto 14px; max-width: 42em; }
+  .river-location { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0; font-size: 12px; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #227b67; box-shadow: 0 0 0 4px rgb(34 123 103 / 0.14); }
+  .location-divider { color: var(--rule); }
+
+  .river-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.72fr);
+    gap: 22px 38px;
+    align-items: end;
+    padding: 24px 28px 22px;
+    background: #eaf2f3;
+    border: 1px solid #cbdcde;
+    border-top: 5px solid #176a83;
+  }
+  .hero-label { margin: 0 0 7px; color: #3c5962; font: 700 12px/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; }
+  .hero-number { display: flex; align-items: baseline; gap: 9px; color: #103f56; font: 800 clamp(54px, 9vw, 86px)/0.95 var(--sans); letter-spacing: -0.065em; font-variant-numeric: tabular-nums; }
+  .hero-unit { font-size: 25px; font-weight: 600; letter-spacing: 0; }
+  .hero-status { margin: 11px 0 0; color: #71302a; font: 800 14px/1.35 var(--sans); }
+  .hero-threshold { border-left: 1px solid #bfd0d1; padding-left: 22px; color: #18333e; font-family: var(--sans); }
+  .hero-threshold strong { font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .hero-threshold strong span { font-size: 15px; font-weight: 600; }
+  .hero-threshold p:not(.hero-label) { margin: 5px 0 0; font-size: 13px; }
+  .hero-asof { display: block; margin-top: 5px; color: #46616b; font-size: 11px; }
+  .stage-meter { grid-column: 1 / -1; font-family: var(--sans); }
+  .meter-labels { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; color: #38515a; font-size: 11px; }
+  .meter-track { position: relative; height: 9px; border-radius: 99px; background: #d1dddd; overflow: visible; }
+  .meter-fill { position: absolute; inset: 0 auto 0 0; max-width: 100%; border-radius: inherit; background: #176a83; transition: width 300ms ease; }
+  .meter-threshold { position: absolute; left: 80%; top: -4px; bottom: -4px; border-left: 2px solid #8b2f27; }
+
+  .chart-panel { margin-top: 22px; padding: 24px 24px 16px; background: var(--paper); border: 1px solid var(--rule); }
+  .chart-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+  .chart-heading .kicker { margin: 0 0 4px; }
+  .chart-heading h2 { margin: 0; font: 700 clamp(19px, 3vw, 25px)/1.2 var(--serif-display); }
+  .chart-unit { color: var(--ink-2); font: 700 12px var(--sans); }
+  .chart-frame { margin: 14px -6px 0; overflow-x: auto; }
+  .chart-frame svg { display: block; width: 100%; min-width: 620px; height: auto; overflow: visible; }
+  .chart-frame :global(text) { fill: var(--ink-2); font: 11px var(--sans); }
+  .chart-frame :global(.chart-empty) { fill: var(--ink-2); font: 15px var(--sans) !important; }
+  .chart-frame :global(.chart-grid line) { stroke: var(--rule); stroke-dasharray: 2 5; stroke-width: 1; }
+  .chart-frame :global(.chart-axis) { stroke: var(--ink-2); stroke-width: 1; }
+  .chart-frame :global(.chart-axis-tick) { stroke: var(--ink-2); }
+  .chart-frame :global(.chart-time-label) { font-size: 10px !important; }
+  .chart-frame :global(.chart-observed) { fill: none; stroke: #176a83; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .chart-frame :global(.chart-forecast) { fill: none; stroke: #a24632; stroke-width: 3; stroke-dasharray: 8 6; stroke-linecap: round; stroke-linejoin: round; }
+  .chart-frame :global(.chart-current-point) { fill: #176a83; stroke: var(--paper); stroke-width: 2; }
+  .chart-frame :global(.chart-forecast-point) { fill: #a24632; stroke: var(--paper); stroke-width: 1.5; }
+  .chart-frame :global(.chart-threshold) { stroke: #a24632; stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .chart-frame :global(.chart-threshold-label), .chart-frame :global(.chart-crest-label) { fill: #8b3028 !important; font: 700 11px var(--sans) !important; }
+  .chart-frame :global(.chart-crest-label) { fill: #813423 !important; }
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 2px; color: var(--ink-2); font: 12px var(--sans); }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .chart-legend i { display: inline-block; width: 20px; height: 0; border-top: 3px solid #176a83; }
+  .chart-legend .legend-forecast { border-color: #a24632; border-top-style: dashed; }
+  .chart-legend .legend-threshold { border-color: #a24632; border-top-style: dotted; border-top-width: 2px; }
+  .chart-note { margin: 11px 0 0; color: var(--ink-2); font: 11px/1.4 var(--sans); }
+
+  .report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+  .report-panel { min-width: 0; padding: 24px; border: 1px solid var(--rule); background: var(--paper); }
+  .forecast-panel { border-top: 5px solid #a24632; }
+  .verified-panel { border-top: 5px solid #227b67; }
+  .panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 13px; font-family: var(--sans); }
+  .panel-tag { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .forecast-panel .panel-tag { color: #8b3028; }
+  .verified-panel .panel-tag { color: #176b58; }
+  .panel-source { color: var(--ink-2); font-size: 11px; text-align: right; }
+  .report-panel h2 { margin: 0 0 12px; font: 700 24px/1.15 var(--serif-display); }
+  .warning-headline { margin: 0 0 10px; font: 600 14px/1.4 var(--sans); }
+  .crest-callout { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 15px 0; padding: 13px 14px; background: #f4e6df; color: #682820; font-family: var(--sans); }
+  .crest-callout[hidden], .official-impact[hidden] { display: none; }
+  .crest-callout > span { flex-basis: 100%; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .crest-callout strong { font-size: 29px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .crest-callout strong small { font-size: 14px; }
+  .crest-callout time { font-size: 12px; }
+  .forecast-copy { margin: 10px 0 12px; font-size: 16px; }
+  .official-impact { margin: 13px 0; padding: 12px 13px; border-left: 3px solid #a24632; background: var(--paper-2); }
+  .official-impact strong { font: 700 12px var(--sans); }
+  .official-impact p { margin: 5px 0; font-size: 14px; }
+  .official-impact small { color: var(--ink-2); font: 11px/1.4 var(--sans); }
+  .alert-asof { color: var(--ink-2); font: 11px/1.45 var(--sans); }
+  .source-link { display: inline-block; margin: 4px 0 8px; font: 700 12px var(--sans); }
+  .active-alerts { margin-top: 12px; }
+  .active-alerts :global(h3) { margin: 15px 0 8px; font: 700 12px var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
+  .active-alerts :global(.active-alert) { display: grid; gap: 3px; padding: 10px 0; border-top: 1px solid var(--rule); font-family: var(--sans); }
+  .active-alerts :global(.active-alert strong) { font-size: 13px; }
+  .active-alerts :global(.active-alert span), .active-alerts :global(.active-alert p) { margin: 0; color: var(--ink-2); font-size: 11px; line-height: 1.4; }
+  .active-alerts :global(.active-alert a) { font-size: 11px; font-weight: 700; }
+  .verified-reading { display: grid; gap: 2px; padding: 12px 14px; background: #e9f1ed; color: #183c32; font-family: var(--sans); }
+  .verified-reading > span { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .verified-reading strong { font-size: 30px; font-variant-numeric: tabular-nums; }
+  .verified-reading small { font-size: 14px; }
+  .verified-reading time { color: #3e6257; font-size: 11px; }
+  .provisional-note { margin: 9px 0 20px; color: var(--ink-2); font: 11px/1.5 var(--sans); }
+  .impact-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--rule); padding-bottom: 7px; }
+  .impact-heading h3 { margin: 0; font: 700 14px/1.3 var(--sans); }
+  .impact-heading span { color: var(--ink-2); font: 11px var(--sans); }
+  .no-impacts { padding: 12px 14px; margin: 0; background: var(--paper-2); font-size: 14px; }
+  .impact-list { list-style: none; padding: 0; margin: 0; }
+  .impact-list li { padding: 11px 0; border-bottom: 1px solid var(--rule); }
+  .impact-list strong { font: 700 13px var(--sans); }
+  .impact-list p { margin: 3px 0; font-size: 14px; }
+  .impact-list .meta { display: block; font-size: 10px; }
+  .impact-list a { display: inline-block; margin-top: 3px; font: 700 11px var(--sans); }
+  .edit-note { margin: 12px 0 0; color: var(--ink-2); font: 11px/1.5 var(--sans); }
+  .edit-note code { color: var(--ink); font-size: 10px; }
+  .page-error { margin-top: 18px; padding: 12px 15px; border-left: 3px solid #a24632; background: var(--paper-2); color: var(--ink-2); font: 12px/1.5 var(--sans); }
+  .page-error[hidden] { display: none; }
+  .data-credits { display: flex; flex-wrap: wrap; gap: 6px 10px; justify-content: center; margin: 24px 0 0; color: var(--ink-2); font: 11px/1.5 var(--sans); text-align: center; }
+
+  @media (max-width: 760px) {
+    .river-heading { margin-top: 26px; }
+    .river-hero { gap: 18px; padding: 20px; }
+    .report-grid { grid-template-columns: 1fr; }
+    .report-panel { padding: 21px; }
+  }
+  @media (max-width: 520px) {
+    .river-location { gap: 5px; font-size: 10px; }
+    .river-hero { grid-template-columns: 1fr 0.75fr; gap: 14px 12px; padding: 17px 15px; }
+    .hero-number { font-size: 58px; }
+    .hero-unit { font-size: 19px; }
+    .hero-threshold { padding-left: 13px; }
+    .hero-threshold strong { font-size: 24px; }
+    .hero-threshold strong span { font-size: 12px; }
+    .hero-label { font-size: 10px; }
+    .hero-status { font-size: 12px; }
+    .meter-labels { font-size: 9px; }
+    .chart-panel { padding: 19px 14px 14px; }
+    .chart-legend { gap: 8px 13px; font-size: 10px; }
+    .report-panel h2 { font-size: 22px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    .river-hero { background: #17272d; border-color: #314b52; border-top-color: #62b3c5; }
+    .hero-label, .hero-threshold, .hero-asof, .meter-labels { color: #c2d0d1; }
+    .hero-number { color: #d5eff1; }
+    .hero-status { color: #f0a092; }
+    .meter-track { background: #304147; }
+    .meter-fill { background: #4ba1b1; }
+    .chart-frame :global(.chart-grid line) { stroke: #36434a; }
+    .chart-frame :global(.chart-observed) { stroke: #66bfd0; }
+    .chart-frame :global(.chart-forecast) { stroke: #f08b73; }
+    .chart-frame :global(.chart-current-point), .chart-frame :global(.chart-forecast-point) { stroke: var(--paper); }
+    .chart-frame :global(.chart-threshold), .chart-frame :global(.chart-threshold-label), .chart-frame :global(.chart-crest-label) { stroke: #f08b73; fill: #f0a092 !important; }
+    .forecast-panel .panel-tag { color: #f0a092; }
+    .verified-panel .panel-tag { color: #83d1bb; }
+    .crest-callout { background: #3a2523; color: #ffd2c7; }
+    .verified-reading { background: #1c3029; color: #cae6d8; }
+    .verified-reading time { color: #a2c5b5; }
+    .no-impacts { background: #20272e; }
+    .official-impact { background: #20272e; }
+  }
+</style>

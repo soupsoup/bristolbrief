@@ -1,57 +1,81 @@
 {
- "updated": "2026-11-02T23:05:29.197Z",
+ "updated": "2026-11-02T23:35:44.917Z",
  "channels": [
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
+  {
+   "id": "4gW7wQCGSys",
+   "title": "RI Division of Taxation warns against phone scam: What to know",
+   "link": "https://www.youtube.com/watch?v=4gW7wQCGSys",
+   "published": "2026-11-02T23:12:27.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/4gW7wQCGSys/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nN13Q5serQg",
+   "title": "Providence mayoral candidates make final push to voters ahead of Election Day",
+   "link": "https://www.youtube.com/watch?v=nN13Q5serQg",
+   "published": "2026-11-02T23:12:01.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nN13Q5serQg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "EaVmBcAfjw8",
+   "title": "Woman warns others after losing $45K to FBI impersonation scam",
+   "link": "https://www.youtube.com/watch?v=EaVmBcAfjw8",
+   "published": "2026-11-02T23:10:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EaVmBcAfjw8/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "8RH3IH9RxHY",
    "title": "Lindsay Clancy returns to court; Reddington asks judge to investigate holdout juror",

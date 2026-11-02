@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T23:05:29.197Z",
+ "updated": "2026-11-02T23:35:44.917Z",
  "alerts": [
   {
    "id": "1040491",
@@ -41,6 +41,47 @@
    ],
    "url": null,
    "updated": "2026-11-02T18:03:40-05:00"
+  },
+  {
+   "id": "1042962",
+   "header": "Providence Line Train 6029 (5:37 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-02T18:22:39-05:00",
+   "end": "2026-11-02T20:29:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-02T18:22:39-05:00"
+  },
+  {
+   "id": "1042950",
+   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-02T18:06:35-05:00",
+   "end": "2026-11-02T19:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-02T18:06:35-05:00"
   }
  ],
  "stopParents": {

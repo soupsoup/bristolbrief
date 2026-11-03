@@ -1,23 +1,19 @@
 {
- "updated": "2026-11-03T05:05:29.363Z",
+ "updated": "2026-11-03T08:07:25.950Z",
  "channels": [
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -27,25 +23,78 @@
    "kept": 15
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 500"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "8YfcydQdoYQ",
+   "title": "Judge hears 3 motions in Lindsay Clancy case",
+   "link": "https://www.youtube.com/watch?v=8YfcydQdoYQ",
+   "published": "2026-11-03T06:18:21.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/8YfcydQdoYQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3UqAJPYedNw",
+   "title": "WPRI 12 Weather Forecast 11-2-26 Partly Sunny, Warm Tuesday",
+   "link": "https://www.youtube.com/watch?v=3UqAJPYedNw",
+   "published": "2026-11-03T04:29:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3UqAJPYedNw/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "bCCJBQYUDL0",
+   "title": "Hometown Hero: Isaac Rodriguez, East Providence",
+   "link": "https://www.youtube.com/watch?v=bCCJBQYUDL0",
+   "published": "2026-11-03T04:25:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bCCJBQYUDL0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "b7J8FKiIRMk",
+   "title": "Providence handles Maine in first game under Bryan Hodgson",
+   "link": "https://www.youtube.com/watch?v=b7J8FKiIRMk",
+   "published": "2026-11-03T04:18:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/b7J8FKiIRMk/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "1a6rGyO5CEI",
    "title": "About 20 displaced, one hospitalized after Cranston apartment fire",
@@ -55,6 +104,69 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/1a6rGyO5CEI/mqdefault.jpg",
    "towns": []
+  },
+  {
+   "id": "UneqXLBysIg",
+   "title": "#LindsayClancy retrial could begin in March #shorts",
+   "link": "https://www.youtube.com/shorts/UneqXLBysIg",
+   "published": "2026-11-03T03:24:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UneqXLBysIg/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "MXo9_uKKRwk",
+   "title": "Graduate Providence Hotel set for auction next year",
+   "link": "https://www.youtube.com/watch?v=MXo9_uKKRwk",
+   "published": "2026-11-03T03:17:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/MXo9_uKKRwk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "MnLtoOpUJ4g",
+   "title": "3 friends launch nonprofit to honor hockey rink shooting victims",
+   "link": "https://www.youtube.com/watch?v=MnLtoOpUJ4g",
+   "published": "2026-11-03T03:17:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/MnLtoOpUJ4g/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "C2Ijq_w5Meo",
+   "title": "RI candidates gear up for Election Day",
+   "link": "https://www.youtube.com/watch?v=C2Ijq_w5Meo",
+   "published": "2026-11-03T03:15:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/C2Ijq_w5Meo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "pWEYiRblDmY",
+   "title": "RI Division of Taxation warns against phone scam #shorts",
+   "link": "https://www.youtube.com/shorts/pWEYiRblDmY",
+   "published": "2026-11-03T02:21:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/pWEYiRblDmY/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "REdnLGwdKW4",
+   "title": "Last day of early voting in Rhode Island #shorts",
+   "link": "https://www.youtube.com/shorts/REdnLGwdKW4",
+   "published": "2026-11-03T01:28:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/REdnLGwdKW4/mqdefault.jpg",
+   "towns": [],
+   "short": true
   },
   {
    "id": "n4_4tAhZkI4",
@@ -79,6 +191,17 @@
    "short": true
   },
   {
+   "id": "X6JjF0wKrUE",
+   "title": "Mountain biking community pushes back after Barrington bulldozes part of popular trail #shorts",
+   "link": "https://www.youtube.com/shorts/X6JjF0wKrUE",
+   "published": "2026-11-03T00:25:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/X6JjF0wKrUE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
    "id": "x8_BxneXmtE",
    "title": "About 20 displaced, one hospitalized after Cranston apartment fire",
    "link": "https://www.youtube.com/watch?v=x8_BxneXmtE",
@@ -96,6 +219,46 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/SDpSfP_s3oU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "z_98Lm6Z9LY",
+   "title": "Woman warns others after losing $45K to FBI impersonation scam",
+   "link": "https://www.youtube.com/watch?v=z_98Lm6Z9LY",
+   "published": "2026-11-02T23:57:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/z_98Lm6Z9LY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "QPOGWTYMe1s",
+   "title": "Woman who skipped sentencing for deadly 2021 crash turns self in",
+   "link": "https://www.youtube.com/watch?v=QPOGWTYMe1s",
+   "published": "2026-11-02T23:56:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/QPOGWTYMe1s/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "IYYuIuUIx-A",
+   "title": "Barrington mountain biking community pushes back after town bulldozes part of popular trail",
+   "link": "https://www.youtube.com/watch?v=IYYuIuUIx-A",
+   "published": "2026-11-02T23:56:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/IYYuIuUIx-A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "VpI_BzxOmA0",
+   "title": "Candidates make final push ahead of Election Day",
+   "link": "https://www.youtube.com/watch?v=VpI_BzxOmA0",
+   "published": "2026-11-02T23:55:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/VpI_BzxOmA0/mqdefault.jpg",
    "towns": []
   },
   {
@@ -385,19 +548,6 @@
    "short": true
   },
   {
-   "id": "mfhU3RaTAl4",
-   "title": "WPRI 12 Weather Now 11-2-26 Unseasonably Warm Next Several Days",
-   "link": "https://www.youtube.com/watch?v=mfhU3RaTAl4",
-   "published": "2026-11-02T21:31:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mfhU3RaTAl4/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
    "id": "DUZsQ1I7ku4",
    "title": "In full: 'This would be a retrial,' commonwealth says in Lindsay Clancy case",
    "link": "https://www.youtube.com/watch?v=DUZsQ1I7ku4",
@@ -518,16 +668,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/n5_TJiZceMc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8YfcydQdoYQ",
-   "title": "Judge hears 3 motions in Lindsay Clancy case",
-   "link": "https://www.youtube.com/watch?v=8YfcydQdoYQ",
-   "published": "2026-11-02T14:04:28.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/8YfcydQdoYQ/mqdefault.jpg",
    "towns": []
   },
   {

@@ -1,21 +1,9 @@
 {
- "updated": "2026-11-03T03:05:32.236Z",
+ "updated": "2026-11-03T03:35:25.404Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -26,21 +14,33 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": false,
    "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
   }
@@ -3583,39 +3583,6 @@
    "thumbnail": "https://i.ytimg.com/vi/34lbQZE9J2o/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "t2HyLP9lnFk",
-   "title": "WPRI 12 Weather Forecast 10-26-26 Sunny But Cooler Tuesday",
-   "link": "https://www.youtube.com/watch?v=t2HyLP9lnFk",
-   "published": "2026-10-27T03:28:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/t2HyLP9lnFk/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "ZTUvAj8naWM",
-   "title": "Pawtucket mayor, residents push back on Hasbro CEO’s comments about city",
-   "link": "https://www.youtube.com/watch?v=ZTUvAj8naWM",
-   "published": "2026-10-27T03:16:08.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ZTUvAj8naWM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "H34qfGyDdNM",
-   "title": "Police pursuit leads to crash, suspect’s arrest on I-95 in Providence",
-   "link": "https://www.youtube.com/watch?v=H34qfGyDdNM",
-   "published": "2026-10-27T03:09:49.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/H34qfGyDdNM/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

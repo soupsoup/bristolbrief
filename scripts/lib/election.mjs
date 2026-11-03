@@ -172,6 +172,30 @@ export function buildResults({ doc, rows, csvById = {}, townSlugs = [] }) {
   return { races: out, unmatched };
 }
 
+/**
+ * Race tracking: compare this check with the last one. Each race gets its current leader and margin
+ * (points between the top two), the margin at the previous check, and when the lead last changed.
+ */
+export function trackChanges(prevRaces = {}, nextRaces = {}, at = new Date().toISOString()) {
+  const out = {};
+  for (const [key, res] of Object.entries(nextRaces)) {
+    const c = res.candidates ?? [];
+    const leader = c.length === 1 ? c[0].name : c.length > 1 && c[0].votes > c[1].votes ? c[0].name : null;
+    const margin = c.length > 1 && c[0].pct != null && c[1].pct != null ? Math.round((c[0].pct - c[1].pct) * 10) / 10 : null;
+    const p = prevRaces[key];
+    out[key] = {
+      ...res,
+      leader,
+      margin,
+      checked_at: at,
+      prev_margin: p?.margin ?? null,
+      prev_checked_at: p?.checked_at ?? null,
+      lead_changed_at: p && p.leader && leader && p.leader !== leader ? at : p?.lead_changed_at ?? null,
+    };
+  }
+  return out;
+}
+
 /** True while election-night checks should run. */
 export function inWindow(now = new Date(), { force = false } = {}) {
   if (force) return true;
@@ -231,6 +255,6 @@ export async function checkResults({ getText, doc, townSlugs, previous, now = ne
     source_url: 'https://electionstats.state.ma.us/',
     elections_found: rows.length,
     unmatched,
-    races: { ...(previous?.races ?? {}), ...races },
+    races: { ...(previous?.races ?? {}), ...trackChanges(previous?.races, races, now.toISOString()) },
   };
 }

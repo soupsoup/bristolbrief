@@ -1363,5 +1363,27 @@
     "text": "Campaign finance reports for U.S. Senate and House candidates."
    }
   ]
+ },
+ "tracker": {
+  "note": "Market odds come from our Market vs. Desk tracker (Kalshi and Polymarket, read-only). The key below is a public, read-only Supabase key made for browsers.",
+  "url": "https://xvcszdxiktwbyawzrenq.supabase.co",
+  "key": "sb_publishable_ft89jBKW5QExGCT9KsvRoQ_OYmcjMdP",
+  "races": [
+   {
+    "id": "ma-sen",
+    "label": "U.S. Senate",
+    "raceKey": "senate"
+   },
+   {
+    "id": "ma-04",
+    "label": "U.S. House, 4th District",
+    "raceKey": "us-house-4"
+   },
+   {
+    "id": "ma-09",
+    "label": "U.S. House, 9th District",
+    "raceKey": "us-house-9"
+   }
+  ]
  }
 }

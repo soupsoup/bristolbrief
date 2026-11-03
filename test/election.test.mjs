@@ -201,3 +201,37 @@ test('every race box has an office description and at least one nonpartisan or o
 test('every ballot question links to the official arguments', () => {
   for (const q of doc.questions) assert.ok(q.links.some((l) => l.url.includes('information-for-voters')), `question ${q.n}`);
 });
+
+import { trackChanges } from '../scripts/lib/election.mjs';
+
+const cands = (a, b) => ({ candidates: [{ name: 'A', votes: a, pct: Math.round((a / (a + b)) * 1000) / 10 }, { name: 'B', votes: b, pct: Math.round((b / (a + b)) * 1000) / 10 }] });
+
+test('race tracking records the leader and margin on the first check', () => {
+  const t = trackChanges({}, { r: cands(60, 40) }, 'T1').r;
+  assert.equal(t.leader, 'A');
+  assert.equal(t.margin, 20);
+  assert.equal(t.prev_margin, null);
+  assert.equal(t.lead_changed_at, null);
+});
+
+test('race tracking keeps the last margin and marks a lead change', () => {
+  const first = trackChanges({}, { r: cands(60, 40) }, 'T1');
+  const second = trackChanges(first, { r: cands(52, 48) }, 'T2').r;
+  assert.equal(second.prev_margin, 20);
+  assert.equal(second.margin, 4);
+  assert.equal(second.lead_changed_at, null);
+  const third = trackChanges({ r: second }, { r: { candidates: [{ name: 'B', votes: 55, pct: 52.4 }, { name: 'A', votes: 50, pct: 47.6 }] } }, 'T3').r;
+  assert.equal(third.leader, 'B');
+  assert.equal(third.lead_changed_at, 'T3');
+  const fourth = trackChanges({ r: third }, { r: cands(30, 70) }, 'T4').r;
+  assert.equal(fourth.lead_changed_at, 'T3'); // carried forward until the lead changes again
+});
+
+test('a tie has no leader', () => {
+  assert.equal(trackChanges({}, { r: cands(50, 50) }, 'T').r.leader, null);
+});
+
+test('the tracker config lists the three Bristol County federal races', () => {
+  assert.deepEqual(doc.tracker.races.map((r) => r.id), ['ma-sen', 'ma-04', 'ma-09']);
+  assert.match(doc.tracker.url, /^https:\/\//);
+});

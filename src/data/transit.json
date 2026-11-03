@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T22:05:43.537Z",
+ "updated": "2026-11-03T22:35:50.355Z",
  "alerts": [
   {
    "id": "1043105",
@@ -9,14 +9,38 @@
    "lifecycle": "NEW",
    "cause": "POLICE_ACTIVITY",
    "start": "2026-11-03T16:04:00-05:00",
-   "end": "2026-11-03T19:05:01-05:00",
+   "end": "2026-11-03T19:35:01-05:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-03T16:23:59-05:00"
+   "updated": "2026-11-03T17:28:01-05:00"
+  },
+  {
+   "id": "1043141",
+   "header": "Providence Line Train 6027 (4:52 PM from South Station) has yet to depart South Station and is 25-35 minutes behind schedule due to police activity on the right of way.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-03T17:23:26-05:00",
+   "end": "2026-11-03T19:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-03T17:23:26-05:00"
   },
   {
    "id": "1040491",

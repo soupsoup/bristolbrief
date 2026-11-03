@@ -1,40 +1,47 @@
 {
- "updated": "2026-10-16T20:05:31.948Z",
+ "updated": "2026-11-03T20:35:33.886Z",
  "alerts": [
   {
-   "id": "1039374",
-   "header": "Providence Line Train 851 (3:20 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Providence.",
+   "id": "1040491",
+   "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
+   "effect": "SCHEDULE_CHANGE",
+   "severity": 7,
+   "lifecycle": "UPCOMING",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T03:00:00-05:00",
+   "end": "2026-11-07T03:00:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
+   "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043068",
+   "header": "Fall River Line Train 8111 (1:05 PM from South Station) is operating 5-15 minutes behind schedule between Braintree and Fall River Depot.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-16T16:01:32-04:00",
-   "end": "2026-10-16T17:30:00-04:00",
+   "start": "2026-11-03T13:39:54-05:00",
+   "end": "2026-11-03T15:50:00-05:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-10-16T16:01:32-04:00"
-  },
-  {
-   "id": "1038493",
-   "header": "On Monday, October 26, a new Fall/Winter schedule will be in effect. Some times have been adjusted for seasonal effects and all train numbers have changed to 4-digits. Visit mbta.com/cr for more information.",
-   "effect": "SCHEDULE_CHANGE",
-   "severity": 3,
-   "lifecycle": "UPCOMING",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-10-26T03:00:00-04:00",
-   "end": "2026-11-02T03:00:00-05:00",
-   "routes": [
-    "CR-NewBedford",
-    "CR-Providence"
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
    ],
-   "stations": [],
-   "towns": [],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
    "url": null,
-   "updated": "2026-10-13T11:05:58-04:00"
+   "updated": "2026-11-03T13:39:54-05:00"
   }
  ],
  "stopParents": {

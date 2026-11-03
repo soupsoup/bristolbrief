@@ -1,0 +1,50 @@
+<aside class="taunton-banner" data-taunton-banner hidden aria-label="Taunton River flood warning">
+  <div class="wrap banner-inner">
+    <span class="banner-mark" aria-hidden="true">!</span>
+    <div class="banner-copy">
+      <strong>Taunton River Flood Warning</strong>
+      <span data-banner-summary>Live river conditions are being checked.</span>
+    </div>
+    <a href="/taunton-river/">Live stage + forecast <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+
+<script src="../lib/taunton-banner.ts"></script>
+
+<style>
+  .taunton-banner {
+    background: #7d241d;
+    color: #fffaf0;
+    font-family: var(--sans);
+    border-top: 1px solid rgb(255 255 255 / 0.18);
+  }
+  .taunton-banner[hidden] { display: none; }
+  .banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 58px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .banner-mark {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    flex: none;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    border-radius: 50%;
+    font-weight: 800;
+  }
+  .banner-copy { display: grid; flex: 1; gap: 1px; font-size: 13px; line-height: 1.35; }
+  .banner-copy strong { font-size: 14px; }
+  .taunton-banner a { color: inherit; font-size: 13px; font-weight: 800; white-space: nowrap; }
+  @media (max-width: 600px) {
+    .banner-inner { align-items: flex-start; gap: 9px; }
+    .banner-mark { width: 24px; height: 24px; }
+    .banner-copy { font-size: 12px; }
+    .banner-copy strong { font-size: 13px; }
+    .taunton-banner a { align-self: center; white-space: normal; text-align: right; max-width: 112px; }
+  }
+</style>

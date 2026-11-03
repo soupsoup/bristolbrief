@@ -8,6 +8,7 @@ import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
 import ElectionModule from '../components/ElectionModule.astro';
+import TauntonFloodBanner from '../components/TauntonFloodBanner.astro';
 import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
 import { storyTracker } from '../../scripts/lib/dedupe.mjs';
@@ -97,6 +98,7 @@ const meetings = meetingItems().slice(0, 6);
 
 ---
 <Base>
+  <TauntonFloodBanner />
   <ElectionModule />
   <div class="wrap">
     {!lead ? (

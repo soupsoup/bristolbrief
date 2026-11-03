@@ -1,12 +1,11 @@
 {
- "updated": "2026-11-02T23:35:44.917Z",
+ "updated": "2026-11-03T01:05:27.476Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-boston",
@@ -15,14 +14,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -33,16 +26,23 @@
    "error": "HTTP 404"
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": false,
-   "error": "HTTP 500"
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3594,28 +3594,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/obeOTsGYkRs/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "4A8XHpFVcJ8",
-   "title": "DEM to thin Arcadia Management Area of diseased trees #shorts",
-   "link": "https://www.youtube.com/shorts/4A8XHpFVcJ8",
-   "published": "2026-10-27T01:03:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/4A8XHpFVcJ8/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "gbYP92CdGEI",
-   "title": "Lane closures begin on Newport Pell and Mount Hope bridges #shorts",
-   "link": "https://www.youtube.com/shorts/gbYP92CdGEI",
-   "published": "2026-10-27T00:05:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gbYP92CdGEI/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

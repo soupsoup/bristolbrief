@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:18:05.182Z",
+ "updated": "2026-11-03T23:35:26.766Z",
  "alerts": [
   {
    "id": "1043105",
@@ -9,14 +9,14 @@
    "lifecycle": "NEW",
    "cause": "POLICE_ACTIVITY",
    "start": "2026-11-03T16:04:00-05:00",
-   "end": "2026-11-03T20:17:30-05:00",
+   "end": "2026-11-03T20:35:01-05:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-03T18:16:01-05:00"
+   "updated": "2026-11-03T18:18:10-05:00"
   },
   {
    "id": "1040491",
@@ -36,30 +36,13 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1043119",
-   "header": "Providence Line Train 6025 (4:15 PM from South Station) is cancelled today due to police activity on the right of way. Passengers may consider Providence Line Train (6:22 PM from South Station).",
-   "effect": "CANCELLATION",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-03T16:39:13-05:00",
-   "end": "2026-11-03T18:26:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-03T16:39:13-05:00"
-  },
-  {
    "id": "1043107",
-   "header": "Providence Line Train 6021 (3:20 PM from South Station) has been terminated after Readville due to police activity on the right of way.",
+   "header": "Update: Providence Line Train 6021 (3:20 PM from South Station) is no longer terminated and is operating significantly behind schedule between Readville and Providence due to police activity on the right of way.",
    "effect": "CANCELLATION",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "POLICE_ACTIVITY",
-   "start": "2026-11-03T16:04:53-05:00",
+   "start": "2026-11-03T16:04:00-05:00",
    "end": "2026-11-03T23:59:00-05:00",
    "routes": [
     "CR-Providence"
@@ -67,7 +50,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-03T16:04:53-05:00"
+   "updated": "2026-11-03T18:34:45-05:00"
   }
  ],
  "stopParents": {

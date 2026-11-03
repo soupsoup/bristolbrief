@@ -1,14 +1,9 @@
 ---
-import election from '../data/election.json';
-import electionResults from '../data/election-results.json';
+import { electionWindow } from '../lib/electionWindow';
 
 // Site-wide banner just below the main menu, from a week before the election until a week after.
-// Dates compare as America/New_York calendar days, and the site rebuilds on every ingest, so the
-// wording follows the clock: before, on, and after Election Day.
-const todayET = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
-const days = Math.round((Date.parse(`${election.date}T00:00:00Z`) - Date.parse(`${todayET}T00:00:00Z`)) / 864e5);
-const live = Object.keys((electionResults as { races?: object }).races ?? {}).length > 0;
-const show = days <= 7 && days >= -7;
+// The wording follows the clock (the site rebuilds on every ingest): before, on, and after Election Day.
+const { days, live, show } = electionWindow();
 const title = live
   ? 'Election results'
   : days > 1

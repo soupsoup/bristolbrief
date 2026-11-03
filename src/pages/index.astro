@@ -7,6 +7,7 @@ import TransitAlerts from '../components/TransitAlerts.astro';
 import TideTable from '../components/TideTable.astro';
 import MeetingCalendar from '../components/MeetingCalendar.astro';
 import SocialSection from '../components/SocialSection.astro';
+import ElectionModule from '../components/ElectionModule.astro';
 import { SITE, SECTIONS, TOWNS, townName } from '../site.config';
 import DiscordIcon from '../components/DiscordIcon.astro';
 import { storyTracker } from '../../scripts/lib/dedupe.mjs';
@@ -96,6 +97,7 @@ const meetings = meetingItems().slice(0, 6);
 
 ---
 <Base>
+  <ElectionModule />
   <div class="wrap">
     {!lead ? (
       <p class="page-dek" style="margin-top:40px">Headlines will appear after the first feed update (<code>npm run ingest</code>).</p>

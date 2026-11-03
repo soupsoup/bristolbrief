@@ -1,9 +1,23 @@
 {
- "updated": "2026-11-03T13:05:47.298Z",
+ "updated": "2026-11-03T13:35:33.206Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,6 +30,13 @@
    "kept": 0
   },
   {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -23,35 +44,34 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "EterhrObOOs",
+   "title": "Secretary of State Gregg Amore talks about voting on Election Day",
+   "link": "https://www.youtube.com/watch?v=EterhrObOOs",
+   "published": "2026-11-03T13:05:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EterhrObOOs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "AM9yB3OFTtA",
+   "title": "Voters head to the polls on Election Day",
+   "link": "https://www.youtube.com/watch?v=AM9yB3OFTtA",
+   "published": "2026-11-03T13:00:28.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/AM9yB3OFTtA/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "ZUZ3diC6LdQ",
    "title": "What's at stake this Election Day in Southern New England",
@@ -3698,16 +3718,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/ZmcAO6_NY9A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oyK8aH-CWHk",
-   "title": "Motorcyclist injured in Pawtucket crash",
-   "link": "https://www.youtube.com/watch?v=oyK8aH-CWHk",
-   "published": "2026-10-27T13:16:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oyK8aH-CWHk/mqdefault.jpg",
    "towns": []
   }
  ]

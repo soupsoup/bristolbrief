@@ -12,6 +12,11 @@ type Res = {
   total_votes: number;
   candidates: { name: string; party?: string | null; votes: number; pct: number | null; state_winner?: boolean }[];
   bristol?: { towns: number; candidates: { name: string; votes: number; pct: number | null }[] };
+  leader?: string | null;
+  margin?: number | null;
+  prev_margin?: number | null;
+  lead_changed_at?: string | null;
+  checked_at?: string;
 };
 
 const races = election.races as Race[];
@@ -34,6 +39,14 @@ const groups: { id: string; title: string; dek?: string }[] = [
 const racesIn = (g: string) => races.filter((r) => r.group === g);
 const leader = (r?: Res) => (r && r.candidates.length > 1 && r.candidates[0].votes > r.candidates[1].votes ? r.candidates[0].name : null);
 const q = election.questions;
+const tracker = election.tracker;
+const trend = (r?: Res) => {
+  if (!r || r.margin == null) return '';
+  const lead = r.leader ?? 'No leader';
+  const move = r.prev_margin != null && r.prev_margin !== r.margin ? ` (${r.margin > r.prev_margin ? 'up' : 'down'} from ${r.prev_margin} pts at the last check)` : '';
+  return r.leader ? `${lead} leads by ${r.margin} pts${move}` : 'Tied';
+};
+const changed = (r?: Res) => (r?.lead_changed_at ? `Lead changed ${fmt(r.lead_changed_at)}` : '');
 const pct = (v: number | null) => (v != null ? `${v}%` : '');
 const topLine = (r?: Res) => (r ? r.candidates.slice(0, 3).map((c) => `${c.name} ${pct(c.pct)}`).join(' · ') : '');
 const summaryRaces = races.filter((r) => results[r.key] && ['statewide', 'congress', 'council', 'county'].includes(r.group));
@@ -50,6 +63,7 @@ const links = election.links;
 
     <nav class="jump" aria-label="On this page">
       <a href="#results">Results</a>
+      <a href="#tracker">Race tracker</a>
       <a href="#polling">Polling places</a>
       <a href="#questions">Ballot questions</a>
       <a href="#candidates">Who is running</a>
@@ -65,7 +79,7 @@ const links = election.links;
       ) : (
         <p class="note">
           Results will appear here after the polls close at 8 p.m. This page checks the state's unofficial results every 30 minutes
-          and shows Bristol County totals for statewide races and ballot questions. The full count is on the
+          and shows Bristol County totals for statewide races and ballot questions. The full count is on the{' '}
           <a href={links.results} target="_blank" rel="noopener">state results site</a>.
         </p>
       )}
@@ -94,6 +108,37 @@ const links = election.links;
           <p class="meta">State House and State Senate results are in each race below.</p>
         </div>
       )}
+    </section>
+
+    <section id="tracker">
+      <div class="section-head"><h2>Race tracker</h2></div>
+      <p class="note">
+        For the three federal races that include Bristol County, traders on Kalshi and Polymarket put a price on each outcome.
+        Prices are expectations, not votes and not projections. A market "call" is when the odds held at 95% or more for five minutes after polls closed.
+        Odds refresh every minute.
+      </p>
+      <div class="track-grid">
+        {tracker.races.map((t) => {
+          const res = results[t.raceKey];
+          return (
+            <article class="track" data-race={t.id}>
+              <h3>{t.label}</h3>
+              <p class="track-names" data-names>&nbsp;</p>
+              <div class="odds" data-odds><p class="meta">Loading market odds…</p></div>
+              <p class="track-line" data-call></p>
+              <p class="track-line" data-move></p>
+              <p class="track-count">
+                {res ? (<><strong>State count:</strong> {trend(res)}. {changed(res) && <span>{changed(res)}.</span>}</>) : <span class="meta">State count: not reporting yet.</span>}
+              </p>
+              <p class="meta" data-stamp></p>
+            </article>
+          );
+        })}
+      </div>
+      <p class="meta">
+        Market data from our Market vs. Desk tracker (Kalshi and Polymarket, read-only; we do not trade). "Desk" calls are when news organizations' decision desks call a race.
+        These markets cover U.S. Senate and House races only, so state and county races use the state's count.
+      </p>
     </section>
 
     <section id="polling">
@@ -239,6 +284,9 @@ const links = election.links;
                         </tbody>
                       </table>
                     )}
+                    {res && (trend(res) || changed(res)) && (
+                      <p class="chip">{trend(res)}{changed(res) ? ` · ${changed(res)}` : ''}</p>
+                    )}
                     {res?.bristol && (
                       <table class="res-table">
                         <caption>Bristol County, {res.bristol.towns} of 20 towns</caption>
@@ -265,6 +313,79 @@ const links = election.links;
     </p>
   </div>
 </Base>
+
+<script is:inline define:vars={{ tracker }}>
+  (function () {
+    var ids = tracker.races.map(function (r) { return r.id; });
+    var H = { apikey: tracker.key, Authorization: 'Bearer ' + tracker.key };
+    function get(table, extra) {
+      return fetch(tracker.url + '/rest/v1/' + table + '?race_id=in.(' + ids.join(',') + ')' + extra, { headers: H })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error(String(r.status))); });
+    }
+    var fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+    var time = function (iso) { return fmt.format(new Date(iso)) + ' ET'; };
+    var pct = function (p) { return p >= 0.995 ? '>99%' : p <= 0.005 ? '<1%' : Math.round(p * 100) + '%'; };
+    var NAMES = { kalshi: 'Kalshi', polymarket: 'Polymarket', blend: 'Blend' };
+    var by = function (rows, id) { return rows.filter(function (r) { return r.race_id === id; }); };
+    function earliest(rows) { return rows.slice().sort(function (a, b) { return new Date(a.called_at) - new Date(b.called_at); })[0]; }
+    function render(data) {
+      tracker.races.forEach(function (t) {
+        var el = document.querySelector('[data-race="' + t.id + '"]');
+        if (!el) return;
+        var info = data.races.filter(function (r) { return r.id === t.id; })[0] || {};
+        el.querySelector('[data-names]').textContent = (info.d_name || 'Democrat') + ' (D) vs. ' + (info.r_name || 'Republican') + ' (R)';
+        var odds = by(data.odds, t.id);
+        var box = el.querySelector('[data-odds]');
+        if (!odds.length) { box.innerHTML = '<p class="meta">No market odds listed for this race right now.</p>'; }
+        else {
+          box.innerHTML = ['blend', 'kalshi', 'polymarket'].map(function (src) {
+            var o = odds.filter(function (x) { return x.source === src; })[0];
+            if (!o) return '';
+            var d = Number(o.d_prob);
+            return '<div class="odds-row"><span class="odds-src">' + NAMES[src] + '</span>' +
+              '<span class="odds-bar" role="img" aria-label="Democrat ' + pct(d) + ', Republican ' + pct(1 - d) + '"><i style="width:' + (d * 100).toFixed(1) + '%"></i></span>' +
+              '<span class="odds-val">D ' + pct(d) + ' · R ' + pct(1 - d) + '</span></div>';
+          }).join('');
+        }
+        var mc = by(data.market, t.id).filter(function (c) { return !c.reversed_at; });
+        var dc = by(data.desk, t.id);
+        var m = earliest(mc.filter(function (c) { return c.source === 'blend'; })) || earliest(mc);
+        var dk = earliest(dc.filter(function (c) { return c.source === 'manual'; })) || earliest(dc);
+        var line = [];
+        if (m) line.push('<strong>Markets called ' + m.side + '</strong> at ' + time(m.called_at) + ' (' + (NAMES[m.source] || m.source) + ').');
+        else line.push('Markets have not called this race.');
+        if (dk) line.push('<strong>Desks called ' + dk.side + '</strong> at ' + time(dk.called_at) + '.');
+        if (m && dk) {
+          var mins = Math.round((new Date(dk.called_at) - new Date(m.called_at)) / 60000);
+          line.push(mins > 0 ? 'Markets were ' + mins + ' min ahead.' : mins < 0 ? 'Desks were ' + (-mins) + ' min ahead.' : 'Called at the same time.');
+        }
+        el.querySelector('[data-call]').innerHTML = line.join(' ');
+        var mv = by(data.moves, t.id).filter(function (x) { return x.source !== 'blend'; })
+          .sort(function (a, b) { return new Date(b.updated_at) - new Date(a.updated_at); })[0];
+        el.querySelector('[data-move]').innerHTML = mv
+          ? '<strong>Big move</strong> toward ' + mv.toward + ' (' + NAMES[mv.source] + '): ' + Math.round(mv.from_p * 100) + '% to ' + Math.round(mv.to_p * 100) + '% by ' + time(mv.updated_at) + '.'
+          : '';
+        var stamp = odds.map(function (o) { return o.fetched_at; }).sort().pop();
+        el.querySelector('[data-stamp]').textContent = stamp ? 'Odds as of ' + time(stamp) + '.' : '';
+      });
+    }
+    function load() {
+      var since = new Date(Date.now() - 2 * 3600e3).toISOString();
+      Promise.all([
+        fetch(tracker.url + '/rest/v1/races?id=in.(' + ids.join(',') + ')&select=id,d_name,r_name', { headers: H }).then(function (r) { return r.ok ? r.json() : []; }),
+        get('latest_odds', '&select=race_id,source,d_prob,fetched_at'),
+        get('market_calls', '&select=race_id,source,called_at,side,reversed_at'),
+        get('desk_calls', '&select=race_id,source,called_at,side'),
+        get('moves', '&select=race_id,source,toward,from_p,to_p,updated_at&detected_at=gte.' + since),
+      ]).then(function (r) { render({ races: r[0], odds: r[1], market: r[2], desk: r[3], moves: r[4] }); })
+        .catch(function () {
+          document.querySelectorAll('[data-odds]').forEach(function (b) { b.innerHTML = '<p class="meta">Market odds are unavailable right now. The state count below still updates.</p>'; });
+        });
+    }
+    load();
+    setInterval(load, 60000);
+  })();
+</script>
 
 {live && <script is:inline>setTimeout(function () { location.reload(); }, 5 * 60 * 1000);</script>}
 
@@ -302,6 +423,18 @@ const links = election.links;
   tr.lead th, tr.lead td { font-weight: 700; }
   .res { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 24px; }
   .sources { margin-top: 28px; }
+  .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 10px 0 8px; }
+  .track { border: 1px solid var(--rule); border-top: 3px solid var(--navy); background: var(--paper-2); padding: 12px 14px; font-family: var(--sans); font-size: 14px; }
+  .track h3 { margin: 0 0 2px; font-family: var(--serif-display); font-size: 20px; }
+  .track-names { margin: 0 0 8px; color: var(--ink-2); }
+  .track p { margin: 6px 0 0; line-height: 1.45; }
+  :global(.odds-row) { display: grid; grid-template-columns: 96px 1fr; gap: 2px 8px; align-items: center; margin: 4px 0; }
+  :global(.odds-src) { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); }
+  :global(.odds-bar) { display: block; height: 10px; background: #c9ccd3; border-radius: 5px; overflow: hidden; }
+  :global(.odds-bar i) { display: block; height: 100%; background: var(--navy); }
+  :global(.odds-val) { grid-column: 2; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .track-count { padding-top: 6px; border-top: 1px solid var(--rule); }
+  .chip { margin: 8px 0 0; font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--accent); }
   .resources { border: 1px solid var(--rule); border-left: 4px solid var(--navy); background: var(--paper-2); padding: 10px 16px; margin: 0 0 8px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
   .resources p { margin: 0 0 6px; }
   .resources ul { margin: 0; padding-left: 18px; }

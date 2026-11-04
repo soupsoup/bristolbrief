@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-04T18:35:25.873Z",
+ "updated": "2026-11-04T19:05:28.962Z",
  "alerts": [
+  {
+   "id": "1043363",
+   "header": "Fall River Line Train 8111 (1:05 PM from South Station) remains stopped before Quincy Center and is 40-50 minutes behind schedule due to a train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-11-04T13:47:00-05:00",
+   "end": "2026-11-04T15:50:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-04T14:01:21-05:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -17,40 +42,6 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1043339",
-   "header": "New Bedford Line Train 8057 (12:13 PM from East Taunton) has departed East Taunton and is operating 10-20 minutes behind schedule due to holding for late Train 8107. ",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T12:27:00-05:00",
-   "end": "2026-11-04T13:38:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-04T12:39:08-05:00"
-  },
-  {
-   "id": "1043349",
-   "header": "New Bedford Line Train 8018 (11:48 AM from New Bedford) is stopped before Quincy Center and is 5-15 minutes behind schedule due to a mechanical issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "MECHANICAL_ISSUE",
-   "start": "2026-11-04T13:15:17-05:00",
-   "end": "2026-11-04T14:30:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-04T13:15:17-05:00"
   },
   {
    "id": "1043348",

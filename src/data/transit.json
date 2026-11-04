@@ -1,6 +1,72 @@
 {
- "updated": "2026-11-04T11:05:31.457Z",
+ "updated": "2026-11-04T20:35:48.044Z",
  "alerts": [
+  {
+   "id": "1043363",
+   "header": "Fall River Line Train 8111 (1:05 PM from South Station) is operating approximately 1 hour and 20 minutes behind schedule between South Station and Fall River due to an earlier train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 9,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-11-04T13:47:00-05:00",
+   "end": "2026-11-04T15:50:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-04T14:37:41-05:00"
+  },
+  {
+   "id": "1043385",
+   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is operating 35-45 minutes behind schedule between JFK/UMass and New Bedford due to a train with an earlier mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T14:34:00-05:00",
+   "end": "2026-11-04T17:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-04T15:11:34-05:00"
+  },
+  {
+   "id": "1043409",
+   "header": "Fall River/New Bedford Line passengers can expect moderate to severe delays due to an earlier train with a mechanical issue on the right of way in the Quincy Center area. ",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T15:25:47-05:00",
+   "end": "2026-11-04T16:30:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T15:25:47-05:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -17,6 +83,57 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043400",
+   "header": "New Bedford Line Train 8076 (4:27 PM from New Bedford) is now expected to depart New Bedford 15-25 minutes behind schedule due to an earlier train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "UPCOMING",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T16:27:00-05:00",
+   "end": "2026-11-04T17:52:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T15:24:41-05:00"
+  },
+  {
+   "id": "1043389",
+   "header": "Fall River Line Train 8174 (3:13 PM from Fall River Depot) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Line Train 8126 (4:41 pm from Fall River Depot).",
+   "effect": "CANCELLATION",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T15:13:00-05:00",
+   "end": "2026-11-04T16:34:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T14:45:59-05:00"
+  },
+  {
+   "id": "1043391",
+   "header": "Fall River Line Train 8163 (3:47 PM from East Taunton) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Train 8115 (3:38 pm from South Station).",
+   "effect": "CANCELLATION",
+   "severity": 1,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T15:47:00-05:00",
+   "end": "2026-11-04T17:10:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T14:47:36-05:00"
   }
  ],
  "stopParents": {

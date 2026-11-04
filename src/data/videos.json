@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-04T11:05:31.457Z",
+ "updated": "2026-11-04T20:35:48.044Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -9,22 +16,8 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,8 +37,15 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,17 +53,221 @@
  ],
  "videos": [
   {
-   "id": "zFoJ042ujZA",
-   "title": "WPRI 12 Weather Forecast for 11/4/26:  Warm and sunny today; some rain ahead",
-   "link": "https://www.youtube.com/watch?v=zFoJ042ujZA",
-   "published": "2026-11-04T09:56:57.000Z",
+   "id": "rVwphkKHYZc",
+   "title": "Election night in Southern New England",
+   "link": "https://www.youtube.com/watch?v=rVwphkKHYZc",
+   "published": "2026-11-04T18:55:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rVwphkKHYZc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "pxgup19zf58",
+   "title": "Helena Foulkes speaks day after winning Rhode Island governorship",
+   "link": "https://www.youtube.com/shorts/pxgup19zf58",
+   "published": "2026-11-04T18:11:53.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/pxgup19zf58/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "BgaRUfy_zKI",
+   "title": "Helena Foulkes reflects on Democratic wins as she prepares to take office as Rhode Island governor",
+   "link": "https://www.youtube.com/watch?v=BgaRUfy_zKI",
+   "published": "2026-11-04T17:59:39.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/BgaRUfy_zKI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "BcGL55_dG7Q",
+   "title": "WPRI 12 Weather Forecast for 11/4/26:  Warm and dry today; some rain ahead",
+   "link": "https://www.youtube.com/watch?v=BcGL55_dG7Q",
+   "published": "2026-11-04T17:50:39.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zFoJ042ujZA/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/BcGL55_dG7Q/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "fL9rMTfECwA",
+   "title": "Democrats win US House and Senate, ending GOP dominance",
+   "link": "https://www.youtube.com/watch?v=fL9rMTfECwA",
+   "published": "2026-11-04T17:25:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fL9rMTfECwA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "QF7R12lvW28",
+   "title": "CVS will separate its pharmacy and insurance businesses",
+   "link": "https://www.youtube.com/watch?v=QF7R12lvW28",
+   "published": "2026-11-04T17:24:43.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/QF7R12lvW28/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "QVxiAFhNbgw",
+   "title": "Brown testing siren at 12:30 p.m. Wednesday",
+   "link": "https://www.youtube.com/watch?v=QVxiAFhNbgw",
+   "published": "2026-11-04T17:23:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/QVxiAFhNbgw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "06LoFNH2HEA",
+   "title": "Helena Foulkes outlines priorities in exclusive 12 News interview after election victory",
+   "link": "https://www.youtube.com/watch?v=06LoFNH2HEA",
+   "published": "2026-11-04T17:23:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/06LoFNH2HEA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "c8DIVDFqdO4",
+   "title": "Voters react to 'Blue tsunami' that rocked the midterm election",
+   "link": "https://www.youtube.com/watch?v=c8DIVDFqdO4",
+   "published": "2026-11-04T17:20:14.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/c8DIVDFqdO4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6_bWvJt0zaE",
+   "title": "Overview of 2026 midterm election results in Rhode Island",
+   "link": "https://www.youtube.com/watch?v=6_bWvJt0zaE",
+   "published": "2026-11-04T17:09:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6_bWvJt0zaE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_QZeGkmaGtY",
+   "title": "Crews respond to large brush fire near I-295",
+   "link": "https://www.youtube.com/watch?v=_QZeGkmaGtY",
+   "published": "2026-11-04T17:07:31.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_QZeGkmaGtY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GiUXJTVIVVo",
+   "title": "Democrats sweep to victories across United States to take control of Congress",
+   "link": "https://www.youtube.com/watch?v=GiUXJTVIVVo",
+   "published": "2026-11-04T15:40:53.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/GiUXJTVIVVo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "2-Ej8WRppvA",
+   "title": "How world is reacting to US midterm elections",
+   "link": "https://www.youtube.com/watch?v=2-Ej8WRppvA",
+   "published": "2026-11-04T15:33:37.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/2-Ej8WRppvA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rdhOvfLFjyQ",
+   "title": "Results in Rhode Island key races",
+   "link": "https://www.youtube.com/watch?v=rdhOvfLFjyQ",
+   "published": "2026-11-04T14:09:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rdhOvfLFjyQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "trXlqTFwkKY",
+   "title": "Which Massachusetts ballot questions passed in 2026?",
+   "link": "https://www.youtube.com/watch?v=trXlqTFwkKY",
+   "published": "2026-11-04T14:03:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/trXlqTFwkKY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "M1DwesAslSM",
+   "title": "Recap of the races in Massachusetts",
+   "link": "https://www.youtube.com/watch?v=M1DwesAslSM",
+   "published": "2026-11-04T13:58:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/M1DwesAslSM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "STXcR5nBa7A",
+   "title": "Foulkes and Morales win big in Rhode Island",
+   "link": "https://www.youtube.com/watch?v=STXcR5nBa7A",
+   "published": "2026-11-04T13:55:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/STXcR5nBa7A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FBiWmktOl7k",
+   "title": "Ask Alison: What are those dirt piles in Garden City?",
+   "link": "https://www.youtube.com/watch?v=FBiWmktOl7k",
+   "published": "2026-11-04T13:55:32.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/FBiWmktOl7k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "R7Qv69l2Hc4",
+   "title": "12 News political analyst breaks down midterm election results",
+   "link": "https://www.youtube.com/watch?v=R7Qv69l2Hc4",
+   "published": "2026-11-04T13:52:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/R7Qv69l2Hc4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "uzxCaWVtus4",
+   "title": "Democrats have a remarkable night locally and nationally",
+   "link": "https://www.youtube.com/shorts/uzxCaWVtus4",
+   "published": "2026-11-04T12:35:09.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/uzxCaWVtus4/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "eNXsy8ZtX3Y",
+   "title": "Behind the Smiles Photo for 11/4/26 from Stephanie DiSano of Coventry",
+   "link": "https://www.youtube.com/watch?v=eNXsy8ZtX3Y",
+   "published": "2026-11-04T11:29:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/eNXsy8ZtX3Y/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
   },
   {
    "id": "eClsJ9AfUxI",
@@ -332,16 +536,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/rNuD5eCjRaQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "rVwphkKHYZc",
-   "title": "Election night in Southern New England",
-   "link": "https://www.youtube.com/watch?v=rVwphkKHYZc",
-   "published": "2026-11-04T00:57:12.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/rVwphkKHYZc/mqdefault.jpg",
    "towns": []
   },
   {
@@ -3409,268 +3603,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/l1OkIsDlq3U/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "MR5Ol532_7A",
-   "title": "RIC breaking ground on new business and technology building",
-   "link": "https://www.youtube.com/watch?v=MR5Ol532_7A",
-   "published": "2026-10-28T20:32:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MR5Ol532_7A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "fUfHFkubNLc",
-   "title": "Gov. Healey champions winter energy relief proposal in Attleboro",
-   "link": "https://www.youtube.com/watch?v=fUfHFkubNLc",
-   "published": "2026-10-28T20:29:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fUfHFkubNLc/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "AHRzkFcgcJ4",
-   "title": "New 12+ Episode: Nick Lascuola",
-   "link": "https://www.youtube.com/watch?v=AHRzkFcgcJ4",
-   "published": "2026-10-28T20:26:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/AHRzkFcgcJ4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oPt2f8dBNMY",
-   "title": "Community Focus: Seasonal illnesses",
-   "link": "https://www.youtube.com/watch?v=oPt2f8dBNMY",
-   "published": "2026-10-28T20:24:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oPt2f8dBNMY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ZiaMt-X1ZRg",
-   "title": "Federal Reserve keeps rates unchanged despite elevated inflation, gives little signal of next move",
-   "link": "https://www.youtube.com/watch?v=ZiaMt-X1ZRg",
-   "published": "2026-10-28T20:20:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZiaMt-X1ZRg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PExpK20VXYo",
-   "title": "Former Bradley Hospital worker accused of sexual assault takes plea deal",
-   "link": "https://www.youtube.com/watch?v=PExpK20VXYo",
-   "published": "2026-10-28T20:13:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PExpK20VXYo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2JeY9BnwgGo",
-   "title": "Prosecutors rest case in Matthew Farwell murder trial",
-   "link": "https://www.youtube.com/watch?v=2JeY9BnwgGo",
-   "published": "2026-10-28T20:12:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2JeY9BnwgGo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "TCqN5DSSo28",
-   "title": "Prosecution, defense seek to resolve Rehoboth murder case before trial",
-   "link": "https://www.youtube.com/watch?v=TCqN5DSSo28",
-   "published": "2026-10-28T20:12:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TCqN5DSSo28/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "UcGyG7vU9Ug",
-   "title": "Sandra Birchmore Case Daily Debrief: Prosecution rests in Matthew Farwell trial",
-   "link": "https://www.youtube.com/watch?v=UcGyG7vU9Ug",
-   "published": "2026-10-28T20:11:27.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/UcGyG7vU9Ug/mqdefault.jpg",
-   "towns": [
-    "easton"
-   ],
-   "local": true
-  },
-  {
-   "id": "oZ1ZwrM3u2g",
-   "title": "19-year-old man stabbed to death in Coventry, no details released on suspect",
-   "link": "https://www.youtube.com/watch?v=oZ1ZwrM3u2g",
-   "published": "2026-10-28T20:10:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oZ1ZwrM3u2g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "4RjEolZ1eE0",
-   "title": "5 charged with murder of Central Falls woman face judge",
-   "link": "https://www.youtube.com/watch?v=4RjEolZ1eE0",
-   "published": "2026-10-28T20:08:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/4RjEolZ1eE0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ls6x6qgbSyM",
-   "title": "Hearing held for Rehoboth man accused killing of pregnant girlfriend",
-   "link": "https://www.youtube.com/watch?v=ls6x6qgbSyM",
-   "published": "2026-10-28T17:08:35.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ls6x6qgbSyM/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "FzC4S4WarEo",
-   "title": "Spotlight New England:",
-   "link": "https://www.youtube.com/watch?v=FzC4S4WarEo",
-   "published": "2026-10-28T16:32:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/FzC4S4WarEo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "egZf2xr9olo",
-   "title": "Healey champions winter energy relief proposal in Attleboro",
-   "link": "https://www.youtube.com/watch?v=egZf2xr9olo",
-   "published": "2026-10-28T16:31:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/egZf2xr9olo/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "Bz22lIVadF0",
-   "title": "After fleeing Brazil, defeated presidential candidate Flávio Bolsonaro and his family land in Miami",
-   "link": "https://www.youtube.com/watch?v=Bz22lIVadF0",
-   "published": "2026-10-28T16:27:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Bz22lIVadF0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-xtl4c6WfVw",
-   "title": "Former Bradley Hospital worker pleads no contest to sexually assaulting underage patient",
-   "link": "https://www.youtube.com/watch?v=-xtl4c6WfVw",
-   "published": "2026-10-28T16:26:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-xtl4c6WfVw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "eMynaNVuC-s",
-   "title": "Family of 18-year-old killed in Rehoboth last year gathers outside court",
-   "link": "https://www.youtube.com/watch?v=eMynaNVuC-s",
-   "published": "2026-10-28T16:24:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/eMynaNVuC-s/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "Ym763iSbJZg",
-   "title": "Providence parents raise concerns over the district's use of AI reading program",
-   "link": "https://www.youtube.com/watch?v=Ym763iSbJZg",
-   "published": "2026-10-28T15:56:08.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Ym763iSbJZg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8B2TqMSdLKw",
-   "title": "A look at Gen Z spending habits",
-   "link": "https://www.youtube.com/watch?v=8B2TqMSdLKw",
-   "published": "2026-10-28T13:33:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8B2TqMSdLKw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Du2qVlLw17Y",
-   "title": "Driver accused of fleeing Providence crash has criminal history",
-   "link": "https://www.youtube.com/watch?v=Du2qVlLw17Y",
-   "published": "2026-10-28T13:32:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Du2qVlLw17Y/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "L4HhWYWWZCU",
-   "title": "Tiverton prepares to extend water lines to 6 PFAS-contaminated homes",
-   "link": "https://www.youtube.com/watch?v=L4HhWYWWZCU",
-   "published": "2026-10-28T13:29:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/L4HhWYWWZCU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "J_zqbmLe1W4",
-   "title": "Rehoboth man to be charged with girlfriend’s murder due back in court",
-   "link": "https://www.youtube.com/watch?v=J_zqbmLe1W4",
-   "published": "2026-10-28T13:19:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/J_zqbmLe1W4/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "KVsFo9km3r8",
-   "title": "5 charged with murder of Central Falls woman due in court",
-   "link": "https://www.youtube.com/watch?v=KVsFo9km3r8",
-   "published": "2026-10-28T12:14:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/KVsFo9km3r8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "X2Pgr8GIvlg",
-   "title": "Family of Coventry stabbing victim speak out",
-   "link": "https://www.youtube.com/shorts/X2Pgr8GIvlg",
-   "published": "2026-10-28T12:05:22.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/X2Pgr8GIvlg/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

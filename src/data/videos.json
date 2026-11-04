@@ -1,20 +1,6 @@
 {
- "updated": "2026-11-04T22:35:26.404Z",
+ "updated": "2026-11-04T23:05:44.653Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -23,22 +9,8 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -49,9 +21,86 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
+  {
+   "id": "6V5eVeqFnGo",
+   "title": "Rhode Islanders share hopes, concerns after election results",
+   "link": "https://www.youtube.com/watch?v=6V5eVeqFnGo",
+   "published": "2026-11-04T22:55:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6V5eVeqFnGo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "sSzaoZT2Sv8",
+   "title": "Helena Foulkes es elegida gobernadora de Rhode Island; Providence tendrá al alcalde más joven de su",
+   "link": "https://www.youtube.com/watch?v=sSzaoZT2Sv8",
+   "published": "2026-11-04T22:53:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sSzaoZT2Sv8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "HPYDo0nxTZk",
+   "title": "What Democratic control means for Rhode Island's influence in Washington",
+   "link": "https://www.youtube.com/watch?v=HPYDo0nxTZk",
+   "published": "2026-11-04T22:53:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HPYDo0nxTZk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "9mcYrWh96R8",
+   "title": "Governor-elect Helena Foulkes lays out vision for Rhode Island in sit-down with 12 News",
+   "link": "https://www.youtube.com/watch?v=9mcYrWh96R8",
+   "published": "2026-11-04T22:51:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/9mcYrWh96R8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Jpq5ugoXHN8",
+   "title": "WPRI 12 Weather Forecast 11-4-26 Rain Thursday Night Into Friday",
+   "link": "https://www.youtube.com/watch?v=Jpq5ugoXHN8",
+   "published": "2026-11-04T22:41:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Jpq5ugoXHN8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "LBrXLufcuiI",
    "title": "How accurately did Polymarket data predict 2026 election results?",
@@ -134,19 +183,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/5YnQLNcfB7Y/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "C0pC26yVtaQ",
-   "title": "WPRI 12 Weather Now 11-4-26. Rain Late Week",
-   "link": "https://www.youtube.com/watch?v=C0pC26yVtaQ",
-   "published": "2026-11-04T21:56:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/C0pC26yVtaQ/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "9Zh17vruurU",
@@ -3399,16 +3435,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/s8-T5qqIbbE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qbiQDvvTtCs",
-   "title": "I-Team: Documents shed light on \"lower-level\" airport worker gun arrest",
-   "link": "https://www.youtube.com/watch?v=qbiQDvvTtCs",
-   "published": "2026-10-28T22:59:16.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/qbiQDvvTtCs/mqdefault.jpg",
    "towns": []
   }
  ]

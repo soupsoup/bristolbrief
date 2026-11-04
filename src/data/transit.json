@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T17:05:53.306Z",
+ "updated": "2026-11-04T17:36:36.921Z",
  "alerts": [
   {
    "id": "1040491",
@@ -44,6 +44,23 @@
    "updated": "2026-11-04T12:00:37-05:00"
   },
   {
+   "id": "1043339",
+   "header": "New Bedford Line Train 8057 (12:13 PM from East Taunton) has yet to depart East Taunton and is 10-20 minutes behind schedule due to holding for late Train 8107. ",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T12:27:58-05:00",
+   "end": "2026-11-04T13:38:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T12:27:58-05:00"
+  },
+  {
    "id": "1043332",
    "header": "Providence Line Train 6020 (11:12 AM from Providence) is operating 5-15 minutes behind schedule between Mansfield and South Station.",
    "effect": "DELAY",
@@ -65,55 +82,6 @@
    ],
    "url": null,
    "updated": "2026-11-04T11:52:49-05:00"
-  },
-  {
-   "id": "1043324",
-   "header": "New Bedford Line Train 8055 (10:58 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford due to holding for late Train 8105.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T11:14:08-05:00",
-   "end": "2026-11-04T12:23:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-11-04T11:14:08-05:00"
-  },
-  {
-   "id": "1043306",
-   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and Fall River Depot due to train traffic.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T10:17:40-05:00",
-   "end": "2026-11-04T12:18:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-04T10:17:40-05:00"
   }
  ],
  "stopParents": {

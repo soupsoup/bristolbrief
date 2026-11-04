@@ -16,48 +16,33 @@
   var NAMES = { kalshi: 'Kalshi', polymarket: 'Polymarket', blend: 'Blend' };
   var by = function (rows, id) { return rows.filter(function (r) { return r.race_id === id; }); };
   function earliest(rows) { return rows.slice().sort(function (a, b) { return new Date(a.called_at) - new Date(b.called_at); })[0]; }
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   function render(data) {
     tracker.races.forEach(function (t) {
       var el = document.querySelector('[data-race="' + t.id + '"]');
       if (!el) return;
       var info = data.races.filter(function (r) { return r.id === t.id; })[0] || {};
-      el.querySelector('[data-names]').textContent = (info.d_name || 'Democrat') + ' (D) vs. ' + (info.r_name || 'Republican') + ' (R)';
-      var odds = by(data.odds, t.id);
-      var box = el.querySelector('[data-odds]');
-      if (!odds.length) { box.innerHTML = '<p class="meta">No market odds listed for this race right now.</p>'; }
-      else {
-        box.innerHTML = ['blend', 'kalshi', 'polymarket'].map(function (src) {
-          var o = odds.filter(function (x) { return x.source === src; })[0];
-          if (!o) return '';
-          var d = Number(o.d_prob);
-          return '<div class="odds-row"><span class="odds-src">' + NAMES[src] + '</span>' +
-            '<span class="odds-bar" role="img" aria-label="Democrat ' + pct(d) + ', Republican ' + pct(1 - d) + '"><i style="width:' + (d * 100).toFixed(1) + '%"></i></span>' +
-            '<span class="odds-val">D ' + pct(d) + ' · R ' + pct(1 - d) + '</span></div>';
-        }).join('');
-      }
-      var mc = by(data.market, t.id).filter(function (c) { return !c.reversed_at; });
-      var dc = by(data.desk, t.id);
-      var m = earliest(mc.filter(function (c) { return c.source === 'blend'; })) || earliest(mc);
-      var dk = earliest(dc.filter(function (c) { return c.source === 'manual'; })) || earliest(dc);
+      var d = info.d_name || 'Democrat';
+      var r = info.r_name || 'Republican';
       // Calls only count once the polls have closed. A market already past 95% at that point is stamped at poll close.
       var closeAt = info.poll_close_at ? new Date(info.poll_close_at) : null;
-      var mAt = m ? (closeAt && new Date(m.called_at) < closeAt ? closeAt.toISOString() : m.called_at) : null;
-      var line = [];
-      if (m) line.push('<strong>Markets called ' + m.side + '</strong> at ' + time(mAt) + (mAt !== m.called_at ? ' (poll close)' : '') + ' (' + (NAMES[m.source] || m.source) + ').');
-      else line.push('Markets have not called this race.');
-      if (dk) line.push('<strong>Desks called ' + dk.side + '</strong> at ' + time(dk.called_at) + '.');
-      if (m && dk) {
-        var mins = Math.round((new Date(dk.called_at) - new Date(mAt)) / 60000);
-        line.push(mins > 0 ? 'Markets were ' + mins + ' min ahead.' : mins < 0 ? 'Desks were ' + (-mins) + ' min ahead.' : 'Called at the same time.');
+      var clamp = function (iso) { return closeAt && new Date(iso) < closeAt ? closeAt.toISOString() : iso; };
+      var dk = earliest(by(data.desk, t.id).filter(function (c) { return c.source === 'manual'; })) || earliest(by(data.desk, t.id));
+      var mc = by(data.market, t.id).filter(function (c) { return !c.reversed_at; });
+      var m = earliest(mc.filter(function (c) { return c.source === 'blend'; })) || earliest(mc);
+      var call = dk || m;
+      var winnerEl = el.querySelector('[data-winner]');
+      var calledEl = el.querySelector('[data-called]');
+      if (call) {
+        var name = call.side === 'D' ? d : r;
+        winnerEl.innerHTML = '<span class="win-label">Winner</span> <strong>' + esc(name) + '</strong> (' + esc(call.side) + ')';
+        var who = dk ? 'Called by' + (dk.caller ? ' ' + esc(dk.caller) : ' the desks') : 'Called by the markets';
+        calledEl.textContent = who + ' at ' + time(clamp(call.called_at)) + '. Unofficial.';
+      } else {
+        winnerEl.innerHTML = esc(d) + ' (D) vs. ' + esc(r) + ' (R)';
+        var odds = by(data.odds, t.id).filter(function (o) { return o.source === 'blend'; })[0];
+        calledEl.textContent = odds ? 'Not called yet. Market odds: ' + esc(d) + ' ' + pct(Number(odds.d_prob)) + ', ' + esc(r) + ' ' + pct(1 - Number(odds.d_prob)) + '.' : 'Not called yet.';
       }
-      el.querySelector('[data-call]').innerHTML = line.join(' ');
-      var mv = by(data.moves, t.id).filter(function (x) { return x.source !== 'blend'; })
-        .sort(function (a, b) { return new Date(b.updated_at) - new Date(a.updated_at); })[0];
-      el.querySelector('[data-move]').innerHTML = mv
-        ? '<strong>Big move</strong> toward ' + mv.toward + ' (' + NAMES[mv.source] + '): ' + Math.round(mv.from_p * 100) + '% to ' + Math.round(mv.to_p * 100) + '% by ' + time(mv.updated_at) + '.'
-        : '';
-      var stamp = odds.map(function (o) { return o.fetched_at; }).sort().pop();
-      el.querySelector('[data-stamp]').textContent = stamp ? 'Odds as of ' + time(stamp) + '.' : '';
     });
   }
   function load() {

@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-04T02:05:41.464Z",
+ "updated": "2026-11-04T02:35:28.041Z",
  "alerts": [
   {
    "id": "1043196",
-   "header": "Providence Line Train 6038 (7:42 PM from Wickford Junction) is expected to depart Wickford Junction 35-45 minutes behind schedule due to earlier police activity on the right of way in the Readville area.",
+   "header": "Providence Line Train 6038 (7:42 PM from Wickford Junction) has departed Wickford Junction and is operating approximately 1 hour behind schedule due to earlier police activity on the right of way in the Readville area.",
    "effect": "DELAY",
    "severity": 8,
    "lifecycle": "NEW",
@@ -16,7 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-03T19:18:31-05:00"
+   "updated": "2026-11-03T21:24:06-05:00"
   },
   {
    "id": "1040491",
@@ -34,83 +34,6 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1043207",
-   "header": "Fall River Line Train 8173 (8:01 PM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and Fall River Depot.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-03T20:24:08-05:00",
-   "end": "2026-11-03T21:25:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-03T20:24:08-05:00"
-  },
-  {
-   "id": "1043199",
-   "header": "Providence Line Train 6033 (7:18 PM from South Station) is operating 15-25 minutes behind schedule between South Station and Providence. This train will bypass Ruggles and Back Bay due to earlier police activity on the right of way in the Readville area.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-03T19:38:31-05:00",
-   "end": "2026-11-03T21:33:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-03T19:38:31-05:00"
-  },
-  {
-   "id": "1043192",
-   "header": "New Bedford Line Train 8023 (6:38 PM from South Station) is operating 10-20 minutes behind schedule between Quincy Center and New Bedford.",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-03T19:10:34-05:00",
-   "end": "2026-11-03T21:21:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-11-03T19:10:34-05:00"
   }
  ],
  "stopParents": {

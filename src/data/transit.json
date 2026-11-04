@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-04T19:05:28.962Z",
+ "updated": "2026-11-04T19:35:29.358Z",
  "alerts": [
   {
    "id": "1043363",
-   "header": "Fall River Line Train 8111 (1:05 PM from South Station) remains stopped before Quincy Center and is 40-50 minutes behind schedule due to a train with a mechanical issue ahead.",
+   "header": "Fall River Line Train 8111 (1:05 PM from South Station) remains stopped before Quincy Center and is approximately 1 hour behind schedule due to a train with a mechanical issue ahead.",
    "effect": "DELAY",
-   "severity": 8,
+   "severity": 9,
    "lifecycle": "NEW",
    "cause": "MECHANICAL_ISSUE",
    "start": "2026-11-04T13:47:00-05:00",
@@ -24,7 +24,7 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-04T14:01:21-05:00"
+   "updated": "2026-11-04T14:22:08-05:00"
   },
   {
    "id": "1040491",
@@ -42,6 +42,40 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043385",
+   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) has yet to depart South Station and is 10-20 minutes behind schedule.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T14:34:05-05:00",
+   "end": "2026-11-04T17:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T14:34:05-05:00"
+  },
+  {
+   "id": "1043381",
+   "header": "New Bedford Line Train 8020 (1:03 PM from New Bedford) is stopped at Braintree and is 10-20 minutes behind schedule due to a train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T14:28:39-05:00",
+   "end": "2026-11-04T15:44:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T14:28:39-05:00"
   },
   {
    "id": "1043348",

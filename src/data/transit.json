@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T15:05:44.615Z",
+ "updated": "2026-11-04T15:35:37.617Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,14 +19,14 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1043274",
-   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 15-25 minutes behind schedule between Middleborough and Fall River due to train traffic.",
+   "id": "1043306",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and Fall River Depot due to train traffic.",
    "effect": "DELAY",
-   "severity": 6,
+   "severity": 4,
    "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-11-04T08:42:00-05:00",
-   "end": "2026-11-04T11:02:00-05:00",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T10:17:40-05:00",
+   "end": "2026-11-04T12:18:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -41,28 +41,7 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-04T09:50:01-05:00"
-  },
-  {
-   "id": "1043298",
-   "header": "New Bedford Line Train 8053 (9:43 AM from East Taunton) has yet to depart East Taunton and is 5-15 minutes behind schedule due to holding for late Train 8103.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T09:55:12-05:00",
-   "end": "2026-11-04T11:08:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton"
-   ],
-   "towns": [
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-04T09:55:12-05:00"
+   "updated": "2026-11-04T10:17:40-05:00"
   },
   {
    "id": "1043296",

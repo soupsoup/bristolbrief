@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T20:05:27.310Z",
+ "updated": "2026-11-04T20:35:48.044Z",
  "alerts": [
   {
    "id": "1043363",
@@ -28,9 +28,9 @@
   },
   {
    "id": "1043385",
-   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is stopped before JFK/UMass and is 30-40 minutes behind schedule due to a train with an earlier mechanical issue ahead and train traffic.",
+   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is operating 35-45 minutes behind schedule between JFK/UMass and New Bedford due to a train with an earlier mechanical issue ahead.",
    "effect": "DELAY",
-   "severity": 7,
+   "severity": 8,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-11-04T14:34:00-05:00",
@@ -38,10 +38,34 @@
    "routes": [
     "CR-NewBedford"
    ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-04T15:11:34-05:00"
+  },
+  {
+   "id": "1043409",
+   "header": "Fall River/New Bedford Line passengers can expect moderate to severe delays due to an earlier train with a mechanical issue on the right of way in the Quincy Center area. ",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T15:25:47-05:00",
+   "end": "2026-11-04T16:30:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-04T14:57:43-05:00"
+   "updated": "2026-11-04T15:25:47-05:00"
   },
   {
    "id": "1040491",
@@ -59,6 +83,23 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043400",
+   "header": "New Bedford Line Train 8076 (4:27 PM from New Bedford) is now expected to depart New Bedford 15-25 minutes behind schedule due to an earlier train with a mechanical issue ahead.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "UPCOMING",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T16:27:00-05:00",
+   "end": "2026-11-04T17:52:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T15:24:41-05:00"
   },
   {
    "id": "1043389",
@@ -82,7 +123,7 @@
    "header": "Fall River Line Train 8163 (3:47 PM from East Taunton) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Train 8115 (3:38 pm from South Station).",
    "effect": "CANCELLATION",
    "severity": 1,
-   "lifecycle": "UPCOMING",
+   "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
    "start": "2026-11-04T15:47:00-05:00",
    "end": "2026-11-04T17:10:00-05:00",

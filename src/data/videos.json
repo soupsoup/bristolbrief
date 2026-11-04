@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T20:05:27.310Z",
+ "updated": "2026-11-04T20:35:48.044Z",
  "channels": [
   {
    "id": "boston25",
@@ -9,8 +9,22 @@
    "kept": 0
   },
   {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,20 +37,6 @@
    "kept": 15
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
@@ -44,8 +44,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -3602,125 +3602,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/l1OkIsDlq3U/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "MR5Ol532_7A",
-   "title": "RIC breaking ground on new business and technology building",
-   "link": "https://www.youtube.com/watch?v=MR5Ol532_7A",
-   "published": "2026-10-28T20:32:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MR5Ol532_7A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "fUfHFkubNLc",
-   "title": "Gov. Healey champions winter energy relief proposal in Attleboro",
-   "link": "https://www.youtube.com/watch?v=fUfHFkubNLc",
-   "published": "2026-10-28T20:29:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fUfHFkubNLc/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "AHRzkFcgcJ4",
-   "title": "New 12+ Episode: Nick Lascuola",
-   "link": "https://www.youtube.com/watch?v=AHRzkFcgcJ4",
-   "published": "2026-10-28T20:26:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/AHRzkFcgcJ4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oPt2f8dBNMY",
-   "title": "Community Focus: Seasonal illnesses",
-   "link": "https://www.youtube.com/watch?v=oPt2f8dBNMY",
-   "published": "2026-10-28T20:24:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oPt2f8dBNMY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ZiaMt-X1ZRg",
-   "title": "Federal Reserve keeps rates unchanged despite elevated inflation, gives little signal of next move",
-   "link": "https://www.youtube.com/watch?v=ZiaMt-X1ZRg",
-   "published": "2026-10-28T20:20:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZiaMt-X1ZRg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PExpK20VXYo",
-   "title": "Former Bradley Hospital worker accused of sexual assault takes plea deal",
-   "link": "https://www.youtube.com/watch?v=PExpK20VXYo",
-   "published": "2026-10-28T20:13:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PExpK20VXYo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2JeY9BnwgGo",
-   "title": "Prosecutors rest case in Matthew Farwell murder trial",
-   "link": "https://www.youtube.com/watch?v=2JeY9BnwgGo",
-   "published": "2026-10-28T20:12:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2JeY9BnwgGo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "TCqN5DSSo28",
-   "title": "Prosecution, defense seek to resolve Rehoboth murder case before trial",
-   "link": "https://www.youtube.com/watch?v=TCqN5DSSo28",
-   "published": "2026-10-28T20:12:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TCqN5DSSo28/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "UcGyG7vU9Ug",
-   "title": "Sandra Birchmore Case Daily Debrief: Prosecution rests in Matthew Farwell trial",
-   "link": "https://www.youtube.com/watch?v=UcGyG7vU9Ug",
-   "published": "2026-10-28T20:11:27.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/UcGyG7vU9Ug/mqdefault.jpg",
-   "towns": [
-    "easton"
-   ],
-   "local": true
-  },
-  {
-   "id": "oZ1ZwrM3u2g",
-   "title": "19-year-old man stabbed to death in Coventry, no details released on suspect",
-   "link": "https://www.youtube.com/watch?v=oZ1ZwrM3u2g",
-   "published": "2026-10-28T20:10:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oZ1ZwrM3u2g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "4RjEolZ1eE0",
-   "title": "5 charged with murder of Central Falls woman face judge",
-   "link": "https://www.youtube.com/watch?v=4RjEolZ1eE0",
-   "published": "2026-10-28T20:08:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/4RjEolZ1eE0/mqdefault.jpg",
    "towns": []
   }
  ]

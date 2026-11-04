@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T00:35:28.882Z",
+ "updated": "2026-11-04T01:06:41.705Z",
  "alerts": [
   {
    "id": "1043105",
@@ -9,7 +9,7 @@
    "lifecycle": "NEW",
    "cause": "POLICE_ACTIVITY",
    "start": "2026-11-03T16:04:00-05:00",
-   "end": "2026-11-03T21:35:01-05:00",
+   "end": "2026-11-03T22:05:01-05:00",
    "routes": [
     "CR-Providence"
    ],
@@ -99,6 +99,30 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043199",
+   "header": "Providence Line Train 6033 (7:18 PM from South Station) is operating 15-25 minutes behind schedule between South Station and Providence. This train will bypass Ruggles and Back Bay due to earlier police activity on the right of way in the Readville area.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-03T19:38:31-05:00",
+   "end": "2026-11-03T21:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-03T19:38:31-05:00"
   },
   {
    "id": "1043192",

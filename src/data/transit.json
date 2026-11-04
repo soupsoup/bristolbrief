@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T18:05:25.918Z",
+ "updated": "2026-11-04T18:35:25.873Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,31 +19,6 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1043331",
-   "header": "Fall River Line Train 8107 (10:50 AM from South Station) is operating 15-25 minutes behind schedule between Campello and Fall River due to train traffic.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-11-04T11:51:00-05:00",
-   "end": "2026-11-04T13:30:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-04T12:00:37-05:00"
-  },
-  {
    "id": "1043339",
    "header": "New Bedford Line Train 8057 (12:13 PM from East Taunton) has departed East Taunton and is operating 10-20 minutes behind schedule due to holding for late Train 8107. ",
    "effect": "DELAY",
@@ -61,27 +36,46 @@
    "updated": "2026-11-04T12:39:08-05:00"
   },
   {
-   "id": "1043332",
-   "header": "Providence Line Train 6020 (11:12 AM from Providence) is operating 5-15 minutes behind schedule between Mansfield and South Station.",
+   "id": "1043349",
+   "header": "New Bedford Line Train 8018 (11:48 AM from New Bedford) is stopped before Quincy Center and is 5-15 minutes behind schedule due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-11-04T13:15:17-05:00",
+   "end": "2026-11-04T14:30:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T13:15:17-05:00"
+  },
+  {
+   "id": "1043348",
+   "header": "Fall River Line Train 8109 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T11:52:49-05:00",
-   "end": "2026-11-04T13:29:00-05:00",
+   "start": "2026-11-04T13:12:46-05:00",
+   "end": "2026-11-04T14:45:00-05:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
    "stations": [
-    "Attleboro",
-    "Mansfield"
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
    ],
    "towns": [
-    "attleboro",
-    "mansfield"
+    "freetown",
+    "fall-river",
+    "taunton"
    ],
    "url": null,
-   "updated": "2026-11-04T11:52:49-05:00"
+   "updated": "2026-11-04T13:12:46-05:00"
   }
  ],
  "stopParents": {

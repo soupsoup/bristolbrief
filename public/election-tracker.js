@@ -39,12 +39,15 @@
       var dc = by(data.desk, t.id);
       var m = earliest(mc.filter(function (c) { return c.source === 'blend'; })) || earliest(mc);
       var dk = earliest(dc.filter(function (c) { return c.source === 'manual'; })) || earliest(dc);
+      // Calls only count once the polls have closed. A market already past 95% at that point is stamped at poll close.
+      var closeAt = info.poll_close_at ? new Date(info.poll_close_at) : null;
+      var mAt = m ? (closeAt && new Date(m.called_at) < closeAt ? closeAt.toISOString() : m.called_at) : null;
       var line = [];
-      if (m) line.push('<strong>Markets called ' + m.side + '</strong> at ' + time(m.called_at) + ' (' + (NAMES[m.source] || m.source) + ').');
+      if (m) line.push('<strong>Markets called ' + m.side + '</strong> at ' + time(mAt) + (mAt !== m.called_at ? ' (poll close)' : '') + ' (' + (NAMES[m.source] || m.source) + ').');
       else line.push('Markets have not called this race.');
       if (dk) line.push('<strong>Desks called ' + dk.side + '</strong> at ' + time(dk.called_at) + '.');
       if (m && dk) {
-        var mins = Math.round((new Date(dk.called_at) - new Date(m.called_at)) / 60000);
+        var mins = Math.round((new Date(dk.called_at) - new Date(mAt)) / 60000);
         line.push(mins > 0 ? 'Markets were ' + mins + ' min ahead.' : mins < 0 ? 'Desks were ' + (-mins) + ' min ahead.' : 'Called at the same time.');
       }
       el.querySelector('[data-call]').innerHTML = line.join(' ');
@@ -60,7 +63,7 @@
   function load() {
     var since = new Date(Date.now() - 2 * 3600e3).toISOString();
     Promise.all([
-      fetch(tracker.url + '/rest/v1/races?id=in.(' + ids.join(',') + ')&select=id,d_name,r_name', { headers: H }).then(function (r) { return r.ok ? r.json() : []; }),
+      fetch(tracker.url + '/rest/v1/races?id=in.(' + ids.join(',') + ')&select=id,d_name,r_name,poll_close_at', { headers: H }).then(function (r) { return r.ok ? r.json() : []; }),
       get('latest_odds', '&select=race_id,source,d_prob,fetched_at'),
       get('market_calls', '&select=race_id,source,called_at,side,reversed_at'),
       get('desk_calls', '&select=race_id,source,called_at,side'),

@@ -5,10 +5,11 @@
 
 export const STATS_BASE = 'https://electionstats.state.ma.us';
 export const ELECTION_DATE = '2026-11-03';
-// Polls close at 8 p.m. EST (daylight time ended Nov. 1). Results are checked from then until the
-// window closes; later runs leave the last saved results alone.
+// Polls close at 8 p.m. EST (daylight time ended Nov. 1). The state does not post unofficial results on
+// election night: its results site published the Sept. 1 primary about a week later. So the check starts at
+// poll close and keeps running for weeks; later runs leave the last saved results alone.
 export const POLLS_CLOSE = '2026-11-03T20:00:00-05:00';
-export const WINDOW_END = '2026-11-10T00:00:00-05:00';
+export const WINDOW_END = '2026-12-01T00:00:00-05:00';
 
 // Office ids the state uses, for narrower searches when the broad one comes back empty.
 const OFFICE_IDS = [3, 4, 5, 6, 8, 9, 12, 45, 53, 90, 386, 389, 529, 530, 537];

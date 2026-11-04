@@ -118,11 +118,11 @@ test('a missing party is filled from the ballot list', () => {
   assert.equal(races['house-9'].candidates[1].party, 'Republican');
 });
 
-test('the election window opens at 8 p.m. on Nov. 3 and closes Nov. 10', () => {
+test('the election window opens at 8 p.m. on Nov. 3 and runs through November', () => {
   assert.equal(inWindow(new Date('2026-11-04T00:59:00Z')), false); // 7:59 p.m. EST
   assert.equal(inWindow(new Date('2026-11-04T01:00:00Z')), true);
-  assert.equal(inWindow(new Date('2026-11-09T12:00:00Z')), true);
-  assert.equal(inWindow(new Date('2026-11-11T00:00:00Z')), false);
+  assert.equal(inWindow(new Date('2026-11-20T12:00:00Z')), true);
+  assert.equal(inWindow(new Date('2026-12-02T00:00:00Z')), false);
   assert.equal(inWindow(new Date('2026-10-01T00:00:00Z'), { force: true }), true);
 });
 

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T22:05:51.798Z",
+ "updated": "2026-11-04T22:35:26.404Z",
  "alerts": [
   {
    "id": "1040491",
@@ -58,6 +58,101 @@
    "updated": "2026-11-04T16:45:11-05:00"
   },
   {
+   "id": "1043467",
+   "header": "New Bedford Line Train 8065 (5:02 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T17:13:40-05:00",
+   "end": "2026-11-04T18:27:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-04T17:13:40-05:00"
+  },
+  {
+   "id": "1043466",
+   "header": "Providence Line Train 6025 (4:15 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T17:13:04-05:00",
+   "end": "2026-11-04T18:26:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-04T17:13:04-05:00"
+  },
+  {
+   "id": "1043465",
+   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Ruggles and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T17:12:20-05:00",
+   "end": "2026-11-04T19:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-04T17:12:20-05:00"
+  },
+  {
+   "id": "1043464",
+   "header": "Fall River Line Train 8126 (4:41 PM from Fall River Depot) is operating 5-15 minutes behind schedule between Freetown and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T17:08:41-05:00",
+   "end": "2026-11-04T19:25:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-04T17:08:41-05:00"
+  },
+  {
    "id": "1043459",
    "header": "New Bedford Line Train 8017 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between JFK/UMass and New Bedford.",
    "effect": "DELAY",
@@ -105,23 +200,6 @@
    ],
    "url": null,
    "updated": "2026-11-04T16:33:55-05:00"
-  },
-  {
-   "id": "1043391",
-   "header": "Fall River Line Train 8163 (3:47 PM from East Taunton) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Train 8115 (3:38 pm from South Station).",
-   "effect": "CANCELLATION",
-   "severity": 1,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T15:47:00-05:00",
-   "end": "2026-11-04T17:10:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-04T14:47:36-05:00"
   }
  ],
  "stopParents": {

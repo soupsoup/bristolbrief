@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-04T19:35:29.358Z",
+ "updated": "2026-11-04T20:05:27.310Z",
  "alerts": [
   {
    "id": "1043363",
-   "header": "Fall River Line Train 8111 (1:05 PM from South Station) remains stopped before Quincy Center and is approximately 1 hour behind schedule due to a train with a mechanical issue ahead.",
+   "header": "Fall River Line Train 8111 (1:05 PM from South Station) is operating approximately 1 hour and 20 minutes behind schedule between South Station and Fall River due to an earlier train with a mechanical issue ahead.",
    "effect": "DELAY",
    "severity": 9,
    "lifecycle": "NEW",
@@ -24,7 +24,24 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-04T14:22:08-05:00"
+   "updated": "2026-11-04T14:37:41-05:00"
+  },
+  {
+   "id": "1043385",
+   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is stopped before JFK/UMass and is 30-40 minutes behind schedule due to a train with an earlier mechanical issue ahead and train traffic.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-04T14:34:00-05:00",
+   "end": "2026-11-04T17:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-04T14:57:43-05:00"
   },
   {
    "id": "1040491",
@@ -44,63 +61,38 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1043385",
-   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) has yet to depart South Station and is 10-20 minutes behind schedule.",
-   "effect": "DELAY",
+   "id": "1043389",
+   "header": "Fall River Line Train 8174 (3:13 PM from Fall River Depot) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Line Train 8126 (4:41 pm from Fall River Depot).",
+   "effect": "CANCELLATION",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T14:34:05-05:00",
-   "end": "2026-11-04T17:02:00-05:00",
+   "start": "2026-11-04T15:13:00-05:00",
+   "end": "2026-11-04T16:34:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-04T14:34:05-05:00"
+   "updated": "2026-11-04T14:45:59-05:00"
   },
   {
-   "id": "1043381",
-   "header": "New Bedford Line Train 8020 (1:03 PM from New Bedford) is stopped at Braintree and is 10-20 minutes behind schedule due to a train with a mechanical issue ahead.",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
+   "id": "1043391",
+   "header": "Fall River Line Train 8163 (3:47 PM from East Taunton) has been cancelled today due to an equipment shortage. Passengers may consider Fall River Train 8115 (3:38 pm from South Station).",
+   "effect": "CANCELLATION",
+   "severity": 1,
+   "lifecycle": "UPCOMING",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T14:28:39-05:00",
-   "end": "2026-11-04T15:44:00-05:00",
+   "start": "2026-11-04T15:47:00-05:00",
+   "end": "2026-11-04T17:10:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-04T14:28:39-05:00"
-  },
-  {
-   "id": "1043348",
-   "header": "Fall River Line Train 8109 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-04T13:12:46-05:00",
-   "end": "2026-11-04T14:45:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-04T13:12:46-05:00"
+   "updated": "2026-11-04T14:47:36-05:00"
   }
  ],
  "stopParents": {

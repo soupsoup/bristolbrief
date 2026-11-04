@@ -21,14 +21,11 @@ const config = JSON.stringify({ url: tracker.url, key: tracker.key, races: track
     return (
       <article class="track" data-race={t.id}>
         <h3>{t.label}</h3>
-        <p class="track-names" data-names>&nbsp;</p>
-        <div class="odds" data-odds><p class="meta">Loading market odds…</p></div>
-        <p class="track-line" data-call></p>
-        <p class="track-line" data-move></p>
-        <p class="track-count">
-          {res && trend(res) ? (<><strong>State count:</strong> {trend(res)}. {changed(res) && <span>{changed(res)}.</span>}</>) : <span class="meta">State count: not reporting yet.</span>}
-        </p>
-        <p class="meta" data-stamp></p>
+        <p class="track-winner" data-winner>&nbsp;</p>
+        <p class="track-called" data-called>Checking the call…</p>
+        {res && trend(res) && (
+          <p class="track-count"><strong>State count:</strong> {trend(res)}. {changed(res) && <span>{changed(res)}.</span>}</p>
+        )}
       </article>
     );
   })}
@@ -40,12 +37,10 @@ const config = JSON.stringify({ url: tracker.url, key: tracker.key, races: track
   .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 10px 0 8px; }
   .track { border: 1px solid var(--rule); border-top: 3px solid var(--navy); background: var(--paper-2); padding: 12px 14px; font-family: var(--sans); font-size: 14px; }
   .track h3 { margin: 0 0 2px; font-family: var(--serif-display); font-size: 20px; }
-  .track-names { margin: 0 0 8px; color: var(--ink-2); }
+  .track-winner { margin: 6px 0 0; font-size: 18px; line-height: 1.3; }
+  .track-winner strong { font-family: var(--serif-display); font-size: 22px; }
+  .win-label { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-right: 4px; }
+  .track-called { margin: 4px 0 8px; color: var(--ink-2); font-size: 13px; }
   .track p { margin: 6px 0 0; line-height: 1.45; }
-  .odds-row { display: grid; grid-template-columns: 96px 1fr; gap: 2px 8px; align-items: center; margin: 4px 0; }
-  .odds-src { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); }
-  .odds-bar { display: block; height: 10px; background: #c9ccd3; border-radius: 5px; overflow: hidden; }
-  .odds-bar i { display: block; height: 100%; background: var(--navy); }
-  .odds-val { grid-column: 2; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
   .track-count { padding-top: 6px; border-top: 1px solid var(--rule); }
 </style>

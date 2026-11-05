@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T20:35:27.852Z",
+ "updated": "2026-11-05T21:05:30.644Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,40 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043704",
+   "header": "New Bedford Line Train 8022 (2:04 PM from New Bedford) is operating 15-25 minutes behind schedule between Braintree and South Station.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T15:17:00-05:00",
+   "end": "2026-11-05T16:44:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-05T15:43:38-05:00"
+  },
+  {
+   "id": "1043712",
+   "header": "Stoughton Line Train 6320 (3:05 PM from Stoughton) is operating 5-15 minutes behind schedule between Hyde Park and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T15:37:25-05:00",
+   "end": "2026-11-05T16:43:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-05T15:37:25-05:00"
   },
   {
    "id": "1043707",
@@ -40,23 +74,6 @@
    ],
    "url": null,
    "updated": "2026-11-05T15:30:24-05:00"
-  },
-  {
-   "id": "1043704",
-   "header": "New Bedford Line Train 8022 (2:04 PM from New Bedford) is operating 5-15 minutes behind schedule between Brockton and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-05T15:17:07-05:00",
-   "end": "2026-11-05T16:44:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-05T15:17:07-05:00"
   },
   {
    "id": "1043703",

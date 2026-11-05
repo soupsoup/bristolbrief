@@ -85,6 +85,21 @@ const links = election.links;
           <a href={links.results} target="_blank" rel="noopener">state results site</a>.
         </p>
       )}
+      <div class="outcomes">
+        <h3>Statewide ballot questions</h3>
+        <ul>
+          {q.map((x) => (
+            <li class={`oc ${x.outcome.status}`}>
+              <a href={`#q${x.n}`}>Question {x.n}: {x.title}</a>
+              <span class={`oc-badge ${x.outcome.status}`}>{x.outcome.label}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="meta">As of {election.outcomes.as_of}. {election.outcomes.note}</p>
+        <p class="meta">
+          {election.outcomes.sources.map((s, i) => (<><a href={s.url} target="_blank" rel="noopener">{s.label}</a>{i < election.outcomes.sources.length - 1 ? '; ' : '.'}</>))}
+        </p>
+      </div>
       {live && (
         <div class="summary">
           {summaryRaces.length > 0 && (
@@ -163,7 +178,8 @@ const links = election.links;
         return (
           <article class="question" id={`q${x.n}`}>
             <p class="q-label">Question {x.n} · {x.type}</p>
-            <h3>{x.title}</h3>
+            <h3>{x.title} <span class={`oc-badge ${x.outcome.status}`}>{x.outcome.label}</span></h3>
+            <p class="q-outcome"><strong>Result:</strong> {x.outcome.statewide} <span class="meta">{x.outcome.local}</span></p>
             <p>{x.summary}</p>
             <dl class="yn">
               <dt>A yes vote</dt><dd>{x.yes}</dd>
@@ -335,6 +351,16 @@ const links = election.links;
   tr.lead th, tr.lead td { font-weight: 700; }
   .res { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 24px; }
   .sources { margin-top: 28px; }
+  .outcomes { font-family: var(--sans); margin: 10px 0 6px; }
+  .outcomes h3 { font-size: 15px; margin: 8px 0 4px; }
+  .outcomes ul { list-style: none; margin: 0; padding: 0; }
+  .outcomes li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 14px; padding: 6px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .oc-badge { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: #dfe3ea; color: #1a2330; white-space: nowrap; vertical-align: middle; }
+  .oc-badge.passed { background: #d7ecd9; color: #14391a; }
+  .oc-badge.failed { background: #f2dad6; color: #5c1a12; }
+  .oc-badge.uncalled { background: #f6e7b4; color: #4a3600; }
+  .q-outcome { font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+  .q-outcome .meta { display: block; margin-top: 2px; }
   .chip { margin: 8px 0 0; font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--accent); }
   .resources { border: 1px solid var(--rule); border-left: 4px solid var(--navy); background: var(--paper-2); padding: 10px 16px; margin: 0 0 8px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
   .resources p { margin: 0 0 6px; }

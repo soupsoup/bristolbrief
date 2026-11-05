@@ -235,3 +235,11 @@ test('the tracker config lists the three Bristol County federal races', () => {
   assert.deepEqual(doc.tracker.races.map((r) => r.id), ['ma-sen', 'ma-04', 'ma-09']);
   assert.match(doc.tracker.url, /^https:\/\//);
 });
+
+test('every ballot question has a result status, a statewide line and sources', () => {
+  for (const q of doc.questions) {
+    assert.ok(['passed', 'failed', 'uncalled'].includes(q.outcome.status), `question ${q.n}`);
+    assert.ok(q.outcome.label && q.outcome.statewide, `question ${q.n}`);
+  }
+  assert.ok(doc.outcomes.sources.length > 0);
+});

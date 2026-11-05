@@ -1,26 +1,41 @@
 {
- "updated": "2026-11-05T22:05:44.954Z",
+ "updated": "2026-11-05T22:35:24.464Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "nbc10-wjar",
@@ -28,30 +43,39 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "zmxDhGqdy6Y",
+   "title": "Revolution Wind fully operational after federal stop-work orders",
+   "link": "https://www.youtube.com/watch?v=zmxDhGqdy6Y",
+   "published": "2026-11-05T22:23:18.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/zmxDhGqdy6Y/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "KG9zIKS0Kus",
+   "title": "Sen. Jack Reed talks about Democratic sweep, Trump, Hegseth and Costco",
+   "link": "https://www.youtube.com/watch?v=KG9zIKS0Kus",
+   "published": "2026-11-05T22:23:04.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/KG9zIKS0Kus/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wUYebQ2NnrY",
+   "title": "Sandra Birchmore Case Daily Debrief: Matthew Farwell case about to go to jury",
+   "link": "https://www.youtube.com/watch?v=wUYebQ2NnrY",
+   "published": "2026-11-05T22:12:10.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/wUYebQ2NnrY/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "0uZ4ILTZRtY",
    "title": "Boston Globe RI: 46 animals test positive for rabies in 2026",
@@ -125,7 +149,7 @@
   },
   {
    "id": "nkFyI4h-x_E",
-   "title": "Demolition of the Potter Street bridge",
+   "title": "Transportation officials detail closure of Interstate 195 for bridge removal in East Providence",
    "link": "https://www.youtube.com/watch?v=nkFyI4h-x_E",
    "published": "2026-11-05T20:03:43.000Z",
    "channel": "nbc10-wjar",
@@ -3429,66 +3453,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/e3oAvZVURfU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NQgx3hVOvOo",
-   "title": "RI Division of Taxation warns of phone scam",
-   "link": "https://www.youtube.com/watch?v=NQgx3hVOvOo",
-   "published": "2026-10-29T22:33:40.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NQgx3hVOvOo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "DSDvnFn7dJo",
-   "title": "DCYF pauses intakes, referrals to Ocean Tides in Narragansett",
-   "link": "https://www.youtube.com/watch?v=DSDvnFn7dJo",
-   "published": "2026-10-29T22:33:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/DSDvnFn7dJo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "jSG__QKaP8M",
-   "title": "Matos criticizes Loughlin over campaign finance error",
-   "link": "https://www.youtube.com/watch?v=jSG__QKaP8M",
-   "published": "2026-10-29T22:28:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jSG__QKaP8M/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "KtqZ2YFjYcQ",
-   "title": "RI Board of Elections: Direct mailers don't count toward campaign spending limits",
-   "link": "https://www.youtube.com/watch?v=KtqZ2YFjYcQ",
-   "published": "2026-10-29T22:26:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/KtqZ2YFjYcQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mXl8mVb-8RE",
-   "title": "Spending on RI governor's race lowest in years",
-   "link": "https://www.youtube.com/watch?v=mXl8mVb-8RE",
-   "published": "2026-10-29T22:22:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mXl8mVb-8RE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8NxVqZxQoHg",
-   "title": "Westerly veterans find connection and camaraderie over free breakfasts",
-   "link": "https://www.youtube.com/watch?v=8NxVqZxQoHg",
-   "published": "2026-10-29T22:20:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/8NxVqZxQoHg/mqdefault.jpg",
    "towns": []
   }
  ]

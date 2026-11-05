@@ -1,41 +1,47 @@
 {
- "updated": "2026-11-05T22:35:24.464Z",
+ "updated": "2026-11-05T23:35:32.264Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -46,6 +52,101 @@
   }
  ],
  "videos": [
+  {
+   "id": "X8Vha0MAz8o",
+   "title": "Children's Friend gets $430K in federal funding",
+   "link": "https://www.youtube.com/watch?v=X8Vha0MAz8o",
+   "published": "2026-11-05T23:08:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/X8Vha0MAz8o/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "k4xeamwXK48",
+   "title": "Chris Markey elected Bristol County district attorney",
+   "link": "https://www.youtube.com/watch?v=k4xeamwXK48",
+   "published": "2026-11-05T23:05:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/k4xeamwXK48/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "BOlCirAxoco",
+   "title": "30 arrested in Elmhurst over Halloween weekend #shorts",
+   "link": "https://www.youtube.com/shorts/BOlCirAxoco",
+   "published": "2026-11-05T23:05:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BOlCirAxoco/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "YUQnmxY8Buo",
+   "title": "RI Sens. Reed, Whitehouse to both chair major committees next year",
+   "link": "https://www.youtube.com/watch?v=YUQnmxY8Buo",
+   "published": "2026-11-05T22:54:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YUQnmxY8Buo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "89F7NBHDTf4",
+   "title": "12 News anchor Mike Montecalvo is a fierce advocate for Alzheimer's awareness",
+   "link": "https://www.youtube.com/watch?v=89F7NBHDTf4",
+   "published": "2026-11-05T22:52:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/89F7NBHDTf4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "veP5mvBzyus",
+   "title": "Revolution Wind farm now operating at full capacity",
+   "link": "https://www.youtube.com/watch?v=veP5mvBzyus",
+   "published": "2026-11-05T22:49:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/veP5mvBzyus/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "FFUFgBEVnIg",
+   "title": "How Bristol County residents voted in governor's race",
+   "link": "https://www.youtube.com/watch?v=FFUFgBEVnIg",
+   "published": "2026-11-05T22:46:48.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/FFUFgBEVnIg/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "ZKCIlHNYLE4",
+   "title": "30 arrested near Providence College during Halloween weekend",
+   "link": "https://www.youtube.com/watch?v=ZKCIlHNYLE4",
+   "published": "2026-11-05T22:44:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZKCIlHNYLE4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "J8RhJqehJSA",
+   "title": "Small businesses seek support ahead of I-195 closure",
+   "link": "https://www.youtube.com/watch?v=J8RhJqehJSA",
+   "published": "2026-11-05T22:37:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J8RhJqehJSA/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "zmxDhGqdy6Y",
    "title": "Revolution Wind fully operational after federal stop-work orders",
@@ -68,12 +169,74 @@
   },
   {
    "id": "wUYebQ2NnrY",
-   "title": "Sandra Birchmore Case Daily Debrief: Matthew Farwell case about to go to jury",
+   "title": "Sandra Birchmore Case Daily Debrief: Legal analysis of Matthew Farwell trial",
    "link": "https://www.youtube.com/watch?v=wUYebQ2NnrY",
    "published": "2026-11-05T22:12:10.000Z",
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/wUYebQ2NnrY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6wLXopH1JeA",
+   "title": "Rep. Gabe Amo on Tuesday's \"blue wave\"",
+   "link": "https://www.youtube.com/watch?v=6wLXopH1JeA",
+   "published": "2026-11-05T22:09:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6wLXopH1JeA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "6sTu9_CsR9A",
+   "title": "Several injured after shooting at Iowa post office",
+   "link": "https://www.youtube.com/watch?v=6sTu9_CsR9A",
+   "published": "2026-11-05T22:04:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6sTu9_CsR9A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RL3fXaP0hrs",
+   "title": "Closing arguments in Matthew Farwell's trial scheduled for Friday",
+   "link": "https://www.youtube.com/watch?v=RL3fXaP0hrs",
+   "published": "2026-11-05T22:04:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RL3fXaP0hrs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "SlmcpYR-7rA",
+   "title": "Bristol County elects new district attorney",
+   "link": "https://www.youtube.com/watch?v=SlmcpYR-7rA",
+   "published": "2026-11-05T22:03:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/SlmcpYR-7rA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "CVlC46v-G_M",
+   "title": "Revolution Wind operating at full capacity",
+   "link": "https://www.youtube.com/watch?v=CVlC46v-G_M",
+   "published": "2026-11-05T21:59:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/CVlC46v-G_M/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "jVk-nBU7qwI",
+   "title": "Children's Friend gets $430k in federal funding",
+   "link": "https://www.youtube.com/watch?v=jVk-nBU7qwI",
+   "published": "2026-11-05T21:58:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jVk-nBU7qwI/mqdefault.jpg",
    "towns": []
   },
   {
@@ -3383,77 +3546,6 @@
    "thumbnail": "https://i.ytimg.com/vi/kQ7Ds6vEnSM/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "HnRTETSXc9k",
-   "title": "Blitz 12 Player of the Week: Classical RB Tahmeed Moshood",
-   "link": "https://www.youtube.com/watch?v=HnRTETSXc9k",
-   "published": "2026-10-29T23:27:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/HnRTETSXc9k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "P6hA3s1k7VE",
-   "title": "Sen. Reed seeks more aid as heating oil spikes and Northeast reserves release looms",
-   "link": "https://www.youtube.com/watch?v=P6hA3s1k7VE",
-   "published": "2026-10-29T23:23:49.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/P6hA3s1k7VE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Dzg3QXtApXc",
-   "title": "New England Nation OT: Karen Guregian on the Patriots' season #shorts",
-   "link": "https://www.youtube.com/shorts/Dzg3QXtApXc",
-   "published": "2026-10-29T23:13:56.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Dzg3QXtApXc/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "1AdmdwAbEKU",
-   "title": "Woman wants to bring Rocky Point's Corkscrew roller coaster back to Rhode Island",
-   "link": "https://www.youtube.com/watch?v=1AdmdwAbEKU",
-   "published": "2026-10-29T22:56:19.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1AdmdwAbEKU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Me1ORRHukbE",
-   "title": "Rhode Island voters to decide on $50 million bond for history center, preservation grants",
-   "link": "https://www.youtube.com/watch?v=Me1ORRHukbE",
-   "published": "2026-10-29T22:44:36.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Me1ORRHukbE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "E-HQXAWpWus",
-   "title": "Providence councilor prevails in free speech lawsuit against governor's staff",
-   "link": "https://www.youtube.com/watch?v=E-HQXAWpWus",
-   "published": "2026-10-29T22:41:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/E-HQXAWpWus/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "e3oAvZVURfU",
-   "title": "Project aims to create more affordable housing in Middletown",
-   "link": "https://www.youtube.com/watch?v=e3oAvZVURfU",
-   "published": "2026-10-29T22:36:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/e3oAvZVURfU/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

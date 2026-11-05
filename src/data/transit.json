@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T23:05:37.758Z",
+ "updated": "2026-11-05T23:35:32.264Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,14 +19,14 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1043756",
-   "header": "Providence Line Train 6025 (4:15 PM from South Station) is operating 10-20 minutes behind schedule between Mansfield and Providence.",
+   "id": "1043789",
+   "header": "Providence Line Train 6029 (5:37 PM from South Station) is operating 5-15 minutes behind schedule between Canton Junction and Wickford Junction.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-05T17:14:25-05:00",
-   "end": "2026-11-05T18:26:00-05:00",
+   "start": "2026-11-05T18:13:35-05:00",
+   "end": "2026-11-05T20:29:00-05:00",
    "routes": [
     "CR-Providence"
    ],
@@ -40,7 +40,7 @@
     "mansfield"
    ],
    "url": null,
-   "updated": "2026-11-05T17:14:25-05:00"
+   "updated": "2026-11-05T18:13:35-05:00"
   },
   {
    "id": "1043770",
@@ -65,28 +65,6 @@
    ],
    "url": null,
    "updated": "2026-11-05T17:37:25-05:00"
-  },
-  {
-   "id": "1043736",
-   "header": "Providence Line Train 6023 (3:47 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-05T16:40:18-05:00",
-   "end": "2026-11-05T18:30:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-11-05T16:40:18-05:00"
   }
  ],
  "stopParents": {

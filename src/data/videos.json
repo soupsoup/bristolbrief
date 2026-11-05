@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-05T15:35:29.049Z",
+ "updated": "2026-11-05T16:35:29.609Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "7news-boston",
@@ -23,22 +30,15 @@
    "kept": 0
   },
   {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -52,6 +52,16 @@
   }
  ],
  "videos": [
+  {
+   "id": "AT8KOh2Tohs",
+   "title": "Former Republican mayor wins seat in Rhode Island General Assembly as independent",
+   "link": "https://www.youtube.com/watch?v=AT8KOh2Tohs",
+   "published": "2026-11-05T15:32:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/AT8KOh2Tohs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "A0aH2jpvYjY",
    "title": "Democrats, Republicans assess fallout from midterm elections",
@@ -3554,20 +3564,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/5VJuTlA0oBk/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "87WUGcerTnQ",
-   "title": "Child, 5, walks off elementary school property",
-   "link": "https://www.youtube.com/shorts/87WUGcerTnQ",
-   "published": "2026-10-29T16:19:52.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/87WUGcerTnQ/mqdefault.jpg",
-   "towns": [
-    "dighton"
-   ],
-   "local": true,
-   "short": true
   }
  ]
 }

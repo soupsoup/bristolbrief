@@ -1,23 +1,12 @@
 {
- "updated": "2026-11-06T01:35:47.419Z",
+ "updated": "2026-11-06T08:06:26.208Z",
  "channels": [
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wpri",
@@ -27,25 +16,169 @@
    "kept": 15
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "mZB-8Xzk5Pk",
+   "title": "WPRI 12 Weather Forecast 11-5-26 Heavy Rain, Local Flooding Friday",
+   "link": "https://www.youtube.com/watch?v=mZB-8Xzk5Pk",
+   "published": "2026-11-06T04:28:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mZB-8Xzk5Pk/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "9adtEQLdDyA",
+   "title": "Providence Place announces enhanced security, requires adult supervision for minors",
+   "link": "https://www.youtube.com/watch?v=9adtEQLdDyA",
+   "published": "2026-11-06T04:17:21.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/9adtEQLdDyA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "mthDluyMpNU",
+   "title": "Case and North Attleboro each get a first round win in MIAA playoffs",
+   "link": "https://www.youtube.com/watch?v=mthDluyMpNU",
+   "published": "2026-11-06T03:56:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mthDluyMpNU/mqdefault.jpg",
+   "towns": [
+    "north-attleborough"
+   ],
+   "local": true
+  },
+  {
+   "id": "BKnP_6tQDzQ",
+   "title": "Police: Man hit with hatchet in Providence",
+   "link": "https://www.youtube.com/watch?v=BKnP_6tQDzQ",
+   "published": "2026-11-06T03:34:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BKnP_6tQDzQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "G_L2mCXINfY",
+   "title": "1 arrested after crash in East Providence",
+   "link": "https://www.youtube.com/watch?v=G_L2mCXINfY",
+   "published": "2026-11-06T03:32:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/G_L2mCXINfY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "v28DgzIQ4Rc",
+   "title": "Woman questions RI Supreme Court nominee's abortion views, citing past relationship",
+   "link": "https://www.youtube.com/watch?v=v28DgzIQ4Rc",
+   "published": "2026-11-06T03:32:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/v28DgzIQ4Rc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "pLd920SIcog",
+   "title": "Fire breaks out in New Bedford school admin building",
+   "link": "https://www.youtube.com/watch?v=pLd920SIcog",
+   "published": "2026-11-06T03:29:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/pLd920SIcog/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "O6cmGePWLQk",
+   "title": "Seekonk man with rare condition seeks to raise awareness",
+   "link": "https://www.youtube.com/watch?v=O6cmGePWLQk",
+   "published": "2026-11-06T03:27:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/O6cmGePWLQk/mqdefault.jpg",
+   "towns": [
+    "seekonk"
+   ],
+   "local": true
+  },
+  {
+   "id": "1KBJX-oP80M",
+   "title": "1 rescued from Attleboro apartment fire",
+   "link": "https://www.youtube.com/watch?v=1KBJX-oP80M",
+   "published": "2026-11-06T02:57:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1KBJX-oP80M/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "15RuC844N2Q",
+   "title": "Both R.I. Senators to chair major committees in 2027 #shorts",
+   "link": "https://www.youtube.com/shorts/15RuC844N2Q",
+   "published": "2026-11-06T02:22:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/15RuC844N2Q/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "Go9xG1T4TeE",
+   "title": "I-195 to close overnight in East Providence, Nov. 6 thru 7 #shorts",
+   "link": "https://www.youtube.com/shorts/Go9xG1T4TeE",
+   "published": "2026-11-06T01:37:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Go9xG1T4TeE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "w50PsO0O2tA",
    "title": "Blitz 12 Player of the Week: Narragansett WR Max Downey",
@@ -80,17 +213,47 @@
    "towns": []
   },
   {
-   "id": "WOlGjf7DreU",
-   "title": "WPRI 12 Weather Forecast 11-5-26  Weather Alert Friday",
-   "link": "https://www.youtube.com/watch?v=WOlGjf7DreU",
-   "published": "2026-11-06T00:05:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/WOlGjf7DreU/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
+   "id": "KM4KHPXb6zs",
+   "title": "Privacy for sale: The surprising ways we're exposing our data",
+   "link": "https://www.youtube.com/watch?v=KM4KHPXb6zs",
+   "published": "2026-11-06T00:04:12.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/KM4KHPXb6zs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "usx-sbMjgx4",
+   "title": "McKee's high court pick faces scrutiny over abortion views following email from ex",
+   "link": "https://www.youtube.com/watch?v=usx-sbMjgx4",
+   "published": "2026-11-05T23:58:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/usx-sbMjgx4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "HRWhmG7Xyno",
+   "title": "Bodycam shows encounter that left 2 Fall River officers injured, suspect dead",
+   "link": "https://www.youtube.com/watch?v=HRWhmG7Xyno",
+   "published": "2026-11-05T23:58:22.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/HRWhmG7Xyno/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "loZEUvv8jVg",
+   "title": "RIDOT says overnight closure of I-195 for bridge demolition was designed to lessen impact",
+   "link": "https://www.youtube.com/watch?v=loZEUvv8jVg",
+   "published": "2026-11-05T23:56:24.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/loZEUvv8jVg/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "S7zJyJljsFk",
@@ -113,6 +276,16 @@
    "towns": []
   },
   {
+   "id": "TvSCaHFqvS8",
+   "title": "‘I lied’: Body camera video shows fish discovery during Middletown boat inspection",
+   "link": "https://www.youtube.com/watch?v=TvSCaHFqvS8",
+   "published": "2026-11-05T23:54:30.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/TvSCaHFqvS8/mqdefault.jpg",
+   "towns": []
+  },
+  {
    "id": "3kg2UeUNZYo",
    "title": "Foulkes names transition staff; seeks ideas, applicants",
    "link": "https://www.youtube.com/watch?v=3kg2UeUNZYo",
@@ -121,6 +294,19 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/3kg2UeUNZYo/mqdefault.jpg",
    "towns": []
+  },
+  {
+   "id": "tT3euHuz7oo",
+   "title": "Community has Trick or Treat 'redo' for 4 -year-old who missed it",
+   "link": "https://www.youtube.com/watch?v=tT3euHuz7oo",
+   "published": "2026-11-05T23:53:49.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/tT3euHuz7oo/mqdefault.jpg",
+   "towns": [
+    "acushnet"
+   ],
+   "local": true
   },
   {
    "id": "wQ2-AErGZ54",
@@ -183,6 +369,26 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/8-HYtGJubDc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "CBg_jRPGEs0",
+   "title": "Localized flooding possible from periods of heavy rain Friday",
+   "link": "https://www.youtube.com/watch?v=CBg_jRPGEs0",
+   "published": "2026-11-05T23:41:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/CBg_jRPGEs0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "p56LDNbmSus",
+   "title": "Class ring lost in Puget Sound 47 years ago returned to Pawtucket graduate",
+   "link": "https://www.youtube.com/watch?v=p56LDNbmSus",
+   "published": "2026-11-05T23:30:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/p56LDNbmSus/mqdefault.jpg",
    "towns": []
   },
   {
@@ -3578,72 +3784,6 @@
     "easton"
    ],
    "local": true
-  },
-  {
-   "id": "5_BWNGjKvE0",
-   "title": "Coast Guard House looks back on Superstorm Sandy",
-   "link": "https://www.youtube.com/shorts/5_BWNGjKvE0",
-   "published": "2026-10-30T03:15:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5_BWNGjKvE0/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "UknG6uYFQA0",
-   "title": "Lebanese Pita Pocket receives outpouring of support after hateful calls",
-   "link": "https://www.youtube.com/watch?v=UknG6uYFQA0",
-   "published": "2026-10-30T03:12:27.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/UknG6uYFQA0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "9z5xRePd1QE",
-   "title": "WPRI 12 Weather Forecast 10-29-26 Sunny Breezy Mild Friday",
-   "link": "https://www.youtube.com/watch?v=9z5xRePd1QE",
-   "published": "2026-10-30T03:12:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/9z5xRePd1QE/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "UNqXDWJyH-A",
-   "title": "Rhode Island Hospital nurse calls for more security after staff car break-ins",
-   "link": "https://www.youtube.com/watch?v=UNqXDWJyH-A",
-   "published": "2026-10-30T03:07:43.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/UNqXDWJyH-A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "JDCLWmM9x8I",
-   "title": "Coast Guard House looks back on Superstorm Sandy 14 years later",
-   "link": "https://www.youtube.com/watch?v=JDCLWmM9x8I",
-   "published": "2026-10-30T02:21:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/JDCLWmM9x8I/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "huTlKUnREV4",
-   "title": "4 Providence schools struggle with heating issues",
-   "link": "https://www.youtube.com/watch?v=huTlKUnREV4",
-   "published": "2026-10-30T02:21:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/huTlKUnREV4/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

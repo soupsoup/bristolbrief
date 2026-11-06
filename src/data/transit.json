@@ -1,6 +1,29 @@
 {
- "updated": "2026-11-06T10:05:31.949Z",
+ "updated": "2026-11-06T10:35:33.269Z",
  "alerts": [
+  {
+   "id": "1043861",
+   "header": "Providence Line Train 6002 (4:10 AM from Providence) is operating 20-30 minutes behind schedule between Attleboro and South Station due to slippery rail conditions.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T05:07:00-05:00",
+   "end": "2026-11-06T06:30:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-06T05:09:13-05:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -17,6 +40,29 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043862",
+   "header": "Providence Line Train 6001 (4:20 AM from South Station) is operating 15-25 minutes behind schedule between Canton Junction and Wickford Junction due to slippery rail conditions.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T05:13:23-05:00",
+   "end": "2026-11-06T07:18:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-06T05:13:23-05:00"
   }
  ],
  "stopParents": {

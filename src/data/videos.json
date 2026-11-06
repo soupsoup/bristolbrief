@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T10:35:33.269Z",
+ "updated": "2026-11-06T11:05:24.859Z",
  "channels": [
   {
    "id": "wpri",
@@ -9,22 +9,22 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,8 +37,8 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -52,6 +52,16 @@
   }
  ],
  "videos": [
+  {
+   "id": "wUYebQ2NnrY",
+   "title": "Sandra Birchmore Case Daily Debrief: Legal analysis of Matthew Farwell trial",
+   "link": "https://www.youtube.com/watch?v=wUYebQ2NnrY",
+   "published": "2026-11-06T10:41:20.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/wUYebQ2NnrY/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "ZCUpk2g0E7w",
    "title": "WPRI 12 Weather Forecast for 11/6/26:  Flood watch...rain and thunder today",
@@ -517,16 +527,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/KG9zIKS0Kus/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "wUYebQ2NnrY",
-   "title": "Sandra Birchmore Case Daily Debrief: Legal analysis of Matthew Farwell trial",
-   "link": "https://www.youtube.com/watch?v=wUYebQ2NnrY",
-   "published": "2026-11-05T22:12:10.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/wUYebQ2NnrY/mqdefault.jpg",
    "towns": []
   },
   {
@@ -3749,41 +3749,6 @@
    ],
    "local": true,
    "short": true
-  },
-  {
-   "id": "NFM4lMIWd8c",
-   "title": "Fire breaks out at abandoned mill in Central Falls",
-   "link": "https://www.youtube.com/watch?v=NFM4lMIWd8c",
-   "published": "2026-10-30T10:57:12.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NFM4lMIWd8c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7pEcj0HGKdY",
-   "title": "Dartmouth provost resigns over AI use",
-   "link": "https://www.youtube.com/watch?v=7pEcj0HGKdY",
-   "published": "2026-10-30T10:40:27.000Z",
-   "channel": "wcvb",
-   "channelName": "WCVB Channel 5",
-   "thumbnail": "https://i.ytimg.com/vi/7pEcj0HGKdY/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
-   ],
-   "local": true
-  },
-  {
-   "id": "TvtBId0L4-I",
-   "title": "Behind the Smiles Photo for 10/30/26 from Jasmin in Lincoln",
-   "link": "https://www.youtube.com/watch?v=TvtBId0L4-I",
-   "published": "2026-10-30T10:36:22.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/TvtBId0L4-I/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
   }
  ]
 }

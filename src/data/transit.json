@@ -1,30 +1,6 @@
 {
- "updated": "2026-11-06T16:05:54.673Z",
+ "updated": "2026-11-06T16:35:32.270Z",
  "alerts": [
-  {
-   "id": "1043936",
-   "header": "Providence Line Train 6016 (8:52 AM from TF Green) has departed TF Green Airport and is operating 20-30 minutes behind schedule due to police activity on the right of way in the Wickford area.",
-   "effect": "DELAY",
-   "severity": 7,
-   "lifecycle": "NEW",
-   "cause": "POLICE_ACTIVITY",
-   "start": "2026-11-06T08:56:00-05:00",
-   "end": "2026-11-06T11:28:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-06T09:15:18-05:00"
-  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -91,25 +67,28 @@
    "updated": "2026-11-06T11:04:47-05:00"
   },
   {
-   "id": "1043947",
-   "header": "Providence Line Train 6009 (9:25 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction due to slippery rail conditions.",
+   "id": "1043958",
+   "header": "New Bedford Line Train 8055 (10:58 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford due to holding for late Train 8105.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T10:23:17-05:00",
-   "end": "2026-11-06T12:10:00-05:00",
+   "start": "2026-11-06T11:16:30-05:00",
+   "end": "2026-11-06T12:23:00-05:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
    "stations": [
-    "Attleboro"
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
    ],
    "towns": [
-    "attleboro"
+    "taunton",
+    "new-bedford"
    ],
    "url": null,
-   "updated": "2026-11-06T10:23:17-05:00"
+   "updated": "2026-11-06T11:16:30-05:00"
   }
  ],
  "stopParents": {

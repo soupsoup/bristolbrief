@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T00:11:53.183Z",
+ "updated": "2026-11-06T00:36:44.469Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,56 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043822",
+   "header": "Providence Line Train 6031 (6:22 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T19:25:30-05:00",
+   "end": "2026-11-05T20:36:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-11-05T19:25:30-05:00"
+  },
+  {
+   "id": "1043813",
+   "header": "New Bedford Line Train 8023 (6:38 PM from South Station) is operating 5-15 minutes behind schedule between Braintree and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T19:13:26-05:00",
+   "end": "2026-11-05T21:21:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-05T19:13:26-05:00"
   },
   {
    "id": "1043789",
@@ -41,30 +91,6 @@
    ],
    "url": null,
    "updated": "2026-11-05T18:13:35-05:00"
-  },
-  {
-   "id": "1043770",
-   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-05T17:37:25-05:00",
-   "end": "2026-11-05T19:33:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-05T17:37:25-05:00"
   }
  ],
  "stopParents": {

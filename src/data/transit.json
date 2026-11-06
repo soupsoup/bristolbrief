@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T01:35:47.419Z",
+ "updated": "2026-11-06T02:05:31.663Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,31 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043843",
+   "header": "Fall River Line Train 8125 (7:35 PM from South Station) is operating 10-20 minutes behind schedule between Campello and Fall River Depot.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T20:40:12-05:00",
+   "end": "2026-11-05T22:18:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-05T20:40:12-05:00"
   },
   {
    "id": "1043839",
@@ -63,28 +88,6 @@
    ],
    "url": null,
    "updated": "2026-11-05T20:15:32-05:00"
-  },
-  {
-   "id": "1043822",
-   "header": "Providence Line Train 6031 (6:22 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-05T19:25:30-05:00",
-   "end": "2026-11-05T20:36:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-11-05T19:25:30-05:00"
   },
   {
    "id": "1043813",

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T02:35:29.270Z",
+ "updated": "2026-11-06T03:05:25.413Z",
  "alerts": [
   {
    "id": "1040491",
@@ -63,6 +63,34 @@
    ],
    "url": null,
    "updated": "2026-11-05T20:22:53-05:00"
+  },
+  {
+   "id": "1043851",
+   "header": "New Bedford Line Train 8027 (9:08 PM from South Station) is operating 5-15 minutes behind schedule between Brockton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-05T22:03:10-05:00",
+   "end": "2026-11-05T23:48:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-05T22:03:10-05:00"
   }
  ],
  "stopParents": {

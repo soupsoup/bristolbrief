@@ -1,6 +1,23 @@
 {
- "updated": "2026-11-06T13:05:49.620Z",
+ "updated": "2026-11-06T13:35:23.872Z",
  "alerts": [
+  {
+   "id": "1043928",
+   "header": "Providence Line Train 6016 (8:38 AM from Wickford Junction) will originate at TF Green Airport today due to police activity on the right of way. Passengers at Wickford Junction can consider taking a RIPTA bus to Providence.",
+   "effect": "SERVICE_CHANGE",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T08:38:00-05:00",
+   "end": "2026-11-06T11:28:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-06T08:28:30-05:00"
+  },
   {
    "id": "1043883",
    "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) has been cancelled today due to police activity on the right of way. Passengers can consider Train 6016 (8:38 AM from Wickford Junction) or RIPTA buses to connect with a train at Providence.",
@@ -19,29 +36,12 @@
    "updated": "2026-11-06T07:32:52-05:00"
   },
   {
-   "id": "1040491",
-   "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
-   "effect": "SCHEDULE_CHANGE",
+   "id": "1043916",
+   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 20-30 minutes behind schedule between Bridgewater and Fall River due to a medical emergency.",
+   "effect": "DELAY",
    "severity": 7,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T03:00:00-05:00",
-   "end": "2026-11-07T03:00:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
-   "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1043916",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is stopped at Bridgewater 15-25 minutes behind schedule due to a medical emergency.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
+   "cause": "MEDICAL_EMERGENCY",
    "start": "2026-11-06T07:48:00-05:00",
    "end": "2026-11-06T09:34:00-05:00",
    "routes": [
@@ -58,7 +58,24 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-06T07:54:01-05:00"
+   "updated": "2026-11-06T08:06:07-05:00"
+  },
+  {
+   "id": "1040491",
+   "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
+   "effect": "SCHEDULE_CHANGE",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T03:00:00-05:00",
+   "end": "2026-11-07T03:00:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
+   "updated": "2026-10-29T19:08:50-04:00"
   },
   {
    "id": "1043917",
@@ -83,6 +100,51 @@
    ],
    "url": null,
    "updated": "2026-11-06T07:52:54-05:00"
+  },
+  {
+   "id": "1043927",
+   "header": "New Bedford Line Train 8051 (8:16 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T08:26:00-05:00",
+   "end": "2026-11-06T09:47:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-06T08:28:53-05:00"
+  },
+  {
+   "id": "1043920",
+   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T08:07:51-05:00",
+   "end": "2026-11-06T10:05:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-06T08:07:51-05:00"
   },
   {
    "id": "1043915",

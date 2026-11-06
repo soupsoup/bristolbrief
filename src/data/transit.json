@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T13:35:23.872Z",
+ "updated": "2026-11-06T14:05:28.060Z",
  "alerts": [
   {
    "id": "1043928",
@@ -19,46 +19,28 @@
    "updated": "2026-11-06T08:28:30-05:00"
   },
   {
-   "id": "1043883",
-   "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) has been cancelled today due to police activity on the right of way. Passengers can consider Train 6016 (8:38 AM from Wickford Junction) or RIPTA buses to connect with a train at Providence.",
-   "effect": "CANCELLATION",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "POLICE_ACTIVITY",
-   "start": "2026-11-06T06:27:00-05:00",
-   "end": "2026-11-06T08:47:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-06T07:32:52-05:00"
-  },
-  {
-   "id": "1043916",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 20-30 minutes behind schedule between Bridgewater and Fall River due to a medical emergency.",
+   "id": "1043936",
+   "header": "Providence Line Train 6016 (8:52 AM from TF Green) has yet to depart TF Green Airport and is 20-30 minutes behind schedule due to police activity on the right of way in the Wickford area.",
    "effect": "DELAY",
    "severity": 7,
    "lifecycle": "NEW",
-   "cause": "MEDICAL_EMERGENCY",
-   "start": "2026-11-06T07:48:00-05:00",
-   "end": "2026-11-06T09:34:00-05:00",
+   "cause": "POLICE_ACTIVITY",
+   "start": "2026-11-06T08:56:13-05:00",
+   "end": "2026-11-06T11:28:00-05:00",
    "routes": [
-    "CR-NewBedford"
+    "CR-Providence"
    ],
    "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
    ],
    "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
+    "attleboro",
+    "mansfield"
    ],
    "url": null,
-   "updated": "2026-11-06T08:06:07-05:00"
+   "updated": "2026-11-06T08:56:13-05:00"
   },
   {
    "id": "1040491",
@@ -76,75 +58,6 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1043917",
-   "header": "Providence Line Train 6005 (7:30 AM from South Station) is operating 15-25 minutes behind schedule between South Station and Providence due to train traffic.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-11-06T07:52:54-05:00",
-   "end": "2026-11-06T09:40:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-06T07:52:54-05:00"
-  },
-  {
-   "id": "1043927",
-   "header": "New Bedford Line Train 8051 (8:16 AM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T08:26:00-05:00",
-   "end": "2026-11-06T09:47:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-11-06T08:28:53-05:00"
-  },
-  {
-   "id": "1043920",
-   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T08:07:51-05:00",
-   "end": "2026-11-06T10:05:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "East Taunton"
-   ],
-   "towns": [
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-06T08:07:51-05:00"
   },
   {
    "id": "1043915",

@@ -1,23 +1,6 @@
 {
- "updated": "2026-11-06T15:05:28.689Z",
+ "updated": "2026-11-06T15:35:51.122Z",
  "alerts": [
-  {
-   "id": "1043928",
-   "header": "Providence Line Train 6016 (8:38 AM from Wickford Junction) will originate at TF Green Airport today due to police activity on the right of way. Passengers at Wickford Junction can consider taking a RIPTA bus to Providence.",
-   "effect": "SERVICE_CHANGE",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T08:38:00-05:00",
-   "end": "2026-11-06T11:28:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-06T08:28:30-05:00"
-  },
   {
    "id": "1043936",
    "header": "Providence Line Train 6016 (8:52 AM from TF Green) has departed TF Green Airport and is operating 20-30 minutes behind schedule due to police activity on the right of way in the Wickford area.",
@@ -58,6 +41,52 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1043949",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Brockton and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T10:25:44-05:00",
+   "end": "2026-11-06T12:18:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-06T10:25:44-05:00"
+  },
+  {
+   "id": "1043947",
+   "header": "Providence Line Train 6009 (9:25 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction due to slippery rail conditions.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T10:23:17-05:00",
+   "end": "2026-11-06T12:10:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-11-06T10:23:17-05:00"
   }
  ],
  "stopParents": {

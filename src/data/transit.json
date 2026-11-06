@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T23:05:27.240Z",
+ "updated": "2026-11-06T23:35:42.518Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,21 +19,21 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1044052",
-   "header": "Providence Line Train 6025 (4:15 PM from South Station) is operating 15-25 minutes behind schedule between Route 128 and Providence.",
+   "id": "1044096",
+   "header": "New Bedford Line Train 8017 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
    "effect": "DELAY",
-   "severity": 6,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T16:28:00-05:00",
-   "end": "2026-11-06T18:26:00-05:00",
+   "start": "2026-11-06T18:19:30-05:00",
+   "end": "2026-11-06T19:26:00-05:00",
    "routes": [
-    "CR-Providence"
+    "CR-NewBedford"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-06T17:02:23-05:00"
+   "updated": "2026-11-06T18:19:30-05:00"
   },
   {
    "id": "1044091",
@@ -51,23 +51,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-11-06T18:00:26-05:00"
-  },
-  {
-   "id": "1044041",
-   "header": "New Bedford Line Train 8024 (3:20 PM from New Bedford) is operating 5-15 minutes behind schedule between Campello and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T16:23:14-05:00",
-   "end": "2026-11-06T18:06:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-06T16:23:14-05:00"
   }
  ],
  "stopParents": {

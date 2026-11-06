@@ -1,6 +1,23 @@
 {
- "updated": "2026-11-06T12:05:34.592Z",
+ "updated": "2026-11-06T12:35:35.060Z",
  "alerts": [
+  {
+   "id": "1043883",
+   "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) has been cancelled today due to police activity on the right of way. Passengers can consider Train 6016 (8:38 AM from Wickford Junction) or RIPTA buses to connect with a train at Providence.",
+   "effect": "CANCELLATION",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "POLICE_ACTIVITY",
+   "start": "2026-11-06T06:27:00-05:00",
+   "end": "2026-11-06T08:47:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-06T07:32:52-05:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -17,46 +34,6 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1043883",
-   "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) remains stopped after Wickford Junction and is 25-35 minutes behind schedule due to police activity on the right of way.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T06:27:00-05:00",
-   "end": "2026-11-06T08:47:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-06T06:50:14-05:00"
-  },
-  {
-   "id": "1043862",
-   "header": "Providence Line Train 6001 (4:20 AM from South Station) is stopped before Wickford Junction and is 25-35 minutes behind schedule due to police activity on the right of way.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T05:13:00-05:00",
-   "end": "2026-11-06T07:18:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-06T06:49:10-05:00"
   }
  ],
  "stopParents": {

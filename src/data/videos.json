@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-06T11:05:24.859Z",
+ "updated": "2026-11-06T11:35:24.663Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -16,20 +23,6 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -37,8 +30,8 @@
    "kept": 15
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -49,9 +42,28 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "xNTLZ48-PlQ",
+   "title": "Behind the Smiles Photo for 11/6/26 from Ashley in Hope Valley",
+   "link": "https://www.youtube.com/watch?v=xNTLZ48-PlQ",
+   "published": "2026-11-06T11:28:10.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xNTLZ48-PlQ/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
   {
    "id": "wUYebQ2NnrY",
    "title": "Sandra Birchmore Case Daily Debrief: Legal analysis of Matthew Farwell trial",
@@ -3735,20 +3747,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/XrVN5STGLq4/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "bja8QjXSp5k",
-   "title": "Lebanese restaurant in Dartmouth gets outpour of love following hateful calls",
-   "link": "https://www.youtube.com/shorts/bja8QjXSp5k",
-   "published": "2026-10-30T11:32:30.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/bja8QjXSp5k/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
-   ],
-   "local": true,
-   "short": true
   }
  ]
 }

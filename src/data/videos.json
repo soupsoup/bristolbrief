@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T22:35:29.303Z",
+ "updated": "2026-11-07T08:06:20.473Z",
  "channels": [
   {
    "id": "wcvb",
@@ -9,22 +9,8 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,6 +23,13 @@
    "kept": 0
   },
   {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -44,14 +37,222 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "qB8hYMQxlGk",
+   "title": "Street flooding reported around Southern New England",
+   "link": "https://www.youtube.com/watch?v=qB8hYMQxlGk",
+   "published": "2026-11-07T04:45:09.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/qB8hYMQxlGk/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "ihKVjaFYjIg",
+   "title": "Rhode Island highway shut down for bridge demolition",
+   "link": "https://www.youtube.com/watch?v=ihKVjaFYjIg",
+   "published": "2026-11-07T04:42:29.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ihKVjaFYjIg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "tikOXm0BmNo",
+   "title": "Video captures sound of gunfire outside Providence home",
+   "link": "https://www.youtube.com/watch?v=tikOXm0BmNo",
+   "published": "2026-11-07T04:38:55.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/tikOXm0BmNo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Fm7luVUQVzs",
+   "title": "Man sitting in Maserati stabbed multiple times, police say",
+   "link": "https://www.youtube.com/watch?v=Fm7luVUQVzs",
+   "published": "2026-11-07T04:35:39.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Fm7luVUQVzs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "bWoJZNRKpMQ",
+   "title": "WPRI 12 Weather Forecast 11/6/26",
+   "link": "https://www.youtube.com/watch?v=bWoJZNRKpMQ",
+   "published": "2026-11-07T04:35:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bWoJZNRKpMQ/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "04tNij72nBk",
+   "title": "Top prosecutor in RI attorney general’s office to retire",
+   "link": "https://www.youtube.com/watch?v=04tNij72nBk",
+   "published": "2026-11-07T04:14:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/04tNij72nBk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GoOx9mTb49s",
+   "title": "Convicted murderer seeks parole for the fourth time",
+   "link": "https://www.youtube.com/watch?v=GoOx9mTb49s",
+   "published": "2026-11-07T04:14:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GoOx9mTb49s/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "k0Cfqxz4v5g",
+   "title": "3 arrested in connection with cocaine, fentanyl distribution in Bristol",
+   "link": "https://www.youtube.com/watch?v=k0Cfqxz4v5g",
+   "published": "2026-11-07T04:12:35.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/k0Cfqxz4v5g/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "lPeTqQhKZxQ",
+   "title": "Man dead after crash on I-95 South in Providence",
+   "link": "https://www.youtube.com/watch?v=lPeTqQhKZxQ",
+   "published": "2026-11-07T04:12:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lPeTqQhKZxQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "C2sGMiKdIbs",
+   "title": "I-195 shuts down in East Providence for bridge demolition",
+   "link": "https://www.youtube.com/watch?v=C2sGMiKdIbs",
+   "published": "2026-11-07T04:07:32.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/C2sGMiKdIbs/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "kPOUpFEfyr8",
+   "title": "Brown falls to Boston University, 72-67",
+   "link": "https://www.youtube.com/watch?v=kPOUpFEfyr8",
+   "published": "2026-11-07T03:11:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/kPOUpFEfyr8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "iKvusZXWQsg",
+   "title": "North Kingstown tops Central in D1 quarterfinals, 34-7",
+   "link": "https://www.youtube.com/watch?v=iKvusZXWQsg",
+   "published": "2026-11-07T03:10:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/iKvusZXWQsg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "2T7JzIff8sE",
+   "title": "Costumes, characters and crowds: Rhode Island Comic Con returns",
+   "link": "https://www.youtube.com/watch?v=2T7JzIff8sE",
+   "published": "2026-11-07T02:46:52.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/2T7JzIff8sE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_3it543b8ec",
+   "title": "Recalls: Ladders, batteries, sterilizers #shorts",
+   "link": "https://www.youtube.com/shorts/_3it543b8ec",
+   "published": "2026-11-07T02:18:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_3it543b8ec/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "fM2bxzmKVls",
+   "title": "Man hit, killed by train in East Greenwich #shorts",
+   "link": "https://www.youtube.com/shorts/fM2bxzmKVls",
+   "published": "2026-11-07T01:33:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fM2bxzmKVls/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "lmGmfpqYKpA",
+   "title": "Police chief says officers followed training in shooting armed suspect",
+   "link": "https://www.youtube.com/watch?v=lmGmfpqYKpA",
+   "published": "2026-11-07T00:06:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/lmGmfpqYKpA/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true
+  },
+  {
+   "id": "lrW208o-3J8",
+   "title": "Car wash crash caught on camera",
+   "link": "https://www.youtube.com/watch?v=lrW208o-3J8",
+   "published": "2026-11-06T23:55:06.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/lrW208o-3J8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "3Z_yZtGR0yM",
+   "title": "Community rallies around longtime volunteer after lightning-sparked shed fire",
+   "link": "https://www.youtube.com/watch?v=3Z_yZtGR0yM",
+   "published": "2026-11-06T23:51:57.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/3Z_yZtGR0yM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rCE0MkRwQR4",
+   "title": "Audit flags Rhode Island housing agency's grant oversight",
+   "link": "https://www.youtube.com/watch?v=rCE0MkRwQR4",
+   "published": "2026-11-06T23:38:50.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rCE0MkRwQR4/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "-4VRq5yFdFI",
    "title": "Rhode Island's senators set to wield more clout in Democrat controlled Congress",
@@ -182,19 +383,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/x_zPmtj-pUA/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "VBWv9NeZdqg",
-   "title": "WPRI 12 Weather Now 11-6-26 Flood Watch Tonight",
-   "link": "https://www.youtube.com/watch?v=VBWv9NeZdqg",
-   "published": "2026-11-06T21:45:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VBWv9NeZdqg/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "vxgTIhEr1G0",
@@ -3486,181 +3674,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/Fs7Zz63Veug/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "jiInEXXoRtE",
-   "title": "Friday Night Blitz: High school football teams prepare for playoffs",
-   "link": "https://www.youtube.com/watch?v=jiInEXXoRtE",
-   "published": "2026-10-31T03:44:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jiInEXXoRtE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "cRGvc13za8c",
-   "title": "Mic'd Up: Cranston East head coach James Cook",
-   "link": "https://www.youtube.com/watch?v=cRGvc13za8c",
-   "published": "2026-10-31T03:42:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cRGvc13za8c/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "RGTea2bv9qs",
-   "title": "Eric Rueb breaks down Week 8 of the high school football season",
-   "link": "https://www.youtube.com/watch?v=RGTea2bv9qs",
-   "published": "2026-10-31T03:41:23.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/RGTea2bv9qs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3UZEM-8ipgc",
-   "title": "Game of the Week: Cranston East beats East Greenwich 34-7",
-   "link": "https://www.youtube.com/watch?v=3UZEM-8ipgc",
-   "published": "2026-10-31T03:21:52.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3UZEM-8ipgc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2wMJG53wkS8",
-   "title": "WPRI 12 Weather Forecast 10-30-26 Clear Dry Chilly Halloween Night",
-   "link": "https://www.youtube.com/watch?v=2wMJG53wkS8",
-   "published": "2026-10-31T03:21:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2wMJG53wkS8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "BZwPaPya_U8",
-   "title": "Newport police bodycam video shows dramatic shootout on stolen sailboat",
-   "link": "https://www.youtube.com/watch?v=BZwPaPya_U8",
-   "published": "2026-10-31T03:17:03.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/BZwPaPya_U8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "FxwN45OciL0",
-   "title": "Firefighter taken to hospital after second fire at vacant Central Falls mill",
-   "link": "https://www.youtube.com/watch?v=FxwN45OciL0",
-   "published": "2026-10-31T03:10:52.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/FxwN45OciL0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Bt-8ZgRVPOU",
-   "title": "RI businessman Aram Garabedian passes away at 91",
-   "link": "https://www.youtube.com/watch?v=Bt-8ZgRVPOU",
-   "published": "2026-10-31T03:07:21.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Bt-8ZgRVPOU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0syLCG2_xz4",
-   "title": "Bodycam shows deadly officer-involved shooting aboard sailboat in Newport",
-   "link": "https://www.youtube.com/watch?v=0syLCG2_xz4",
-   "published": "2026-10-31T03:05:55.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0syLCG2_xz4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_urm2ADnrdQ",
-   "title": "2 South Kingstown police lieutenants sue town, chief after dropped misconduct charges",
-   "link": "https://www.youtube.com/watch?v=_urm2ADnrdQ",
-   "published": "2026-10-31T03:05:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_urm2ADnrdQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ZCY-n4ACCDY",
-   "title": "South Kingstown police officers sue chief, department, town #shorts",
-   "link": "https://www.youtube.com/shorts/ZCY-n4ACCDY",
-   "published": "2026-10-31T01:30:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZCY-n4ACCDY/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "-aa8tALeRDQ",
-   "title": "RI governor’s race spending lowest in years, at nearly $10 million #shorts",
-   "link": "https://www.youtube.com/shorts/-aa8tALeRDQ",
-   "published": "2026-10-30T23:44:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-aa8tALeRDQ/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "CzRCkvss_Ao",
-   "title": "Charges expected after police find 140 fish fillets aboard boat off Middletown",
-   "link": "https://www.youtube.com/watch?v=CzRCkvss_Ao",
-   "published": "2026-10-30T23:12:09.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/CzRCkvss_Ao/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "zbwWd2mk7sY",
-   "title": "Providence artist hides ceramic slugs to promote studio",
-   "link": "https://www.youtube.com/watch?v=zbwWd2mk7sY",
-   "published": "2026-10-30T22:56:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zbwWd2mk7sY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QRdYpaQkH-U",
-   "title": "PPSD Superintendent Javier Montañez speaks with 12 News after announcing exit",
-   "link": "https://www.youtube.com/watch?v=QRdYpaQkH-U",
-   "published": "2026-10-30T22:51:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QRdYpaQkH-U/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "h_fcopd1RZA",
-   "title": "Newport police video shows deadly confrontation over stolen sailboat",
-   "link": "https://www.youtube.com/watch?v=h_fcopd1RZA",
-   "published": "2026-10-30T22:51:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/h_fcopd1RZA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Pda18Ckpfv4",
-   "title": "Crews respond to second fire at Central Falls mill within 24 hours",
-   "link": "https://www.youtube.com/watch?v=Pda18Ckpfv4",
-   "published": "2026-10-30T22:37:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Pda18Ckpfv4/mqdefault.jpg",
    "towns": []
   }
  ]

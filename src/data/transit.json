@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T17:35:27.221Z",
+ "updated": "2026-11-07T18:05:31.594Z",
  "alerts": [
   {
    "id": "1040491",
@@ -17,6 +17,23 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
+  },
+  {
+   "id": "1044232",
+   "header": "Fall River Line Train 8609 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and Fall River due to an earlier unruly passenger.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNRULY_PASSENGER",
+   "start": "2026-11-07T12:46:00-05:00",
+   "end": "2026-11-07T14:45:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-07T12:47:49-05:00"
   }
  ],
  "stopParents": {

@@ -1,19 +1,26 @@
 {
- "updated": "2026-11-07T15:05:36.508Z",
+ "updated": "2026-11-07T15:35:26.108Z",
  "channels": [
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "cbs-boston",
@@ -30,13 +37,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -44,14 +44,27 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "osEgYGSfUQs",
+   "title": "WPRI 12 Weather Now 11/7/26: Mainly Cloudy This Afternoon; Breezy, Cooler Sunday",
+   "link": "https://www.youtube.com/watch?v=osEgYGSfUQs",
+   "published": "2026-11-07T15:16:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/osEgYGSfUQs/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "U6w9xcolOlI",
    "title": "Election 2026 analysis: Where do Republicans and Democrats go from here?",
@@ -61,19 +74,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/U6w9xcolOlI/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "Z1SBtYXqU1c",
-   "title": "WPRI 12 Weather Forecast 11/7/26: Rain Ends, Mainly Cloudy Today",
-   "link": "https://www.youtube.com/watch?v=Z1SBtYXqU1c",
-   "published": "2026-11-07T11:31:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Z1SBtYXqU1c/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "E2y8BOuVtJk",

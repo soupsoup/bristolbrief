@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T00:05:27.309Z",
+ "updated": "2026-11-07T00:35:25.840Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,38 +19,55 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1044096",
-   "header": "New Bedford Line Train 8017 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "id": "1044116",
+   "header": "Providence Line Train 6033 (7:17 PM from South Station) is operating 5-15 minutes behind schedule between South Station and Providence.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T18:19:30-05:00",
-   "end": "2026-11-06T19:26:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-06T18:19:30-05:00"
-  },
-  {
-   "id": "1044091",
-   "header": "Providence Line Train 6027 (4:45 PM from South Station) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-06T18:00:26-05:00",
-   "end": "2026-11-06T19:33:00-05:00",
+   "start": "2026-11-06T19:28:53-05:00",
+   "end": "2026-11-06T21:33:00-05:00",
    "routes": [
     "CR-Providence"
    ],
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-06T18:00:26-05:00"
+   "updated": "2026-11-06T19:28:53-05:00"
+  },
+  {
+   "id": "1044114",
+   "header": "New Bedford Line Train 8021 (5:40 PM from South Station) is operating 5-15 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T19:16:40-05:00",
+   "end": "2026-11-06T20:25:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-06T19:16:40-05:00"
+  },
+  {
+   "id": "1044111",
+   "header": "New Bedford Line Train 8028 (6:10 PM from New Bedford) is operating 5-15 minutes behind schedule between Bridgewater and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-06T19:14:47-05:00",
+   "end": "2026-11-06T20:59:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-06T19:14:47-05:00"
   }
  ],
  "stopParents": {

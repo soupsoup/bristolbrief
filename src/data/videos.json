@@ -1,13 +1,6 @@
 {
- "updated": "2026-11-08T10:35:28.357Z",
+ "updated": "2026-11-08T11:06:43.260Z",
  "channels": [
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -16,15 +9,15 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,6 +30,13 @@
    "kept": 15
   },
   {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -44,14 +44,27 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "Q72asIN3jsg",
+   "title": "WPRI 12 Weather Now 11/8/26: Clouds to Sun, Breezy and Cool Today",
+   "link": "https://www.youtube.com/watch?v=Q72asIN3jsg",
+   "published": "2026-11-08T10:50:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Q72asIN3jsg/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "3XCpsiFKNcQ",
    "title": "Movie theater flooded in North Dartmouth",

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T15:35:32.334Z",
+ "updated": "2026-11-09T16:05:28.713Z",
  "alerts": [
   {
    "id": "1040491",
@@ -19,14 +19,14 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1044520",
-   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 10-20 minutes behind schedule between South Station and Fall River Depot.",
+   "id": "1044542",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 15-25 minutes behind schedule between Bridgewater and Fall River Depot.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 6,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-09T09:48:05-05:00",
-   "end": "2026-11-09T12:18:00-05:00",
+   "start": "2026-11-09T10:58:52-05:00",
+   "end": "2026-11-09T13:05:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -41,17 +41,41 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-09T09:48:05-05:00"
+   "updated": "2026-11-09T10:58:52-05:00"
   },
   {
-   "id": "1044517",
-   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 10-20 minutes behind schedule between Church Street and South Station due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "id": "1044545",
+   "header": "Providence Line Train 6011 (10:35 AM from South Station) is operating 10-20 minutes behind schedule between Ruggles and Providence.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-09T11:02:48-05:00",
+   "end": "2026-11-09T12:50:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-09T11:02:48-05:00"
+  },
+  {
+   "id": "1044543",
+   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is operating 10-20 minutes behind schedule between Church Street and South Station due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
    "effect": "DELAY",
    "severity": 5,
    "lifecycle": "NEW",
    "cause": "CROSSING_ISSUE",
-   "start": "2026-11-09T09:40:41-05:00",
-   "end": "2026-11-09T11:58:00-05:00",
+   "start": "2026-11-09T11:00:08-05:00",
+   "end": "2026-11-09T13:13:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -64,7 +88,7 @@
     "new-bedford"
    ],
    "url": null,
-   "updated": "2026-11-09T09:40:41-05:00"
+   "updated": "2026-11-09T11:00:08-05:00"
   },
   {
    "id": "1044530",

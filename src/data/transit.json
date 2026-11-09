@@ -1,6 +1,29 @@
 {
- "updated": "2026-11-09T13:35:24.579Z",
+ "updated": "2026-11-09T14:05:48.571Z",
  "alerts": [
+  {
+   "id": "1044502",
+   "header": "New Bedford Line Train 8012 (8:20 AM from New Bedford) is operating 20-30 minutes behind schedule between Church Street and South Station due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "CROSSING_ISSUE",
+   "start": "2026-11-09T08:58:35-05:00",
+   "end": "2026-11-09T11:00:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-09T08:58:35-05:00"
+  },
   {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
@@ -17,53 +40,6 @@
    "towns": [],
    "url": "https://cdn.mbta.com/sites/default/files/media/route_pdfs/2026-11-6-cr-providence-stoughton-line-construction-schedule.pdf",
    "updated": "2026-10-29T19:08:50-04:00"
-  },
-  {
-   "id": "1044468",
-   "header": "Fall River Line Train 8101 (6:45 AM from South Station) is operating 15-25 minutes behind schedule between South Station and Fall River Depot due to train traffic.",
-   "effect": "DELAY",
-   "severity": 6,
-   "lifecycle": "NEW",
-   "cause": "TRAIN_TRAFFIC",
-   "start": "2026-11-09T07:23:39-05:00",
-   "end": "2026-11-09T09:34:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-09T07:23:39-05:00"
-  },
-  {
-   "id": "1044495",
-   "header": "Providence Line Train 6005 (7:30 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-09T08:27:06-05:00",
-   "end": "2026-11-09T09:40:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-11-09T08:27:06-05:00"
   }
  ],
  "stopParents": {

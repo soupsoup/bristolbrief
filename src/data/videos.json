@@ -1,9 +1,37 @@
 {
- "updated": "2026-11-09T13:35:24.579Z",
+ "updated": "2026-11-09T14:05:48.571Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,42 +44,37 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "UTuNSJqCjqc",
+   "title": "WPRI 12 Weather Forecast for 11/9/26: Some showers today, then dry for a few days",
+   "link": "https://www.youtube.com/watch?v=UTuNSJqCjqc",
+   "published": "2026-11-09T13:57:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UTuNSJqCjqc/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "jcaMXC0Ljss",
+   "title": "Rhode Island Energy program aims at helping customers save on their electric bills",
+   "link": "https://www.youtube.com/watch?v=jcaMXC0Ljss",
+   "published": "2026-11-09T13:42:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/jcaMXC0Ljss/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "PFGeJUAkdKA",
    "title": "Cold Cases: Who Killed John Fiore?",
@@ -102,19 +125,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/SQLnNaorgtU/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "-PgonOzCAXY",
-   "title": "WPRI 12 Weather Forecast for 11/9/26:  Showers arrive today, then drier for a few days",
-   "link": "https://www.youtube.com/watch?v=-PgonOzCAXY",
-   "published": "2026-11-09T11:59:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-PgonOzCAXY/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "9ImMdsqBcRg",
@@ -3847,26 +3857,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/n5_TJiZceMc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "q1pxgmIEejk",
-   "title": "Lindsay Clancy back in court for a motions hearing",
-   "link": "https://www.youtube.com/watch?v=q1pxgmIEejk",
-   "published": "2026-11-02T13:55:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/q1pxgmIEejk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "mXxHzheS70o",
-   "title": "Tiverton to break ground on new water line project",
-   "link": "https://www.youtube.com/watch?v=mXxHzheS70o",
-   "published": "2026-11-02T13:36:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mXxHzheS70o/mqdefault.jpg",
    "towns": []
   }
  ]

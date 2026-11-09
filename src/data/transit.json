@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-09T17:35:26.604Z",
+ "updated": "2026-11-09T18:05:30.711Z",
  "alerts": [
   {
    "id": "1044560",
-   "header": "New Bedford Line Train 8018 (11:48 AM from New Bedford) has departed New Bedford and is operating 20-30 minutes behind schedule due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "header": "New Bedford Line Train 8018 (11:48 AM from New Bedford) is operating 30-40 minutes behind schedule between Church Street and South Station due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
    "effect": "DELAY",
-   "severity": 7,
+   "severity": 8,
    "lifecycle": "NEW",
    "cause": "CROSSING_ISSUE",
    "start": "2026-11-09T12:02:00-05:00",
@@ -15,15 +15,14 @@
    ],
    "stations": [
     "East Taunton",
-    "Church Street",
-    "New Bedford"
+    "Church Street"
    ],
    "towns": [
     "taunton",
     "new-bedford"
    ],
    "url": null,
-   "updated": "2026-11-09T12:11:42-05:00"
+   "updated": "2026-11-09T12:37:16-05:00"
   },
   {
    "id": "1040491",
@@ -65,6 +64,23 @@
    ],
    "url": null,
    "updated": "2026-11-09T12:30:50-05:00"
+  },
+  {
+   "id": "1044574",
+   "header": "New Bedford Line Train 8020 (1:03 PM from New Bedford) is expected to depart New Bedford 5-15 minutes behind schedule due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "CROSSING_ISSUE",
+   "start": "2026-11-09T13:03:00-05:00",
+   "end": "2026-11-09T15:44:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-09T12:54:59-05:00"
   }
  ],
  "stopParents": {

@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-09T06:35:30.184Z",
+ "updated": "2026-11-09T08:07:18.204Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,19 +16,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -38,15 +25,30 @@
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   }
  ],
  "videos": [
@@ -62,6 +64,36 @@
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "sczn8VTgj6g",
+   "title": "National Black Storytelling Festival wraps up in Rhode Island",
+   "link": "https://www.youtube.com/watch?v=sczn8VTgj6g",
+   "published": "2026-11-09T04:21:37.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/sczn8VTgj6g/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Yxl_w2GVK3k",
+   "title": "Visitors can pet, cuddle and hike with goats at Johnston farm",
+   "link": "https://www.youtube.com/watch?v=Yxl_w2GVK3k",
+   "published": "2026-11-09T04:18:06.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Yxl_w2GVK3k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Zd-eXv7zYDk",
+   "title": "Rhode Island Environmental Police urge anglers to follow fishing regulations",
+   "link": "https://www.youtube.com/watch?v=Zd-eXv7zYDk",
+   "published": "2026-11-09T04:13:56.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Zd-eXv7zYDk/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "sT5WkD9q7FA",

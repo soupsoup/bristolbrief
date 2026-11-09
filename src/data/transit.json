@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T18:44:34.234Z",
+ "updated": "2026-11-09T19:05:31.538Z",
  "alerts": [
   {
    "id": "1044560",
@@ -25,6 +25,23 @@
    "updated": "2026-11-09T12:37:16-05:00"
   },
   {
+   "id": "1044574",
+   "header": "New Bedford Line Train 8020 (1:03 PM from New Bedford) is operating 25-35 minutes behind schedule between Church Street and South Station due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "effect": "DELAY",
+   "severity": 7,
+   "lifecycle": "NEW",
+   "cause": "CROSSING_ISSUE",
+   "start": "2026-11-09T13:03:00-05:00",
+   "end": "2026-11-09T15:44:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-09T13:49:33-05:00"
+  },
+  {
    "id": "1040491",
    "header": "On Fri, Nov 6 & Mon, Nov 9, a temporary schedule will be in effect. Stoughton Line trains operate only between Stoughton and Canton Junction for transfer to adjusted Providence Line service which makes additional stops between Sharon & Hyde Park. ",
    "effect": "SCHEDULE_CHANGE",
@@ -42,21 +59,28 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
-   "id": "1044574",
-   "header": "New Bedford Line Train 8020 (1:03 PM from New Bedford) has departed New Bedford and is operating 15-25 minutes behind schedule due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
+   "id": "1044582",
+   "header": "New Bedford Line Train 8059 (1:28 PM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and New Bedford due to a temporary speed restriction in effect at a crossing in the East Taunton area.",
    "effect": "DELAY",
    "severity": 6,
    "lifecycle": "NEW",
    "cause": "CROSSING_ISSUE",
-   "start": "2026-11-09T13:03:00-05:00",
-   "end": "2026-11-09T15:44:00-05:00",
+   "start": "2026-11-09T13:52:20-05:00",
+   "end": "2026-11-09T14:53:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
-   "stations": [],
-   "towns": [],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
    "url": null,
-   "updated": "2026-11-09T13:23:57-05:00"
+   "updated": "2026-11-09T13:52:20-05:00"
   }
  ],
  "stopParents": {

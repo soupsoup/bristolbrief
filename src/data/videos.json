@@ -1,23 +1,19 @@
 {
- "updated": "2026-11-09T00:35:28.653Z",
+ "updated": "2026-11-09T06:35:30.184Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
@@ -26,26 +22,77 @@
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "01tGTsQCayw",
+   "title": "WPRI 12 Weather Forecast 11/8/26",
+   "link": "https://www.youtube.com/watch?v=01tGTsQCayw",
+   "published": "2026-11-09T04:29:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/01tGTsQCayw/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "sT5WkD9q7FA",
+   "title": "High School Roundup: La Salle, Classical and Johnston win boys soccer titles",
+   "link": "https://www.youtube.com/watch?v=sT5WkD9q7FA",
+   "published": "2026-11-09T04:11:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sT5WkD9q7FA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "L0IN9ce1xas",
+   "title": "Secretary of Defense Pete Hegseth to visit Newport on Monday",
+   "link": "https://www.youtube.com/watch?v=L0IN9ce1xas",
+   "published": "2026-11-09T02:50:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/L0IN9ce1xas/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "oiIoRhHCgQc",
+   "title": "Advocates speak out as convicted murderer seeks parole",
+   "link": "https://www.youtube.com/watch?v=oiIoRhHCgQc",
+   "published": "2026-11-09T00:33:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/oiIoRhHCgQc/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "z95aQJzHJ9Q",
    "title": "New England Nation: Week 9 Game Picks",
@@ -105,19 +152,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/6Q7RRMYqJzc/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "waIt_rWnLws",
-   "title": "WPRI 12 Weather Forecast 11/8/26: Seasonable, Breezy Next Few Days",
-   "link": "https://www.youtube.com/watch?v=waIt_rWnLws",
-   "published": "2026-11-08T14:15:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/waIt_rWnLws/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "l3rAaAacDuQ",
@@ -3769,59 +3803,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "9qE4T4L7IGg",
-   "title": "High School Roundup: Moses Brown, Lincoln, Tiverton Co-Op win field hockey state titles",
-   "link": "https://www.youtube.com/watch?v=9qE4T4L7IGg",
-   "published": "2026-11-02T05:34:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/9qE4T4L7IGg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "zwE-Cz-A4wA",
-   "title": "All licenses suspended for Providence restaurant ahead of hearing",
-   "link": "https://www.youtube.com/watch?v=zwE-Cz-A4wA",
-   "published": "2026-11-02T05:18:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zwE-Cz-A4wA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "5UTM6b9MDns",
-   "title": "Iggy’s mourns loss of co-founder after battle with dementia",
-   "link": "https://www.youtube.com/watch?v=5UTM6b9MDns",
-   "published": "2026-11-02T05:18:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5UTM6b9MDns/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "uFZ0RkPspQw",
-   "title": "WPRI 12 Weather Now 11/1/26: Dry, Much Milder Monday with Sunshine",
-   "link": "https://www.youtube.com/watch?v=uFZ0RkPspQw",
-   "published": "2026-11-02T04:46:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/uFZ0RkPspQw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "-GF1yoi9S7w",
-   "title": "Poll shows Foulkes opening up big lead over Block with election two days away",
-   "link": "https://www.youtube.com/watch?v=-GF1yoi9S7w",
-   "published": "2026-11-02T04:43:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-GF1yoi9S7w/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

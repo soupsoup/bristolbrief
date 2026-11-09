@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T23:05:31.068Z",
+ "updated": "2026-11-09T23:36:39.102Z",
  "alerts": [
   {
    "id": "1044599",
@@ -9,7 +9,7 @@
    "lifecycle": "NEW",
    "cause": "CROSSING_ISSUE",
    "start": "2026-11-09T15:12:19-05:00",
-   "end": "2026-11-09T20:05:00-05:00",
+   "end": "2026-11-09T20:35:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -53,23 +53,6 @@
    "updated": "2026-11-09T17:56:00-05:00"
   },
   {
-   "id": "1044624",
-   "header": "Providence Line Train 6025 (4:15 PM from South Station) is operating 10-20 minutes behind schedule between Mansfield and Providence.",
-   "effect": "DELAY",
-   "severity": 5,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-09T16:41:00-05:00",
-   "end": "2026-11-09T18:26:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-09T17:15:19-05:00"
-  },
-  {
    "id": "1044635",
    "header": "New Bedford Line Train 8017 (4:40 PM from South Station) is operating 5-15 minutes behind schedule between Braintree and New Bedford.",
    "effect": "DELAY",
@@ -87,46 +70,28 @@
    "updated": "2026-11-09T17:11:59-05:00"
   },
   {
-   "id": "1044625",
-   "header": "Fall River Line Train 8115 (3:38 PM from South Station) is operating 5-15 minutes behind schedule between Middleborough and Fall River Depot.",
+   "id": "1044652",
+   "header": "Providence Line Train 6029 (5:32 PM from South Station) is operating 5-15 minutes behind schedule between Route 128 and Wickford Junction.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 3,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-09T16:55:05-05:00",
-   "end": "2026-11-09T18:24:00-05:00",
+   "start": "2026-11-09T18:19:38-05:00",
+   "end": "2026-11-09T20:29:00-05:00",
    "routes": [
-    "CR-NewBedford"
+    "CR-Providence"
    ],
    "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
    ],
    "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
+    "attleboro",
+    "mansfield"
    ],
    "url": null,
-   "updated": "2026-11-09T16:55:05-05:00"
-  },
-  {
-   "id": "1044623",
-   "header": "New Bedford Line Train 8024 (3:20 PM from New Bedford) is operating 10-20 minutes behind schedule between Montello and South Station.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-09T16:39:48-05:00",
-   "end": "2026-11-09T18:06:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-09T16:39:48-05:00"
+   "updated": "2026-11-09T18:19:38-05:00"
   }
  ],
  "stopParents": {

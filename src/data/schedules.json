@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T12:35:26.519Z",
+ "updated": "2026-11-09T13:05:28.465Z",
  "teams": {
   "red-sox": {
    "league": "MLB",
@@ -114,6 +114,17 @@
    "league": "NFL",
    "past": [
     {
+     "id": "nfl-133",
+     "date": "2026-11-08T21:25:00.000Z",
+     "home": true,
+     "opponent": "Packers",
+     "status": "final",
+     "us": 27,
+     "them": 45,
+     "result": "L",
+     "note": "Week 9"
+    },
+    {
      "id": "nfl-119",
      "date": "2026-11-01T21:25:00.000Z",
      "home": false,
@@ -156,17 +167,6 @@
      "them": 17,
      "result": "W",
      "note": "Week 5"
-    },
-    {
-     "id": "nfl-52",
-     "date": "2026-10-04T17:00:00.000Z",
-     "home": false,
-     "opponent": "Bills",
-     "status": "final",
-     "us": 29,
-     "them": 26,
-     "result": "W",
-     "note": "Week 4"
     }
    ],
    "next": [
@@ -216,6 +216,16 @@
    "league": "NBA",
    "past": [
     {
+     "id": "nba-144",
+     "date": "2026-11-09T01:00:00.000Z",
+     "home": false,
+     "opponent": "Bucks",
+     "status": "final",
+     "us": 117,
+     "them": 97,
+     "result": "W"
+    },
+    {
      "id": "nba-125",
      "date": "2026-11-07T00:00:00.000Z",
      "home": false,
@@ -253,16 +263,6 @@
      "status": "final",
      "us": 108,
      "them": 97,
-     "result": "W"
-    },
-    {
-     "id": "nba-73",
-     "date": "2026-10-30T23:30:00.000Z",
-     "home": true,
-     "opponent": "Bulls",
-     "status": "final",
-     "us": 125,
-     "them": 111,
      "result": "W"
     }
    ],

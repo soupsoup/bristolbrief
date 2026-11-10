@@ -1,53 +1,22 @@
 {
- "updated": "2026-11-10T12:35:47.281Z",
+ "updated": "2026-11-10T13:05:49.128Z",
  "alerts": [
   {
-   "id": "1044704",
-   "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station.",
+   "id": "1044740",
+   "header": "Stoughton Line Train 6305 (8:00 AM from South Station) is expected to depart South Station 5-15 minutes behind schedule.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-10T07:01:27-05:00",
-   "end": "2026-11-10T08:41:00-05:00",
+   "start": "2026-11-10T08:02:01-05:00",
+   "end": "2026-11-10T09:37:00-05:00",
    "routes": [
     "CR-Providence"
    ],
-   "stations": [
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
+   "stations": [],
+   "towns": [],
    "url": null,
-   "updated": "2026-11-10T07:01:27-05:00"
-  },
-  {
-   "id": "1044705",
-   "header": "Correction: Fall River Line Train 8101 (6:45 AM from South Station) is operating near schedule between Braintree and Fall River Depot.",
-   "effect": "DELAY",
-   "severity": 1,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-10T07:09:00-05:00",
-   "end": "2026-11-10T09:34:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton"
-   ],
-   "url": null,
-   "updated": "2026-11-10T07:19:42-05:00"
+   "updated": "2026-11-10T08:02:01-05:00"
   }
  ],
  "stopParents": {

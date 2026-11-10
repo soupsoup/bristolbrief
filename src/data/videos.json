@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T23:36:39.102Z",
+ "updated": "2026-11-10T03:05:28.988Z",
  "channels": [
   {
    "id": "wcvb",
@@ -9,15 +9,14 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,28 +29,81 @@
    "kept": 15
   },
   {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 500"
   }
  ],
  "videos": [
+  {
+   "id": "frnqwTjjvC8",
+   "title": "New RI Energy discount rates based on Federal Poverty Level #shorts",
+   "link": "https://www.youtube.com/shorts/frnqwTjjvC8",
+   "published": "2026-11-10T01:27:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/frnqwTjjvC8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "fAUhsaHNweQ",
+   "title": "Findley Dermatology",
+   "link": "https://www.youtube.com/shorts/fAUhsaHNweQ",
+   "published": "2026-11-10T00:01:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fAUhsaHNweQ/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "O7eZj9gkRMU",
+   "title": "Heavy rain triggered flooding across Southern New England",
+   "link": "https://www.youtube.com/watch?v=O7eZj9gkRMU",
+   "published": "2026-11-09T23:37:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/O7eZj9gkRMU/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "YjiCRmR8B7s",
+   "title": "2 rabid raccoons found in Johnston, Coventry",
+   "link": "https://www.youtube.com/watch?v=YjiCRmR8B7s",
+   "published": "2026-11-09T23:35:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YjiCRmR8B7s/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "-4j6Dv-ulls",
+   "title": "Hegseth speaks at Naval War College amid impeachment effort",
+   "link": "https://www.youtube.com/watch?v=-4j6Dv-ulls",
+   "published": "2026-11-09T23:32:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/-4j6Dv-ulls/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "JhC3rQx3FdM",
    "title": "With gas prices high, are EVs & hybrids worth the investment?",
@@ -3760,121 +3812,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/C2Ijq_w5Meo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "pWEYiRblDmY",
-   "title": "RI Division of Taxation warns against phone scam #shorts",
-   "link": "https://www.youtube.com/shorts/pWEYiRblDmY",
-   "published": "2026-11-03T02:21:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/pWEYiRblDmY/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "REdnLGwdKW4",
-   "title": "Last day of early voting in Rhode Island #shorts",
-   "link": "https://www.youtube.com/shorts/REdnLGwdKW4",
-   "published": "2026-11-03T01:28:33.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/REdnLGwdKW4/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "n4_4tAhZkI4",
-   "title": "Providence pizza shop set to reopen following stabbing incident",
-   "link": "https://www.youtube.com/shorts/n4_4tAhZkI4",
-   "published": "2026-11-03T01:23:07.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/n4_4tAhZkI4/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "Gm6wErhSKBw",
-   "title": "Halloween weekend chaos erupts in Providence",
-   "link": "https://www.youtube.com/shorts/Gm6wErhSKBw",
-   "published": "2026-11-03T00:52:38.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Gm6wErhSKBw/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "X6JjF0wKrUE",
-   "title": "Mountain biking community pushes back after Barrington bulldozes part of popular trail #shorts",
-   "link": "https://www.youtube.com/shorts/X6JjF0wKrUE",
-   "published": "2026-11-03T00:25:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/X6JjF0wKrUE/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "x8_BxneXmtE",
-   "title": "About 20 displaced, one hospitalized after Cranston apartment fire",
-   "link": "https://www.youtube.com/watch?v=x8_BxneXmtE",
-   "published": "2026-11-03T00:20:17.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/x8_BxneXmtE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "SDpSfP_s3oU",
-   "title": "Massachusetts Question 5 would change formula for triggering taxpayer refunds",
-   "link": "https://www.youtube.com/watch?v=SDpSfP_s3oU",
-   "published": "2026-11-03T00:10:40.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/SDpSfP_s3oU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "z_98Lm6Z9LY",
-   "title": "Woman warns others after losing $45K to FBI impersonation scam",
-   "link": "https://www.youtube.com/watch?v=z_98Lm6Z9LY",
-   "published": "2026-11-02T23:57:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/z_98Lm6Z9LY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QPOGWTYMe1s",
-   "title": "Woman who skipped sentencing for deadly 2021 crash turns self in",
-   "link": "https://www.youtube.com/watch?v=QPOGWTYMe1s",
-   "published": "2026-11-02T23:56:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QPOGWTYMe1s/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "IYYuIuUIx-A",
-   "title": "Barrington mountain biking community pushes back after town bulldozes part of popular trail",
-   "link": "https://www.youtube.com/watch?v=IYYuIuUIx-A",
-   "published": "2026-11-02T23:56:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/IYYuIuUIx-A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "VpI_BzxOmA0",
-   "title": "Candidates make final push ahead of Election Day",
-   "link": "https://www.youtube.com/watch?v=VpI_BzxOmA0",
-   "published": "2026-11-02T23:55:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VpI_BzxOmA0/mqdefault.jpg",
    "towns": []
   }
  ]

@@ -1,30 +1,9 @@
 {
- "updated": "2026-11-10T13:05:49.128Z",
+ "updated": "2026-11-10T13:35:27.879Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,6 +16,13 @@
    "kept": 15
   },
   {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
@@ -44,14 +30,64 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "NTeGTXdtdT4",
+   "title": "1 dead, 1 missing after vehicle crashes into river in Taunton",
+   "link": "https://www.youtube.com/watch?v=NTeGTXdtdT4",
+   "published": "2026-11-10T13:31:20.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/NTeGTXdtdT4/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "AoYsmCanflk",
+   "title": "WPRI 12 Weather Forecast for 11/10/26:  Dry and seasonable today",
+   "link": "https://www.youtube.com/watch?v=AoYsmCanflk",
+   "published": "2026-11-10T13:11:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/AoYsmCanflk/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "qPSexRG9YZs",
+   "title": "Providence fire chief to retire after 20 years",
+   "link": "https://www.youtube.com/watch?v=qPSexRG9YZs",
+   "published": "2026-11-10T12:54:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qPSexRG9YZs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "SlW1qKeT6T8",
    "title": "Veterinarians remove a metal arrow from the head of a racoon",
@@ -72,19 +108,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/vFp21Db3wzg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "N4Nk4xbbjlw",
-   "title": "WPRI 12 Weather Forecast for 11/10/26:  Seasonable and dry today",
-   "link": "https://www.youtube.com/watch?v=N4Nk4xbbjlw",
-   "published": "2026-11-10T09:54:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/N4Nk4xbbjlw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "gAERXilaUVU",
@@ -3823,16 +3846,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/7um2Ki2nsPE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "EterhrObOOs",
-   "title": "Secretary of State Gregg Amore talks about voting on Election Day",
-   "link": "https://www.youtube.com/watch?v=EterhrObOOs",
-   "published": "2026-11-03T13:05:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/EterhrObOOs/mqdefault.jpg",
    "towns": []
   }
  ]

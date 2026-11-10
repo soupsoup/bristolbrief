@@ -1,26 +1,6 @@
 {
- "updated": "2026-11-10T04:35:25.039Z",
+ "updated": "2026-11-10T08:06:25.667Z",
  "channels": [
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -36,6 +16,13 @@
    "kept": 0
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
@@ -43,14 +30,38 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "gAERXilaUVU",
+   "title": "North Kingstown approves ordinance to ban retail sale of dogs, cats, rabbits",
+   "link": "https://www.youtube.com/watch?v=gAERXilaUVU",
+   "published": "2026-11-10T04:34:17.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/gAERXilaUVU/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "6H0cbagsfsw",
    "title": "2 men arrested for solicitation of a child",
@@ -3823,16 +3834,6 @@
     "westport"
    ],
    "local": true
-  },
-  {
-   "id": "8YfcydQdoYQ",
-   "title": "Judge hears 3 motions in Lindsay Clancy case",
-   "link": "https://www.youtube.com/watch?v=8YfcydQdoYQ",
-   "published": "2026-11-03T06:18:21.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/8YfcydQdoYQ/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

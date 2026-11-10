@@ -1,6 +1,47 @@
 {
- "updated": "2026-11-10T20:05:31.167Z",
+ "updated": "2026-11-10T20:35:30.530Z",
  "alerts": [
+  {
+   "id": "1044809",
+   "header": "Providence Line Train 6019 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-10T15:21:23-05:00",
+   "end": "2026-11-10T17:04:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-10T15:21:23-05:00"
+  },
+  {
+   "id": "1044805",
+   "header": "Providence Line Train 6028 (2:25 PM from Wickford Junction) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-10T15:08:47-05:00",
+   "end": "2026-11-10T17:09:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-10T15:08:47-05:00"
+  },
   {
    "id": "1044782",
    "header": "On Wednesday, November 11th, all Commuter Rail lines will be operating on a normal weekday schedule.",

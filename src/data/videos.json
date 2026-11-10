@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-10T17:46:49.243Z",
+ "updated": "2026-11-10T18:05:26.666Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -9,8 +16,8 @@
    "kept": 1
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -23,11 +30,11 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 1
   },
   {
    "id": "nbc10-wjar",
@@ -42,16 +49,32 @@
    "ok": true,
    "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "YG6IadSsW3w",
+   "title": "Man found dead in submerged car, police searching for 2nd person in Taunton river",
+   "link": "https://www.youtube.com/watch?v=YG6IadSsW3w",
+   "published": "2026-11-10T18:00:04.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/YG6IadSsW3w/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "0kmpIfZHXEg",
+   "title": "Gov.-elect Foulkes announces plans for transition",
+   "link": "https://www.youtube.com/watch?v=0kmpIfZHXEg",
+   "published": "2026-11-10T17:52:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0kmpIfZHXEg/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "UOzX3SEpNsM",
    "title": "WPRI 12 Weather Now 11/10/26: Dry and breezy today",
@@ -4006,16 +4029,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/RFrU6cKD7CM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "IpNmXMt7byU",
-   "title": "Voters seeking change find lines in Southern New England",
-   "link": "https://www.youtube.com/watch?v=IpNmXMt7byU",
-   "published": "2026-11-03T18:01:57.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/IpNmXMt7byU/mqdefault.jpg",
    "towns": []
   }
  ]

@@ -1,16 +1,37 @@
 {
- "updated": "2026-11-10T20:35:30.530Z",
+ "updated": "2026-11-10T21:05:32.760Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 1
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 1
@@ -23,27 +44,6 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -52,6 +52,19 @@
   }
  ],
  "videos": [
+  {
+   "id": "fbGJ2nJygT0",
+   "title": "Saltwater Sessions: Coastal dining with Joe Zito #shorts",
+   "link": "https://www.youtube.com/shorts/fbGJ2nJygT0",
+   "published": "2026-11-10T20:39:48.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fbGJ2nJygT0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "short": true
+  },
   {
    "id": "QZijcS8pTC4",
    "title": "Federal prosecutors speak after conviction of Matthew Farwell in Sandra Birchmore killing",

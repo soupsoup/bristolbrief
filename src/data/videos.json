@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-10T22:35:24.917Z",
+ "updated": "2026-11-10T23:05:56.950Z",
  "channels": [
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
+   "kept": 2
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "cbs-boston",
@@ -23,13 +30,6 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
@@ -44,14 +44,62 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "o21_5G8FGf4",
+   "title": "North Kingstown officer charged with 3 counts of second-degree sexual assault",
+   "link": "https://www.youtube.com/watch?v=o21_5G8FGf4",
+   "published": "2026-11-10T23:02:28.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/o21_5G8FGf4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Qxw1VgU8fmc",
+   "title": "Second body recovered after car plunges into Taunton river",
+   "link": "https://www.youtube.com/watch?v=Qxw1VgU8fmc",
+   "published": "2026-11-10T23:01:14.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Qxw1VgU8fmc/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "PjaZ0r_ZlhE",
+   "title": "WPRI 12 Weather Forecast  11-10-26 Sunny Veteran's Day",
+   "link": "https://www.youtube.com/watch?v=PjaZ0r_ZlhE",
+   "published": "2026-11-10T22:59:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/PjaZ0r_ZlhE/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "uSNbP1j933Y",
+   "title": "Hospital activates face mask policy as flu activity rises in southeastern Massachusetts",
+   "link": "https://www.youtube.com/watch?v=uSNbP1j933Y",
+   "published": "2026-11-10T22:41:51.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/uSNbP1j933Y/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
   {
    "id": "C2sh5_plnPw",
    "title": "Food 'Four' Thought: Chef shares holiday cooking tips",
@@ -111,19 +159,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/obQiApCuF34/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "LgelgYHts20",
-   "title": "WPRI 12 Weather Now 11-10-26 Clear Dry Thru Wednesday",
-   "link": "https://www.youtube.com/watch?v=LgelgYHts20",
-   "published": "2026-11-10T21:55:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/LgelgYHts20/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "asFDbWRjnjI",
@@ -4068,37 +4103,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/oaryLsDQc_M/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "On0XfboIjz8",
-   "title": "Bristol boy who loves Spider-Man needs your help in Stan Lee Super Kid competition",
-   "link": "https://www.youtube.com/watch?v=On0XfboIjz8",
-   "published": "2026-11-03T23:02:58.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/On0XfboIjz8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_uFLcP6NXxE",
-   "title": "5:45 p.m. | Tracking Woonsocket's mayoral race #shorts",
-   "link": "https://www.youtube.com/shorts/_uFLcP6NXxE",
-   "published": "2026-11-03T22:48:46.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_uFLcP6NXxE/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "2mAxAE3SBYo",
-   "title": "Large dirt piles, parking problems spark concerns at Garden City Center",
-   "link": "https://www.youtube.com/watch?v=2mAxAE3SBYo",
-   "published": "2026-11-03T22:45:59.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/2mAxAE3SBYo/mqdefault.jpg",
    "towns": []
   }
  ]

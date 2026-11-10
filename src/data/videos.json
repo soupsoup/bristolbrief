@@ -1,36 +1,29 @@
 {
- "updated": "2026-11-10T03:05:28.988Z",
+ "updated": "2026-11-10T04:35:25.039Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -43,13 +36,117 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 500"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "6H0cbagsfsw",
+   "title": "2 men arrested for solicitation of a child",
+   "link": "https://www.youtube.com/watch?v=6H0cbagsfsw",
+   "published": "2026-11-10T04:33:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/6H0cbagsfsw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "H0dzn1KGzs0",
+   "title": "Crews respond to Three-Mile River in Taunton",
+   "link": "https://www.youtube.com/watch?v=H0dzn1KGzs0",
+   "published": "2026-11-10T04:32:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/H0dzn1KGzs0/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "7_SBQvGJIYM",
+   "title": "WPRI 12 Weather Forecast 11-9-26 Sunny Cool Next Few Days",
+   "link": "https://www.youtube.com/watch?v=7_SBQvGJIYM",
+   "published": "2026-11-10T04:26:12.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7_SBQvGJIYM/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "Q0t5QJw4fqc",
+   "title": "EPHA: Food donated to unauthorized pantry will not be thrown away, must be claimed Tuesday",
+   "link": "https://www.youtube.com/watch?v=Q0t5QJw4fqc",
+   "published": "2026-11-10T04:23:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Q0t5QJw4fqc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Km9JCg5nwzE",
+   "title": "Long-term future of Newport birthing center still uncertain",
+   "link": "https://www.youtube.com/watch?v=Km9JCg5nwzE",
+   "published": "2026-11-10T04:22:34.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Km9JCg5nwzE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wUnHnzmxlDc",
+   "title": "Newport leaders outline plan to keep birthing center open amid funding challenges",
+   "link": "https://www.youtube.com/watch?v=wUnHnzmxlDc",
+   "published": "2026-11-10T04:15:27.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/wUnHnzmxlDc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ifmG251a524",
+   "title": "East Providence food drive sparks dispute; residents given Tuesday pickup window",
+   "link": "https://www.youtube.com/watch?v=ifmG251a524",
+   "published": "2026-11-10T04:10:52.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ifmG251a524/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vWIKqAJjkuw",
+   "title": "Hometown Hero: Lucca Sisto, La Salle",
+   "link": "https://www.youtube.com/watch?v=vWIKqAJjkuw",
+   "published": "2026-11-10T03:36:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/vWIKqAJjkuw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_0CNE6F_b_Y",
+   "title": "High School Roundup: Tiverton and North Providence advance to D-III finals",
+   "link": "https://www.youtube.com/watch?v=_0CNE6F_b_Y",
+   "published": "2026-11-10T03:33:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_0CNE6F_b_Y/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "frnqwTjjvC8",
    "title": "New RI Energy discount rates based on Federal Poverty Level #shorts",
@@ -73,6 +170,16 @@
    "short": true
   },
   {
+   "id": "j9igdcXIWxs",
+   "title": "Arrow-injured raccoon healing well, could return to wild within a week",
+   "link": "https://www.youtube.com/watch?v=j9igdcXIWxs",
+   "published": "2026-11-09T23:46:38.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/j9igdcXIWxs/mqdefault.jpg",
+   "towns": []
+  },
+  {
    "id": "O7eZj9gkRMU",
    "title": "Heavy rain triggered flooding across Southern New England",
    "link": "https://www.youtube.com/watch?v=O7eZj9gkRMU",
@@ -83,6 +190,16 @@
    "towns": [],
    "local": true,
    "countywide": true
+  },
+  {
+   "id": "OaQi9M3YHxk",
+   "title": "'He should resign.' Impeachment news hangs over Hegseth visit to Rhode Island",
+   "link": "https://www.youtube.com/watch?v=OaQi9M3YHxk",
+   "published": "2026-11-09T23:35:48.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/OaQi9M3YHxk/mqdefault.jpg",
+   "towns": []
   },
   {
    "id": "YjiCRmR8B7s",
@@ -187,19 +304,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/7vUpBowpZHU/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "wRkZuko2kIE",
-   "title": "WPRI 12 Weather Forecast 11-9-26  Seasonably Cool This Week",
-   "link": "https://www.youtube.com/watch?v=wRkZuko2kIE",
-   "published": "2026-11-09T22:57:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wRkZuko2kIE/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "rYpp1lnXwTc",
@@ -3728,90 +3832,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/8YfcydQdoYQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3UqAJPYedNw",
-   "title": "WPRI 12 Weather Forecast 11-2-26 Partly Sunny, Warm Tuesday",
-   "link": "https://www.youtube.com/watch?v=3UqAJPYedNw",
-   "published": "2026-11-03T04:29:23.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/3UqAJPYedNw/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "bCCJBQYUDL0",
-   "title": "Hometown Hero: Isaac Rodriguez, East Providence",
-   "link": "https://www.youtube.com/watch?v=bCCJBQYUDL0",
-   "published": "2026-11-03T04:25:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/bCCJBQYUDL0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "b7J8FKiIRMk",
-   "title": "Providence handles Maine in first game under Bryan Hodgson",
-   "link": "https://www.youtube.com/watch?v=b7J8FKiIRMk",
-   "published": "2026-11-03T04:18:13.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/b7J8FKiIRMk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "1a6rGyO5CEI",
-   "title": "About 20 displaced, one hospitalized after Cranston apartment fire",
-   "link": "https://www.youtube.com/watch?v=1a6rGyO5CEI",
-   "published": "2026-11-03T04:09:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1a6rGyO5CEI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "UneqXLBysIg",
-   "title": "#LindsayClancy retrial could begin in March #shorts",
-   "link": "https://www.youtube.com/shorts/UneqXLBysIg",
-   "published": "2026-11-03T03:24:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/UneqXLBysIg/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "MXo9_uKKRwk",
-   "title": "Graduate Providence Hotel set for auction next year",
-   "link": "https://www.youtube.com/watch?v=MXo9_uKKRwk",
-   "published": "2026-11-03T03:17:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MXo9_uKKRwk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "MnLtoOpUJ4g",
-   "title": "3 friends launch nonprofit to honor hockey rink shooting victims",
-   "link": "https://www.youtube.com/watch?v=MnLtoOpUJ4g",
-   "published": "2026-11-03T03:17:24.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MnLtoOpUJ4g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "C2Ijq_w5Meo",
-   "title": "RI candidates gear up for Election Day",
-   "link": "https://www.youtube.com/watch?v=C2Ijq_w5Meo",
-   "published": "2026-11-03T03:15:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/C2Ijq_w5Meo/mqdefault.jpg",
    "towns": []
   }
  ]

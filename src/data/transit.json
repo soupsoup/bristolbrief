@@ -1,22 +1,28 @@
 {
- "updated": "2026-11-10T11:35:35.855Z",
+ "updated": "2026-11-10T12:05:29.685Z",
  "alerts": [
   {
-   "id": "1044686",
-   "header": "Providence Line Train 6004 (5:10 AM from Providence) is operating 5-15 minutes behind schedule between Providence and South Station.",
+   "id": "1044704",
+   "header": "Providence Line Train 6008 (6:02 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Attleboro and South Station.",
    "effect": "DELAY",
-   "severity": 3,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-10T05:25:10-05:00",
-   "end": "2026-11-10T07:24:00-05:00",
+   "start": "2026-11-10T07:01:27-05:00",
+   "end": "2026-11-10T08:41:00-05:00",
    "routes": [
     "CR-Providence"
    ],
-   "stations": [],
-   "towns": [],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
    "url": null,
-   "updated": "2026-11-10T05:25:10-05:00"
+   "updated": "2026-11-10T07:01:27-05:00"
   }
  ],
  "stopParents": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T23:36:39.102Z",
+ "updated": "2026-11-10T00:05:48.250Z",
  "alerts": [
   {
    "id": "1044599",
@@ -9,7 +9,7 @@
    "lifecycle": "NEW",
    "cause": "CROSSING_ISSUE",
    "start": "2026-11-09T15:12:19-05:00",
-   "end": "2026-11-09T20:35:00-05:00",
+   "end": "2026-11-09T21:05:01-05:00",
    "routes": [
     "CR-NewBedford"
    ],
@@ -36,6 +36,23 @@
    "updated": "2026-10-29T19:08:50-04:00"
   },
   {
+   "id": "1044655",
+   "header": "Providence Line Train 6031 (6:17 PM from South Station) is operating 15-25 minutes behind schedule between Ruggles and Providence.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-09T18:44:44-05:00",
+   "end": "2026-11-09T20:36:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-09T18:44:44-05:00"
+  },
+  {
    "id": "1044628",
    "header": "Providence Line Train 6027 (4:45 PM from South Station) is operating 15-25 minutes behind schedule between Mansfield and Wickford Junction.",
    "effect": "DELAY",
@@ -51,6 +68,23 @@
    "towns": [],
    "url": null,
    "updated": "2026-11-09T17:56:00-05:00"
+  },
+  {
+   "id": "1044656",
+   "header": "New Bedford Line Train 8023 (6:38 PM from South Station) is operating 10-20 minutes behind schedule between South Station and New Bedford.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-09T18:55:09-05:00",
+   "end": "2026-11-09T21:21:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-09T18:55:09-05:00"
   },
   {
    "id": "1044635",

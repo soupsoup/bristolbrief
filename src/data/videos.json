@@ -1,33 +1,36 @@
 {
- "updated": "2026-11-11T02:05:28.175Z",
+ "updated": "2026-11-11T03:05:28.132Z",
  "channels": [
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
    "id": "nbc10-boston",
@@ -37,21 +40,50 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "38QM6WWerKE",
+   "title": "2 bodies recovered in Taunton river after car crashes into Threemile River #shorts",
+   "link": "https://www.youtube.com/shorts/38QM6WWerKE",
+   "published": "2026-11-11T03:03:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/38QM6WWerKE/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "cCVFqPmU07o",
+   "title": "Foulkes announces transition committee #shorts",
+   "link": "https://www.youtube.com/shorts/cCVFqPmU07o",
+   "published": "2026-11-11T02:15:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/cCVFqPmU07o/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "_o93DtcZa24",
+   "title": "North Kingstown officer indicted on 3 felony counts of 2nd-degree sexual assault #shorts",
+   "link": "https://www.youtube.com/shorts/_o93DtcZa24",
+   "published": "2026-11-11T02:05:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_o93DtcZa24/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "mZpvIjcFRlA",
    "title": "12 Health: Alzheimer's Awareness Month #shorts",
@@ -4264,46 +4296,6 @@
    "thumbnail": "https://i.ytimg.com/vi/lf1YOrMolhc/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "baiMVWvZgQ4",
-   "title": "Rhode Island voters elect Helena Foulkes governor",
-   "link": "https://www.youtube.com/watch?v=baiMVWvZgQ4",
-   "published": "2026-11-04T02:46:06.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/baiMVWvZgQ4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2XfI5uN8DJY",
-   "title": "Democrat Gabe Amo wins reelection to U.S. House in Rhode Island's 1st Congressional District",
-   "link": "https://www.youtube.com/watch?v=2XfI5uN8DJY",
-   "published": "2026-11-04T02:45:18.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/2XfI5uN8DJY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "atacbeCoW2o",
-   "title": "Rhode Island voters elect Helena Foulkes governor",
-   "link": "https://www.youtube.com/watch?v=atacbeCoW2o",
-   "published": "2026-11-04T02:41:30.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/atacbeCoW2o/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "9vs6FCQFI1A",
-   "title": "Ken Block concedes after Rhode Island voters elect Helena Foulkes governor",
-   "link": "https://www.youtube.com/watch?v=9vs6FCQFI1A",
-   "published": "2026-11-04T02:15:38.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/9vs6FCQFI1A/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

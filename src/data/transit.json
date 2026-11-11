@@ -1,6 +1,44 @@
 {
- "updated": "2026-11-11T14:35:25.859Z",
+ "updated": "2026-11-11T15:05:45.590Z",
  "alerts": [
+  {
+   "id": "1044953",
+   "header": "Correction: Fall River Line Train 8164 (9:13 AM from Fall River Depot) will be replaced by a shuttle bus between Fall River Depot and East Taunton due to a road vehicle on the right of way.",
+   "effect": "SHUTTLE",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-11T09:29:00-05:00",
+   "end": "2026-11-11T10:34:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-11T10:02:31-05:00"
+  },
+  {
+   "id": "1044955",
+   "header": "Fall River/New Bedford Line passengers may experience delays of up to 20 mins in both directions due to a road vehicle on the right of way near East Taunton and a temporary speed restriction in effect at a crossing in the Middleborough area.",
+   "effect": "DELAY",
+   "severity": 8,
+   "lifecycle": "NEW",
+   "cause": "CROSSING_ISSUE",
+   "start": "2026-11-11T09:48:00-05:00",
+   "end": "2026-11-11T12:05:01-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-11T09:56:10-05:00"
+  },
   {
    "id": "1044949",
    "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 25-35 minutes behind schedule between Brockton and Fall River due to a temporary speed restriction in effect in the Middleborough area and train traffic.",
@@ -44,38 +82,29 @@
    "updated": "2026-11-11T09:33:14-05:00"
   },
   {
-   "id": "1044953",
-   "header": "Fall River Line Train 8164 (9:13 AM from Fall River Depot) is stopped before East Taunton until further notice due to a road vehicle on the right of way.",
+   "id": "1044956",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Quincy Center and Fall River.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-11T09:29:24-05:00",
-   "end": "2026-11-11T10:34:00-05:00",
+   "start": "2026-11-11T10:04:23-05:00",
+   "end": "2026-11-11T12:18:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-11T09:29:24-05:00"
-  },
-  {
-   "id": "1044945",
-   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 5-15 minutes behind schedule between Montello and South Station.",
-   "effect": "DELAY",
-   "severity": 3,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-11T08:36:02-05:00",
-   "end": "2026-11-11T10:05:00-05:00",
-   "routes": [
-    "CR-NewBedford"
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
    ],
-   "stations": [],
-   "towns": [],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
    "url": null,
-   "updated": "2026-11-11T08:36:02-05:00"
+   "updated": "2026-11-11T10:04:23-05:00"
   },
   {
    "id": "1044782",

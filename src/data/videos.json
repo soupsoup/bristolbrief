@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T03:05:28.132Z",
+ "updated": "2026-11-11T03:35:26.347Z",
  "channels": [
   {
    "id": "cbs-boston",
@@ -20,31 +20,29 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": false,
    "error": "HTTP 404"
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -4265,37 +4263,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/FSQhPUe8k28/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "VMJ3s-C1ORU",
-   "title": "David Morales becomes youngest candidate to win election for Providence mayor",
-   "link": "https://www.youtube.com/watch?v=VMJ3s-C1ORU",
-   "published": "2026-11-04T03:31:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/VMJ3s-C1ORU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Qmz4IKc7m-k",
-   "title": "Senator Jack Reed shares his thoughts on reelection win",
-   "link": "https://www.youtube.com/watch?v=Qmz4IKc7m-k",
-   "published": "2026-11-04T03:29:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Qmz4IKc7m-k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lf1YOrMolhc",
-   "title": "9:12 p.m. | Helena Foulkes celebrates victory in RI governor race #shorts",
-   "link": "https://www.youtube.com/shorts/lf1YOrMolhc",
-   "published": "2026-11-04T03:28:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lf1YOrMolhc/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-11T14:05:29.742Z",
+ "updated": "2026-11-11T14:35:25.859Z",
  "alerts": [
   {
    "id": "1044949",
-   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and Fall River.",
+   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 25-35 minutes behind schedule between Brockton and Fall River due to a temporary speed restriction in effect in the Middleborough area and train traffic.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 8,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-11T08:57:14-05:00",
+   "cause": "SPEED_RESTRICTION",
+   "start": "2026-11-11T08:57:00-05:00",
    "end": "2026-11-11T11:02:00-05:00",
    "routes": [
     "CR-NewBedford"
@@ -24,7 +24,41 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-11T08:57:14-05:00"
+   "updated": "2026-11-11T09:31:09-05:00"
+  },
+  {
+   "id": "1044954",
+   "header": "New Bedford Line Train 8053 (9:43 AM from East Taunton) is expected to depart East Taunton at least 20 minutes behind schedule due to a road vehicle on the right of way.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-11T09:43:00-05:00",
+   "end": "2026-11-11T11:08:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-11T09:33:14-05:00"
+  },
+  {
+   "id": "1044953",
+   "header": "Fall River Line Train 8164 (9:13 AM from Fall River Depot) is stopped before East Taunton until further notice due to a road vehicle on the right of way.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-11T09:29:24-05:00",
+   "end": "2026-11-11T10:34:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-11T09:29:24-05:00"
   },
   {
    "id": "1044945",

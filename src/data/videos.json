@@ -1,35 +1,40 @@
 {
- "updated": "2026-11-11T01:05:28.006Z",
+ "updated": "2026-11-11T01:35:28.310Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "wcvb",
@@ -39,13 +44,65 @@
    "kept": 1
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "mZpvIjcFRlA",
+   "title": "12 Health: Alzheimer's Awareness Month #shorts",
+   "link": "https://www.youtube.com/shorts/mZpvIjcFRlA",
+   "published": "2026-11-11T00:56:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mZpvIjcFRlA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "Filb1_Qcip8",
+   "title": "Connect to Providence: Mayor Smiley calls transition to Morales smooth",
+   "link": "https://www.youtube.com/watch?v=Filb1_Qcip8",
+   "published": "2026-11-11T00:48:48.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Filb1_Qcip8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "XFcCGkcYaGY",
+   "title": "Fish Bowl owner says North Kingstown pet sales ban could force store to close",
+   "link": "https://www.youtube.com/watch?v=XFcCGkcYaGY",
+   "published": "2026-11-11T00:45:20.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/XFcCGkcYaGY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Y-bc7s8zzNo",
+   "title": "Providence to host first St. Andrew’s weekend, signing friendship pact with Scottish town",
+   "link": "https://www.youtube.com/watch?v=Y-bc7s8zzNo",
+   "published": "2026-11-11T00:26:56.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Y-bc7s8zzNo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Wnj0sQA1YLw",
+   "title": "East Providence food drive controversy highlights food insecurity",
+   "link": "https://www.youtube.com/watch?v=Wnj0sQA1YLw",
+   "published": "2026-11-11T00:13:40.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Wnj0sQA1YLw/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "hY7LZh0hwto",
    "title": "What to know: Henderson Expressway ramp closure",
@@ -4246,16 +4303,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/9vs6FCQFI1A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "rNuD5eCjRaQ",
-   "title": "Gov. Maura Healey wins reelection in Massachusetts",
-   "link": "https://www.youtube.com/watch?v=rNuD5eCjRaQ",
-   "published": "2026-11-04T01:29:24.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/rNuD5eCjRaQ/mqdefault.jpg",
    "towns": []
   }
  ]

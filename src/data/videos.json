@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-11T17:05:28.026Z",
+ "updated": "2026-11-11T17:35:47.031Z",
  "channels": [
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -14,20 +14,6 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "nbc10-boston",
@@ -44,8 +30,22 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,17 +53,62 @@
  ],
  "videos": [
   {
-   "id": "fGQrM5KnPdk",
-   "title": "WPRI 12 Weather Now 11/11/26: Sunny, seasonable and dry today; rain arrives late tomorrow",
-   "link": "https://www.youtube.com/watch?v=fGQrM5KnPdk",
-   "published": "2026-11-11T16:38:22.000Z",
+   "id": "C8VERCNFYp4",
+   "title": "12 Gives Back: Veterans Association of Bristol County",
+   "link": "https://www.youtube.com/watch?v=C8VERCNFYp4",
+   "published": "2026-11-11T17:28:07.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fGQrM5KnPdk/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/C8VERCNFYp4/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "0Dhm6sH6AqY",
+   "title": "WPRI 12 Weather Forecast for 11/11/26:  Dry today, rain arrives tomorrow",
+   "link": "https://www.youtube.com/watch?v=0Dhm6sH6AqY",
+   "published": "2026-11-11T17:25:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0Dhm6sH6AqY/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "l7VJgYc_YWM",
+   "title": "Red Sox honor veterans during visit to Bristol veterans home",
+   "link": "https://www.youtube.com/watch?v=l7VJgYc_YWM",
+   "published": "2026-11-11T17:24:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/l7VJgYc_YWM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "bctaf4wXmEo",
+   "title": "Scituate dedicates community center to Lt. Gen. Reginald Centracchio",
+   "link": "https://www.youtube.com/watch?v=bctaf4wXmEo",
+   "published": "2026-11-11T17:20:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/bctaf4wXmEo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "EYyBZZrmmJ0",
+   "title": "New Bedford honors veterans with parade, ceremony",
+   "link": "https://www.youtube.com/watch?v=EYyBZZrmmJ0",
+   "published": "2026-11-11T17:12:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/EYyBZZrmmJ0/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
   },
   {
    "id": "dYwxGf3TgBk",
@@ -4137,76 +4182,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/BgaRUfy_zKI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "fL9rMTfECwA",
-   "title": "Democrats win US House and Senate, ending GOP dominance",
-   "link": "https://www.youtube.com/watch?v=fL9rMTfECwA",
-   "published": "2026-11-04T17:25:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fL9rMTfECwA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QF7R12lvW28",
-   "title": "CVS will separate its pharmacy and insurance businesses",
-   "link": "https://www.youtube.com/watch?v=QF7R12lvW28",
-   "published": "2026-11-04T17:24:43.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QF7R12lvW28/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "QVxiAFhNbgw",
-   "title": "Brown testing siren at 12:30 p.m. Wednesday",
-   "link": "https://www.youtube.com/watch?v=QVxiAFhNbgw",
-   "published": "2026-11-04T17:23:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QVxiAFhNbgw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "06LoFNH2HEA",
-   "title": "Helena Foulkes outlines priorities in exclusive 12 News interview after election victory",
-   "link": "https://www.youtube.com/watch?v=06LoFNH2HEA",
-   "published": "2026-11-04T17:23:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/06LoFNH2HEA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "c8DIVDFqdO4",
-   "title": "Voters react to 'Blue tsunami' that rocked the midterm election",
-   "link": "https://www.youtube.com/watch?v=c8DIVDFqdO4",
-   "published": "2026-11-04T17:20:14.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/c8DIVDFqdO4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "6_bWvJt0zaE",
-   "title": "Overview of 2026 midterm election results in Rhode Island",
-   "link": "https://www.youtube.com/watch?v=6_bWvJt0zaE",
-   "published": "2026-11-04T17:09:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/6_bWvJt0zaE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_QZeGkmaGtY",
-   "title": "Crews respond to large brush fire near I-295",
-   "link": "https://www.youtube.com/watch?v=_QZeGkmaGtY",
-   "published": "2026-11-04T17:07:31.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_QZeGkmaGtY/mqdefault.jpg",
    "towns": []
   }
  ]

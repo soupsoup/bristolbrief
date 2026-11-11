@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-11T03:35:26.347Z",
+ "updated": "2026-11-11T04:05:25.455Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": false,
+   "error": "HTTP 404"
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
@@ -14,14 +32,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -30,19 +42,7 @@
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "kept": 0
   }
  ],
  "videos": [
@@ -4199,69 +4199,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/nfU6cG1DunI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "1I_obhw5WR4",
-   "title": "WPRI 12 Weather Forecast 11-3-26 More Warm Sunshine Wednesday",
-   "link": "https://www.youtube.com/watch?v=1I_obhw5WR4",
-   "published": "2026-11-04T04:04:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/1I_obhw5WR4/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "mfRQGZSofmw",
-   "title": "Kim Ahern wins race for RI attorney general",
-   "link": "https://www.youtube.com/watch?v=mfRQGZSofmw",
-   "published": "2026-11-04T03:52:34.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mfRQGZSofmw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "kWOFPXaEO9Y",
-   "title": "David Morales elected mayor of Providence",
-   "link": "https://www.youtube.com/watch?v=kWOFPXaEO9Y",
-   "published": "2026-11-04T03:48:01.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/kWOFPXaEO9Y/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "aI92yuWdLn8",
-   "title": "Morales elected mayor of Providence",
-   "link": "https://www.youtube.com/watch?v=aI92yuWdLn8",
-   "published": "2026-11-04T03:46:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/aI92yuWdLn8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ZP9Avk2AL1M",
-   "title": "Democrats claim Mass state's top offices",
-   "link": "https://www.youtube.com/watch?v=ZP9Avk2AL1M",
-   "published": "2026-11-04T03:45:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ZP9Avk2AL1M/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "FSQhPUe8k28",
-   "title": "Sabina Matos defeats former GOP state Rep. John Loughlin",
-   "link": "https://www.youtube.com/watch?v=FSQhPUe8k28",
-   "published": "2026-11-04T03:41:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/FSQhPUe8k28/mqdefault.jpg",
    "towns": []
   }
  ]

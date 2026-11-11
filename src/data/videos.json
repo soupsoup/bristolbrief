@@ -1,16 +1,23 @@
 {
- "updated": "2026-11-11T23:05:24.089Z",
+ "updated": "2026-11-11T23:35:32.607Z",
  "channels": [
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,25 +30,18 @@
    "kept": 0
   },
   {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "wcvb",
@@ -52,6 +52,99 @@
   }
  ],
  "videos": [
+  {
+   "id": "NcpeMabAFpc",
+   "title": "Newport mother sues school officials after son's locker room assault at Rogers High School",
+   "link": "https://www.youtube.com/watch?v=NcpeMabAFpc",
+   "published": "2026-11-11T23:34:03.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/NcpeMabAFpc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rwoX2EGvfsM",
+   "title": "Man, 20, seriously injured in shooting at Sabin Point in East Providence",
+   "link": "https://www.youtube.com/watch?v=rwoX2EGvfsM",
+   "published": "2026-11-11T23:27:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rwoX2EGvfsM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "dwFgBRAmbGM",
+   "title": "New Bedford honors veterans with annual parade #shorts",
+   "link": "https://www.youtube.com/shorts/dwFgBRAmbGM",
+   "published": "2026-11-11T23:23:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/dwFgBRAmbGM/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "KAAenrZgs8U",
+   "title": "Raynham ice ink closed after possible ammonia leak",
+   "link": "https://www.youtube.com/watch?v=KAAenrZgs8U",
+   "published": "2026-11-11T23:18:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/KAAenrZgs8U/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true
+  },
+  {
+   "id": "HfSbFG3RerA",
+   "title": "More victims identified in North Smithfield man's AI child sexual abuse case",
+   "link": "https://www.youtube.com/watch?v=HfSbFG3RerA",
+   "published": "2026-11-11T23:17:15.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HfSbFG3RerA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ygQLc1jJahs",
+   "title": "Southeastern New England observes Veterans Day",
+   "link": "https://www.youtube.com/watch?v=ygQLc1jJahs",
+   "published": "2026-11-11T23:14:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ygQLc1jJahs/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "3Xa_3f4k9mo",
+   "title": "Persons of interest detained after shooting at Sabin Point Park",
+   "link": "https://www.youtube.com/watch?v=3Xa_3f4k9mo",
+   "published": "2026-11-11T23:14:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/3Xa_3f4k9mo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "8m7Ur9VJQ0Q",
+   "title": "WPRI 12 Weather Forecast 11-11-26 Rain By Late Day Thursday",
+   "link": "https://www.youtube.com/watch?v=8m7Ur9VJQ0Q",
+   "published": "2026-11-11T22:59:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/8m7Ur9VJQ0Q/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "5kPEpprVZtg",
    "title": "Sandra Birchmore Case Daily Debrief: what's next after Matthew Farwell's conviction",
@@ -205,19 +298,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/vSrq6gWbTgY/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "h9iA5fTYSy0",
-   "title": "WPRI 12 Weather Now 11-11-26 Rain Thursday PM And Friday",
-   "link": "https://www.youtube.com/watch?v=h9iA5fTYSy0",
-   "published": "2026-11-11T21:28:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/h9iA5fTYSy0/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "z11K68ACvhQ",
@@ -4059,120 +4139,6 @@
    "thumbnail": "https://i.ytimg.com/vi/wsgOpGEFMCg/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "A4HOZuo8nXU",
-   "title": "'A desire for change': Foulkes talks about big election win and agenda in office",
-   "link": "https://www.youtube.com/watch?v=A4HOZuo8nXU",
-   "published": "2026-11-04T23:34:49.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/A4HOZuo8nXU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "C9Xo9xyazoM",
-   "title": "Proposed Prudence Island Ferry hike would raise round-trip passenger fares",
-   "link": "https://www.youtube.com/watch?v=C9Xo9xyazoM",
-   "published": "2026-11-04T23:32:35.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/C9Xo9xyazoM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "74feXVnHBaw",
-   "title": "Daniel Gendron wins mayoral election in Woonsocket",
-   "link": "https://www.youtube.com/watch?v=74feXVnHBaw",
-   "published": "2026-11-04T23:29:49.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/74feXVnHBaw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PiUkqXgYqLo",
-   "title": "Parent says second grader made alleged hit list naming her son at Charlestown school",
-   "link": "https://www.youtube.com/watch?v=PiUkqXgYqLo",
-   "published": "2026-11-04T23:26:34.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/PiUkqXgYqLo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ucP9PwIjSQE",
-   "title": "Rhode Island voters reject statewide bonds for first time in 20 years",
-   "link": "https://www.youtube.com/watch?v=ucP9PwIjSQE",
-   "published": "2026-11-04T23:26:08.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ucP9PwIjSQE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "MV0OA6N6XlY",
-   "title": "How accurately did polling and Polymarket data predict major election results? #shorts",
-   "link": "https://www.youtube.com/shorts/MV0OA6N6XlY",
-   "published": "2026-11-04T23:23:43.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/MV0OA6N6XlY/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "5BSSEGRPZvE",
-   "title": "WWII soldier from New Bedford accounted for",
-   "link": "https://www.youtube.com/watch?v=5BSSEGRPZvE",
-   "published": "2026-11-04T23:23:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5BSSEGRPZvE/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "2ABse7jMOuU",
-   "title": "I-195 will shut down in East Providence this week",
-   "link": "https://www.youtube.com/watch?v=2ABse7jMOuU",
-   "published": "2026-11-04T23:22:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/2ABse7jMOuU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "wWVfEmhkfvE",
-   "title": "30 arrests made in Providence neighborhood during Halloween",
-   "link": "https://www.youtube.com/watch?v=wWVfEmhkfvE",
-   "published": "2026-11-04T23:19:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wWVfEmhkfvE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "cviAkPYE6TY",
-   "title": "Full interview: 1-on-1 with RI Governor-elect Helena Foulkes",
-   "link": "https://www.youtube.com/watch?v=cviAkPYE6TY",
-   "published": "2026-11-04T23:19:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/cviAkPYE6TY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "xC3YRiIGQ0A",
-   "title": "Brush fire breaks out along I-295 North",
-   "link": "https://www.youtube.com/watch?v=xC3YRiIGQ0A",
-   "published": "2026-11-04T23:17:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/xC3YRiIGQ0A/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

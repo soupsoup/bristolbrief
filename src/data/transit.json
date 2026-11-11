@@ -1,6 +1,48 @@
 {
- "updated": "2026-11-11T13:35:39.469Z",
+ "updated": "2026-11-11T14:05:29.742Z",
  "alerts": [
+  {
+   "id": "1044949",
+   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 5-15 minutes behind schedule between Holbrook/Randolph and Fall River.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-11T08:57:14-05:00",
+   "end": "2026-11-11T11:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-11T08:57:14-05:00"
+  },
+  {
+   "id": "1044945",
+   "header": "New Bedford Line Train 8010 (7:24 AM from New Bedford) is operating 5-15 minutes behind schedule between Montello and South Station.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-11T08:36:02-05:00",
+   "end": "2026-11-11T10:05:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-11T08:36:02-05:00"
+  },
   {
    "id": "1044782",
    "header": "On Wednesday, November 11th, all Commuter Rail lines will be operating on a normal weekday schedule.",

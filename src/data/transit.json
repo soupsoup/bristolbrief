@@ -1,6 +1,55 @@
 {
- "updated": "2026-11-12T21:05:24.442Z",
+ "updated": "2026-11-12T21:35:30.217Z",
  "alerts": [
+  {
+   "id": "1045167",
+   "header": "Fall River Line Train 8163 (3:47 PM from East Taunton) is operating 15-25 minutes behind schedule between East Taunton and Fall River Depot.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T16:09:26-05:00",
+   "end": "2026-11-12T17:10:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-12T16:09:26-05:00"
+  },
+  {
+   "id": "1045168",
+   "header": "Providence Line Train 6030 (3:56 PM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T16:10:05-05:00",
+   "end": "2026-11-12T18:14:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-12T16:10:05-05:00"
+  },
   {
    "id": "1045152",
    "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and New Bedford.",
@@ -28,23 +77,6 @@
    ],
    "url": null,
    "updated": "2026-11-12T15:23:29-05:00"
-  },
-  {
-   "id": "1045146",
-   "header": "Fall River Line Train 8174 (3:13 PM from Fall River Depot) is expected to depart Fall River 5-15 minutes behind schedule.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-12T15:13:00-05:00",
-   "end": "2026-11-12T16:34:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-12T14:26:27-05:00"
   }
  ],
  "stopParents": {

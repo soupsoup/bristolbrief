@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-12T17:35:41.385Z",
+ "updated": "2026-11-12T18:05:43.862Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 2
@@ -27,11 +27,18 @@
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 3
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -42,16 +49,92 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "4FNifXKVjoM",
+   "title": "Man found dead after traffic stop leads to standoff in New Bedford",
+   "link": "https://www.youtube.com/watch?v=4FNifXKVjoM",
+   "published": "2026-11-12T17:56:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/4FNifXKVjoM/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "RHgSQbF8pWo",
+   "title": "Upshot League announces new women’s basketball team in Providence",
+   "link": "https://www.youtube.com/watch?v=RHgSQbF8pWo",
+   "published": "2026-11-12T17:51:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RHgSQbF8pWo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "GH7yewdNO7c",
+   "title": "Nvidia CEO Jensen Huang resigns after his affair raises national security concerns",
+   "link": "https://www.youtube.com/watch?v=GH7yewdNO7c",
+   "published": "2026-11-12T17:51:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/GH7yewdNO7c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RczKYrRjodc",
+   "title": "1 dead, multiple injured in Washington DC shooting; police say suspect ‘contained’",
+   "link": "https://www.youtube.com/watch?v=RczKYrRjodc",
+   "published": "2026-11-12T17:49:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RczKYrRjodc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "y16yXwtRYGQ",
+   "title": "WPRI 12 Weather Forecast 11/12/26: Chilly Rain Arrives Later Today And Friday",
+   "link": "https://www.youtube.com/watch?v=y16yXwtRYGQ",
+   "published": "2026-11-12T17:44:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/y16yXwtRYGQ/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "vn4_VHax4no",
+   "title": "Suspect who died after opening fire at officers on Mass. street identified",
+   "link": "https://www.youtube.com/shorts/vn4_VHax4no",
+   "published": "2026-11-12T17:38:54.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/vn4_VHax4no/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "2JxgODDr7Tk",
+   "title": "Suspect dead after standoff in New Bedford",
+   "link": "https://www.youtube.com/watch?v=2JxgODDr7Tk",
+   "published": "2026-11-12T17:33:42.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/2JxgODDr7Tk/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "BWCm1w5umG8",
    "title": "Suspect who died after opening fire at officers on New Bedford street identified",
@@ -94,19 +177,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/pLIMfX-ym1g/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "4tK56dzr6l4",
-   "title": "WPRI 12 Weather Forecast for 11/12/26:  Rain showers develop later today",
-   "link": "https://www.youtube.com/watch?v=4tK56dzr6l4",
-   "published": "2026-11-12T14:04:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/4tK56dzr6l4/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "O4H56rbd_I8",
@@ -4191,26 +4261,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/yXh8nOq23gs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oULxNRN0rf4",
-   "title": "Cranston residents voice frustrations over Garden City dirt piles",
-   "link": "https://www.youtube.com/watch?v=oULxNRN0rf4",
-   "published": "2026-11-05T17:47:28.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/oULxNRN0rf4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-7C4pUOJpUA",
-   "title": "Video Now: Briefing on upcoming I-195 closure",
-   "link": "https://www.youtube.com/watch?v=-7C4pUOJpUA",
-   "published": "2026-11-05T17:42:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-7C4pUOJpUA/mqdefault.jpg",
    "towns": []
   }
  ]

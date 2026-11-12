@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T20:05:29.494Z",
+ "updated": "2026-11-12T20:35:50.668Z",
  "alerts": [
   {
    "id": "1045136",
@@ -25,6 +25,34 @@
    ],
    "url": null,
    "updated": "2026-11-12T14:23:54-05:00"
+  },
+  {
+   "id": "1045152",
+   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and New Bedford.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T15:23:29-05:00",
+   "end": "2026-11-12T17:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-12T15:23:29-05:00"
   },
   {
    "id": "1045146",

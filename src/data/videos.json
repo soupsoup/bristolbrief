@@ -1,36 +1,40 @@
 {
- "updated": "2026-11-12T05:05:26.948Z",
+ "updated": "2026-11-12T08:05:54.235Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
    "kept": 0
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
   },
   {
    "id": "cbs-boston",
@@ -40,13 +44,73 @@
    "kept": 1
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "3v3jbZdgE1M",
+   "title": "Shots fired at officers, New Bedford police say",
+   "link": "https://www.youtube.com/watch?v=3v3jbZdgE1M",
+   "published": "2026-11-12T05:57:50.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/3v3jbZdgE1M/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "wmqSwPPgGmg",
+   "title": "WPRI 12 Weather Forecast 11-11-26 Rain Late Thursday Into Friday",
+   "link": "https://www.youtube.com/watch?v=wmqSwPPgGmg",
+   "published": "2026-11-12T04:31:06.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wmqSwPPgGmg/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "nhb2nyjtyOw",
+   "title": "Providence woman injured, dog hospitalized after reported dog attack",
+   "link": "https://www.youtube.com/watch?v=nhb2nyjtyOw",
+   "published": "2026-11-12T04:16:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/nhb2nyjtyOw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "zRYZ36s4lBE",
+   "title": "25 dogs removed from Warwick home; neighbor describes cramped crates, lack of water",
+   "link": "https://www.youtube.com/watch?v=zRYZ36s4lBE",
+   "published": "2026-11-12T04:11:31.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/zRYZ36s4lBE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "NHhg_ox-FeA",
+   "title": "Officers fired at in New Bedford; neighbor describes loud gunfire",
+   "link": "https://www.youtube.com/watch?v=NHhg_ox-FeA",
+   "published": "2026-11-12T04:08:08.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/NHhg_ox-FeA/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "VY9l60tJ1mU",
    "title": "Shots fired at New Bedford police officers leads to standoff",
@@ -59,6 +123,103 @@
     "new-bedford"
    ],
    "local": true
+  },
+  {
+   "id": "1Wl1vdrsCvk",
+   "title": "Officers swarm New Bedford neighborhood after shots fired",
+   "link": "https://www.youtube.com/watch?v=1Wl1vdrsCvk",
+   "published": "2026-11-12T03:38:05.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1Wl1vdrsCvk/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "Dmm4Di_RLU0",
+   "title": "Police: Suspect shoots at officers on New Bedford street, no officers injured",
+   "link": "https://www.youtube.com/watch?v=Dmm4Di_RLU0",
+   "published": "2026-11-12T03:18:03.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/Dmm4Di_RLU0/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "JA5JpTD0l8k",
+   "title": "Joe Kennedy III on family’s arch lawsuit: ‘You’ve got to follow the law’",
+   "link": "https://www.youtube.com/watch?v=JA5JpTD0l8k",
+   "published": "2026-11-12T03:15:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JA5JpTD0l8k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_W1ids_Bc3c",
+   "title": "2 dead after building collapse in New York City",
+   "link": "https://www.youtube.com/watch?v=_W1ids_Bc3c",
+   "published": "2026-11-12T03:15:07.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_W1ids_Bc3c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "z4ue8_c_x4w",
+   "title": "Man charged after 25 dogs removed from Warwick home",
+   "link": "https://www.youtube.com/watch?v=z4ue8_c_x4w",
+   "published": "2026-11-12T03:12:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/z4ue8_c_x4w/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "lVkbc5PV0PI",
+   "title": "Pedestrian hit, critically injured by car in Warwick",
+   "link": "https://www.youtube.com/watch?v=lVkbc5PV0PI",
+   "published": "2026-11-12T03:12:08.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lVkbc5PV0PI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "hk3rs0BQuHM",
+   "title": "Man stabbed after altercation in Providence",
+   "link": "https://www.youtube.com/watch?v=hk3rs0BQuHM",
+   "published": "2026-11-12T03:11:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/hk3rs0BQuHM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "q_1AOOXC9rY",
+   "title": "6 arrested after man shot in East Providence",
+   "link": "https://www.youtube.com/watch?v=q_1AOOXC9rY",
+   "published": "2026-11-12T03:09:56.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/q_1AOOXC9rY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qRZD51tfJsg",
+   "title": "Behind the Story: Storytelling through images",
+   "link": "https://www.youtube.com/shorts/qRZD51tfJsg",
+   "published": "2026-11-12T03:07:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qRZD51tfJsg/mqdefault.jpg",
+   "towns": [],
+   "short": true
   },
   {
    "id": "C760_VkLmKY",
@@ -225,19 +386,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/3Xa_3f4k9mo/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "8m7Ur9VJQ0Q",
-   "title": "WPRI 12 Weather Forecast 11-11-26 Rain By Late Day Thursday",
-   "link": "https://www.youtube.com/watch?v=8m7Ur9VJQ0Q",
-   "published": "2026-11-11T22:59:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8m7Ur9VJQ0Q/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "5kPEpprVZtg",

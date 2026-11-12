@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T21:35:30.217Z",
+ "updated": "2026-11-12T22:05:27.009Z",
  "alerts": [
   {
    "id": "1045167",
@@ -27,6 +27,51 @@
    "updated": "2026-11-12T16:09:26-05:00"
   },
   {
+   "id": "1045195",
+   "header": "Providence Line Train 6023 (3:47 PM from South Station) is operating 10-20 minutes behind schedule between South Attleboro and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T16:54:58-05:00",
+   "end": "2026-11-12T18:30:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-11-12T16:54:58-05:00"
+  },
+  {
+   "id": "1045197",
+   "header": "Providence Line Train 6025 (4:15 PM from South Station) is operating 5-15 minutes behind schedule between Sharon and Providence.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T16:56:23-05:00",
+   "end": "2026-11-12T18:26:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-12T16:56:23-05:00"
+  },
+  {
    "id": "1045168",
    "header": "Providence Line Train 6030 (3:56 PM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station.",
    "effect": "DELAY",
@@ -49,34 +94,6 @@
    ],
    "url": null,
    "updated": "2026-11-12T16:10:05-05:00"
-  },
-  {
-   "id": "1045152",
-   "header": "New Bedford Line Train 8013 (2:20 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and New Bedford.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-12T15:23:29-05:00",
-   "end": "2026-11-12T17:02:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [
-    "Freetown",
-    "Fall River Depot",
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
-   ],
-   "towns": [
-    "freetown",
-    "fall-river",
-    "taunton",
-    "new-bedford"
-   ],
-   "url": null,
-   "updated": "2026-11-12T15:23:29-05:00"
   }
  ],
  "stopParents": {

@@ -1,47 +1,29 @@
 {
- "updated": "2026-11-12T02:35:44.139Z",
+ "updated": "2026-11-12T03:06:42.065Z",
  "channels": [
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wcvb",
@@ -49,6 +31,18 @@
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [

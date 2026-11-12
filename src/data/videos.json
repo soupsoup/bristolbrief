@@ -1,6 +1,20 @@
 {
- "updated": "2026-11-12T11:05:33.798Z",
+ "updated": "2026-11-12T11:35:25.933Z",
  "channels": [
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -9,11 +23,18 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 2
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "nbc10-wjar",
@@ -28,30 +49,22 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "gF-JZYTPy04",
+   "title": "Suspect dead after allegedly shooting at police in New Bedford, Massachusetts",
+   "link": "https://www.youtube.com/watch?v=gF-JZYTPy04",
+   "published": "2026-11-12T11:09:22.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/gF-JZYTPy04/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "G30BmgI4yXc",
    "title": "Police: Suspect dead after opening fire at officers on New Bedford street",
@@ -4244,29 +4257,6 @@
    "thumbnail": "https://i.ytimg.com/vi/9SeSbIqYM6g/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "ylxOLBDjXZk",
-   "title": "Behind the Smiles Photo for 11/5/26 from Jennifer in Seekonk",
-   "link": "https://www.youtube.com/watch?v=ylxOLBDjXZk",
-   "published": "2026-11-05T11:27:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ylxOLBDjXZk/mqdefault.jpg",
-   "towns": [
-    "seekonk"
-   ],
-   "local": true
-  },
-  {
-   "id": "gYoVhtOQizA",
-   "title": "Portugal great Cristiano Ronaldo announces retirement from international soccer",
-   "link": "https://www.youtube.com/watch?v=gYoVhtOQizA",
-   "published": "2026-11-05T11:14:00.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gYoVhtOQizA/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

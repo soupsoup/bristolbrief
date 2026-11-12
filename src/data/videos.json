@@ -1,12 +1,26 @@
 {
- "updated": "2026-11-12T23:05:30.050Z",
+ "updated": "2026-11-12T23:35:25.302Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "cbs-boston",
@@ -23,20 +37,6 @@
    "kept": 0
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
@@ -44,14 +44,131 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "w3716Cd9diY",
+   "title": "Cranston man killed while cutting down tree",
+   "link": "https://www.youtube.com/watch?v=w3716Cd9diY",
+   "published": "2026-11-12T23:33:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/w3716Cd9diY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "UzG5b_ewZ9U",
+   "title": "'Don't be secretive': Polisena reacts to FM's exit",
+   "link": "https://www.youtube.com/watch?v=UzG5b_ewZ9U",
+   "published": "2026-11-12T23:29:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UzG5b_ewZ9U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "fx2Vg8Zqg-g",
+   "title": "WPRI 12 Weather Forecast 11-12-26 Heavy Rain Tonight",
+   "link": "https://www.youtube.com/watch?v=fx2Vg8Zqg-g",
+   "published": "2026-11-12T23:25:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fx2Vg8Zqg-g/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "klRbl43fun4",
+   "title": "Police make arrest in Cranston stabbing",
+   "link": "https://www.youtube.com/watch?v=klRbl43fun4",
+   "published": "2026-11-12T23:22:35.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/klRbl43fun4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "U-qOdSUXOZ8",
+   "title": "Providence recycling rates improve with new carts, education",
+   "link": "https://www.youtube.com/watch?v=U-qOdSUXOZ8",
+   "published": "2026-11-12T23:21:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/U-qOdSUXOZ8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "zY2VQAylSZU",
+   "title": "Three adults held without bail in Sabin Point Park shooting; victim on ventilator",
+   "link": "https://www.youtube.com/watch?v=zY2VQAylSZU",
+   "published": "2026-11-12T23:15:10.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/zY2VQAylSZU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "WJWMn_gHyjY",
+   "title": "Taunton man arrested on gun, drug-trafficking charges",
+   "link": "https://www.youtube.com/watch?v=WJWMn_gHyjY",
+   "published": "2026-11-12T23:14:37.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/WJWMn_gHyjY/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true
+  },
+  {
+   "id": "xUjbCfUxbRI",
+   "title": "Local group donates hundreds of handmade flag memorial cases to veteran families",
+   "link": "https://www.youtube.com/watch?v=xUjbCfUxbRI",
+   "published": "2026-11-12T23:13:19.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/xUjbCfUxbRI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rKnFTO2olLA",
+   "title": "12 Responds: 'My condo is sinking'",
+   "link": "https://www.youtube.com/watch?v=rKnFTO2olLA",
+   "published": "2026-11-12T23:12:41.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rKnFTO2olLA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "7Ijl4Z5NNFE",
+   "title": "Providence reports improved recycling rates #shorts",
+   "link": "https://www.youtube.com/shorts/7Ijl4Z5NNFE",
+   "published": "2026-11-12T22:59:19.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7Ijl4Z5NNFE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "R7xbBtWqnUs",
+   "title": "Raising awareness of one of the deadliest forms of cancer",
+   "link": "https://www.youtube.com/watch?v=R7xbBtWqnUs",
+   "published": "2026-11-12T22:57:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/R7xbBtWqnUs/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "Uzrrg88Ty1k",
    "title": "Recount requested in Portsmouth Town Council race",
@@ -94,19 +211,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/DSudbanuRow/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "_EP3a0FWmQA",
-   "title": "WPRI Weather Now 11-12-26 Rain Tonight. Cold Damp Friday",
-   "link": "https://www.youtube.com/watch?v=_EP3a0FWmQA",
-   "published": "2026-11-12T22:01:11.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_EP3a0FWmQA/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "m_GaIlHkgGw",
@@ -4078,26 +4182,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/CBg_jRPGEs0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "p56LDNbmSus",
-   "title": "Class ring lost in Puget Sound 47 years ago returned to Pawtucket graduate",
-   "link": "https://www.youtube.com/watch?v=p56LDNbmSus",
-   "published": "2026-11-05T23:30:51.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/p56LDNbmSus/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "X8Vha0MAz8o",
-   "title": "Children's Friend gets $430K in federal funding",
-   "link": "https://www.youtube.com/watch?v=X8Vha0MAz8o",
-   "published": "2026-11-05T23:08:52.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/X8Vha0MAz8o/mqdefault.jpg",
    "towns": []
   }
  ]

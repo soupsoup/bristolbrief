@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-12T13:35:51.096Z",
+ "updated": "2026-11-12T14:05:28.498Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 2
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "nbc10-wjar",
@@ -16,8 +23,15 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 2
@@ -30,28 +44,37 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "O4H56rbd_I8",
+   "title": "Death toll rises to 8 in Brooklyn building collapse as rescuers dig through rubble",
+   "link": "https://www.youtube.com/watch?v=O4H56rbd_I8",
+   "published": "2026-11-12T13:48:36.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/O4H56rbd_I8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "08RP2C-Wx5k",
+   "title": "Person dead after shootout with New Bedford police",
+   "link": "https://www.youtube.com/watch?v=08RP2C-Wx5k",
+   "published": "2026-11-12T13:43:05.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/08RP2C-Wx5k/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "l97kdDbh-lM",
    "title": "6 arrested after man shot in East Providence",

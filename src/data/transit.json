@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T22:35:26.884Z",
+ "updated": "2026-11-12T23:05:30.050Z",
  "alerts": [
   {
    "id": "1045195",
@@ -21,6 +21,30 @@
    ],
    "url": null,
    "updated": "2026-11-12T16:54:58-05:00"
+  },
+  {
+   "id": "1045213",
+   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-12T17:39:27-05:00",
+   "end": "2026-11-12T19:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-12T17:39:27-05:00"
   },
   {
    "id": "1045197",

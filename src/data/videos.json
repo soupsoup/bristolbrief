@@ -1,15 +1,16 @@
 {
- "updated": "2026-11-12T03:06:42.065Z",
+ "updated": "2026-11-12T05:05:26.948Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -20,23 +21,23 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": false,
    "error": "HTTP 404"
   },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
    "ok": false,
    "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
   },
   {
    "id": "7news-boston",
@@ -46,6 +47,19 @@
   }
  ],
  "videos": [
+  {
+   "id": "VY9l60tJ1mU",
+   "title": "Shots fired at New Bedford police officers leads to standoff",
+   "link": "https://www.youtube.com/watch?v=VY9l60tJ1mU",
+   "published": "2026-11-12T04:07:27.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/VY9l60tJ1mU/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "C760_VkLmKY",
    "title": "Joe Kennedy III on family’s arch lawsuit: ‘You’ve got to follow the law’ #shorts",
@@ -4078,69 +4092,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/gYoVhtOQizA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lvTVtvj910A",
-   "title": "WPRI 12 Weather Forecast 11-4-26 Breezy Warm Humid Thursday",
-   "link": "https://www.youtube.com/watch?v=lvTVtvj910A",
-   "published": "2026-11-05T04:26:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lvTVtvj910A/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "ruV1Xfl3qb4",
-   "title": "Dozens of illegally caught fish seized in Middletown as 8 people face fisheries violations",
-   "link": "https://www.youtube.com/watch?v=ruV1Xfl3qb4",
-   "published": "2026-11-05T04:11:28.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ruV1Xfl3qb4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-qDxORGzAeU",
-   "title": "Man accused of defrauding Rhode Island resident of $27,000",
-   "link": "https://www.youtube.com/watch?v=-qDxORGzAeU",
-   "published": "2026-11-05T04:07:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/-qDxORGzAeU/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "n7SXohmk3ng",
-   "title": "RISPCA, MSPCA each take in 20+ chinchillas from massive rescue effort",
-   "link": "https://www.youtube.com/watch?v=n7SXohmk3ng",
-   "published": "2026-11-05T03:22:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/n7SXohmk3ng/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "OD_k_s1rpk4",
-   "title": "Which Rhode Island ballot questions passed in 2026?",
-   "link": "https://www.youtube.com/watch?v=OD_k_s1rpk4",
-   "published": "2026-11-05T03:14:17.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/OD_k_s1rpk4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "jMcI4IZ0vgk",
-   "title": "Providence teachers, students protest school heating issues",
-   "link": "https://www.youtube.com/watch?v=jMcI4IZ0vgk",
-   "published": "2026-11-05T03:08:07.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/jMcI4IZ0vgk/mqdefault.jpg",
    "towns": []
   }
  ]

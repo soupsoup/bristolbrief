@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-13T17:35:33.793Z",
+ "updated": "2026-11-13T18:05:34.502Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -9,8 +16,8 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,13 +30,6 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "7news-boston",
    "name": "7NEWS Boston",
    "ok": true,
@@ -37,8 +37,8 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -52,6 +52,40 @@
   }
  ],
  "videos": [
+  {
+   "id": "4-4TVHM55M8",
+   "title": "Community Focus: RIDE commissioner on Pawtucket schools #shorts",
+   "link": "https://www.youtube.com/shorts/4-4TVHM55M8",
+   "published": "2026-11-13T17:51:11.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/4-4TVHM55M8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "YMydqlEyZeU",
+   "title": "Man accused in Cranston stabbing to be held in Massachusetts pending RI transfer",
+   "link": "https://www.youtube.com/watch?v=YMydqlEyZeU",
+   "published": "2026-11-13T17:46:25.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/YMydqlEyZeU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "pPxQ0eJV8Zs",
+   "title": "Medical technician accused of passing drugs to inmate at county jail",
+   "link": "https://www.youtube.com/watch?v=pPxQ0eJV8Zs",
+   "published": "2026-11-13T17:37:02.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/pPxQ0eJV8Zs/mqdefault.jpg",
+   "towns": [
+    "dartmouth"
+   ],
+   "local": true
+  },
   {
    "id": "RVetaHXj6b0",
    "title": "Providence to hold interviews for interim superintendent",
@@ -4005,39 +4039,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/l4WpZjh6X8s/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "4hDdmjC3cIY",
-   "title": "Pedestrian is fatally struck by train near Rocky Hollow Road in East Greenwich",
-   "link": "https://www.youtube.com/watch?v=4hDdmjC3cIY",
-   "published": "2026-11-06T17:47:22.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/4hDdmjC3cIY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "EPBv2VHYncg",
-   "title": "Man charged for vandalizing 22 vehicles in Providence",
-   "link": "https://www.youtube.com/watch?v=EPBv2VHYncg",
-   "published": "2026-11-06T17:39:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/EPBv2VHYncg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ccqeNe-hRuE",
-   "title": "New Bedford man faces life sentence for 2024 murder",
-   "link": "https://www.youtube.com/watch?v=ccqeNe-hRuE",
-   "published": "2026-11-06T17:38:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/ccqeNe-hRuE/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
   }
  ]
 }

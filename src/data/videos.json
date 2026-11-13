@@ -1,27 +1,16 @@
 {
- "updated": "2026-11-13T03:35:35.043Z",
+ "updated": "2026-11-13T04:05:36.512Z",
  "channels": [
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -29,23 +18,149 @@
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "7UvUtT-aodA",
+   "title": "Cranston stabbing suspect arrested in New Bedford",
+   "link": "https://www.youtube.com/watch?v=7UvUtT-aodA",
+   "published": "2026-11-13T03:51:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/7UvUtT-aodA/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "rdulQmfhttU",
+   "title": "Man killed by fallen tree in Cranston",
+   "link": "https://www.youtube.com/watch?v=rdulQmfhttU",
+   "published": "2026-11-13T03:50:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/rdulQmfhttU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Dggz-AwGZnQ",
+   "title": "Big second half propels URI to 67-47 win over Maryland Eastern Shore",
+   "link": "https://www.youtube.com/watch?v=Dggz-AwGZnQ",
+   "published": "2026-11-13T03:42:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Dggz-AwGZnQ/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "UyqXJ19mFpk",
+   "title": "Portsmouth Town Council president loses race by 4 votes #shorts",
+   "link": "https://www.youtube.com/shorts/UyqXJ19mFpk",
+   "published": "2026-11-13T03:27:29.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/UyqXJ19mFpk/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "DNHWfOGwGlo",
+   "title": "WPRI 12 Weather Now 11-12-26 Cold Damp Friday",
+   "link": "https://www.youtube.com/watch?v=DNHWfOGwGlo",
+   "published": "2026-11-13T03:26:38.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/DNHWfOGwGlo/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "BtpezQpCpP0",
+   "title": "La Salle holds singing day for 18 student athletes",
+   "link": "https://www.youtube.com/watch?v=BtpezQpCpP0",
+   "published": "2026-11-13T03:17:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/BtpezQpCpP0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1avC5kK3OFY",
+   "title": "Saltwater Sessions: Surf Towel Story with Brian Cotsonas",
+   "link": "https://www.youtube.com/watch?v=1avC5kK3OFY",
+   "published": "2026-11-13T03:12:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1avC5kK3OFY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "frisEjMSMYc",
+   "title": "Upshot League announces new women’s basketball team in Providence #shorts",
+   "link": "https://www.youtube.com/shorts/frisEjMSMYc",
+   "published": "2026-11-13T02:16:40.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/frisEjMSMYc/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "MwCjAxyRp14",
+   "title": "Board game cafe secures limited liquor license",
+   "link": "https://www.youtube.com/watch?v=MwCjAxyRp14",
+   "published": "2026-11-13T02:03:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/MwCjAxyRp14/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_XYC4W3Koh8",
+   "title": "New body camera footage shows officers chasing Nelson Pires onto I-95 before arrest",
+   "link": "https://www.youtube.com/shorts/_XYC4W3Koh8",
+   "published": "2026-11-13T02:00:16.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/_XYC4W3Koh8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "RBZdegkU8co",
    "title": "New England Nation OT: Why is Drake Maye so inconsistent? #shorts",
@@ -141,19 +256,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/UzG5b_ewZ9U/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "fx2Vg8Zqg-g",
-   "title": "WPRI 12 Weather Forecast 11-12-26 Heavy Rain Tonight",
-   "link": "https://www.youtube.com/watch?v=fx2Vg8Zqg-g",
-   "published": "2026-11-12T23:25:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fx2Vg8Zqg-g/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "klRbl43fun4",
@@ -3947,19 +4049,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/9adtEQLdDyA/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "mthDluyMpNU",
-   "title": "Case and North Attleboro each get a first round win in MIAA playoffs",
-   "link": "https://www.youtube.com/watch?v=mthDluyMpNU",
-   "published": "2026-11-06T03:56:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/mthDluyMpNU/mqdefault.jpg",
-   "towns": [
-    "north-attleborough"
-   ],
-   "local": true
   }
  ]
 }

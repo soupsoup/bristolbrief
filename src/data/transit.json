@@ -1,13 +1,13 @@
 {
- "updated": "2026-11-13T17:05:46.838Z",
+ "updated": "2026-11-13T17:35:33.793Z",
  "alerts": [
   {
    "id": "1045369",
-   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is operating 15-25 minutes behind schedule between Montello and South Station.",
+   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is operating 15-25 minutes behind schedule between Montello and South Station due to train traffic.",
    "effect": "DELAY",
    "severity": 6,
    "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
+   "cause": "TRAIN_TRAFFIC",
    "start": "2026-11-13T11:08:00-05:00",
    "end": "2026-11-13T13:13:00-05:00",
    "routes": [
@@ -20,31 +20,70 @@
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-13T11:59:21-05:00"
+   "updated": "2026-11-13T12:07:50-05:00"
   },
   {
-   "id": "1045371",
-   "header": "New Bedford Line Train 8055 (10:58 AM from East Taunton) is operating 10-20 minutes behind schedule between East Taunton and New Bedford.",
+   "id": "1045384",
+   "header": "Fall River Line Train 8109 (12:05 PM from South Station) is operating 5-15 minutes behind schedule between JFK/UMass and Fall River Depot.",
    "effect": "DELAY",
-   "severity": 5,
+   "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-13T11:17:19-05:00",
-   "end": "2026-11-13T12:23:00-05:00",
+   "start": "2026-11-13T12:26:45-05:00",
+   "end": "2026-11-13T14:45:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
-    "East Taunton",
-    "Church Street",
-    "New Bedford"
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
    ],
    "towns": [
-    "taunton",
-    "new-bedford"
+    "freetown",
+    "fall-river",
+    "taunton"
    ],
    "url": null,
-   "updated": "2026-11-13T11:17:19-05:00"
+   "updated": "2026-11-13T12:26:45-05:00"
+  },
+  {
+   "id": "1045383",
+   "header": "New Bedford Line Train 8018 (11:48 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-13T12:25:18-05:00",
+   "end": "2026-11-13T14:30:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-13T12:25:18-05:00"
+  },
+  {
+   "id": "1045382",
+   "header": "New Bedford Line Train 8057 (12:13 PM from East Taunton) is operating 5-15 minutes behind schedule between East Taunton and New Bedford due to a mechanical issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "MECHANICAL_ISSUE",
+   "start": "2026-11-13T12:24:19-05:00",
+   "end": "2026-11-13T13:38:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-13T12:24:19-05:00"
   },
   {
    "id": "1045379",
@@ -107,51 +146,6 @@
    ],
    "url": null,
    "updated": "2026-11-13T11:34:40-05:00"
-  },
-  {
-   "id": "1045367",
-   "header": "Providence Line Train 6018 (10:15 AM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station due to a signal issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "SIGNAL_ISSUE",
-   "start": "2026-11-13T10:42:45-05:00",
-   "end": "2026-11-13T12:27:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "Attleboro",
-    "Mansfield"
-   ],
-   "towns": [
-    "attleboro",
-    "mansfield"
-   ],
-   "url": null,
-   "updated": "2026-11-13T10:42:45-05:00"
-  },
-  {
-   "id": "1045365",
-   "header": "Providence Line Train 6009 (9:25 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-13T10:21:05-05:00",
-   "end": "2026-11-13T12:10:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "South Attleboro",
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-11-13T10:21:05-05:00"
   }
  ],
  "stopParents": {

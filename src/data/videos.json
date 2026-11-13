@@ -1,6 +1,20 @@
 {
- "updated": "2026-11-13T21:35:36.880Z",
+ "updated": "2026-11-13T21:57:39.628Z",
  "channels": [
+  {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -9,8 +23,15 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,35 +44,80 @@
    "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "j_8DGrJKyt8",
+   "title": "WPRI 12 Weather Forecast 11/13/26: Dry, Chilly Weekend Ahead",
+   "link": "https://www.youtube.com/watch?v=j_8DGrJKyt8",
+   "published": "2026-11-13T21:45:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/j_8DGrJKyt8/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "xVw_3JGZ6tE",
+   "title": "Bessent blames Commerce Department for not restricting Nvidia chips to China",
+   "link": "https://www.youtube.com/watch?v=xVw_3JGZ6tE",
+   "published": "2026-11-13T21:45:28.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/xVw_3JGZ6tE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RaXD1Z2akwU",
+   "title": "New Bedford mayor looking to prohibit street parking for RVs, campers",
+   "link": "https://www.youtube.com/watch?v=RaXD1Z2akwU",
+   "published": "2026-11-13T21:41:54.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/RaXD1Z2akwU/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "wML-OpP-_5E",
+   "title": "How to get help with high home heating bills",
+   "link": "https://www.youtube.com/watch?v=wML-OpP-_5E",
+   "published": "2026-11-13T21:39:53.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wML-OpP-_5E/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "tVyJ0EbMneI",
+   "title": "Dogs, puppies rescued from Warwick home \"doing better\" in shelter",
+   "link": "https://www.youtube.com/watch?v=tVyJ0EbMneI",
+   "published": "2026-11-13T21:35:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/tVyJ0EbMneI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Wp7eUgdAUrI",
+   "title": "Breaking News: Flights halted nationwide due to ‘extraordinary circumstances’",
+   "link": "https://www.youtube.com/watch?v=Wp7eUgdAUrI",
+   "published": "2026-11-13T21:35:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Wp7eUgdAUrI/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "M-ISEM09uRA",
    "title": "Pedestrian struck Wednesday night in Warwick still in critical condition",
@@ -122,19 +188,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/ksgYfYTJMro/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "zVvFfVpZnbc",
-   "title": "WPRI 12 Weather Now 11/13/26: Cold, Dry Tonight; Chilly Weekend Ahead",
-   "link": "https://www.youtube.com/watch?v=zVvFfVpZnbc",
-   "published": "2026-11-13T20:47:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/zVvFfVpZnbc/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "Dl__gf9G-zs",
@@ -4130,36 +4183,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/utmVIpGkdd0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "x_zPmtj-pUA",
-   "title": "Drivers urged to avoid I-195 as Potter Street Bridge demolition begins",
-   "link": "https://www.youtube.com/watch?v=x_zPmtj-pUA",
-   "published": "2026-11-06T21:53:40.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/x_zPmtj-pUA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vxgTIhEr1G0",
-   "title": "Man dead after crash on I-95 in Providence",
-   "link": "https://www.youtube.com/watch?v=vxgTIhEr1G0",
-   "published": "2026-11-06T21:44:36.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vxgTIhEr1G0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "B5tdQ5CUa2Y",
-   "title": "Family recounts lightning strike that torched shed",
-   "link": "https://www.youtube.com/watch?v=B5tdQ5CUa2Y",
-   "published": "2026-11-06T21:44:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/B5tdQ5CUa2Y/mqdefault.jpg",
    "towns": []
   }
  ]

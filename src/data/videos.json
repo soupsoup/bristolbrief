@@ -1,26 +1,23 @@
 {
- "updated": "2026-11-13T01:35:34.275Z",
+ "updated": "2026-11-13T03:35:35.043Z",
  "channels": [
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "7news-boston",
@@ -30,25 +27,22 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": false,
+   "error": "HTTP 404"
   },
   {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": false,
+   "error": "HTTP 404"
   }
  ],
  "videos": [
@@ -3966,97 +3960,6 @@
     "north-attleborough"
    ],
    "local": true
-  },
-  {
-   "id": "BKnP_6tQDzQ",
-   "title": "Police: Man hit with hatchet in Providence",
-   "link": "https://www.youtube.com/watch?v=BKnP_6tQDzQ",
-   "published": "2026-11-06T03:34:45.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/BKnP_6tQDzQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "G_L2mCXINfY",
-   "title": "1 arrested after crash in East Providence",
-   "link": "https://www.youtube.com/watch?v=G_L2mCXINfY",
-   "published": "2026-11-06T03:32:25.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/G_L2mCXINfY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "v28DgzIQ4Rc",
-   "title": "Woman questions RI Supreme Court nominee's abortion views, citing past relationship",
-   "link": "https://www.youtube.com/watch?v=v28DgzIQ4Rc",
-   "published": "2026-11-06T03:32:10.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/v28DgzIQ4Rc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "pLd920SIcog",
-   "title": "Fire breaks out in New Bedford school admin building",
-   "link": "https://www.youtube.com/watch?v=pLd920SIcog",
-   "published": "2026-11-06T03:29:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/pLd920SIcog/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "O6cmGePWLQk",
-   "title": "Seekonk man with rare condition seeks to raise awareness",
-   "link": "https://www.youtube.com/watch?v=O6cmGePWLQk",
-   "published": "2026-11-06T03:27:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/O6cmGePWLQk/mqdefault.jpg",
-   "towns": [
-    "seekonk"
-   ],
-   "local": true
-  },
-  {
-   "id": "1KBJX-oP80M",
-   "title": "1 rescued from Attleboro apartment fire",
-   "link": "https://www.youtube.com/watch?v=1KBJX-oP80M",
-   "published": "2026-11-06T02:57:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/1KBJX-oP80M/mqdefault.jpg",
-   "towns": [
-    "attleboro"
-   ],
-   "local": true
-  },
-  {
-   "id": "15RuC844N2Q",
-   "title": "Both R.I. Senators to chair major committees in 2027 #shorts",
-   "link": "https://www.youtube.com/shorts/15RuC844N2Q",
-   "published": "2026-11-06T02:22:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/15RuC844N2Q/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "Go9xG1T4TeE",
-   "title": "I-195 to close overnight in East Providence, Nov. 6 thru 7 #shorts",
-   "link": "https://www.youtube.com/shorts/Go9xG1T4TeE",
-   "published": "2026-11-06T01:37:58.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/Go9xG1T4TeE/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

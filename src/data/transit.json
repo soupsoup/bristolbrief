@@ -1,6 +1,73 @@
 {
- "updated": "2026-11-13T16:05:30.455Z",
+ "updated": "2026-11-13T16:35:29.802Z",
  "alerts": [
+  {
+   "id": "1045371",
+   "header": "New Bedford Line Train 8055 (10:58 AM from East Taunton) is operating 10-20 minutes behind schedule between East Taunton and New Bedford.",
+   "effect": "DELAY",
+   "severity": 5,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-13T11:17:19-05:00",
+   "end": "2026-11-13T12:23:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton",
+    "Church Street",
+    "New Bedford"
+   ],
+   "towns": [
+    "taunton",
+    "new-bedford"
+   ],
+   "url": null,
+   "updated": "2026-11-13T11:17:19-05:00"
+  },
+  {
+   "id": "1045374",
+   "header": "Providence Line Train 6011 (10:35 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Providence due to a signal issue in the Pawtucket/Central Falls area.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-13T11:34:40-05:00",
+   "end": "2026-11-13T12:45:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-11-13T11:34:40-05:00"
+  },
+  {
+   "id": "1045369",
+   "header": "New Bedford Line Train 8016 (10:33 AM from New Bedford) is operating 5-15 minutes behind schedule between East Taunton and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-13T11:08:25-05:00",
+   "end": "2026-11-13T13:13:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "East Taunton"
+   ],
+   "towns": [
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-13T11:08:25-05:00"
+  },
   {
    "id": "1045367",
    "header": "Providence Line Train 6018 (10:15 AM from Providence) is operating 5-15 minutes behind schedule between Pawtucket/Central Falls and South Station due to a signal issue.",

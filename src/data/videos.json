@@ -1,17 +1,26 @@
 {
- "updated": "2026-11-13T23:06:41.899Z",
+ "updated": "2026-11-14T08:06:27.769Z",
  "channels": [
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
@@ -21,31 +30,313 @@
    "kept": 0
   },
   {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": false,
-   "error": "HTTP 500"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 500"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "sKsbW3Zu848",
+   "title": "Friday Night Blitz: High school football playoffs continue",
+   "link": "https://www.youtube.com/watch?v=sKsbW3Zu848",
+   "published": "2026-11-14T04:40:30.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sKsbW3Zu848/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "J1YBpvXdnPY",
+   "title": "Eric Rueb breaks down Week 10 of the high school football season",
+   "link": "https://www.youtube.com/watch?v=J1YBpvXdnPY",
+   "published": "2026-11-14T04:31:43.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/J1YBpvXdnPY/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "NsypvMWW1vA",
+   "title": "Game of the Week: La Salle tops North Kingstown 42-22",
+   "link": "https://www.youtube.com/watch?v=NsypvMWW1vA",
+   "published": "2026-11-14T04:19:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/NsypvMWW1vA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "hDGfZQpdS9E",
+   "title": "WPRI 12 Weather Forecast 11/13/26: Chilly and Dry Weekend Ahead",
+   "link": "https://www.youtube.com/watch?v=hDGfZQpdS9E",
+   "published": "2026-11-14T04:17:55.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/hDGfZQpdS9E/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "q6cdYu7cqwk",
+   "title": "The Federal Aviation Administration says airplane departures can resume",
+   "link": "https://www.youtube.com/watch?v=q6cdYu7cqwk",
+   "published": "2026-11-14T04:14:28.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/q6cdYu7cqwk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Y7pnyBJU4s4",
+   "title": "FAA allows flights to resume after ground stop #shorts",
+   "link": "https://www.youtube.com/shorts/Y7pnyBJU4s4",
+   "published": "2026-11-14T04:06:20.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Y7pnyBJU4s4/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "hF83kt9LAr0",
+   "title": "MIAA Div. 2 quarterfinals Bridgwater-Raynham defeats Westford Academy",
+   "link": "https://www.youtube.com/shorts/hF83kt9LAr0",
+   "published": "2026-11-14T03:35:33.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/hF83kt9LAr0/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "SeFzXfv3lgM",
+   "title": "MIAA Div. 2 final score Bridgewater-Raynham defeats Westford Academy",
+   "link": "https://www.youtube.com/shorts/SeFzXfv3lgM",
+   "published": "2026-11-14T03:23:00.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/SeFzXfv3lgM/mqdefault.jpg",
+   "towns": [
+    "raynham"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "YM32WPM2--A",
+   "title": "St. Andrew's holds signing day for two Division I bound athletes",
+   "link": "https://www.youtube.com/watch?v=YM32WPM2--A",
+   "published": "2026-11-14T03:20:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/YM32WPM2--A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wofIyUaNtHg",
+   "title": "FAA says airplane departures can resume following nationwide ground stop",
+   "link": "https://www.youtube.com/watch?v=wofIyUaNtHg",
+   "published": "2026-11-14T02:31:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wofIyUaNtHg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "2PiZ_gFSBnc",
+   "title": "Cranston knife attack suspect faces judge, extradition #shorts",
+   "link": "https://www.youtube.com/shorts/2PiZ_gFSBnc",
+   "published": "2026-11-14T02:21:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2PiZ_gFSBnc/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "sdlD4G1hDjw",
+   "title": "Oil companies struggling with increased prices #shorts",
+   "link": "https://www.youtube.com/shorts/sdlD4G1hDjw",
+   "published": "2026-11-14T01:13:09.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/sdlD4G1hDjw/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "TAAni5Afoag",
+   "title": "Blitz 12 Player of the Week: Cranston West's WR/DB Daniel Mojica Jr.",
+   "link": "https://www.youtube.com/watch?v=TAAni5Afoag",
+   "published": "2026-11-14T01:07:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/TAAni5Afoag/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nhJHfXa9oHg",
+   "title": "Rescued Warwick dogs \"doing better\" at shelter #shorts",
+   "link": "https://www.youtube.com/shorts/nhJHfXa9oHg",
+   "published": "2026-11-14T00:22:48.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nhJHfXa9oHg/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "de7b_YULlQg",
+   "title": "Rhode Island College President Dr. Jack Warner talks upcoming enrollment period",
+   "link": "https://www.youtube.com/watch?v=de7b_YULlQg",
+   "published": "2026-11-14T00:19:43.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/de7b_YULlQg/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rliJuiSwXnE",
+   "title": "'I'm not going anywhere': Rhode Islander stranded at Cincinnati airport",
+   "link": "https://www.youtube.com/watch?v=rliJuiSwXnE",
+   "published": "2026-11-13T23:57:44.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rliJuiSwXnE/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Lz9L_3yskf0",
+   "title": "FM expects limited job cuts as headquarters move from Johnston to Providence",
+   "link": "https://www.youtube.com/watch?v=Lz9L_3yskf0",
+   "published": "2026-11-13T23:50:07.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Lz9L_3yskf0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZgES75yCnfU",
+   "title": "Passengers at TF Green Airport left scrambling after nationwide ground stop",
+   "link": "https://www.youtube.com/watch?v=ZgES75yCnfU",
+   "published": "2026-11-13T23:46:33.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ZgES75yCnfU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nfQQXjhiEMI",
+   "title": "New body camera footage shows Halloween weekend arrests near Providence College",
+   "link": "https://www.youtube.com/watch?v=nfQQXjhiEMI",
+   "published": "2026-11-13T23:42:46.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/nfQQXjhiEMI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "5TXMluzQne0",
+   "title": "More than $2M a year in pay: TF Green Airport boss gets massive raise",
+   "link": "https://www.youtube.com/watch?v=5TXMluzQne0",
+   "published": "2026-11-13T23:37:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/5TXMluzQne0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "4PKtlh_4Y3k",
+   "title": "Crescent Park Carousel caretaker is a dedicated Townie",
+   "link": "https://www.youtube.com/watch?v=4PKtlh_4Y3k",
+   "published": "2026-11-13T23:20:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/4PKtlh_4Y3k/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "O5pkNrRLL40",
+   "title": "Gov.-elect Foulkes announces plans for transition",
+   "link": "https://www.youtube.com/watch?v=O5pkNrRLL40",
+   "published": "2026-11-13T23:17:02.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/O5pkNrRLL40/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "nit3kCJnL9U",
+   "title": "Southern New England communities discuss potential bans on Flock cameras",
+   "link": "https://www.youtube.com/watch?v=nit3kCJnL9U",
+   "published": "2026-11-13T23:16:06.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/nit3kCJnL9U/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "kz_HFur73lY",
+   "title": "Suspect charged in Cranston stabbing faces New Bedford judge",
+   "link": "https://www.youtube.com/watch?v=kz_HFur73lY",
+   "published": "2026-11-13T23:14:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/kz_HFur73lY/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "4Dt8c2vfRU8",
+   "title": "'This isn't another 9/11,' Mullin says after FAA issues nationwide ground stop",
+   "link": "https://www.youtube.com/shorts/4Dt8c2vfRU8",
+   "published": "2026-11-13T23:01:31.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/4Dt8c2vfRU8/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "fS2oZ4cU_iY",
+   "title": "New Bedford mayor proposes ban on overnight RV, camper parking",
+   "link": "https://www.youtube.com/watch?v=fS2oZ4cU_iY",
+   "published": "2026-11-13T22:44:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/fS2oZ4cU_iY/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "XY25rhujjK0",
    "title": "New 12+ Episode: Surf Towel Story with Brian Cotsonas",
@@ -75,19 +366,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/T3wfpth7P0A/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "j_8DGrJKyt8",
-   "title": "WPRI 12 Weather Forecast 11/13/26: Dry, Chilly Weekend Ahead",
-   "link": "https://www.youtube.com/watch?v=j_8DGrJKyt8",
-   "published": "2026-11-13T21:45:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/j_8DGrJKyt8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "xVw_3JGZ6tE",
@@ -3885,207 +4163,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/E2y8BOuVtJk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qB8hYMQxlGk",
-   "title": "Street flooding reported around Southern New England",
-   "link": "https://www.youtube.com/watch?v=qB8hYMQxlGk",
-   "published": "2026-11-07T04:45:09.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/qB8hYMQxlGk/mqdefault.jpg",
-   "towns": [
-    "new-bedford"
-   ],
-   "local": true
-  },
-  {
-   "id": "ihKVjaFYjIg",
-   "title": "Rhode Island highway shut down for bridge demolition",
-   "link": "https://www.youtube.com/watch?v=ihKVjaFYjIg",
-   "published": "2026-11-07T04:42:29.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ihKVjaFYjIg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tikOXm0BmNo",
-   "title": "Video captures sound of gunfire outside Providence home",
-   "link": "https://www.youtube.com/watch?v=tikOXm0BmNo",
-   "published": "2026-11-07T04:38:55.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/tikOXm0BmNo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Fm7luVUQVzs",
-   "title": "Man sitting in Maserati stabbed multiple times, police say",
-   "link": "https://www.youtube.com/watch?v=Fm7luVUQVzs",
-   "published": "2026-11-07T04:35:39.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Fm7luVUQVzs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "bWoJZNRKpMQ",
-   "title": "WPRI 12 Weather Forecast 11/6/26",
-   "link": "https://www.youtube.com/watch?v=bWoJZNRKpMQ",
-   "published": "2026-11-07T04:35:19.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/bWoJZNRKpMQ/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "04tNij72nBk",
-   "title": "Top prosecutor in RI attorney general’s office to retire",
-   "link": "https://www.youtube.com/watch?v=04tNij72nBk",
-   "published": "2026-11-07T04:14:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/04tNij72nBk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "GoOx9mTb49s",
-   "title": "Convicted murderer seeks parole for the fourth time",
-   "link": "https://www.youtube.com/watch?v=GoOx9mTb49s",
-   "published": "2026-11-07T04:14:42.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GoOx9mTb49s/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "k0Cfqxz4v5g",
-   "title": "3 arrested in connection with cocaine, fentanyl distribution in Bristol",
-   "link": "https://www.youtube.com/watch?v=k0Cfqxz4v5g",
-   "published": "2026-11-07T04:12:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/k0Cfqxz4v5g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lPeTqQhKZxQ",
-   "title": "Man dead after crash on I-95 South in Providence",
-   "link": "https://www.youtube.com/watch?v=lPeTqQhKZxQ",
-   "published": "2026-11-07T04:12:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/lPeTqQhKZxQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "C2sGMiKdIbs",
-   "title": "I-195 shuts down in East Providence for bridge demolition",
-   "link": "https://www.youtube.com/watch?v=C2sGMiKdIbs",
-   "published": "2026-11-07T04:07:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/C2sGMiKdIbs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "kPOUpFEfyr8",
-   "title": "Brown falls to Boston University, 72-67",
-   "link": "https://www.youtube.com/watch?v=kPOUpFEfyr8",
-   "published": "2026-11-07T03:11:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/kPOUpFEfyr8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "iKvusZXWQsg",
-   "title": "North Kingstown tops Central in D1 quarterfinals, 34-7",
-   "link": "https://www.youtube.com/watch?v=iKvusZXWQsg",
-   "published": "2026-11-07T03:10:51.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/iKvusZXWQsg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "2T7JzIff8sE",
-   "title": "Costumes, characters and crowds: Rhode Island Comic Con returns",
-   "link": "https://www.youtube.com/watch?v=2T7JzIff8sE",
-   "published": "2026-11-07T02:46:52.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/2T7JzIff8sE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "_3it543b8ec",
-   "title": "Recalls: Ladders, batteries, sterilizers #shorts",
-   "link": "https://www.youtube.com/shorts/_3it543b8ec",
-   "published": "2026-11-07T02:18:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/_3it543b8ec/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "fM2bxzmKVls",
-   "title": "Man hit, killed by train in East Greenwich #shorts",
-   "link": "https://www.youtube.com/shorts/fM2bxzmKVls",
-   "published": "2026-11-07T01:33:38.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/fM2bxzmKVls/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "lmGmfpqYKpA",
-   "title": "Police chief says officers followed training in shooting armed suspect",
-   "link": "https://www.youtube.com/watch?v=lmGmfpqYKpA",
-   "published": "2026-11-07T00:06:03.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/lmGmfpqYKpA/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "lrW208o-3J8",
-   "title": "Car wash crash caught on camera",
-   "link": "https://www.youtube.com/watch?v=lrW208o-3J8",
-   "published": "2026-11-06T23:55:06.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/lrW208o-3J8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "3Z_yZtGR0yM",
-   "title": "Community rallies around longtime volunteer after lightning-sparked shed fire",
-   "link": "https://www.youtube.com/watch?v=3Z_yZtGR0yM",
-   "published": "2026-11-06T23:51:57.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/3Z_yZtGR0yM/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "rCE0MkRwQR4",
-   "title": "Audit flags Rhode Island housing agency's grant oversight",
-   "link": "https://www.youtube.com/watch?v=rCE0MkRwQR4",
-   "published": "2026-11-06T23:38:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/rCE0MkRwQR4/mqdefault.jpg",
    "towns": []
   }
  ]

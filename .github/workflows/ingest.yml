@@ -19,13 +19,23 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 50
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The hourly data lives on the `data` branch, which Vercel never builds.
+      # Start from its last copy so the ingest merges into the previous wire,
+      # then put back the files that are edited on main.
+      - name: Load previous data
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            git fetch --depth=1 origin data
+            git checkout origin/data -- src/data
+            git checkout HEAD -- src/data/editorial.json src/data/sources.json src/data/video-channels.json src/data/election.json src/data/flood-verified.json
+          else
+            echo "No data branch yet; starting from the copy on main."
+          fi
       - run: npm test
       - run: npm run ingest
       # Police logs are PDFs; New Bedford's are scanned and need OCR. Install
@@ -44,26 +54,24 @@ jobs:
         continue-on-error: true
         timeout-minutes: 8
         run: node scripts/police-log.mjs
-      # Every push to main is a Vercel production build, and the ingest can be
-      # triggered more than once an hour (this schedule plus external pings), so
-      # commit at most about once an hour. The push still lets editors' featured
-      # picks expire on the hour and keeps tides and alerts current.
-      - name: Commit updated data
+      # Publish the data. The site reads these files from the `data` branch at
+      # request time, so this never triggers a Vercel build. The branch keeps a
+      # single commit (replaced each run) so the repository does not grow.
+      # editorial.json, sources.json and the other hand-edited files are copied
+      # too so the newsletter and social routines can read everything from one place.
+      - name: Publish data
         run: |
-          if git diff --quiet -- src/data/; then
-            echo "Nothing changed."
-            exit 0
-          fi
-          last=$(git log -1 --author=bristol-brief-bot --format=%ct 2>/dev/null || echo 0)
-          age=$(( $(date +%s) - ${last:-0} ))
-          if [ "$age" -lt 3000 ]; then
-            echo "Last data commit was $((age / 60)) min ago; skipping to limit Vercel builds."
-            exit 0
-          fi
+          set -e
+          rm -rf "$RUNNER_TEMP/data-publish"
+          mkdir -p "$RUNNER_TEMP/data-publish/src"
+          cp -r src/data "$RUNNER_TEMP/data-publish/src/data"
+          cd "$RUNNER_TEMP/data-publish"
+          git init -q -b data
           git config user.name "bristol-brief-bot"
           git config user.email "bristol-brief-bot@users.noreply.github.com"
-          git add src/data/
-          git commit -m "Update headlines $(date -u +%Y-%m-%dT%H:%MZ)"
-          # An editor may have saved from the admin while this ran.
-          git pull --rebase
-          git push
+          git add src/data
+          git commit -q -m "Data $(date -u +%Y-%m-%dT%H:%MZ)"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push -f -q origin data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -27,7 +27,8 @@ npm test         # parser, town-matching and data tests
 
 - Sources live in `src/data/sources.json`. To add a feed, add an entry with `id`, `name`, `url` and `category` (`news`, `public-safety`, `government` or `meetings`).
 - Only items that name one of the county's 20 cities and towns (or a village in one, like Assonet or North Dartmouth) make it onto the site. "South Coast" alone doesn't count. Stories that mention Bristol County but no town are kept with a "Countywide" label: they show in the headline list (and the Countywide filter on `/news/`) but on no town page. The exception is a town hall, police department or agenda feed: give it `"defaultTowns": ["slug"]` and all of its items are kept and filed under that town.
-- `.github/workflows/ingest.yml` runs the ingest and commits when data changes, at most about once an hour (extra triggers, such as an external :05 and :35 ping, still run the ingest but skip the commit), because every commit is a Vercel production build. Scheduled workflows only run on the default branch.
+- `.github/workflows/ingest.yml` runs the ingest and publishes the result to the `data` branch (a single commit that is replaced each run). Vercel does not build that branch, so the hourly data never costs a deploy. Scheduled workflows only run on the default branch.
+- **How the site gets fresh data:** every public page renders on demand (`output: 'server'` with ISR, one-hour cache). A middleware calls `loadData()` in `src/lib/data-source.ts`, which reads the live JSON files from `raw.githubusercontent.com/.../data/src/data` (at most once a minute per server instance) and falls back to the copies bundled with the last deploy if GitHub cannot be reached. Set `DATA_BASE_URL` to read from somewhere else. Only code, `editorial.json`, `sources.json`, `election.json` and other hand-edited files trigger Vercel builds; the files under `src/data` on `main` are just the starting copy and fallback.
 - Headlines appear on the home page, `/news/` (filter by town, type and source), each town page, `/meetings/`, `/weather/` and `/sources/`.
 - The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
@@ -36,7 +37,7 @@ npm test         # parser, town-matching and data tests
 
 `src/data/election.json` holds the ballot as the Secretary of the Commonwealth published it (candidates for races that include Bristol County, the nine statewide questions, polling place changes), with the source pages listed in the file. Edit it by hand if the state corrects a listing.
 
-`src/data/election-results.json` is written by `scripts/ingest.mjs` (via `scripts/lib/election.mjs`). From 8 p.m. ET on Nov. 3 until Nov. 10 every ingest asks the state's results site (electionstats.state.ma.us) for the general election and saves statewide, Bristol County and district results. The scheduler may run the ingest at :05 and :35, but the workflow commits at most about once an hour to limit Vercel builds, so results refresh hourly. Before the state publishes anything, or outside that window, the file is left alone. To try it against a past election: `ELECTION_FORCE=1 ELECTION_DATE=2026-09-01 ELECTION_PRIMARY=Democratic npm run ingest`.
+`src/data/election-results.json` is written by `scripts/ingest.mjs` (via `scripts/lib/election.mjs`). From 8 p.m. ET on Nov. 3 until Nov. 10 every ingest asks the state's results site (electionstats.state.ma.us) for the general election and saves statewide, Bristol County and district results. The scheduler runs the ingest at :05 and :35, so results refresh every 30 minutes on the `data` branch; pages pick them up within an hour. Before the state publishes anything, or outside that window, the file is left alone. To try it against a past election: `ELECTION_FORCE=1 ELECTION_DATE=2026-09-01 ELECTION_PRIMARY=Democratic npm run ingest`.
 
 ## Admin
 
@@ -66,13 +67,13 @@ Without `ADMIN_PASSWORD` the admin is switched off. Without `ADMIN_GITHUB_TOKEN`
 
 `npm run pin -- "headline text" [--slot lead|second|third|rail] [--hours N]` features a story from the command line.
 
-The hourly headline job commits and triggers a rebuild every hour, so expired picks give way to fresh news at the first hourly update after they expire.
+Pages are re-rendered at least hourly, so expired picks give way to fresh news within the hour after they expire.
 
 ## Deploying on Vercel
 
 1. Go to [vercel.com/new](https://vercel.com/new), import `soupsoup/bristolbrief`, and deploy. `vercel.json` sets the build; no settings need changing.
 2. In the project's **Settings → Git**, set the production branch to the branch you want live (the default branch, once this work is merged). Other branches get preview URLs.
-3. Every push deploys automatically, including the hourly headline commits from `.github/workflows/ingest.yml`.
+3. Every push to `main` deploys automatically. The hourly data from `.github/workflows/ingest.yml` goes to the `data` branch, which `vercel.json` excludes from deployments.
 4. When you add a custom domain, set a `SITE_URL` environment variable (for example `https://bristolbrief.com`) so canonical links and the RSS feed use it. Until then they use the Vercel production URL.
 
 ## Before launch

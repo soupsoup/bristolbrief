@@ -4,7 +4,7 @@ import { readEditorial } from '../../lib/admin/store';
 import { TOWNS, townName } from '../../site.config';
 import type { SocialPost } from '../../lib/wire';
 import { sortByPosted } from '../../../scripts/lib/social.mjs';
-import candidatesData from '../../data/social-candidates.json';
+import { getData } from '../../lib/data-source';
 
 export const prerender = false;
 
@@ -18,6 +18,7 @@ const approved = new Set(posts.map((p) => p.id));
 const dismissed = new Set<string>(doc.dismissedSocial ?? []);
 const muted: string[] = doc.mutedSocial ?? [];
 const mutedSet = new Set(muted);
+const candidatesData = getData('social-candidates');
 const allCandidates = ((candidatesData as unknown as { posts?: Candidate[] }).posts ?? []) as Candidate[];
 const candidates = allCandidates.filter(
   (c) => !approved.has(c.id) && !dismissed.has(c.id) && !mutedSet.has(String(c.handle ?? '').toLowerCase()),

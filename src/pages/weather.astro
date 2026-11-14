@@ -2,10 +2,13 @@
 import Base from '../layouts/Base.astro';
 import TideTable from '../components/TideTable.astro';
 import { activeAlerts } from '../lib/wire';
-import alertsData from '../data/alerts.json';
-import forecastData from '../data/forecast.json';
+import { getData } from '../lib/data-source';
 import { groupDays } from '../../scripts/lib/forecast.mjs';
 
+export const prerender = false;
+
+const alertsData = getData('alerts');
+const forecastData = getData('forecast');
 const periods = (forecastData as { periods?: any[] }).periods ?? [];
 const today = periods[0];
 const next = periods[1];

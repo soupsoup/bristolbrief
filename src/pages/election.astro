@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import RaceTracker from '../components/RaceTracker.astro';
 import { TOWNS, townName } from '../site.config';
 import election from '../data/election.json';
-import resultsData from '../data/election-results.json';
+import { getData } from '../lib/data-source';
 
 type Cand = { name: string; party?: string | null; town?: string | null };
 type Link = { label: string; url: string };
@@ -21,6 +21,7 @@ type Res = {
 };
 
 const races = election.races as Race[];
+const resultsData = getData('election-results');
 const results = (resultsData as { races?: Record<string, Res>; updated?: string | null }).races ?? {};
 const updated = (resultsData as { updated?: string | null }).updated;
 const live = Object.keys(results).length > 0;

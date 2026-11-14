@@ -7,12 +7,12 @@ import SportsDesk from '../../components/SportsDesk.astro';
 import { SECTIONS } from '../../site.config';
 import { itemsForSection } from '../../lib/wire';
 
-export function getStaticPaths() {
-  return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { name: s.name } }));
-}
+export const prerender = false;
 
 const { section } = Astro.params;
-const { name } = Astro.props;
+const found = SECTIONS.find((s) => s.slug === section);
+if (!found) return new Response(null, { status: 404 });
+const { name } = found;
 const items = itemsForSection(section);
 ---
 <Base title={name} description={`${name} headlines from across Bristol County, Massachusetts.`}>

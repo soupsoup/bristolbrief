@@ -1,9 +1,10 @@
 ---
 import election from '../data/election.json';
-import resultsData from '../data/election-results.json';
+import { getData } from '../lib/data-source';
 
 type Res = { leader?: string | null; margin?: number | null; prev_margin?: number | null; lead_changed_at?: string | null };
 const tracker = election.tracker;
+const resultsData = getData('election-results');
 const results = (resultsData as { races?: Record<string, Res> }).races ?? {};
 const fmt = (iso?: string | null) =>
   iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }) + ' ET' : '';

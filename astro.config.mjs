@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-import sitemap from '@astrojs/sitemap';
 
 // Canonical URLs, Open Graph tags and the RSS feed use this address.
 // Set SITE_URL once you have a custom domain; until then Vercel's
@@ -12,12 +11,13 @@ const site =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : 'https://bristolbrief.com');
 
-// Public pages are prerendered to static HTML. Only the admin area and its
-// API routes (which set `export const prerender = false`) run as functions.
-// The sitemap lists the prerendered public pages; the admin area is left out.
+// Every page renders on demand from the data branch (see src/lib/data-source.ts),
+// so the hourly data commits never trigger a build. Vercel caches each rendered
+// public page for an hour (ISR) and re-renders it on the next visit after that.
+// The admin area and API routes are never cached. The sitemap is built in
+// src/pages/sitemap.xml.ts.
 export default defineConfig({
   site,
-  output: 'static',
-  adapter: vercel(),
-  integrations: [sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/admin/') })],
+  output: 'server',
+  adapter: vercel({ isr: { expiration: 3600, exclude: [/^\/admin/, /^\/api/] } }),
 });

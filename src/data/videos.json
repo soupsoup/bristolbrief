@@ -1,23 +1,16 @@
 {
- "updated": "2026-11-14T16:05:47.170Z",
+ "updated": "2026-11-14T16:36:42.537Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -30,11 +23,18 @@
    "kept": 0
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 2
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "nbc10-wjar",
@@ -44,14 +44,24 @@
    "kept": 15
   },
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "WuBs0O6NczQ",
+   "title": "Providence fire",
+   "link": "https://www.youtube.com/watch?v=WuBs0O6NczQ",
+   "published": "2026-11-14T16:33:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/WuBs0O6NczQ/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "K8jR_kbbvaE",
    "title": "FAA allows flights to resume after nationwide ground stop",

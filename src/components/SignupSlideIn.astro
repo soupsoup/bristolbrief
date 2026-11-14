@@ -11,17 +11,17 @@
 ---
 <aside class="slidein" id="nl-slidein" aria-labelledby="nl-slidein-title" hidden>
   <button class="slidein-close" type="button" aria-label="Close">×</button>
-  <p class="kicker">Free weekly newsletter</p>
-  <p class="slidein-title" id="nl-slidein-title">The week in Bristol County, in one email</p>
+  <p class="kicker">Free winter guide</p>
+  <p class="slidein-title" id="nl-slidein-title">Where you can park when it snows, in all 20 towns</p>
   <p class="slidein-copy">
-    The top local stories from all 20 cities and towns, plus the public meetings coming up.
-    Once a week. Free.
+    Get our winter parking guide and the weekly Bristol Brief newsletter: the top local stories,
+    plus the public meetings coming up. Free.
   </p>
   <form class="slidein-form" method="post" action="/api/subscribe/">
     <label class="visually-hidden" for="email-slidein">Email address</label>
     <input id="email-slidein" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
     <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-    <button class="btn" type="submit">Send me the weekly</button>
+    <button class="btn" type="submit">Send me the guide</button>
   </form>
   <p class="slidein-status meta" role="status" hidden></p>
   <button class="slidein-later meta" type="button">No thanks</button>
@@ -43,7 +43,7 @@
   const subscribed = state === 'subscribed';
   const dismissedAt = state.startsWith('dismissed:') ? Number(state.slice(10)) : 0;
   const recentlyDismissed = dismissedAt && Date.now() - dismissedAt < DISMISS_DAYS * 86_400_000;
-  const excluded = path.startsWith('/subscribe') || path.startsWith('/admin') || new URLSearchParams(location.search).has('status');
+  const excluded = path.startsWith('/subscribe') || path.startsWith('/admin') || path.startsWith('/winter-guide') || new URLSearchParams(location.search).has('status');
   const shownThisSession = read(sessionStorage, 'bb_nl_shown') === '1';
 
   if (box && !subscribed && !recentlyDismissed && !excluded && !shownThisSession) {
@@ -81,7 +81,7 @@
     const status = box.querySelector<HTMLElement>('.slidein-status')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const MESSAGES: Record<string, string> = {
-      ok: 'Thanks! Check your inbox to confirm your subscription.',
+      ok: 'Thanks! Check your inbox to confirm your subscription. Your guide is ready now:',
       invalid: 'That email address doesn’t look right. Please check it and try again.',
       'not-configured': 'Sign-ups open very soon. Please try again later today.',
       upstream: 'Something went wrong on our end. Please try again in a minute.',
@@ -107,9 +107,14 @@
       track(result === 'ok' ? 'newsletter_signup' : 'newsletter_signup_error', { result, placement: 'slidein' });
       if (result === 'ok') {
         write(localStorage, KEY, 'subscribed');
+        const link = document.createElement('a');
+        link.href = '/winter-guide/';
+        link.textContent = 'Open the winter parking guide';
+        link.className = 'slidein-guide';
+        status.append(document.createElement('br'), link);
         form.hidden = true;
         (box.querySelector('.slidein-later') as HTMLElement).hidden = true;
-        setTimeout(() => { box.classList.remove('open'); setTimeout(() => { box.hidden = true; }, 250); }, 4000);
+        setTimeout(() => { box.classList.remove('open'); setTimeout(() => { box.hidden = true; }, 250); }, 15000);
       }
     });
   }

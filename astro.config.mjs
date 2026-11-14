@@ -19,5 +19,5 @@ export default defineConfig({
   site,
   output: 'static',
   adapter: vercel(),
-  integrations: [sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/admin/') })],
+  integrations: [sitemap({ filter: (page) => !['/admin/', '/election/'].some((p) => new URL(page).pathname.startsWith(p)) })],
 });

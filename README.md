@@ -27,7 +27,7 @@ npm test         # parser, town-matching and data tests
 
 - Sources live in `src/data/sources.json`. To add a feed, add an entry with `id`, `name`, `url` and `category` (`news`, `public-safety`, `government` or `meetings`).
 - Only items that name one of the county's 20 cities and towns (or a village in one, like Assonet or North Dartmouth) make it onto the site. "South Coast" alone doesn't count. Stories that mention Bristol County but no town are kept with a "Countywide" label: they show in the headline list (and the Countywide filter on `/news/`) but on no town page. The exception is a town hall, police department or agenda feed: give it `"defaultTowns": ["slug"]` and all of its items are kept and filed under that town.
-- `.github/workflows/ingest.yml` runs the ingest hourly and commits when headlines change, which triggers a redeploy on most hosts. Scheduled workflows only run on the default branch.
+- `.github/workflows/ingest.yml` runs the ingest and commits when data changes, at most about once an hour (extra triggers, such as an external :05 and :35 ping, still run the ingest but skip the commit), because every commit is a Vercel production build. Scheduled workflows only run on the default branch.
 - Headlines appear on the home page, `/news/` (filter by town, type and source), each town page, `/meetings/`, `/weather/` and `/sources/`.
 - The same run pulls MBTA commuter rail alerts for Bristol County stations (`/transit/`, refreshed live in the browser), NOAA tide predictions for four harbors (`/weather/#tides`) and Taunton's CivicClerk meeting calendar (`/meetings/`). To add another CivicClerk town, add its tenant to `CIVICCLERK` in `scripts/ingest.mjs`.
 - `docs/sources.md` has the research notes: which feeds work, which need scrapers, and data APIs to add next.
@@ -36,7 +36,7 @@ npm test         # parser, town-matching and data tests
 
 `src/data/election.json` holds the ballot as the Secretary of the Commonwealth published it (candidates for races that include Bristol County, the nine statewide questions, polling place changes), with the source pages listed in the file. Edit it by hand if the state corrects a listing.
 
-`src/data/election-results.json` is written by `scripts/ingest.mjs` (via `scripts/lib/election.mjs`). From 8 p.m. ET on Nov. 3 until Nov. 10 every ingest asks the state's results site (electionstats.state.ma.us) for the general election and saves statewide, Bristol County and district results. The scheduler runs the ingest at :05 and :35, so results refresh every 30 minutes; each run commits, which redeploys the site. Before the state publishes anything, or outside that window, the file is left alone. To try it against a past election: `ELECTION_FORCE=1 ELECTION_DATE=2026-09-01 ELECTION_PRIMARY=Democratic npm run ingest`.
+`src/data/election-results.json` is written by `scripts/ingest.mjs` (via `scripts/lib/election.mjs`). From 8 p.m. ET on Nov. 3 until Nov. 10 every ingest asks the state's results site (electionstats.state.ma.us) for the general election and saves statewide, Bristol County and district results. The scheduler may run the ingest at :05 and :35, but the workflow commits at most about once an hour to limit Vercel builds, so results refresh hourly. Before the state publishes anything, or outside that window, the file is left alone. To try it against a past election: `ELECTION_FORCE=1 ELECTION_DATE=2026-09-01 ELECTION_PRIMARY=Democratic npm run ingest`.
 
 ## Admin
 

@@ -1,20 +1,6 @@
 {
- "updated": "2026-11-14T22:35:26.961Z",
+ "updated": "2026-11-15T08:07:12.790Z",
  "channels": [
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
   {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
@@ -23,31 +9,155 @@
    "kept": 0
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 500"
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "27aDBkEhs6Q",
+   "title": "Attleboro's Marie Lee celebrates 100th birthday",
+   "link": "https://www.youtube.com/watch?v=27aDBkEhs6Q",
+   "published": "2026-11-15T04:54:08.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/27aDBkEhs6Q/mqdefault.jpg",
+   "towns": [
+    "attleboro"
+   ],
+   "local": true
+  },
+  {
+   "id": "jHxMU0oou8A",
+   "title": "WPRI 12 Weather Forecast 11/14/26",
+   "link": "https://www.youtube.com/watch?v=jHxMU0oou8A",
+   "published": "2026-11-15T04:29:46.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jHxMU0oou8A/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "NEtCBi3-tf4",
+   "title": "Cape Wildlife Center is caring for a new two-headed turtle",
+   "link": "https://www.youtube.com/watch?v=NEtCBi3-tf4",
+   "published": "2026-11-15T04:18:01.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/NEtCBi3-tf4/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "1D-6XKoNFqM",
+   "title": "New security measures begin at Providence Place",
+   "link": "https://www.youtube.com/watch?v=1D-6XKoNFqM",
+   "published": "2026-11-15T04:14:00.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/1D-6XKoNFqM/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "oVqXJxrpGy8",
+   "title": "Operations are back up and running at T.F. Green International Airport",
+   "link": "https://www.youtube.com/watch?v=oVqXJxrpGy8",
+   "published": "2026-11-15T04:08:51.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/oVqXJxrpGy8/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "8Ah53OrcCkI",
+   "title": "Crews investigating early morning fire in Providence",
+   "link": "https://www.youtube.com/watch?v=8Ah53OrcCkI",
+   "published": "2026-11-15T03:42:23.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/8Ah53OrcCkI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "fEXN6CID-TU",
+   "title": "Providence School Board names interim superintendent",
+   "link": "https://www.youtube.com/watch?v=fEXN6CID-TU",
+   "published": "2026-11-15T03:41:58.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/fEXN6CID-TU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "P3C8W0wwM7w",
+   "title": "T.F. Green travelers still seeing effects after ground stop lifted",
+   "link": "https://www.youtube.com/watch?v=P3C8W0wwM7w",
+   "published": "2026-11-15T03:40:51.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/P3C8W0wwM7w/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wtDaRLyNvKo",
+   "title": "Byrd's 10 steals leads Friars past Colorado, 67-53",
+   "link": "https://www.youtube.com/watch?v=wtDaRLyNvKo",
+   "published": "2026-11-15T03:01:33.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wtDaRLyNvKo/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "Iuwy8V0n78M",
+   "title": "T.F. Green travelers still feeling effects of ground stoppage",
+   "link": "https://www.youtube.com/watch?v=Iuwy8V0n78M",
+   "published": "2026-11-15T00:56:39.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Iuwy8V0n78M/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "Vh5U3a2B3N0",
    "title": "FAA update on ground stoppage",
@@ -107,19 +217,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/QTpV6D40X9o/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "IpUZV7SMATk",
-   "title": "WPRI 12 Weather Now 11/14/26: Chilly This Weekend; Milder Next Week",
-   "link": "https://www.youtube.com/watch?v=IpUZV7SMATk",
-   "published": "2026-11-14T15:21:04.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/IpUZV7SMATk/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "fkAsSiHYpcE",
@@ -4010,190 +4107,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "3XCpsiFKNcQ",
-   "title": "Movie theater flooded in North Dartmouth",
-   "link": "https://www.youtube.com/watch?v=3XCpsiFKNcQ",
-   "published": "2026-11-08T04:48:00.000Z",
-   "channel": "cbs-boston",
-   "channelName": "CBS Boston (WBZ)",
-   "thumbnail": "https://i.ytimg.com/vi/3XCpsiFKNcQ/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
-   ],
-   "local": true
-  },
-  {
-   "id": "RIYr6U29fMI",
-   "title": "Cranston West tops St. Rays, advances in DI playoffs",
-   "link": "https://www.youtube.com/watch?v=RIYr6U29fMI",
-   "published": "2026-11-08T04:46:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/RIYr6U29fMI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "qiFHNXgv_fE",
-   "title": "High School Roundup: La Salle, Pilgrim, Bay View win girls soccer state titles",
-   "link": "https://www.youtube.com/watch?v=qiFHNXgv_fE",
-   "published": "2026-11-08T04:45:49.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/qiFHNXgv_fE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vQuwopa41BY",
-   "title": "WPRI 12 Weather Forecast 11/7/26",
-   "link": "https://www.youtube.com/watch?v=vQuwopa41BY",
-   "published": "2026-11-08T04:28:47.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vQuwopa41BY/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "JdX7d6dY_Xk",
-   "title": "Warren fundraiser supports first responder recovering from heart transplant",
-   "link": "https://www.youtube.com/watch?v=JdX7d6dY_Xk",
-   "published": "2026-11-08T04:25:09.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/JdX7d6dY_Xk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "duwRAhG9OIE",
-   "title": "Dartmouth movie theater flooded after heavy rainfall on Friday",
-   "link": "https://www.youtube.com/watch?v=duwRAhG9OIE",
-   "published": "2026-11-08T04:16:37.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/duwRAhG9OIE/mqdefault.jpg",
-   "towns": [
-    "dartmouth"
-   ],
-   "local": true
-  },
-  {
-   "id": "67j7BnqVFXY",
-   "title": "Parenteau wins first individual cross country title, Cumberland secures third straight team title",
-   "link": "https://www.youtube.com/watch?v=67j7BnqVFXY",
-   "published": "2026-11-08T03:42:15.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/67j7BnqVFXY/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "XNYF3YbSstk",
-   "title": "Flynn claims individual title, Hendricken wins fifth straight boys cross country title",
-   "link": "https://www.youtube.com/watch?v=XNYF3YbSstk",
-   "published": "2026-11-08T03:39:20.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/XNYF3YbSstk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "DBVppTLrSGo",
-   "title": "Celebrities visit Providence for Comic Con",
-   "link": "https://www.youtube.com/watch?v=DBVppTLrSGo",
-   "published": "2026-11-08T03:18:05.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/DBVppTLrSGo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oIke-MiZ29g",
-   "title": "WaterFire holds 'Salute to Veterans' lighting",
-   "link": "https://www.youtube.com/watch?v=oIke-MiZ29g",
-   "published": "2026-11-08T03:15:59.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oIke-MiZ29g/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tlj1rq9K2GM",
-   "title": "Scouting for Food Drive collects significant amount of food bank donations",
-   "link": "https://www.youtube.com/watch?v=tlj1rq9K2GM",
-   "published": "2026-11-08T03:14:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/tlj1rq9K2GM/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "8mNouTU8uDs",
-   "title": "Local firefighter receives heart transplant",
-   "link": "https://www.youtube.com/watch?v=8mNouTU8uDs",
-   "published": "2026-11-08T03:13:56.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8mNouTU8uDs/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "KhEBBVbjhiE",
-   "title": "I-195 re-opened to traffic in East Providence",
-   "link": "https://www.youtube.com/watch?v=KhEBBVbjhiE",
-   "published": "2026-11-08T03:12:03.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/KhEBBVbjhiE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NPXIcCXf6yI",
-   "title": "Man charged in Swansea dealership scheme sentenced to prison",
-   "link": "https://www.youtube.com/watch?v=NPXIcCXf6yI",
-   "published": "2026-11-08T03:11:18.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NPXIcCXf6yI/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
-  },
-  {
-   "id": "CdPtAVP4wdA",
-   "title": "Protesters call for transparency from Rhode Island Energy",
-   "link": "https://www.youtube.com/watch?v=CdPtAVP4wdA",
-   "published": "2026-11-08T01:19:09.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/CdPtAVP4wdA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "ev_vAvBIKwQ",
-   "title": "Rain doesn’t keep Patriots fans away from Rob Gronkowski’s Hall of Fame induction",
-   "link": "https://www.youtube.com/watch?v=ev_vAvBIKwQ",
-   "published": "2026-11-08T01:03:39.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/ev_vAvBIKwQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "IwfLbHqpgSg",
-   "title": "I-195 reopens following Potter Street Bridge demolition",
-   "link": "https://www.youtube.com/watch?v=IwfLbHqpgSg",
-   "published": "2026-11-07T23:18:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/IwfLbHqpgSg/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

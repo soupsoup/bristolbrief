@@ -68,6 +68,10 @@ Without `ADMIN_PASSWORD` the admin is switched off. Without `ADMIN_GITHUB_TOKEN`
 
 The hourly headline job commits and triggers a rebuild every hour, so expired picks give way to fresh news at the first hourly update after they expire.
 
+## Deploying on the VPS
+
+The site runs on the VPS behind nginx, rebuilt automatically whenever `main` changes. `deploy/vps/SETUP.md` has the install, cutover and rollback steps. Build for it with `DEPLOY_TARGET=node npm run build`; without that variable the build targets Vercel, as below.
+
 ## Deploying on Vercel
 
 1. Go to [vercel.com/new](https://vercel.com/new), import `soupsoup/bristolbrief`, and deploy. `vercel.json` sets the build; no settings need changing.

@@ -42,8 +42,8 @@ jobs:
         continue-on-error: true
         timeout-minutes: 8
         run: node scripts/police-log.mjs
-      # Commit every run, even when no headlines changed: the push makes Vercel
-      # rebuild, which lets editors' featured picks expire on the hour and keeps
+      # Commit every run, even when no headlines changed: the push makes the
+      # host rebuild (the VPS deploy timer, or Vercel), which lets editors' featured picks expire on the hour and keeps
       # tides and alerts current.
       - name: Commit updated data
         run: |

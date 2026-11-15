@@ -1,0 +1,18 @@
+[Unit]
+Description=Deploy the newest Bristol Brief commit if main changed
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=bristolbrief
+Group=bristolbrief
+WorkingDirectory=/var/www/bristolbrief
+# Only what the build needs. Secrets stay in bristolbrief.service.
+Environment=SITE_URL=https://bristolbrief.com
+Environment=NODE_OPTIONS=--max-old-space-size=768
+ExecStart=/var/www/bristolbrief/deploy/vps/deploy.sh
+# Builds yield the CPU to Frontier and the live site.
+Nice=10
+CPUWeight=20
+IOSchedulingClass=idle
+TimeoutStartSec=10min

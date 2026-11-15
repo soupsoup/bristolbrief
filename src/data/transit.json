@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-15T19:05:24.966Z",
+ "updated": "2026-11-15T19:35:47.426Z",
  "alerts": [
   {
    "id": "1045633",
-   "header": "Fall River Line Train 8609 (12:05 PM from South Station) is operating 25-35 minutes behind schedule Middleborough and Fall River Depot due to a signal issue.",
+   "header": "Fall River Line Train 8609 (12:05 PM from South Station) is operating 35-45 minutes behind schedule Middleborough and Fall River Depot due to a signal issue.",
    "effect": "DELAY",
    "severity": 7,
    "lifecycle": "NEW",
@@ -16,7 +16,58 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-15T13:46:43-05:00"
+   "updated": "2026-11-15T14:08:11-05:00"
+  },
+  {
+   "id": "1045637",
+   "header": "Fall River Line Train 8616 (2:09 PM from Fall River Depot) has departed Fall River and is operating 15-25 minutes behind schedule due to a signal issue.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "SIGNAL_ISSUE",
+   "start": "2026-11-15T14:09:00-05:00",
+   "end": "2026-11-15T16:44:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-15T14:30:46-05:00"
+  },
+  {
+   "id": "1045636",
+   "header": "New Bedford Line Train 8514 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between Middleborough and South Station due to a signal issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-15T13:44:00-05:00",
+   "end": "2026-11-15T16:45:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-15T14:10:06-05:00"
+  },
+  {
+   "id": "1045640",
+   "header": "New Bedford Line Train 8511 (1:05 PM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and New Bedford due to a signal issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-15T14:06:41-05:00",
+   "end": "2026-11-15T15:48:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-15T14:06:41-05:00"
   },
   {
    "id": "1045638",
@@ -34,40 +85,6 @@
    "towns": [],
    "url": null,
    "updated": "2026-11-15T14:02:44-05:00"
-  },
-  {
-   "id": "1045637",
-   "header": "Fall River Line Train 8616 (2:09 PM from Fall River Depot) is expected to depart Fall River 5-15 minutes behind schedule due to a signal issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "SIGNAL_ISSUE",
-   "start": "2026-11-15T14:09:00-05:00",
-   "end": "2026-11-15T16:44:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-15T13:50:52-05:00"
-  },
-  {
-   "id": "1045636",
-   "header": "New Bedford Line Train 8514 (1:03 PM from New Bedford) is operating 5-15 minutes behind schedule between Middleborough and South Station due to a signal issue.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-15T13:44:35-05:00",
-   "end": "2026-11-15T15:45:00-05:00",
-   "routes": [
-    "CR-NewBedford"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-15T13:44:35-05:00"
   }
  ],
  "stopParents": {

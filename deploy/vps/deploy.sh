@@ -58,6 +58,9 @@ restart
 echo "Deployed $(git log -1 --format='%h %s') in $(( $(date +%s) - start ))s"
 
 # Prune old releases, newest first, never the current one.
-ls -1t .releases | grep -vx -e current -e "$new" | tail -n +"$KEEP" | while read -r old; do
+# `|| true`: on the first deploys there's nothing to prune, grep matches
+# nothing and exits 1, which pipefail would turn into a failed run.
+{ ls -1t .releases | grep -vx -e current -e "$new" || true; } | tail -n +"$KEEP" | while read -r old; do
   rm -rf ".releases/$old"
 done
+exit 0

@@ -1,6 +1,19 @@
 {
- "updated": "2026-11-16T00:35:26.264Z",
+ "updated": "2026-11-16T01:05:47.718Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -8,16 +21,18 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
    "id": "boston25",
    "name": "Boston 25 News",
-   "ok": false,
-   "error": "HTTP 404"
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -28,24 +43,58 @@
   {
    "id": "wpri",
    "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "jJ8MUMnfNPU",
+   "title": "T.F. Green travelers still seeing delays days after ground stop",
+   "link": "https://www.youtube.com/watch?v=jJ8MUMnfNPU",
+   "published": "2026-11-16T00:19:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/jJ8MUMnfNPU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "lNEIKEIw2P4",
+   "title": "Man arrested after police say he drove at officers",
+   "link": "https://www.youtube.com/watch?v=lNEIKEIw2P4",
+   "published": "2026-11-16T00:18:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/lNEIKEIw2P4/mqdefault.jpg",
+   "towns": [
+    "seekonk"
+   ],
+   "local": true
+  },
+  {
+   "id": "1IdhUTS83tw",
+   "title": "Police investigating reported threat at Cranston West",
+   "link": "https://www.youtube.com/watch?v=1IdhUTS83tw",
+   "published": "2026-11-16T00:18:16.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/1IdhUTS83tw/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "wCNUVfwCLE0",
+   "title": "WPRI 12 Weather Forecast 11/15/26",
+   "link": "https://www.youtube.com/watch?v=wCNUVfwCLE0",
+   "published": "2026-11-15T23:59:00.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/wCNUVfwCLE0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "IAuoHrhbZtA",
    "title": "Newport angler represents Team USA in international surf fishing competition",
@@ -65,19 +114,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/fzQb2EcH1g0/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "CF6gx9ADl7A",
-   "title": "WPRI 12 Weather Now 11/15/26: Cold, Quiet Tonight; M.Sunny, Less Breezy Monday",
-   "link": "https://www.youtube.com/watch?v=CF6gx9ADl7A",
-   "published": "2026-11-15T23:09:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/CF6gx9ADl7A/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "5Fi_bm0_nsA",

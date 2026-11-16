@@ -82,6 +82,10 @@ Pages are re-rendered at least hourly, so expired picks give way to fresh news w
 2. **Set the domain** with the `SITE_URL` environment variable, and the contact email and social links in `src/site.config.ts`.
 3. **Merge to the default branch** so the hourly GitHub Actions job can run.
 
+## Weekly newsletter
+
+`node scripts/newsletter.mjs --weekly --ref origin/data` builds the weekly edition as `newsletter-draft/weekly-<date>.html` and `.txt`: a story of the week, the next eight biggest stories (ranked by how many outlets ran them), the week's high school scores, and the public meetings for the coming seven days. Run it on the day you send. The window is always the last seven days, so the weekday only affects the "week ahead" list. Use `--ref origin/main` until the `data` branch exists.
+
 ## Where things live
 
 | Path | Purpose |

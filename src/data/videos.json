@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-16T12:35:39.595Z",
+ "updated": "2026-11-16T13:05:31.927Z",
  "channels": [
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "wpri",
    "name": "WPRI 12",
@@ -9,8 +16,8 @@
    "kept": 15
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -23,13 +30,6 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
@@ -37,15 +37,15 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -53,13 +53,46 @@
  ],
  "videos": [
   {
-   "id": "5GdTgOL4MjE",
-   "title": "WPRI 12 Weather Forecast for 11/16/26:  Sunny, cool and dry today",
-   "link": "https://www.youtube.com/watch?v=5GdTgOL4MjE",
-   "published": "2026-11-16T09:55:59.000Z",
+   "id": "tnOF9e9xcbE",
+   "title": "Lindsay Clancy is back in court as retrial date is uncertain",
+   "link": "https://www.youtube.com/shorts/tnOF9e9xcbE",
+   "published": "2026-11-16T12:55:26.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/tnOF9e9xcbE/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "lx9fzcBQVRA",
+   "title": "Behind the Smiles Photo for 11/16/26 from Tena in NK",
+   "link": "https://www.youtube.com/watch?v=lx9fzcBQVRA",
+   "published": "2026-11-16T12:38:59.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/5GdTgOL4MjE/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/lx9fzcBQVRA/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true
+  },
+  {
+   "id": "HLI6hJ8_6Io",
+   "title": "Tartan Army cheer on Patriots in Germany despite loss",
+   "link": "https://www.youtube.com/watch?v=HLI6hJ8_6Io",
+   "published": "2026-11-16T12:32:52.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HLI6hJ8_6Io/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ZCbr8TH4y0o",
+   "title": "WPRI 12 Weather Forecast for 11/16/26:  Sunny, seasonably cool today",
+   "link": "https://www.youtube.com/watch?v=ZCbr8TH4y0o",
+   "published": "2026-11-16T12:23:13.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ZCbr8TH4y0o/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
@@ -4018,47 +4051,6 @@
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/jcaMXC0Ljss/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "PFGeJUAkdKA",
-   "title": "Cold Cases: Who Killed John Fiore?",
-   "link": "https://www.youtube.com/watch?v=PFGeJUAkdKA",
-   "published": "2026-11-09T12:42:23.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/PFGeJUAkdKA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "-Sckuf8eNMA",
-   "title": "Secretary of Defense Pete Hegseth to visit Newport on Monday",
-   "link": "https://www.youtube.com/watch?v=-Sckuf8eNMA",
-   "published": "2026-11-09T12:41:48.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/-Sckuf8eNMA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "wiFQgelbPM0",
-   "title": "Advocates speak out as convicted murderer seeks parole",
-   "link": "https://www.youtube.com/watch?v=wiFQgelbPM0",
-   "published": "2026-11-09T12:40:28.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/wiFQgelbPM0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tJ97RTGletM",
-   "title": "Defense Secretary Hegseth speaks at  Naval War College in Newport",
-   "link": "https://www.youtube.com/shorts/tJ97RTGletM",
-   "published": "2026-11-09T12:37:43.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/tJ97RTGletM/mqdefault.jpg",
-   "towns": [],
-   "short": true
   }
  ]
 }

@@ -1,9 +1,16 @@
 {
- "updated": "2026-11-16T17:05:24.844Z",
+ "updated": "2026-11-16T18:05:36.362Z",
  "channels": [
   {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,22 +23,8 @@
    "kept": 0
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,26 +37,138 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
   {
-   "id": "SlO7HQjGMfM",
-   "title": "WPRI 12 Weather Now 11/16/26: Cool, dry and sunny afternoon. Warmup ahead",
-   "link": "https://www.youtube.com/watch?v=SlO7HQjGMfM",
-   "published": "2026-11-16T16:50:34.000Z",
+   "id": "go9M1Q2-hgU",
+   "title": "Newport's historic The Elms mansion unveils immersive Gilded Age experience",
+   "link": "https://www.youtube.com/watch?v=go9M1Q2-hgU",
+   "published": "2026-11-16T17:52:34.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/go9M1Q2-hgU/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vK3f3ZMiNmA",
+   "title": "Patriots QB Drake Maye out with lower leg injury #shorts",
+   "link": "https://www.youtube.com/shorts/vK3f3ZMiNmA",
+   "published": "2026-11-16T17:52:02.000Z",
    "channel": "wpri",
    "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/SlO7HQjGMfM/mqdefault.jpg",
+   "thumbnail": "https://i.ytimg.com/vi/vK3f3ZMiNmA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "nex-HDFFz_I",
+   "title": "Gas prices continue to decline",
+   "link": "https://www.youtube.com/watch?v=nex-HDFFz_I",
+   "published": "2026-11-16T17:37:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/nex-HDFFz_I/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "_Z8KtUunk0Y",
+   "title": "U.S. loses measles elimination status",
+   "link": "https://www.youtube.com/watch?v=_Z8KtUunk0Y",
+   "published": "2026-11-16T17:37:24.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/_Z8KtUunk0Y/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "qk8tpk4E19Q",
+   "title": "Appreciation breakfast held for local veterans",
+   "link": "https://www.youtube.com/watch?v=qk8tpk4E19Q",
+   "published": "2026-11-16T17:34:35.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/qk8tpk4E19Q/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "HYXe7nMHaJ0",
+   "title": "Comedian Charlie Hall being remembered",
+   "link": "https://www.youtube.com/watch?v=HYXe7nMHaJ0",
+   "published": "2026-11-16T17:29:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/HYXe7nMHaJ0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "zpRMrGmabp4",
+   "title": "10 displaced by New Bedford fire",
+   "link": "https://www.youtube.com/watch?v=zpRMrGmabp4",
+   "published": "2026-11-16T17:27:04.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/zpRMrGmabp4/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "2gwNfN1yQyQ",
+   "title": "WPRI 12 Weather Forecast for 11/16/26:  Sunny, cool today; warming trend ahead",
+   "link": "https://www.youtube.com/watch?v=2gwNfN1yQyQ",
+   "published": "2026-11-16T17:26:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/2gwNfN1yQyQ/mqdefault.jpg",
    "towns": [],
    "local": true,
    "countywide": true,
    "weather": true
+  },
+  {
+   "id": "0HhemN_LK7A",
+   "title": "Police increase presence at Cranston West after threats",
+   "link": "https://www.youtube.com/watch?v=0HhemN_LK7A",
+   "published": "2026-11-16T17:24:03.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/0HhemN_LK7A/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "ws2zEkUL8hk",
+   "title": "Judge sets date for Lindsay Clancy retrial",
+   "link": "https://www.youtube.com/watch?v=ws2zEkUL8hk",
+   "published": "2026-11-16T17:21:44.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ws2zEkUL8hk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "RdEJMazHw4g",
+   "title": "Judge, lawyers haggle over dates in Lindsay Clancy retrial",
+   "link": "https://www.youtube.com/shorts/RdEJMazHw4g",
+   "published": "2026-11-16T16:59:55.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/RdEJMazHw4g/mqdefault.jpg",
+   "towns": [],
+   "short": true
   },
   {
    "id": "wRPF6qrstf0",
@@ -3959,107 +4064,6 @@
    "thumbnail": "https://i.ytimg.com/vi/l4UAP502WBY/mqdefault.jpg",
    "towns": [],
    "short": true
-  },
-  {
-   "id": "XdG6lr5WEG4",
-   "title": "Defense Secretary Hegseth discusses changes for military war colleges",
-   "link": "https://www.youtube.com/watch?v=XdG6lr5WEG4",
-   "published": "2026-11-09T17:49:30.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/XdG6lr5WEG4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "1KwiRXwUfSI",
-   "title": "Remarkable Women nominations close November 20 #shorts",
-   "link": "https://www.youtube.com/shorts/1KwiRXwUfSI",
-   "published": "2026-11-09T17:44:08.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/1KwiRXwUfSI/mqdefault.jpg",
-   "towns": [],
-   "short": true
-  },
-  {
-   "id": "1qVQC0eqFW0",
-   "title": "Secretary of Defense Pete Hegseth speaks at Naval War College in Newport",
-   "link": "https://www.youtube.com/watch?v=1qVQC0eqFW0",
-   "published": "2026-11-09T17:38:50.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/1qVQC0eqFW0/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "g2bm9OzSlBA",
-   "title": "‘Godzilla Minus Zero’ stomps to a record-setting $31.6 debut",
-   "link": "https://www.youtube.com/watch?v=g2bm9OzSlBA",
-   "published": "2026-11-09T17:33:29.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/g2bm9OzSlBA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "adFjAs6Tp4Q",
-   "title": "Deliberations continue in murder trial against Matthew Farwell",
-   "link": "https://www.youtube.com/watch?v=adFjAs6Tp4Q",
-   "published": "2026-11-09T17:25:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/adFjAs6Tp4Q/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "SMAUrW2OT_A",
-   "title": "Secretary of Defense Pete Hegseth in Rhode Island",
-   "link": "https://www.youtube.com/watch?v=SMAUrW2OT_A",
-   "published": "2026-11-09T17:25:10.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/SMAUrW2OT_A/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "8dyhfCtNhfQ",
-   "title": "RI Energy launches program to help customers save on electric bills",
-   "link": "https://www.youtube.com/watch?v=8dyhfCtNhfQ",
-   "published": "2026-11-09T17:22:54.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/8dyhfCtNhfQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "N_LIRiNLLpg",
-   "title": "Family nurse practitioner discusses winter medical kit checklist",
-   "link": "https://www.youtube.com/watch?v=N_LIRiNLLpg",
-   "published": "2026-11-09T17:21:28.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/N_LIRiNLLpg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NP28XG4abhw",
-   "title": "Pete Hegseth visits RI as he faces increasing calls for impeachment",
-   "link": "https://www.youtube.com/watch?v=NP28XG4abhw",
-   "published": "2026-11-09T17:21:16.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NP28XG4abhw/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "vtIFwE1VmVM",
-   "title": "U.S. Defense Sec. Pete Hegseth speaks at Naval War College in Newport",
-   "link": "https://www.youtube.com/watch?v=vtIFwE1VmVM",
-   "published": "2026-11-09T17:14:01.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/vtIFwE1VmVM/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

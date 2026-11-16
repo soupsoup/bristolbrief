@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-16T22:35:43.525Z",
+ "updated": "2026-11-16T23:06:40.683Z",
  "alerts": [
+  {
+   "id": "1045835",
+   "header": "Providence Line Train 6027 (4:52 PM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-16T17:43:12-05:00",
+   "end": "2026-11-16T19:33:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro"
+   ],
+   "towns": [
+    "attleboro"
+   ],
+   "url": null,
+   "updated": "2026-11-16T17:43:12-05:00"
+  },
   {
    "id": "1045830",
    "header": "Providence Line Train 6032 (4:35 PM from Wickford Junction) is operating 5-15 minutes behind schedule between Providence and South Station.",

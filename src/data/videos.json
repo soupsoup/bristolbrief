@@ -1,12 +1,6 @@
 {
- "updated": "2026-11-16T00:05:28.768Z",
+ "updated": "2026-11-16T00:35:26.264Z",
  "channels": [
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": false,
-   "error": "HTTP 404"
-  },
   {
    "id": "7news-boston",
    "name": "7NEWS Boston",
@@ -14,14 +8,8 @@
    "error": "HTTP 404"
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": false,
-   "error": "HTTP 404"
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": false,
    "error": "HTTP 404"
   },
@@ -38,14 +26,46 @@
    "error": "HTTP 404"
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "IAuoHrhbZtA",
+   "title": "Newport angler represents Team USA in international surf fishing competition",
+   "link": "https://www.youtube.com/watch?v=IAuoHrhbZtA",
+   "published": "2026-11-15T23:48:59.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/IAuoHrhbZtA/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "fzQb2EcH1g0",
+   "title": "Department of Environmental Management hosts educational workshop on invasive fly species",
+   "link": "https://www.youtube.com/watch?v=fzQb2EcH1g0",
+   "published": "2026-11-15T23:46:06.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/fzQb2EcH1g0/mqdefault.jpg",
+   "towns": []
+  },
   {
    "id": "CF6gx9ADl7A",
    "title": "WPRI 12 Weather Now 11/15/26: Cold, Quiet Tonight; M.Sunny, Less Breezy Monday",
@@ -4031,16 +4051,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/L0IN9ce1xas/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "oiIoRhHCgQc",
-   "title": "Advocates speak out as convicted murderer seeks parole",
-   "link": "https://www.youtube.com/watch?v=oiIoRhHCgQc",
-   "published": "2026-11-09T00:33:39.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/oiIoRhHCgQc/mqdefault.jpg",
    "towns": []
   }
  ]

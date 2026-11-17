@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-17T12:05:44.896Z",
- "alerts": [],
+ "updated": "2026-11-17T12:35:23.945Z",
+ "alerts": [
+  {
+   "id": "1045897",
+   "header": "Providence Line Train 6012 (7:02 AM from Wickford Junction) is operating 5-15 minutes behind schedule between Providence and South Station.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-17T07:34:31-05:00",
+   "end": "2026-11-17T09:40:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-17T07:34:31-05:00"
+  }
+ ],
  "stopParents": {
   "NEC-1919": "place-NEC-1919",
   "NEC-1919-01": "place-NEC-1919",

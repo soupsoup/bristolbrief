@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-17T13:35:51.572Z",
+ "updated": "2026-11-17T14:05:29.920Z",
  "alerts": [
   {
    "id": "1045917",
-   "header": "Providence Line Train 6007 (8:25 AM from South Station) has yet to depart South Station and is 5-15 minutes behind schedule due to a signal issue.",
+   "header": "Providence Line Train 6007 (8:25 AM from South Station) has yet to depart South Station and is now 35-45 minutes behind schedule due to a signal issue.",
    "effect": "DELAY",
-   "severity": 4,
+   "severity": 8,
    "lifecycle": "NEW",
    "cause": "SIGNAL_ISSUE",
    "start": "2026-11-17T08:25:00-05:00",
@@ -16,28 +16,7 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-17T08:30:29-05:00"
-  },
-  {
-   "id": "1045898",
-   "header": "Providence Line Train 6003 (6:35 AM from South Station) is operating 5-15 minutes behind schedule between Attleboro and Wickford Junction.",
-   "effect": "DELAY",
-   "severity": 4,
-   "lifecycle": "NEW",
-   "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-17T07:35:23-05:00",
-   "end": "2026-11-17T09:20:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [
-    "Attleboro"
-   ],
-   "towns": [
-    "attleboro"
-   ],
-   "url": null,
-   "updated": "2026-11-17T07:35:23-05:00"
+   "updated": "2026-11-17T09:04:14-05:00"
   }
  ],
  "stopParents": {

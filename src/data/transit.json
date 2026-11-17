@@ -1,49 +1,34 @@
 {
- "updated": "2026-11-17T15:05:30.186Z",
+ "updated": "2026-11-17T15:35:28.929Z",
  "alerts": [
   {
-   "id": "1045917",
-   "header": "Providence Line Train 6007 (8:25 AM from South Station) has departed South Station and is operating 40-50 minutes behind schedule due to a signal issue.",
-   "effect": "DELAY",
-   "severity": 8,
-   "lifecycle": "NEW",
-   "cause": "SIGNAL_ISSUE",
-   "start": "2026-11-17T08:25:00-05:00",
-   "end": "2026-11-17T10:35:00-05:00",
-   "routes": [
-    "CR-Providence"
-   ],
-   "stations": [],
-   "towns": [],
-   "url": null,
-   "updated": "2026-11-17T09:10:07-05:00"
-  },
-  {
-   "id": "1045945",
-   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 5-15 minutes behind schedule between Freetown and South Station.",
+   "id": "1045955",
+   "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Campello and Fall River Depot.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
    "cause": "UNKNOWN_CAUSE",
-   "start": "2026-11-17T09:51:13-05:00",
-   "end": "2026-11-17T11:58:00-05:00",
+   "start": "2026-11-17T10:30:13-05:00",
+   "end": "2026-11-17T12:18:00-05:00",
    "routes": [
     "CR-NewBedford"
    ],
    "stations": [
     "Freetown",
+    "Fall River Depot",
     "East Taunton"
    ],
    "towns": [
     "freetown",
+    "fall-river",
     "taunton"
    ],
    "url": null,
-   "updated": "2026-11-17T09:51:13-05:00"
+   "updated": "2026-11-17T10:30:13-05:00"
   },
   {
    "id": "1045935",
-   "header": "Providence Line Train 6018 (10:15 AM from Providence) is expected to depart Providence 5-15 minutes behind schedule due to an earlier signal issue.",
+   "header": "Providence Line Train 6018 (10:15 AM from Providence) has departed Providence and is operating 5-15 minutes behind schedule due to an earlier signal issue.",
    "effect": "DELAY",
    "severity": 4,
    "lifecycle": "NEW",
@@ -56,7 +41,48 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-17T09:10:41-05:00"
+   "updated": "2026-11-17T10:28:17-05:00"
+  },
+  {
+   "id": "1045953",
+   "header": "Providence Line Train 6009 (9:25 AM from South Station) is operating 5-15 minutes behind schedule between Mansfield and Wickford Junction.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-17T10:16:58-05:00",
+   "end": "2026-11-17T12:10:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-17T10:16:58-05:00"
+  },
+  {
+   "id": "1045949",
+   "header": "New Bedford Line Train 8014 (9:18 AM from New Bedford) is operating 5-15 minutes behind schedule between Middleborough and South Station.",
+   "effect": "DELAY",
+   "severity": 3,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-17T10:06:52-05:00",
+   "end": "2026-11-17T11:58:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-17T10:06:52-05:00"
   }
  ],
  "stopParents": {

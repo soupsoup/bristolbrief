@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-17T14:05:29.920Z",
+ "updated": "2026-11-17T14:35:48.007Z",
  "alerts": [
   {
    "id": "1045917",
-   "header": "Providence Line Train 6007 (8:25 AM from South Station) has yet to depart South Station and is now 35-45 minutes behind schedule due to a signal issue.",
+   "header": "Providence Line Train 6007 (8:25 AM from South Station) has departed South Station and is operating 40-50 minutes behind schedule due to a signal issue.",
    "effect": "DELAY",
    "severity": 8,
    "lifecycle": "NEW",
@@ -16,7 +16,66 @@
    "stations": [],
    "towns": [],
    "url": null,
-   "updated": "2026-11-17T09:04:14-05:00"
+   "updated": "2026-11-17T09:10:07-05:00"
+  },
+  {
+   "id": "1045941",
+   "header": "Fall River Line Train 8103 (8:18 AM from South Station) is operating 5-15 minutes behind schedule between Bridgewater and Fall River Depot.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "UNKNOWN_CAUSE",
+   "start": "2026-11-17T09:30:08-05:00",
+   "end": "2026-11-17T11:02:00-05:00",
+   "routes": [
+    "CR-NewBedford"
+   ],
+   "stations": [
+    "Freetown",
+    "Fall River Depot",
+    "East Taunton"
+   ],
+   "towns": [
+    "freetown",
+    "fall-river",
+    "taunton"
+   ],
+   "url": null,
+   "updated": "2026-11-17T09:30:08-05:00"
+  },
+  {
+   "id": "1045938",
+   "header": "Stoughton Line Train 6307 (9:05 AM from South Station) has departed South Station and is operating 5-15 minutes behind schedule due to an earlier signal issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "SIGNAL_ISSUE",
+   "start": "2026-11-17T09:15:00-05:00",
+   "end": "2026-11-17T10:45:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-17T09:19:54-05:00"
+  },
+  {
+   "id": "1045935",
+   "header": "Providence Line Train 6018 (10:15 AM from Providence) is expected to depart Providence 5-15 minutes behind schedule due to an earlier signal issue.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "UPCOMING",
+   "cause": "SIGNAL_ISSUE",
+   "start": "2026-11-17T10:15:00-05:00",
+   "end": "2026-11-17T12:27:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [],
+   "towns": [],
+   "url": null,
+   "updated": "2026-11-17T09:10:41-05:00"
   }
  ],
  "stopParents": {

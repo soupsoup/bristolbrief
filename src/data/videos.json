@@ -1,9 +1,23 @@
 {
- "updated": "2026-11-17T22:18:26.399Z",
+ "updated": "2026-11-17T22:35:50.957Z",
  "channels": [
+  {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,25 +30,11 @@
    "kept": 1
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "boston25",
@@ -44,14 +44,41 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "v_DPOUS6aaw",
+   "title": "MassDOT installs wrong-way detection system on busy stretch of I-195 in Fall River #shorts",
+   "link": "https://www.youtube.com/shorts/v_DPOUS6aaw",
+   "published": "2026-11-17T22:31:48.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/v_DPOUS6aaw/mqdefault.jpg",
+   "towns": [
+    "fall-river"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "OdH2y7EHAC0",
+   "title": "WPRI 12 Weather Forecast 11-17-26 Trending Milder The Rest Of This Week",
+   "link": "https://www.youtube.com/watch?v=OdH2y7EHAC0",
+   "published": "2026-11-17T22:27:21.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/OdH2y7EHAC0/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
   {
    "id": "jS59fKw4oZs",
    "title": "Mass. DOT holding annual \"Name a Snowplow\" contest",
@@ -111,19 +138,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/WpsieURsSRw/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "7d2yGsz7TaQ",
-   "title": "WPRI 12 Weather Now 11-17-26 More Sunshine Ahead",
-   "link": "https://www.youtube.com/watch?v=7d2yGsz7TaQ",
-   "published": "2026-11-17T21:43:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7d2yGsz7TaQ/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "rClBb-E75GQ",

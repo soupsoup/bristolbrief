@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-17T16:35:51.317Z",
+ "updated": "2026-11-17T17:05:53.162Z",
  "alerts": [
   {
    "id": "1045958",
-   "header": "Providence Line Train 6011 (10:35 AM from South Station) is stopped at Mansfield and is 15-25 minutes behind schedule due to an earlier unruly passenger and a switch issue near Mansfield.",
+   "header": "Providence Line Train 6011 (10:35 AM from South Station) is operating 20-30 minutes behind schedule between Mansfield and Providence due to an earlier unruly passenger and a switch issue near Mansfield.",
    "effect": "DELAY",
-   "severity": 6,
+   "severity": 7,
    "lifecycle": "NEW",
    "cause": "SWITCH_ISSUE",
    "start": "2026-11-17T11:15:00-05:00",
@@ -23,7 +23,30 @@
     "mansfield"
    ],
    "url": null,
-   "updated": "2026-11-17T11:28:37-05:00"
+   "updated": "2026-11-17T11:38:58-05:00"
+  },
+  {
+   "id": "1045959",
+   "header": "Providence Line Train 6020 (11:12 AM from Providence) is operating 5-15 minutes behind schedule between Attleboro and South Station due to an earlier switch issue in the Mansfield area.",
+   "effect": "DELAY",
+   "severity": 4,
+   "lifecycle": "NEW",
+   "cause": "SWITCH_ISSUE",
+   "start": "2026-11-17T11:45:38-05:00",
+   "end": "2026-11-17T13:29:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-17T11:45:38-05:00"
   },
   {
    "id": "1045955",

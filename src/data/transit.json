@@ -1,6 +1,30 @@
 {
- "updated": "2026-11-17T16:05:30.489Z",
+ "updated": "2026-11-17T16:35:51.317Z",
  "alerts": [
+  {
+   "id": "1045958",
+   "header": "Providence Line Train 6011 (10:35 AM from South Station) is stopped at Mansfield and is 15-25 minutes behind schedule due to an earlier unruly passenger and a switch issue near Mansfield.",
+   "effect": "DELAY",
+   "severity": 6,
+   "lifecycle": "NEW",
+   "cause": "SWITCH_ISSUE",
+   "start": "2026-11-17T11:15:00-05:00",
+   "end": "2026-11-17T12:45:00-05:00",
+   "routes": [
+    "CR-Providence"
+   ],
+   "stations": [
+    "South Attleboro",
+    "Attleboro",
+    "Mansfield"
+   ],
+   "towns": [
+    "attleboro",
+    "mansfield"
+   ],
+   "url": null,
+   "updated": "2026-11-17T11:28:37-05:00"
+  },
   {
    "id": "1045955",
    "header": "Fall River Line Train 8105 (9:35 AM from South Station) is operating 5-15 minutes behind schedule between Campello and Fall River Depot.",

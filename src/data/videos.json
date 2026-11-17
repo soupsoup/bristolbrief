@@ -1,20 +1,6 @@
 {
- "updated": "2026-11-17T17:35:27.419Z",
+ "updated": "2026-11-17T18:05:47.519Z",
  "channels": [
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
   {
    "id": "wcvb",
    "name": "WCVB Channel 5",
@@ -23,8 +9,15 @@
    "kept": 1
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -44,11 +37,18 @@
    "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   }
  ],
  "videos": [
@@ -3941,39 +3941,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/mHN1JG7uLfQ/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "YG6IadSsW3w",
-   "title": "Man found dead in submerged car, police searching for 2nd person in Taunton river",
-   "link": "https://www.youtube.com/watch?v=YG6IadSsW3w",
-   "published": "2026-11-10T18:00:04.000Z",
-   "channel": "nbc10-boston",
-   "channelName": "NBC10 Boston",
-   "thumbnail": "https://i.ytimg.com/vi/YG6IadSsW3w/mqdefault.jpg",
-   "towns": [
-    "taunton"
-   ],
-   "local": true
-  },
-  {
-   "id": "uiBH8WZD3Y4",
-   "title": "Electra Senior Vice President JP Stewart shares technology behind hybrid-electric planes",
-   "link": "https://www.youtube.com/watch?v=uiBH8WZD3Y4",
-   "published": "2026-11-10T17:56:07.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/uiBH8WZD3Y4/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "0kmpIfZHXEg",
-   "title": "Gov.-elect Foulkes announces plans for transition",
-   "link": "https://www.youtube.com/watch?v=0kmpIfZHXEg",
-   "published": "2026-11-10T17:52:06.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/0kmpIfZHXEg/mqdefault.jpg",
    "towns": []
   }
  ]

@@ -1,9 +1,16 @@
 {
- "updated": "2026-11-17T23:05:36.401Z",
+ "updated": "2026-11-17T23:35:34.457Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -16,15 +23,8 @@
    "kept": 15
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -37,21 +37,110 @@
    "kept": 15
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "C76je4JQgsc",
+   "title": "1 of 3 escaped goats remains missing",
+   "link": "https://www.youtube.com/watch?v=C76je4JQgsc",
+   "published": "2026-11-17T23:30:26.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/C76je4JQgsc/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "H2orEdJICW0",
+   "title": "Judge rejects bid to detain former RI dance teacher despite alleged bail violations, child safety co",
+   "link": "https://www.youtube.com/watch?v=H2orEdJICW0",
+   "published": "2026-11-17T23:29:25.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/H2orEdJICW0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "vLR57DnYxxw",
+   "title": "Breaking: Crews battle flames at building in New Bedford",
+   "link": "https://www.youtube.com/watch?v=vLR57DnYxxw",
+   "published": "2026-11-17T23:27:57.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/vLR57DnYxxw/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "ug4yju9B54w",
+   "title": "Airport board should 'reconsider' CEO's $2 million pay, Rhode Island governor says",
+   "link": "https://www.youtube.com/watch?v=ug4yju9B54w",
+   "published": "2026-11-17T23:13:38.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/ug4yju9B54w/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "VK4tgCOoI78",
+   "title": "Firefighters battle massive blaze in New Bedford",
+   "link": "https://www.youtube.com/watch?v=VK4tgCOoI78",
+   "published": "2026-11-17T23:10:16.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/VK4tgCOoI78/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "Ze-I9vslRHI",
+   "title": "Blind crochet artist hopes creations make others happy",
+   "link": "https://www.youtube.com/watch?v=Ze-I9vslRHI",
+   "published": "2026-11-17T23:09:46.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/Ze-I9vslRHI/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "JB0bypi1s_c",
+   "title": "Providence police chief to retire in January",
+   "link": "https://www.youtube.com/watch?v=JB0bypi1s_c",
+   "published": "2026-11-17T23:09:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/JB0bypi1s_c/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "28d24KA8su4",
+   "title": "Large fire breaks out in New Bedford",
+   "link": "https://www.youtube.com/watch?v=28d24KA8su4",
+   "published": "2026-11-17T23:07:29.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/28d24KA8su4/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "iyr0HraqVAA",
    "title": "Providence police chief to retire in January",
@@ -4002,79 +4091,6 @@
     "taunton"
    ],
    "local": true
-  },
-  {
-   "id": "i5-MXkoY0cg",
-   "title": "Foulkes assembles transition team, talks issues, gets emotional about homeless",
-   "link": "https://www.youtube.com/watch?v=i5-MXkoY0cg",
-   "published": "2026-11-10T23:32:00.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/i5-MXkoY0cg/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "lcQqvKIY7TE",
-   "title": "Veteran, 89, goes viral for unexpected performance of 'You're A Grand Old Flag'",
-   "link": "https://www.youtube.com/watch?v=lcQqvKIY7TE",
-   "published": "2026-11-10T23:29:48.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/lcQqvKIY7TE/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "smHLcn2FG58",
-   "title": "Rehoboth man gets life sentence with possible parole for killing pregnant girlfriend",
-   "link": "https://www.youtube.com/watch?v=smHLcn2FG58",
-   "published": "2026-11-10T23:14:52.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/smHLcn2FG58/mqdefault.jpg",
-   "towns": [
-    "rehoboth"
-   ],
-   "local": true
-  },
-  {
-   "id": "j30_K6qFCHc",
-   "title": "Matthew Farwell convicted of killing Sandra Birchmore",
-   "link": "https://www.youtube.com/watch?v=j30_K6qFCHc",
-   "published": "2026-11-10T23:13:54.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/j30_K6qFCHc/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "tdfiiSWl6yA",
-   "title": "What parents should know before opening a 529 college savings plan",
-   "link": "https://www.youtube.com/watch?v=tdfiiSWl6yA",
-   "published": "2026-11-10T23:13:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/tdfiiSWl6yA/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "9mImhf_dTuo",
-   "title": "On-ramp to Henderson Expressway to close until at least 2029",
-   "link": "https://www.youtube.com/watch?v=9mImhf_dTuo",
-   "published": "2026-11-10T23:13:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/9mImhf_dTuo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "GqsSIUwpVz0",
-   "title": "Man receives life sentence after admitting to 2025 killing of pregnant girlfriend",
-   "link": "https://www.youtube.com/watch?v=GqsSIUwpVz0",
-   "published": "2026-11-10T23:10:44.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/GqsSIUwpVz0/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

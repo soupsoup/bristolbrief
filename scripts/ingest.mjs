@@ -4,7 +4,6 @@
 //   src/data/alerts.json       active National Weather Service alerts
 //   src/data/forecast.json     National Weather Service seven-day forecast
 //   src/data/producthunt.json  AI tools with the most votes on Product Hunt (/tools/ page)
-//   src/data/election-results.json  unofficial election results (Nov. 3 evening onward, state results site)
 //   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
 //   src/data/tides.json        NOAA tide predictions and latest water levels
 //   src/data/calendar.json     upcoming public meetings with real dates (CivicClerk)
@@ -29,7 +28,6 @@ import {
 import { scanSocial } from './lib/social.mjs';
 import { SCHEDULE_TEAMS, trimSchedule } from './lib/schedules.mjs';
 import { FORECAST_URL, normalizeForecast } from './lib/forecast.mjs';
-import { checkResults } from './lib/election.mjs';
 import { MCP_URL, fetchTools } from './lib/producthunt.mjs';
 
 const ROOT = new URL('../', import.meta.url);
@@ -171,31 +169,6 @@ async function ingestProductHunt() {
   }
 }
 
-// Election night: from poll closing on Nov. 3 until Nov. 10, pull the state's unofficial results on
-// every run (the scheduler runs this at :05 and :35, so results refresh every 30 minutes). Outside that
-// window, or before the state publishes anything, the saved file is left alone.
-async function ingestElection() {
-  try {
-    const doc = await readJson('src/data/election.json', null);
-    if (!doc) return { ok: true, skipped: true };
-    const previous = await readJson('src/data/election-results.json', null);
-    const cfg = await readFile(path('src/site.config.ts'), 'utf8');
-    const townSlugs = [...cfg.matchAll(/\{ slug: '([a-z-]+)', name: '[^']+' \}/g)].map((m) => m[1]);
-    const next = await checkResults({
-      getText: (url, headers) => fetchText(url, { headers, accept: 'application/json, text/csv, */*;q=0.5' }),
-      doc,
-      townSlugs,
-      previous,
-      force: process.env.ELECTION_FORCE === '1',
-      date: process.env.ELECTION_DATE || undefined,
-      primary: process.env.ELECTION_PRIMARY || null,
-    });
-    return { ok: true, results: next };
-  } catch (err) {
-    return { ok: false, error: err.message };
-  }
-}
-
 async function fetchJson(url) {
   const { status, body } = await fetchText(url, { accept: 'application/json, application/vnd.api+json' });
   if (status !== 200) throw new Error(`HTTP ${status}`);
@@ -329,7 +302,7 @@ async function ingestVideos() {
   return { ok: status.some((s) => s.ok), videos, status, channelIds: new Set(channels.map((c) => c.id)), now };
 }
 
-const [results, alertResult, forecast, transit, tides, calendar, social, schedules, videoResult, election, producthunt] = await Promise.all([
+const [results, alertResult, forecast, transit, tides, calendar, social, schedules, videoResult, producthunt] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
   ingestForecast(),
@@ -339,7 +312,6 @@ const [results, alertResult, forecast, transit, tides, calendar, social, schedul
   ingestSocial(),
   ingestSchedules(),
   ingestVideos(),
-  ingestElection(),
   ingestProductHunt(),
 ]);
 
@@ -365,7 +337,6 @@ console.log(
     `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
     `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}. ` +
     `Product Hunt: ${producthunt.ok ? `${producthunt.doc.tools.length} AI tools` : `failed (${producthunt.error})`}. ` +
-    `Election: ${election.ok ? (election.results ? `${Object.keys(election.results.races).length} races reporting` : 'no new results') : `failed (${election.error})`}. ` +
     `Forecast: ${forecast.ok ? `${forecast.forecast.periods.length} periods` : `failed (${forecast.error})`}. ` +
     `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}. ` +
     `Videos: ${videoResult.ok ? `${videoResult.videos.length} from ${videoResult.status.filter((s) => s.ok).length}/${videoResult.status.length} channels` : 'failed'}${videoResult.status.some((s) => !s.ok) ? ` (failed: ${videoResult.status.filter((s) => !s.ok).map((s) => `${s.id}: ${s.error}`).join('; ')})` : ''}.`,
@@ -380,10 +351,6 @@ if (!dryRun) {
   // Keep the last good copy when an API is down.
   if (forecast.ok) {
     await writeFile(path('src/data/forecast.json'), JSON.stringify({ updated: now, ...forecast.forecast }, null, 1) + '\n');
-  }
-  if (producthunt.ok) await writeFile(path('src/data/producthunt.json'), JSON.stringify(producthunt.doc, null, 1) + '\n');
-  if (election.ok && election.results) {
-    await writeFile(path('src/data/election-results.json'), JSON.stringify(election.results, null, 1) + '\n');
   }
   if (transit.ok) {
     await writeFile(path('src/data/transit.json'), JSON.stringify({ updated: now, alerts: transit.alerts, stopParents: transit.stopParents }, null, 1) + '\n');
@@ -407,6 +374,9 @@ if (!dryRun) {
   }
   if (calendar.ok) {
     await writeFile(path('src/data/calendar.json'), JSON.stringify({ updated: now, meetings: calendar.meetings }, null, 1) + '\n');
+  }
+  if (producthunt.ok) {
+    await writeFile(path('src/data/producthunt.json'), JSON.stringify(producthunt.doc, null, 1) + '\n');
   }
   // Only rewrite the status file for a full run so --only doesn't drop entries.
   if (!only) {

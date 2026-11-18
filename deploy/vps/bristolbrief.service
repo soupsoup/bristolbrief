@@ -1,0 +1,24 @@
+[Unit]
+Description=Bristol Brief (Astro server for the admin and API routes)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bristolbrief
+Group=bristolbrief
+WorkingDirectory=/var/www/bristolbrief
+EnvironmentFile=/etc/bristolbrief.env
+Environment=HOST=127.0.0.1
+Environment=PORT=4322
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /var/www/bristolbrief/.releases/current/server/entry.mjs
+Restart=on-failure
+RestartSec=3
+MemoryMax=400M
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/www/bristolbrief
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

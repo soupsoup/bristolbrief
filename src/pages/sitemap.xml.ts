@@ -5,7 +5,7 @@ import { localStories, loadData } from '../lib/wire';
 export const prerender = false;
 
 const STATIC_PAGES = [
-  '', 'news', 'all-stories', 'election', 'meetings', 'weather', 'traffic', 'transit', 'videos', 'tools', 'social',
+  '', 'news', 'all-stories', 'meetings', 'weather', 'traffic', 'transit', 'videos', 'tools', 'social',
   'taunton-river', 'sources', 'about', 'tips', 'subscribe',
 ];
 

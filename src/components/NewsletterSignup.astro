@@ -8,8 +8,8 @@ const { variant = 'box' } = Astro.props;
   <p class="kicker">Free newsletter</p>
   <h2 id={`signup-${variant}-title`}>Bristol County in your inbox</h2>
   <p class="signup-copy">
-    The day's headlines from New Bedford to Attleboro, plus upcoming public meetings,
-    in one weekday-morning email.
+    The week's top local stories from New Bedford to Attleboro, plus the public meetings
+    coming up in your town, in one free weekly email.
   </p>
   <form class="signup-form" method="post" action="/api/subscribe/">
     <label class="visually-hidden" for={`email-${variant}`}>Email address</label>
@@ -57,7 +57,7 @@ const { variant = 'box' } = Astro.props;
       status.textContent = MESSAGES[result] ?? MESSAGES.upstream;
       status.dataset.state = result === 'ok' ? 'ok' : 'error';
       button.disabled = false;
-      if (result === 'ok') form.reset();
+      if (result === 'ok') { form.reset(); try { localStorage.setItem('bb_nl', 'subscribed'); } catch {} }
       const gtag = (window as any).gtag;
       if (typeof gtag === 'function') gtag('event', result === 'ok' ? 'newsletter_signup' : 'newsletter_signup_error', { result, page: location.pathname });
     });

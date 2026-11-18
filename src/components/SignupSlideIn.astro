@@ -1,0 +1,201 @@
+---
+// A small newsletter slide-in: bottom-right on desktop, a bottom sheet on phones.
+// It never covers the page, and it shows only to readers who are engaged and haven't
+// already signed up or said no:
+//   - not on /subscribe/ or /admin/;
+//   - triggers at 50% scroll depth or after 45 seconds on the page, whichever is first;
+//   - at most once per browser session; a dismissal hides it for 14 days;
+//   - a sign-up from any form on the site hides it for good.
+// State lives in localStorage/sessionStorage only; nothing is sent anywhere until
+// the reader submits the form, which posts to the same /api/subscribe/ endpoint.
+---
+<aside class="slidein" id="nl-slidein" aria-labelledby="nl-slidein-title" hidden>
+  <button class="slidein-close" type="button" aria-label="Close">×</button>
+  <p class="kicker">Free winter guide</p>
+  <p class="slidein-title" id="nl-slidein-title">Where you can park when it snows, in all 20 towns</p>
+  <p class="slidein-copy">
+    Get our winter parking guide and the weekly Bristol Brief newsletter: the top local stories,
+    plus the public meetings coming up. Free.
+  </p>
+  <form class="slidein-form" method="post" action="/api/subscribe/">
+    <label class="visually-hidden" for="email-slidein">Email address</label>
+    <input id="email-slidein" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+    <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button class="btn" type="submit">Send me the guide</button>
+  </form>
+  <p class="slidein-status meta" role="status" hidden></p>
+  <button class="slidein-later meta" type="button">No thanks</button>
+</aside>
+
+<script>
+  const KEY = 'bb_nl';
+  const DISMISS_DAYS = 14;
+  const read = (store: Storage, k: string) => { try { return store.getItem(k); } catch { return null; } };
+  const write = (store: Storage, k: string, v: string) => { try { store.setItem(k, v); } catch {} };
+  const track = (name: string, extra: Record<string, string> = {}) => {
+    const gtag = (window as any).gtag;
+    if (typeof gtag === 'function') gtag('event', name, { page: location.pathname, ...extra });
+  };
+
+  const box = document.getElementById('nl-slidein') as HTMLElement | null;
+  const path = location.pathname;
+  const state = read(localStorage, KEY) || '';
+  const subscribed = state === 'subscribed';
+  const dismissedAt = state.startsWith('dismissed:') ? Number(state.slice(10)) : 0;
+  const recentlyDismissed = dismissedAt && Date.now() - dismissedAt < DISMISS_DAYS * 86_400_000;
+  const excluded = path.startsWith('/subscribe') || path.startsWith('/admin') || path.startsWith('/winter-guide') || new URLSearchParams(location.search).has('status');
+  const shownThisSession = read(sessionStorage, 'bb_nl_shown') === '1';
+
+  if (box && !subscribed && !recentlyDismissed && !excluded && !shownThisSession) {
+    let done = false;
+    const show = (trigger: string) => {
+      if (done) return;
+      done = true;
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+      // Don't pop over a reader who is typing in another form.
+      if (document.activeElement && ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+      box.hidden = false;
+      requestAnimationFrame(() => box.classList.add('open'));
+      write(sessionStorage, 'bb_nl_shown', '1');
+      track('newsletter_slidein_shown', { trigger });
+    };
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      if (max > 0 && scrollY / max >= 0.5) show('scroll');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const timer = setTimeout(() => show('time'), 45_000);
+
+    const close = (how: string) => {
+      box.classList.remove('open');
+      setTimeout(() => { box.hidden = true; }, 250);
+      if (read(localStorage, KEY) !== 'subscribed') write(localStorage, KEY, `dismissed:${Date.now()}`);
+      track('newsletter_slidein_dismissed', { how });
+    };
+    box.querySelector('.slidein-close')!.addEventListener('click', () => close('x'));
+    box.querySelector('.slidein-later')!.addEventListener('click', () => close('no-thanks'));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close('escape'); });
+
+    const form = box.querySelector<HTMLFormElement>('.slidein-form')!;
+    const status = box.querySelector<HTMLElement>('.slidein-status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const MESSAGES: Record<string, string> = {
+      ok: 'Thanks! Check your inbox to confirm your subscription. Your guide is ready now:',
+      invalid: 'That email address doesn’t look right. Please check it and try again.',
+      'not-configured': 'Sign-ups open very soon. Please try again later today.',
+      upstream: 'Something went wrong on our end. Please try again in a minute.',
+    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      button.disabled = true;
+      let result = 'upstream';
+      try {
+        const res = await fetch('/api/subscribe/', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: data.get('email'), website: data.get('website') }),
+        });
+        const body = await res.json().catch(() => ({}));
+        result = body.ok ? 'ok' : body.error ?? 'upstream';
+      } catch {}
+      status.hidden = false;
+      status.textContent = MESSAGES[result] ?? MESSAGES.upstream;
+      status.dataset.state = result === 'ok' ? 'ok' : 'error';
+      button.disabled = false;
+      track(result === 'ok' ? 'newsletter_signup' : 'newsletter_signup_error', { result, placement: 'slidein' });
+      if (result === 'ok') {
+        write(localStorage, KEY, 'subscribed');
+        const link = document.createElement('a');
+        link.href = '/winter-guide/';
+        link.textContent = 'Open the winter parking guide';
+        link.className = 'slidein-guide';
+        status.append(document.createElement('br'), link);
+        form.hidden = true;
+        (box.querySelector('.slidein-later') as HTMLElement).hidden = true;
+        setTimeout(() => { box.classList.remove('open'); setTimeout(() => { box.hidden = true; }, 250); }, 15000);
+      }
+    });
+  }
+</script>
+
+<style>
+  .slidein {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 50;
+    width: min(380px, calc(100vw - 40px));
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    padding: 18px 18px 12px;
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .slidein.open { transform: none; opacity: 1; }
+  .slidein .kicker { margin: 0; }
+  .slidein-title {
+    font-family: var(--serif-display);
+    font-size: 21px;
+    line-height: 1.2;
+    margin: 4px 28px 6px 0;
+  }
+  .slidein-copy { margin: 0 0 12px; font-size: 15px; color: var(--ink-2); }
+  .slidein-form { display: flex; flex-wrap: wrap; gap: 8px; }
+  .slidein-form input {
+    flex: 1 1 180px;
+    min-width: 0;
+    font: inherit;
+    font-family: var(--sans);
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .slidein-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: none;
+    color: var(--ink-2);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .slidein-later {
+    display: block;
+    margin: 8px 0 0;
+    padding: 6px 0;
+    border: 0;
+    background: none;
+    color: var(--ink-2);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .slidein-status { margin: 10px 0 0; }
+  .slidein-status[data-state='ok'] { color: #1f7a3a; font-weight: 600; }
+  .slidein-status[data-state='error'] { color: var(--accent); font-weight: 600; }
+  @media (prefers-color-scheme: dark) { .slidein-status[data-state='ok'] { color: #6fcf8e; } }
+  @media (max-width: 600px) {
+    .slidein {
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) { .slidein { transition: none; } }
+</style>

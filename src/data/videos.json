@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T05:05:28.993Z",
+ "updated": "2026-11-18T05:35:49.255Z",
  "channels": [
   {
    "id": "cbs-boston",
@@ -7,6 +7,13 @@
    "ok": true,
    "entries": 15,
    "kept": 3
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "wcvb",
@@ -23,15 +30,15 @@
    "kept": 1
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -41,17 +48,23 @@
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
+   "kept": 1
   }
  ],
  "videos": [
+  {
+   "id": "7qPX7D6enmk",
+   "title": "Fire in New Bedford leaves child seriously hurt",
+   "link": "https://www.youtube.com/watch?v=7qPX7D6enmk",
+   "published": "2026-11-18T05:30:37.000Z",
+   "channel": "nbc10-boston",
+   "channelName": "NBC10 Boston",
+   "thumbnail": "https://i.ytimg.com/vi/7qPX7D6enmk/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "PeaoX0_CglA",
    "title": "Pedestrian struck while crossing street in Somerset",
@@ -4148,26 +4161,6 @@
    "channel": "nbc10-wjar",
    "channelName": "NBC 10 WJAR",
    "thumbnail": "https://i.ytimg.com/vi/yiUb1Lt8A7k/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "Y1YEHAPEoL8",
-   "title": "How far will Congress take impeachment threats?",
-   "link": "https://www.youtube.com/watch?v=Y1YEHAPEoL8",
-   "published": "2026-11-11T05:17:32.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/Y1YEHAPEoL8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "T1PXhNedsqM",
-   "title": "Jim Jordan elected House Republican leader",
-   "link": "https://www.youtube.com/watch?v=T1PXhNedsqM",
-   "published": "2026-11-11T05:06:16.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/T1PXhNedsqM/mqdefault.jpg",
    "towns": []
   }
  ]

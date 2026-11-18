@@ -83,6 +83,7 @@ From your Mac (replace `VPS_IP`):
 
 ```sh
 curl -s -o /dev/null -w "%{http_code}\n" --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/
+# The home page must be 200 too: it is a directory on disk, and a missing index.html is a 403
 curl -s -o /dev/null -w "%{http_code}\n" --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/news/
 curl -sI --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/api/flood-data.json | grep -i x-cache
 curl -sI --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/news/ | grep -i x-cache   # MISS, then HIT on the second request

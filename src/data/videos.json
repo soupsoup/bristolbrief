@@ -1,26 +1,19 @@
 {
- "updated": "2026-11-18T03:05:49.736Z",
+ "updated": "2026-11-18T03:35:30.323Z",
  "channels": [
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
   {
    "id": "nbc10-wjar",
    "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   },
   {
    "id": "cbs-boston",
@@ -30,18 +23,25 @@
    "kept": 2
   },
   {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
    "id": "wcvb",
    "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 3
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
    "id": "wpri",
@@ -52,6 +52,19 @@
   }
  ],
  "videos": [
+  {
+   "id": "Rwa9Euwcw2s",
+   "title": "8-year-old girl seriously injured in smoky, fast-moving New Bedford fire, officials say",
+   "link": "https://www.youtube.com/watch?v=Rwa9Euwcw2s",
+   "published": "2026-11-18T03:06:54.000Z",
+   "channel": "wcvb",
+   "channelName": "WCVB Channel 5",
+   "thumbnail": "https://i.ytimg.com/vi/Rwa9Euwcw2s/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "PNhTydtYwvA",
    "title": "Pawtucket lays final beam on new high school #shorts",
@@ -4139,42 +4152,6 @@
    "towns": [],
    "local": true,
    "countywide": true
-  },
-  {
-   "id": "7kVbunxZoIw",
-   "title": "80-year-old man hit by car in Fall River",
-   "link": "https://www.youtube.com/watch?v=7kVbunxZoIw",
-   "published": "2026-11-11T03:25:53.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7kVbunxZoIw/mqdefault.jpg",
-   "towns": [
-    "fall-river"
-   ],
-   "local": true
-  },
-  {
-   "id": "7AFJ739vB9U",
-   "title": "Swansea postpones discussion on proposed AI data center",
-   "link": "https://www.youtube.com/watch?v=7AFJ739vB9U",
-   "published": "2026-11-11T03:20:50.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/7AFJ739vB9U/mqdefault.jpg",
-   "towns": [
-    "swansea"
-   ],
-   "local": true
-  },
-  {
-   "id": "caFywvo8hAk",
-   "title": "House Republicans quash effort to impeach Hegseth",
-   "link": "https://www.youtube.com/watch?v=caFywvo8hAk",
-   "published": "2026-11-11T03:20:27.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/caFywvo8hAk/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

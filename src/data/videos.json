@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-18T04:15:34.601Z",
+ "updated": "2026-11-18T04:35:30.265Z",
  "channels": [
   {
    "id": "cbs-boston",
    "name": "CBS Boston (WBZ)",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 3
   },
   {
    "id": "wcvb",
@@ -16,18 +16,18 @@
    "kept": 3
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
-  },
-  {
    "id": "nbc10-boston",
    "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   },
   {
    "id": "7news-boston",
@@ -37,21 +37,78 @@
    "kept": 0
   },
   {
+   "id": "wpri",
+   "name": "WPRI 12",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
    "id": "boston25",
    "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
    "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "S2ixKfIu8pE",
+   "title": "WPRI Weather Forecast 11-17-26 Sunny Mild Next Several Days",
+   "link": "https://www.youtube.com/watch?v=S2ixKfIu8pE",
+   "published": "2026-11-18T04:26:45.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/S2ixKfIu8pE/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "kp4i8bRsInI",
+   "title": "Community mourns loss of South Kingstown EMS captain",
+   "link": "https://www.youtube.com/shorts/kp4i8bRsInI",
+   "published": "2026-11-18T04:25:18.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/kp4i8bRsInI/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
+  {
+   "id": "ShSyXJUzgzk",
+   "title": "URI women's basketball cruises past Emmanuel in home opener",
+   "link": "https://www.youtube.com/watch?v=ShSyXJUzgzk",
+   "published": "2026-11-18T04:15:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/ShSyXJUzgzk/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "rFPigUavUc0",
+   "title": "Chariho parents call for superintendent’s removal over handling of school safety incidents",
+   "link": "https://www.youtube.com/watch?v=rFPigUavUc0",
+   "published": "2026-11-18T04:13:17.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/rFPigUavUc0/mqdefault.jpg",
+   "towns": []
+  },
+  {
+   "id": "QJZ-2qA_Q34",
+   "title": "Firefighters pull girl from burning apartment building in New Bedford",
+   "link": "https://www.youtube.com/watch?v=QJZ-2qA_Q34",
+   "published": "2026-11-18T04:08:52.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/QJZ-2qA_Q34/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "0ChSPMmRyGM",
    "title": "8-year-old girl seriously hurt in New Bedford building fire",
@@ -87,19 +144,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/ExCBRiAESlg/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "QZ9qi5KLzrI",
-   "title": "WPRI 12 Weather Now 11-17-26 Sunshine Milder Wednesday",
-   "link": "https://www.youtube.com/watch?v=QZ9qi5KLzrI",
-   "published": "2026-11-18T03:45:35.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/QZ9qi5KLzrI/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "Rb3MHvrcjJA",
@@ -4111,29 +4155,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/LGcEnk2Oyfo/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "NauCTH2qTg8",
-   "title": "WPRI 12 Weather Forecast 11-10-26  Nice Wednesday. Rain Late Week",
-   "link": "https://www.youtube.com/watch?v=NauCTH2qTg8",
-   "published": "2026-11-11T04:27:26.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/NauCTH2qTg8/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
-  },
-  {
-   "id": "YtNvH7SQ8YI",
-   "title": "Gov.-elect Foulkes announces plans for transition",
-   "link": "https://www.youtube.com/watch?v=YtNvH7SQ8YI",
-   "published": "2026-11-11T04:18:37.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/YtNvH7SQ8YI/mqdefault.jpg",
    "towns": []
   }
  ]

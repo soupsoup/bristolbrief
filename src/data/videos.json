@@ -1,12 +1,33 @@
 {
- "updated": "2026-11-18T02:35:37.338Z",
+ "updated": "2026-11-18T03:05:49.736Z",
  "channels": [
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
+  },
+  {
+   "id": "boston25",
+   "name": "Boston 25 News",
+   "ok": true,
+   "entries": 15,
+   "kept": 1
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "wcvb",
@@ -16,8 +37,8 @@
    "kept": 2
   },
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
    "kept": 0
@@ -28,30 +49,20 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
-   "ok": true,
-   "entries": 15,
-   "kept": 2
-  },
-  {
-   "id": "boston25",
-   "name": "Boston 25 News",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
-   "ok": true,
-   "entries": 15,
-   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "PNhTydtYwvA",
+   "title": "Pawtucket lays final beam on new high school #shorts",
+   "link": "https://www.youtube.com/shorts/PNhTydtYwvA",
+   "published": "2026-11-18T02:48:42.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/PNhTydtYwvA/mqdefault.jpg",
+   "towns": [],
+   "short": true
+  },
   {
    "id": "rNXpZqX00tU",
    "title": "8-year-old girl seriously injured in smoky, fast-moving New Bedford fire, officials say",
@@ -4164,20 +4175,6 @@
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/caFywvo8hAk/mqdefault.jpg",
    "towns": []
-  },
-  {
-   "id": "38QM6WWerKE",
-   "title": "2 bodies recovered in Taunton river after car crashes into Threemile River #shorts",
-   "link": "https://www.youtube.com/shorts/38QM6WWerKE",
-   "published": "2026-11-11T03:03:30.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/38QM6WWerKE/mqdefault.jpg",
-   "towns": [
-    "taunton"
-   ],
-   "local": true,
-   "short": true
   }
  ]
 }

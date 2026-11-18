@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import { getData } from '../lib/data-source';
+
+export const prerender = false;
+
+type Tool = {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  url: string;
+  thumbnail: string | null;
+  votes: number;
+  rating: number | null;
+  reviews: number;
+  launched: string | null;
+  category: string | null;
+  makers: string[];
+  hasMcp: boolean;
+};
+
+const doc = getData<{ updated?: string | null; tools?: Tool[] }>('producthunt');
+const tools = doc.tools ?? [];
+const fmtDate = (iso?: string | null) =>
+  iso ? new Date(iso).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' }) : '';
+const fmtUpdated = (iso?: string | null) =>
+  iso ? new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' }) : '';
+---
+<Base title="AI tools" description="The AI tools getting the most votes on Product Hunt this week.">
+  <div class="wrap narrow">
+    <p class="kicker" style="margin:32px 0 0">Tools</p>
+    <h1 class="page-title" style="margin-top:4px">AI tools getting the most interest</h1>
+    <p class="page-dek">
+      The AI products with the most upvotes on Product Hunt over the past two weeks, refreshed through the day. Votes
+      come from Product Hunt's community, not from The Bristol Brief, and we have not tested these tools.
+    </p>
+    {doc.updated && <p class="meta">Checked {fmtUpdated(doc.updated)}</p>}
+
+    {tools.length === 0 && <p class="meta">The list will appear after the next update.</p>}
+
+    <ol class="tools">
+      {tools.map((t, i) => (
+        <li class="tool">
+          <span class="rank" aria-hidden="true">{i + 1}</span>
+          {t.thumbnail && <img class="thumb" src={t.thumbnail} alt="" width="56" height="56" loading="lazy" />}
+          <div class="body">
+            <h2><a href={t.url} rel="noopener" target="_blank">{t.name}</a></h2>
+            <p class="tagline">{t.tagline}</p>
+            <p class="meta">
+              <strong>{t.votes.toLocaleString('en-US')} votes</strong>
+              {t.category && <span> · {t.category}</span>}
+              {t.launched && <span> · Launched {fmtDate(t.launched)}</span>}
+              {t.rating != null && t.reviews > 0 && <span> · {t.rating.toFixed(1)} stars from {t.reviews} review{t.reviews === 1 ? '' : 's'}</span>}
+              {t.hasMcp && <span> · Has an MCP server</span>}
+            </p>
+            {t.makers.length > 0 && <p class="meta">By {t.makers.join(', ')}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <p class="meta source">
+      Source: <a href="https://www.producthunt.com/" rel="noopener" target="_blank">Product Hunt</a>. Rankings change
+      as voting continues.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .narrow { max-width: 820px; }
+  .tools { list-style: none; margin: 18px 0 0; padding: 0; }
+  .tool { display: grid; grid-template-columns: 28px 56px 1fr; gap: 14px; align-items: start; padding: 16px 0; border-top: 1px solid var(--rule); }
+  .rank { font-family: var(--serif-display); font-size: 22px; font-weight: 700; color: var(--muted, #5b6672); line-height: 56px; text-align: right; }
+  .thumb { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: var(--rule); }
+  h2 { font-family: var(--serif-display); font-size: 20px; line-height: 1.25; margin: 0 0 2px; }
+  h2 a { text-decoration: none; }
+  h2 a:hover { text-decoration: underline; }
+  .tagline { font-size: 16px; margin: 0 0 4px; }
+  .body .meta { margin: 0 0 2px; }
+  .source { margin-top: 28px; }
+  @media (max-width: 520px) {
+    .tool { grid-template-columns: 24px 48px 1fr; gap: 10px; }
+    .thumb { width: 48px; height: 48px; }
+    .rank { line-height: 48px; }
+  }
+</style>

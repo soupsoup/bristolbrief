@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
 import node from '@astrojs/node';
-import sitemap from '@astrojs/sitemap';
 
 // DEPLOY_TARGET=node builds a standalone Node server for the VPS
 // (deploy/vps/). Anything else, including Vercel's own builds, keeps the
@@ -18,17 +17,19 @@ const site =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : 'https://bristolbrief.com');
 
-// Public pages are prerendered to static HTML. Only the admin area and its
-// API routes (which set `export const prerender = false`) run as functions.
-// The sitemap lists the prerendered public pages; the admin area is left out.
+// Every page renders on demand from the data branch (see src/lib/data-source.ts),
+// so the hourly data never needs a build: builds happen only for code and
+// admin changes. On the VPS, nginx caches the rendered public pages for a few
+// minutes (deploy/vps/nginx-bristolbrief.conf). On Vercel, ISR caches each public
+// page for an hour. The admin area and API routes are never cached. The
+// sitemap is built in src/pages/sitemap.xml.ts.
 export default defineConfig({
   site,
-  output: 'static',
-  adapter: onVps ? node({ mode: 'standalone' }) : vercel(),
+  output: 'server',
+  adapter: onVps ? node({ mode: 'standalone' }) : vercel({ isr: { expiration: 3600, exclude: [/^\/admin/, /^\/api/] } }),
   // Behind nginx, Astro trusts X-Forwarded-For (the visitor's real IP, which
   // the newsletter rate limit needs) only for requests to these hosts.
   ...(onVps && {
     security: { allowedDomains: [{ hostname: 'bristolbrief.com' }, { hostname: 'www.bristolbrief.com' }] },
   }),
-  integrations: [sitemap({ filter: (page) => !['/admin/', '/election/'].some((p) => new URL(page).pathname.startsWith(p)) })],
 });

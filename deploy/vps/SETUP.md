@@ -1,21 +1,27 @@
 # Running the Bristol Brief on the VPS
 
-The site moves from Vercel to the VPS that already runs Frontier. Nothing about
-how the site is edited changes: the hourly ingest still runs in GitHub Actions
-and commits to `main`, and admin saves still commit through the GitHub API. The
-VPS checks `main` once a minute and, when it has moved, builds the new commit
-(about 10 seconds) and switches to it.
+The site moves from Vercel to the VPS that already runs Frontier. Editing is the
+same: admin saves still commit to `main` through the GitHub API. The hourly
+ingest still runs in GitHub Actions, but it publishes the data to a separate
+`data` branch instead of `main`. The VPS checks `main` once a minute and, when
+it has moved (a code change or an admin save), builds the new commit (about 10
+seconds) and switches to it. Headline, alert and tide updates never need a
+build: the Node server reads the current data from the `data` branch at most
+once a minute.
 
 ```
-GitHub Actions ingest ──┐
-admin saves ────────────┼─► main on GitHub ─► VPS deploy timer (every minute)
-code changes ───────────┘                       └─ astro build ─► .releases/<sha>
-                                                                   └─ current ─► nginx + node :4322
+GitHub Actions ingest ─► `data` branch ──────────────┐ (read at runtime, about once a minute)
+admin saves ────────┐                                 ▼
+code changes ───────┴─► main ─► VPS deploy timer ─► .releases/<sha> ─► node :4322 ─► nginx (3 min page cache)
 ```
 
-- nginx serves every prerendered page straight from disk.
-- The Node server (`bristolbrief.service`, port 4322, localhost only) handles
-  `/admin`, `/api/*` and the 404 page.
+- The Node server (`bristolbrief.service`, port 4322, localhost only) renders
+  every page. It needs outbound HTTPS to `raw.githubusercontent.com` for the
+  data; if that is unreachable it uses the copy bundled with the last build.
+  `DATA_BASE_URL` in `/etc/bristolbrief.env` points it somewhere else.
+- nginx serves the build's static files from disk and caches rendered pages for
+  3 minutes (the `X-Cache` header shows HIT or MISS). `/admin` and `/api/*`
+  are never cached, apart from the 5-minute flood-data cache.
 - The last five builds stay on disk under `/var/www/bristolbrief/.releases/`,
   so a rollback takes about a second.
 
@@ -79,6 +85,7 @@ From your Mac (replace `VPS_IP`):
 curl -s -o /dev/null -w "%{http_code}\n" --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/
 curl -s -o /dev/null -w "%{http_code}\n" --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/news/
 curl -sI --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/api/flood-data.json | grep -i x-cache
+curl -sI --resolve bristolbrief.com:80:VPS_IP http://bristolbrief.com/news/ | grep -i x-cache   # MISS, then HIT on the second request
 ```
 
 To click around, including signing in to `/admin/`, add `VPS_IP bristolbrief.com`

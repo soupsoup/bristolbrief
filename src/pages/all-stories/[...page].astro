@@ -1,12 +1,27 @@
 ---
-import type { GetStaticPaths, Page } from 'astro';
 import Base from '../../layouts/Base.astro';
 import WireList from '../../components/WireList.astro';
 import { allStories, type WireItem } from '../../lib/wire';
 
-export const getStaticPaths = (({ paginate }) => paginate(allStories(), { pageSize: 100 })) satisfies GetStaticPaths;
+export const prerender = false;
 
-const { page } = Astro.props as { page: Page<WireItem> };
+// Pages of 100 stories, built from the current data on each render.
+const PAGE_SIZE = 100;
+const everything = allStories();
+const lastPage = Math.max(1, Math.ceil(everything.length / PAGE_SIZE));
+const raw = Astro.params.page;
+const currentPage = raw === undefined || raw === '' ? 1 : Number(raw);
+if (!Number.isInteger(currentPage) || currentPage < 1 || currentPage > lastPage || raw === '1') {
+  return new Response(null, { status: 404 });
+}
+const pageUrl = (n: number) => (n === 1 ? '/all-stories/' : `/all-stories/${n}/`);
+const page = {
+  data: everything.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE) as WireItem[],
+  total: everything.length,
+  currentPage,
+  lastPage,
+  url: { prev: currentPage > 1 ? pageUrl(currentPage - 1) : undefined, next: currentPage < lastPage ? pageUrl(currentPage + 1) : undefined },
+};
 
 // Group by day in Eastern time.
 const dayKey = (iso: string) => new Date(iso).toLocaleDateString('en-CA', { timeZone: 'America/New_York' });

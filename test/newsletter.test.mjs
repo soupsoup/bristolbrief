@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, pickScores, isScoreHeadline, outOfState, shortHeadline, subjectFor, previewFor } from '../scripts/lib/newsletter.mjs';
+import { pickStories, pickMeetings, trimSummary, cleanLink, buildNewsletter, pickScores, isScoreHeadline, outOfState, shortHeadline, subjectFor, previewFor, pickWeekAhead, weeklySubjectFor } from '../scripts/lib/newsletter.mjs';
 
 const now = new Date('2026-10-01T10:00:00Z');
 const hoursAgo = (h) => new Date(now.valueOf() - h * 3600e3).toISOString();
@@ -285,4 +285,47 @@ test('the footer carries the MailerLite unsubscribe tag in both versions', () =>
   const out = buildNewsletter({ items: [], now: new Date('2026-10-13T12:00:00Z') });
   assert.ok(out.html.includes('href="{$unsubscribe}"'));
   assert.ok(out.text.includes('Unsubscribe: {$unsubscribe}'));
+});
+
+test('weekly edition looks back seven days and ranks by how many outlets ran the story', () => {
+  const items = [
+    item({ id: 'a1', title: 'Fatal standoff ends on Blackmer Street', source: 'a', age: 96, section: 'public-safety', towns: ['new-bedford'] }),
+    item({ id: 'a2', title: 'Standoff on Blackmer Street ends in death', source: 'b', age: 95, section: 'public-safety', towns: ['new-bedford'] }),
+    item({ id: 'a3', title: 'Blackmer Street standoff suspect identified', source: 'c', age: 90, section: 'public-safety', towns: ['new-bedford'] }),
+    item({ id: 'b1', title: 'Suspect flees traffic stop in New Bedford lot', summary: 'A different driver ran from a routine stop near a shopping plaza Friday afternoon and later struggled with arriving patrol units.', source: 'd', age: 5, section: 'public-safety', towns: ['new-bedford'] }),
+  ];
+  const daily = pickStories(items, { now });
+  assert.deepEqual(daily.map((s) => s.id), ['b1']);
+  const weekly = pickStories(items, { now, hours: 168, strict: true, decayHours: 72, perSourceMax: 3 });
+  assert.equal(weekly[0].id.startsWith('a'), true);
+  assert.equal(weekly.filter((s) => s.title.includes('tandoff')).length, 1);
+  assert.ok(weekly.some((s) => s.id === 'b1'), 'an unrelated New Bedford police story is not treated as a duplicate');
+});
+
+test('pickWeekAhead lists the next seven days of meetings in order, with day labels', () => {
+  const at = (days, hour) => new Date(now.valueOf() + days * 864e5 + hour * 3600e3).toISOString();
+  const meetings = [
+    { id: 'late', start: at(10, 0), town: 'taunton', title: 'Too far out', link: 'x' },
+    { id: 'b', start: at(2, 1), town: 'norton', title: 'Select Board', link: 'y', hasAgenda: true },
+    { id: 'a', start: at(1, 1), town: 'taunton', title: 'City Council', link: 'z' },
+  ];
+  const out = pickWeekAhead(meetings, { now, townName: (t) => t.toUpperCase() });
+  assert.deepEqual(out.map((m) => m.title), ['City Council', 'Select Board']);
+  assert.match(out[0].day, /^(Thu|Fri|Sat|Sun|Mon|Tue|Wed), /);
+  assert.equal(out[1].town, 'NORTON');
+});
+
+test('weeklySubjectFor prefixes the lead headline and falls back to the week of date', () => {
+  assert.equal(weeklySubjectFor([{ title: 'Taunton council approves harbor plan' }], now), 'Week in review: Taunton council approves harbor plan');
+  assert.match(weeklySubjectFor([], now), /^The Bristol Brief: week of /);
+  assert.ok(weeklySubjectFor([{ title: 'x'.repeat(200) + ' after a long meeting that never ends' }], now).length <= 70);
+});
+
+test('buildNewsletter weekly labels the sections for the week', () => {
+  const items = [item({ title: 'Taunton council approves harbor plan', age: 100 }), item({ title: 'Norton votes on school budget plan', age: 30, source: 'c', towns: ['norton'] })];
+  const out = buildNewsletter({ items, now, weekly: true });
+  assert.match(out.html, /Story of the week/);
+  assert.match(out.text, /STORY OF THE WEEK/);
+  assert.match(out.text, /ALSO THIS WEEK/);
+  assert.match(out.preheader, /^This week in /);
 });

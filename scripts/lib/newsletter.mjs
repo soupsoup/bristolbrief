@@ -4,7 +4,11 @@
 // MailerLite custom HTML campaign. The footer carries MailerLite's {$unsubscribe} tag, which
 // MailerLite replaces with each reader's unsubscribe link when it sends.
 
-import { titleKey, sig, sameStory, bodySig, sameIncident } from './dedupe.mjs';
+import { titleKey, sig, sameStory as sameStoryBase, overlap, bodySig, sameIncident } from './dedupe.mjs';
+
+const sameStory = sameStoryBase;
+// Words that say "a crime story" without saying which one.
+const GENERIC = new Set(['suspect', 'suspects', 'police', 'officer', 'officers', 'arrested', 'arrest', 'charged', 'charges', 'accused', 'killed', 'found', 'after', 'identified', 'released', 'sentenced', 'seize', 'seized', 'faces', 'former', 'announces', 'announced', 'local', 'state', 'troopers', 'trooper']);
 
 export const SITE_URL = 'https://bristolbrief.com';
 export const UNSUBSCRIBE = '{$unsubscribe}';
@@ -60,13 +64,20 @@ export function outOfState(item, townName = (s) => s) {
  * with a real summary, no listings, sports-wire or agendas, at most two per
  * source, no repeated headlines.
  */
-export function pickStories(items, { now = new Date(), hours = 24, count = 6, townName = (s) => s } = {}) {
+export function pickStories(items, { now = new Date(), hours = 24, count = 6, townName = (s) => s, perSourceMax = 2, decayHours = 12, strict = false } = {}) {
+  // Over a week, unrelated stories share headline words ("suspect", "New Bedford", "police"). Strict mode ignores
+  // place and generic crime words, so only a shared event counts as the same story.
+  const placeWords = (i) => new Set([...(i.towns ?? []).flatMap((t) => townName(t).toLowerCase().split(/\s+/)), 'bristol', 'county', 'massachusetts']);
+  const wsig = (i) => new Set([...sig(i.title)].filter((w) => !GENERIC.has(w) && !placeWords(i).has(w)));
+  const sameStory = strict ? (a, b) => overlap(a, b) >= 2 : sameStoryBase;
+  const sigOf = (i) => (strict ? wsig(i) : sig(i.title));
   const seenTitles = new Set();
   const perSource = new Map();
   const recent = items.filter((i) => !i.team && !i.hidden && new Date(i.date) <= now && hoursOld(i, now) <= hours + 24 && i.category !== 'meetings');
-  const sigs = new Map(recent.map((i) => [i.id, sig(i.title)]));
+  const sigs = new Map(recent.map((i) => [i.id, sigOf(i)]));
+  const bodies = new Map(recent.map((i) => [i.id, { body: bodySig(i), towns: i.towns ?? [] }]));
   // How many other outlets ran the same story: the best signal of what matters today.
-  const coverage = (i) => new Set(recent.filter((o) => o.source !== i.source && sameStory(sigs.get(i.id), sigs.get(o.id))).map((o) => o.source)).size;
+  const coverage = (i) => new Set(recent.filter((o) => o.source !== i.source && sameStory(sigs.get(i.id), sigs.get(o.id)) || (strict && sameIncident(bodies.get(i.id), bodies.get(o.id)))).map((o) => o.source)).size;
   const pool = items
     .filter((i) => !i.team && !i.hidden && !outOfState(i, townName))
     .filter((i) => (i.category === 'news' || i.category === 'public-safety') && !SKIP_SECTIONS.has(i.section))
@@ -74,8 +85,8 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
     .filter((i) => trimSummary(i.summary).length >= 60)
     .map((i) => ({
       item: i,
-      score: (SECTION_WEIGHT[i.section] ?? 1) + Math.min(coverage(i), 4) * 1.5 + (i.featuredRank != null ? 4 - Math.min(i.featuredRank, 3) : 0) - hoursOld(i, now) / 12,
-      sig: sig(i.title),
+      score: (SECTION_WEIGHT[i.section] ?? 1) + Math.min(coverage(i), strict ? 7 : 4) * 1.5 + (i.featuredRank != null ? 4 - Math.min(i.featuredRank, 3) : 0) - hoursOld(i, now) / decayHours,
+      sig: sigOf(i),
       body: bodySig(i),
       towns: i.towns ?? [],
     }))
@@ -86,7 +97,7 @@ export function pickStories(items, { now = new Date(), hours = 24, count = 6, to
     const key = titleKey(item.title);
     if (seenTitles.has(key)) continue;
     if (pickedSigs.some((p) => sameStory(p.sig, itemSig) || sameIncident(p, { body, towns }))) continue;
-    if ((perSource.get(item.source) ?? 0) >= 2) continue;
+    if ((perSource.get(item.source) ?? 0) >= perSourceMax) continue;
     seenTitles.add(key);
     pickedSigs.push({ sig: itemSig, body, towns });
     perSource.set(item.source, (perSource.get(item.source) ?? 0) + 1);
@@ -159,6 +170,27 @@ export function pickMeetings(meetings, { now = new Date(), count = 8, townName =
     .map((m) => ({ time: etTime(m.start), town: townName(m.town), title: m.title, link: m.link, hasAgenda: Boolean(m.hasAgenda) }));
 }
 
+/**
+ * Public meetings in the next `days` days (counting from the start of today, Eastern time), soonest first,
+ * each with a day label like "Mon, Nov 17". Used by the weekly edition for its "Week ahead" list.
+ */
+export function pickWeekAhead(meetings, { now = new Date(), days = 7, count = 14, townName = (s) => s } = {}) {
+  const from = etDay(now);
+  const to = etDay(new Date(now.valueOf() + days * 864e5));
+  return meetings
+    .filter((m) => etDay(m.start) >= from && etDay(m.start) < to)
+    .sort((a, b) => a.start.localeCompare(b.start))
+    .slice(0, count)
+    .map((m) => ({
+      day: new Date(m.start).toLocaleDateString('en-US', { timeZone: ET, weekday: 'short', month: 'short', day: 'numeric' }),
+      time: etTime(m.start),
+      town: townName(m.town),
+      title: m.title,
+      link: m.link,
+      hasAgenda: Boolean(m.hasAgenda),
+    }));
+}
+
 const FILLER = /\s(?:of|and|the|a|an|at|in|on|for|to|by|with|from|or|as|after|over|amid|while|that|who|is|are|was|were)$/i;
 // Where a headline can end and still read as a thought: clause breaks first,
 // then prepositions.
@@ -199,6 +231,14 @@ const dayLabel = (now) => now.toLocaleDateString('en-US', { timeZone: ET, weekda
 export function subjectFor(stories, now = new Date(), max = 70) {
   const lead = stories[0];
   return (lead && shortHeadline(lead.title, max)) || `The Bristol Brief: ${dayLabel(now)}`;
+}
+
+/** Weekly subject: "Week in review: <lead headline>" when the headline fits, else the week's date. */
+export function weeklySubjectFor(stories, now = new Date(), max = 70) {
+  const prefix = 'Week in review: ';
+  const lead = stories[0];
+  const head = lead && shortHeadline(lead.title, max - prefix.length);
+  return head ? `${prefix}${head}` : `The Bristol Brief: week of ${now.toLocaleDateString('en-US', { timeZone: ET, month: 'short', day: 'numeric' }).replace('Sept', 'Sep')}`;
 }
 
 /**
@@ -252,14 +292,19 @@ const link = (href, text, { color = NAVY, underline = true } = {}) => {
   return `<a href="${esc(href)}" style="${imp(css)}"><span style="${imp(css)}">${text}</span></a>`;
 };
 
-export function buildNewsletter({ items, meetings = [], alerts = [], now = new Date(), townName = (s) => s } = {}) {
-  const stories = pickStories(items, { now, townName });
-  const scores = pickScores(items, { now, townName });
-  const todays = pickMeetings(meetings, { now, townName });
+export function buildNewsletter({ items, meetings = [], alerts = [], now = new Date(), townName = (s) => s, weekly = false } = {}) {
+  // The weekly edition looks back seven days for the biggest stories and ahead seven days for meetings.
+  const stories = weekly
+    ? pickStories(items, { now, townName, hours: 168, count: 9, perSourceMax: 3, decayHours: 72, strict: true })
+    : pickStories(items, { now, townName });
+  const scores = pickScores(items, weekly ? { now, townName, hours: 168, count: 6 } : { now, townName });
+  const todays = weekly ? pickWeekAhead(meetings, { now, townName }) : pickMeetings(meetings, { now, townName });
   const date = now.toLocaleDateString('en-US', { timeZone: ET, weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const [lead, ...rest] = stories;
-  const subject = subjectFor(stories, now);
-  const preheader = previewFor(stories, { alerts, meetings: todays, scores });
+  const subject = weekly ? weeklySubjectFor(stories, now) : subjectFor(stories, now);
+  const preheader = weekly
+    ? previewFor(stories, { alerts, meetings: [], scores: [] }).replace(/^More from /, 'This week in ').replace(/\.$/, '') + (todays.length ? ', plus the week ahead.' : '.')
+    : previewFor(stories, { alerts, meetings: todays, scores });
 
   const h = [];
   const label = (text) => box(`margin:24px 0 8px;${type(SANS, 700, 12, 16)};letter-spacing:.08em;text-transform:uppercase;color:${RED}`, esc(text));
@@ -269,7 +314,7 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;font-family:${FONT};color:${INK};">`);
   h.push(`<tr><td style="padding:24px 0 8px;border-bottom:3px solid ${NAVY};">`);
   h.push(box(`margin:0;${type(FONT, 700, 26, 32)};color:${NAVY}`, 'The Bristol Brief'));
-  h.push(box(`margin:2px 0 0;${type(SANS, 400, 14, 18)};color:${MUTED}`, esc(date)));
+  h.push(box(`margin:2px 0 0;${type(SANS, 400, 14, 18)};color:${MUTED}`, esc(weekly ? `The week in Bristol County · ${date}` : date)));
   h.push(`</td></tr><tr><td style="padding:4px 0 0;">`);
 
   if (alerts.length) {
@@ -285,14 +330,14 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   }
 
   if (lead) {
-    h.push(label(`Top story · ${lead.place}`));
+    h.push(label(`${weekly ? 'Story of the week' : 'Top story'} · ${lead.place}`));
     h.push(box(`margin:0 0 6px;${type(FONT, 700, 24, 30)}`, link(lead.link, esc(lead.title), { color: INK, underline: false })));
     h.push(box(`margin:0 0 4px;${type(FONT, 400, 17, 24)}`, esc(lead.summary)));
     h.push(box(`margin:0;${type(SANS, 400, 13, 18)};color:${MUTED}`, link(lead.link, 'Read at ' + esc(lead.source))));
   }
 
   if (rest.length) {
-    h.push(label('Also this morning'));
+    h.push(label(weekly ? 'Also this week' : 'Also this morning'));
     for (const s of rest) {
       h.push(box(`margin:0 0 3px;${type(FONT, 700, 18, 23)}`, link(s.link, esc(s.title), { color: INK, underline: false })));
       h.push(box(`margin:0 0 3px;${type(FONT, 400, 16, 22)}`, esc(s.summary)));
@@ -301,18 +346,18 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   }
 
   if (todays.length) {
-    h.push(label('Public meetings today'));
+    h.push(label(weekly ? 'Week ahead: public meetings' : 'Public meetings today'));
     h.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="${imp(`${type(SANS, 400, 15, 21)}`)}">`);
     for (const m of todays) {
       h.push(
-        `<tr><td style="padding:6px 12px 6px 0;white-space:nowrap;color:${MUTED};vertical-align:top;border-top:1px solid ${RULE};">${esc(m.time)}</td><td style="padding:6px 0;vertical-align:top;border-top:1px solid ${RULE};"><strong style="${imp('font-weight:700;font-style:normal')}">${esc(m.town)}</strong>: ${link(m.link, esc(m.title))}${m.hasAgenda ? ` <span style="${imp(`color:${MUTED};font-style:normal`)}">(agenda posted)</span>` : ''}</td></tr>`,
+        `<tr><td style="padding:6px 12px 6px 0;white-space:nowrap;color:${MUTED};vertical-align:top;border-top:1px solid ${RULE};">${weekly ? `${esc(m.day)}<br>` : ''}${esc(m.time)}</td><td style="padding:6px 0;vertical-align:top;border-top:1px solid ${RULE};"><strong style="${imp('font-weight:700;font-style:normal')}">${esc(m.town)}</strong>: ${link(m.link, esc(m.title))}${m.hasAgenda ? ` <span style="${imp(`color:${MUTED};font-style:normal`)}">(agenda posted)</span>` : ''}</td></tr>`,
       );
     }
     h.push(`</table>`);
   }
 
   if (scores.length) {
-    h.push(label('High school scores'));
+    h.push(label(weekly ? 'High school scores this week' : 'High school scores'));
     for (const s of scores) h.push(box(`margin:0 0 5px;${type(SANS, 400, 15, 21)}`, link(s.link, esc(s.title))));
   }
 
@@ -327,20 +372,20 @@ export function buildNewsletter({ items, meetings = [], alerts = [], now = new D
   h.push(`</td></tr></table></td></tr></table>`);
 
   const t = [];
-  t.push(`THE BRISTOL BRIEF · ${date}`, '');
+  t.push(weekly ? `THE BRISTOL BRIEF · THE WEEK IN BRISTOL COUNTY · ${date}` : `THE BRISTOL BRIEF · ${date}`, '');
   for (const a of alerts) t.push(`ALERT: ${a.event}${a.areas ? ' for ' + trimSummary(a.areas, 120) : ''}.${a.link ? ' ' + a.link : ''}`, '');
-  if (lead) t.push(`TOP STORY · ${lead.place}`, lead.title, lead.summary, `${lead.source}: ${lead.link}`, '');
+  if (lead) t.push(`${weekly ? 'STORY OF THE WEEK' : 'TOP STORY'} · ${lead.place}`, lead.title, lead.summary, `${lead.source}: ${lead.link}`, '');
   if (rest.length) {
-    t.push('ALSO THIS MORNING', '');
+    t.push(weekly ? 'ALSO THIS WEEK' : 'ALSO THIS MORNING', '');
     for (const s of rest) t.push(s.title, s.summary, `${s.place} · ${s.source}: ${s.link}`, '');
   }
   if (todays.length) {
-    t.push('PUBLIC MEETINGS TODAY');
-    for (const m of todays) t.push(`${m.time}  ${m.town}: ${m.title} ${m.link}`);
+    t.push(weekly ? 'WEEK AHEAD: PUBLIC MEETINGS' : 'PUBLIC MEETINGS TODAY');
+    for (const m of todays) t.push(`${weekly ? m.day + ' ' : ''}${m.time}  ${m.town}: ${m.title} ${m.link}`);
     t.push('');
   }
   if (scores.length) {
-    t.push('HIGH SCHOOL SCORES');
+    t.push(weekly ? 'HIGH SCHOOL SCORES THIS WEEK' : 'HIGH SCHOOL SCORES');
     for (const s of scores) t.push(`${s.title} ${s.link}`);
     t.push('');
   }

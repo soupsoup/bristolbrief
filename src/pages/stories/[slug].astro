@@ -6,11 +6,10 @@ import { localStories, storyItems, fmtDay, type WireItem } from '../../lib/wire'
 import { renderBody } from '../../lib/body';
 import { sectionName, townName } from '../../site.config';
 
-export function getStaticPaths() {
-  return localStories().map((story) => ({ params: { slug: story.slug }, props: { story } }));
-}
+export const prerender = false;
 
-const { story } = Astro.props as { story: WireItem };
+const story = localStories().find((s) => s.slug === Astro.params.slug) as WireItem | undefined;
+if (!story) return new Response(null, { status: 404 });
 const more = storyItems()
   .filter((i) => i.id !== story.id && i.towns.some((t) => story.towns.includes(t)))
   .slice(0, 5);

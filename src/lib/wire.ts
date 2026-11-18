@@ -1,10 +1,7 @@
-import wireData from '../data/wire.json';
-import alertsData from '../data/alerts.json';
 import sourcesData from '../data/sources.json';
-import statusData from '../data/feed-status.json';
-import videosData from '../data/videos.json';
 import videoChannelsData from '../data/video-channels.json';
 import editorialData from '../data/editorial.json';
+import { getData, loadData as loadLiveData } from './data-source';
 import { applyEditorial, featuredItems } from '../../scripts/lib/editorial.mjs';
 import { wireWindow } from '../../scripts/lib/parse.mjs';
 import { storyTracker } from '../../scripts/lib/dedupe.mjs';
@@ -85,20 +82,20 @@ export interface SourceStatus {
   checkedAt: string;
 }
 
-export const wireUpdated: string | null = wireData.updated;
 const aggregatedSources = new Set(
   ((sourcesData.sources ?? []) as { id: string; via?: string }[]).filter((s) => s.via === 'google-news').map((s) => s.id),
 );
 const ageDays = (iso: string) => (Date.now() - new Date(iso).valueOf()) / 864e5;
 
 /** Every stored feed item, up to six months back (the admin shows these). */
-export const allWireItems = (wireData.items ?? []) as Omit<WireItem, 'sections'>[];
+export let allWireItems: Omit<WireItem, 'sections'>[] = [];
+export let wireUpdated: string | null = null;
 
 /** Feed items within their public window (45 days for direct feeds, 14 for Google News). */
-export const rawWireItems = allWireItems.filter((i) => ageDays(i.date) <= wireWindow(i, aggregatedSources).show);
+export let rawWireItems: Omit<WireItem, 'sections'>[] = [];
 
 /** Feed items plus manual stories, with editors' changes applied and hidden items removed. */
-export const wireItems = (applyEditorial(rawWireItems, editorialData) as WireItem[]).filter((i) => isPublishedAt(i.date));
+export let wireItems: WireItem[] = [];
 
 /** Every story kept (six months of direct feeds, 14 days of Google News), newest first. No meeting agendas. */
 export const allStories = () =>
@@ -106,11 +103,11 @@ export const allStories = () =>
     (i) => i.category !== 'meetings' && isLocal(i) && isPublishedAt(i.date),
   );
 export const sources = (sourcesData.sources ?? []) as Source[];
-export const sourceStatus = (statusData.sources ?? []) as SourceStatus[];
+export let sourceStatus: SourceStatus[] = [];
 
 /** Alerts that haven't expired yet at build time. */
 export function activeAlerts(now = new Date()): Alert[] {
-  const alerts = (alertsData.alerts ?? []) as Alert[];
+  const alerts = (getData('alerts').alerts ?? []) as Alert[];
   const seen = new Set<string>();
   return alerts
     .filter((a) => !a.expires || new Date(a.expires) > now)
@@ -142,9 +139,6 @@ export const featuredStories = () => featuredItems(wireItems) as WireItem[];
 /** Manual stories that have their own page on this site. */
 export const localStories = () => wireItems.filter((i) => i.manual && !i.external);
 
-import transitData from '../data/transit.json';
-import tidesData from '../data/tides.json';
-import calendarData from '../data/calendar.json';
 
 export interface TransitAlert {
   id: string;
@@ -179,13 +173,13 @@ export interface Meeting {
   hasAgenda: boolean;
 }
 
-export const transitUpdated: string | null = transitData.updated;
-export const transitStopParents = (transitData.stopParents ?? {}) as Record<string, string>;
+export let transitUpdated: string | null = null;
+export let transitStopParents: Record<string, string> = {};
 export const transitAlerts = (now = new Date()) =>
-  ((transitData.alerts ?? []) as TransitAlert[]).filter((a) => !a.end || new Date(a.end) > now);
+  ((getData('transit').alerts ?? []) as TransitAlert[]).filter((a) => !a.end || new Date(a.end) > now);
 
-export const tideStations = (tidesData.stations ?? []) as TideStation[];
-export const tidesUpdated: string | null = tidesData.updated;
+export let tideStations: TideStation[] = [];
+export let tidesUpdated: string | null = null;
 
 /** Upcoming tides from `now`, for one station. */
 export const nextTides = (station: TideStation, count = 4, now = new Date()) =>
@@ -194,7 +188,7 @@ export const nextTides = (station: TideStation, count = 4, now = new Date()) =>
 export const upcomingMeetings = (now = new Date()) => {
   const start = new Date(now);
   start.setHours(0, 0, 0, 0);
-  return ((calendarData.meetings ?? []) as Meeting[]).filter((m) => new Date(m.start) >= start);
+  return ((getData('calendar').meetings ?? []) as Meeting[]).filter((m) => new Date(m.start) >= start);
 };
 
 const ET = 'America/New_York';
@@ -263,7 +257,6 @@ export interface SocialPost {
 export const socialPosts = () => sortByPosted(((editorialData as { social?: SocialPost[] }).social ?? []) as SocialPost[]) as SocialPost[];
 export const socialForTown = (town: string) => socialPosts().filter((p) => p.towns?.includes(town));
 
-import policeData from '../data/police-log.json';
 
 export interface PoliceEntry {
   id: string;
@@ -298,8 +291,9 @@ export interface PoliceDept {
  * so the window runs back from each one's newest entry, not from today.
  */
 export function policeLogs(days = 30): PoliceDept[] {
-  const all = (policeData.entries ?? []) as PoliceEntry[];
-  const depts = (policeData.departments ?? {}) as Record<string, Omit<PoliceDept, 'id' | 'entries'>>;
+  const police = getData('police-log');
+  const all = (police.entries ?? []) as PoliceEntry[];
+  const depts = (police.departments ?? {}) as Record<string, Omit<PoliceDept, 'id' | 'entries'>>;
   return Object.entries(depts).map(([id, d]) => {
     const mine = all.filter((e) => e.dept === id);
     const latest = mine[0]?.date;
@@ -316,7 +310,6 @@ export const fmtLogTime = (d: string) => {
   return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'a.m.' : 'p.m.'}`;
 };
 
-import schedulesData from '../data/schedules.json';
 
 export interface Game {
   id: string;
@@ -337,7 +330,7 @@ export interface TeamSchedule {
 }
 /** Results and upcoming games for teams with a schedule feed (Red Sox, Bruins). */
 export const teamSchedule = (team: string) =>
-  ((schedulesData.teams ?? {}) as Record<string, TeamSchedule>)[team] ?? null;
+  ((getData('schedules').teams ?? {}) as Record<string, TeamSchedule>)[team] ?? null;
 
 export interface Video {
   id: string;
@@ -363,8 +356,8 @@ export interface VideoChannel {
 }
 
 export const videoChannels = ((videoChannelsData as { channels?: VideoChannel[] }).channels ?? []).filter((c) => c.enabled);
-export const videosUpdated: string | null = (videosData as { updated?: string }).updated ?? null;
-const storedVideos = ((videosData as { videos?: Video[] }).videos ?? []).filter((v) => isPublishedAt(v.published));
+export let videosUpdated: string | null = null;
+let storedVideos: Video[] = [];
 
 /** Videos from the last day, newest first. */
 export const videosLastDay = (now = new Date()) => recentVideos(storedVideos, { now, hours: 24 });
@@ -374,3 +367,32 @@ export const videosEarlierThisWeek = (now = new Date(), max = 24) =>
 
 /** The video featured on the home page: the newest Bristol County video, else the newest of any kind. */
 export const featuredVideo = (now = new Date()) => pickFeaturedVideo(storedVideos, { now }) as Video | undefined;
+
+/**
+ * Rebuild everything derived from the live data files. Pages are rendered on
+ * demand, so this runs again whenever loadData() pulls newer files.
+ */
+function rebuild() {
+  const wire = getData('wire');
+  wireUpdated = wire.updated ?? null;
+  allWireItems = (wire.items ?? []) as Omit<WireItem, 'sections'>[];
+  rawWireItems = allWireItems.filter((i) => ageDays(i.date) <= wireWindow(i, aggregatedSources).show);
+  wireItems = (applyEditorial(rawWireItems, editorialData) as WireItem[]).filter((i) => isPublishedAt(i.date));
+  sourceStatus = (getData('feed-status').sources ?? []) as SourceStatus[];
+  const transit = getData('transit');
+  transitUpdated = transit.updated ?? null;
+  transitStopParents = (transit.stopParents ?? {}) as Record<string, string>;
+  const tides = getData('tides');
+  tideStations = (tides.stations ?? []) as TideStation[];
+  tidesUpdated = tides.updated ?? null;
+  const videos = getData('videos');
+  videosUpdated = videos.updated ?? null;
+  storedVideos = ((videos.videos ?? []) as Video[]).filter((v) => isPublishedAt(v.published));
+}
+
+rebuild();
+
+/** Pull the latest data from the data branch (at most once a minute) and rebuild what depends on it. */
+export async function loadData() {
+  if (await loadLiveData()) rebuild();
+}

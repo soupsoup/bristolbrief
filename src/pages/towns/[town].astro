@@ -11,12 +11,12 @@ import { MBTA_STATIONS, TIDE_STATIONS } from '../../../scripts/lib/data.mjs';
 import { TOWNS } from '../../site.config';
 import { itemsForTown, socialForTown, listingsForTown } from '../../lib/wire';
 
-export function getStaticPaths() {
-  return TOWNS.map((t) => ({ params: { town: t.slug }, props: { name: t.name } }));
-}
+export const prerender = false;
 
 const { town } = Astro.params;
-const { name } = Astro.props;
+const found = TOWNS.find((t) => t.slug === town);
+if (!found) return new Response(null, { status: 404 });
+const { name } = found;
 const townItems = itemsForTown(town);
 const headlines = townItems.filter((i) => i.category !== 'meetings').slice(0, 25);
 const meetings = townItems.filter((i) => i.category === 'meetings').slice(0, 8);

@@ -1,10 +1,13 @@
 import { defineMiddleware } from 'astro:middleware';
 import { hasSession, adminEnabled } from './lib/admin/auth';
+import { loadData } from './lib/wire';
 
 const OPEN = new Set(['/admin/login/', '/admin/login', '/api/admin/login/', '/api/admin/login']);
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
+  // Pages render on demand, so pull the current data (at most once a minute) before any page code runs.
+  if (!context.isPrerendered) await loadData();
   const isAdmin = pathname.startsWith('/admin') || pathname.startsWith('/api/admin');
   if (!isAdmin || context.isPrerendered) return next();
 

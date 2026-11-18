@@ -1,19 +1,12 @@
 {
- "updated": "2026-11-18T14:05:29.482Z",
+ "updated": "2026-11-18T14:35:51.283Z",
  "channels": [
   {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
+   "id": "boston25",
+   "name": "Boston 25 News",
    "ok": true,
    "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 4
+   "kept": 2
   },
   {
    "id": "nbc10-boston",
@@ -23,15 +16,15 @@
    "kept": 1
   },
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 4
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
@@ -44,14 +37,47 @@
    "kept": 3
   },
   {
-   "id": "boston25",
-   "name": "Boston 25 News",
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
    "ok": true,
    "entries": 15,
-   "kept": 2
+   "kept": 0
+  },
+  {
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
+   "ok": true,
+   "entries": 15,
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "LUcX7pVnW1o",
+   "title": "WPRI 12 Weather Forecast for 11/18/26:  Mild and dry through the week",
+   "link": "https://www.youtube.com/watch?v=LUcX7pVnW1o",
+   "published": "2026-11-18T14:14:22.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/LUcX7pVnW1o/mqdefault.jpg",
+   "towns": [],
+   "local": true,
+   "countywide": true,
+   "weather": true
+  },
+  {
+   "id": "w7pM8O453iI",
+   "title": "Pedestrian hit, killed by vehicle in Somerset",
+   "link": "https://www.youtube.com/watch?v=w7pM8O453iI",
+   "published": "2026-11-18T13:58:59.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/w7pM8O453iI/mqdefault.jpg",
+   "towns": [
+    "somerset"
+   ],
+   "local": true
+  },
   {
    "id": "D7oH1KZQEvk",
    "title": "Man seriously hurt in Providence stabbing",
@@ -108,19 +134,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "gOMiRdXRI3w",
-   "title": "WPRI 12 Weather Forecast for 11/18/26:  Milder today with sunshine",
-   "link": "https://www.youtube.com/watch?v=gOMiRdXRI3w",
-   "published": "2026-11-18T12:10:41.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/gOMiRdXRI3w/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true,
-   "weather": true
   },
   {
    "id": "yyWXLNGBAI0",
@@ -4175,38 +4188,6 @@
     "new-bedford"
    ],
    "local": true
-  },
-  {
-   "id": "dYwxGf3TgBk",
-   "title": "Ex-officer convicted of killing Sandra Birchmore to keep Massachusetts woman quiet about sex abuse",
-   "link": "https://www.youtube.com/watch?v=dYwxGf3TgBk",
-   "published": "2026-11-11T14:06:09.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/dYwxGf3TgBk/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "O0b5pwaKyFY",
-   "title": "North Smithfield man used AI to create child sex abuse images, federal prosecutors allege",
-   "link": "https://www.youtube.com/watch?v=O0b5pwaKyFY",
-   "published": "2026-11-11T14:05:57.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/O0b5pwaKyFY/mqdefault.jpg",
-   "towns": [],
-   "local": true,
-   "countywide": true
-  },
-  {
-   "id": "x3mRbEY9bEc",
-   "title": "Insurer FM will move HQ to Providence tower, close Johnston office",
-   "link": "https://www.youtube.com/watch?v=x3mRbEY9bEc",
-   "published": "2026-11-11T14:05:32.000Z",
-   "channel": "wpri",
-   "channelName": "WPRI 12",
-   "thumbnail": "https://i.ytimg.com/vi/x3mRbEY9bEc/mqdefault.jpg",
-   "towns": []
   }
  ]
 }

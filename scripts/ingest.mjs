@@ -3,6 +3,7 @@
 //   src/data/wire.json         headlines for the site (merged with prior runs)
 //   src/data/alerts.json       active National Weather Service alerts
 //   src/data/forecast.json     National Weather Service seven-day forecast
+//   src/data/producthunt.json  AI tools with the most votes on Product Hunt (/tools/ page)
 //   src/data/election-results.json  unofficial election results (Nov. 3 evening onward, state results site)
 //   src/data/transit.json      MBTA commuter rail alerts for Bristol County stations
 //   src/data/tides.json        NOAA tide predictions and latest water levels
@@ -29,6 +30,7 @@ import { scanSocial } from './lib/social.mjs';
 import { SCHEDULE_TEAMS, trimSchedule } from './lib/schedules.mjs';
 import { FORECAST_URL, normalizeForecast } from './lib/forecast.mjs';
 import { checkResults } from './lib/election.mjs';
+import { MCP_URL, fetchTools } from './lib/producthunt.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const path = (p) => new URL(p, ROOT);
@@ -142,6 +144,28 @@ async function ingestForecast() {
     const forecast = normalizeForecast(JSON.parse(body));
     if (!forecast.periods.length) throw new Error('no forecast periods');
     return { ok: true, forecast };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+// Product Hunt's MCP server answers leaderboard questions without a sign-in. A failed or empty
+// fetch leaves the saved file alone.
+async function ingestProductHunt() {
+  try {
+    const post = async (body) => {
+      const res = await fetch(MCP_URL, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream', 'user-agent': UA },
+        body,
+        signal: AbortSignal.timeout(25_000),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return { body: await res.text(), contentType: res.headers.get('content-type') };
+    };
+    const doc = await fetchTools(post);
+    if (!doc.tools.length) throw new Error('no AI tools in the leaderboards');
+    return { ok: true, doc };
   } catch (err) {
     return { ok: false, error: err.message };
   }
@@ -305,7 +329,7 @@ async function ingestVideos() {
   return { ok: status.some((s) => s.ok), videos, status, channelIds: new Set(channels.map((c) => c.id)), now };
 }
 
-const [results, alertResult, forecast, transit, tides, calendar, social, schedules, videoResult, election] = await Promise.all([
+const [results, alertResult, forecast, transit, tides, calendar, social, schedules, videoResult, election, producthunt] = await Promise.all([
   pool(selected, CONCURRENCY, ingestSource),
   ingestAlerts(),
   ingestForecast(),
@@ -316,6 +340,7 @@ const [results, alertResult, forecast, transit, tides, calendar, social, schedul
   ingestSchedules(),
   ingestVideos(),
   ingestElection(),
+  ingestProductHunt(),
 ]);
 
 const incoming = results.flatMap((r) => r.items);
@@ -339,6 +364,7 @@ console.log(
     `Tides: ${tides.ok ? `${tides.stations.length} stations` : `failed (${tides.error})`}. ` +
     `Meetings: ${calendar.ok ? `${calendar.meetings.length} scheduled` : `failed (${calendar.error})`}. ` +
     `Social: ${social.ok ? `${social.found} found, ${social.posts.length} to review` : `failed (${social.error ?? social.errors?.join('; ')})`}. ` +
+    `Product Hunt: ${producthunt.ok ? `${producthunt.doc.tools.length} AI tools` : `failed (${producthunt.error})`}. ` +
     `Election: ${election.ok ? (election.results ? `${Object.keys(election.results.races).length} races reporting` : 'no new results') : `failed (${election.error})`}. ` +
     `Forecast: ${forecast.ok ? `${forecast.forecast.periods.length} periods` : `failed (${forecast.error})`}. ` +
     `Schedules: ${Object.keys(schedules.teams).join(', ') || 'none'}${schedules.errors.length ? ` (failed: ${schedules.errors.join('; ')})` : ''}. ` +
@@ -355,6 +381,7 @@ if (!dryRun) {
   if (forecast.ok) {
     await writeFile(path('src/data/forecast.json'), JSON.stringify({ updated: now, ...forecast.forecast }, null, 1) + '\n');
   }
+  if (producthunt.ok) await writeFile(path('src/data/producthunt.json'), JSON.stringify(producthunt.doc, null, 1) + '\n');
   if (election.ok && election.results) {
     await writeFile(path('src/data/election-results.json'), JSON.stringify(election.results, null, 1) + '\n');
   }

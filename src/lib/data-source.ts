@@ -26,6 +26,7 @@ export const LIVE_FILES = [
   'videos',
   'feed-status',
   'police-log',
+  'producthunt',
 ] as const;
 
 const DEFAULT_BASE = 'https://raw.githubusercontent.com/soupsoup/bristolbrief/data/src/data';

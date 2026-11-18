@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-18T01:06:06.106Z",
+ "updated": "2026-11-18T01:35:29.241Z",
  "channels": [
   {
-   "id": "wpri",
-   "name": "WPRI 12",
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
    "ok": true,
    "entries": 15,
-   "kept": 15
+   "kept": 0
   },
   {
    "id": "7news-boston",
@@ -16,18 +16,25 @@
    "kept": 0
   },
   {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
    "ok": true,
    "entries": 15,
-   "kept": 0
+   "kept": 1
   },
   {
-   "id": "nbc10-wjar",
-   "name": "NBC 10 WJAR",
+   "id": "wpri",
+   "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "cbs-boston",
+   "name": "CBS Boston (WBZ)",
+   "ok": true,
+   "entries": 15,
+   "kept": 2
   },
   {
    "id": "boston25",
@@ -37,21 +44,41 @@
    "kept": 1
   },
   {
-   "id": "cbs-boston",
-   "name": "CBS Boston (WBZ)",
+   "id": "nbc10-wjar",
+   "name": "NBC 10 WJAR",
    "ok": true,
    "entries": 15,
-   "kept": 1
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 1
+   "kept": 15
   }
  ],
  "videos": [
+  {
+   "id": "Kw5Aw5AQjvE",
+   "title": "Man who shot, killed Taunton teen sentenced to prison #shorts",
+   "link": "https://www.youtube.com/shorts/Kw5Aw5AQjvE",
+   "published": "2026-11-18T01:14:47.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/Kw5Aw5AQjvE/mqdefault.jpg",
+   "towns": [
+    "taunton"
+   ],
+   "local": true,
+   "short": true
+  },
+  {
+   "id": "u9RhdyE0sug",
+   "title": "Child rushed to hospital after massive fire in New Bedford",
+   "link": "https://www.youtube.com/watch?v=u9RhdyE0sug",
+   "published": "2026-11-18T01:11:49.000Z",
+   "channel": "cbs-boston",
+   "channelName": "CBS Boston (WBZ)",
+   "thumbnail": "https://i.ytimg.com/vi/u9RhdyE0sug/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
   {
    "id": "iglgVVofHmE",
    "title": "Woonsocket police searching for missing teen",

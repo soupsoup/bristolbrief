@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T04:05:42.942Z",
+ "updated": "2026-11-18T04:15:34.601Z",
  "channels": [
   {
    "id": "cbs-boston",
@@ -9,11 +9,32 @@
    "kept": 2
   },
   {
+   "id": "wcvb",
+   "name": "WCVB Channel 5",
+   "ok": true,
+   "entries": 15,
+   "kept": 3
+  },
+  {
    "id": "wpri",
    "name": "WPRI 12",
    "ok": true,
    "entries": 15,
    "kept": 15
+  },
+  {
+   "id": "nbc10-boston",
+   "name": "NBC10 Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
+  },
+  {
+   "id": "7news-boston",
+   "name": "7NEWS Boston",
+   "ok": true,
+   "entries": 15,
+   "kept": 0
   },
   {
    "id": "boston25",
@@ -28,30 +49,35 @@
    "ok": true,
    "entries": 15,
    "kept": 15
-  },
-  {
-   "id": "wcvb",
-   "name": "WCVB Channel 5",
-   "ok": true,
-   "entries": 15,
-   "kept": 3
-  },
-  {
-   "id": "7news-boston",
-   "name": "7NEWS Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
-  },
-  {
-   "id": "nbc10-boston",
-   "name": "NBC10 Boston",
-   "ok": true,
-   "entries": 15,
-   "kept": 0
   }
  ],
  "videos": [
+  {
+   "id": "0ChSPMmRyGM",
+   "title": "8-year-old girl seriously hurt in New Bedford building fire",
+   "link": "https://www.youtube.com/watch?v=0ChSPMmRyGM",
+   "published": "2026-11-18T04:07:50.000Z",
+   "channel": "nbc10-wjar",
+   "channelName": "NBC 10 WJAR",
+   "thumbnail": "https://i.ytimg.com/vi/0ChSPMmRyGM/mqdefault.jpg",
+   "towns": [
+    "new-bedford"
+   ],
+   "local": true
+  },
+  {
+   "id": "mLJWmr9rnzU",
+   "title": "Fairhaven residents vote to ban automated license plate readers",
+   "link": "https://www.youtube.com/watch?v=mLJWmr9rnzU",
+   "published": "2026-11-18T03:59:50.000Z",
+   "channel": "wpri",
+   "channelName": "WPRI 12",
+   "thumbnail": "https://i.ytimg.com/vi/mLJWmr9rnzU/mqdefault.jpg",
+   "towns": [
+    "fairhaven"
+   ],
+   "local": true
+  },
   {
    "id": "ExCBRiAESlg",
    "title": "House Judiciary Committee approves Matos' Supreme Court appointment",
@@ -4108,26 +4134,6 @@
    "channel": "wpri",
    "channelName": "WPRI 12",
    "thumbnail": "https://i.ytimg.com/vi/YtNvH7SQ8YI/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "PipBL1xnoq8",
-   "title": "North Kingstown police officer charged with sexual assault",
-   "link": "https://www.youtube.com/watch?v=PipBL1xnoq8",
-   "published": "2026-11-11T04:15:19.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/PipBL1xnoq8/mqdefault.jpg",
-   "towns": []
-  },
-  {
-   "id": "7IPADETPsYg",
-   "title": "North Smithfield man accused of creating AI-generated child sexual abuse material",
-   "link": "https://www.youtube.com/watch?v=7IPADETPsYg",
-   "published": "2026-11-11T04:08:02.000Z",
-   "channel": "nbc10-wjar",
-   "channelName": "NBC 10 WJAR",
-   "thumbnail": "https://i.ytimg.com/vi/7IPADETPsYg/mqdefault.jpg",
    "towns": []
   }
  ]
